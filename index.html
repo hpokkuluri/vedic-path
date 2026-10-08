@@ -189,6 +189,27 @@ body {
 .verse-text .vline {
   display: inline;
 }
+/* Telugu script line */
+.vline-te {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.6;
+  color: var(--fg2);
+  font-family: 'Noto Sans Telugu', 'Gautami', serif;
+  opacity: 0.82;
+  margin-top: 1px;
+  margin-bottom: 4px;
+}
+/* Recite Telugu line */
+.recite-line-te {
+  font-size: 0.62em;
+  line-height: 1.5;
+  color: var(--recite-fg);
+  opacity: 0.65;
+  font-family: 'Noto Sans Telugu', 'Gautami', serif;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
 /* Verse number inline like ॥ 1 ॥ */
 .verse-num {
   display: inline;
@@ -782,6 +803,7 @@ body {
 </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&display=swap">
 
 <!-- Top bar (hidden on home) -->
 <div id="topbar" style="display:none">
@@ -906,6 +928,7 @@ const SETTINGS_DEFAULTS = {
   reciteFontSize: 2,     // index: 0=small,1=med,2=large,3=xlarge
   showMeaning: true,
   autoAdvance: false,
+  language: 'en',        // 'en' = IAST only, 'te' = Telugu only, 'both' = IAST + Telugu
 };
 const PRACTICE_FONT_SIZES = ['1.1rem','1.35rem','1.6rem','1.9rem'];
 const RECITE_FONT_SIZES   = ['1.5rem','1.9rem','2.4rem','3rem'];
@@ -1171,7 +1194,12 @@ function renderDhyanaPractice(el) {
     const key = `gita_dhyana_${s.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
-    const linesHtml = s.tlines.map((ln,i) => `<span class="vline">${esc(ln)}</span>${i < s.tlines.length-1 ? '<br>' : ''}`).join('');
+    const linesHtml = s.tlines.map((ln,i) => {
+      const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
+      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(iastToTelugu(ln))}</span>` : '';
+      const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
+      return enLine + teLine + br;
+    }).join('');
     html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
       <div class="verse-text">${linesHtml}<span class="verse-num">॥ ${s.n} ॥</span></div>
@@ -1218,7 +1246,12 @@ function renderGitaPractice(el) {
       spkHtml = `<span class="spk-tag">${spkNames[v.spk] || v.spk} uvāca</span>`;
       prevSpk = v.spk;
     }
-    const linesHtml = v.tlines.map((ln,i) => `<span class="vline">${esc(ln)}</span>${i < v.tlines.length-1 ? '<br>' : ''}`).join('');
+    const linesHtml = v.tlines.map((ln,i) => {
+      const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
+      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(iastToTelugu(ln))}</span>` : '';
+      const br = (i < v.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
+      return enLine + teLine + br;
+    }).join('');
     const meaningHtml = v.meaning_en ? `<div class="verse-meaning">${esc(v.meaning_en)}</div>` : `<div class="verse-meaning empty"></div>`;
     html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
@@ -1268,7 +1301,9 @@ function renderRudramPractice(el) {
   <div class="rudram-anuvaka"><div class="rudram-lines">`;
 
   for (const ln of lines) {
-    html += `<span>${esc(ln)}</span>`;
+    const enPart = settings.language !== 'te' ? `<span>${esc(ln)}</span>` : '';
+    const tePart = settings.language !== 'en' ? `<span class="vline-te" style="display:block;font-size:1.1rem">${esc(iastToTelugu(ln))}</span>` : '';
+    html += enPart + tePart;
   }
   html += `</div></div>`;
 
@@ -1615,9 +1650,11 @@ function renderRecite() {
   // Speaker tag (shown above lines when speaker changes)
   const linesEl = document.getElementById('recite-lines');
   const spkHtml = item.spk ? `<div class="recite-spk">${esc(item.spk)}</div>` : '';
-  linesEl.innerHTML = spkHtml + item.lines.map(ln =>
-    `<div class="recite-line">${esc(ln)}</div>`
-  ).join('');
+  linesEl.innerHTML = spkHtml + item.lines.map(ln => {
+    const enLine = settings.language !== 'te' ? `<div class="recite-line">${esc(ln)}</div>` : '';
+    const teLine = settings.language !== 'en' ? `<div class="recite-line-te">${esc(iastToTelugu(ln))}</div>` : '';
+    return enLine + teLine;
+  }).join('');
   
   // Dots
   const dotsEl = document.getElementById('recite-dots');
@@ -1631,6 +1668,78 @@ function renderRecite() {
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+
+// ─────────────── IAST → TELUGU CONVERTER ───────────────
+(function() {
+  const ACCENT_STRIPS = new Set(['̠','̍','̎','̑','̱','̌','̤','̥']);
+  const VIRAMA = '్';
+  const ANUSVARA = 'ం';
+  const VISARGA  = 'ః';
+  const SV = {a:'అ',ā:'ఆ',i:'ఇ',ī:'ఈ',u:'ఉ',ū:'ఊ',
+    ṛ:'ఋ',ṝ:'ఌ',e:'ఎ',ē:'ఏ',ai:'ఐ',o:'ఒ',ō:'ఓ',au:'ఔ'};
+  const VM = {a:'',ā:'ా',i:'ి',ī:'ీ',u:'ు',ū:'ూ',
+    ṛ:'ృ',ṝ:'ౄ',e:'ె',ē:'ే',ai:'ై',o:'ొ',ō:'ో',au:'ౌ'};
+  const CONS2 = {kh:'ఖ',gh:'ఘ',ch:'ఛ',jh:'ఝ',
+    ṭh:'ఠ',ḍh:'ఢ',th:'థ',dh:'ధ',ph:'ఫ',bh:'భ'};
+  const CONS1 = {k:'క',g:'గ',ṅ:'ఙ',c:'చ',j:'జ',ñ:'ఞ',
+    ṭ:'ట',ḍ:'డ',ṇ:'ణ',t:'త',d:'ద',n:'న',
+    p:'ప',b:'బ',m:'మ',y:'య',r:'ర',l:'ల',
+    ḷ:'ళ',ḻ:'ళ',v:'వ',ś:'శ',ṣ:'ష',s:'స',h:'హ'};
+  const SPECIAL = {ṃ:ANUSVARA,ṁ:ANUSVARA,ḥ:VISARGA};
+  const PASSTHRU = new Set(' \t\n\r|।॥-\'"()[]{}0123456789,.!?;:/\\~`@#%^&*_+=<>\'');
+
+  function stripAccents(t) {
+    const r = [];
+    for (const c of t) { if (!ACCENT_STRIPS.has(c)) r.push(c); }
+    return r.join('');
+  }
+  function getCons(text, i) {
+    const two = text.slice(i, i+2);
+    if (CONS2[two]) return [CONS2[two], 2];
+    const c = text[i] || '';
+    if (CONS1[c]) return [CONS1[c], 1];
+    return [null, 0];
+  }
+  function getVowel(text, i) {
+    const two = text.slice(i, i+2);
+    if (two === 'ai' || two === 'au') return [two, 2];
+    const c = text[i] || '';
+    if (c in VM) return [c, 1];
+    return [null, 0];
+  }
+
+  window.iastToTelugu = function(text) {
+    text = stripAccents(text);
+    // NFC normalize (browser)
+    if (text.normalize) text = text.normalize('NFC');
+    const result = [];
+    let i = 0;
+    const n = text.length;
+    while (i < n) {
+      const ch = text[i];
+      if (PASSTHRU.has(ch)) { result.push(ch); i++; continue; }
+      if (SPECIAL[ch]) { result.push(SPECIAL[ch]); i++; continue; }
+      const [cons_ch, clen] = getCons(text, i);
+      if (cons_ch) {
+        i += clen;
+        const [vowel, vlen] = getVowel(text, i);
+        if (vowel !== null) {
+          result.push(cons_ch, VM[vowel]);
+          i += vlen;
+        } else {
+          result.push(cons_ch, VIRAMA);
+        }
+        continue;
+      }
+      // Standalone vowel
+      const two = text.slice(i, i+2);
+      if (two === 'ai' || two === 'au') { result.push(SV[two]); i += 2; continue; }
+      if (SV[ch]) { result.push(SV[ch]); i++; continue; }
+      result.push(ch); i++;
+    }
+    return result.join('');
+  };
+})();
 
 // ─────────────── SETTINGS VIEW ───────────────
 function renderSettings() {
@@ -1664,6 +1773,22 @@ function renderSettings() {
           <button class="sz-btn" onclick="changeSetting('reciteFontSize',-1)">−</button>
           <span class="sz-val">${FONT_LABELS[rf]}</span>
           <button class="sz-btn" onclick="changeSetting('reciteFontSize',1)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-section-title">Script Language</div>
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Display Language</div>
+          <div class="settings-desc">Choose script for verse text</div>
+        </div>
+        <div class="settings-control" style="gap:6px">
+          ${['en','both','te'].map(v => {
+            const labels = {en:'English',both:'Both',te:'తెలుగు'};
+            const sel = settings.language === v;
+            return `<button class="sz-btn" style="width:auto;padding:0 12px;font-size:0.82rem;border-radius:8px;${sel?'background:var(--accent);color:#fff;border-color:var(--accent)':''}" onclick="setLanguage('${v}')">${labels[v]}</button>`;
+          }).join('')}
         </div>
       </div>
     </div>
@@ -1703,6 +1828,14 @@ function changeSetting(key, dir) {
 
 function adjustReciteFont(dir) {
   changeSetting('reciteFontSize', dir);
+}
+
+function setLanguage(lang) {
+  settings.language = lang;
+  saveSettings();
+  renderSettings();
+  if (state.view === 'practice') renderPractice();
+  if (state.view === 'recite') renderRecite();
 }
 
 // ─────────────── INIT ───────────────
