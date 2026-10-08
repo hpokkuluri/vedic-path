@@ -426,6 +426,15 @@ body {
   gap: 18px;
   text-align: center;
 }
+.recite-spk {
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+  color: var(--recite-hl);
+  opacity: 0.75;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  margin-bottom: 12px;
+}
 .recite-line {
   font-size: clamp(1.2rem, 4vw, 1.7rem);
   line-height: 1.5;
@@ -1405,15 +1414,19 @@ function buildReciteItems() {
       });
     }
   } else if (state.section === 'gita') {
+    const spkNames = { 'dhṛtarāṣṭra':'Dhṛtarāṣṭra','arjuna':'Arjuna','bhagavān':'Śrī Bhagavān','sañjaya':'Sañjaya' };
+    let prevSpk = null;
     const verses = GITA_DATA[state.chapter] || [];
     for (const v of verses) {
-      // Group lines into chunks of up to 4
       const allLines = [...v.tlines];
-      // Each verse as one recite "card" (max 4 lines shown)
+      // Attach speaker label only when it changes
+      const spkLabel = (v.spk && v.spk !== prevSpk) ? (spkNames[v.spk] || v.spk) + ' uvāca' : null;
+      if (v.spk) prevSpk = v.spk;
       items.push({
         id: `gita_ch${state.chapter}_v${v.n}`,
         label: `Ch.${state.chapter} · ${v.n}`,
         lines: allLines.slice(0, 4),
+        spk: spkLabel,
         n: v.n,
       });
     };
@@ -1527,9 +1540,10 @@ function renderRecite() {
     state.section === 'gita' ? 'Bhagavad Gītā' : 'Śrī Rudram';
   document.getElementById('recite-verse-label').textContent = item.label || '';
   
-  // Lines: show item lines, highlight first
+  // Speaker tag (shown above lines when speaker changes)
   const linesEl = document.getElementById('recite-lines');
-  linesEl.innerHTML = item.lines.map((ln, i) => 
+  const spkHtml = item.spk ? `<div class="recite-spk">${esc(item.spk)}</div>` : '';
+  linesEl.innerHTML = spkHtml + item.lines.map((ln, i) =>
     `<div class="recite-line${i===0?' hl':''}">${esc(ln)}</div>`
   ).join('');
   
