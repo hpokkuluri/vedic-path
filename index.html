@@ -3,59 +3,68 @@
 <style>
 /* ── Design tokens ── */
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --fg2: #555555;
-  --fg3: #888888;
-  --accent: #8b4513;
-  --accent2: #c8860a;
-  --border: #e0e0e0;
-  --card-bg: #f9f7f4;
-  --nav-bg: #ffffff;
-  --nav-border: #e0e0e0;
-  --recite-bg: #0a0a0a;
-  --recite-fg: #e8e8e8;
-  --recite-hl: #d4a017;
-  --tag-bg: #f0ebe4;
-  --tag-fg: #6b3d14;
-  --done-bg: #e8f4e8;
-  --done-border: #4caf50;
+  --bg: #fdf8f0;
+  --fg: #1c1208;
+  --fg2: #5a4020;
+  --fg3: #9a7a50;
+  --accent: #7b3a10;
+  --accent2: #b8720a;
+  --accent3: #d4960e;
+  --border: #e8d8c0;
+  --card-bg: #fff9f0;
+  --card-shadow: 0 2px 12px rgba(120,60,0,0.10);
+  --nav-bg: #fdf8f0;
+  --nav-border: #e8d8c0;
+  --recite-bg: #080508;
+  --recite-fg: #f0e8d8;
+  --recite-hl: #f0c040;
+  --tag-bg: #f5e8d0;
+  --tag-fg: #7b3a10;
+  --done-bg: #eef6ee;
+  --done-border: #5aaa5a;
+  --home-gradient: linear-gradient(160deg, #2a0e00 0%, #4a1a06 40%, #1a0a22 100%);
+  --home-gold: #f0c040;
+  --home-gold2: #d4960e;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121212;
-    --fg: #e8e8e8;
-    --fg2: #b0b0b0;
-    --fg3: #777777;
-    --accent: #c8860a;
-    --accent2: #d4a017;
-    --border: #2a2a2a;
-    --card-bg: #1e1e1e;
-    --nav-bg: #121212;
-    --nav-border: #2a2a2a;
-    --tag-bg: #2a1a08;
-    --tag-fg: #d4a017;
-    --done-bg: #1a2a1a;
-    --done-border: #4caf50;
+    --bg: #100c08;
+    --fg: #f0e4d0;
+    --fg2: #c8a870;
+    --fg3: #806040;
+    --accent: #e08030;
+    --accent2: #d4960e;
+    --accent3: #f0c040;
+    --border: #2e2010;
+    --card-bg: #1a1208;
+    --card-shadow: 0 2px 12px rgba(0,0,0,0.40);
+    --nav-bg: #0e0a06;
+    --nav-border: #2e2010;
+    --tag-bg: #2e1808;
+    --tag-fg: #e0a040;
+    --done-bg: #0e1e0e;
+    --done-border: #5aaa5a;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121212;
-  --fg: #e8e8e8;
-  --fg2: #b0b0b0;
-  --fg3: #777777;
-  --accent: #c8860a;
-  --accent2: #d4a017;
-  --border: #2a2a2a;
-  --card-bg: #1e1e1e;
-  --nav-bg: #121212;
-  --nav-border: #2a2a2a;
-  --tag-bg: #2a1a08;
-  --tag-fg: #d4a017;
-  --done-bg: #1a2a1a;
-  --done-border: #4caf50;
+  --bg: #100c08;
+  --fg: #f0e4d0;
+  --fg2: #c8a870;
+  --fg3: #806040;
+  --accent: #e08030;
+  --accent2: #d4960e;
+  --accent3: #f0c040;
+  --border: #2e2010;
+  --card-bg: #1a1208;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.40);
+  --nav-bg: #0e0a06;
+  --nav-border: #2e2010;
+  --tag-bg: #2e1808;
+  --tag-fg: #e0a040;
+  --done-bg: #0e1e0e;
+  --done-border: #5aaa5a;
   color-scheme: dark;
 }
 
@@ -494,17 +503,170 @@ body {
 .placeholder-msg h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--fg2); }
 .placeholder-msg p { font-size: 0.9rem; }
 
+/* ── Home page ── */
+#view-home {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 0;
+  max-width: 100%;
+}
+#view-home.active { display: flex; }
+.home-hero {
+  width: 100%;
+  background: var(--home-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(240,192,64,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.home-mandala {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 24px rgba(240,192,64,0.5));
+}
+.home-title {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.home-title span { color: var(--home-gold); }
+.home-subtitle {
+  font-size: 0.95rem;
+  color: rgba(240,220,180,0.7);
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.home-menu {
+  width: 100%;
+  max-width: 480px;
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.home-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.home-card:active { transform: scale(0.98); }
+.home-card-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  gap: 14px;
+}
+.home-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.home-card-icon.gita { background: linear-gradient(135deg, #7b3a10, #b8720a); }
+.home-card-icon.rudram { background: linear-gradient(135deg, #1a4a6a, #2a7ab0); }
+.home-card-icon.vsn { background: linear-gradient(135deg, #2a5a1a, #4aaa2a); }
+.home-card-text { flex: 1; }
+.home-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1.2;
+}
+.home-card-desc {
+  font-size: 0.8rem;
+  color: var(--fg3);
+  margin-top: 2px;
+}
+.home-card-arrow {
+  color: var(--accent2);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+/* Rudram sub-menu */
+.home-submenu {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.home-submenu.open { display: block; }
+.home-submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px 12px 76px;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.home-submenu-item:last-child { border-bottom: none; }
+.home-submenu-item:hover, .home-submenu-item:active { background: var(--card-bg); }
+.home-submenu-item .sub-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+.home-submenu-item .sub-desc {
+  font-size: 0.78rem;
+  color: var(--fg3);
+  margin-top: 1px;
+}
+.home-submenu-item .sub-arrow {
+  margin-left: auto;
+  color: var(--accent2);
+  font-size: 1rem;
+}
+.home-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--fg3);
+  padding: 0 20px 24px;
+  letter-spacing: 0.04em;
+}
+
 /* ── Responsive ── */
 @media (max-width: 480px) {
   .verse-text { font-size: 0.95rem; }
   .idx-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .home-title { font-size: 1.9rem; }
+  .home-mandala { width: 130px; height: 130px; }
 }
 </style>
 
-<!-- Top bar -->
-<div id="topbar">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+
+<!-- Top bar (hidden on home) -->
+<div id="topbar" style="display:none">
+  <button id="btn-home" onclick="showView('home')" style="background:none;border:none;cursor:pointer;padding:4px 6px;color:var(--accent);font-size:1.1rem;" title="Home">🏠</button>
   <h1 id="topbar-title">Vedic Path</h1>
-  <div class="section-tabs">
+  <div class="section-tabs" id="section-tabs">
     <button class="stab active" data-sec="gita" onclick="switchSection('gita')">Gītā</button>
     <button class="stab" data-sec="rudram" onclick="switchSection('rudram')">Rudram</button>
     <button class="stab" data-sec="vsn" onclick="switchSection('vsn')">VSN</button>
@@ -514,17 +676,25 @@ body {
 
 <!-- Main content area -->
 <div id="main">
+  <!-- Home view -->
+  <div class="view active" id="view-home"></div>
   <!-- Practice view -->
-  <div class="view active" id="view-practice"></div>
+  <div class="view" id="view-practice"></div>
   <!-- Index view -->
   <div class="view" id="view-index"></div>
   <!-- Progress view -->
   <div class="view" id="view-progress"></div>
 </div>
 
-<!-- Bottom nav -->
-<nav id="bottomnav">
-  <button class="bnav-btn active" id="bnav-practice" onclick="showView('practice')">
+<!-- Bottom nav (hidden on home) -->
+<nav id="bottomnav" style="display:none">
+  <button class="bnav-btn" id="bnav-home" onclick="showView('home')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    <span>Home</span>
+  </button>
+  <button class="bnav-btn" id="bnav-practice" onclick="showView('practice')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
     </svg>
@@ -609,12 +779,13 @@ function saveState() {
   } catch(e) {}
 }
 
-// Restore state
+// Restore state (but always start at home view)
 try {
   const s = JSON.parse(localStorage.getItem('vedic_state') || '{}');
   if (s.section) state.section = s.section;
   if (s.chapter) state.chapter = s.chapter;
 } catch(e) {}
+state.view = 'home';
 
 // ─────────────── SECTIONS ───────────────
 function switchSection(sec) {
@@ -633,15 +804,23 @@ function showView(v) {
   document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
   document.getElementById('view-' + v).classList.add('active');
   document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('bnav-' + v).classList.add('active');
+  const bn = document.getElementById('bnav-' + v);
+  if (bn) bn.classList.add('active');
+  // Show/hide chrome based on view
+  const isHome = (v === 'home');
+  document.getElementById('topbar').style.display = isHome ? 'none' : '';
+  document.getElementById('bottomnav').style.display = isHome ? 'none' : '';
+  // Scroll main to top
+  document.getElementById('main').scrollTop = 0;
   renderCurrentView();
 }
 
 function renderCurrentView() {
-  if (state.view === 'practice') renderPractice();
+  if (state.view === 'home') renderHome();
+  else if (state.view === 'practice') renderPractice();
   else if (state.view === 'index') renderIndex();
   else if (state.view === 'progress') renderProgress();
-  updateTopbar();
+  if (state.view !== 'home') updateTopbar();
 }
 
 function updateTopbar() {
@@ -659,6 +838,121 @@ function updateTopbar() {
   const hasContent = (state.section === 'gita' && GITA_DATA[state.chapter]?.length > 0) ||
                      (state.section === 'rudram' && RUDRAM_DATA[state.chapter]?.length > 0);
   recBtn.style.display = (state.view === 'practice' && hasContent) ? '' : 'none';
+}
+
+// ─────────────── HOME VIEW ───────────────
+function renderHome() {
+  const el = document.getElementById('view-home');
+  el.innerHTML = `
+  <div class="home-hero">
+    <svg class="home-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer ring -->
+      <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(240,192,64,0.35)" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(240,192,64,0.25)" stroke-width="0.8"/>
+      <!-- 16-petal lotus -->
+      ${Array.from({length:16},(_,i)=>{
+        const a=i*22.5*Math.PI/180, r=58, rx=14, ry=28;
+        const cx2=100+r*Math.sin(a), cy2=100-r*Math.cos(a);
+        return `<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.13)" stroke="rgba(240,192,64,0.50)" stroke-width="0.8"/>`;
+      }).join('')}
+      <!-- 8-petal inner lotus -->
+      ${Array.from({length:8},(_,i)=>{
+        const a=(i*45+22.5)*Math.PI/180, r=34, rx=9, ry=18;
+        const cx2=100+r*Math.sin(a), cy2=100-r*Math.cos(a);
+        return `<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*45+22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.18)" stroke="rgba(240,192,64,0.60)" stroke-width="0.9"/>`;
+      }).join('')}
+      <!-- Inner circle glow -->
+      <circle cx="100" cy="100" r="22" fill="rgba(240,192,64,0.15)" stroke="rgba(240,192,64,0.5)" stroke-width="1"/>
+      <!-- OM symbol -->
+      <text x="100" y="109" text-anchor="middle" font-size="26" fill="#f0c040" font-family="serif" style="filter:drop-shadow(0 0 6px rgba(240,192,64,0.8))">ॐ</text>
+      <!-- Decorative dots at petal tips -->
+      ${Array.from({length:16},(_,i)=>{
+        const a=i*22.5*Math.PI/180;
+        const cx2=100+84*Math.sin(a), cy2=100-84*Math.cos(a);
+        return `<circle cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" r="2" fill="rgba(240,192,64,0.6)"/>`;
+      }).join('')}
+    </svg>
+    <div class="home-title">Vedic <span>Path</span></div>
+    <div class="home-subtitle">Sacred Texts · Learn &amp; Recite</div>
+  </div>
+
+  <div class="home-menu">
+    <!-- Bhagavad Gita card -->
+    <div class="home-card" onclick="openSection('gita')">
+      <div class="home-card-header">
+        <div class="home-card-icon gita"><span style="color:#fff">🪷</span></div>
+        <div class="home-card-text">
+          <div class="home-card-name">Bhagavad Gītā</div>
+          <div class="home-card-desc">18 Chapters · 700 Verses</div>
+        </div>
+        <div class="home-card-arrow">›</div>
+      </div>
+    </div>
+
+    <!-- Rudram card with sub-menu -->
+    <div class="home-card" id="rudram-card">
+      <div class="home-card-header" onclick="toggleRudramMenu(event)">
+        <div class="home-card-icon rudram"><span style="color:#fff">🔱</span></div>
+        <div class="home-card-text">
+          <div class="home-card-name">Śrī Rudram</div>
+          <div class="home-card-desc">Namakam &amp; Chamakam</div>
+        </div>
+        <div class="home-card-arrow" id="rudram-arrow">›</div>
+      </div>
+      <div class="home-submenu" id="rudram-submenu">
+        <div class="home-submenu-item" onclick="openSection('rudram','namakam')">
+          <div>
+            <div class="sub-label">Namakam</div>
+            <div class="sub-desc">11 Anuvakas</div>
+          </div>
+          <div class="sub-arrow">›</div>
+        </div>
+        <div class="home-submenu-item" style="opacity:0.5;cursor:default">
+          <div>
+            <div class="sub-label">Chamakam</div>
+            <div class="sub-desc">Coming soon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vishnu Sahasranamam card -->
+    <div class="home-card" style="opacity:0.55;cursor:default">
+      <div class="home-card-header">
+        <div class="home-card-icon vsn"><span style="color:#fff">🌸</span></div>
+        <div class="home-card-text">
+          <div class="home-card-name">Viṣṇu Sahasranāmam</div>
+          <div class="home-card-desc">1000 Names · Coming soon</div>
+        </div>
+        <div class="home-card-arrow" style="opacity:0.3">›</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-footer">ॐ तत् सत् · All Sacred Texts</div>
+  `;
+}
+
+function toggleRudramMenu(e) {
+  e.stopPropagation();
+  const sub = document.getElementById('rudram-submenu');
+  const arrow = document.getElementById('rudram-arrow');
+  const open = sub.classList.toggle('open');
+  arrow.style.transform = open ? 'rotate(90deg)' : '';
+  arrow.style.transition = 'transform 0.2s';
+}
+
+function openSection(sec, sub) {
+  if (sec === 'gita') {
+    state.section = 'gita';
+    state.chapter = state.chapter && parseInt(state.chapter) <= 18 ? state.chapter : '1';
+  } else if (sec === 'rudram') {
+    state.section = 'rudram';
+    state.chapter = state.chapter && parseInt(state.chapter) <= 11 ? state.chapter : '1';
+  }
+  document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
+  saveState();
+  showView('index');
 }
 
 // ─────────────── PRACTICE VIEW ───────────────
@@ -758,56 +1052,99 @@ function toggleVerse(key) {
 function renderIndex() {
   const el = document.getElementById('view-index');
   let html = '';
-  
-  if (state.section === 'gita' || !state.section) {
-    html += `<div class="idx-section"><h2>Bhagavad Gītā — 18 Chapters</h2><div class="idx-grid">`;
+
+  if (state.section === 'gita') {
+    html += `<div class="idx-section">
+      <div class="idx-section-hdr">
+        <span class="idx-section-icon" style="background:linear-gradient(135deg,#7b3a10,#b8720a)">🪷</span>
+        <div>
+          <div class="idx-section-title">Bhagavad Gītā</div>
+          <div class="idx-section-sub">18 Chapters · 700 Verses</div>
+        </div>
+      </div>
+      <div class="idx-list">`;
     for (let c = 1; c <= 18; c++) {
       const cs = String(c);
       const meta = GITA_META[cs];
       const total = meta?.count || 0;
       const doneCount = [...done].filter(k => k.startsWith(`gita_ch${cs}_`)).length;
       const pct = total ? Math.round(doneCount/total*100) : 0;
-      html += `<div class="idx-card${state.chapter === cs && state.section === 'gita' ? ' current' : ''}"
-        onclick="goToChapter('gita','${cs}')">
-        <div class="idx-num">Chapter ${c}</div>
-        <div class="idx-name">${meta?.yoga || ''}</div>
-        <div class="idx-sub">${meta?.subtitle || ''} · ${total}v</div>
-        <div class="idx-prog"><div class="idx-prog-fill" style="width:${pct}%"></div></div>
+      const isCurrent = (state.chapter === cs && state.section === 'gita');
+      html += `<div class="idx-row${isCurrent ? ' current' : ''}" onclick="goToChapter('gita','${cs}')">
+        <div class="idx-row-num">Ch.${c}</div>
+        <div class="idx-row-body">
+          <div class="idx-row-name">${meta?.yoga || 'Chapter '+c}</div>
+          <div class="idx-row-meta">${meta?.subtitle || ''} · ${total}v</div>
+          <div class="idx-prog"><div class="idx-prog-fill" style="width:${pct}%"></div></div>
+        </div>
+        <div class="idx-row-pct">${pct}%</div>
       </div>`;
     }
     html += `</div></div>`;
   }
-  
-  html += `<div class="idx-section"><h2>Śrī Rudram — Namakam (11 Anuvakas)</h2><div class="idx-grid">`;
-  for (let a = 1; a <= 11; a++) {
-    const as = String(a);
-    const lines = (RUDRAM_DATA[as] || []).length;
-    html += `<div class="idx-card${state.chapter === as && state.section === 'rudram' ? ' current' : ''}"
-      onclick="goToChapter('rudram','${as}')">
-      <div class="idx-num">Anuvaka ${a}</div>
-      <div class="idx-name">${RUDRAM_META[as] || ''}</div>
-      <div class="idx-sub">${lines} lines</div>
-      <div class="idx-prog"><div class="idx-prog-fill" style="width:0%"></div></div>
+
+  if (state.section === 'rudram') {
+    html += `<div class="idx-section">
+      <div class="idx-section-hdr">
+        <span class="idx-section-icon" style="background:linear-gradient(135deg,#1a4a6a,#2a7ab0)">🔱</span>
+        <div>
+          <div class="idx-section-title">Śrī Rudram — Namakam</div>
+          <div class="idx-section-sub">11 Anuvakas</div>
+        </div>
+      </div>
+      <div class="idx-list">`;
+    for (let a = 1; a <= 11; a++) {
+      const as = String(a);
+      const lines = (RUDRAM_DATA[as] || []).length;
+      const isCurrent = (state.chapter === as && state.section === 'rudram');
+      html += `<div class="idx-row${isCurrent ? ' current' : ''}" onclick="goToChapter('rudram','${as}')">
+        <div class="idx-row-num">${a}</div>
+        <div class="idx-row-body">
+          <div class="idx-row-name">${RUDRAM_META[as] || 'Anuvaka '+a}</div>
+          <div class="idx-row-meta">${lines} lines</div>
+          <div class="idx-prog"><div class="idx-prog-fill" style="width:0%"></div></div>
+        </div>
+        <div class="idx-row-pct">›</div>
+      </div>`;
+    }
+    html += `</div></div>
+    <div class="idx-section" style="opacity:0.5">
+      <div class="idx-section-hdr">
+        <span class="idx-section-icon" style="background:linear-gradient(135deg,#1a4a6a,#2a7ab0)">🔱</span>
+        <div>
+          <div class="idx-section-title">Śrī Rudram — Chamakam</div>
+          <div class="idx-section-sub">Coming soon</div>
+        </div>
+      </div>
     </div>`;
   }
-  html += `</div></div>`;
-  
-  html += `<div class="idx-section"><h2>Śrī Rudram — Chamakam</h2>
-    <div class="idx-card" style="opacity:0.5;cursor:default">
-      <div class="idx-num">11 Anuvakas</div>
-      <div class="idx-name">Chamakam</div>
-      <div class="idx-sub">Coming soon</div>
-    </div></div>`;
-    
-  html += `<div class="idx-section"><h2>Viṣṇu Sahasranāmam</h2>
-    <div class="idx-card" style="opacity:0.5;cursor:default">
-      <div class="idx-num">1000 Names</div>
-      <div class="idx-name">1000 names of Viṣṇu</div>
-      <div class="idx-sub">Coming soon</div>
-    </div></div>`;
-  
+
   el.innerHTML = html;
 }
+
+/* idx-row styles — injected once */
+(function injectIdxRowStyles() {
+  if (document.getElementById('idx-row-styles')) return;
+  const s = document.createElement('style');
+  s.id = 'idx-row-styles';
+  s.textContent = `
+.idx-section { margin-bottom: 24px; }
+.idx-section-hdr { display:flex; align-items:center; gap:12px; margin-bottom:12px; padding:0 2px; }
+.idx-section-icon { width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
+.idx-section-title { font-size:1rem;font-weight:700;color:var(--fg);line-height:1.2; }
+.idx-section-sub { font-size:0.78rem;color:var(--fg3);margin-top:1px; }
+.idx-list { display:flex;flex-direction:column;gap:2px; }
+.idx-row { display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;cursor:pointer;background:var(--card-bg);border:1px solid var(--border);transition:background 0.12s; }
+.idx-row:hover,.idx-row:active { background:var(--border); }
+.idx-row.current { border-color:var(--accent2);box-shadow:0 0 0 1px var(--accent2); }
+.idx-row-num { width:36px;text-align:center;font-size:0.75rem;font-weight:700;color:var(--accent2);flex-shrink:0;font-variant-numeric:tabular-nums; }
+.idx-row-body { flex:1;min-width:0; }
+.idx-row-name { font-size:0.9rem;font-weight:600;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.idx-row-meta { font-size:0.75rem;color:var(--fg3);margin-top:1px; }
+.idx-row-pct { font-size:0.75rem;color:var(--fg3);font-variant-numeric:tabular-nums;flex-shrink:0; }
+  `;
+  document.head.appendChild(s);
+}());
 
 function goToChapter(sec, ch) {
   state.section = sec;
@@ -979,9 +1316,8 @@ function esc(s) {
 
 // ─────────────── INIT ───────────────
 function init() {
-  // Update section tab
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === state.section));
-  showView('practice');
+  showView('home');
 }
 
 init();
