@@ -1,0 +1,988 @@
+<title>Vedic Path</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* ── Design tokens ── */
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --fg2: #555555;
+  --fg3: #888888;
+  --accent: #8b4513;
+  --accent2: #c8860a;
+  --border: #e0e0e0;
+  --card-bg: #f9f7f4;
+  --nav-bg: #ffffff;
+  --nav-border: #e0e0e0;
+  --recite-bg: #0a0a0a;
+  --recite-fg: #e8e8e8;
+  --recite-hl: #d4a017;
+  --tag-bg: #f0ebe4;
+  --tag-fg: #6b3d14;
+  --done-bg: #e8f4e8;
+  --done-border: #4caf50;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212;
+    --fg: #e8e8e8;
+    --fg2: #b0b0b0;
+    --fg3: #777777;
+    --accent: #c8860a;
+    --accent2: #d4a017;
+    --border: #2a2a2a;
+    --card-bg: #1e1e1e;
+    --nav-bg: #121212;
+    --nav-border: #2a2a2a;
+    --tag-bg: #2a1a08;
+    --tag-fg: #d4a017;
+    --done-bg: #1a2a1a;
+    --done-border: #4caf50;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121212;
+  --fg: #e8e8e8;
+  --fg2: #b0b0b0;
+  --fg3: #777777;
+  --accent: #c8860a;
+  --accent2: #d4a017;
+  --border: #2a2a2a;
+  --card-bg: #1e1e1e;
+  --nav-bg: #121212;
+  --nav-border: #2a2a2a;
+  --tag-bg: #2a1a08;
+  --tag-fg: #d4a017;
+  --done-bg: #1a2a1a;
+  --done-border: #4caf50;
+  color-scheme: dark;
+}
+
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top bar ── */
+#topbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+#topbar h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#topbar .section-tabs {
+  display: flex;
+  gap: 4px;
+}
+.stab {
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--fg2);
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.stab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+#btn-recite {
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--accent2);
+  color: #fff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#btn-recite:hover { opacity: 0.9; }
+
+/* ── Main content ── */
+#main {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.view { display: none; padding: 16px; max-width: 680px; margin: 0 auto; }
+.view.active { display: block; }
+
+/* ── Practice view — book-style ── */
+#view-practice .chapter-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+#view-practice .chapter-header h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+#view-practice .chapter-header .subtitle {
+  font-size: 0.9rem;
+  color: var(--fg2);
+  margin-top: 4px;
+}
+#view-practice .chapter-header .chapter-num {
+  font-size: 0.8rem;
+  color: var(--fg3);
+  margin-top: 2px;
+}
+
+/* Book-style verse block */
+.verse-block {
+  margin-bottom: 20px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.verse-block:hover { background: var(--card-bg); }
+.verse-block.done { 
+  opacity: 0.55;
+}
+.verse-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--fg);
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+.verse-text .vline {
+  display: inline;
+}
+/* Verse number inline like ॥ 1 ॥ */
+.verse-num {
+  display: inline;
+  color: var(--accent2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 4px;
+}
+/* Speaker tag */
+.spk-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--tag-fg);
+  background: var(--tag-bg);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-right: 4px;
+  font-style: italic;
+  vertical-align: middle;
+}
+
+/* Expanded meaning */
+.verse-meaning {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--fg2);
+  line-height: 1.6;
+}
+.verse-block.expanded .verse-meaning { display: block; }
+.verse-meaning.empty { display: none !important; }
+
+/* Done checkmark */
+.verse-done-mark {
+  display: none;
+  float: right;
+  color: #4caf50;
+  font-size: 1.1rem;
+}
+.verse-block.done .verse-done-mark { display: inline; }
+
+/* ── Rudram lines (not individual verses, just lines) ── */
+.rudram-anuvaka {
+  margin-bottom: 24px;
+}
+.rudram-anuvaka .an-header {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.rudram-lines {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.0rem;
+  line-height: 2.0;
+  color: var(--fg);
+}
+.rudram-lines span { display: block; }
+
+/* ── Bottom nav ── */
+#bottomnav {
+  position: sticky;
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--nav-bg);
+  border-top: 1px solid var(--nav-border);
+  display: flex;
+  z-index: 100;
+  flex-shrink: 0;
+}
+.bnav-btn {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  background: none;
+  color: var(--fg3);
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.15s;
+}
+.bnav-btn.active { color: var(--accent); }
+.bnav-btn svg { width: 22px; height: 22px; }
+.bnav-btn span { font-size: 0.65rem; }
+
+/* ── Index view ── */
+#view-index { padding-bottom: 24px; }
+.idx-section {
+  margin-bottom: 28px;
+}
+.idx-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+.idx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 8px;
+}
+.idx-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.idx-card:hover { border-color: var(--accent); }
+.idx-card.current { border-color: var(--accent); background: var(--tag-bg); }
+.idx-card .idx-num {
+  font-size: 0.7rem;
+  color: var(--fg3);
+  margin-bottom: 2px;
+}
+.idx-card .idx-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.3;
+}
+.idx-card .idx-sub {
+  font-size: 0.75rem;
+  color: var(--fg2);
+  margin-top: 2px;
+}
+.idx-card .idx-prog {
+  margin-top: 6px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.idx-card .idx-prog-fill {
+  height: 100%;
+  background: var(--accent2);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+/* ── Progress view ── */
+#view-progress h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.prog-section { margin-bottom: 24px; }
+.prog-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--fg);
+}
+.prog-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.prog-label {
+  font-size: 0.85rem;
+  color: var(--fg2);
+  width: 120px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prog-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.prog-fill {
+  height: 100%;
+  background: var(--accent2);
+  border-radius: 3px;
+  transition: width 0.5s;
+}
+.prog-pct {
+  font-size: 0.8rem;
+  color: var(--fg3);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.prog-reset {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--fg2);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* ── Recite overlay ── */
+#recite-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--recite-bg);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-top: env(safe-area-inset-top, 20px);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 80px);
+}
+#recite-overlay.active { display: flex; }
+#recite-lines {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+}
+.recite-line {
+  font-size: clamp(1.2rem, 4vw, 1.7rem);
+  line-height: 1.5;
+  color: var(--recite-fg);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s, font-size 0.2s;
+}
+.recite-line.hl {
+  opacity: 1;
+  color: var(--recite-hl);
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+}
+#recite-info {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  color: #666;
+  font-size: 0.8rem;
+}
+#recite-controls {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 0px);
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(0,0,0,0.6);
+}
+.recite-btn {
+  padding: 10px 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.recite-btn:hover { background: rgba(255,255,255,0.2); }
+.recite-btn.primary {
+  background: var(--recite-hl);
+  border-color: var(--recite-hl);
+  color: #000;
+  font-weight: 700;
+}
+#recite-dots {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 300px;
+}
+.recite-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.2s;
+}
+.recite-dot.done { background: var(--recite-hl); }
+.recite-dot.cur { background: #fff; }
+
+/* ── Placeholder for Vishnu Sahasranamam / Chamakam ── */
+.placeholder-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--fg3);
+}
+.placeholder-msg h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--fg2); }
+.placeholder-msg p { font-size: 0.9rem; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .verse-text { font-size: 0.95rem; }
+  .idx-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+</style>
+
+<!-- Top bar -->
+<div id="topbar">
+  <h1 id="topbar-title">Vedic Path</h1>
+  <div class="section-tabs">
+    <button class="stab active" data-sec="gita" onclick="switchSection('gita')">Gītā</button>
+    <button class="stab" data-sec="rudram" onclick="switchSection('rudram')">Rudram</button>
+    <button class="stab" data-sec="vsn" onclick="switchSection('vsn')">VSN</button>
+  </div>
+  <button id="btn-recite" onclick="startRecite()">▶ Recite</button>
+</div>
+
+<!-- Main content area -->
+<div id="main">
+  <!-- Practice view -->
+  <div class="view active" id="view-practice"></div>
+  <!-- Index view -->
+  <div class="view" id="view-index"></div>
+  <!-- Progress view -->
+  <div class="view" id="view-progress"></div>
+</div>
+
+<!-- Bottom nav -->
+<nav id="bottomnav">
+  <button class="bnav-btn active" id="bnav-practice" onclick="showView('practice')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>
+    <span>Practice</span>
+  </button>
+  <button class="bnav-btn" id="bnav-index" onclick="showView('index')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+    </svg>
+    <span>Index</span>
+  </button>
+  <button class="bnav-btn" id="bnav-progress" onclick="showView('progress')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+    </svg>
+    <span>Progress</span>
+  </button>
+</nav>
+
+<!-- Recite overlay -->
+<div id="recite-overlay">
+  <div id="recite-info">
+    <span id="recite-section-label"></span>
+    <span id="recite-verse-label"></span>
+  </div>
+  <div id="recite-lines"></div>
+  <div id="recite-dots"></div>
+  <div id="recite-controls">
+    <button class="recite-btn" onclick="recitePrev()">← Prev</button>
+    <button class="recite-btn primary" onclick="reciteNext()">Next →</button>
+    <button class="recite-btn" onclick="stopRecite()">✕ Done</button>
+  </div>
+</div>
+
+<script>
+// ─────────────── DATA ───────────────
+const GITA_DATA = {"1": [{"n": 1, "tlines": ["dharmakṣetre kurukṣetre", "samavetā yuyutsavaḥ |", "māmakāḥ pāṇḍavāścaiva", "kimakurvata sañjaya"], "spk": "dhṛtarāṣṭra", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["dṛṣṭvā tu pāṇḍavānīkaṃ", "vyūḍhaṃ duryodhanastadā |", "ācāryamupasaṅgamya", "rājā vacanamabravīt"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["paśyaitāṃ pāṇḍuputrāṇām", "ācārya mahatīṃ camūm |", "vyūḍhāṃ drupadaputreṇa", "tava śiṣyeṇa dhīmatā"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["atra śūrā maheṣvāsāḥ", "bhīmārjunasamā yudhi |", "yuyudhāno virāṭaśca", "drupadaśca mahārathaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["dhṛṣṭaketuścekitānaḥ", "kāśirājaśca vīryavān |", "purujitkuntibhojaśca", "śaibyaśca narapuṅgavaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["yudhāmanyuśca vikrāntaḥ", "uttamaujāśca vīryavān |", "saubhadro draupadeyāśca", "sarva eva mahārathāḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["asmākaṃ tu viśiṣṭā ye", "tānnibodha dvijottama |", "nāyakā mama sainyasya", "sañjñārthaṃ tānbravīmi te"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["bhavānbhīṣmaśca karṇaśca", "kṛpaśca samitiñjayaḥ |", "aśvatthāmā vikarṇaśca", "saumadattistathaiva ca"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["anye ca bahavaḥ śūrāḥ", "madarthe tyaktajīvitāḥ |", "nānāśastrapraharaṇāḥ", "sarve yuddhaviśāradāḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["aparyāptaṃ tadasmākaṃ", "balaṃ bhīṣmābhirakṣitam |", "paryāptaṃ tvidameteṣāṃ", "balaṃ bhīmābhirakṣitam"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["ayaneṣu ca sarveṣu", "yathābhāgamavasthitāḥ |", "bhīṣmamevābhirakṣantu", "bhavantaḥ sarva eva hi"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["1. Arjuna-Viṣāda-Yogaḥ", "tasya sañjanayanharṣaṃ", "kuruvṛddhaḥ pitāmahaḥ |", "siṃhanādaṃ vinadyoccaiḥ", "śaṅkhaṃ dadhmau pratāpavān"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["tataḥ śaṅkhāśca bheryaśca", "paṇavānakagomukhāḥ |", "sahasaivābhyahanyanta", "sa śabdastumulo'bhavat"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["tataḥ śvetairhayairyukte", "mahati syandane sthitau |", "mādhavaḥ pāṇḍavaścaiva", "divyau śaṅkhau pradadhmatuḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["pāñcajanyaṃ hṛṣīkeśaḥ", "devadattaṃ dhanañjayaḥ |", "pauṇḍraṃ dadhmau mahāśaṅkhaṃ", "bhīmakarmā vṛkodaraḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["anantavijayaṃ rājā", "kuntīputro yudhiṣṭhiraḥ |", "nakulaḥ sahadevaśca", "sughoṣamaṇipuṣpakau"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["kāśyaśca parameṣvāsaḥ", "śikhaṇḍī ca mahārathaḥ |", "dhṛṣṭadyumno virāṭaśca", "sātyakiścāparājitaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["drupado draupadeyāśca", "sarvaśaḥ pṛthivīpate |", "soubhadraśca mahābāhuḥ", "śaṅkhāndadhmuḥ pṛthakpṛthak"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["sa ghoṣo dhārtarāṣṭrāṇāṃ", "hṛdayāni vyadārayat |", "nabhaśca pṛthivīṃ caiva", "tumulo vyanunādayan"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["atha vyavasthitāndṛṣṭvā", "dhārtarāṣṭrān kapidhvajaḥ |", "pravṛtte śastrasampāte", "dhanurudyamya pāṇḍavaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["hṛṣīkeśaṃ tadā vākyam", "idamāha mahīpate |", "senayorubhayormadhye", "rathaṃ sthāpaya me'cyuta"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["yāvadetānnirīkṣe'haṃ", "yoddhukāmānavasthitān |", "kairmayā saha yoddhavyam", "asmin raṇasamudyame"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["yotsyamānānavekṣe'haṃ", "ya ete'tra samāgatāḥ |", "dhārtarāṣṭrasyadurbuddheḥ", "yuddhe priyacikīrṣavaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["1. Arjuna-Viṣāda-Yogaḥ", "evamukto hṛṣīkeśaḥ", "guḍākeśena bhārata |", "senayorubhayormadhye", "sthāpayitvā rathottamam"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["bhīṣmadroṇapramukhataḥ", "sarveṣāṃ ca mahīkṣitām |", "uvāca pārtha paśyaitān", "samavetānkurūniti"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["tatrāpaśyatsthitānpārthaḥ", "pitènatha pitāmahān |", "ācāryānmātulānbhrātèn", "putrānpautrānsakhīṃstathā"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["śvaśurānsuhṛdaścaiva", "senayorubhayorapi |", "tānsamīkṣya sa kaunteyaḥ", "sarvānbandhūnavasthitān"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["kṛpayā parayā'viṣṭaḥ", "viṣīdannidamabravīt |", "dṛṣṭvemaṃ svajanaṃ kṛṣṇa", "yuyutsuṃ samupasthitam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["sīdanti mama gātrāṇi", "mukhaṃ ca pariśuṣyati |", "vepathuśca śarīre me", "romaharṣaśca jāyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["gāṇḍīvaṃ sraṃsate hastāt", "tvakcaiva paridahyate |", "na ca śaknomyavasthātuṃ", "bhramatīva ca me manaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["nimittāni ca paśyāmi", "viparītāni keśava |", "na ca śreyo'nupaśyāmi", "hatvā svajanamāhave"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["na kāṅkṣe vijayaṃ kṛṣṇa", "na ca rājyaṃ sukhāni ca |", "kiṃ no rājyena govinda", "kiṃ bhogairjīvitena vā"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["yeṣāmarthe kāṅkṣitaṃ naḥ", "rājyaṃ bhogāḥ sukhāni ca |", "ta ime'vasthitā yuddhe", "prāṇāṃstyaktvā dhanāni ca"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["ācāryāḥ pitaraḥ putrāḥ", "tathaiva ca pitāmahāḥ |", "mātulāḥ śvaśurāḥ pautrāḥ", "śyālāḥ sambandhinastathā"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["1. Arjuna-Viṣāda-Yogaḥ", "etānna hantumicchāmi", "ghnato'pi madhusūdana |", "api trailokyarājyasya", "hetoḥ kiṃ nu mahīkṛte"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["nihatya dhārtarāṣṭrānnaḥ", "kā prītiḥ syājjanārdana |", "pāpamevāśrayedasmān", "hatvaitānātatāyinaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["tasmānnārhā vayaṃ hantuṃ", "dhārtarāṣṭrānsvabāndhavān |", "svajanaṃ hi kathaṃ hatvā", "sukhinaḥ syāma mādhava"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["yadyapyete na paśyanti", "lobhopahatacetasaḥ |", "kulakṣayakṛtaṃ doṣaṃ", "mitradrohe ca pātakam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["kathaṃ na jñeyamasmābhiḥ", "pāpādasmānnivartitum |", "kulakṣayakṛtaṃ doṣaṃ", "prapaśyadbhirjanārdana"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["kulakṣaye praṇaśyanti", "kuladharmāḥ sanātanāḥ |", "dharme naṣṭe kulaṃ kṛtsnam", "adharmo'bhibhavatyuta"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["adharmābhibhavātkṛṣṇa", "praduṣyanti kulastriyaḥ |", "strīṣu duṣṭāsu vārṣṇeya", "jāyate varṇasaṅkaraḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["saṅkaro narakāyaiva", "kulaghnānāṃ kulasya ca |", "patanti pitaro hyeṣāṃ", "luptapiṇḍodakakriyāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["doṣairetaiḥ kulaghnānāṃ", "varṇasaṅkarakārakaiḥ |", "utsādyante jātidharmāḥ", "kuladharmāśca śāśvatāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 44, "tlines": ["utsannakuladharmāṇāṃ", "manuṣyāṇāṃ janārdana |", "narake'niyataṃ vāsaḥ", "bhavatītyanuśuśruma"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 45, "tlines": ["aho bata mahatpāpaṃ", "kartuṃ vyavasitā vayam |", "yadrājyasukhalobhena", "hantuṃ svajanamudyatāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 46, "tlines": ["yadi māmapratīkāram", "aśastraṃ śastrapāṇayaḥ |", "dhārtarāṣṭrā raṇe hanyuḥ", "tanme kṣemataraṃ bhavet"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 47, "tlines": ["1. Arjuna-Viṣāda-Yogaḥ", "evamuktvā'rjunaḥ saṅkhye", "rathopastha upāviśat |", "visṛjya saśaraṃ cāpaṃ", "śokasaṃvignamānasaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "2": [{"n": 1, "tlines": ["taṃ tathā kṛpayā'viṣṭam", "aśrupūrṇākulekṣaṇam |", "viṣīdantamidaṃ vākyam", "uvāca madhusūdanaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["kutastvā kaśmalamidaṃ", "viṣame samupasthitam |", "anāryajuṣṭamasvargyam", "akīrtikaramarjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["klaibyaṃ mā sma gamaḥ pārtha", "naitattvayyupapadyate |", "kṣudraṃ hṛdayadaurbalyaṃ", "tyaktvottiṣṭha parantapa"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["kathaṃ bhīṣmamahaṃ saṅkhye", "droṇaṃ ca madhusūdana |", "iṣubhiḥ pratiyotsyāmi", "pūjārhāvarisūdana"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["gurūnahatvā hi mahānubhāvān", "śreyo bhoktuṃ bhaikṣyamapīha loke |", "2. Sāṅkhya-Yogaḥ", "hatvārthakāmāṃstu gurūnihaiva", "bhuñjīya bhogān rudhirapradigdhān"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["na caitadvidmaḥ kataranno garīyaḥ", "yadvā jayema yadi vā no jayeyuḥ |", "yāneva hatvā na jijīviṣāmaḥ", "te'vasthitāḥ pramukhe dhārtarāṣṭrāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["kārpaṇyadoṣopahatasvabhāvaḥ", "pṛcchāmi tvāṃ dharmasammūḍhacetāḥ |", "yacchreyaḥ syānniścitaṃ brūhi tanme", "śiṣyaste'haṃ śādhi māṃ tvāṃ prapannam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["na hi prapaśyāmi mamāpanudyāt", "yacchokamucchoṣaṇamindriyāṇām |", "avāpya bhūmāvasapatnamṛddhaṃ", "rājyaṃ surāṇāmapi cādhipatyam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["evamuktvā hṛṣīkeśaṃ", "guḍākeśaḥ parantapaḥ |", "na yotsya iti govindam", "uktvā tūṣṇīṃ babhūva ha"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["tamuvāca hṛṣīkeśaḥ", "prahasanniva bhārata |", "senayorubhayormadhye", "viṣīdantamidaṃ vacaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["aśocyānanvaśocastvaṃ", "prajñāvādāṃśca bhāṣase |", "gatāsūnagatāsūṃśca", "nānuśocanti paṇḍitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["na tvevāhaṃ jātu nāsaṃ", "na tvaṃ neme janādhipāḥ |", "na caiva na bhaviṣyāmaḥ", "sarve vayamataḥ param"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["dehino'sminyathā dehe", "kaumāraṃ yauvanaṃ jarā |", "tathā dehāntaraprāptiḥ", "dhīrastatra na muhyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["mātrāsparśāstu kaunteya", "śītoṣṇasukhaduḥkhadāḥ |", "āgamāpāyino'nityāḥ", "tāṃstitikṣasva bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["yaṃ hi na vyathayantyete", "puruṣaṃ puruṣarṣabha |", "samaduḥkhasukhaṃ dhīraṃ", "so'mṛtatvāya kalpate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["nāsato vidyate bhāvaḥ", "nābhāvo vidyate sataḥ |", "ubhayorapi dṛṣṭo'ntaḥ", "tvanayostattvadarśibhiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["2. Sāṅkhya-Yogaḥ", "avināśi tu tadviddhi", "yena sarvamidaṃ tatam |", "vināśamavyayasyāsya", "na kaścitkartumarhati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["antavanta ime dehāḥ", "nityasyoktāḥ śarīriṇaḥ |", "anāśino'prameyasya", "tasmādyudhyasva bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["ya enaṃ vetti hantāraṃ", "yaścainaṃ manyate hatam |", "ubhau tau na vijānītaḥ", "nāyaṃ hanti na hanyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["na jāyate mriyate vā kadācit", "nāyaṃ bhūtvā bhavitā vā na bhūyaḥ |", "ajo nityaḥ śāśvato'yaṃ purāṇaḥ", "na hanyate hanyamāne śarīre"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["vedāvināśinaṃ nityaṃ", "ya enamajamavyayam |", "kathaṃ sa puruṣaḥ pārtha", "kaṃ ghātayati hanti kam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["vāsāṃsi jīrṇāni yathā vihāya", "navāni gṛhṇāti naro'parāṇi |", "tathā śarīrāṇi vihāya jīrṇāni", "anyāni saṃyāti navāni dehī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["nainaṃ chindanti śastrāṇi", "nainaṃ dahati pāvakaḥ |", "na cainaṃ kledayantyāpaḥ", "na śoṣayati mārutaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["acchedyo'yamadāhyo'yam", "akledyo'śoṣya eva ca |", "nityaḥ sarvagataḥ sthāṇuḥ", "acalo'yaṃ sanātanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["avyakto'yamacintyo'yam", "avikāryo'yamucyate |", "tasmādevaṃ viditvainaṃ", "nānuśocitumarhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["atha cainaṃ nityajātaṃ", "nityaṃ vā manyase mṛtam |", "tathā'pi tvaṃ mahābāho", "naivaṃ śocitumarhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["jātasya hi dhruvo mṛtyuḥ", "dhruvaṃ janma mṛtasya ca |", "tasmādaparihārye'rthe", "na tvaṃ śocitumarhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["avyaktādīni bhūtāni", "vyaktamadhyāni bhārata |", "avyaktanidhanānyeva", "tatra kā paridevanā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["2. Sāṅkhya-Yogaḥ", "āścaryavatpaśyati kaścidenam", "āścaryavadvadati tathaiva cānyaḥ |", "āścaryavaccainamanyaḥ śṛṇoti", "śrutvā'pyenaṃ veda na caiva kaścit"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["dehī nityamavadhyo'yaṃ", "dehe sarvasya bhārata |", "tasmātsarvāṇi bhūtāni", "na tvaṃ śocitumarhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["svadharmamapi cāvekṣya", "na vikampitumarhasi |", "dharmyāddhi yuddhācchreyo'nyat", "kṣatriyasya na vidyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["yadṛcchayā copapannaṃ", "svargadvāramapāvṛtam |", "sukhinaḥ kṣatriyāḥ pārtha", "labhante yuddhamīdṛśam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["atha cettvamimaṃ dharmyaṃ", "saṅgrāmaṃ na kariṣyasi |", "tataḥ svadharmaṃ kīrtiṃ ca", "hitvā pāpamavāpsyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["akīrtiṃ cāpi bhūtāni", "kathayiṣyanti te'vyayām |", "sambhāvitasya cākīrtiḥ", "maraṇādatiricyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["bhayādraṇāduparataṃ", "maṃsyante tvāṃ mahārathāḥ |", "yeṣāṃ ca tvaṃ bahumataḥ", "bhūtvā yāsyasi lāghavam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["avācyavādāṃśca bahūn", "vadiṣyanti tavāhitāḥ |", "nindantastava sāmarthyaṃ", "tato duḥkhataraṃ nu kim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["hato vā prāpsyasi svargaṃ", "jitvā vā bhokṣyase mahīm |", "tasmāduttiṣṭha kaunteya", "yuddhāya kṛtaniścayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["sukhaduḥkhe same kṛtvā", "lābhālābhau jayājayau |", "tato yuddhāya yujyasva", "naivaṃ pāpamavāpsyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["eṣā te'bhihitā sāṅkhye", "buddhiryoge tvimāṃ śṛṇu |", "buddhyā yukto yayā pārtha", "karmabandhaṃ prahāsyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["nehābhikramanāśo'sti", "pratyavāyo na vidyate |", "svalpamapyasya dharmasya", "trāyate mahato bhayāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["2. Sāṅkhya-Yogaḥ", "vyavasāyātmikā buddhiḥ", "ekeha kurunandana |", "bahuśākhā hyanantāśca", "buddhayo'vyavasāyinām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["yāmimāṃ puṣpitāṃ vācaṃ", "pravadantyavipaścitaḥ |", "vedavādaratāḥ pārtha", "nānyadastīti vādinaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["kāmātmānaḥ svargaparāḥ", "janmakarmaphalapradām |", "kriyāviśeṣabahulāṃ", "bhogaiśvaryagatiṃ prati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 44, "tlines": ["bhogaiśvaryaprasaktānāṃ", "tayā'pahṛtacetasām |", "vyavasāyātmikā buddhiḥ", "samādhau na vidhīyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 45, "tlines": ["traiguṇyaviṣayā vedāḥ", "nistraiguṇyo bhavārjuna |", "nirdvandvo nityasattvasthaḥ", "niryogakṣema ātmavān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 46, "tlines": ["yāvānartha udapāne", "sarvataḥ samplutodake |", "tāvānsarveṣu vedeṣu", "brāhmaṇasya vijānataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 47, "tlines": ["karmaṇyevādhikāraste", "mā phaleṣu kadācana |", "mā karmaphalaheturbhūḥ", "mā te saṅgo'stvakarmaṇi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 48, "tlines": ["yogasthaḥ kuru karmāṇi", "saṅgaṃ tyaktvā dhanañjaya |", "siddhyasiddhyoḥ samo bhūtvā", "samatvaṃ yoga ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 49, "tlines": ["dūreṇa hyavaraṃ karma", "buddhiyogāddhanañjaya |", "buddhau śaraṇamanviccha", "kṛpaṇāḥ phalahetavaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 50, "tlines": ["buddhiyukto jahātīha", "ubhe sukṛtaduṣkṛte |", "tasmādyogāya yujyasva", "yogaḥ karmasu kauśalam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 51, "tlines": ["karmajaṃ buddhiyuktā hi", "phalaṃ tyaktvā manīṣiṇaḥ |", "janmabandhavinirmuktāḥ", "padaṃ gacchantyanāmayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 52, "tlines": ["yadā te mohakalilaṃ", "buddhirvyatitariṣyati |", "tadā gantā'si nirvedaṃ", "śrotavyasya śrutasya ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 53, "tlines": ["2. Sāṅkhya-Yogaḥ", "śrutivipratipannā te", "yadā sthāsyati niścalā |", "samādhāvacalā buddhiḥ", "tadā yogamavāpsyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 54, "tlines": ["sthitaprajñasya kā bhāṣā", "samādhisthasya keśava |", "sthitadhīḥ kiṃ prabhāṣeta", "kimāsīta vrajeta kim"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 55, "tlines": ["prajahāti yadā kāmān", "sarvānpārtha manogatān |", "ātmanyevātmanā tuṣṭaḥ", "sthitaprajñastadocyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 56, "tlines": ["duḥkheṣvanudvignamanāḥ", "sukheṣu vigataspṛhaḥ |", "vītarāgabhayakrodhaḥ", "sthitadhīrmunirucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 57, "tlines": ["yaḥ sarvatrānabhisnehaḥ", "tattatprāpya śubhāśubham |", "nābhinandati na dveṣṭi", "tasya prajñā pratiṣṭhitā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 58, "tlines": ["yadā saṃharate cāyaṃ", "kūrmo'ṅgānīva sarvaśaḥ |", "indriyāṇīndriyārthebhyaḥ", "tasya prajñā pratiṣṭhitā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 59, "tlines": ["viṣayā vinivartante", "nirāhārasya dehinaḥ |", "rasavarjaṃ raso'pyasya", "paraṃ dṛṣṭvā nivartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 60, "tlines": ["yatato hyapi kaunteya", "puruṣasya vipaścitaḥ |", "indriyāṇi pramāthīni", "haranti prasabhaṃ manaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 61, "tlines": ["tāni sarvāṇi saṃyamya", "yukta āsīta matparaḥ |", "vaśe hi yasyendriyāṇi", "tasya prajñā pratiṣṭhitā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 62, "tlines": ["dhyāyato viṣayānpuṃsaḥ", "saṅgasteṣūpajāyate |", "saṅgātsañjāyate kāmaḥ", "kāmātkrodho'bhijāyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 63, "tlines": ["krodhādbhavati sammohaḥ", "sammohātsmṛtivibhramaḥ |", "smṛtibhraṃśāt buddhināśaḥ", "buddhināśātpraṇaśyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 64, "tlines": ["2. Sāṅkhya-Yogaḥ", "rāgadveṣaviyuktaistu", "viṣayānindriyaiścaran |", "ātmavaśyairvidheyātmā", "prasādamadhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 65, "tlines": ["prasāde sarvaduḥkhānāṃ", "hānirasyopajāyate |", "prasannacetaso hyāśu", "buddhiḥ paryavatiṣṭhate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 66, "tlines": ["nā'sti buddhirayuktasya", "na cāyuktasya bhāvanā |", "na cābhāvayataḥ śāntiḥ", "aśāntasya kutaḥ sukham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 67, "tlines": ["indriyāṇāṃ hi caratāṃ", "yanmano'nuvidhīyate |", "tadasya harati prajñāṃ", "vāyurnāvamivāmbhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 68, "tlines": ["tasmādyasya mahābāho", "nigṛhītāni sarvaśaḥ |", "indriyāṇīndriyārthebhyaḥ", "tasya prajñā pratiṣṭhitā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 69, "tlines": ["yā niśā sarvabhūtānāṃ", "tasyāṃ jāgarti saṃyamī |", "yasyāṃ jāgrati bhūtāni", "sā niśā paśyato muneḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 70, "tlines": ["āpūryamāṇamacalapratiṣṭhaṃ", "samudramāpaḥ praviśanti yadvat |", "tadvatkāmā yaṃ praviśanti sarve", "sa śāntimāpnoti na kāmakāmī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 71, "tlines": ["vihāya kāmānyaḥ sarvān", "pumāṃścarati nisspṛhaḥ |", "nirmamo nirahaṅkāraḥ", "sa śāntimadhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 72, "tlines": ["eṣā brāhmī sthitiḥ pārtha", "naināṃ prāpya vimuhyati |", "sthitvāsyāmantakāle'pi", "brahmanirvāṇamṛcchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "3": [{"n": 1, "tlines": ["jyāyasī cetkarmaṇaste", "matā buddhirjanārdana |", "tatkiṃ karmaṇi ghore māṃ", "niyojayasi keśava"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["vyāmiśreṇeva vākyena", "buddhiṃ mohayasīva me |", "tadekaṃ vada niścitya", "yena śreyo'hamāpnuyām"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["loke'smindvividhā niṣṭhā", "purā proktā mayā'nagha |", "jñānayogena sāṅkhyānāṃ", "karmayogena yoginām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["na karmaṇāmanārambhāt", "naiṣkarmyaṃ puruṣo'śnute |", "na ca sannyasanādeva", "siddhiṃ samadhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["na hi kaścitkṣaṇamapi", "jātu tiṣṭhatyakarmakṛt |", "kāryate hyavaśaḥ karma", "sarvaḥ prakṛtijairguṇaiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["karmendriyāṇi saṃyamya", "ya āste manasā smaran |", "indriyārthānvimūḍhātmā", "mithyācāraḥ sa ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["yastvindriyāṇi manasā", "niyamyārabhate'rjuna |", "karmendriyaiḥ karmayogam", "asaktaḥ sa viśiṣyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["niyataṃ kuru karma tvaṃ", "karma jyāyo hyakarmaṇaḥ |", "śarīrayātrā'pi ca te", "na prasiddhyedakarmaṇaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["yajñārthātkarmaṇo'nyatra", "loko'yaṃ karmabandhanaḥ |", "tadarthaṃ karma kaunteya", "muktasaṅgaḥ samācara"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["sahayajñāḥ prajāḥ sṛṣṭvā", "purovāca prajāpatiḥ |", "anena prasaviṣyadhvam", "eṣavo'stviṣṭakāmadhuk"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["devānbhāvayatā'nena", "te devā bhāvayantu vaḥ |", "parasparaṃ bhāvayantaḥ", "śreyaḥ paramavāpsyatha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["iṣṭānbhogānhi vo devāḥ", "dāsyante yajñabhāvitāḥ |", "tairdattānapradāyaibhyaḥ", "yo bhuṅkte stena eva saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["yajñaśiṣṭāśinaḥ santaḥ", "mucyante sarvakilbiṣaiḥ |", "bhuñjate te tvaghaṃ pāpāḥ", "ye pacantyātmakāraṇāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["annādbhavanti bhūtāni", "parjanyādannasambhavaḥ |", "yajñādbhavati parjanyaḥ", "yajñaḥ karmasamudbhavaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["karma brahmodbhavaṃ viddhi", "brahmākṣarasamudbhavam |", "tasmātsarvagataṃ brahma", "nityaṃ yajñe pratiṣṭhitam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["evaṃ pravartitaṃ cakraṃ", "nānuvartayatīha yaḥ |", "aghāyurindriyārāmaḥ", "moghaṃ pārtha sa jīvati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["yastvātmaratireva syāt", "ātmatṛptaśca mānavaḥ |", "ātmanyeva ca santuṣṭaḥ", "tasya kāryaṃ na vidyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["naiva tasya kṛtenārthaḥ", "nākṛteneha kaścana |", "na cāsya sarvabhūteṣu", "kaścidarthavyapāśrayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["tasmādasaktaḥ satataṃ", "kāryaṃ karma samācara |", "asakto hyācarankarma", "paramāpnoti pūruṣaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["karmaṇaiva hi saṃsiddhim", "āsthitā janakādayaḥ |", "lokasaṅgrahamevāpi", "sampaśyankartumarhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["yadyadācarati śreṣṭhaḥ", "tattadevetaro janaḥ |", "sa yatpramāṇaṃ kurute", "lokastadanuvartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["na me pārthāsti kartavyaṃ", "triṣu lokeṣu kiñcana |", "nānavāptamavāptavyaṃ", "varta eva ca karmaṇi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["yadi hyahaṃ na varteya", "jātu karmaṇyatandritaḥ |", "mama vartmānuvartante", "manuṣyāḥ pārtha sarvaśaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["utsīdeyurime lokāḥ", "na kuryāṃ karma cedaham |", "saṅkarasya ca kartā syām", "upahanyāmimāḥ prajāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["saktāḥ karmaṇyavidvāṃsaḥ", "yathā kurvanti bhārata |", "kuryādvidvāṃstathā'saktaḥ", "cikīrṣurlokasaṅgraham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["na buddhibhedaṃ janayet", "ajñānāṃ karmasaṅginām |", "joṣayetsarvakarmāṇi", "vidvānyuktaḥ samācaran"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["prakṛteḥ kriyamāṇāni", "guṇaiḥ karmāṇi sarvaśaḥ |", "ahaṅkāravimūḍhātmā", "kartā'hamiti manyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["tattvavittu mahābāho", "guṇakarmavibhāgayoḥ |", "guṇā guṇeṣu vartante", "iti matvā na sajjate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["prakṛterguṇasammūḍhāḥ", "sajjante guṇakarmasu |", "tānakṛtsnavido mandān", "kṛtsnavinna vicālayet"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["mayi sarvāṇi karmāṇi", "sannyasyādhyātmacetasā |", "nirāśīrnirmamo bhūtvā", "yudhyasva vigatajvaraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["ye me matamidaṃ nityam", "anutiṣṭhanti mānavāḥ |", "śraddhāvanto'nasūyantaḥ", "mucyante te'pi karmabhiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["ye tvetadabhyasūyantaḥ", "nānutiṣṭhanti me matam |", "sarvajñānavimūḍhāṃstān", "viddhi naṣṭānacetasaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["sadṛśaṃ ceṣṭate svasyāḥ", "prakṛterjñānavānapi |", "prakṛtiṃ yānti bhūtāni", "nigrahaḥ kiṃ kariṣyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["indriyasyendriyasyārthe", "rāgadveṣau vyavasthitau |", "tayorna vaśamāgacchet", "tau hyasya paripanthinau"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["śreyānsvadharmo viguṇaḥ", "paradharmātsvanuṣṭhitāt |", "svadharme nidhanaṃ śreyaḥ", "paradharmo bhayāvahaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["atha kena prayukto'yaṃ", "pāpaṃ carati pūruṣaḥ |", "anicchannapi vārṣṇeya", "balādiva niyojitaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["kāma eṣa krodha eṣaḥ", "rajoguṇasamudbhavaḥ |", "mahāśano mahāpāpmā", "viddhyenamiha vairiṇam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["dhūmenāvriyate vahniḥ", "yathā'darśo malena ca |", "yatholbenāvṛto garbhaḥ", "tathā tenedamāvṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["āvṛtaṃ jñānametena", "jñānino nityavairiṇā |", "kāmarūpeṇa kaunteya", "duṣpūreṇānalena ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["indriyāṇi mano buddhiḥ", "asyādhiṣṭhānamucyate |", "etairvimohayatyeṣaḥ", "jñānamāvṛtya dehinam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["tasmāttvamindriyāṇyādau", "niyamya bharatarṣabha |", "pāpmānaṃ prajahi hyenaṃ", "jñānavijñānanāśanam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["indriyāṇi parāṇyāhuḥ", "indriyebhyaḥ paraṃ manaḥ |", "manasastu parā buddhiḥ", "yo buddheḥ paratastu saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["evaṃ buddheḥ paraṃ buddhvā", "saṃstabhyātmānamātmanā |", "jahi śatruṃ mahābāho", "kāmarūpaṃ durāsadam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "4": [{"n": 1, "tlines": ["imaṃ vivasvate yogaṃ", "proktavānahamavyayam |", "vivasvānmanave prāha", "manurikṣvākave'bravīt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["evaṃ paramparāprāptam", "imaṃ rājarṣayo viduḥ |", "sa kāleneha mahatā", "yogo naṣṭaḥ parantapa"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["sa evāyaṃ mayā te'dya", "yogaḥ proktaḥ purātanaḥ |", "bhakto'si me sakhā ceti", "rahasyaṃ hyetaduttamam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["aparaṃ bhavato janma", "paraṃ janma vivasvataḥ |", "kathametadvijānīyāṃ", "tvamādau proktavāniti"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["bahūni me vyatītāni", "janmāni tava cārjuna |", "tānyahaṃ veda sarvāṇi", "na tvaṃ vettha parantapa"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["ajo'pi sannavyayātmā", "bhūtānāmīśvaro'pi san |", "prakṛtiṃ svāmadhiṣṭhāya", "sambhavāmyātmamāyayā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["yadā yadā hi dharmasya", "glānirbhavati bhārata |", "abhyutthānamadharmasya", "tadā'tmānaṃ sṛjāmyaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["paritrāṇāya sādhūnāṃ", "vināśāya ca duṣkṛtām |", "dharmasaṃsthāpanārthāya", "sambhavāmi yuge yuge"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["janma karma ca me divyam", "evaṃ yo vetti tattvataḥ |", "tyaktvā dehaṃ punarjanma", "naiti māmeti so'rjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["vītarāgabhayakrodhāḥ", "manmayā māmupāśritāḥ |", "bahavo jñānatapasā", "pūtā madbhāvamāgatāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["ye yathā māṃ prapadyante", "tāṃstathaiva bhajāmyaham |", "mama vartmānuvartante", "manuṣyāḥ pārtha sarvaśaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["kāṅkṣantaḥ karmaṇāṃ siddhiṃ", "yajanta iha devatāḥ |", "kṣipraṃ hi mānuṣe loke", "siddhirbhavati karmajā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["cāturvarṇyaṃ mayā sṛṣṭaṃ", "guṇakarmavibhāgaśaḥ |", "tasya kartāramapi māṃ", "viddhyakartāramavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["na māṃ karmāṇi limpanti", "na me karmaphale spṛhā |", "iti māṃ yo'bhijānāti", "karmabhirna sa badhyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["evaṃ jñātvā kṛtaṃ karma", "pūrvairapi mumukṣubhiḥ |", "kuru karmaiva tasmāttvaṃ", "pūrvaiḥ pūrvataraṃ kṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["kiṃ karma kimakarmeti", "kavayo'pyatra mohitāḥ |", "tatte karma pravakṣyāmi", "yajjñātvā mokṣyase'śubhāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["karmaṇo hyapi boddhavyaṃ", "boddhavyaṃ ca vikarmaṇaḥ |", "akarmaṇaśca boddhavyaṃ", "gahanā karmaṇo gatiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["karmaṇyakarma yaḥ paśyet", "akarmaṇi ca karma yaḥ |", "sa buddhimānmanuṣyeṣu", "sa yuktaḥ kṛtsnakarmakṛt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["yasya sarve samārambhāḥ", "kāmasaṅkalpavarjitāḥ |", "jñānāgnidagdhakarmāṇaṃ", "tamāhuḥ paṇḍitaṃ budhāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["tyaktvā karmaphalāsaṅgaṃ", "nityatṛpto nirāśrayaḥ |", "karmaṇyabhipravṛtto'pi", "naiva kiñcitkaroti saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["nirāśīryatacittātmā", "tyaktasarvaparigrahaḥ |", "śārīraṃ kevalaṃ karma", "kurvannāpnoti kilbiṣam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["yadṛcchālābhasantuṣṭaḥ", "dvandvātīto vimatsaraḥ |", "samaḥ siddhāvasiddhau ca", "kṛtvāpi na nibadhyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["gatasaṅgasya muktasya", "jñānāvasthitacetasaḥ |", "yajñāyācarataḥ karma", "samagraṃ pravilīyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["brahmārpaṇaṃ brahma haviḥ", "brahmāgnau brahmaṇā hutam |", "brahmaiva tena gantavyaṃ", "brahmakarmasamādhinā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["daivamevāpare yajñaṃ", "yoginaḥ paryupāsate |", "brahmāgnāvapare yajñaṃ", "yajñenaivopajuhvati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["śrotrādīnīndriyāṇyanye", "saṃyamāgniṣu juhvati |", "śabdādīnviṣayānanye", "indriyāgniṣu juhvati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["sarvāṇīndriyakarmāṇi", "prāṇakarmāṇi cāpare |", "ātmasaṃyamayogāgnau", "juhvati jñānadīpite"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["dravyayajñāstapoyajñāḥ", "yogayajñāstathā'pare |", "svādhyāyajñānayajñāśca", "yatayaḥ saṃśitavratāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["apāne juhvati prāṇaṃ", "prāṇe'pānaṃ tathāpare |", "prāṇāpānagatī ruddhvā", "prāṇāyāmaparāyaṇāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["apare niyatāhārāḥ", "prāṇānprāṇeṣu juhvati |", "sarve'pyete yajñavidaḥ", "yajñakṣapitakalmaṣāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["yajñaśiṣṭāmṛtabhujaḥ", "yānti brahma sanātanam |", "nāyaṃ loko'styayajñasya", "kuto'nyaḥ kurusattama"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["evaṃ bahuvidhā yajñāḥ", "vitatā brahmaṇo mukhe |", "karmajānviddhi tānsarvān", "evaṃ jñātvā vimokṣyase"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["śreyāndravyamayādyajñāt", "jñānayajñaḥ parantapa |", "sarvaṃ karmākhilaṃ pārtha", "jñāne parisamāpyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["tadviddhi praṇipātena", "paripraśnena sevayā |", "upadekṣyanti te jñānaṃ", "jñāninastattvadarśinaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["yajjñātvā na punarmoham", "evaṃ yāsyasi pāṇḍava |", "yena bhūtānyaśeṣeṇa", "drakṣyasyātmanyatho mayi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["api cedasi pāpebhyaḥ", "sarvebhyaḥ pāpakṛttamaḥ |", "sarvaṃ jñānaplavenaiva", "vṛjinaṃ santariṣyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["yathaidhāṃsi samiddho'gniḥ", "bhasmasātkurute'rjuna |", "jñānāgniḥ sarvakarmāṇi", "bhasmasātkurute tathā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["na hi jñānena sadṛśaṃ", "pavitramiha vidyate |", "tatsvayaṃ yogasaṃsiddhaḥ", "kālenātmani vindati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["śraddhāvān labhate jñānaṃ", "tatparaḥ saṃyatendriyaḥ |", "jñānaṃ labdhvā parāṃ śāntim", "acireṇādhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["ajñaścāśraddadhānaśca", "saṃśayātmā vinaśyati |", "nāyaṃ loko'sti na paraḥ", "na sukhaṃ saṃśayātmanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["yogasannyastakarmāṇaṃ", "jñānasañchinnasaṃśayam |", "ātmavantaṃ na karmāṇi", "nibadhnanti dhanañjaya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["tasmādajñānasambhūtaṃ", "hṛtsthaṃ jñānāsinātmanaḥ |", "chittvainaṃ saṃśayaṃ yogam", "ātiṣṭhottiṣṭha bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "5": [{"n": 1, "tlines": ["sannyāsaṃ karmaṇāṃ kṛṣṇa", "punaryogaṃ ca śaṃsasi |", "yacchreya etayorekaṃ", "tanme brūhi suniścitam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["sannyāsaḥ karmayogaśca", "niśśreyasakarāvubhau |", "tayostu karmasannyāsāt", "karmayogo viśiṣyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["jñeyaḥ sa nityasannyāsī", "yo na dveṣṭi na kāṅkṣati |", "nirdvandvo hi mahābāho", "sukhaṃ bandhātpramucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["sāṅkhyayogau pṛthagbālāḥ", "pravadanti na paṇḍitāḥ |", "ekamapyāsthitaḥ samyak", "ubhayorvindate phalam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["yatsāṅkhyaiḥ prāpyate sthānaṃ", "tadyogairapi gamyate |", "ekaṃ sāṅkhyaṃ ca yogaṃ ca", "yaḥ paśyati sa paśyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["sannyāsastu mahābāho", "duḥkhamāptumayogataḥ |", "yogayukto munirbrahma", "nacireṇādhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["yogayukto viśuddhātmā", "vijitātmā jitendriyaḥ |", "sarvabhūtātmabhūtātmā", "kurvannapi na lipyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["naiva kiñcitkaromīti", "yukto manyeta tattvavit |", "paśyanśṛṇvan spṛśañjighran", "aśnangacchan svapan śvasan"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["pralapan visṛjan gṛhṇan", "unmiṣannimiṣannapi |", "indriyāṇīndriyārtheṣu", "vartanta iti dhārayan"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["brahmaṇyādhāya karmāṇi", "saṅgaṃ tyaktvā karoti yaḥ |", "lipyate na sa pāpena", "padmapatramivāmbhasā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["kāyena manasā buddhyā", "kevalairindriyairapi |", "yoginaḥ karma kurvanti", "saṅgaṃ tyaktvā'tmaśuddhaye"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["yuktaḥ karmaphalaṃ tyaktvā", "śāntimāpnoti naiṣṭhikīm |", "ayuktaḥ kāmakāreṇa", "phale sakto nibadhyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["sarvakarmāṇi manasā", "sannyasyāste sukhaṃ vaśī |", "navadvāre pure dehī", "naiva kurvanna kārayan"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["na kartṛtvaṃ na karmāṇi", "lokasya sṛjati prabhuḥ |", "na karmaphalasaṃyogaṃ", "svabhāvastu pravartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["nādatte kasyacitpāpaṃ", "na caiva sukṛtaṃ vibhuḥ |", "ajñānenāvṛtaṃ jñānaṃ", "tena muhyanti jantavaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["jñānena tu tadajñānaṃ", "yeṣāṃ nāśitamātmanaḥ |", "teṣāmādityavajjñānaṃ", "prakāśayati tatparam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["tadbuddhayastadātmānaḥ", "tanniṣṭhāstatparāyaṇāḥ |", "gacchantyapunarāvṛttiṃ", "jñānanirdhūtakalmaṣāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["vidyāvinayasampanne", "brāhmaṇe gavi hastini |", "śuni caiva śvapāke ca", "paṇḍitāḥ samadarśinaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["ihaiva tairjitaḥ sargaḥ", "yeṣāṃ sāmye sthitaṃ manaḥ |", "nirdoṣaṃ hi samaṃ brahma", "tasmāt brahmaṇi te sthitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["na prahṛṣyetpriyaṃ prāpya", "nodvijetprāpya cāpriyam |", "sthirabuddhirasammūḍhaḥ", "brahmavit brahmaṇi sthitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["bāhyasparśeṣvasaktātmā", "vindatyātmani yat sukham |", "sa brahmayogayuktātmā", "sukhamakṣayamaśnute"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["ye hi saṃsparśajā bhogāḥ", "duḥkhayonaya eva te |", "ādyantavantaḥ kaunteya", "na teṣu ramate budhaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["śaknotīhaiva yaḥ soḍhuṃ", "prāk śarīravimokṣaṇāt |", "kāmakrodhodbhavaṃ vegaṃ", "sa yuktaḥ sa sukhī naraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["yo'ntaḥ sukho'ntarārāmaḥ", "tathā'ntarjyotireva yaḥ |", "sa yogī brahmanirvāṇaṃ", "brahmabhūto'dhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["labhante brahmanirvāṇam", "ṛṣayaḥ kṣīṇakalmaṣāḥ |", "chinnadvaidhā yatātmānaḥ", "sarvabhūtahite ratāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["kāmakrodhaviyuktānāṃ", "yatīnāṃ yatacetasām |", "abhito brahmanirvāṇaṃ", "vartate viditātmanām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["sparśān kṛtvā bahirbāhyān", "cakṣuścaivāntare bhruvoḥ |", "prāṇāpānau samau kṛtvā", "nāsābhyantaracāriṇau"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["yatendriyamanobuddhiḥ", "munirmokṣaparāyaṇaḥ |", "vigatecchābhayakrodhaḥ", "yaḥ sadā mukta eva saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["bhoktāraṃ yajñatapasāṃ", "sarvalokamaheśvaram |", "suhṛdaṃ sarvabhūtānāṃ", "jñātvā māṃ śāntimṛcchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "6": [{"n": 1, "tlines": ["anāśritaḥ karmaphalaṃ", "kāryaṃ karma karoti yaḥ |", "sa sannyāsī ca yogī ca", "na niragnirna cākriyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["yaṃ sannyāsamiti prāhuḥ", "yogaṃ taṃ viddhi pāṇḍava |", "na hyasannyastasaṅkalpaḥ", "yogī bhavati kaścana"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["ārurukṣormuneryogaṃ", "karma kāraṇamucyate |", "yogārūḍhasya tasyaiva", "śamaḥ kāraṇamucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["yadā hi nendriyārtheṣu", "na karmasvanuṣajjate |", "sarvasaṅkalpasannyāsī", "yogārūḍhastadocyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["uddharedātmanā'tmānaṃ", "nātmānamavasādayet |", "ātmaiva hyātmano bandhuḥ", "ātmaiva ripurātmanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["bandhurātmā'tmanastasya", "yenātmaivātmanā jitaḥ |", "anātmanastu śatrutve", "vartetātmaiva śatruvat"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["jitātmanaḥ praśāntasya", "paramātmā samāhitaḥ |", "śītoṣṇasukhaduḥkheṣu", "tathā mānāpamānayoḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["jñānavijñānatṛptātmā", "kūṭastho vijitendriyaḥ |", "yukta ityucyate yogī", "samaloṣṭāśmakāñcanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["suhṛnmitrāryudāsīna-", "madhyasthadveṣyabandhuṣu |", "sādhuṣvapi ca pāpeṣu", "samabuddhirviśiṣyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["yogī yuñjīta satatam", "ātmānaṃ rahasi sthitaḥ |", "ekākī yatacittātmā", "nirāśīraparigrahaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["śucau deśe pratiṣṭhāpya", "sthiramāsanamātmanaḥ |", "nātyucchritaṃ nātinīcaṃ", "cailājinakuśottaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["tatraikāgraṃ manaḥ kṛtvā", "yatacittendriyakriyaḥ |", "upaviśyāsane yuñjyāt", "yogamātmaviśuddhaye"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["samaṃ kāyaśirogrīvaṃ", "dhārayannacalaṃ sthiraḥ |", "samprekṣya nāsikāgraṃ svaṃ", "diśaścānavalokayan"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["praśāntātmā vigatabhīḥ", "brahmacārivrate sthitaḥ |", "manaḥ saṃyamya maccittaḥ", "yukta āsīta matparaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["yuñjannevaṃ sadā'tmānaṃ", "yogī niyatamānasaḥ |", "śāntiṃ nirvāṇaparamāṃ", "matsaṃsthāmadhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["nātyaśnatastu yogo'sti", "na caikāntamanaśnataḥ |", "na cāti svapnaśīlasya", "jāgrato naiva cārjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["yuktāhāravihārasya", "yuktaceṣṭasya karmasu |", "yuktasvapnāvabodhasya", "yogo bhavati duḥkhahā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["yadā viniyataṃ cittam", "ātmanyevāvatiṣṭhate |", "nisspṛhaḥ sarvakāmebhyaḥ", "yukta ityucyate tadā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["yathā dīpo nivātasthaḥ", "neṅgate sopamā smṛtā |", "yogino yatacittasya", "yuñjato yogamātmanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["yatroparamate cittaṃ", "niruddhaṃ yogasevayā |", "yatra caivātmanā'tmānaṃ", "paśyannātmani tuṣyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["sukhamātyantikaṃ yattat", "buddhigrāhyamatīndriyam |", "vetti yatra na caivāyaṃ", "sthitaścalati tattvataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["yaṃ labdhvā cāparaṃ lābhaṃ", "manyate nādhikaṃ tataḥ |", "yasmin sthito na duḥkhena", "guruṇāpi vicālyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["taṃ vidyāt duḥkhasaṃyoga-", "viyogaṃ yogasañjñitam |", "sa niścayena yoktavyaḥ", "yogo'nirviṇṇacetasā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["saṅkalpaprabhavān kāmān", "tyaktvā sarvānaśeṣataḥ |", "manasaivendriyagrāmaṃ", "viniyamya samantataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["śanaiḥ śanairuparamet", "buddhyā dhṛtigṛhītayā |", "ātmasaṃsthaṃ manaḥ kṛtvā", "na kiñcidapi cintayet"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["yato yato niścarati", "manaścañcalamasthiram |", "tatastato niyamyaitat", "ātmanyeva vaśaṃ nayet"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["praśāntamanasaṃ hyenaṃ", "yoginaṃ sukhamuttamam |", "upaiti śāntarajasaṃ", "brahmabhūtamakalmaṣam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["yuñjannevaṃ sadā'tmānaṃ", "yogī vigatakalmaṣaḥ |", "sukhena brahmasaṃsparśaṃ", "atyantaṃ sukhamaśnute"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["sarvabhūtasthamātmānaṃ", "sarvabhūtāni cātmani |", "īkṣate yogayuktātmā", "sarvatra samadarśanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["yo māṃ paśyati sarvatra", "sarvaṃ ca mayi paśyati |", "tasyāhaṃ na praṇaśyāmi", "sa ca me na praṇaśyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["sarvabhūtasthitaṃ yo māṃ", "bhajatyekatvamāsthitaḥ |", "sarvathā vartamāno'pi", "sa yogī mayi vartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["ātmaupamyena sarvatra", "samaṃ paśyati yo'rjuna |", "sukhaṃ vā yadi vā duḥkhaṃ", "sa yogī paramo mataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["yo'yaṃ yogastvayā proktaḥ", "sāmyena madhusūdana |", "etasyāhaṃ na paśyāmi", "cañcalatvāt sthitiṃ sthirām"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["cañcalaṃ hi manaḥ kṛṣṇa", "pramāthi balavad-dṛḍham |", "tasyāhaṃ nigrahaṃ manye", "vāyoriva suduṣkaram"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["asaṃśayaṃ mahābāho", "mano durnigrahaṃ calam |", "abhyāsena tu kaunteya", "vairāgyeṇa ca gṛhyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["asaṃyatātmanā yogaḥ", "duṣprāpa iti me matiḥ |", "vaśyātmanā tu yatatā", "śakyo'vāptumupāyataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["ayatiḥ śraddhayopetaḥ", "yogāccalitamānasaḥ |", "aprāpya yogasaṃsiddhiṃ", "kāṃ gatiṃ kṛṣṇa gacchati"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["kaccinnobhayavibhraṣṭaḥ", "chinnābhramiva naśyati |", "apratiṣṭho mahābāho", "vimūḍho brahmaṇaḥ pathi"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["etanme saṃśayaṃ kṛṣṇa", "chettumarhasyaśeṣataḥ |", "tvadanyaḥ saṃśayasyāsya", "chettā na hyupapadyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["pārtha naiveha nāmutra", "vināśastasya vidyate |", "na hi kalyāṇakṛtkaścit", "durgatiṃ tāta gacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["prāpya puṇyakṛtāṃ lokān", "uṣitvā śāśvatīḥ samāḥ |", "śucīnāṃ śrīmatāṃ gehe", "yogabhraṣṭo'bhijāyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["athavā yogināmeva", "kule bhavati dhīmatām |", "etaddhi durlabhataraṃ", "loke janma yadīdṛśam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["tatra taṃ buddhisaṃyogaṃ", "labhate paurvadehikam |", "yatate ca tato bhūyaḥ", "saṃsiddhau kurunandana"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 44, "tlines": ["pūrvābhyāsena tenaiva", "hriyate hyavaśo'pi saḥ |", "jijñāsurapi yogasya", "śabdabrahmātivartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 45, "tlines": ["prayatnādyatamānastu", "yogī saṃśuddhakilbiṣaḥ |", "anekajanmasaṃsiddhaḥ", "tato yāti parāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 46, "tlines": ["tapasvibhyo'dhiko yogī", "jñānibhyo'pi mato'dhikaḥ |", "karmibhyaścādhiko yogī", "tasmādyogī bhavārjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 47, "tlines": ["yogināmapi sarveṣāṃ", "madgatenāntarātmanā |", "śraddhāvānbhajate yo māṃ", "sa me yuktatamo mataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "7": [{"n": 1, "tlines": ["mayyāsaktamanāḥ pārtha", "yogaṃ yuñjanmadāśrayaḥ |", "asaṃśayaṃ samagraṃ māṃ", "yathā jñāsyasi tacchṛṇu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["jñānaṃ te'haṃ savijñānam", "idaṃ vakṣyāmyaśeṣataḥ |", "yajjñātvā neha bhūyo'nyat", "jñātavyamavaśiṣyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["manuṣyāṇāṃ sahasreṣu", "kaścidyatati siddhaye |", "yatatāmapi siddhānāṃ", "kaścinmāṃ vetti tattvataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["bhūmirāpo'nalo vāyuḥ", "khaṃ mano buddhireva ca |", "ahaṅkāra itīyaṃ me", "bhinnā prakṛtiraṣṭadhā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["apareyamitastvanyāṃ", "prakṛtiṃ viddhi me parām |", "jīvabhūtāṃ mahābāho", "yayedaṃ dhāryate jagat"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["etadyonīni bhūtāni", "sarvāṇītyupadhāraya |", "ahaṃ kṛtsnasya jagataḥ", "prabhavaḥ pralayastathā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["mattaḥ parataraṃ nānyat", "kiñcidasti dhanañjaya |", "mayi sarvamidaṃ protaṃ", "sūtre maṇigaṇā iva"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["raso'hamapsu kaunteya", "prabhā'smi śaśisūryayoḥ |", "praṇavaḥ sarvavedeṣu", "śabdaḥ khe pauruṣaṃ nṛṣu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["puṇyo gandhaḥ pṛthivyāṃ ca", "tejaścāsmi vibhāvasau |", "jīvanaṃ sarvabhūteṣu", "tapaścāsmi tapasviṣu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["bījaṃ māṃ sarvabhūtānāṃ", "viddhi pārtha sanātanam |", "buddhirbuddhimatāmasmi", "tejastejasvināmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["balaṃ balavatāṃ cāhaṃ", "kāmarāgavivarjitam |", "dharmāviruddho bhūteṣu", "kāmo'smi bharatarṣabha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["ye caiva sāttvikā bhāvāḥ", "rājasāstāmasāśca ye |", "matta eveti tānviddhi", "na tvahaṃ teṣu te mayi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["tribhirguṇamayairbhāvaiḥ", "ebhiḥ sarvamidaṃ jagat |", "mohitaṃ nābhijānāti", "māmebhyaḥ paramavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["daivī hyeṣā guṇamayī", "mama māyā duratyayā |", "māmeva ye prapadyante", "māyāmetāṃ taranti te"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["na māṃ duṣkṛtino mūḍhāḥ", "prapadyante narādhamāḥ |", "māyayā'pahṛtajñānāḥ", "āsuraṃ bhāvamāśritāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["caturvidhā bhajante māṃ", "janāḥ sukṛtino'rjuna |", "ārto jijñāsurarthārthī", "jñānī ca bharatarṣabha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["teṣāṃ jñānī nityayuktaḥ", "ekabhaktirviśiṣyate |", "priyo hi jñānino'tyartham", "ahaṃ sa ca mama priyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["udārāḥ sarva evaite", "jñānī tvātmaiva me matam |", "āsthitaḥ sa hi yuktātmā", "māmevānuttamāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["bahūnāṃ janmanāmante", "jñānavānmāṃ prapadyate |", "vāsudevaḥ sarvamiti", "sa mahātmā sudurlabhaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["kāmaistaistairhṛtajñānāḥ", "prapadyante'nyadevatāḥ |", "taṃ taṃ niyamamāsthāya", "prakṛtyā niyatāḥ svayā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["yo yo yāṃ yāṃ tanuṃ bhaktaḥ", "śraddhayārcitumicchati |", "tasya tasyācalāṃ śraddhāṃ", "tāmeva vidadhāmyaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["sa tayā śraddhayā yuktaḥ", "tasyārādhanamīhate |", "labhate ca tataḥ kāmān", "mayaiva vihitānhi tān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["antavattu phalaṃ teṣāṃ", "tadbhavatyalpamedhasām |", "devāndevayajo yānti", "madbhaktā yānti māmapi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["avyaktaṃ vyaktimāpannaṃ", "manyante māmabuddhayaḥ |", "paraṃ bhāvamajānantaḥ", "mamāvyayamanuttamam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["nāhaṃ prakāśaḥ sarvasya", "yogamāyāsamāvṛtaḥ |", "mūḍho'yaṃ nābhijānāti", "loko māmajamavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["vedāhaṃ samatītāni", "vartamānāni cārjuna |", "bhaviṣyāṇi ca bhūtāni", "māṃ tu veda na kaścana"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["icchādveṣasamutthena", "dvandvamohena bhārata |", "sarvabhūtāni sammohaṃ", "sarge yānti parantapa"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["yeṣāṃ tvantagataṃ pāpaṃ", "janānāṃ puṇyakarmaṇām |", "te dvandvamohanirmuktāḥ", "bhajante māṃ dṛḍhavratāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["jarāmaraṇamokṣāya", "māmāśritya yatanti ye |", "te brahma tadviduḥ kṛtsnam", "adhyātmaṃ karma cākhilam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["sādhibhūtādhidaivaṃ māṃ", "sādhiyajñaṃ ca ye viduḥ |", "prayāṇakāle'pi ca māṃ", "te viduryuktacetasaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "8": [{"n": 1, "tlines": ["kiṃ tadbrahma kimadhyātmaṃ", "kiṃ karma puruṣottama |", "adhibhūtaṃ ca kiṃ proktam", "adhidaivaṃ kimucyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["adhiyajñaḥ kathaṃ ko'tra", "dehe'sminmadhusūdana  |", "prayāṇakāle ca kathaṃ", "jñeyo'si niyatātmabhiḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["akṣaraṃ brahma paramaṃ", "svabhāvo'dhyātmamucyate |", "bhūtabhāvodbhavakaraḥ", "visargaḥ karmasañjñitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["adhibhūtaṃ kṣaro bhāvaḥ", "puruṣaścādhidaivatam |", "adhiyajño'hamevātra", "dehe dehabhṛtāṃ vara"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["antakāle ca māmeva", "smaranmuktvā kalevaram |", "yaḥ prayāti sa madbhāvaṃ", "yāti nāstyatra saṃśayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["yaṃ yaṃ vāpi smaranbhāvaṃ", "tyajatyante kalevaram |", "taṃ tamevaiti kaunteya", "sadā tadbhāvabhāvitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["tasmātsarveṣu kāleṣu", "māmanusmara yudhya ca |", "mayyarpitamanobuddhiḥ", "māmevaiṣyasyasaṃśayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["abhyāsayogayuktena", "cetasā nānyagāminā |", "paramaṃ puruṣaṃ divyaṃ", "yāti pārthānucintayan"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["kaviṃ purāṇamanuśāsitāram", "aṇoraṇīyāṃsamanusmaredyaḥ |", "sarvasya dhātāramacintyarūpam", "ādityavarṇaṃ tamasaḥ parastāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["prayāṇakāle manasā'calena", "bhaktyā yukto yogabalena caiva |", "bhruvormadhye prāṇamāveśya samyak", "sa taṃ paraṃ puruṣamupaiti divyam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["yadakṣaraṃ vedavido vadanti", "viśanti yadyatayo vītarāgāḥ |", "yadicchanto brahmacaryaṃ caranti", "tatte padaṃ saṅgraheṇa pravakṣye"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["sarvadvārāṇi saṃyamya", "mano hṛdi nirudhya ca |", "mūrdhnyādhāyātmanaḥ prāṇam", "āsthito yogadhāraṇām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["omityekākṣaraṃ brahma", "vyāharanmāmanusmaran |", "yaḥ prayāti tyajandehaṃ", "sa yāti paramāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["ananyacetāḥ satataṃ", "yo māṃ smarati nityaśaḥ |", "tasyāhaṃ sulabhaḥ pārtha", "nityayuktasya yoginaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["māmupetya punarjanma", "duḥkhālayamaśāśvatam |", "nāpnuvanti mahātmānaḥ", "saṃsiddhiṃ paramāṃ gatāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["ābrahmabhuvanāllokāḥ", "punarāvartino'rjuna |", "māmupetya tu kaunteya", "punarjanma na vidyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["sahasrayugaparyantam", "aharyadbrahmaṇo viduḥ |", "rātriṃ yugasahasrāntāṃ", "te'horātravido janāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["avyaktādvyaktayaḥ sarvāḥ", "prabhavantyaharāgame |", "rātryāgame pralīyante", "tatraivāvyaktasañjñake"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["bhūtagrāmaḥ sa evāyaṃ", "bhūtvā bhūtvā pralīyate |", "rātryāgame'vaśaḥ pārtha", "prabhavatyaharāgame"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["parastasmāttu bhāvo'nyaḥ", "avyakto'vyaktātsanātanaḥ |", "yaḥ sa sarveṣu bhūteṣu", "naśyatsu na vinaśyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["avyakto'kṣara ityuktaḥ", "tamāhuḥ paramāṃ gatim |", "yaṃ prāpya na nivartante", "taddhāma paramaṃ mama"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["puruṣaḥ sa paraḥ pārtha", "bhaktyā labhyastvananyayā |", "yasyāntaḥ sthāni bhūtāni", "yena sarvamidaṃ tatam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["yatra kāle tvanāvṛttim", "āvṛttiṃ caiva yoginaḥ |", "prayātā yānti taṃ kālaṃ", "vakṣyāmi bharatarṣabha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["agnirjyotirahaḥ śuklaḥ", "ṣaṇmāsā uttarāyaṇam |", "tatra prayātā gacchanti", "brahma brahmavido janāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["dhūmo rātristathā kṛṣṇaḥ", "ṣaṇmāsā dakṣiṇāyanam |", "tatra cāndramasaṃ jyotiḥ", "yogī prāpya nivartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["śuklakṛṣṇe gatī hyete", "jagataḥ śāśvate mate |", "ekayā yātyanāvṛttim", "anyayā'vartate punaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["naite sṛtī pārtha jānan", "yogī muhyati kaścana |", "tasmātsarveṣu kāleṣu", "yogayukto bhavārjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["vedeṣu yajñeṣu tapassu caiva", "dāneṣu yat puṇyaphalaṃ pradiṣṭam |", "atyeti tatsarvamidaṃ viditvā", "yogī paraṃ sthānamupaiti cādyam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "9": [{"n": 1, "tlines": ["idaṃ tu te guhyatamaṃ", "pravakṣyāmyanasūyave |", "jñānaṃ vijñānasahitaṃ", "yajjñātvā mokṣyase'śubhāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["rājavidyā rājaguhyaṃ", "pavitramidamuttamam |", "pratyakṣāvagamaṃ dharmyaṃ", "susukhaṃ kartumavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["aśraddadhānāḥ puruṣāḥ", "dharmasyāsya parantapa |", "aprāpya māṃ nivartante", "mṛtyusaṃsāravartmani"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["mayā tatamidaṃ sarvaṃ", "jagadavyaktamūrtinā |", "matsthāni sarvabhūtāni", "na cāhaṃ teṣvavasthitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["na ca matsthāni bhūtāni", "paśya me yogamaiśvaram |", "bhūtabhṛnna ca bhūtasthaḥ", "mamātmā bhūtabhāvanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["yathā'kāśasthito nityaṃ", "vāyuḥ sarvatrago mahān |", "tathā sarvāṇi bhūtāni", "matsthānītyupadhāraya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["sarvabhūtāni kaunteya", "prakṛtiṃ yānti māmikām |", "kalpakṣaye punastāni", "kalpādau visṛjāmyaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["prakṛtiṃ svāmavaṣṭabhya", "visṛjāmi punaḥ punaḥ |", "bhūtagrāmamimaṃ kṛtsnam", "avaśaṃ prakṛtervaśāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["na ca māṃ tāni karmāṇi", "nibadhnanti dhanañjaya |", "udāsīnavadāsīnam", "asaktaṃ teṣu karmasu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["mayādhyakṣeṇa prakṛtiḥ", "sūyate sacarācaram |", "hetunā'nena kaunteya", "jagadviparivartate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["avajānanti māṃ mūḍhāḥ", "mānuṣīṃ tanumāśritam |", "paraṃ bhāvamajānantaḥ", "mama bhūtamaheśvaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["moghāśā moghakarmāṇaḥ", "moghajñānā vicetasaḥ |", "rākṣasīmāsurīṃ caiva", "prakṛtiṃ mohinīṃ śritāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["mahātmānastu māṃ pārtha", "daivīṃ prakṛtimāśritāḥ |", "bhajantyananyamanasaḥ", "jñātvā bhūtādimavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["satataṃ kīrtayanto māṃ", "yatantaśca dṛḍhavratāḥ |", "namasyantaśca māṃ bhaktyā", "nityayuktā upāsate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["jñānayajñena cāpyanye", "yajanto māmupāsate |", "ekatvena pṛthaktvena", "bahudhā viśvatomukham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["ahaṃ kraturahaṃ yajñaḥ", "svadhāhamahamauṣadham |", "mantro'hamahamevājyam", "ahamagnirahaṃ hutam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["pitā'hamasya jagataḥ", "mātā dhātā pitāmahaḥ |", "vedyaṃ pavitramoṅkāraḥ", "ṛksāma yajureva ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["gatirbhartā prabhuḥ sākṣī", "nivāsaḥ śaraṇaṃ suhṛt |", "prabhavaḥ pralayaḥ sthānaṃ", "nidhānaṃ bījamavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["tapāmyahamahaṃ varṣaṃ", "nigṛhṇāmyutsṛjāmi ca |", "amṛtaṃ caiva mṛtyuśca", "sadasaccāhamarjuna"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["traividyā māṃ somapāḥ pūtapāpāḥ", "yajñairiṣṭvā svargatiṃ prārthayante |", "te puṇyamāsādya surendralokam", "aśnanti divyāndivi devabhogān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["te taṃ bhuktvā svargalokaṃ viśālaṃ", "kṣīṇe puṇye martyalokaṃ viśanti |", "evaṃ trayīdharmamanuprapannāḥ", "gatāgataṃ kāmakāmā labhante"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["ananyāścintayanto māṃ", "ye janāḥ paryupāsate |", "teṣāṃ nityābhiyuktānāṃ", "yogakṣemaṃ vahāmyaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["ye'pyanyadevatā bhaktāḥ", "yajante śraddhayānvitāḥ |", "te'pi māmeva kaunteya", "yajantyavidhipūrvakam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["ahaṃ hi sarvayajñānāṃ", "bhoktā ca prabhureva ca |", "na tu māmabhijānanti", "tattvenātaścyavanti te"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["yānti devavratā devān", "pitèn yānti pitṛvratāḥ |", "bhūtāni yānti bhūtejyāḥ", "yānti madyājino'pi mām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["patraṃ puṣpaṃ phalaṃ toyaṃ", "yo me bhaktyā prayacchati |", "tadahaṃ bhaktyupahṛtam", "aśnāmi prayatātmanaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["yatkaroṣi yadaśnāsi", "yajjuhoṣi dadāsi yat |", "yattapasyasi kaunteya", "tatkuruṣva madarpaṇam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["śubhāśubhaphalairevaṃ", "mokṣyase karmabandhanaiḥ |", "sannyāsayogayuktātmā", "vimukto māmupaiṣyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["samo'haṃ sarvabhūteṣu", "na me dveṣyo'sti na priyaḥ |", "ye bhajanti tu māṃ bhaktyā", "mayi te teṣu cāpyaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["api cetsudurācāraḥ", "bhajate māmananyabhāk |", "sādhureva sa mantavyaḥ", "samyagvyavasito hi saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["kṣipraṃ bhavati dharmātmā", "śaśvacchāntiṃ nigacchati |", "kaunteya pratijānīhi", "na me bhaktaḥ praṇaśyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["māṃ hi pārtha vyapāśritya", "ye'pi syuḥ pāpayonayaḥ |", "striyo vaiśyāstathā śūdrāḥ", "te'pi yānti parāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["kiṃ punarbrāhmaṇāḥ puṇyāḥ", "bhaktā rājarṣayastathā |", "anityamasukhaṃ lokam", "imaṃ prāpya bhajasva mām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["manmanā bhava madbhaktaḥ", "madyājī māṃ namaskuru |", "māmevaiṣyasi yuktvaivam", "ātmānaṃ matparāyaṇaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "10": [{"n": 1, "tlines": ["bhūya eva mahābāho", "śṛṇu me paramaṃ vacaḥ |", "yatte'haṃ prīyamāṇāya", "vakṣyāmi hitakāmyayā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["na me viduḥ suragaṇāḥ", "prabhavaṃ na maharṣayaḥ |", "ahamādirhi devānāṃ", "maharṣīṇāṃ ca sarvaśaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["yo māmajamanādiṃ ca", "vetti lokamaheśvaram |", "asammūḍhaḥ sa martyeṣu", "sarvapāpaiḥ pramucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["buddhirjñānamasammohaḥ", "kṣamā satyaṃ damaḥ śamaḥ |", "sukhaṃ duḥkhaṃ bhavo'bhāvaḥ", "bhayaṃ cābhayameva ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["ahiṃsā samatā tuṣṭiḥ", "tapo dānaṃ yaśo'yaśaḥ |", "bhavanti bhāvā bhūtānāṃ", "matta eva pṛthagvidhāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["maharṣayaḥ sapta pūrve", "catvāro manavastathā |", "madbhāvā mānasā jātāḥ", "yeṣāṃ loka imāḥ prajāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["etāṃ vibhūtiṃ yogaṃ ca", "mama yo vetti tattvataḥ |", "so'vikampena yogena", "yujyate nātra saṃśayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["ahaṃ sarvasya prabhavaḥ", "mattaḥ sarvaṃ pravartate |", "iti matvā bhajante māṃ", "budhā bhāvasamanvitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["maccittā madgataprāṇāḥ", "bodhayantaḥ parasparam |", "kathayantaśca māṃ nityaṃ", "tuṣyanti ca ramanti ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["teṣāṃ satatayuktānāṃ", "bhajatāṃ prītipūrvakam |", "dadāmi buddhiyogaṃ taṃ", "yena māmupayānti te"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["teṣāmevānukampārtham", "ahamajñānajaṃ tamaḥ |", "nāśayāmyātmabhāvasthaḥ", "jñānadīpena bhāsvatā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["paraṃ brahma paraṃ dhāma", "pavitraṃ paramaṃ bhavān |", "puruṣaṃ śāśvataṃ divyam", "ādidevamajaṃ vibhum"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["āhustvāmṛṣayaḥ sarve", "devarṣirnāradastathā |", "asito devalo vyāsaḥ", "svayaṃ caiva bravīṣi me"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["sarvametadṛtaṃ manye", "yanmāṃ vadasi keśava |", "na hi te bhagavanvyaktiṃ", "vidurdevā na dānavāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["svayamevātmanā'tmānaṃ", "vettha tvaṃ puruṣottama |", "bhūtabhāvana bhūteśa", "devadeva jagatpate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["vaktumarhasyaśeṣeṇa", "divyā hyātmavibhūtayaḥ |", "yābhirvibhūtibhirlokān", "imāṃstvaṃ vyāpya tiṣṭhasi"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["kathaṃ vidyāmahaṃ yogin", "tvāṃ sadā paricintayan |", "keṣu keṣu ca bhāveṣu", "cintyo'si bhagavanmayā"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["vistareṇātmano yogaṃ", "vibhūtiṃ ca janārdana |", "bhūyaḥ kathaya tṛptirhi", "śṛṇvato nāsti me'mṛtam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["hanta te kathayiṣyāmi", "divyā hyātmavibhūtayaḥ |", "prādhānyataḥ kuruśreṣṭha", "nāstyanto vistarasya me"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["ahamātmā guḍākeśa", "sarvabhūtāśayasthitaḥ |", "ahamādiśca madhyaṃ ca", "bhūtānāmanta eva ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["ādityānāmaham viṣṇuḥ", "jyotiṣāṃ raviraṃśumān |", "marīcirmarutāmasmi", "nakṣatrāṇāmahaṃ śaśī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["vedānāṃ sāmavedo'smi", "devānāmasmi vāsavaḥ |", "indriyāṇāṃ manaścāsmi", "bhūtānāmasmi cetanā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["rudrāṇāṃ śaṅkaraścāsmi", "vitteśo yakṣarakṣasām |", "vasūnāṃ pāvakaścāsmi", "meruḥ śikhariṇāmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["purodhasāṃ ca mukhyaṃ māṃ", "viddhi pārtha bṛhaspatim |", "senānīnāmahaṃ skandaḥ", "sarasāmasmi sāgaraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["maharṣīṇāṃ bhṛgurahaṃ", "girāmasmyekamakṣaram |", "yajñānāṃ japayajño'smi", "sthāvarāṇāṃ himālayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["aśvatthaḥ sarvavṛkṣāṇāṃ", "devarṣīṇāṃ ca nāradaḥ |", "gandharvāṇāṃ citrarathaḥ", "siddhānāṃ kapilo muniḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["uccaiḥ śravasamaśvānāṃ", "viddhi māmamṛtodbhavam |", "airāvataṃ gajendrāṇāṃ", "narāṇāṃ ca narādhipam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["āyudhānāmahaṃ vajraṃ", "dhenūnāmasmi kāmadhuk |", "prajanaścāsmi kandarpaḥ", "sarpāṇāmasmi vāsukiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["anantaścāsmi nāgānāṃ", "varuṇo yādasāmaham |", "pitèṇāmaryamā cāsmi", "yamaḥ saṃyamatāmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["prahlādaścāsmi daityānāṃ", "kālaḥ kalayatāmaham |", "mṛgāṇāṃ ca mṛgendro'haṃ", "vainateyaśca pakṣiṇām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["pavanaḥ pavatāmasmi", "rāmaḥ śastrabhṛtāmaham |", "jhaṣāṇāṃ makaraścāsmi", "srotasāmasmi jāhnavī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["sargāṇāmādirantaśca", "madhyaṃ caivāhamarjuna |", "adhyātmavidyā vidyānāṃ", "vādaḥ pravadatāmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["akṣarāṇāmakāro'smi", "dvandvaḥ sāmāsikasya ca |", "ahamevākṣayaḥ kālaḥ", "dhātā'haṃ viśvatomukhaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["mṛtyuḥ sarvaharaścāham", "udbhavaśca bhaviṣyatām |", "kīrtiḥ śrīrvākca nārīṇāṃ", "smṛtirmedhā dhṛtiḥ kṣamā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["bṛhatsāma tathā sāmnāṃ", "gāyatrī chandasāmaham |", "māsānāṃ mārgaśīrṣo'ham", "ṛtūnāṃ kusumākaraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["dyūtaṃ chalayatāmasmi", "tejastejasvināmaham |", "jayo'smi vyavasāyo'smi", "sattvaṃ sattvavatāmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["vṛṣṇīnāṃ vāsudevo'smi", "pāṇḍavānāṃ dhanañjayaḥ |", "munīnāmapyahaṃ vyāsaḥ", "kavīnāmuśanā kaviḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["daṇḍo damayatāmasmi", "nītirasmi jigīṣatām |", "maunaṃ caivāsmi guhyānāṃ", "jñānaṃ jñānavatāmaham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["yaccāpi sarvabhūtānāṃ", "bījaṃ tadahamarjuna |", "na tadasti vinā yatsyāt", "mayā bhūtaṃ carācaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["nānto'sti mama divyānāṃ", "vibhūtīnāṃ parantapa |", "eṣa tūddeśataḥ proktaḥ", "vibhūtervistaro mayā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["yadyadvibhūtimatsattvaṃ", "śrīmadūrjitameva vā |", "tattadevāvagaccha tvaṃ", "mama tejo'mśasambhavam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["athavā bahunaitena", "kiṃ jñātena tavārjuna |", "viṣṭabhyāhamidaṃ kṛtsnam", "ekāṃśena sthito jagat"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "11": [{"n": 1, "tlines": ["madanugrahāya paramaṃ", "guhyamadhyātmasañjñitam |", "yattvayoktaṃ vacastena", "moho'yaṃ vigato mama"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["bhavāpyayau hi bhūtānāṃ", "śrutau vistaraśo mayā |", "tvattaḥ kamalapatrākṣa", "māhātmyamapi cāvyayam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["evametadyathā'ttha tvam", "ātmānaṃ parameśvara |", "draṣṭumicchāmi te rūpam", "aiśvaraṃ puruṣottama"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["manyase yadi tacchakyaṃ", "mayā draṣṭumiti prabho |", "yogeśvara tato me tvaṃ", "darśayātmānamavyayam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["paśya me pārtha rūpāṇi", "śataśo'tha sahasraśaḥ |", "nānāvidhāni divyāni", "nānāvarṇākṛtīni ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["paśyādityānvasūnrudrān", "aśvinau marutastathā |", "bahūnyadṛṣṭapūrvāṇi", "paśyāścaryāṇi bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["ihaikasthaṃ jagatkṛtsnaṃ", "paśyādya sacarācaram |", "mama dehe guḍākeśa", "yaccānyat draṣṭumicchasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["na tu māṃ śakyase draṣṭum", "anenaiva svacakṣuṣā |", "divyaṃ dadāmi te cakṣuḥ", "paśya me yogamaiśvaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["evamuktvā tato rājan", "mahāyogeśvaro hariḥ |", "darśayāmāsa pārthāya", "paramaṃ rūpamaiśvaram"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["anekavaktranayanam", "anekādbhutadarśanam |", "anekadivyābharaṇaṃ", "divyānekodyatāyudham"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["divyamālyāmbaradharaṃ", "divyagandhānulepanam |", "sarvāścaryamayaṃ devam", "anantaṃ viśvatomukham"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["divi sūryasahasrasya", "bhavedyugapadutthitā |", "yadi bhāḥ sadṛśī sā syāt", "bhāsastasya mahātmanaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["tatraikasthaṃ jagatkṛtsnaṃ", "pravibhaktamanekadhā |", "apaśyaddevadevasya", "śarīre pāṇḍavastadā"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["tataḥ sa vismayāviṣṭaḥ", "hṛṣṭaromā dhanañjayaḥ |", "praṇamya śirasā devaṃ", "kṛtāñjalirabhāṣata"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["paśyāmi devāṃstava deva dehe", "sarvāṃstathā bhūtaviśeṣasaṅghān |", "brahmāṇamīśaṃ kamalāsanastham", "ṛṣīṃśca sarvānuragāṃśca divyān"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["anekabāhūdaravaktranetraṃ", "paśyāmi tvā sarvato'nantarūpam |", "nāntaṃ na madhyaṃ na punastavādiṃ", "paśyāmi viśveśvara viśvarūpa"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["kirīṭinaṃ gadinaṃ cakriṇaṃ ca", "tejorāśiṃ sarvato dīptimantam |", "paśyāmi tvāṃ durnirīkṣyaṃ samantāt", "dīptānalārkadyutimaprameyam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["tvamakṣaraṃ paramaṃ veditavyaṃ", "tvamasya viśvasya paraṃ nidhānam |", "tvamavyayaḥ śāśvatadharmagoptā", "sanātanastvaṃ puruṣo mato me"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["anādimadhyāntamanantavīryam", "anantabāhuṃ śaśisūryanetram |", "paśyāmi tvāṃ dīptahutāśavaktraṃ", "svatejasā viśvamidaṃ tapantam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["dyāvāpṛthivyoridamantaraṃ hi", "vyāptaṃ tvayaikena diśaśca sarvāḥ |", "dṛṣṭvādbhutaṃ rūpamidaṃ tavograṃ", "lokatrayaṃ pravyathitaṃ mahātman"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["amī hi tvā surasaṅghā viśanti", "kecidbhītāḥ prāñjalayo gṛṇanti |", "svastītyuktvā maharṣisiddhasaṅghāḥ", "stuvanti tvāṃ stutibhiḥ puṣkalābhiḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["rudrādityā vasavo ye ca sādhyāḥ", "viśve'śvinau marutaścoṣmapāśca |", "gandharvayakṣāsurasiddhasaṅghāḥ", "vīkṣante tvāṃ vismitāścaiva sarve"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["rūpaṃ mahatte bahuvaktranetraṃ", "mahābāho bahubāhūrupādam |", "bahūdaraṃ bahudaṃṣṭrākarālaṃ", "dṛṣṭvā lokāḥ pravyathitāstathā'ham"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["nabhaḥ spṛśaṃ dīptamanekavarṇaṃ", "vyāttānanaṃ dīptaviśālanetram |", "dṛṣṭvā hi tvāṃ pravyathitāntarātmā", "dhṛtiṃ na vindāmi śamaṃ ca viṣṇo"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["daṃṣṭrākarālāni ca te mukhāni", "dṛṣṭvaiva kālānalasannibhāni |", "diśo na jāne na labhe ca śarma", "prasīda deveśa jagannivāsa"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["amī ca tvāṃ dhṛtarāṣṭrasya putrāḥ", "sarve sahaivāvanipālasaṅghaiḥ |", "bhīṣmo droṇaḥ sūtaputrastathā'sau", "sahāsmadīyairapi yodhamukhyaiḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["vaktrāṇi te tvaramāṇā viśanti", "daṃṣṭrākarālāni bhayānakāni |", "kecidvilagnā daśanāntareṣu", "sandṛśyante cūrṇitairuttamāṅgaiḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["yathā nadīnāṃ bahavo'mbuvegāḥ", "samudramevābhimukhā dravanti |", "tathā tavāmī naralokavīrāḥ", "viśanti vaktrāṇyabhivijvalanti"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["yathā pradīptaṃ jvalanaṃ pataṅgāḥ", "viśanti nāśāya samṛddhavegāḥ |", "tathaiva nāśāya viśanti lokāḥ", "tavāpi vaktrāṇi samṛddhavegāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["lelihyase grasamānaḥ samantāt", "lokānsamagrānvadanairjvaladbhiḥ |", "tejobhirāpūrya jagatsamagraṃ", "bhāsastavogrāḥ pratapanti viṣṇo"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["ākhyāhi me ko bhavānugrarūpaḥ", "namo'stu te devavara prasīda |", "vijñātumicchāmi bhavantamādyaṃ", "na hi prajānāmi tava pravṛttim"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["kālo'smi lokakṣayakṛtpravṛddhaḥ", "lokānsamāhartumiha pravṛttaḥ |", "ṛte'pi tvā na bhaviṣyanti sarve", "ye'vasthitāḥ pratyanīkeṣu yodhāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["tasmāttvamuttiṣṭha yaśo labhasva", "jitvā śatrūn bhuṅkṣva rājyaṃ samṛddham |", "mayaivaite nihatāḥ pūrvameva", "nimittamātraṃ bhava savyasācin"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["droṇaṃ ca bhīṣmaṃ ca jayadrathaṃ ca", "karṇaṃ tathā'nyānapi yodhavīrān |", "mayā hatāṃstvaṃ jahi mā vyathiṣṭhāḥ", "yudhyasva jetāsi raṇe sapatnān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["etacchrutvā vacanaṃ keśavasya", "kṛtāñjalirvepamānaḥ kirīṭī |", "namaskṛtvā bhūya evāha kṛṣṇaṃ", "sagadgadaṃ bhītabhītaḥ praṇamya"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["sthāne hṛṣīkeśa tava prakīrtyā", "jagatprahṛṣyatyanurajyate ca |", "rakṣāṃsi bhītāni diśo dravanti", "sarve namasyanti ca siddhasaṅghāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["kasmācca te na nameranmahātman", "garīyase brahmaṇo'pyādikartre |", "ananta deveśa jagannivāsa", "tvamakṣaraṃ sadasattatparaṃ yat"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["tvamādidevaḥ puruṣaḥ purāṇaḥ", "tvamasya viśvasya paraṃ nidhānam |", "vettā'si vedyaṃ ca paraṃ ca dhāma", "tvayā tataṃ viśvamanantarūpa"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["vāyuryamo'gnirvaruṇaḥ śaśāṅkaḥ", "prajāpatistvaṃ prapitāmahaśca |", "namo namaste'stu sahasrakṛtvaḥ", "punaśca bhūyo'pi namo namaste"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["namaḥ purastādatha pṛṣṭhataste", "namo'stu te sarvata eva sarva |", "anantavīryāmitavikramastvaṃ", "sarvaṃ samāpnoṣi tato'si sarvaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["sakheti matvā prasabhaṃ yaduktaṃ", "he kṛṣṇa he yādava he sakheti |", "ajānatā mahimānaṃ tavedaṃ", "mayā pramādātpraṇayena vā'pi"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["yaccāpahāsārthamasatkṛto'si", "vihāraśayyāsanabhojaneṣu |", "eko'thavāpyacyuta tatsamakṣaṃ", "tatkṣāmaye tvāmahamaprameyam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["pitā'si lokasya carācarasya", "tvamasya pūjyaśca gururgarīyān |", "na tvatsamo'styabhyadhikaḥ kuto'nyaḥ", "lokatraye'pyapratimaprabhāva"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 44, "tlines": ["tasmātpraṇamya praṇidhāya kāyaṃ", "prasādaye tvāmahamīśamīḍyam |", "piteva putrasya sakheva sakhyuḥ", "priyaḥ priyāyārhasi deva soḍhum"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 45, "tlines": ["adṛṣṭapūrvaṃ hṛṣito'smi dṛṣṭvā", "bhayena ca pravyathitaṃ mano me |", "tadeva me darśaya deva rūpaṃ", "prasīda deveśa jagannivāsa"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 46, "tlines": ["kirīṭinaṃ gadinaṃ cakrahastam", "icchāmi tvāṃ draṣṭumahaṃ tathaiva |", "tenaiva rūpeṇa caturbhujena", "sahasrabāho bhava viśvamūrte"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 47, "tlines": ["mayā prasannena tavārjunedaṃ", "rūpaṃ paraṃ darśitamātmayogāt |", "tejomayaṃ viśvamanantamādyaṃ", "yanme tvadanyena na dṛṣṭapūrvam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 48, "tlines": ["na vedayajñādhyayanairna dānaiḥ", "na ca kriyābhirna tapobhirugraiḥ |", "evaṃrūpaḥ śakya ahaṃ nṛloke", "draṣṭuṃ tvadanyena kurupravīra"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 49, "tlines": ["mā te vyathā mā ca vimūḍhabhāvaḥ", "dṛṣṭvā rūpaṃ ghoramīdṛṅmamedam |", "vyapetabhīḥ prītamanāḥ punastvaṃ", "tadeva me rūpamidaṃ prapaśya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 50, "tlines": ["ityarjunaṃ vāsudevastathoktvā", "svakaṃ rūpaṃ darśayāmāsa bhūyaḥ |", "āśvāsayāmāsa ca bhītamenaṃ", "bhūtvā punaḥ saumyavapurmahātmā"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 51, "tlines": ["dṛṣṭvedaṃ mānuṣaṃ rūpaṃ", "tava saumyaṃ janārdana |", "idānīmasmi saṃvṛttaḥ", "sacetāḥ prakṛtiṃ gataḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 52, "tlines": ["sudurdarśamidaṃ rūpaṃ", "dṛṣṭavānasi yanmama |", "devā apyasya rūpasya", "nityaṃ darśanakāṅkṣiṇaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 53, "tlines": ["nāhaṃ vedairna tapasā", "na dānena na cejyayā |", "śakya evaṃvidho draṣṭuṃ", "dṛṣṭavānasi māṃ yathā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 54, "tlines": ["bhaktyā tvananyayā śakyaḥ", "ahamevaṃvidho'rjuna |", "jñātuṃ draṣṭuṃ ca tattvena", "praveṣṭuṃ ca parantapa"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 55, "tlines": ["matkarmakṛnmatparamaḥ", "madbhaktaḥ saṅgavarjitaḥ |", "nirvairaḥ sarvabhūteṣu", "yaḥ sa māmeti pāṇḍava"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "12": [{"n": 1, "tlines": ["evaṃ satatayuktā ye", "bhaktāstvāṃ paryupāsate |", "ye cāpyakṣaramavyaktaṃ", "teṣāṃ ke yogavittamāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["mayyāveśya mano ye māṃ", "nityayuktā upāsate |", "śraddhayā parayopetāḥ", "te me yuktatamā matāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["ye tvakṣaramanirdeśyam", "avyaktaṃ paryupāsate |", "sarvatragamacintyaṃ ca", "kūṭasthamacalaṃ dhruvam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["sanniyamyendriyagrāmaṃ", "sarvatra samabuddhayaḥ |", "te prāpnuvanti māmeva", "sarvabhūtahite ratāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["kleśo'dhikatarasteṣām", "avyaktāsaktacetasām |", "avyaktā hi gatirduḥkhaṃ", "dehavadbhiravāpyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["ye tu sarvāṇi karmāṇi", "mayi sannyasya matparāḥ |", "ananyenaiva yogena", "māṃ dhyāyanta upāsate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["teṣāmahaṃ samuddhartā", "mṛtyusaṃsārasāgarāt |", "bhavāmi nacirātpārtha", "mayyāveśitacetasām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["mayyeva mana ādhatsva", "mayi buddhiṃ niveśaya |", "nivasiṣyasi mayyeva", "ata ūrdhvaṃ na saṃśayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["atha cittaṃ samādhātuṃ", "na śaknoṣi mayi sthiram |", "abhyāsayogena tataḥ", "māmicchāptuṃ dhanañjaya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["abhyāse'pyasamartho'si", "matkarmaparamo bhava |", "madarthamapi karmāṇi", "kurvansiddhimavāpsyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["athaitadapyaśakto'si", "kartuṃ madyogamāśritaḥ |", "sarvakarmaphalatyāgaṃ", "tataḥ kuru yatātmavān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["śreyo hi jñānamabhyāsāt", "jñānāddhyānaṃ viśiṣyate |", "dhyānātkarmaphalatyāgaḥ", "tyāgācchāntiranantaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["adveṣṭā sarvabhūtānāṃ", "maitraḥ karuṇa  eva ca |", "nirmamo nirahaṅkāraḥ", "samaduḥkhasukhaḥ kṣamī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["santuṣṭaḥ satataṃ yogī", "yatātmā dṛḍhaniścayaḥ |", "mayyarpitamanobuddhiḥ", "yo madbhaktaḥ sa me priyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["yasmānnodvijate lokaḥ", "lokānnodvijate ca yaḥ |", "harṣāmarṣabhayodvegaiḥ", "mukto yaḥ sa ca me priyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["anapekṣaḥ śucirdakṣaḥ", "udāsīno gatavyathaḥ |", "sarvārambhaparityāgī", "yo madbhaktaḥ sa me priyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["yo na hṛṣyati na dveṣṭi", "na śocati na kāṅkṣati |", "śubhāśubhaparityāgī", "bhaktimānyaḥ sa me priyaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["samaḥ śatrau ca mitre ca", "tathā mānāpamānayoḥ |", "śītoṣṇasukhaduḥkheṣu", "samaḥ saṅgavivarjitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["tulyanindāstutirmaunī", "santuṣṭo yena kenacit |", "aniketaḥ sthiramatiḥ", "bhaktimānme priyo naraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["ye tu dharmyāmṛtamidaṃ", "yathoktaṃ paryupāsate |", "śradd adhānā matparamāḥ", "bhaktāste'tīva me priyāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "13": [{"n": 1, "tlines": ["prakṛtiṃ puruṣaṃ caiva", "kṣetraṃ kṣetrajñameva ca |", "etat veditumicchāmi", "jñānaṃ jñeyaṃ ca keśava ||0*||", "śrī bhagavānuvāca -", "idaṃ śarīraṃ kaunteya", "kṣetramityabhidhīyate |", "etadyo vetti taṃ prāhuḥ", "kṣetrajña iti tadvidaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["kṣetrajñaṃ cāpi māṃ viddhi", "sarvakṣetreṣu bhārata |", "kṣetrakṣetrajñayorjñānaṃ", "yattajjñānaṃ mataṃ mama"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["tatkṣetraṃ yacca yādṛkca", "yadvikāri yataśca yat |", "sa ca yo yatprabhāvaśca", "tatsamāsena me śṛṇu"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["ṛṣibhirbahudhā gītaṃ", "chandobhirvividhaiḥ pṛthak |", "brahmasūtrapadaiścaiva", "hetumadbhirviniścitaiḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["mahābhūtānyahaṅkāraḥ", "buddhiravyaktameva ca |", "indriyāṇi daśaikaṃ ca", "pañca cendriyagocarāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["icchā dveṣaḥ sukhaṃ duḥkhaṃ", "saṅghātaścetanā dhṛtiḥ |", "etatkṣetraṃ samāsena", "savikāramudāhṛtam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["amānitvamadambhitvam", "ahiṃsā kṣāntirārjavam |", "ācāryopāsanaṃ śaucaṃ", "sthairyamātmavinigrahaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["indriyārtheṣu vairāgyam", "anahaṅkāra eva ca |", "janmamṛtyujarāvyādhi-", "duḥkhadoṣānudarśanam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["asaktiranabhiṣvaṅgaḥ", "putradāragṛhādiṣu |", "nityaṃ ca samacittatvam", "iṣṭāniṣṭopapattiṣu"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["mayi cānanyayogena", "bhaktiravyabhicāriṇī |", "viviktadeśasevitvam", "aratirjanasaṃsadi"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["adhyātmajñānanityatvaṃ", "tattvajñānārthadarśanam |", "etajjñānamiti proktam", "ajñānaṃ yadato'nyathā"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["jñeyaṃ yattatpravakṣyāmi", "yajjñātvā'mṛtamaśnute |", "anādimatparaṃ brahma", "na sattannāsaducyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["sarvataḥ pāṇipādaṃ tat", "sarvato'kṣiśiromukham |", "sarvataḥ śrutimalloke", "sarvamāvṛtya tiṣṭhati"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["sarvendriyaguṇābhāsaṃ", "sarvendriyavivarjitam |", "asaktaṃ sarvabhṛccaiva", "nirguṇaṃ guṇabhoktṛca"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["bahirantaśca bhūtānām", "acaraṃ carameva ca |", "sūkṣmatvāttadavijñeyaṃ", "dūrasthaṃ cāntike ca tat"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["avibhaktaṃ ca bhūteṣu", "vibhaktamiva ca sthitam |", "bhūtabhartṛ ca tajjñeyaṃ", "grasiṣṇu prabhaviṣṇu ca"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["jyotiṣāmapi tajjyotiḥ", "tamasaḥ paramucyate |", "jñānaṃ jñeyaṃ jñānagamyaṃ", "hṛdi sarvasya viṣṭhitam"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["iti kṣetraṃ tathā jñānaṃ", "jñeyaṃ coktaṃ samāsataḥ |", "madbhakta etadvijñāya", "madbhāvāyopapadyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["prakṛtiṃ puruṣaṃ caiva", "viddhyanādī ubhāvapi |", "vikārāmśca guṇāmścaiva", "viddhi prakṛtisambhavān"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["kāryakaraṇakartṛtve", "hetuḥ prakṛtirucyate |", "puruṣaḥ sukhaduḥkhānāṃ", "bhoktṛtve heturucyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["puruṣaḥ prakṛtistho hi", "bhuṅkte prakṛtijānguṇān |", "kāraṇaṃ guṇasaṅgo'sya", "sadasadyonijanmasu"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["upadraṣṭā'numantā ca", "bhartā bhoktā maheśvaraḥ |", "paramātmeti cāpyuktaḥ", "dehe'sminpuruṣaḥ paraḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["ya evaṃ vetti puruṣaṃ", "prakṛtiṃ ca guṇaiḥ saha |", "sarvathā vartamāno'pi", "na sa bhūyo'bhijāyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["dhyānenātmani paśyanti", "kecidātmānamātmanā |", "anye sāṅkhyena yogena", "karmayogena cāpare"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["anye tvevamajānantaḥ", "śrutvā'nyebhya upāsate |", "te'pi cātitarantyeva", "mṛtyuṃ śrutiparāyaṇāḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["yāvatsañjāyate kiñcit", "sattvaṃ sthāvarajaṅgamam |", "kṣetrakṣetrajñasaṃyogāt", "tadviddhi bharatarṣabha"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["samaṃ sarveṣu bhūteṣu", "tiṣṭhantaṃ parameśvaram |", "vinaśyatsvavinaśyantaṃ", "yaḥ paśyati sa paśyati"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["samaṃ paśyanhi sarvatra", "samavasthitamīśvaram |", "na hinastyātmanā'tmānaṃ", "tato yāti parāṃ gatim"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["prakṛtyaiva ca karmāṇi", "kriyamāṇāni sarvaśaḥ |", "yaḥ paśyati tathā'tmānam", "akartāraṃ sa paśyati"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["yadā bhūtapṛthagbhāvam", "ekasthamanupaśyati |", "tata eva ca vistāraṃ", "brahma sampadyate tadā"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["anāditvānnirguṇatvāt", "paramātmāyamavyayaḥ |", "śarīrastho'pi kaunteya", "na karoti na lipyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["yathā sarvagataṃ saukṣmyāt", "ākāśaṃ nopalipyate |", "sarvatrāvasthito dehe", "tathā'tmā nopalipyate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["yathā prakāśayatyekaḥ", "kṛtsnaṃ lokamimaṃ raviḥ |", "kṣetraṃ kṣetrī tathā kṛtsnaṃ", "prakāśayati bhārata"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["kṣetrakṣetrajñayorevam", "antaraṃ jñānacakṣuṣā |", "bhūtaprakṛtimokṣaṃ ca", "ye viduryānti te param"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "14": [{"n": 1, "tlines": ["paraṃ bhūyaḥ pravakṣyāmi", "jñānānāṃ jñānamuttamam |", "yajjñātvā munayaḥ sarve", "parāṃ siddhimito gatāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["idaṃ jñānamupāśritya", "mama sādharmyamāgatāḥ |", "sarge'pi nopajāyante", "pralaye na vyathanti ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["mama yonirmahadbrahma", "tasmingarbhaṃ dadhāmyaham |", "sambhavaḥ sarvabhūtānāṃ", "tato bhavati bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["sarvayoniṣu kaunteya", "mūrtayaḥ sambhavanti yāḥ |", "tāsāṃ brahma mahadyoniḥ", "ahaṃ bījapradaḥ pitā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["sattvaṃ rajastama iti", "guṇāḥ prakṛtisambhavāḥ |", "nibadhnanti mahābāho", "dehe dehinamavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["tatra sattvaṃ nirmalatvāt", "prakāśakamanāmayam |", "sukhasaṅgena badhnāti", "jñānasaṅgena cānagha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["rajo rāgātmakaṃ viddhi", "tṛṣṇāsaṅgasamudbhavam |", "tannibadhnāti kaunteya", "karmasaṅgena dehinam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["tamastvajñānajaṃ viddhi", "mohanaṃ sarvadehinām |", "pramādālasyanidrābhiḥ", "tannibadhnāti bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["sattvaṃ sukhe sañjayati", "rajaḥ karmaṇi bhārata |", "jñānamāvṛtya tu tamaḥ", "pramāde sañjayatyuta"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["rajastamaścābhibhūya", "sattvaṃ bhavati bhārata |", "rajaḥ sattvaṃ tamaścaiva", "tamaḥ sattvaṃ rajastathā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["sarvadvāreṣu dehe'smin", "prakāśa upajāyate |", "jñānaṃ yadā tadā vidyāt", "vivṛddhaṃ sattvamityuta"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["lobhaḥ pravṛttirārambhaḥ", "karmaṇāmaśamaḥ spṛhā |", "rajasyetāni jāyante", "vivṛddhe bharatarṣabha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["aprakāśo'pravṛttiśca", "pramādo moha eva ca |", "tamasyetāni jāyante", "vivṛddhe kurunandana"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["yadā sattve pravṛddhe tu", "pralayaṃ yāti dehabhṛt |", "tadottamavidāṃ lokān", "amalānpratipadyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["rajasi pralayaṃ gatvā", "karmasaṅgiṣu jāyate |", "tathā pralīnastamasi", "mūḍhayoniṣu jāyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["karmaṇaḥ sukṛtasyāhuḥ", "sāttvikaṃ nirmalaṃ phalam |", "rajasastu phalaṃ duḥkham", "ajñānaṃ tamasaḥ phalam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["sattvātsañjāyate jñānaṃ", "rajaso lobha eva ca |", "pramādamohau tamasaḥ", "bhavato'jñānameva ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["ūrdhvaṃ gacchanti sattvasthāḥ", "madhye tiṣṭhanti rājasāḥ |", "jaghanyaguṇavṛttisthāḥ", "adho gacchanti tāmasāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["nānyaṃ guṇebhyaḥ kartāraṃ", "yadā draṣṭā'nupaśyati |", "guṇebhyaśca paraṃ vetti", "madbhāvaṃ so'dhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["guṇānetānatītya trīn", "dehī dehasamudbhavān |", "janmamṛtyujarāduḥkhaiḥ", "vimukto'mṛtamaśnute"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["kairliṅgaistrīnguṇānetān", "atīto bhavati prabho |", "kimācāraḥ kathaṃ caitān", "trīnguṇānativartate"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["prakāśaṃ ca pravṛttiṃ ca", "mohameva ca pāṇḍava |", "na dveṣṭi sampravṛttāni", "na nivṛttāni kāṅkṣati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["udāsīnavadāsīnaḥ", "guṇairyo na vicālyate |", "guṇā vartanta ityeva", "yo'vatiṣṭhati neṅgate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["samaduḥkhasukhaḥ svasthaḥ", "samaloṣṭāśmakāñcanaḥ |", "tulyapriyāpriyo dhīraḥ", "tulyanindātmasaṃstutiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["mānāpamānayostulyaḥ", "tulyo mitrāripakṣayoḥ |", "sarvārambhaparityāgī", "guṇātītaḥ sa ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["māṃ ca yo'vyabhicāreṇa", "bhaktiyogena sevate |", "sa guṇānsamatītyaitān", "brahmabhūyāya kalpate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["brahmaṇo hi pratiṣṭhā'ham", "amṛtasyāvyayasya ca |", "śāśvatasya ca dharmasya", "sukhasyaikāntikasya ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "15": [{"n": 1, "tlines": ["ūrdhvamūlamadhaḥ śākham", "aśvatthaṃ prāhuravyayam |", "chandāṃsi yasya parṇāni", "yastaṃ veda sa vedavit"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["adhaścordhvaṃ prasṛtāstasya śākhāḥ", "guṇapravṛddhā viṣayapravālāḥ |", "adhaśca mūlānyanusantatāni", "karmānubandhīni manuṣyaloke"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["na rūpamasyeha tathopalabhyate", "nānto na cādirna ca sampratiṣṭhā |", "aśvatthamenaṃ suvirūḍhamūlam", "asaṅgaśastreṇa dṛḍhena chittvā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["tataḥ padaṃ tatparimārgitavyaṃ", "yasmingatā na nivartanti bhūyaḥ |", "tameva cādyaṃ puruṣaṃ prapadye", "yataḥ pravṛttiḥ prasṛtā purāṇī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["nirmānamohā jitasaṅgadoṣāḥ", "adhyātmanityā vinivṛttakāmāḥ |", "dvandvairvimuktāḥ sukhaduḥkhasañjñaiḥ", "gacchantyamūḍhāḥ padamavyayaṃ tat"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["na tadbhāsayate sūryaḥ", "na śaśāṅko napāvakaḥ", "yadgatvā na nivartante", "taddhāma paramaṃ mama"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["mamaivāṃśo jīvaloke", "jīvabhūtaḥ sanātanaḥ |", "manaḥ ṣaṣṭhānīndriyāṇi", "prakṛtisthāni karṣati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["śarīraṃ yadavāpnoti", "yaccāpyutkrāmatīśvaraḥ |", "gṛhītvaitāni saṃyāti", "vāyurgandhānivāśayāt"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["śrotraṃ cakṣuḥ sparśanaṃ ca", "rasanaṃ ghrāṇameva ca |", "adhiṣṭhāya manaścāyaṃ", "viṣayānupasevate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["utkrāmantaṃ sthitaṃ vā'pi", "bhuñjānaṃ vā guṇānvitam |", "vimūḍhā nānupaśyanti", "paśyanti jñānacakṣuṣaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["yatanto yoginaścainaṃ", "paśyantyātmanyavasthitam |", "yatanto'pyakṛtātmānaḥ", "nainaṃ paśyantyacetasaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["yadādityagataṃ tejaḥ", "jagadbhāsayate'khilam |", "yaccandramasi yaccāgnau", "tattejo viddhi māmakam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["gāmāviśya ca bhūtāni", "dhārayāmyahamojasā |", "puṣṇāmi cauṣadhīḥ sarvāḥ", "somo bhūtvā rasātmakaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["ahaṃ vaiśvānaro bhūtvā", "prāṇināṃ dehamāśritaḥ |", "prāṇāpānasamāyuktaḥ", "pacāmyannaṃ caturvidham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["sarvasya cāhaṃ hṛdi sanniviṣṭaḥ", "mattaḥ smṛtirjñānamapohanaṃ ca |", "vedaiśca sarvairahameva vedyaḥ", "vedāntakṛdvedavideva cāham"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["dvāvimau puruṣau loke", "kṣaraścākṣara eva ca |", "kṣaraḥ sarvāṇi bhūtāni", "kūṭastho'kṣara ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["uttamaḥ puruṣastvanyaḥ", "paramātmetyudāhṛtaḥ |", "yo lokatrayamāviśya", "bibhartyavyaya īśvaraḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["yasmātkṣaramatīto'ham", "akṣarādapi cottamaḥ |", "ato'smi loke vede ca", "prathitaḥ puruṣottamaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["yo māmevamasammūḍhaḥ", "jānāti puruṣottamam |", "sa sarvavid bhajati māṃ", "sarvabhāvena bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["iti guhyatamaṃ śāstram", "idamuktaṃ mayā'nagha |", "etadbuddhvā buddhimānsyāt", "kṛtakṛtyaśca bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "16": [{"n": 1, "tlines": ["abhayaṃ sattvasaṃśuddhiḥ", "jñānayogavyavasthitiḥ |", "dānaṃ damaśca yajñaśca", "svādhyāyastapa ārjavam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["ahiṃsā satyamakrodhaḥ", "tyāgaḥ śāntirapaiśunam |", "dayā bhūteṣvaloluptvaṃ", "mārdavaṃ hrīracāpalam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["tejaḥ kṣamā dhṛtiḥ śaucam", "adroho nātimānitā |", "bhavanti sampadaṃ daivīm", "abhijātasya bhārata"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["dambho darpo'bhimānaśca", "krodhaḥ pāruṣyameva ca |", "ajñānaṃ cābhijātasya", "pārtha sampadamāsurīm"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["daivī sampadvimokṣāya", "nibandhāyāsurī matā |", "mā śucaḥ sampadaṃ daivīm", "abhijāto'si pāṇḍava"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["dvau bhūtasargau loke'smin", "daiva āsura eva ca |", "daivo vistaraśaḥ proktaḥ", "āsuraṃ pārtha me śṛṇu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["pravṛttiṃ ca nivṛttiṃ ca", "janā na vidurāsurāḥ |", "na śaucaṃ nāpi cācāraḥ", "na satyaṃ teṣu vidyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["asatyamapratiṣṭhaṃ te", "jagadāhuranīśvaram |", "aparasparasambhūtaṃ", "kimanyatkāmahaitukam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["etāṃ dṛṣṭimavaṣṭabhya", "naṣṭātmāno'lpabuddhayaḥ |", "prabhavantyugrakarmāṇaḥ", "kṣayāya jagato'hitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["kāmamāśritya duṣpūraṃ", "dambhamānamadānvitāḥ |", "mohādgṛhītvā'sadgrāhān", "pravartante'śucivratāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["cintāmaparimeyāṃ ca", "pralayāntāmupāśritāḥ |", "kāmopabhogaparamāḥ", "etāvaditi niścitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["āśāpāśaśatairbaddhāḥ", "kāmakrodhaparāyaṇāḥ |", "īhante kāmabhogārtham", "anyāyenārthasañcayān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["idamadya mayā labdham", "imaṃ prāpsye manoratham |", "idamastīdamapi me", "bhaviṣyati punardhanam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["asau mayā hataḥ śatruḥ", "haniṣye cāparānapi |", "īśvaro'hamahaṃ bhogī", "siddho'haṃ balavānsukhī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["āḍhyo'bhijanavānasmi", "ko'nyo'sti sadṛśo mayā |", "yakṣye dāsyāmi modiṣye", "ityajñānavimohitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["anekacittavibhrāntāḥ", "mohajālasamāvṛtāḥ |", "prasaktāḥ kāmabhogeṣu", "patanti narake'śucau"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["ātmasambhāvitāḥ stabdhāḥ", "dhanamānamadānvitāḥ |", "yajante nāmayajñaiste", "dambhenāvidhipūrvakam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["ahaṅkāraṃ balaṃ darpaṃ", "kāmaṃ krodhaṃ ca saṃśritāḥ |", "māmātmaparadeheṣu", "pradviṣanto'bhyasūyakāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["tānahaṃ dviṣataḥ krūrān", "saṃsāreṣu narādhamān |", "kṣipāmyajasramaśubhān", "āsurīṣveva yoniṣu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["āsurīṃ yonimāpannāḥ", "mūḍhā janmani janmani |", "māmaprāpyaiva kaunteya", "tato yāntyadhamāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["trividhaṃ narakasyedaṃ", "dvāraṃ nāśanamātmanaḥ |", "kāmaḥ krodhastathā lobhaḥ", "tasmādetattrayaṃ tyajet"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["etairvimuktaḥ kaunteya", "tamodvāraistribhirnaraḥ |", "ācaratyātmanaḥ śreyaḥ", "tato yāti parāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["yaḥ śāstravidhimutsṛjya", "vartate kāmakārataḥ |", "na sa siddhimavāpnoti", "na sukhaṃ na parāṃ gatim"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["tasmācchāstraṃ pramāṇaṃ te", "kāryākāryavyavasthitau |", "jñātvā śāstravidhānoktaṃ", "karma kartumihārhasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "17": [{"n": 1, "tlines": ["ye śāstravidhimutsṛjya", "yajante śraddhayānvitāḥ |", "teṣāṃ niṣṭhā tu kā kṛṣṇa", "sattvamāho rajastamaḥ"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["trividhā bhavati śraddhā", "dehināṃ sā svabhāvajā |", "sāttvikī rājasī caiva", "tāmasī ceti tāṃ śṛṇu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["sattvānurūpā sarvasya", "śraddhā bhavati bhārata |", "śraddhāmayo'yaṃ puruṣaḥ", "yo yacchraddhaḥ sa eva saḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["yajante sāttvikā devān", "yakṣarakṣāṃsi rājasāḥ |", "pretān bhūtagaṇāṃścānye", "yajante tāmasā janāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["aśāstravihitaṃ ghoraṃ", "tapyante ye tapo janāḥ |", "dambhāhaṅkārasaṃyuktāḥ", "kāmarāgabalānvitāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["karśayantaḥ śarīrasthaṃ", "bhūtagrāmamacetasaḥ |", "māṃ caivāntaḥ śarīrasthaṃ", "tān viddhyāsuraniścayān"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["āhārastvapi sarvasya", "trividho bhavati priyaḥ |", "yajñastapastathā dānaṃ", "teṣāṃ bhedamimaṃ śṛṇu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["āyussattvabalārogya-", "sukhaprītivivardhanāḥ |", "rasyāḥ snigdhāḥ sthirā hṛdyāḥ", "āhārāḥ sāttvikapriyāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["kaṭvamlalavaṇātyuṣṇa-", "tīkṣṇarūkṣavidāhinaḥ |", "āhārā rājasasyeṣṭāḥ", "duḥkhaśokāmayapradāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["yātayāmaṃ gatarasaṃ", "pūti paryuṣitaṃ ca yat |", "ucchiṣṭamapi cāmedhyaṃ", "bhojanaṃ tāmasapriyam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["aphalākāṅkṣibhiryajñaḥ", "vidhidṛṣṭo ya ijyate |", "yaṣṭavyameveti manaḥ", "samādhāya sa sāttvikaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["abhisandhāya tu phalaṃ", "dambhārthamapi caiva yat |", "ijyate bharataśreṣṭha", "taṃ yajñaṃ viddhi rājasam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["vidhihīnamasṛṣṭānnaṃ", "mantrahīnamadakṣiṇam |", "śraddhāvirahitaṃ yajñaṃ", "tāmasaṃ paricakṣate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["devadvijaguruprājña-", "pūjanaṃ śaucamārjavam |", "brahmacaryamahiṃsā ca", "śārīraṃ tapa ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["anudvegakaraṃ vākyaṃ", "satyaṃ priyahitaṃ ca yat |", "svādhyāyābhyasanaṃ caiva", "vāṅmayaṃ tapa ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["manaḥprasādaḥ saumyatvaṃ", "maunamātmavinigrahaḥ |", "bhāvasaṃśuddhirityetat", "tapo mānasamucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["śraddhayā parayā taptaṃ", "tapastat trividhaṃ naraiḥ |", "aphalākāṅkṣibhiryuktaiḥ", "sāttvikaṃ paricakṣate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["satkāramānapūjārthaṃ", "tapo dambhena caiva yat |", "kriyate tadiha proktaṃ", "rājasaṃ calamadhruvam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["mūḍhagrāheṇātmano yat", "pīḍayā kriyate tapaḥ |", "parasyotsādanārthaṃ vā", "tattāmasamudāhṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["dātavyamiti yaddānaṃ", "dīyate'nupakāriṇe |", "deśe kāle ca pātre ca", "taddānaṃ sāttvikaṃ smṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["yattu pratyupakārārthaṃ", "phalamuddiśya vā punaḥ |", "dīyate ca parikliṣṭaṃ", "taddānaṃ rājasaṃ smṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["adeśakāle yaddānam", "apātrebhyaśca dīyate |", "asatkṛtamavajñātaṃ", "tattāmasamudāhṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["om tatsaditi nirdeśaḥ", "brahmaṇastrividhaḥ smṛtaḥ |", "brāhmaṇāstena vedāśca", "yajñāśca vihitāḥ purā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["tasmād om ityudāhṛtya", "yajñadānatapaḥkriyāḥ |", "pravartante vidhānoktāḥ", "satataṃ brahmavādinām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["tadityanabhisandhāya", "phalaṃ yajñatapaḥkriyāḥ |", "dānakriyāśca vividhāḥ", "kriyante mokṣakāṅkṣibhiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["sadbhāve sādhubhāve ca", "sadityetat prayujyate |", "praśaste karmaṇi tathā", "sacchabdaḥ pārtha yujyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["yajñe tapasi dāne ca", "sthitiḥ saditi cocyate |", "karma caiva tadarthīyaṃ", "sadityevābhidhīyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["aśraddhayā hutaṃ dattaṃ", "tapastaptaṃ kṛtaṃ ca yat |", "asadityucyate pārtha", "na ca tatpretya no iha"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}], "18": [{"n": 1, "tlines": ["sannyāsasya mahābāho", "tattvamicchāmi veditum |", "tyāgasya ca hṛṣīkeśa", "pṛthakkeśiniṣūdana"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 2, "tlines": ["kāmyānāṃ karmaṇāṃ nyāsaṃ", "sannyāsaṃ kavayo viduḥ |", "sarvakarmaphalatyāgaṃ", "prāhustyāgaṃ vicakṣaṇāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 3, "tlines": ["tyājyaṃ doṣavadityeke", "karma prāhurmanīṣiṇaḥ |", "yajñadānatapaḥ karma", "na tyājyamiti cāpare"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 4, "tlines": ["niścayaṃ śṛṇu me tatra", "tyāge bharatasattama |", "tyāgo hi puruṣavyāghra", "trividhaḥ samprakīrtitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 5, "tlines": ["yajñadānatapaḥkarma", "na tyājyaṃ kāryameva tat |", "yajño dānaṃ tapaścaiva", "pāvanāni manīṣiṇām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 6, "tlines": ["etānyapi tu karmāṇi", "saṅgaṃ tyaktvā phalāni ca |", "kartavyānīti me pārtha", "niścitaṃ matamuttamam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 7, "tlines": ["niyatasya tu sannyāsaḥ", "karmaṇo nopapadyate |", "mohāttasya parityāgaḥ", "tāmasaḥ parikīrtitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 8, "tlines": ["duḥkhamityeva yatkarma", "kāyakleśabhayāttyajet |", "sa kṛtvā rājasaṃ tyāgaṃ", "naiva tyāgaphalaṃ labhet"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 9, "tlines": ["kāryamityeva yatkarma", "niyataṃ kriyate'rjuna |", "saṅgaṃ tyaktvā phalaṃ caiva", "sa tyāgaḥ sāttviko mataḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 10, "tlines": ["na dveṣṭyakuśalaṃ karma", "kuśale nānuṣajjate |", "tyāgī sattvasamāviṣṭaḥ", "medhāvī chinnasaṃśayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 11, "tlines": ["na hi dehabhṛtā śakyaṃ", "tyaktuṃ karmāṇyaśeṣataḥ |", "yastu karmaphalatyāgī", "sa tyāgītyabhidhīyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 12, "tlines": ["aniṣṭamiṣṭaṃ miśraṃ ca", "trividhaṃ karmaṇaḥ phalam |", "bhavatyatyāgināṃ pretya", "na tu sannyāsināṃ kvacit"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 13, "tlines": ["pañcaitāni mahābāho", "kāraṇāni nibodha me |", "sāṅkhye kṛtānte proktāni", "siddhaye sarvakarmaṇām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 14, "tlines": ["adhiṣṭhānaṃ tathā kartā", "karaṇaṃ ca pṛthagvidham |", "vividhāśca pṛthakceṣṭāḥ", "daivaṃ caivātra pañcamam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 15, "tlines": ["śarīravāṅmanobhiryat", "karma prārabhate naraḥ |", "nyāyyaṃ vā viparītaṃ vā", "pañcaite tasya hetavaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 16, "tlines": ["tatraivaṃ sati kartāram", "ātmānaṃ kevalaṃ tu yaḥ |", "paśyatyakṛtabuddhitvāt", "na sa paśyati durmatiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 17, "tlines": ["yasya nāhaṅkṛto bhāvaḥ", "buddhiryasya na lipyate |", "hatvā'pi sa imāllokān", "na hanti na nibadhyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 18, "tlines": ["jñānaṃ jñeyaṃ parijñātā", "trividhā karmacodanā |", "karaṇaṃ karma karteti", "trividhaḥ karmasaṅgrahaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 19, "tlines": ["jñānaṃ karma ca kartā ca", "tridhaiva guṇabhedataḥ |", "procyate guṇasaṅkhyāne", "yathāvacchṛṇu tānyapi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 20, "tlines": ["sarvabhūteṣu yenaikaṃ", "bhāvamavyayamīkṣate |", "avibhaktaṃ vibhakteṣu", "tajjñānaṃ viddhi sāttvikam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 21, "tlines": ["pṛthaktvena tu yajjñānaṃ", "nānābhāvān pṛthagvidhān |", "vetti sarveṣu bhūteṣu", "tajjñānaṃ viddhi rājasam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 22, "tlines": ["yattu kṛtsnavadekasmin", "kārye saktamahaitukam |", "atattvārthavadalpaṃ ca", "tattāmasamudāhṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 23, "tlines": ["niyataṃ saṅgarahitam", "arāgadveṣataḥ kṛtam |", "aphalaprepsunā karma", "yattatsāttvikamucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 24, "tlines": ["yattu kāmepsunā karma", "sāhaṅkāreṇa vā punaḥ |", "kriyate bahulāyāsaṃ", "tadrājasamudāhṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 25, "tlines": ["anubandhaṃ kṣayaṃ hiṃsām", "anapekṣya ca pauruṣam |", "mohādārabhyate karma", "yattattāmasamucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 26, "tlines": ["muktasaṅgo'nahaṃvādī", "dhṛtyutsāhasamanvitaḥ |", "siddhyasiddhyornirvikāraḥ", "kartā sāttvika ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 27, "tlines": ["rāgī karmaphalaprepsuḥ", "lubdho hiṃsātmako'śuciḥ |", "harṣaśokānvitaḥ kartā", "rājasaḥ parikīrtitaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 28, "tlines": ["ayuktaḥ prākṛtaḥ stabdhaḥ", "śaṭho naiṣkṛtiko'lasaḥ |", "viṣādī dīrghasūtrī ca", "kartā tāmasa ucyate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 29, "tlines": ["buddherbhedaṃ dhṛteścaiva", "guṇatastrividhaṃ śṛṇu |", "procyamānamaśeṣeṇa", "pṛthaktvena dhanañjaya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 30, "tlines": ["pravṛttiṃ ca nivṛttiṃ ca", "kāryākārye bhayābhaye |", "bandhaṃ mokṣaṃ ca yā vetti", "buddhiḥ sā pārtha sāttvikī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 31, "tlines": ["yayā dharmamadharmaṃ ca", "kāryaṃ cākāryameva ca |", "ayathāvatprajānāti", "buddhiḥ sā pārtha rājasī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 32, "tlines": ["adharmaṃ dharmamiti yā", "manyate tamasā'vṛtā |", "sarvārthānviparītāṃśca", "buddhiḥ sā pārtha tāmasī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 33, "tlines": ["dhṛtyā yayā dhārayate", "manaḥ prāṇendriyakriyāḥ |", "yogenāvyabhicāriṇyā", "dhṛtiḥ sā pārtha sāttvikī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 34, "tlines": ["yayā tu dharmakāmārthān", "dhṛtyā dhārayate'rjuna |", "prasaṅgena phalākāṅkṣī", "dhṛtiḥ sā pārtha rājasī"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 35, "tlines": ["yayā svapnaṃ bhayaṃ śokaṃ", "viṣādaṃ madameva ca |", "na vimuñcati durmedhāḥ", "dhṛtiḥ sā tāmasī matā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 36, "tlines": ["sukhaṃ tvidānīṃ trividhaṃ", "śṛṇu me bharatarṣabha |", "abhyāsādramate yatra", "duḥkhāntaṃ ca nigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 37, "tlines": ["yattadagre viṣamiva", "pariṇāme'mṛtopamam |", "tatsukhaṃ sāttvikaṃ proktam", "ātmabuddhiprasādajam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 38, "tlines": ["viṣayendriyasaṃyogāt", "yattadagre'mṛtopamam |", "pariṇāme viṣamiva", "tatsukhaṃ rājasaṃ smṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 39, "tlines": ["yadagre cānubandhe ca", "sukhaṃ mohanamātmanaḥ |", "nidrālasyapramādotthaṃ", "tattāmasamudāhṛtam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 40, "tlines": ["na tadasti pṛthivyāṃ vā", "divi deveṣu vā punaḥ |", "sattvaṃ prakṛtijairmuktaṃ", "yadebhiḥ syāttribhirguṇaiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 41, "tlines": ["brāhmaṇakṣatriyaviśāṃ", "śūdrāṇāṃ ca parantapa |", "karmāṇi pravibhaktāni", "svabhāvaprabhavairguṇaiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 42, "tlines": ["śamo damastapaḥ śaucaṃ", "kṣāntirārjavameva ca |", "jñānaṃ vijñānamāstikyaṃ", "brahmakarma svabhāvajam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 43, "tlines": ["śauryaṃ tejo dhṛtirdākṣyaṃ", "yuddhe cāpyapalāyanam |", "dānamīśvarabhāvaśca", "kṣātraṃ karma svabhāvajam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 44, "tlines": ["kṛṣigaurakṣyavāṇijyaṃ", "vaiśyakarma svabhāvajam |", "paricaryātmakaṃ karma", "śūdrasyāpi svabhāvajam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 45, "tlines": ["sve sve karmaṇyabhirataḥ", "saṃsiddhiṃ labhate naraḥ |", "svakarmanirataḥ siddhiṃ", "yathā vindati tacchṛṇu"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 46, "tlines": ["yataḥ pravṛttirbhūtānāṃ", "yena sarvamidaṃ tatam |", "svakarmaṇā tamabhyarcya", "siddhiṃ vindati mānavaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 47, "tlines": ["śreyānsvadharmo viguṇaḥ", "paradharmātsvanuṣṭhitāt |", "svabhāvaniyataṃ karma", "kurvannāpnoti kilbiṣam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 48, "tlines": ["sahajaṃ karma kaunteya", "sadoṣamapi na tyajet |", "sarvārambhā hi doṣeṇa", "dhūmenāgnirivāvṛtāḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 49, "tlines": ["asaktabuddhiḥ sarvatra", "jitātmā vigataspṛhaḥ |", "naiṣkarmyasiddhiṃ paramāṃ", "sannyāsenādhigacchati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 50, "tlines": ["siddhiṃ prāpto yathā brahma", "tathā'pnoti nibodha me |", "samāsenaiva kaunteya", "niṣṭhā jñānasya yā parā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 51, "tlines": ["buddhyā viśuddhayā yuktaḥ", "dhṛtyā'tmānaṃ niyamya ca |", "śabdādīnviṣayāṃstyaktvā", "rāgadveṣau vyudasya ca"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 52, "tlines": ["viviktasevī laghvāśī", "yatavākkāyamānasaḥ |", "dhyānayogaparo nityaṃ", "vairāgyaṃ samupāśritaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 53, "tlines": ["ahaṅkāraṃ balaṃ darpaṃ", "kāmaṃ krodhaṃ parigraham |", "vimucya nirmamaḥ śāntaḥ", "brahmabhūyāya kalpate"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 54, "tlines": ["brahmabhūtaḥ prasannātmā", "na śocati na kāṅkṣati |", "samaḥ sarveṣu bhūteṣu", "madbhaktiṃ labhate parām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 55, "tlines": ["bhaktyā māmabhijānāti", "yāvānyaścāsmi tattvataḥ |", "tato māṃ tattvato jñātvā", "viśate tadanantaram"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 56, "tlines": ["sarvakarmāṇyapi sadā", "kurvāṇo madvyapāśrayaḥ |", "matprasādādavāpnoti", "śāśvataṃ padamavyayam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 57, "tlines": ["cetasā sarvakarmāṇi", "mayi sannyasya matparaḥ |", "buddhiyogamupāśritya", "maccittaḥ satataṃ bhava"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 58, "tlines": ["maccittaḥ sarvadurgāṇi", "matprasādāttariṣyasi |", "atha cettvamahaṅkārāt", "na śroṣyasi vinaṅkṣyasi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 59, "tlines": ["yadahaṅkāramāśritya", "na yotsya iti manyase |", "mithyaiṣa vyavasāyaste", "prakṛtistvāṃ niyokṣyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 60, "tlines": ["svabhāvajena kaunteya", "nibaddhaḥ svena karmaṇā |", "kartuṃ necchasi yanmohāt", "kariṣyasyavaśo'pi tat"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 61, "tlines": ["īśvaraḥ sarvabhūtānāṃ", "hṛddeśe'rjuna tiṣṭhati |", "bhrāmayansarvabhūtāni", "yantrārūḍhāni māyayā"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 62, "tlines": ["tameva śaraṇaṃ gaccha", "sarvabhāvena bhārata |", "tatprasādātparāṃ śāntiṃ", "sthānaṃ prāpsyasi śāśvatam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 63, "tlines": ["iti te jñānamākhyātaṃ", "guhyādguhyataraṃ mayā |", "vimṛśyaitadaśeṣeṇa", "yathecchasi tathā kuru"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 64, "tlines": ["sarvaguhyatamaṃ bhūyaḥ", "śṛṇu me paramaṃ vacaḥ |", "iṣṭo'si  me dṛḍhamiti", "tato vakṣyāmi te hitam"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 65, "tlines": ["manmanā bhava madbhaktaḥ", "madyājī māṃ namaskuru |", "māmevaiṣyasi satyaṃ te", "pratijāne priyo'si me"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 66, "tlines": ["sarvadharmānparityajya", "māmekaṃ śaraṇaṃ vraja |", "ahaṃ tvā sarvapāpebhyaḥ", "mokṣayiṣyāmi mā śucaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 67, "tlines": ["idaṃ te nātapaskāya", "nābhaktāya kadācana |", "na cāśuśrūṣave vācyaṃ", "na ca māṃ yo'bhyasūyati"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 68, "tlines": ["ya imaṃ paramaṃ guhyaṃ", "madbhakteṣvabhidhāsyati |", "bhaktiṃ mayi parāṃ kṛtvā", "māmevaiṣyatyasaṃśayaḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 69, "tlines": ["na ca tasmānmanuṣyeṣu", "kaścinme priyakṛttamaḥ |", "bhavitā na ca me tasmāt", "anyaḥ priyataro bhuvi"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 70, "tlines": ["adhyeṣyate ca ya imaṃ", "dharmyaṃ saṃvādamāvayoḥ |", "jñānayajñena tenāham", "iṣṭaḥ syāmiti me matiḥ"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 71, "tlines": ["śraddhāvānanasūyaśca", "śṛṇuyādapi yo naraḥ |", "so'pi muktaḥ śubhāllokān", "prāpnuyātpuṇyakarmaṇām"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 72, "tlines": ["kaccidetacchrutaṃ pārtha", "tvayaikāgreṇa cetasā |", "kaccidajñānasammohaḥ", "pranaṣṭaste dhanañjaya"], "spk": "bhagavān", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 73, "tlines": ["naṣṭo mohaḥ smṛtirlabdhā", "tvatprasādānmayā'cyuta |", "sthito'smi gatasandehaḥ", "kariṣye vacanaṃ tava"], "spk": "arjuna", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 74, "tlines": ["ityahaṃ vāsudevasya", "pārthasya ca mahātmanaḥ |", "saṃvādamimamaśrauṣam", "adbhutaṃ romaharṣaṇam"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 75, "tlines": ["vyāsaprasādācchrutavān", "imaṃ guhyatamaṃ param |", "yogaṃ yogeśvarātkṛṣṇāt", "sākṣātkathayataḥ svayam"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 76, "tlines": ["rājan saṃsmṛtya saṃsmṛtya", "saṃvādamimamadbhutam |", "keśavārjunayoḥ puṇyaṃ", "hṛṣyāmi ca muhurmuhuḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 77, "tlines": ["tacca saṃsmṛtya saṃsmṛtya", "rūpamatyadbhutaṃ hareḥ |", "vismayo me mahānrājan", "hṛṣyāmi ca punaḥ punaḥ"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}, {"n": 78, "tlines": ["yatra yogeśvaraḥ kṛṣṇaḥ", "yatra pārtho dhanurdharaḥ |", "tatra śrīrvijayo bhūtiḥ", "dhruvā nītirmatirmama"], "spk": "sañjaya", "dlines": [], "meaning_en": "", "meaning_hi": ""}]};
+const RUDRAM_DATA = {"1": ["ō-nnamō bhagavatē̍ rudrā̠ya ॥", "nama̍stē rudra ma̠nyava̍ u̠tōta̠ iṣa̍vē̠ nama̍ḥ ।", "nama̍stē astu̠ dhanva̍nē bā̠hubhyā̍mu̠ta tē̠ nama̍ḥ ॥", "yā ta̠ iṣu̍-śśi̠vata̍mā śi̠va-mba̠bhūva̍ tē̠ dhanu̍ḥ ।", "śi̠vā śa̍ra̠vyā̍ yā tava̠ tayā̍ nō rudra mṛḍaya ।", "yā tē̍ rudra śi̠vā ta̠nūraghō̠rā-'pā̍pakāśinī ।", "tayā̍ nasta̠nuvā̠ śanta̍mayā̠ girı̍śantā̠bhichā̍kaśīhi ॥", "yāmiṣu̍-ṅgiriśanta̠ hastē̠ bibha̠rṣyasta̍vē ।", "śi̠vā-ṅgı̍ritra̠ tā-ṅku̍ru̠ mā hig̍ṃsī̠ḥ puru̍ṣa̠-ñjaga̍t॥", "śi̠vēna̠ vacha̍sā tvā̠ giri̠śāchChā̍ vadāmasi ।", "yathā̍ na̠-ssarva̠mijjaga̍daya̠kṣmagṃ su̠manā̠ asa̍t ॥", "adhya̍vōchadadhiva̠ktā pra̍tha̠mō daivyō̍ bhi̠ṣak ।", "ahīg̍ścha̠ sarvā̎mja̠mbhaya̠n-thsarvā̎ścha yātudhā̠nya̍ḥ ॥", "a̠sau yastā̠mrō a̍ru̠ṇa u̠ta ba̠bhrussu̍ma̠ṅgala̍ḥ ।", "yē chē̠māgṃ ru̠drā a̠bhitō̍ di̠kṣu śri̠tā-ssa̍hasra̠śō-'vaiṣā̠gṃ̠ hēḍa̍ īmahē ॥", "a̠sau yō̍-'va̠sarpa̍Ɵ̠ nīla̍grīvō̠ vilō̍hitaḥ ।", "u̠taina̍-ṅgō̠pā a̍dṛśa̠nnadṛ̍śannudahā̠rya̍ḥ ।", "u̠taina̠ṃ viśvā̍ bhū̠tāni̠ sa dṛ̠ṣṭō mṛ̍ḍayāƟ naḥ ॥", "namō̍ astu̠ nīla̍grīvāya sahasrā̠kṣāya̍ mī̠ḍhuṣē̎ ।", "athō̠ yē a̍sya̠ satvā̍nō̠-'ha-ntēbhyō̍-'kara̠nnama̍ḥ ॥", "pramu̍ñcha̠ dhanva̍na̠stvamu̠bhayō̠rārtnı̍ yō̠rjyām ।", "yāścha̍ tē̠ hasta̠ iṣa̍va̠ḥ parā̠ tā bha̍gavō vapa ॥", "a̠va̠tatya̠ dhanu̠stvagṃ saha̍srākṣa̠ śatē̍ṣudhē ।", "ni̠śīrya̍ śa̠lyānā̠-mmukhā̍ śi̠vō na̍-ssu̠manā̍ bhava ॥", "vijya̠-ndhanu̍ḥ kapa̠rdinō̠ viśa̍lyō̠ bāṇa̍vāgṃ u̠ta ।", "anē̍śanna̠syēṣa̍va ā̠bhura̍sya niṣa̠ṅgathı̍ḥ ॥", "yā tē̍ hē̠Ɵrmī̍ḍuṣṭama̠ hastē̍ ba̠bhūva̍ tē̠ dhanu̍ḥ ।", "tayā̠-'smān, vi̠śvata̠stvama̍ya̠kṣmayā̠ parı̍bbhuja ॥", "nama̍stē a̠stvāyu̍dhā̠yānā̍tatāya dhṛ̠ṣṇavē̎ ।", "u̠bhābhyā̍mu̠ta tē̠ namō̍ bā̠hubhyā̠-ntava̠ dhanva̍nē ॥", "parı̍ tē̠ dhanva̍nō hē̠Ɵra̠smān vṛ̍ṇaktu vi̠śvata̍ḥ ।", "athō̠ ya ı̍ṣu̠dhistavā̠rē a̠smannidhē̍hi̠ tam"], "2": ["namō̠ hira̍ṇya bāhavē sēnā̠nyē̍ di̠śā-ñcha̠ pata̍yē̠ namō̠", "namō̍ vṛ̠kṣēbhyō̠ harı̍kēśēbhyaḥ paśū̠nā-mpata̍yē̠ namō̠", "nama̍-ssa̠spiñja̍rāya̠ tviṣī̍matē pathī̠nā-mpata̍yē̠ namō̠", "namō̍ babhlu̠śāya̍ vivyā̠dhinē-'nnā̍nā̠-mpata̍yē̠ namō̠", "namō̠ harı̍kēśāyōpavī̠Ɵnē̍ pu̠ṣṭānā̠-mpata̍yē̠ namō̠", "namō̍ bha̠vasya̍ hē̠tyai jaga̍tā̠-mpata̍yē̠ namō̠", "namō̍ ru̠drāyā̍tatā̠vinē̠ kṣētrā̍ṇā̠-mpata̍yē̠ namō̠", "nama̍ssū̠tāyāha̍ntyāya̠ vanā̍nā̠-mpata̍yē̠ namō̠", "namō̠ rōhı̍tāya stha̠pata̍yē vṛ̠kṣāṇā̠-mpata̍yē̠ namō̠", "namō̍ ma̠ntriṇē̍ vāṇi̠jāya̠ kakṣā̍ṇā̠-mpata̍yē̠ namō̠", "namō̍ bhuva̠ntayē̍ vārivaskṛ̠tā-yauṣa̍dhīnā̠-mpata̍yē̠ namō̠", "nama̍ u̠chchairghō̍ṣāyākra̠ndaya̍tē paư̠nā-mpata̍yē̠ namō̠", "nama̍ḥ kṛtsnavī̠tāya̠ dhāva̍tē̠ saƩva̍nā̠-mpata̍yē̠ nama̍ḥ"], "3": ["nama̠-ssaha̍mānāya nivyā̠dhina̍ āvyā̠dhinī̍nā̠-mpata̍yē namō̠", "nama̍ḥ kaku̠bhāya̍ niṣa̠ṅgiṇē̎ stē̠nānā̠-mpata̍yē̠ namō̠", "namō̍ niṣa̠ṅgiṇa̍ iṣudhi̠matē̠ taska̍rāṇā̠-mpata̍yē̠ namō̠", "namō̠ vañcha̍tē pari̠vañcha̍tē stāyū̠nā-mpata̍yē̠ namō̠", "namō̍ nichē̠ravē̍ paricha̠rāyāra̍ṇyānā̠-mpata̍yē̠ namō̠", "nama̍-ssṛkā̠vibhyō̠ jighāg̍ṃsadbhyō muṣṇa̠tā-mpata̍yē̠ namō̠", "namō̍-'si̠madbhyō̠ nakta̠ñchara̍dbhyaḥ prakṛ̠ntānā̠-mpata̍yē̠ namō̠", "nama̍ uṣṇī̠ṣiṇē̍ giricha̠rāya̍ kulu̠ñchānā̠-mpata̍yē̠ namō̠", "nama̠ iṣu̍madbhyō dhanvā̠vibhya̍ścha vō̠ namō̠", "nama̍ ātan-vā̠nēbhya̍ḥ praƟ̠dadhā̍nēbhyaścha vō̠ namō̠", "nama̍ ā̠yachCha̍dbhyō visṛ̠jadbhya̍ścha vō̠ namō̠", "namō-'ssa̍dbhyō̠ vidya̍dbhyaścha vō̠ namō̠", "nama̠ āsī̍nēbhya̠-śśayā̍nēbhyaścha vō̠ namō̠", "nama̍-ssva̠padbhyō̠ jāgra̍dbhyaścha vō̠ namō̠", "nama̠sƟṣṭha̍dbhyō̠ dhāva̍dbhyaścha vō̠ namō̠", "nama̍-ssa̠bhābhya̍-ssa̠bhāpa̍Ɵbhyaścha vō̠ namō̠", "namō̠ aśvē̠bhyō-'śva̍paƟbhyaścha vō̠ nama̍ḥ"], "4": ["nama̍ āvyā̠dhinī̎bhyō vi̠vidhya̍nƤbhyaścha vō̠ namō̠", "nama̠ uga̍ṇābhyastṛgṃ-ha̠Ƥbhya̍ścha vō̠ namō̠", "namō̍ gṛ̠tsēbhyō̍ gṛ̠tsapa̍Ɵbhyaścha vō̠ namō̠", "namō̠ vrātē̎bhyō̠ vrāta̍paƟbhyaścha vō̠ namō̠", "namō̍ ga̠ṇēbhyō̍ ga̠ṇapa̍Ɵbhyaścha vō̠ namō̠", "namō̠ virū̍pēbhyō vi̠śvarū̍pēbhyaścha vō̠ namō̠", "namō̍ maha̠dbhya̍ḥ, kṣulla̠kēbhya̍ścha vō̠ namō̠", "namō̍ ra̠thibhyō̍-'ra̠thēbhya̍ścha vō̠ namō̠", "namō̠ rathē̎bhyō̠ ratha̍paƟbhyaścha vō̠ namō̠", "nama̠-ssēnā̎bhya-ssēnā̠nibhya̍ścha vō̠ namō̠", "nama̍ḥ, kṣa̠Ʃṛbhya̍-ssaṅgrahī̠tṛbhya̍ścha vō̠ namō̠", "nama̠stakṣa̍bhyō rathakā̠rēbhya̍ścha vō̠ namō̠", "nama̠ḥ kulā̍lēbhyaḥ ka̠rmārē̎bhyaścha vō̠ namō̠", "nama̍ḥ pu̠ñjiṣṭē̎bhyō niṣā̠dēbhya̍ścha vō̠ namō̠", "nama̍ iṣu̠kṛdbhyō̍ dhanva̠kṛdbhya̍ścha vō̠ namō̠", "namō̍ mṛga̠yubhya̍-śśva̠nibhya̍ścha vō̠ namō̠", "nama̠-śśvabhya̠-śśvapa̍Ɵbhyaścha vō̠ nama̍ḥ"], "5": ["namō̍ bha̠vāya̍ cha ru̠drāya̍ cha̠", "nama̍-śśa̠rvāya̍ cha paśu̠pata̍yē cha̠", "namō̠ nīla̍grīvāya cha śiƟ̠kaṇṭhā̍ya cha̠", "nama̍ḥ kapa̠rdinē̍ cha̠ vyu̍ptakēśāya cha̠", "nama̍-ssahasrā̠kṣāya̍ cha śa̠tadha̍nvanē cha̠", "namō̍ giri̠śāya̍ cha śipivi̠ṣṭāya̍ cha̠", "namō̍ mī̠ḍhuṣṭa̍māya̠ chēṣu̍matē cha̠", "namō̎ hra̠svāya̍ cha vāma̠nāya̍ cha̠", "namō̍ bṛha̠tē cha̠ varṣī̍yasē cha̠", "namō̍ vṛ̠ddhāya̍ cha sa̠ṃvṛdhva̍nē cha̠", "namō̠ agrı̍yāya cha pratha̠māya̍ cha̠", "nama̍ ā̠śavē̍ chāji̠rāya̍ cha̠", "nama̠-śśīghrı̍yāya cha̠ śībhyā̍ya cha̠", "nama̍ ū̠rmyā̍ya chāvasva̠nyā̍ya cha̠", "nama̍-ssrōta̠syā̍ya cha̠ dvīpyā̍ya cha"], "6": ["namō̎ jyē̠ṣṭhāya̍ cha kani̠ṣṭhāya̍ cha̠", "nama̍ḥ pūrva̠jāya̍ chāpara̠jāya̍ cha̠", "namō̍ madhya̠māya̍ chāpaga̠lbhāya̍ cha̠", "namō̍ jagha̠nyā̍ya cha̠ budhnı̍yāya cha̠", "nama̍-ssō̠bhyā̍ya cha praƟsa̠ryā̍ya cha̠", "namō̠ yāmyā̍ya cha̠ kṣēmyā̍ya cha̠", "nama̍ urva̠ryā̍ya cha̠ khalyā̍ya cha̠", "nama̠-śślōkyā̍ya chā-'vasā̠nyā̍ya cha̠", "namō̠ vanyā̍ya cha̠ kakṣyā̍ya cha̠", "nama̍-śśra̠vāya̍ cha praƟśra̠vāya̍ cha̠", "nama̍ ā̠śuṣē̍ṇāya chā̠śura̍thāya cha̠", "nama̠-śśūrā̍ya chāvabhinda̠tē cha̠", "namō̍ va̠rmiṇē̍ cha varū̠dhinē̍ cha̠", "namō̍ bi̠lminē̍ cha kava̠chinē̍ cha̠", "nama̍-śśru̠tāya̍ cha śrutasē̠nāya̍ cha"], "7": ["namō̍ dundu̠bhyā̍ya chāhana̠nyā̍ya cha̠", "namō̍ dhṛ̠ṣṇavē̍ cha pramṛ̠śāya̍ cha̠", "namō̍ dū̠tāya̍ cha prahı̍tāya cha̠", "namō̍ niṣa̠ṅgiṇē̍ chēṣudhi̠matē̍ cha̠", "nama̍sƤ̠kṣṇēṣa̍vē chāyu̠dhinē̍ cha̠", "nama̍-ssvāyu̠dhāya̍ cha su̠dhanva̍nē cha̠", "nama̠-ssrutyā̍ya cha̠ pathyā̍ya cha̠", "nama̍ḥ kā̠ṭyā̍ya cha nī̠pyā̍ya cha̠", "nama̠-ssūdyā̍ya cha sara̠syā̍ya cha̠", "namō̍ nā̠dyāya̍ cha vaiśa̠ntāya̍ cha̠", "nama̠ḥ kūpyā̍ya chāva̠ṭyā̍ya cha̠", "namō̠ varṣyā̍ya chāva̠rṣyāya̍ cha̠", "namō̍ mē̠ghyā̍ya cha vidyu̠tyā̍ya cha̠", "nama ī̠dhriyā̍ya chāta̠pyā̍ya cha̠", "namō̠ vātyā̍ya cha̠ rēṣmı̍yāya cha̠", "namō̍ vāsta̠vyā̍ya cha vāstu̠pāya̍ cha"], "8": ["nama̠-ssōmā̍ya cha ru̠drāya̍ cha̠", "nama̍stā̠mrāya̍ chāru̠ṇāya̍ cha̠", "nama̍-śśa̠ṅgāya̍ cha paśu̠pata̍yē cha̠", "nama̍ u̠grāya̍ cha bhī̠māya̍ cha̠", "namō̍ agrēva̠dhāya̍ cha dūrēva̠dhāya̍ cha̠", "namō̍ ha̠ntrē cha̠ hanī̍yasē cha̠", "namō̍ vṛ̠kṣēbhyō̠ harı̍kēśēbhyō̠", "nama̍stā̠rāya̠", "nama̍śśa̠mbhavē̍ cha mayō̠bhavē̍ cha̠", "nama̍-śśaṅka̠rāya̍ cha mayaska̠rāya̍ cha̠", "nama̍-śśi̠vāya̍ cha śi̠vata̍rāya cha̠", "nama̠sƤrthyā̍ya cha̠ kūlyā̍ya cha̠", "nama̍ḥ pā̠ryā̍ya chāvā̠ryā̍ya cha̠", "nama̍ḥ pra̠tara̍ṇāya chō̠Ʃara̍ṇāya cha̠", "nama̍ ātā̠ryā̍ya chālā̠dyā̍ya cha̠", "nama̠-śśaṣpyā̍ya cha̠ phēnyā̍ya cha̠", "nama̍-ssika̠tyā̍ya cha pravā̠hyā̍ya cha"], "9": ["nama̍ iri̠ṇyā̍ya cha prapa̠thyā̍ya cha̠", "nama̍ḥ kigṃśi̠lāya̍ cha̠ kṣaya̍ṇāya cha̠", "nama̍ḥ kapa̠rdinē̍ cha pula̠stayē̍ cha̠", "namō̠ gōṣṭhyā̍ya cha̠ gṛhyā̍ya cha̠", "nama̠stalpyā̍ya cha̠ gēhyā̍ya cha̠", "nama̍ḥ kā̠ṭyā̍ya cha gahvarē̠ṣṭhāya̍ cha̠", "namō̎ hrada̠yyā̍ya cha nivē̠ṣpyā̍ya cha̠", "nama̍ḥ pāgṃ sa̠vyā̍ya cha raja̠syā̍ya cha̠", "nama̠-śśuṣkyā̍ya cha hari̠tyā̍ya cha̠", "namō̠ lōpyā̍ya chōla̠pyā̍ya cha̠", "nama̍ ū̠rvyā̍ya cha sū̠rmyā̍ya cha̠", "nama̍ḥ pa̠rṇyā̍ya cha parṇaśa̠dyā̍ya cha̠", "namō̍-'pagu̠ramā̍ṇāya chābhighna̠tē cha̠", "nama̍ ākhkhida̠tē cha̍ prakhkhida̠tē cha̠", "namō̍ vaḥ kiri̠kēbhyō̍ dē̠vānā̠g̠m̠ hṛda̍yēbhyō̠", "namō̍ vikṣīṇa̠kēbhyō̠ namō̍ vichinva̠tkēbhyō̠", "nama̍ ānir ha̠tēbhyō̠ nama̍ āmīva̠tkēbhya̍ḥ"], "10": ["drāpē̠ andha̍saspatē̠ darı̍dra̠nnīla̍lōhita ।", "ē̠ṣā-mpuru̍ṣāṇāmē̠ṣā-mpa̍śū̠nā-mmā bhērmā-'rō̠ mō ē̍ṣā̠-ṅkiñcha̠nāma̍mat ।", "yā tē̍ rudra śi̠vā ta̠nū-śśi̠vā vi̠śvāha̍bhēṣajī ।", "śi̠vā ru̠drasya̍ bhēṣa̠jī tayā̍ nō mṛḍa jī̠vasē̎ ॥", "i̠māgṃ ru̠drāya̍ ta̠vasē̍ kapa̠rdinē̎ kṣa̠yadvī̍rāya̠ prabha̍rāmahē ma̠Ɵm ।", "yathā̍ na̠śśamasa̍ddvi̠padē̠ chatu̍ṣpadē̠ viśva̍-mpu̠ṣṭa-ṅgrāmē̍ a̠sminnanā̍turam ।", "mṛ̠ḍā nō̍ rudrō̠ta nō̠ maya̍skṛdhi kṣa̠yadvī̍rāya̠ nama̍sā vidhēma tē ।", "yachCha-ñcha̠ yōścha̠ manu̍rāya̠jē pi̠tā tada̍śyāma̠ tava̍ rudra̠ praṇī̍tau ।", "mā nō̍ ma̠hānta̍mu̠ta mā nō̍ arbha̠ka-mmā na̠ ukṣa̍ntamu̠ta mā na̍ ukṣi̠tam ।", "mā nō̍-'vadhīḥ pi̠tara̠-mmōta mā̠tara̍-mpri̠yā mā na̍sta̠nuvō̍ rudra rīriṣaḥ ।", "mā na̍stō̠kē tana̍yē̠ mā na̠ āyu̍ṣi̠ mā nō̠ gōṣu̠ mā nō̠ aśvē̍ṣu rīriṣaḥ ।", "vī̠rānmā nō̍ rudra bhāmi̠tō-'va̍dhīrha̠viṣmaṃ̍tō̠ nama̍sā vidhēma tē ।", "ā̠rāƩē̍ gō̠ghna u̠ta pū̍ruṣa̠ghnē kṣa̠yadvī̍rāya su̠mnama̠smē tē̍ astu ।", "rakṣā̍ cha nō̠ adhı̍ cha dēva brū̠hyathā̍ cha na̠-śśarma̍ yachCha dvi̠barhā̎ḥ ।", "stu̠hi śru̠ta-ṅga̍rta̠sada̠ṃ yuvā̍na-mmṛ̠ganna bhī̠mamu̍paha̠ntumu̠gram ।", "mṛ̠ḍā ja̍ri̠trē ru̍dra̠ stavā̍nō a̠nyantē̍ a̠smanniva̍pantu̠ sēnā̎ḥ ।", "parı̍ṇō ru̠drasya̍ hē̠Ɵrvṛ̍ṇaktu̠ parı̍ tvē̠ṣasya̍ durma̠Ɵ ra̍ghā̠yōḥ ।", "ava̍ sthi̠rā ma̠ghava̍dbhya-stanuṣva̠ mīḍhva̍stō̠kāya̠ tana̍yāya mṛḍaya ।", "mīḍhu̍ṣṭama̠ śiva̍tama śi̠vō na̍-ssu̠manā̍ bhava ।", "pa̠ra̠mē vṛ̠kṣa āyu̍dhanni̠dhāya̠ kṛƫ̠ṃ vasā̍na̠ ācha̍ra̠ pinā̍ka̠-mbibhra̠dāga̍hi ।", "vikı̍rida̠ vilō̍hita̠ nama̍stē astu bhagavaḥ ।", "yāstē̍ sa̠hasragṃ̍ hē̠tayō̠nyama̠smanniva̍pantu̠ tāḥ ।", "sa̠hasrā̍ṇi sahasra̠dhā bā̍hu̠vōstava̍ hē̠taya̍ḥ ।", "tāsā̠mīśā̍nō bhagavaḥ parā̠chīnā̠ mukhā̍ kṛdhi"], "11": ["sa̠hasrā̍ṇi sahasra̠śō yē ru̠drā adhi̠ bhūmyā̎m ।", "tēṣāg̍ṃ sahasrayōja̠nē-'va̠dhanvā̍ni tanmasi ।", "a̠sminma̍ha̠tya̍rṇa̠vē̎m-'tarı̍kṣē bha̠vā adhı̍ ।", "nīla̍grīvā-śśiƟ̠kaṇṭhā̎-śśa̠rvā a̠dhaḥ, kṣa̍mācha̠rāḥ ।", "nīla̍grīvā-śśiƟ̠kaṇṭhā̠ divag̍ṃ ru̠drā upa̍śritāḥ ।", "yē vṛ̠kṣēṣu̍ sa̠spiñja̍rā̠ nīla̍grīvā̠ vilō̍hitāḥ ।", "yē bhū̠tānā̠madhı̍patayō viśi̠khāsa̍ḥ kapa̠rdı̍naḥ ।", "yē annē̍ṣu vi̠vidhya̍nƟ̠ pātrē̍ṣu̠ piba̍tō̠ janān̍ ।", "yē pa̠thā-mpa̍thi̠rakṣa̍ya ailabṛ̠dā̍ ya̠vyudha̍ḥ ।", "yē Ƥ̠rthānı̍ pra̠chara̍nƟ sṛ̠kāva̍ntō niṣa̠ṅgiṇa̍ḥ ।", "ya ē̠tāva̍ntaścha̠ bhūyāg̍ṃsaścha̠ diśō̍ ru̠drā vı̍tasthi̠rē ।", "tēṣāg̍ṃ sahasrayōja̠nē-'va̠dhanvā̍ni tanmasi ।", "namō̍ ru̠dhrēbhyō̠ yē pṛ̍thi̠vyāṃ yē̎-'ntarı̍kṣē̠ yē di̠vi yēṣā̠manna̠ṃ vātō̍ va̠rṣa̠miṣa̍va̠stēbhyō̠ daśa̠", "prāchī̠rdaśa̍ dakṣi̠ṇā daśa̍ pra̠Ƥchī̠-rdaśō-dī̍chī̠-rdaśō̠rdhvāstēbhyō̠ nama̠stē nō̍ mṛḍayantu̠ tē ya-", "ndvi̠ṣmō yaścha̍ nō̠ dvēṣṭi̠ taṃ vō̠ jambhē̍ dadhāmi"]};
+const GITA_META = {"1": {"yoga": "Arjuna Viṣāda Yoga", "subtitle": "Arjuna's Grief", "count": 47}, "2": {"yoga": "Sāṅkhya Yoga", "subtitle": "Knowledge", "count": 72}, "3": {"yoga": "Karma Yoga", "subtitle": "Action", "count": 43}, "4": {"yoga": "Jñāna Yoga", "subtitle": "Wisdom", "count": 42}, "5": {"yoga": "Karma Sannyāsa Yoga", "subtitle": "Renunciation", "count": 29}, "6": {"yoga": "Ātma Saṃyama Yoga", "subtitle": "Self-Discipline", "count": 47}, "7": {"yoga": "Jñāna Vijñāna Yoga", "subtitle": "Knowledge & Wisdom", "count": 30}, "8": {"yoga": "Akṣara Parabrahma Yoga", "subtitle": "Imperishable Brahman", "count": 28}, "9": {"yoga": "Rājavidyā Rājaguhya Yoga", "subtitle": "Royal Knowledge", "count": 34}, "10": {"yoga": "Vibhūti Yoga", "subtitle": "Divine Manifestations", "count": 42}, "11": {"yoga": "Viśvarūpa Sandarśana Yoga", "subtitle": "Cosmic Vision", "count": 55}, "12": {"yoga": "Bhakti Yoga", "subtitle": "Devotion", "count": 20}, "13": {"yoga": "Kṣetrakṣetrajña Vibhāga Yoga", "subtitle": "Field & Its Knower", "count": 34}, "14": {"yoga": "Guṇatraya Vibhāga Yoga", "subtitle": "Three Modes of Nature", "count": 27}, "15": {"yoga": "Puruṣottama Prāpti Yoga", "subtitle": "Supreme Person", "count": 20}, "16": {"yoga": "Daivāsura Sampad Vibhāga Yoga", "subtitle": "Divine & Demonic", "count": 24}, "17": {"yoga": "Śraddhātraya Vibhāga Yoga", "subtitle": "Three Kinds of Faith", "count": 28}, "18": {"yoga": "Mokṣa Sannyāsa Yoga", "subtitle": "Liberation", "count": 78}};
+
+const RUDRAM_META = {
+  "1":"Anuvaka 1 — Namaste Rudra",
+  "2":"Anuvaka 2 — Namō Hiraṇya",
+  "3":"Anuvaka 3 — Namō Vyādhini",
+  "4":"Anuvaka 4 — Namō Bhavāya",
+  "5":"Anuvaka 5 — Namō Jyeṣṭhāya",
+  "6":"Anuvaka 6 — Namō Dundu",
+  "7":"Anuvaka 7 — Namō Sōmāya",
+  "8":"Anuvaka 8 — Namō Irīṇyāya",
+  "9":"Anuvaka 9 — Namō Iriṇyāya II",
+  "10":"Anuvaka 10 — Drāpe",
+  "11":"Anuvaka 11 — Sahasrāṇi"
+};
+
+// ─────────────── STATE ───────────────
+let state = {
+  section: 'gita',   // gita | rudram | vsn
+  chapter: '12',     // for gita: chapter number string; for rudram: anuvaka number string
+  view: 'practice',  // practice | index | progress
+  expandedVerse: null,
+  reciting: false,
+  reciteItems: [],   // flat array of items (lines for recite mode)
+  reciteIdx: 0,
+};
+
+// done tracking: key = "gita_ch12_v3" or "rudram_an1_l5"
+let done = new Set();
+try {
+  const saved = localStorage.getItem('vedic_done');
+  if (saved) done = new Set(JSON.parse(saved));
+} catch(e) {}
+
+function saveDone() {
+  try { localStorage.setItem('vedic_done', JSON.stringify([...done])); } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('vedic_state', JSON.stringify({
+      section: state.section, chapter: state.chapter
+    }));
+  } catch(e) {}
+}
+
+// Restore state
+try {
+  const s = JSON.parse(localStorage.getItem('vedic_state') || '{}');
+  if (s.section) state.section = s.section;
+  if (s.chapter) state.chapter = s.chapter;
+} catch(e) {}
+
+// ─────────────── SECTIONS ───────────────
+function switchSection(sec) {
+  state.section = sec;
+  state.expandedVerse = null;
+  if (sec === 'gita') state.chapter = state.chapter || '12';
+  else if (sec === 'rudram') state.chapter = state.chapter && parseInt(state.chapter) <= 11 ? state.chapter : '1';
+  document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
+  saveState();
+  renderCurrentView();
+}
+
+// ─────────────── VIEW SWITCHING ───────────────
+function showView(v) {
+  state.view = v;
+  document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+  document.getElementById('view-' + v).classList.add('active');
+  document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('bnav-' + v).classList.add('active');
+  renderCurrentView();
+}
+
+function renderCurrentView() {
+  if (state.view === 'practice') renderPractice();
+  else if (state.view === 'index') renderIndex();
+  else if (state.view === 'progress') renderProgress();
+  updateTopbar();
+}
+
+function updateTopbar() {
+  const t = document.getElementById('topbar-title');
+  const recBtn = document.getElementById('btn-recite');
+  if (state.section === 'gita') {
+    const m = GITA_META[state.chapter];
+    t.textContent = m ? 'Ch.' + state.chapter + ' — ' + m.yoga : 'Bhagavad Gītā';
+  } else if (state.section === 'rudram') {
+    t.textContent = RUDRAM_META[state.chapter] || 'Śrī Rudram';
+  } else {
+    t.textContent = 'Viṣṇu Sahasranāmam';
+  }
+  // Show recite button only in practice view and when content available
+  const hasContent = (state.section === 'gita' && GITA_DATA[state.chapter]?.length > 0) ||
+                     (state.section === 'rudram' && RUDRAM_DATA[state.chapter]?.length > 0);
+  recBtn.style.display = (state.view === 'practice' && hasContent) ? '' : 'none';
+}
+
+// ─────────────── PRACTICE VIEW ───────────────
+function renderPractice() {
+  const el = document.getElementById('view-practice');
+  if (state.section === 'gita') renderGitaPractice(el);
+  else if (state.section === 'rudram') renderRudramPractice(el);
+  else renderPlaceholder(el, 'Viṣṇu Sahasranāmam', 'Coming soon — 1000 names of Viṣṇu');
+}
+
+function renderGitaPractice(el) {
+  const ch = state.chapter;
+  const meta = GITA_META[ch];
+  const verses = GITA_DATA[ch] || [];
+  let html = `<div class="chapter-header">
+    <div class="chapter-num">Bhagavad Gītā · Chapter ${ch}</div>
+    <h2>${meta?.yoga || 'Chapter ' + ch}</h2>
+    <div class="subtitle">${meta?.subtitle || ''}</div>
+  </div>`;
+  
+  // Render as flowing book text
+  let prevSpk = null;
+  for (const v of verses) {
+    const key = `gita_ch${ch}_v${v.n}`;
+    const isDone = done.has(key);
+    const isExpanded = state.expandedVerse === key;
+    
+    // Speaker tag when it changes
+    let spkHtml = '';
+    if (v.spk && v.spk !== prevSpk) {
+      const spkNames = {
+        'arjuna': 'Arjuna', 'bhagavān': 'Śrī Bhagavān',
+        'sañjaya': 'Sañjaya', 'dhṛtarāṣṭra': 'Dhṛtarāṣṭra'
+      };
+      spkHtml = `<span class="spk-tag">${spkNames[v.spk] || v.spk} uvāca</span>`;
+      prevSpk = v.spk;
+    }
+    
+    // Verse text: all lines inline, then ॥N॥
+    const linesHtml = v.tlines.map((ln, i) => `<span class="vline">${esc(ln)}</span>${i < v.tlines.length-1 ? '<br>' : ''}`).join('');
+    
+    const meaningHtml = v.meaning_en ? `<div class="verse-meaning">${esc(v.meaning_en)}</div>` : 
+                        `<div class="verse-meaning empty"></div>`;
+    
+    html += `<div class="verse-block${isDone ? ' done' : ''}${isExpanded ? ' expanded' : ''}"
+      data-key="${key}" onclick="toggleVerse('${key}')">
+      <span class="verse-done-mark">✓</span>
+      <div class="verse-text">${spkHtml}${linesHtml}<span class="verse-num">॥ ${v.n} ॥</span></div>
+      ${meaningHtml}
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderRudramPractice(el) {
+  const an = state.chapter;
+  const lines = RUDRAM_DATA[an] || [];
+  const anLabel = RUDRAM_META[an] || 'Anuvaka ' + an;
+  
+  let html = `<div class="chapter-header">
+    <div class="chapter-num">Śrī Rudram (Namakam)</div>
+    <h2>${anLabel}</h2>
+  </div>`;
+  
+  html += `<div class="rudram-anuvaka">
+    <div class="rudram-lines">`;
+  
+  for (const ln of lines) {
+    html += `<span>${esc(ln)}</span>`;
+  }
+  html += `</div></div>`;
+  el.innerHTML = html;
+}
+
+function renderPlaceholder(el, title, msg) {
+  el.innerHTML = `<div class="placeholder-msg">
+    <h3>${title}</h3><p>${msg}</p>
+  </div>`;
+}
+
+function toggleVerse(key) {
+  if (state.expandedVerse === key) {
+    // Second click = mark done
+    if (done.has(key)) done.delete(key);
+    else done.add(key);
+    saveDone();
+    state.expandedVerse = null;
+    renderPractice();
+    if (state.view === 'progress') renderProgress();
+  } else {
+    state.expandedVerse = key;
+    renderPractice();
+  }
+}
+
+// ─────────────── INDEX VIEW ───────────────
+function renderIndex() {
+  const el = document.getElementById('view-index');
+  let html = '';
+  
+  if (state.section === 'gita' || !state.section) {
+    html += `<div class="idx-section"><h2>Bhagavad Gītā — 18 Chapters</h2><div class="idx-grid">`;
+    for (let c = 1; c <= 18; c++) {
+      const cs = String(c);
+      const meta = GITA_META[cs];
+      const total = meta?.count || 0;
+      const doneCount = [...done].filter(k => k.startsWith(`gita_ch${cs}_`)).length;
+      const pct = total ? Math.round(doneCount/total*100) : 0;
+      html += `<div class="idx-card${state.chapter === cs && state.section === 'gita' ? ' current' : ''}"
+        onclick="goToChapter('gita','${cs}')">
+        <div class="idx-num">Chapter ${c}</div>
+        <div class="idx-name">${meta?.yoga || ''}</div>
+        <div class="idx-sub">${meta?.subtitle || ''} · ${total}v</div>
+        <div class="idx-prog"><div class="idx-prog-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+  
+  html += `<div class="idx-section"><h2>Śrī Rudram — Namakam (11 Anuvakas)</h2><div class="idx-grid">`;
+  for (let a = 1; a <= 11; a++) {
+    const as = String(a);
+    const lines = (RUDRAM_DATA[as] || []).length;
+    html += `<div class="idx-card${state.chapter === as && state.section === 'rudram' ? ' current' : ''}"
+      onclick="goToChapter('rudram','${as}')">
+      <div class="idx-num">Anuvaka ${a}</div>
+      <div class="idx-name">${RUDRAM_META[as] || ''}</div>
+      <div class="idx-sub">${lines} lines</div>
+      <div class="idx-prog"><div class="idx-prog-fill" style="width:0%"></div></div>
+    </div>`;
+  }
+  html += `</div></div>`;
+  
+  html += `<div class="idx-section"><h2>Śrī Rudram — Chamakam</h2>
+    <div class="idx-card" style="opacity:0.5;cursor:default">
+      <div class="idx-num">11 Anuvakas</div>
+      <div class="idx-name">Chamakam</div>
+      <div class="idx-sub">Coming soon</div>
+    </div></div>`;
+    
+  html += `<div class="idx-section"><h2>Viṣṇu Sahasranāmam</h2>
+    <div class="idx-card" style="opacity:0.5;cursor:default">
+      <div class="idx-num">1000 Names</div>
+      <div class="idx-name">1000 names of Viṣṇu</div>
+      <div class="idx-sub">Coming soon</div>
+    </div></div>`;
+  
+  el.innerHTML = html;
+}
+
+function goToChapter(sec, ch) {
+  state.section = sec;
+  state.chapter = ch;
+  state.expandedVerse = null;
+  document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
+  saveState();
+  showView('practice');
+}
+
+// ─────────────── PROGRESS VIEW ───────────────
+function renderProgress() {
+  const el = document.getElementById('view-progress');
+  let html = '<h2>Progress</h2>';
+  
+  // Gita progress
+  html += '<div class="prog-section"><h3>Bhagavad Gītā</h3>';
+  let gitaTotal = 0, gitaDone = 0;
+  for (let c = 1; c <= 18; c++) {
+    const cs = String(c);
+    const total = GITA_META[cs]?.count || 0;
+    const d = [...done].filter(k => k.startsWith(`gita_ch${cs}_`)).length;
+    gitaTotal += total; gitaDone += d;
+    const pct = total ? Math.round(d/total*100) : 0;
+    html += `<div class="prog-row">
+      <span class="prog-label">Ch.${c} ${GITA_META[cs]?.subtitle||''}</span>
+      <div class="prog-bar"><div class="prog-fill" style="width:${pct}%"></div></div>
+      <span class="prog-pct">${pct}%</span>
+    </div>`;
+  }
+  const gitaPct = gitaTotal ? Math.round(gitaDone/gitaTotal*100) : 0;
+  html += `<div class="prog-row" style="font-weight:600;margin-top:8px">
+    <span class="prog-label">Overall</span>
+    <div class="prog-bar"><div class="prog-fill" style="width:${gitaPct}%"></div></div>
+    <span class="prog-pct">${gitaPct}%</span>
+  </div></div>`;
+  
+  html += `<button class="prog-reset" onclick="resetProgress()">Reset Progress</button>`;
+  el.innerHTML = html;
+}
+
+function resetProgress() {
+  if (!confirm('Reset all progress?')) return;
+  done.clear();
+  saveDone();
+  renderProgress();
+  renderIndex();
+}
+
+// ─────────────── RECITE MODE ───────────────
+function buildReciteItems() {
+  // Build flat list of items for recite mode
+  // Each item is an object with lines[] to show
+  const items = [];
+  
+  if (state.section === 'gita') {
+    const verses = GITA_DATA[state.chapter] || [];
+    for (const v of verses) {
+      // Group lines into chunks of up to 4
+      const allLines = [...v.tlines];
+      // Each verse as one recite "card" (max 4 lines shown)
+      items.push({
+        id: `gita_ch${state.chapter}_v${v.n}`,
+        label: `Ch.${state.chapter} · ${v.n}`,
+        lines: allLines.slice(0, 4),
+        n: v.n,
+      });
+    };
+  } else if (state.section === 'rudram') {
+    const lines = RUDRAM_DATA[state.chapter] || [];
+    // Group every 4 lines into a card
+    for (let i = 0; i < lines.length; i += 4) {
+      items.push({
+        id: `rudram_an${state.chapter}_g${Math.floor(i/4)}`,
+        label: RUDRAM_META[state.chapter],
+        lines: lines.slice(i, i+4),
+      });
+    }
+  }
+  return items;
+}
+
+function startRecite() {
+  const items = buildReciteItems();
+  if (!items.length) return;
+  
+  state.reciting = true;
+  state.reciteItems = items;
+  state.reciteIdx = 0;
+  
+  // Start from first undone item if possible
+  for (let i = 0; i < items.length; i++) {
+    if (!done.has(items[i].id)) { state.reciteIdx = i; break; }
+  }
+  
+  document.getElementById('recite-overlay').classList.add('active');
+  renderRecite();
+  
+  // Keyboard support
+  document.addEventListener('keydown', reciteKeyHandler);
+}
+
+function stopRecite() {
+  state.reciting = false;
+  document.getElementById('recite-overlay').classList.remove('active');
+  document.removeEventListener('keydown', reciteKeyHandler);
+  renderPractice();
+  updateTopbar();
+}
+
+function reciteKeyHandler(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); reciteNext(); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); recitePrev(); }
+  else if (e.key === 'Escape') stopRecite();
+}
+
+function reciteNext() {
+  if (state.reciteIdx < state.reciteItems.length - 1) {
+    // Mark current as done
+    const item = state.reciteItems[state.reciteIdx];
+    done.add(item.id);
+    saveDone();
+    state.reciteIdx++;
+    renderRecite();
+  } else {
+    // Mark last done
+    const item = state.reciteItems[state.reciteIdx];
+    done.add(item.id);
+    saveDone();
+    stopRecite();
+  }
+}
+
+function recitePrev() {
+  if (state.reciteIdx > 0) {
+    state.reciteIdx--;
+    renderRecite();
+  }
+}
+
+function renderRecite() {
+  const items = state.reciteItems;
+  const idx = state.reciteIdx;
+  const item = items[idx];
+  if (!item) return;
+  
+  document.getElementById('recite-section-label').textContent = 
+    state.section === 'gita' ? 'Bhagavad Gītā' : 'Śrī Rudram';
+  document.getElementById('recite-verse-label').textContent = item.label || '';
+  
+  // Lines: show item lines, highlight first
+  const linesEl = document.getElementById('recite-lines');
+  linesEl.innerHTML = item.lines.map((ln, i) => 
+    `<div class="recite-line${i===0?' hl':''}">${esc(ln)}</div>`
+  ).join('');
+  
+  // Dots
+  const dotsEl = document.getElementById('recite-dots');
+  dotsEl.innerHTML = items.map((it, i) => {
+    const cls = i === idx ? 'cur' : (done.has(it.id) ? 'done' : '');
+    return `<div class="recite-dot ${cls}"></div>`;
+  }).join('');
+}
+
+// ─────────────── UTILITIES ───────────────
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─────────────── INIT ───────────────
+function init() {
+  // Update section tab
+  document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === state.section));
+  showView('practice');
+}
+
+init();
+</script>
