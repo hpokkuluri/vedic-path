@@ -1,4 +1,4 @@
-<title>Vedic Path</title>
+<title>Vedasaram</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
 /* ── Design tokens ── */
@@ -548,11 +548,18 @@ body {
   margin-bottom: 8px;
 }
 .home-title span { color: var(--home-gold); }
-.home-subtitle {
-  font-size: 0.95rem;
-  color: rgba(240,220,180,0.7);
+.home-title-script {
+  font-size: 1.05rem;
+  color: rgba(240,210,140,0.85);
   text-align: center;
-  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.home-subtitle {
+  font-size: 0.82rem;
+  color: rgba(240,220,180,0.6);
+  text-align: center;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   margin-bottom: 0;
 }
@@ -651,12 +658,84 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* ── Chapter nav bar (prev / chapter title / next) ── */
+.chapter-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.chapter-nav-btn {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.chapter-nav-btn:hover { background: var(--border); }
+.chapter-nav-btn:disabled { opacity: 0.3; cursor: default; }
+.chapter-nav-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--fg3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Lesson continuation banner ── */
+.lesson-end-banner {
+  margin: 32px 0 8px;
+  padding: 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color: #fff;
+  text-align: center;
+}
+.lesson-end-banner .leb-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.lesson-end-banner .leb-sub {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+.lesson-end-banner .leb-next-btn {
+  display: inline-block;
+  padding: 9px 24px;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.12s;
+}
+.lesson-end-banner .leb-next-btn:hover { opacity: 0.88; }
+.lesson-end-banner .leb-done {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  opacity: 0.75;
+}
+
 /* ── Responsive ── */
 @media (max-width: 480px) {
   .verse-text { font-size: 0.95rem; }
   .idx-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   .home-title { font-size: 1.9rem; }
   .home-mandala { width: 130px; height: 130px; }
+  .chapter-nav-btn { padding: 6px 10px; font-size: 0.78rem; }
 }
 </style>
 
@@ -665,7 +744,7 @@ body {
 <!-- Top bar (hidden on home) -->
 <div id="topbar" style="display:none">
   <button id="btn-home" onclick="showView('home')" style="background:none;border:none;cursor:pointer;padding:4px 6px;color:var(--accent);font-size:1.1rem;" title="Home">🏠</button>
-  <h1 id="topbar-title">Vedic Path</h1>
+  <h1 id="topbar-title">Vedasaram</h1>
   <div class="section-tabs" id="section-tabs">
     <button class="stab active" data-sec="gita" onclick="switchSection('gita')">Gītā</button>
     <button class="stab" data-sec="rudram" onclick="switchSection('rudram')">Rudram</button>
@@ -726,6 +805,11 @@ body {
     <button class="recite-btn" onclick="recitePrev()">← Prev</button>
     <button class="recite-btn primary" onclick="reciteNext()">Next →</button>
     <button class="recite-btn" onclick="stopRecite()">✕ Done</button>
+  </div>
+  <div id="recite-end" style="display:none;text-align:center;padding:16px 0 0">
+    <div style="color:var(--recite-hl);font-size:1rem;font-weight:700;margin-bottom:8px">🙏 Complete</div>
+    <div id="recite-end-label" style="color:var(--recite-fg);font-size:0.85rem;margin-bottom:14px"></div>
+    <button class="recite-btn primary" onclick="reciteNextChapter()" id="recite-next-ch-btn">Next Chapter →</button>
   </div>
 </div>
 
@@ -872,7 +956,8 @@ function renderHome() {
         return `<circle cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" r="2" fill="rgba(240,192,64,0.6)"/>`;
       }).join('')}
     </svg>
-    <div class="home-title">Vedic <span>Path</span></div>
+    <div class="home-title">Veda<span>saram</span></div>
+    <div class="home-title-script">వేదసారం · वेदसारम्</div>
     <div class="home-subtitle">Sacred Texts · Learn &amp; Recite</div>
   </div>
 
@@ -929,7 +1014,7 @@ function renderHome() {
     </div>
   </div>
 
-  <div class="home-footer">ॐ तत् सत् · All Sacred Texts</div>
+  <div class="home-footer">Vedasaram · వేదసారం · वेदसारम्</div>
   `;
 }
 
@@ -955,6 +1040,21 @@ function openSection(sec, sub) {
   showView('index');
 }
 
+function navChapter(dir) {
+  const ch = parseInt(state.chapter);
+  const max = (state.section === 'gita') ? 18 : 11;
+  const next = ch + dir;
+  if (next < 1 || next > max) return;
+  state.chapter = String(next);
+  state.expandedVerse = null;
+  saveState();
+  showView('practice');
+}
+
+function nextChapterFromBanner() {
+  navChapter(1);
+}
+
 // ─────────────── PRACTICE VIEW ───────────────
 function renderPractice() {
   const el = document.getElementById('view-practice');
@@ -965,65 +1065,105 @@ function renderPractice() {
 
 function renderGitaPractice(el) {
   const ch = state.chapter;
+  const chNum = parseInt(ch);
   const meta = GITA_META[ch];
   const verses = GITA_DATA[ch] || [];
-  let html = `<div class="chapter-header">
+  const hasPrev = chNum > 1;
+  const hasNext = chNum < 18;
+  const nextMeta = hasNext ? GITA_META[String(chNum+1)] : null;
+
+  let html = `
+  <div class="chapter-nav">
+    <button class="chapter-nav-btn" onclick="navChapter(-1)" ${hasPrev ? '' : 'disabled'}>← Prev</button>
+    <div class="chapter-nav-title">Ch.${chNum} of 18</div>
+    <button class="chapter-nav-btn" onclick="navChapter(1)" ${hasNext ? '' : 'disabled'}>Next →</button>
+  </div>
+  <div class="chapter-header">
     <div class="chapter-num">Bhagavad Gītā · Chapter ${ch}</div>
     <h2>${meta?.yoga || 'Chapter ' + ch}</h2>
     <div class="subtitle">${meta?.subtitle || ''}</div>
   </div>`;
-  
-  // Render as flowing book text
+
   let prevSpk = null;
   for (const v of verses) {
     const key = `gita_ch${ch}_v${v.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
-    
-    // Speaker tag when it changes
     let spkHtml = '';
     if (v.spk && v.spk !== prevSpk) {
-      const spkNames = {
-        'arjuna': 'Arjuna', 'bhagavān': 'Śrī Bhagavān',
-        'sañjaya': 'Sañjaya', 'dhṛtarāṣṭra': 'Dhṛtarāṣṭra'
-      };
+      const spkNames = { 'arjuna':'Arjuna','bhagavān':'Śrī Bhagavān','sañjaya':'Sañjaya','dhṛtarāṣṭra':'Dhṛtarāṣṭra' };
       spkHtml = `<span class="spk-tag">${spkNames[v.spk] || v.spk} uvāca</span>`;
       prevSpk = v.spk;
     }
-    
-    // Verse text: all lines inline, then ॥N॥
-    const linesHtml = v.tlines.map((ln, i) => `<span class="vline">${esc(ln)}</span>${i < v.tlines.length-1 ? '<br>' : ''}`).join('');
-    
-    const meaningHtml = v.meaning_en ? `<div class="verse-meaning">${esc(v.meaning_en)}</div>` : 
-                        `<div class="verse-meaning empty"></div>`;
-    
-    html += `<div class="verse-block${isDone ? ' done' : ''}${isExpanded ? ' expanded' : ''}"
-      data-key="${key}" onclick="toggleVerse('${key}')">
+    const linesHtml = v.tlines.map((ln,i) => `<span class="vline">${esc(ln)}</span>${i < v.tlines.length-1 ? '<br>' : ''}`).join('');
+    const meaningHtml = v.meaning_en ? `<div class="verse-meaning">${esc(v.meaning_en)}</div>` : `<div class="verse-meaning empty"></div>`;
+    html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
       <div class="verse-text">${spkHtml}${linesHtml}<span class="verse-num">॥ ${v.n} ॥</span></div>
       ${meaningHtml}
     </div>`;
   }
+
+  // Continuation banner
+  if (hasNext && nextMeta) {
+    html += `<div class="lesson-end-banner">
+      <div class="leb-title">Chapter ${ch} Complete 🙏</div>
+      <div class="leb-sub">Continue to Chapter ${chNum+1} · ${nextMeta.yoga}</div>
+      <button class="leb-next-btn" onclick="nextChapterFromBanner()">Next Chapter →</button>
+      <div class="leb-done">${nextMeta.subtitle} · ${nextMeta.count} verses</div>
+    </div>`;
+  } else if (!hasNext) {
+    html += `<div class="lesson-end-banner">
+      <div class="leb-title">🙏 Bhagavad Gītā Complete</div>
+      <div class="leb-sub">You have completed all 18 chapters</div>
+      <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
+    </div>`;
+  }
+
   el.innerHTML = html;
 }
 
 function renderRudramPractice(el) {
   const an = state.chapter;
+  const anNum = parseInt(an);
   const lines = RUDRAM_DATA[an] || [];
   const anLabel = RUDRAM_META[an] || 'Anuvaka ' + an;
-  
-  let html = `<div class="chapter-header">
+  const hasPrev = anNum > 1;
+  const hasNext = anNum < 11;
+  const nextLabel = hasNext ? (RUDRAM_META[String(anNum+1)] || 'Anuvaka '+(anNum+1)) : null;
+
+  let html = `
+  <div class="chapter-nav">
+    <button class="chapter-nav-btn" onclick="navChapter(-1)" ${hasPrev ? '' : 'disabled'}>← Prev</button>
+    <div class="chapter-nav-title">Anuvaka ${anNum} of 11</div>
+    <button class="chapter-nav-btn" onclick="navChapter(1)" ${hasNext ? '' : 'disabled'}>Next →</button>
+  </div>
+  <div class="chapter-header">
     <div class="chapter-num">Śrī Rudram (Namakam)</div>
     <h2>${anLabel}</h2>
-  </div>`;
-  
-  html += `<div class="rudram-anuvaka">
-    <div class="rudram-lines">`;
-  
+  </div>
+  <div class="rudram-anuvaka"><div class="rudram-lines">`;
+
   for (const ln of lines) {
     html += `<span>${esc(ln)}</span>`;
   }
   html += `</div></div>`;
+
+  // Continuation banner
+  if (hasNext) {
+    html += `<div class="lesson-end-banner">
+      <div class="leb-title">Anuvaka ${anNum} Complete 🙏</div>
+      <div class="leb-sub">Continue to ${nextLabel}</div>
+      <button class="leb-next-btn" onclick="nextChapterFromBanner()">Next Anuvaka →</button>
+    </div>`;
+  } else {
+    html += `<div class="lesson-end-banner">
+      <div class="leb-title">🙏 Namakam Complete</div>
+      <div class="leb-sub">You have completed all 11 Anuvakas of Namakam</div>
+      <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
+    </div>`;
+  }
+
   el.innerHTML = html;
 }
 
@@ -1250,6 +1390,9 @@ function startRecite() {
 function stopRecite() {
   state.reciting = false;
   document.getElementById('recite-overlay').classList.remove('active');
+  // Reset end panel
+  document.getElementById('recite-controls').style.display = '';
+  document.getElementById('recite-end').style.display = 'none';
   document.removeEventListener('keydown', reciteKeyHandler);
   renderPractice();
   updateTopbar();
@@ -1263,19 +1406,44 @@ function reciteKeyHandler(e) {
 
 function reciteNext() {
   if (state.reciteIdx < state.reciteItems.length - 1) {
-    // Mark current as done
     const item = state.reciteItems[state.reciteIdx];
     done.add(item.id);
     saveDone();
     state.reciteIdx++;
     renderRecite();
   } else {
-    // Mark last done
+    // Last item — show end panel
     const item = state.reciteItems[state.reciteIdx];
     done.add(item.id);
     saveDone();
-    stopRecite();
+    // Show end panel
+    document.getElementById('recite-controls').style.display = 'none';
+    const endEl = document.getElementById('recite-end');
+    endEl.style.display = '';
+    const chNum = parseInt(state.chapter);
+    const max = (state.section === 'gita') ? 18 : 11;
+    const hasNext = chNum < max;
+    const btn = document.getElementById('recite-next-ch-btn');
+    if (hasNext) {
+      const nextLabel = state.section === 'gita'
+        ? `Chapter ${chNum+1} · ${GITA_META[String(chNum+1)]?.yoga || ''}`
+        : `${RUDRAM_META[String(chNum+1)] || 'Anuvaka '+(chNum+1)}`;
+      document.getElementById('recite-end-label').textContent = 'Up next: ' + nextLabel;
+      btn.textContent = state.section === 'gita' ? 'Next Chapter →' : 'Next Anuvaka →';
+      btn.style.display = '';
+    } else {
+      document.getElementById('recite-end-label').textContent =
+        state.section === 'gita' ? 'All 18 Chapters complete 🙏' : 'All 11 Anuvakas complete 🙏';
+      btn.style.display = 'none';
+    }
   }
+}
+
+function reciteNextChapter() {
+  stopRecite();
+  navChapter(1);
+  // Auto-start recite for next chapter
+  setTimeout(() => startRecite(), 100);
 }
 
 function recitePrev() {
