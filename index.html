@@ -3047,6 +3047,13 @@ function nextChapterFromBanner() {
   navChapter(1);
 }
 
+function goVSNSection(sec) {
+  state.chapter = sec;
+  state.expandedVerse = null;
+  saveState();
+  showView('practice');
+}
+
 // ─────────────── PRACTICE VIEW ───────────────
 function renderPractice() {
   const el = document.getElementById('view-practice');
@@ -3098,42 +3105,76 @@ function renderDhyanaPractice(el) {
 
 function renderVSNPractice(el) {
   const ch = state.chapter;
-  const slokas = VSN_DATA[ch] || [];
-  const secIdx = VSN_SECTIONS_ORDER.indexOf(ch);
-  const hasPrev = secIdx > 0;
-  const hasNext = secIdx < VSN_SECTIONS_ORDER.length - 1;
-  const isMainSloka = !['preamble','purva','dhyanam','phala'].includes(ch);
-  const slokaNum = isMainSloka ? parseInt(ch) : 0;
+  const NON_SLOKA = ['preamble','purva','dhyanam','phala'];
+  const isMainSloka = !NON_SLOKA.includes(ch);
 
-  let navLabel;
-  if (ch === 'preamble') navLabel = 'Invocation';
-  else if (ch === 'purva') navLabel = 'Pūrva Pīṭhikā';
-  else if (ch === 'dhyanam') navLabel = 'Dhyānam';
-  else if (ch === 'phala') navLabel = 'Phalaśruti';
-  else navLabel = `Śloka ${ch} of 108`;
+  // For the main 108 slokas, treat them all as one continuous section.
+  // Navigation: dhyanam ← [all 108] → phala
+  let effectiveCh = isMainSloka ? '__main__' : ch;
+  let hasPrev, hasNext, navLabel;
+
+  if (isMainSloka) {
+    hasPrev = true;  // dhyanam is always before
+    hasNext = true;  // phala is always after
+    navLabel = 'Slokas 1 – 108';
+  } else {
+    const secIdx = VSN_SECTIONS_ORDER.indexOf(ch);
+    hasPrev = secIdx > 0;
+    hasNext = secIdx < VSN_SECTIONS_ORDER.length - 1;
+    if (ch === 'preamble') navLabel = 'Invocation';
+    else if (ch === 'purva') navLabel = 'Pūrva Pīṭhikā';
+    else if (ch === 'dhyanam') navLabel = 'Dhyānam';
+    else if (ch === 'phala') navLabel = 'Phalaśruti';
+    else navLabel = ch;
+  }
+
+  // Override navChapter for main slokas so prev→dhyanam, next→phala
+  const prevTarget = isMainSloka ? 'dhyanam' : null;
+  const nextTarget = isMainSloka ? 'phala' : null;
+  const prevClick = prevTarget ? `goVSNSection('${prevTarget}')` : `navChapter(-1)`;
+  const nextClick = nextTarget ? `goVSNSection('${nextTarget}')` : `navChapter(1)`;
 
   let html = `
   <div class="chapter-nav">
-    <button class="chapter-nav-btn" onclick="navChapter(-1)" ${hasPrev?'':'disabled'}>← Prev</button>
+    <button class="chapter-nav-btn" onclick="${prevClick}" ${hasPrev?'':'disabled'}>← Prev</button>
     <div class="chapter-nav-title">${navLabel}</div>
-    <button class="chapter-nav-btn" onclick="navChapter(1)" ${hasNext?'':'disabled'}>Next →</button>
+    <button class="chapter-nav-btn" onclick="${nextClick}" ${hasNext?'':'disabled'}>Next →</button>
   </div>
   <div class="chapter-header">
     <div class="chapter-num">Viṣṇu Sahasranāmam</div>
-    <h2>${VSN_META[ch] || 'Śloka ' + ch}</h2>
-    <div class="subtitle">${isMainSloka ? '1000 Names of Viṣṇu · Śloka ' + ch : ''}</div>
+    <h2>${isMainSloka ? 'Nāma Slokas' : (VSN_META[ch] || ch)}</h2>
+    <div class="subtitle">${isMainSloka ? '1000 Names of Viṣṇu · Slokas 1–108' : ''}</div>
   </div>`;
 
-  for (const s of slokas) {
-    const key = `vsn_${ch}_${s.n}`;
+  // Collect slokas to render
+  let sectionsToRender = [];
+  if (isMainSloka) {
+    // Render all 108 numbered slokas as one continuous scroll
+    for (let i = 1; i <= 108; i++) {
+      const sec = String(i);
+      const slokas = VSN_DATA[sec] || [];
+      for (const s of slokas) {
+        sectionsToRender.push({sec, s});
+      }
+    }
+  } else {
+    const slokas = VSN_DATA[ch] || [];
+    for (const s of slokas) {
+      sectionsToRender.push({sec: ch, s});
+    }
+  }
+
+  for (const {sec, s} of sectionsToRender) {
+    const key = `vsn_${sec}_${s.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
     const speakerLabel = s.speaker ? `<div class="verse-speaker">${esc(s.speaker)}</div>` : '';
-    const teSlokas = VSN_TE_DATA[ch] || [];
+    const teSlokas = VSN_TE_DATA[sec] || [];
     const teSloka = teSlokas.find(x => x.n === s.n);
+    // Show sloka number label for main slokas
+    const slokaNumLabel = isMainSloka ? `<div class="verse-num">Śloka ${sec}</div>` : '';
     const linesHtml = s.tlines.map((ln,i) => {
       const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      // Use provided Telugu text if available, otherwise auto-convert
       const teLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : iastToTelugu(ln);
       const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
@@ -3141,12 +3182,20 @@ function renderVSNPractice(el) {
     }).join('');
     html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
+      ${slokaNumLabel}
       ${speakerLabel}
       <div class="verse-text">${linesHtml}</div>
     </div>`;
   }
 
-  if (hasNext) {
+  if (isMainSloka) {
+    html += `<div class="lesson-end-banner">
+      <div class="leb-title">Slokas Complete 🙏</div>
+      <div class="leb-sub">Continue to Phalaśruti</div>
+      <button class="leb-next-btn" onclick="goVSNSection('phala')">Next →</button>
+    </div>`;
+  } else if (hasNext) {
+    const secIdx = VSN_SECTIONS_ORDER.indexOf(ch);
     const nextSec = VSN_SECTIONS_ORDER[secIdx + 1];
     const nextLabel = VSN_META[nextSec] || 'Śloka ' + nextSec;
     html += `<div class="lesson-end-banner">
@@ -3447,20 +3496,22 @@ function renderIndex() {
       </div>
       <div class="idx-row-pct">${vsnDhyanaPct}%</div>
     </div>`;
-    // Main 108 slokas
-    for (let s = 1; s <= 108; s++) {
-      const ss = String(s);
-      const isCurrent = (state.chapter === ss && state.section === 'vsn');
-      const isDone = done.has('vsn_' + ss + '_' + s);
-      const pct = isDone ? 100 : 0;
-      html += `<div class="idx-row${isCurrent?' current':''}" onclick="goToChapter('vsn','${ss}')">
-        <div class="idx-row-num">${s}</div>
+    // Main 108 slokas — single row for continuous scroll
+    {
+      const vsnMainDone = [...done].filter(k => /^vsn_\d+_/.test(k)).length;
+      // Each sloka section has multiple lines; count total verses across all 108
+      let vsnMainTotal = 0;
+      for (let s = 1; s <= 108; s++) { vsnMainTotal += (VSN_DATA[String(s)] || []).length; }
+      const vsnMainPct = vsnMainTotal ? Math.round(vsnMainDone/vsnMainTotal*100) : 0;
+      const isMainCurr = (state.section === 'vsn' && !['preamble','purva','dhyanam','phala'].includes(state.chapter));
+      html += `<div class="idx-row${isMainCurr?' current':''}" onclick="goToChapter('vsn','1')">
+        <div class="idx-row-num" style="font-size:0.6rem;line-height:1.2">1–<br>108</div>
         <div class="idx-row-body">
-          <div class="idx-row-name">Śloka ${s}</div>
-          <div class="idx-row-meta">2 lines</div>
-          <div class="idx-prog"><div class="idx-prog-fill" style="width:${pct}%"></div></div>
+          <div class="idx-row-name">Nāma Slokas</div>
+          <div class="idx-row-meta">108 slokas · 1000 names</div>
+          <div class="idx-prog"><div class="idx-prog-fill" style="width:${vsnMainPct}%"></div></div>
         </div>
-        <div class="idx-row-pct">${isDone?'✓':'›'}</div>
+        <div class="idx-row-pct">${vsnMainPct === 100?'✓':vsnMainPct+'%'}</div>
       </div>`;
     }
     // Phala section
