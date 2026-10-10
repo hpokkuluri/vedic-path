@@ -144,6 +144,11 @@ body {
 }
 .view { display: none; padding: 16px; max-width: 680px; margin: 0 auto; }
 .view.active { display: block; }
+/* Chapter transition animations */
+@keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInLeft  { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+.chapter-enter-next { animation: slideInRight 0.28s cubic-bezier(0.22,1,0.36,1) both; }
+.chapter-enter-prev { animation: slideInLeft  0.28s cubic-bezier(0.22,1,0.36,1) both; }
 
 /* ── Practice view — book-style ── */
 #view-practice .chapter-header {
@@ -3054,7 +3059,7 @@ function navChapter(dir) {
   }
   state.expandedVerse = null;
   saveState();
-  showView('practice');
+  showViewWithTransition('practice', dir > 0 ? 'next' : 'prev');
 }
 
 function nextChapterFromBanner() {
@@ -3062,10 +3067,36 @@ function nextChapterFromBanner() {
 }
 
 function goVSNSection(sec) {
+  const curIdx = VSN_SECTIONS_ORDER.indexOf(state.chapter);
+  const newIdx = VSN_SECTIONS_ORDER.indexOf(sec);
+  const dir = newIdx >= curIdx ? 1 : -1;
   state.chapter = sec;
   state.expandedVerse = null;
   saveState();
-  showView('practice');
+  showViewWithTransition('practice', dir);
+}
+
+function showViewWithTransition(v, dir) {
+  // dir: 'next' (→), 'prev' (←), or falsy = no animation
+  const el = document.getElementById('view-' + v);
+  if (!dir || !el) { showView(v); return; }
+  // Perform state change + render without scrolling first
+  state.view = v;
+  document.querySelectorAll('.view').forEach(e => e.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('active'));
+  const bn = document.getElementById('bnav-' + v);
+  if (bn) bn.classList.add('active');
+  const isHome = (v === 'home');
+  document.getElementById('topbar').style.display = isHome ? 'none' : '';
+  document.getElementById('bottomnav').style.display = isHome ? 'none' : '';
+  renderCurrentView();
+  // Scroll to top instantly, then apply animation class
+  const main = document.getElementById('main');
+  main.scrollTop = 0;
+  const cls = dir === 'next' ? 'chapter-enter-next' : 'chapter-enter-prev';
+  el.classList.add(cls);
+  el.addEventListener('animationend', () => el.classList.remove(cls), { once: true });
 }
 
 // ─────────────── PRACTICE VIEW ───────────────
@@ -3641,7 +3672,7 @@ function goToChapter(sec, ch) {
   state.expandedVerse = null;
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
   saveState();
-  showView('practice');
+  showViewWithTransition('practice', 'next');
 }
 
 // ─────────────── PROGRESS VIEW ───────────────
