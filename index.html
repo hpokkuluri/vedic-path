@@ -3292,17 +3292,23 @@ function renderGitaPractice(el) {
     const key = `gita_ch${ch}_v${v.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
+    // Look up provided Telugu verse text first (need speaker from it)
+    const teVerseLines = (GITA_TE_DATA[chNum] && GITA_TE_DATA[chNum][v.n]) ? GITA_TE_DATA[chNum][v.n] : [];
+    const teSpeakers = ["సంజయ ఉవాచ","శ్రీ భగవానువాచ","అర్జున ఉవాచ","ధృతరాష్ట్ర ఉవాచ","భగవానువాచ"];
+    const teSpkLine = (teVerseLines.length > 0 && teSpeakers.includes(teVerseLines[0])) ? teVerseLines[0] : null;
+    const teVLines = teSpkLine ? teVerseLines.slice(1) : teVerseLines;
     let spkHtml = '';
     if (v.spk && v.spk !== prevSpk) {
       const spkNames = { 'arjuna':'Arjuna','bhagavān':'Śrī Bhagavān','sañjaya':'Sañjaya','dhṛtarāṣṭra':'Dhṛtarāṣṭra' };
-      spkHtml = `<span class="spk-tag">${spkNames[v.spk] || v.spk} uvāca</span>`;
+      if (settings.language === 'te') {
+        // Telugu mode — show Telugu speaker label if available, else hide
+        spkHtml = teSpkLine ? `<span class="spk-tag">${esc(teSpkLine)}</span>` : '';
+      } else {
+        // IAST or both mode — show IAST speaker
+        spkHtml = `<span class="spk-tag">${spkNames[v.spk] || v.spk} uvāca</span>`;
+      }
       prevSpk = v.spk;
     }
-    // Look up provided Telugu verse text
-    const teVerseLines = (GITA_TE_DATA[chNum] && GITA_TE_DATA[chNum][v.n]) ? GITA_TE_DATA[chNum][v.n] : [];
-    // Strip speaker label from te lines if present (first line may be speaker)
-    const teSpeakers = ["సంజయ ఉవాచ","శ్రీ భగవానువాచ","అర్జున ఉవాచ","ధృతరాష్ట్ర ఉవాచ","భగవానువాచ"];
-    const teVLines = (teVerseLines.length > 0 && teSpeakers.includes(teVerseLines[0])) ? teVerseLines.slice(1) : teVerseLines;
     // Render IAST lines and Telugu lines independently (they have different line counts)
     // IAST: 4 half-lines; Telugu: 2 full lines — never pair them 1:1
     let linesHtml = '';
@@ -3720,26 +3726,34 @@ function buildReciteItems() {
   
   if (state.section === 'gita' && state.chapter === 'dhyana') {
     for (const s of DHYANA_DATA) {
+      const teLines = DHYANA_TE_DATA[s.n - 1] || [];
       items.push({
         id: `gita_dhyana_${s.n}`,
         label: `Dhyānam · ${s.n}`,
         lines: s.tlines.slice(0, 4),
+        teLines,
         n: s.n,
       });
     }
   } else if (state.section === 'gita') {
     const spkNames = { 'dhṛtarāṣṭra':'Dhṛtarāṣṭra','arjuna':'Arjuna','bhagavān':'Śrī Bhagavān','sañjaya':'Sañjaya' };
+    const teSpeakers = ["సంజయ ఉవాచ","శ్రీ భగవానువాచ","అర్జున ఉవాచ","ధృతరాష్ట్ర ఉవాచ","భగవానువాచ"];
     let prevSpk = null;
+    const chNum = parseInt(state.chapter);
     const verses = GITA_DATA[state.chapter] || [];
     for (const v of verses) {
       const allLines = [...v.tlines];
       // Attach speaker label only when it changes
       const spkLabel = (v.spk && v.spk !== prevSpk) ? (spkNames[v.spk] || v.spk) + ' uvāca' : null;
       if (v.spk) prevSpk = v.spk;
+      // Look up Telugu lines; strip speaker line if present
+      const rawTeLines = (GITA_TE_DATA[chNum] && GITA_TE_DATA[chNum][v.n]) ? GITA_TE_DATA[chNum][v.n] : [];
+      const teLines = (rawTeLines.length > 0 && teSpeakers.includes(rawTeLines[0])) ? rawTeLines.slice(1) : rawTeLines;
       items.push({
         id: `gita_ch${state.chapter}_v${v.n}`,
         label: `Ch.${state.chapter} · ${v.n}`,
         lines: allLines.slice(0, 4),
+        teLines,
         spk: spkLabel,
         n: v.n,
       });
@@ -3765,11 +3779,14 @@ function buildReciteItems() {
   } else if (state.section === 'vsn') {
     const slokas = VSN_DATA[state.chapter] || [];
     const secLabel = VSN_META[state.chapter] || ('Śloka ' + state.chapter);
+    const teSlokas = VSN_TE_DATA[state.chapter] || [];
     for (const s of slokas) {
+      const teSloka = teSlokas.find(x => x.n === s.n);
       items.push({
         id: `vsn_${state.chapter}_${s.n}`,
         label: secLabel + ' · ' + s.n,
         lines: s.tlines,
+        teLines: teSloka ? teSloka.tlines : [],
         n: s.n,
       });
     }
