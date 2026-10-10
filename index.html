@@ -2804,6 +2804,7 @@ const SETTINGS_DEFAULTS = {
 const PRACTICE_FONT_SIZES = ['1.1rem','1.35rem','1.6rem','1.9rem'];
 const RECITE_FONT_SIZES   = ['1.5rem','1.9rem','2.4rem','3rem'];
 const FONT_LABELS = ['S','M','L','XL'];
+const BUILD_DATE = '2026-10-10';
 
 let settings = {...SETTINGS_DEFAULTS};
 try {
@@ -3983,6 +3984,15 @@ function renderSettings() {
           <div class="settings-desc">Bhagavad Gītā · Śrī Rudram · Viṣṇu Sahasranāmam</div>
         </div>
       </div>
+      <div class="settings-row">
+        <div>
+          <div class="settings-label">Check for Updates</div>
+          <div class="settings-desc" id="update-status">Version ${BUILD_DATE} · tap to check</div>
+        </div>
+        <div class="settings-control">
+          <button class="sz-btn" style="width:auto;padding:0 14px;border-radius:8px;font-size:0.8rem;" onclick="checkForUpdates(this)">Refresh</button>
+        </div>
+      </div>
     </div>
   </div>`;
 }
@@ -4007,6 +4017,35 @@ function setLanguage(lang) {
   renderSettings();
   if (state.view === 'practice') renderPractice();
   if (state.view === 'recite') renderRecite();
+}
+
+function checkForUpdates(btn) {
+  const statusEl = document.getElementById('update-status');
+  if (btn) { btn.disabled = true; btn.textContent = 'Checking…'; }
+  if (statusEl) statusEl.textContent = 'Checking for updates…';
+  // Fetch the page bypassing cache to detect a new version
+  fetch(location.href, {cache: 'no-store'})
+    .then(r => r.text())
+    .then(html => {
+      // Extract build date comment or just reload if fetch succeeded
+      const remoteMatch = html.match(/BUILD_DATE\s*=\s*["']([^"']+)["']/);
+      const localMatch = document.documentElement.innerHTML.match(/BUILD_DATE\s*=\s*["']([^"']+)["']/);
+      const remoteDate = remoteMatch ? remoteMatch[1] : null;
+      const localDate = localMatch ? localMatch[1] : null;
+      if (remoteDate && localDate && remoteDate === localDate) {
+        if (statusEl) statusEl.textContent = 'You\'re on the latest version ✓';
+        if (btn) { btn.disabled = false; btn.textContent = 'Refresh'; }
+      } else {
+        // New version available or no version markers — reload
+        if (statusEl) statusEl.textContent = 'Update found — reloading…';
+        setTimeout(() => location.reload(true), 600);
+      }
+    })
+    .catch(() => {
+      // Offline or error — just do a hard reload
+      if (statusEl) statusEl.textContent = 'Reloading…';
+      setTimeout(() => location.reload(true), 400);
+    });
 }
 
 // ─────────────── INIT ───────────────
