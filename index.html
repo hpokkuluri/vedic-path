@@ -3097,8 +3097,9 @@ function renderDhyanaPractice(el) {
     const teLines = DHYANA_TE_DATA[s.n - 1] || [];
     const linesHtml = s.tlines.map((ln,i) => {
       const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      const teLn = teLines[i] || iastToTelugu(ln);
-      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(teLn)}</span>` : '';
+      const rawTeLn = teLines[i] || null;
+      const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
+      const teLine = (settings.language !== 'en' && teLn) ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
       return enLine + teLine + br;
     }).join('');
@@ -3206,8 +3207,9 @@ function renderVSNPractice(el) {
     const slokaNumLabel = isMainSloka ? `<div class="verse-num">Śloka ${sec}</div>` : '';
     const linesHtml = s.tlines.map((ln,i) => {
       const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      const teLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : iastToTelugu(ln);
-      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(teLn)}</span>` : '';
+      const rawTeLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : null;
+      const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
+      const teLine = (settings.language !== 'en' && teLn) ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
       return enLine + teLine + br;
     }).join('');
@@ -3254,14 +3256,19 @@ function renderGitaPractice(el) {
   const hasNext = chNum < 18;
   const nextMeta = hasNext ? GITA_META[String(chNum+1)] : null;
 
-  // Sanskrit ordinals for chapter invocation header
+  // Sanskrit ordinals and yoga names for chapter invocation header
   const ORDINALS = ['','prathamo','dvitīyo','tṛtīyo','caturtho','pañcamo',
     'ṣaṣṭho','saptamo','aṣṭamo','navamo','daśamo','ekādaśo','dvādaśo',
     'trayodaśo','caturdaśo','pañcadaśo','ṣoḍaśo','saptadaśo','aṣṭādaśo'];
   const ordinal = ORDINALS[chNum] || chNum;
-  // Convert yoga name from IAST display to yoga-name form (lowercase first letter, drop spaces)
-  const yogaRaw = meta?.yoga || '';
-  const yogaId = yogaRaw.replace(/\s+/g, '').replace(/^./, c => c.toLowerCase()) + 'yōgaḥ';
+  // Proper Sanskrit yoga compound name for each chapter
+  const YOGA_NAMES = ['',
+    'arjunaviṣādayōgaḥ','sāṅkhyayōgaḥ','karmayōgaḥ','jñānayōgaḥ',
+    'karmasannyāsayōgaḥ','ātmasaṃyamayōgaḥ','jñānavijñānayōgaḥ','akṣaraparabrahmayōgaḥ',
+    'rājavidyārājaguhyayōgaḥ','vibhūtiyōgaḥ','viśvarūpasandarśanayōgaḥ','bhaktiyōgaḥ',
+    'kṣētrakṣētrajñavibhāgayōgaḥ','guṇatrayavibhāgayōgaḥ','puruṣōttamaprāptiyōgaḥ',
+    'daivāsurasampadvibhāgayōgaḥ','śraddhātrayavibhāgayōgaḥ','mokṣasannyāsayōgaḥ'];
+  const yogaName = YOGA_NAMES[chNum] || '';
 
   let html = `
   <div class="chapter-nav">
@@ -3277,7 +3284,7 @@ function renderGitaPractice(el) {
   <div class="chapter-invocation">
     <span class="vline">ōṃ śrī paramātmanē namaḥ</span><br>
     <span class="vline">atha ${ordinal}'dhyāyaḥ</span><br>
-    <span class="vline">${yogaId}</span>
+    <span class="vline">${yogaName}</span>
   </div>`;
 
   let prevSpk = null;
@@ -3308,19 +3315,15 @@ function renderGitaPractice(el) {
     }
     if (settings.language !== 'en' && teVLines.length > 0) {
       // Show Telugu lines as an independent block (not paired with IAST count)
+      // Strip embedded ॥N॥ verse markers — render code adds its own verse-num span
       if (settings.language !== 'te' && v.tlines.length > 0) linesHtml += '<br>';
       linesHtml += teVLines.map((teLn, i) => {
+        const cleanLn = teLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd();
         const br = (i < teVLines.length - 1) ? '<br>' : '';
-        return `<span class="vline-te">${esc(teLn)}</span>${br}`;
-      }).join('');
-    } else if (settings.language !== 'en' && teVLines.length === 0) {
-      // No Telugu data available — fall back to auto-convert only if no source file line
-      if (settings.language !== 'te' && v.tlines.length > 0) linesHtml += '<br>';
-      linesHtml += v.tlines.map((ln, i) => {
-        const br = (i < v.tlines.length - 1) ? '<br>' : '';
-        return `<span class="vline-te">${esc(iastToTelugu(ln))}</span>${br}`;
+        return `<span class="vline-te">${esc(cleanLn)}</span>${br}`;
       }).join('');
     }
+    // No Telugu data → show nothing (never auto-convert)
     const meaningHtml = v.meaning_en ? `<div class="verse-meaning">${esc(v.meaning_en)}</div>` : `<div class="verse-meaning empty"></div>`;
     html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
@@ -3381,8 +3384,9 @@ function renderRudramPractice(el) {
 
   lines.forEach((ln, i) => {
     const enPart = settings.language !== 'te' ? `<span>${esc(ln)}</span>` : '';
-    const teLn = (teLines && teLines[i]) ? teLines[i] : iastToTelugu(ln);
-    const tePart = settings.language !== 'en' ? `<span class="vline-te" style="display:block;font-size:1.1rem">${esc(teLn)}</span>` : '';
+    const rawTeLn = (teLines && teLines[i]) ? teLines[i] : null;
+    const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
+    const tePart = (settings.language !== 'en' && teLn) ? `<span class="vline-te" style="display:block;font-size:1.1rem">${esc(teLn)}</span>` : '';
     html += enPart + tePart;
   });
   html += `</div></div>`;
@@ -3749,7 +3753,7 @@ function buildReciteItems() {
     // Group every 4 lines into a card
     for (let i = 0; i < lines.length; i += 4) {
       const cardLines = lines.slice(i, i+4);
-      const cardTeLines = teLines ? teLines.slice(i, i+4) : cardLines.map(l => iastToTelugu(l));
+      const cardTeLines = teLines ? teLines.slice(i, i+4) : [];
       items.push({
         id: `rudram_an${an}_g${Math.floor(i/4)}`,
         label: RUDRAM_META[an] || 'Anuvaka ' + an,
@@ -3888,9 +3892,11 @@ function renderRecite() {
   // Speaker tag (shown above lines when speaker changes)
   const linesEl = document.getElementById('recite-lines');
   const spkHtml = item.spk ? `<div class="recite-spk">${esc(item.spk)}</div>` : '';
-  linesEl.innerHTML = spkHtml + item.lines.map(ln => {
+  linesEl.innerHTML = spkHtml + item.lines.map((ln, i) => {
     const enLine = settings.language !== 'te' ? `<div class="recite-line">${esc(ln)}</div>` : '';
-    const teLine = settings.language !== 'en' ? `<div class="recite-line-te">${esc(iastToTelugu(ln))}</div>` : '';
+    const rawTeLn = item.teLines && item.teLines[i] ? item.teLines[i] : null;
+    const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
+    const teLine = (settings.language !== 'en' && teLn) ? `<div class="recite-line-te">${esc(teLn)}</div>` : '';
     return enLine + teLine;
   }).join('');
   
