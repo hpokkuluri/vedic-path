@@ -516,6 +516,10 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,0.2);
   transition: background 0.2s;
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: content-box;
+  margin: -5px;
 }
 .recite-dot.done { background: var(--recite-hl); }
 .recite-dot.cur { background: #fff; }
@@ -876,7 +880,8 @@ body {
   <div id="recite-lines"></div>
   <div id="recite-controls">
     <div id="recite-dots"></div>
-    <div style="display:flex;gap:16px;justify-content:center;width:100%">
+    <div style="display:flex;gap:10px;justify-content:center;width:100%;flex-wrap:wrap">
+      <button class="recite-btn" onclick="reciteGoTo(0)" title="Jump to first verse">⏮ First</button>
       <button class="recite-btn" onclick="recitePrev()">← Prev</button>
       <button class="recite-btn primary" onclick="reciteNext()">Next →</button>
       <button class="recite-btn" onclick="stopRecite()">✕ Done</button>
@@ -1630,6 +1635,13 @@ function reciteNextChapter() {
   setTimeout(() => startRecite(), 100);
 }
 
+function reciteGoTo(idx) {
+  if (idx >= 0 && idx < state.reciteItems.length) {
+    state.reciteIdx = idx;
+    renderRecite();
+  }
+}
+
 function recitePrev() {
   if (state.reciteIdx > 0) {
     state.reciteIdx--;
@@ -1660,7 +1672,7 @@ function renderRecite() {
   const dotsEl = document.getElementById('recite-dots');
   dotsEl.innerHTML = items.map((it, i) => {
     const cls = i === idx ? 'cur' : (done.has(it.id) ? 'done' : '');
-    return `<div class="recite-dot ${cls}"></div>`;
+    return `<div class="recite-dot ${cls}" onclick="reciteGoTo(${i})" title="${esc(it.label||String(i+1))}"></div>`;
   }).join('');
 }
 
