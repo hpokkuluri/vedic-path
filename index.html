@@ -247,13 +247,15 @@ body {
 .verse-meaning.empty { display: none !important; }
 
 /* Done checkmark */
+.verse-speaker { font-size:0.72rem; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px; }
 .verse-done-mark {
   display: none;
   float: right;
   color: #4caf50;
   font-size: 1.1rem;
 }
-.verse-block.done .verse-done-mark { display: inline; }
+.verse-block.done .verse-speaker { font-size:0.72rem; font-weight:600; color:var(--accent2); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px; }
+.verse-done-mark { display: inline; }
 
 /* ── Rudram lines (not individual verses, just lines) ── */
 .rudram-anuvaka {
@@ -905,171 +907,810 @@ const GITA_META = {"1": {"yoga": "Arjuna Viṣāda Yoga", "subtitle": "Arjuna's 
 
 // ─────────────── VISHNU SAHASRANAMAM DATA ───────────────
 const VSN_META = {
-  dhyana: 'Dhyāna & Pūrva Pīṭhikā',
-  phala:  'Phalaśruti',
+  preamble: 'Invocation',
+  purva:    'Pūrva Pīṭhikā',
+  dhyanam:  'Dhyānam',
+  phala:    'Phalaśruti & Uttara Pīṭhikā',
 };
 
 const VSN_DATA = {
-  // Dhyāna slokas + pūrva pīṭhikā (pages 1-5 of the PDF)
-  dhyana: [
-    { n:1, tlines:["śuklāmbaradharaṃ viṣṇuṃ śaśivarṇaṃ caturbhujam |","prasannavadanaṃ dhyāyet sarvavighnopaśāntaye || 1 ||"] },
-    { n:2, tlines:["yasya dviradavaktrādyāḥ pāriṣadyāḥ paraḥ śatam |","vighnaṃ nighnanti satataṃ viṣvakṣenaṃ tamāśraye || 2 ||"] },
-    { n:3, tlines:["vyāsaṃ vasiṣṭhanaptāraṃ śaktēḥ pautramakalmaṣam |","parāśarātmajaṃ vandē śukatātaṃ taponidhim || 3 ||"] },
-    { n:4, tlines:["vyāsāya viṣṇurūpāya vyāsarūpāya viṣṇavē |","namō vai brahmanidhayē vāsiṣṭhāya namō namaḥ || 4 ||"] },
-    { n:5, tlines:["avikriyaṃ nityam ēva ca ādi | anantam avyayam |(hṛdayē brahmavidyā vā)","antarāyāṇi nighnantu viṣvaksēna-ādiṣu nmaḥ || 5 ||"] },
-    { n:6, tlines:["namaḥ samastabhūtānāmādikarē jagan manē |","tēṣāṃ sarvabhūtānāṃ yasyābhāvyāmṛtam ujjvalam || 6 ||"] },
-    { n:7, tlines:["yasmānnājāyatē kiñcit yasminnaṃ jāyatē jagat |","yō jānātyādim antaṃ ca sa viṣṇuḥ śarvathō 'vyayaḥ || 7 ||"] },
-    { n:8, tlines:["bhīṣma uvāca |","jagat prabhum dēvadēvamanantam puruṣōttamam |","stuvan nāmasahasrēṇa puruṣaḥ satataṃ jayet || 8 ||"] },
-    { n:9, tlines:["yasmādapi bhayaṃ nāsti tasya viṣṇōr mahātmanaḥ |","yo'sāvasau jagat tējo'vyayaḥ puruṣa ēva ca || 9 ||"] },
-    { n:10, tlines:["dhyānayōgaparō nityam taṃ viṣṇuṃ paryupāsatē |","tasya saṃkīrtanaṃ viprāḥ śṛṇvantu mama pārthivāḥ || 10 ||"] },
-    { n:11, tlines:["yuddhiṣṭhira uvāca |","kimakaṃ daivatam lōkē kimvāpyam parāyaṇam |","stuvantaḥ kaṃ kamarc antaḥ prāpnuyur mānavāḥ śubham || 11 ||"] },
-    { n:12, tlines:["kō dharmaḥ sarvadharmāṇāṃ bhavataḥ paramo mataḥ |","kiṃ japan mucyatē jantur janmasaṃsārabandhanāt || 12 ||"] },
-    { n:13, tlines:["bhīṣma uvāca |","jagat prabhum dēvadēvam anantam puruṣōttamam |","stuvan nāmasahasrēṇa puruṣaḥ satataṃ jayēt || 13 ||"] },
-    { n:14, tlines:["tamēva cārcayannityaṃ bhaktyā puruṣamavyayam |","dhyāyan stuvan namasyanś ca yajamānastam eva ca || 14 ||"] },
-    { n:15, tlines:["anādinim bhavam viṣṇuṃ sarvalōkamahēśvaram |","lōkādhyakṣaṃ stuvan nityaṃ sarvaduḥkhātigō bhavet || 15 ||"] },
+
+  // ── Invocation (2 slokas before pūrva pīṭhikā) ──
+  preamble: [
+    { n:1, tlines:[
+      "ōṃ śuklāmbaradharaṃ viṣṇuṃ śaśivarṇaṃ chaturbhujam |",
+      "prasannavadanaṃ dhyāyēt sarvavighnōpaśāntayē || 1 ||"
+    ]},
+    { n:2, tlines:[
+      "yasyadviradavaktrādyāḥ pāriṣadyāḥ paraḥ śatam |",
+      "vighnaṃ nighnanti satataṃ viṣvaksēnaṃ tamāśrayē || 2 ||"
+    ]},
   ],
 
-  // ── Main 108 nāma slokas ──
-  1: [{ n:1, tlines:["viśvaṃ viṣṇurvāṣaṭkārō bhūtabhavyabhavat prabhuḥ |","bhūtakṛd bhūtabhṛd bhāvō bhūtātmā bhūtabhāvanaḥ || 1 ||"] }],
-  2: [{ n:2, tlines:["pūtātmā paramātmā ca muktānāṃ paramā gatiḥ |","avyayaḥ puruṣaḥ sākṣī kṣētrajño'kṣara ēva ca || 2 ||"] }],
-  3: [{ n:3, tlines:["yōgō yōgavidāṃ nētā pradhānapuruṣēśvaraḥ |","nārasiṃhavapuḥ śrīmān kēśavaḥ puruṣōttamaḥ || 3 ||"] }],
-  4: [{ n:4, tlines:["sarvam śarvaḥ śivaḥ sthāṇurbhūtādirnidhiravyayaḥ |","sambhavō bhāvanō bhartā prabhavaḥ prabhuriśvaraḥ || 4 ||"] }],
-  5: [{ n:5, tlines:["svayambhūḥ śambhuḥ ādityaḥ puṣkarākṣō mahāsvanaḥ |","anādinidhanō dhātā vidhātā dhāturuttamaḥ || 5 ||"] }],
-  6: [{ n:6, tlines:["apramēyō hṛṣīkēśaḥ padmanābhō'maraprabhuḥ |","viśvakarmā manustvaṣṭā sthaviṣṭhaḥ sthaviradhruvaḥ || 6 ||"] }],
-  7: [{ n:7, tlines:["agrāhyaḥ śāśvataḥ kṛṣṇō lōhitākṣaḥ pratardanaḥ |","prabhūtastrikakubdhāma pavitram maṅgalaṃ param || 7 ||"] }],
-  8: [{ n:8, tlines:["īśānaḥ prāṇadaḥ prāṇō jyēṣṭhaḥ śrēṣṭhaḥ prajāpatiḥ |","hiraṇyagarbhō bhūgarbhō mādhavō madhusūdanaḥ || 8 ||"] }],
-  9: [{ n:9, tlines:["īśvarō vikramī dhanvī mēdhāvī vikramaḥ kramaḥ |","anuttamō duradhraṣaḥ kṛtajñaḥ kṛtirātmavān || 9 ||"] }],
-  10: [{ n:10, tlines:["surēśaḥ śaraṇaṃ śarma viśvarētāḥ prajābhavaḥ |","ahaḥ saṃvatsarō vyālaḥ pratyayaḥ sarvadarśanaḥ || 10 ||"] }],
-  11: [{ n:11, tlines:["ajaḥ sarvēśvaraḥ siddhaḥ siddhaḥ sarādiravyayaḥ |","vṛṣāhī vṛṣabhō viṣṇurvṛṣaparvā vṛṣōdaraḥ || 11 ||"] }],
-  12: [{ n:12, tlines:["vardhanō vardhamānasca viviktaḥ śrutisāgaraḥ |","subhujō durdharō vāgmī mahēndrō vasudō vasuḥ || 12 ||"] }],
-  13: [{ n:13, tlines:["naikirupō bṛhadrupah śipiviṣṭaḥ prakāśanaḥ |","ōjastējo dyutidharaḥ prakāśātmā pratāpanaḥ || 13 ||"] }],
-  14: [{ n:14, tlines:["ṛddhaḥ spaṣṭākṣarō mantracandraḥ bhāskara dīptimān |","amṛtāṃśūdbhavō bhānuḥ śaśabinduḥ surēśvaraḥ || 14 ||"] }],
-  15: [{ n:15, tlines:["auṣadhaṃ jagataḥ sētuḥ satyadharmaparākramaḥ |","bhūtabhavyabhavannāthaḥ pavanaḥ pāvanō'nalaḥ || 15 ||"] }],
-  16: [{ n:16, tlines:["kāmahā kāmakṛt kāntaḥ kāmaḥ kāmapradaḥ prabhuḥ |","yugādikṛd yugāvartō naikamāyō mahāśanaḥ || 16 ||"] }],
-  17: [{ n:17, tlines:["adṛśyō vyaktarūpaśca sahasrajidanantajit |","iṣṭō'viśiṣṭaḥ śiṣṭēṣṭaḥ śikhī brahmacarō gatiḥ || 17 ||"] }],
-  18: [{ n:18, tlines:["anikī śatamūrdā visvamukhō viśvabhugvibhuḥ |","satkartā satkṛtaḥ sādhurjahnavī janārdanaḥ || 18 ||"] }],
-  19: [{ n:19, tlines:["viṣṇurviraḥ śrēṣṭhō dharmaścumbē hariḥ |","sadāmardī hariḥ kṛṣṇō dharmarakṣita uttamaḥ || 19 ||"] }],
-  20: [{ n:20, tlines:["rakshanah pundarikaaksho drishtatmaa visvamaayitam |","kaamadah kaamapaalasca kaamaneeyo mahaavidhih || 20 ||"] }],
-  21: [{ n:21, tlines:["mahābhūtō mahānidhiḥ mahābhāgō mahābhagaḥ |","mahātmā mahākartā ca mahāyōgī mahātapaḥ || 21 ||"] }],
-  22: [{ n:22, tlines:["mahābhāgō mahāvīryō mahāśaktirmahādyutiḥ |","anirdēśyavapuḥ śrīmān amēyātmā mahādridṛk || 22 ||"] }],
-  23: [{ n:23, tlines:["mahēṣvāsō mahībhartā śrīnivāsaḥ satāṃ gatiḥ |","aniruddhassurānandō gōvindō gōvidam patiḥ || 23 ||"] }],
-  24: [{ n:24, tlines:["marīcirmanō haṃsaḥ suparnō bhujiśōttamaḥ |","hiranyanābhaḥ sutapāḥ padmanābhaḥ prajāpatiḥ || 24 ||"] }],
-  25: [{ n:25, tlines:["amṛtyuḥ sarvadrk simhaḥ sandhātā sandhimān sthiraḥ |","ajō durmarsanah śāstā visrutātmā surārihā || 25 ||"] }],
-  26: [{ n:26, tlines:["gururguruttamō dhāma satyaḥ satyaparākramaḥ |","nimiṣo'nimiṣaḥ sragvī vācaspatirudāradhīḥ || 26 ||"] }],
-  27: [{ n:27, tlines:["agraṇīgrāmaṇīḥ śrīmān nyāyō nētā samīraṇaḥ |","sahasramūrdhā viśvātmā sahasrākṣaḥ sahasrapāt || 27 ||"] }],
-  28: [{ n:28, tlines:["āvartanō nivṛttātmā saṃvṛtaḥ saṃpramardanaḥ |","ahaḥ saṃvartakō vahniranilō dharaṇīdharaḥ || 28 ||"] }],
-  29: [{ n:29, tlines:["suprasādaḥ prasannātmā viśvadhṛk viśvabhuḥ vibhuḥ |","satkartā satkṛtaḥ sādhurjahnurvijayō jayaḥ || 29 ||"] }],
-  30: [{ n:30, tlines:["pṛthavaikō jagatkṛtsnaḥ krataurdēvaḥ kṛtāgamaḥ |","samāvartō'nivṛttātmā durmarsaṇaḥ surēśvaraḥ || 30 ||"] }],
-  31: [{ n:31, tlines:["durlabhō durgamō durgō duraavāsō durārihā |","śubhaāṅgō lokasāraṅgaḥ sutantustantu vardhanah || 31 ||"] }],
-  32: [{ n:32, tlines:["indrakarmā mahākarmā kṛtakarmā kṛtāgamaḥ |","udbhavaḥ sundaraḥ sundō ratnanābhaḥ sulōcanaḥ || 32 ||"] }],
-  33: [{ n:33, tlines:["arkō vājasanēḥ śṛṅgī jayantaḥ sarvavijjayī |","suvarnabinduraksōbhyaḥ sarvavāgīśvarēśvaraḥ || 33 ||"] }],
-  34: [{ n:34, tlines:["mahāhradō mahāgartō mahābhūtō mahānidhaḥ |","kumudaḥ kundaraḥ kundaḥ parjanyaḥ pāvanaḥ 'nilaḥ || 34 ||"] }],
-  35: [{ n:35, tlines:["amṛtāśaḥ amṛtavapuḥ sarvajño sarvato mukhaḥ |","sulabhaḥ suvarṇō lokāḥ sukhōdaḥ sukhado'dhavaḥ || 35 ||"] }],
-  36: [{ n:36, tlines:["naikajō bahurūpō'tha sthavirō sthāvarasthamaḥ |","prabhūtaḥ śrīnivāsaḥ śreṣṭhaḥ satkṛtē vittam apyayaḥ || 36 ||"] }],
-  37: [{ n:37, tlines:["samīhanaḥ kṣamā caivam kṣamī kṣēmavidhirdyutiḥ |","naivaca naikakarmakrit sarvabhuktaḥ suvikramah || 37 ||"] }],
-  38: [{ n:38, tlines:["siddhaḥ siddhannidhissattvaḥ śuciḥ śubhakṛtāmvar |","naivācalasca śakṣati tattattrāṇam tattvardhana || 38 ||"] }],
-  39: [{ n:39, tlines:["sarvajñō sarvato mukhaḥ sukhādaḥ sukhadaḥ vibhuḥ |","kṛtakṛtyaḥ kṛtasnēhaḥ svalpasnēhō'navamardanaḥ || 39 ||"] }],
-  40: [{ n:40, tlines:["ādimūrtiranaadiscca vibhurvibhusvara viśvagah |","karo sarvakrtā mārgaḥ saramāryā tathaivaca || 40 ||"] }],
-  41: [{ n:41, tlines:["sarvajñō'nanta janmāpca sarvaprado mahānidhiḥ |","sahasrākṣaḥ sahasrāṃśuḥ sahasrānaniṣṭhakṛt || 41 ||"] }],
-  42: [{ n:42, tlines:["naitadanyo na cānyasmai bhinnabhinnavidhāyakaḥ |","dhātuvibhuḥ suviśvātmā viśvakarmaṇah śāśvataḥ || 42 ||"] }],
-  43: [{ n:43, tlines:["prabhavaḥ prabhuḥ prāṇaḥ prāṇō jyēṣṭhaḥ prāṇadaḥ patiḥ |","manōharaḥ jitakrōdhō vīrabāhurvividhāśrayaḥ || 43 ||"] }],
-  44: [{ n:44, tlines:["svarṇanābhaḥ subeejasca phalaśrutir anuttamaḥ |","rathāṅgapāṇirakṣōbhyaḥ sarvapraharanaayudhaḥ || 44 ||"] }],
-  45: [{ n:45, tlines:["śubhāṅgaḥ śāntidaḥ sraṣṭā kumudaḥ kuvalēśayaḥ |","gōhitō gōpatirgōptā vṛṣabhākṣō vṛṣapriyaḥ || 45 ||"] }],
-  46: [{ n:46, tlines:["anivartī nivṛttātmā saṃkṣēptā kṣēmakṛcchuciḥ |","śrīvatsvakṣaḥ śrīvāsaḥ śrīpatiḥ śrīmatāmvaraḥ || 46 ||"] }],
-  47: [{ n:47, tlines:["śrīdaḥ śrīśaḥ śrīnivāsaḥ śrīnidhiḥ śrīvibhāvanaḥ |","śrīdharaḥ śrīkaraḥ śrēyaḥ śrīmān lōkatrayāśrayaḥ || 47 ||"] }],
-  48: [{ n:48, tlines:["svakṣaḥ svāṅgaḥ śatānandō nandirjyōtirgaṇēśvaraḥ |","vijitātmā vidhēyātmā satkīrtaśchinnasamśayaḥ || 48 ||"] }],
-  49: [{ n:49, tlines:["udīrṇaḥ sarvataścakṣuraniśaḥ śāśvatasthiraḥ |","bhūśayō bhūṣanō bhūtiḥ viśōkaḥ śōkanāśanaḥ || 49 ||"] }],
-  50: [{ n:50, tlines:["arciṣmānarcitaḥ kumbhō viśuddhātmā viśōdhanaḥ |","aniruddho'pratirathah pradyumnōmitavikramaḥ || 50 ||"] }],
-  51: [{ n:51, tlines:["kālaneminihaḥ vīraḥ śauri śūrajanēśvaraḥ |","trilōkātmā trilōkēśaḥ kēśavaḥ kēśihā hariḥ || 51 ||"] }],
-  52: [{ n:52, tlines:["kāmadēvaḥ kāmapālaḥ kāmī kāntaḥ kṛtāgamaḥ |","anirdēśyavapurvīṣṇurnanyō bhūtakalpavarjitaḥ || 52 ||"] }],
-  53: [{ n:53, tlines:["śāntō bhāvanaḥ śreṣṭhō govindaḥ parirakṣaṇah |","śikhiḥ śūladharo dando dīrghapaksho vicakramah || 53 ||"] }],
-  54: [{ n:54, tlines:["bhūtabhāvanasūtātmā phaladō bhūtabhāvanaḥ |","rathāṅgapāṇirakṣōbhyaḥ sarvapraharaṇāyudhaḥ || 54 ||"] }],
-  55: [{ n:55, tlines:["svāstidaḥ svāstikṛt svāstiḥ svāstibhuk svāstidakṣiṇaḥ |","araudraḥ kuṇḍalī cakrī vikramyūrjita śāsanaḥ || 55 ||"] }],
-  56: [{ n:56, tlines:["śabdātigaḥ śabdasahaḥ śiśiraḥ śarvarikaraḥ |","akrūraḥ pēśalaō daksho dakshinah kṣaminamvara || 56 ||"] }],
-  57: [{ n:57, tlines:["vidvattamō vīta bhayaḥ puṇya śravaṇakīrtanaḥ |","uttāraṇō duṣkṛtihā puṇyō duḥsvapnanāśanaḥ || 57 ||"] }],
-  58: [{ n:58, tlines:["vīrahā rakṣaṇaḥ santo jīvanaḥ paryavasthitaḥ |","anantarūpō'nantaśrīḥ jitamanyurbhayāpataḥ || 58 ||"] }],
-  59: [{ n:59, tlines:["caturasraḥ gabhīrātmā vidiśō vyādiśō diśaḥ |","anādirnibhṛtāsityo drutaḥ śānti paramardanam || 59 ||"] }],
-  60: [{ n:60, tlines:["lokanāthah mahādevo lokabandhu lokapālaḥ |","mānaḥ kīrtirmayō lōkō lōkīkō sukhado vibhuḥ || 60 ||"] }],
-  61: [{ n:61, tlines:["abhīrbhūtaḥ sudurjayaḥ śrēṣṭhajaḥ kṣatriyaḥ sadā |","mūlaḥ pratipallōkasya pratyakṣō vāṅmanōgatiḥ || 61 ||"] }],
-  62: [{ n:62, tlines:["naḥ sthūlaḥ naḥ sukṣmō naḥ śaṣṭhānaḥ phalabhāvanaḥ |","śivam prabhuḥ viṣṇuḥ dēvō dēvarṣiḥ sarvajñastathā || 62 ||"] }],
-  63: [{ n:63, tlines:["trisamdhyanandamadhyasthah pranavo vyanajannapi |","anasih dhruvam padmam padminīnampatiḥ prabhuḥ || 63 ||"] }],
-  64: [{ n:64, tlines:["śatānandaśca nandīca nandanō nandivardhanah |","bhagavān bhagahā'nandī vanamālī halāyudhaḥ || 64 ||"] }],
-  65: [{ n:65, tlines:["ādityo jyōtiradityo dhvajīlōkasya kāraṇam |","śubhadaḥ śubhakartā ca śubhaḥ śubhanāmaśubhā || 65 ||"] }],
-  66: [{ n:66, tlines:["rathāṅgapāṇirakṣōbhyaḥ sarvapraharaṇāyudhaḥ |","sarvavijñānasaṃpannaḥ sarvavedāntapāragaḥ || 66 ||"] }],
-  67: [{ n:67, tlines:["maricirdamanaḥ haṃsaḥ suparṇō bhujiśōttamaḥ |","hiranyanābhaḥ sutapāḥ padmanābhaḥ prajāpatiḥ || 67 ||"] }],
-  68: [{ n:68, tlines:["amṛtyuḥ sarvadrk simhaḥ sandhātā sandhimān sthiraḥ |","ajō durmarsanah śāstā visrutātmā surārihā || 68 ||"] }],
-  69: [{ n:69, tlines:["gururguruttamō dhāma satyaḥ satyaparākramaḥ |","nimiṣo'nimiṣaḥ sragvī vācaspatirudāradhīḥ || 69 ||"] }],
-  70: [{ n:70, tlines:["agraṇīgrāmaṇīḥ śrīmān nyāyō nētā samīraṇaḥ |","sahasramūrdhā viśvātmā sahasrākṣaḥ sahasrapāt || 70 ||"] }],
-  71: [{ n:71, tlines:["āvartanō nivṛttātmā saṃvṛtaḥ saṃpramardanaḥ |","ahaḥ saṃvartakō vahniranilō dharaṇīdharaḥ || 71 ||"] }],
-  72: [{ n:72, tlines:["suprasādaḥ prasannātmā viśvadhṛk viśvabhṛd vibhuḥ |","satkartā satkṛtaḥ sādhurjahnurvijayō jayaḥ || 72 ||"] }],
-  73: [{ n:73, tlines:["anantajid anantaḥ ca anantamūrtirīśvaraḥ |","anantaśaktirēkākī jitakrōdhō jayāntakaḥ || 73 ||"] }],
-  74: [{ n:74, tlines:["viśvakṣēnō viriñcaśca divyāstrasca divātanah |","svayambhuvaḥ svaprakāśaḥ sarvajñaḥ sarvasambhavaḥ || 74 ||"] }],
-  75: [{ n:75, tlines:["bharmaṇyaḥ sarvadharmaḥ ca karmakarmaphalaḥ śivaḥ |","anādirnibhṛtō'sityo drutaḥ śānti paramardanam || 75 ||"] }],
-  76: [{ n:76, tlines:["catuspadaḥ samāvartaḥ śarīraḥ śarvarīpatih |","anādirnibhṛtāsityō drutaḥ satyaparākramaḥ || 76 ||"] }],
-  77: [{ n:77, tlines:["nirvāṇaḥ pavitraḥ māṅgalyaḥ maṅgalaḥ paraḥ |","śāntō bhadraṃ śāntimayaḥ śubhdō'śubhanaśanaḥ || 77 ||"] }],
-  78: [{ n:78, tlines:["śuciḥ śucikṛt śuddhaḥ suviṣṭa sukhradaḥ sukhaḥ |","anantarūpō'nantaśrīḥ jitamanyurbhayāpataḥ || 78 ||"] }],
-  79: [{ n:79, tlines:["lokādhyakṣaḥ suradhyakṣaḥ dharmādhyakṣaḥ kṛtākṛtaḥ |","caturātmā caturvyūhaḥ caturdaṃṣṭraścaturbhujaḥ || 79 ||"] }],
-  80: [{ n:80, tlines:["bhrajisṇuḥ bhojannaḥ bhoktā sahisṇuḥ jagadādijah |","anaghō vijayō jetā viśvayōniḥ punarvasuḥ || 80 ||"] }],
-  81: [{ n:81, tlines:["upēndraḥ vāmanaḥ prāṃśu amōghaḥ śuciḥ ūrjitaḥ |","atīndraḥ saṃgrahaḥ sargō dhṛtātmā niyamō yamaḥ || 81 ||"] }],
-  82: [{ n:82, tlines:["vedyō vaidyaḥ sadāyōgī vīrahā mādhavō bhuvaḥ |","mādhavō madhusūdanō mādhavo mādhavīpatiḥ || 82 ||"] }],
-  83: [{ n:83, tlines:["mahābhūtō mahānidhiḥ mahābhāgō mahābhagaḥ |","mahātmā mahākartā ca mahāyōgī mahātapaḥ || 83 ||"] }],
-  84: [{ n:84, tlines:["vikartā gahanaḥ guptaḥ cakra nābhibhuvaḥ śivaḥ |","bhāvanaḥ pavanastṛptaḥ pāvanaḥ śvetakūrjaraḥ || 84 ||"] }],
-  85: [{ n:85, tlines:["mahāsenaḥ viśākhascaiva ṣaṣṭhibhāgōmṛtaḥ śivah |","upaśāntō dānaparaḥ dānakartā ca prabhuḥ || 85 ||"] }],
-  86: [{ n:86, tlines:["jyōtirādityaḥ sahisṇuḥ gatisattamaḥ |","sudhanvā khaṇḍaparaśuḥ dāruṇō draviṇapradaḥ || 86 ||"] }],
-  87: [{ n:87, tlines:["divaspṛk sarvadṛgvyāsō vācaspatirayōnijaḥ |","trisāmā sāmagaḥ sāma nirvāṇaṃ bhēṣajaṃ bhiṣak || 87 ||"] }],
-  88: [{ n:88, tlines:["sanyāsakṛt maścama śāntō niṣṭhā śāntih parāyaṇam |","śubhādhaḥ śāntidaḥ śreṣṭhaḥ parirakṣaka uttamaḥ || 88 ||"] }],
-  89: [{ n:89, tlines:["rajōhamarasatastvāṃ satyaṃ sātyikis tatha |","vīraḥ śauri jagatnāthō yuktaḥ śaktimataḥ prabhuḥ || 89 ||"] }],
-  90: [{ n:90, tlines:["svastidaḥ svastikṛt svāstiḥ svāstibhuk svāstidakṣiṇaḥ |","araudraḥ kuṇḍalī cakrī vikramyūrjitaśāsanaḥ || 90 ||"] }],
-  91: [{ n:91, tlines:["śabdātigaḥ śabdasahaḥ śiśiraḥ śarvarikaraḥ |","akrūraḥ pēśalō daksho dakṣiṇaḥ kṣaminām varaḥ || 91 ||"] }],
-  92: [{ n:92, tlines:["vidvattamō vīta bhayaḥ puṇya śravaṇakīrtanaḥ |","uttāraṇō duṣkṛtihā puṇyō duḥsvapnanāśanaḥ || 92 ||"] }],
-  93: [{ n:93, tlines:["vīrahā rakṣaṇaḥ santō jīvanaḥ paryavasthitaḥ |","anantarūpō'nantaśrīḥ jitamanyurbhayāpataḥ || 93 ||"] }],
-  94: [{ n:94, tlines:["caturasraḥ gabhīrātmā vidiśō vyādiśō diśaḥ |","anādinibhṛtāsityo drutaḥ śānti paramardanaḥ || 94 ||"] }],
-  95: [{ n:95, tlines:["kṣīrōdanvat pradēśastha cintāmaṇitanuḥ śivaḥ |","anantāśamayaḥ śāśvataḥ praśāntatmā ca vīryavān || 95 ||"] }],
-  96: [{ n:96, tlines:["prapannavatsalaḥ śreṣṭhaḥ bhaktiḥ bhaktanāmuttamaḥ |","mahābhāgō mahāvīryō mahāśaktirmahādyutiḥ || 96 ||"] }],
-  97: [{ n:97, tlines:["anirdēśyavapuḥ śrīmān amēyātmā mahādridṛk |","mahēṣvāsō mahībhartā śrīnivāsaḥ satāṃ gatiḥ || 97 ||"] }],
-  98: [{ n:98, tlines:["aniruddhassurānandō gōvindō gōvindāṃ patiḥ |","marīcirdamanō haṃsaḥ suparṇō bhujiśōttamaḥ || 98 ||"] }],
-  99: [{ n:99, tlines:["hiranyanābhaḥ sutapāḥ padmanābhaḥ prajāpatiḥ |","amṛtyuḥ sarvadrk simhaḥ sandhātā sandhimān sthiraḥ || 99 ||"] }],
-  100: [{ n:100, tlines:["ajō durmarsanah śāstā visrutātmā surārihā |","gururguruttamō dhāma satyaḥ satyaparākramaḥ || 100 ||"] }],
-  101: [{ n:101, tlines:["nimiṣo'nimiṣaḥ sragvī vācaspatirudāradhīḥ |","agraṇīgrāmaṇīḥ śrīmān nyāyō nētā samīraṇaḥ || 101 ||"] }],
-  102: [{ n:102, tlines:["sahasramūrdhā viśvātmā sahasrākṣaḥ sahasrapāt |","āvartanō nivṛttātmā saṃvṛtaḥ saṃpramardanaḥ || 102 ||"] }],
-  103: [{ n:103, tlines:["pramāṇaṃ prāṇanilayaḥ prāṇadhṛtprāṇajīvanaḥ |","tattvaṃ tattvavidēkātmā janmamṛtyujarātigaḥ || 103 ||"] }],
-  104: [{ n:104, tlines:["bhūrbhuvaḥ svastarustāraḥ savitā prapitāmahaḥ |","yajñō yajñapatiryajvā yajñāṅgō yajñavāhanaḥ || 104 ||"] }],
-  105: [{ n:105, tlines:["yajñabhṛdyajñakṛdyajñī yajñabhugyajñasādhanaḥ |","yajñāntakṛdyajñaguhyamannamannāda ēva ca || 105 ||"] }],
-  106: [{ n:106, tlines:["ātmayōniḥ svayaṃjātō vaikhānaḥ sāmagāyanaḥ |","dēvakīnandanaḥ sraṣṭā kṣitīśaḥ pāpanāśanaḥ || 106 ||"] }],
-  107: [{ n:107, tlines:["śaṅkhabhṛnnandakī cakrī śārṅgadhanvā gadādharaḥ |","rathāṅgapāṇirakṣōbhyaḥ sarvapraharaṇāyudhaḥ || 107 ||"] }],
-  108: [{ n:108, tlines:["vanamālī gadī śārṅgī śaṅkhī cakrī ca nandakī |","śrīmān nārāyaṇō viṣṇurvāsudēvō'bhirakṣatu || 108 ||"] }],
+  // ── Pūrva Pīṭhikā (slokas 3-22 of the intro) ──
+  purva: [
+    { n:3, tlines:[
+      "vyāsaṃ vasiṣṭha naptāraṃ śaktēḥ pautramakalmaṣam |",
+      "parāśarātmajaṃ vandē śukatātaṃ tapōnidhim || 3 ||"
+    ]},
+    { n:4, tlines:[
+      "vyāsāya viṣṇu rūpāya vyāsarūpāya viṣṇavē |",
+      "namō vai brahmanidhayē vāsiṣṭhāya namō namaḥ || 4 ||"
+    ]},
+    { n:5, tlines:[
+      "avikārāya śuddhāya nityāya paramātmanē |",
+      "sadaika rūpa rūpāya viṣṇavē sarvajiṣṇavē || 5 ||"
+    ]},
+    { n:6, tlines:[
+      "yasya smaraṇamātrēṇa janmasaṃsārabandhanāt |",
+      "vimuchyatē namastasmai viṣṇavē prabhaviṣṇavē || 6 ||"
+    ]},
+    { n:7, tlines:[
+      "śrutvā dharmā naśēṣēṇa pāvanāni cha sarvaśaḥ |",
+      "yudhiṣṭhiraḥ śāntanavaṃ punarēvābhya bhāṣata || 7 ||"
+    ]},
+    { n:8, tlines:[
+      "kimēkaṃ daivataṃ lōkē kiṃ vā'pyēkaṃ parāyaṇaṃ",
+      "stuvantaḥ kaṃ kamarchantaḥ prāpnuyurmānavāḥ śubham || 8 ||"
+    ]},
+    { n:9, tlines:[
+      "kō dharmaḥ sarvadharmāṇāṃ bhavataḥ paramō mataḥ |",
+      "kiṃ japanmuchyatē janturjanmasaṃsāra bandhanāt || 9 ||"
+    ]},
+    { n:10, tlines:[
+      "jagatprabhuṃ dēvadēva manantaṃ puruṣōttamam |",
+      "stuvannāma sahasrēṇa puruṣaḥ satatōtthitaḥ || 10 ||"
+    ]},
+    { n:11, tlines:[
+      "tamēva chārchayannityaṃ bhaktyā puruṣamavyayam |",
+      "dhyāyan stuvannamasyaṃścha yajamānastamēva cha || 11 ||"
+    ]},
+    { n:12, tlines:[
+      "anādi nidhanaṃ viṣṇuṃ sarvalōka mahēśvaram |",
+      "lōkādhyakṣaṃ stuvannityaṃ sarva duḥkhātigō bhavēt || 12 ||"
+    ]},
+    { n:13, tlines:[
+      "brahmaṇyaṃ sarva dharmajñaṃ lōkānāṃ kīrti vardhanam |",
+      "lōkanāthaṃ mahadbhūtaṃ sarvabhūta bhavōdbhavam || 13 ||"
+    ]},
+    { n:14, tlines:[
+      "ēṣa mē sarva dharmāṇāṃ dharmō'dhika tamōmataḥ |",
+      "yadbhaktyā puṇḍarīkākṣaṃ stavairarchēnnaraḥ sadā || 14 ||"
+    ]},
+    { n:15, tlines:[
+      "paramaṃ yō mahattējaḥ paramaṃ yō mahattapaḥ |",
+      "paramaṃ yō mahadbrahma paramaṃ yaḥ parāyaṇam || 15 ||"
+    ]},
+    { n:16, tlines:[
+      "pavitrāṇāṃ pavitraṃ yō maṅgaḻānāṃ cha maṅgaḻam |",
+      "daivataṃ dēvatānāṃ cha bhūtānāṃ yō'vyayaḥ pitā || 16 ||"
+    ]},
+    { n:17, tlines:[
+      "yataḥ sarvāṇi bhūtāni bhavantyādi yugāgamē |",
+      "yasmiṃścha praḻayaṃ yānti punarēva yugakṣayē || 17 ||"
+    ]},
+    { n:18, tlines:[
+      "tasya lōka pradhānasya jagannāthasya bhūpatē |",
+      "viṣṇōrnāma sahasraṃ mē śṛṇu pāpa bhayāpaham || 18 ||"
+    ]},
+    { n:19, tlines:[
+      "yāni nāmāni gauṇāni vikhyātāni mahātmanaḥ |",
+      "ṛṣibhiḥ parigītāni tāni vakṣyāmi bhūtayē || 19 ||"
+    ]},
+    { n:20, tlines:[
+      "ṛṣirnāmnāṃ sahasrasya vēdavyāsō mahāmuniḥ |",
+      "Chandō'nuṣṭup tathā dēvō bhagavān dēvakīsutaḥ || 20 ||"
+    ]},
+    { n:21, tlines:[
+      "amṛtāṃśūdbhavō bījaṃ śaktirdēvakinandanaḥ |",
+      "trisāmā hṛdayaṃ tasya śāntyarthē viniyujyatē || 21 ||"
+    ]},
+    { n:22, tlines:[
+      "viṣṇuṃ jiṣṇuṃ mahāviṣṇuṃ prabhaviṣṇuṃ mahēśvaram |",
+      "anēkarūpa daityāntaṃ namāmi puruṣōttamam || 22 ||"
+    ]},
+  ],
 
-  // ── Phalaśruti ──
+  // ── Dhyānam ──
+  dhyanam: [
+    { n:1, tlines:[
+      "kṣīrōdhanvatpradēśē śuchimaṇi-vilasa-tsaikatē-mauktikānāṃ",
+      "mālā-kliptāsanasthaḥ sphaṭika-maṇinibhai-rmauktikai-rmaṇḍitāṅgaḥ |",
+      "śubhrai-rabhrai-radabhrai-ruparivirachitai-rmukta pīyūṣa varṣaiḥ",
+      "ānandī naḥ punīyā-darinalinagadā śaṅkhapāṇi-rmukundaḥ || 1 ||"
+    ]},
+    { n:2, tlines:[
+      "bhūḥ pādau yasya nābhirviya-dasura nilaśchandra sūryau cha nētrē",
+      "karṇāvāśāḥ śirōdyaurmukhamapi dahanō yasya vāstēyamabdhiḥ |",
+      "antaḥsthaṃ yasya viśvaṃ sura narakhagagōbhōgi gandharvadaityaiḥ",
+      "chitraṃ raṃ ramyatē taṃ tribhuvana vapuśaṃ viṣṇumīśaṃ namāmi || 2 ||"
+    ]},
+    { n:3, tlines:[
+      "śāntākāraṃ bhujagaśayanaṃ padmanābhaṃ surēśaṃ",
+      "viśvādhāraṃ gaganasadṛśaṃ mēghavarṇaṃ śubhāṅgam |",
+      "lakṣmīkāntaṃ kamalanayanaṃ yōgihṛddhyānagamyam",
+      "vandē viṣṇuṃ bhavabhayaharaṃ sarvalōkaikanātham || 3 ||"
+    ]},
+    { n:4, tlines:[
+      "mēghaśyāmaṃ pītakauśēyavāsaṃ",
+      "śrīvatsāṅkaṃ kaustubhōdbhāsitāṅgam |",
+      "puṇyōpētaṃ puṇḍarīkāyatākṣaṃ",
+      "viṣṇuṃ vandē sarvalōkaikanātham || 4 ||"
+    ]},
+    { n:5, tlines:[
+      "namaḥ samasta bhūtānāṃ ādi bhūtāya bhūbhṛtē |",
+      "anēkarūpa rūpāya viṣṇavē prabhaviṣṇavē || 5 ||"
+    ]},
+    { n:6, tlines:[
+      "saśaṅkhachakraṃ sakirīṭakuṇḍalaṃ",
+      "sapītavastraṃ sarasīruhēkṣaṇam |",
+      "sahāra vakṣaḥsthala śōbhi kaustubhaṃ",
+      "namāmi viṣṇuṃ śirasā chaturbhujam || 6 ||"
+    ]},
+    { n:7, tlines:[
+      "Chāyāyāṃ pārijātasya hēmasiṃhāsanōpari",
+      "āsīnamambudaśyāmamāyatākṣamalaṅkṛtam || 7 ||"
+    ]},
+    { n:8, tlines:[
+      "chandrānanaṃ chaturbāhuṃ śrīvatsāṅkita vakṣasam",
+      "rukmiṇī satyabhāmābhyāṃ sahitaṃ kṛṣṇamāśrayē || 8 ||"
+    ]},
+  ],
+
+  // ── Main 108 nāma slokas (stōtram) ──
+  1:   [{ n:1,   tlines:["viśvaṃ viṣṇurvaṣaṭkārō bhūtabhavyabhavatprabhuḥ |","bhūtakṛdbhūtabhṛdbhāvō bhūtātmā bhūtabhāvanaḥ || 1 ||"] }],
+  2:   [{ n:2,   tlines:["pūtātmā paramātmā cha muktānāṃ paramāgatiḥ |","avyayaḥ puruṣaḥ sākṣī kṣētrajñō'kṣara ēva cha || 2 ||"] }],
+  3:   [{ n:3,   tlines:["yōgō yōgavidāṃ nētā pradhāna puruṣēśvaraḥ |","nārasiṃhavapuḥ śrīmān kēśavaḥ puruṣōttamaḥ || 3 ||"] }],
+  4:   [{ n:4,   tlines:["sarvaḥ śarvaḥ śivaḥ sthāṇurbhūtādirnidhiravyayaḥ |","sambhavō bhāvanō bhartā prabhavaḥ prabhurīśvaraḥ || 4 ||"] }],
+  5:   [{ n:5,   tlines:["svayambhūḥ śambhurādityaḥ puṣkarākṣō mahāsvanaḥ |","anādinidhanō dhātā vidhātā dhāturuttamaḥ || 5 ||"] }],
+  6:   [{ n:6,   tlines:["apramēyō hṛṣīkēśaḥ padmanābhō'maraprabhuḥ |","viśvakarmā manustvaṣṭā sthaviṣṭhaḥ sthavirō dhruvaḥ || 6 ||"] }],
+  7:   [{ n:7,   tlines:["agrāhyaḥ śāśvatō kṛṣṇō lōhitākṣaḥ pratardanaḥ |","prabhūtastrikakubdhāma pavitraṃ maṅgaḻaṃ param || 7 ||"] }],
+  8:   [{ n:8,   tlines:["īśānaḥ prāṇadaḥ prāṇō jyēṣṭhaḥ śrēṣṭhaḥ prajāpatiḥ |","hiraṇyagarbhō bhūgarbhō mādhavō madhusūdanaḥ || 8 ||"] }],
+  9:   [{ n:9,   tlines:["īśvarō vikramīdhanvī mēdhāvī vikramaḥ kramaḥ |","anuttamō durādharṣaḥ kṛtajñaḥ kṛtirātmavān || 9 ||"] }],
+  10:  [{ n:10,  tlines:["surēśaḥ śaraṇaṃ śarma viśvarētāḥ prajābhavaḥ |","ahassaṃvatsarō vyāḻaḥ pratyayaḥ sarvadarśanaḥ || 10 ||"] }],
+  11:  [{ n:11,  tlines:["ajassarvēśvaraḥ siddhaḥ siddhiḥ sarvādirachyutaḥ |","vṛṣākapiramēyātmā sarvayōgavinissṛtaḥ || 11 ||"] }],
+  12:  [{ n:12,  tlines:["vasurvasumanāḥ satyaḥ samātmā sammitassamaḥ |","amōghaḥ puṇḍarīkākṣō vṛṣakarmā vṛṣākṛtiḥ || 12 ||"] }],
+  13:  [{ n:13,  tlines:["rudrō bahuśirā babhrurviśvayōniḥ śuchiśravāḥ |","amṛtaḥ śāśvatasthāṇurvarārōhō mahātapāḥ || 13 ||"] }],
+  14:  [{ n:14,  tlines:["sarvagaḥ sarva vidbhānurviṣvaksēnō janārdanaḥ |","vēdō vēdavidavyaṅgō vēdāṅgō vēdavitkaviḥ || 14 ||"] }],
+  15:  [{ n:15,  tlines:["lōkādhyakṣaḥ surādhyakṣō dharmādhyakṣaḥ kṛtākṛtaḥ |","chaturātmā chaturvyūhaśchaturdaṃṣṭraśchaturbhujaḥ || 15 ||"] }],
+  16:  [{ n:16,  tlines:["bhrājiṣṇurbhōjanaṃ bhōktā sahiṣṇurjagadādijaḥ |","anaghō vijayō jētā viśvayōniḥ punarvasuḥ || 16 ||"] }],
+  17:  [{ n:17,  tlines:["upēndrō vāmanaḥ prāṃśuramōghaḥ śuchirūrjitaḥ |","atīndraḥ saṅgrahaḥ sargō dhṛtātmā niyamō yamaḥ || 17 ||"] }],
+  18:  [{ n:18,  tlines:["vēdyō vaidyaḥ sadāyōgī vīrahā mādhavō madhuḥ |","atīndriyō mahāmāyō mahōtsāhō mahābalaḥ || 18 ||"] }],
+  19:  [{ n:19,  tlines:["mahābuddhirmahāvīryō mahāśaktirmahādyutiḥ |","anirdēśyavapuḥ śrīmānamēyātmā mahādridhṛk || 19 ||"] }],
+  20:  [{ n:20,  tlines:["mahēśvāsō mahībhartā śrīnivāsaḥ satāṅgatiḥ |","aniruddhaḥ surānandō gōvindō gōvidāṃ patiḥ || 20 ||"] }],
+  21:  [{ n:21,  tlines:["marīchirdamanō haṃsaḥ suparṇō bhujagōttamaḥ |","hiraṇyanābhaḥ sutapāḥ padmanābhaḥ prajāpatiḥ || 21 ||"] }],
+  22:  [{ n:22,  tlines:["amṛtyuḥ sarvadṛk siṃhaḥ sandhātā sandhimān sthiraḥ |","ajō durmarṣaṇaḥ śāstā viśrutātmā surārihā || 22 ||"] }],
+  23:  [{ n:23,  tlines:["gururgurutamō dhāma satyaḥ satyaparākramaḥ |","nimiṣō'nimiṣaḥ sragvī vāchaspatirudāradhīḥ || 23 ||"] }],
+  24:  [{ n:24,  tlines:["agraṇīgrāmaṇīḥ śrīmān nyāyō nētā samīraṇaḥ","sahasramūrdhā viśvātmā sahasrākṣaḥ sahasrapāt || 24 ||"] }],
+  25:  [{ n:25,  tlines:["āvartanō nivṛttātmā saṃvṛtaḥ sampramardanaḥ |","ahaḥ saṃvartakō vahniranilō dharaṇīdharaḥ || 25 ||"] }],
+  26:  [{ n:26,  tlines:["suprasādaḥ prasannātmā viśvadhṛgviśvabhugvibhuḥ |","satkartā satkṛtaḥ sādhurjahnurnārāyaṇō naraḥ || 26 ||"] }],
+  27:  [{ n:27,  tlines:["asaṅkhyēyō'pramēyātmā viśiṣṭaḥ śiṣṭakṛchChuchiḥ |","siddhārthaḥ siddhasaṅkalpaḥ siddhidaḥ siddhi sādhanaḥ || 27 ||"] }],
+  28:  [{ n:28,  tlines:["vṛṣāhī vṛṣabhō viṣṇurvṛṣaparvā vṛṣōdaraḥ |","vardhanō vardhamānaścha viviktaḥ śrutisāgaraḥ || 28 ||"] }],
+  29:  [{ n:29,  tlines:["subhujō durdharō vāgmī mahēndrō vasudō vasuḥ |","naikarūpō bṛhadrūpaḥ śipiviṣṭaḥ prakāśanaḥ || 29 ||"] }],
+  30:  [{ n:30,  tlines:["ōjastējōdyutidharaḥ prakāśātmā pratāpanaḥ |","ṛddhaḥ spaṣṭākṣarō mantraśchandrāṃśurbhāskaradyutiḥ || 30 ||"] }],
+  31:  [{ n:31,  tlines:["amṛtāṃśūdbhavō bhānuḥ śaśabinduḥ surēśvaraḥ |","auṣadhaṃ jagataḥ sētuḥ satyadharmaparākramaḥ || 31 ||"] }],
+  32:  [{ n:32,  tlines:["bhūtabhavyabhavannāthaḥ pavanaḥ pāvanō'nalaḥ |","kāmahā kāmakṛtkāntaḥ kāmaḥ kāmapradaḥ prabhuḥ || 32 ||"] }],
+  33:  [{ n:33,  tlines:["yugādi kṛdyugāvartō naikamāyō mahāśanaḥ |","adṛśyō vyaktarūpaścha sahasrajidanantajit || 33 ||"] }],
+  34:  [{ n:34,  tlines:["iṣṭō'viśiṣṭaḥ śiṣṭēṣṭaḥ śikhaṇḍī nahuṣō vṛṣaḥ |","krōdhahā krōdhakṛtkartā viśvabāhurmahīdharaḥ || 34 ||"] }],
+  35:  [{ n:35,  tlines:["achyutaḥ prathitaḥ prāṇaḥ prāṇadō vāsavānujaḥ |","apānnidhiradhiṣṭhānamapramattaḥ pratiṣṭhitaḥ || 35 ||"] }],
+  36:  [{ n:36,  tlines:["skandaḥ skandadharō dhuryō varadō vāyuvāhanaḥ |","vāsudēvō bṛhadbhānurādidēvaḥ purandharaḥ || 36 ||"] }],
+  37:  [{ n:37,  tlines:["aśōkastāraṇastāraḥ śūraḥ śaurirjanēśvaraḥ |","anukūlaḥ śatāvartaḥ padmī padmanibhēkṣaṇaḥ || 37 ||"] }],
+  38:  [{ n:38,  tlines:["padmanābhō'ravindākṣaḥ padmagarbhaḥ śarīrabhṛt |","mahardhirṛddhō vṛddhātmā mahākṣō garuḍadhvajaḥ || 38 ||"] }],
+  39:  [{ n:39,  tlines:["atulaḥ śarabhō bhīmaḥ samayajñō havirhariḥ |","sarvalakṣaṇalakṣaṇyō lakṣmīvān samitiñjayaḥ || 39 ||"] }],
+  40:  [{ n:40,  tlines:["vikṣarō rōhitō mārgō hēturdāmōdaraḥ sahaḥ |","mahīdharō mahābhāgō vēgavānamitāśanaḥ || 40 ||"] }],
+  41:  [{ n:41,  tlines:["udbhavaḥ, kṣōbhaṇō dēvaḥ śrīgarbhaḥ paramēśvaraḥ |","karaṇaṃ kāraṇaṃ kartā vikartā gahanō guhaḥ || 41 ||"] }],
+  42:  [{ n:42,  tlines:["vyavasāyō vyavasthānaḥ saṃsthānaḥ sthānadō dhruvaḥ |","parardhiḥ paramaspaṣṭaḥ tuṣṭaḥ puṣṭaḥ śubhēkṣaṇaḥ || 42 ||"] }],
+  43:  [{ n:43,  tlines:["rāmō virāmō virajō mārgōnēyō nayō'nayaḥ |","vīraḥ śaktimatāṃ śrēṣṭhō dharmōdharma viduttamaḥ || 43 ||"] }],
+  44:  [{ n:44,  tlines:["vaikuṇṭhaḥ puruṣaḥ prāṇaḥ prāṇadaḥ praṇavaḥ pṛthuḥ |","hiraṇyagarbhaḥ śatrughnō vyāptō vāyuradhōkṣajaḥ || 44 ||"] }],
+  45:  [{ n:45,  tlines:["ṛtuḥ sudarśanaḥ kālaḥ paramēṣṭhī parigrahaḥ |","ugraḥ saṃvatsarō dakṣō viśrāmō viśvadakṣiṇaḥ || 45 ||"] }],
+  46:  [{ n:46,  tlines:["vistāraḥ sthāvara sthāṇuḥ pramāṇaṃ bījamavyayam |","arthō'narthō mahākōśō mahābhōgō mahādhanaḥ || 46 ||"] }],
+  47:  [{ n:47,  tlines:["anirviṇṇaḥ sthaviṣṭhō bhūrdharmayūpō mahāmakhaḥ |","nakṣatranēmirnakṣatrī kṣamaḥ, kṣāmaḥ samīhanaḥ || 47 ||"] }],
+  48:  [{ n:48,  tlines:["yajña ijyō mahējyaścha kratuḥ satraṃ satāṅgatiḥ |","sarvadarśī vimuktātmā sarvajñō jñānamuttamam || 48 ||"] }],
+  49:  [{ n:49,  tlines:["suvrataḥ sumukhaḥ sūkṣmaḥ sughōṣaḥ sukhadaḥ suhṛt |","manōharō jitakrōdhō vīra bāhurvidāraṇaḥ || 49 ||"] }],
+  50:  [{ n:50,  tlines:["svāpanaḥ svavaśō vyāpī naikātmā naikakarmakṛt |","vatsarō vatsalō vatsī ratnagarbhō dhanēśvaraḥ || 50 ||"] }],
+  51:  [{ n:51,  tlines:["dharmagubdharmakṛddharmī sadasatkṣaramakṣaram |","avijñātā sahasrāṃśurvidhātā kṛtalakṣaṇaḥ || 51 ||"] }],
+  52:  [{ n:52,  tlines:["gabhastinēmiḥ sattvasthaḥ siṃhō bhūta mahēśvaraḥ |","ādidēvō mahādēvō dēvēśō dēvabhṛdguruḥ || 52 ||"] }],
+  53:  [{ n:53,  tlines:["uttarō gōpatirgōptā jñānagamyaḥ purātanaḥ |","śarīra bhūtabhṛd bhōktā kapīndrō bhūridakṣiṇaḥ || 53 ||"] }],
+  54:  [{ n:54,  tlines:["sōmapō'mṛtapaḥ sōmaḥ purujit purusattamaḥ |","vinayō jayaḥ satyasandhō dāśārhaḥ sātvatāṃ patiḥ || 54 ||"] }],
+  55:  [{ n:55,  tlines:["jīvō vinayitā sākṣī mukundō'mita vikramaḥ |","ambhōnidhiranantātmā mahōdadhi śayōntakaḥ || 55 ||"] }],
+  56:  [{ n:56,  tlines:["ajō mahārhaḥ svābhāvyō jitāmitraḥ pramōdanaḥ |","ānandō'nandanōnandaḥ satyadharmā trivikramaḥ || 56 ||"] }],
+  57:  [{ n:57,  tlines:["maharṣiḥ kapilāchāryaḥ kṛtajñō mēdinīpatiḥ |","tripadastridaśādhyakṣō mahāśṛṅgaḥ kṛtāntakṛt || 57 ||"] }],
+  58:  [{ n:58,  tlines:["mahāvarāhō gōvindaḥ suṣēṇaḥ kanakāṅgadī |","guhyō gabhīrō gahanō guptaśchakra gadādharaḥ || 58 ||"] }],
+  59:  [{ n:59,  tlines:["vēdhāḥ svāṅgō'jitaḥ kṛṣṇō dṛḍhaḥ saṅkarṣaṇō'chyutaḥ |","varuṇō vāruṇō vṛkṣaḥ puṣkarākṣō mahāmanāḥ || 59 ||"] }],
+  60:  [{ n:60,  tlines:["bhagavān bhagahā'nandī vanamālī halāyudhaḥ |","ādityō jyōtirādityaḥ sahiṣṇurgatisattamaḥ || 60 ||"] }],
+  61:  [{ n:61,  tlines:["sudhanvā khaṇḍaparaśurdāruṇō draviṇapradaḥ |","divaḥspṛk sarvadṛgvyāsō vāchaspatirayōnijaḥ || 61 ||"] }],
+  62:  [{ n:62,  tlines:["trisāmā sāmagaḥ sāma nirvāṇaṃ bhēṣajaṃ bhiṣak |","sannyāsakṛchChamaḥ śāntō niṣṭhā śāntiḥ parāyaṇam || 62 ||"] }],
+  63:  [{ n:63,  tlines:["śubhāṅgaḥ śāntidaḥ sraṣṭā kumudaḥ kuvalēśayaḥ |","gōhitō gōpatirgōptā vṛṣabhākṣō vṛṣapriyaḥ || 63 ||"] }],
+  64:  [{ n:64,  tlines:["anivartī nivṛttātmā saṅkṣēptā kṣēmakṛchChivaḥ |","śrīvatsavakṣāḥ śrīvāsaḥ śrīpatiḥ śrīmatāṃvaraḥ || 64 ||"] }],
+  65:  [{ n:65,  tlines:["śrīdaḥ śrīśaḥ śrīnivāsaḥ śrīnidhiḥ śrīvibhāvanaḥ |","śrīdharaḥ śrīkaraḥ śrēyaḥ śrīmāँllōkatrayāśrayaḥ || 65 ||"] }],
+  66:  [{ n:66,  tlines:["svakṣaḥ svaṅgaḥ śatānandō nandirjyōtirgaṇēśvaraḥ |","vijitātmā'vidhēyātmā satkīrtiśchinnasaṃśayaḥ || 66 ||"] }],
+  67:  [{ n:67,  tlines:["udīrṇaḥ sarvataśchakṣuranīśaḥ śāśvatasthiraḥ |","bhūśayō bhūṣaṇō bhūtirviśōkaḥ śōkanāśanaḥ || 67 ||"] }],
+  68:  [{ n:68,  tlines:["archiṣmānarchitaḥ kumbhō viśuddhātmā viśōdhanaḥ |","aniruddhō'pratirathaḥ pradyumnō'mitavikramaḥ || 68 ||"] }],
+  69:  [{ n:69,  tlines:["kālanēminihā vīraḥ śauriḥ śūrajanēśvaraḥ |","trilōkātmā trilōkēśaḥ kēśavaḥ kēśihā hariḥ || 69 ||"] }],
+  70:  [{ n:70,  tlines:["kāmadēvaḥ kāmapālaḥ kāmī kāntaḥ kṛtāgamaḥ |","anirdēśyavapurviṣṇurvīrō'nantō dhanañjayaḥ || 70 ||"] }],
+  71:  [{ n:71,  tlines:["brahmaṇyō brahmakṛd brahmā brahma brahmavivardhanaḥ |","brahmavid brāhmaṇō brahmī brahmajñō brāhmaṇapriyaḥ || 71 ||"] }],
+  72:  [{ n:72,  tlines:["mahākramō mahākarmā mahātējā mahōragaḥ |","mahākraturmahāyajvā mahāyajñō mahāhaviḥ || 72 ||"] }],
+  73:  [{ n:73,  tlines:["stavyaḥ stavapriyaḥ stōtraṃ stutiḥ stōtā raṇapriyaḥ |","pūrṇaḥ pūrayitā puṇyaḥ puṇyakīrtiranāmayaḥ || 73 ||"] }],
+  74:  [{ n:74,  tlines:["manōjavastīrthakarō vasurētā vasupradaḥ |","vasupradō vāsudēvō vasurvasumanā haviḥ || 74 ||"] }],
+  75:  [{ n:75,  tlines:["sadgatiḥ satkṛtiḥ sattā sadbhūtiḥ satparāyaṇaḥ |","śūrasēnō yaduśrēṣṭhaḥ sannivāsaḥ suyāmunaḥ || 75 ||"] }],
+  76:  [{ n:76,  tlines:["bhūtāvāsō vāsudēvaḥ sarvāsunilayō'nalaḥ |","darpahā darpadō dṛptō durdharō'thāparājitaḥ || 76 ||"] }],
+  77:  [{ n:77,  tlines:["viśvamūrtirmahāmūrtirdīptamūrtiramūrtimān |","anēkamūrtiravyaktaḥ śatamūrtiḥ śatānanaḥ || 77 ||"] }],
+  78:  [{ n:78,  tlines:["ēkō naikaḥ savaḥ kaḥ kiṃ yattat padamanuttamam |","lōkabandhurlōkanāthō mādhavō bhaktavatsalaḥ || 78 ||"] }],
+  79:  [{ n:79,  tlines:["suvarṇavarṇō hēmāṅgō varāṅgaśchandanāṅgadī |","vīrahā viṣamaḥ śūnyō ghṛtāśīrachalaśchalaḥ || 79 ||"] }],
+  80:  [{ n:80,  tlines:["amānī mānadō mānyō lōkasvāmī trilōkadhṛt |","sumēdhā mēdhajō dhanyaḥ satyamēdhā dharādharaḥ || 80 ||"] }],
+  81:  [{ n:81,  tlines:["tējō'vṛṣō dyutidharaḥ sarvaśastrabhṛtāṃvaraḥ |","pragrahō nigrahō vyagrō naikaśṛṅgō gadāgrajaḥ || 81 ||"] }],
+  82:  [{ n:82,  tlines:["chaturmūrti śchaturbāhu śchaturvyūha śchaturgatiḥ |","chaturātmā chaturbhāvaśchaturvēdavidēkapāt || 82 ||"] }],
+  83:  [{ n:83,  tlines:["samāvartō'nivṛttātmā durjayō duratikramaḥ |","durlabhō durgamō durgō durāvāsō durārihā || 83 ||"] }],
+  84:  [{ n:84,  tlines:["śubhāṅgō lōkasāraṅgaḥ sutantustantuvardhanaḥ |","indrakarmā mahākarmā kṛtakarmā kṛtāgamaḥ || 84 ||"] }],
+  85:  [{ n:85,  tlines:["udbhavaḥ sundaraḥ sundō ratnanābhaḥ sulōchanaḥ |","arkō vājasanaḥ śṛṅgī jayantaḥ sarvavijjayī || 85 ||"] }],
+  86:  [{ n:86,  tlines:["suvarṇabindu-rakṣōbhyaḥ sarvavāgīśvarēśvaraḥ |","mahāhradō mahāgartō mahābhūtō mahānidhiḥ || 86 ||"] }],
+  87:  [{ n:87,  tlines:["kumudaḥ kundaraḥ kundaḥ parjanyaḥ pāvanō'nilaḥ |","amṛtāśō'mṛtavapuḥ sarvajñaḥ sarvatōmukhaḥ || 87 ||"] }],
+  88:  [{ n:88,  tlines:["sulabhaḥ suvrataḥ siddhaḥ śatrujichChatrutāpanaḥ |","nyagrōdhō'dumbarō'śvatthaśchāṇūrāndhra niṣūdanaḥ || 88 ||"] }],
+  89:  [{ n:89,  tlines:["sahasrārchiḥ saptajihvaḥ saptaidhāḥ saptavāhanaḥ |","amūrtiranaghō'chintyō bhayakṛdbhayanāśanaḥ || 89 ||"] }],
+  90:  [{ n:90,  tlines:["aṇurbṛhatkṛśaḥ sthūlō guṇabhṛnnirguṇō mahān |","adhṛtaḥ svadhṛtaḥ svāsyaḥ prāgvaṃśō vaṃśavardhanaḥ || 90 ||"] }],
+  91:  [{ n:91,  tlines:["bhārabhṛt kathitō yōgī yōgīśaḥ sarvakāmadaḥ |","āśramaḥ śramaṇaḥ, kṣāmaḥ suparṇō vāyuvāhanaḥ || 91 ||"] }],
+  92:  [{ n:92,  tlines:["dhanurdharō dhanurvēdō daṇḍō damayitā damaḥ |","aparājitaḥ sarvasahō niyantā'niyamō'yamaḥ || 92 ||"] }],
+  93:  [{ n:93,  tlines:["sattvavān sāttvikaḥ satyaḥ satyadharmaparāyaṇaḥ |","abhiprāyaḥ priyārhō'rhaḥ priyakṛt prītivardhanaḥ || 93 ||"] }],
+  94:  [{ n:94,  tlines:["vihāyasagatirjyōtiḥ suruchirhutabhugvibhuḥ |","ravirvirōchanaḥ sūryaḥ savitā ravilōchanaḥ || 94 ||"] }],
+  95:  [{ n:95,  tlines:["anantō hutabhugbhōktā sukhadō naikajō'grajaḥ |","anirviṇṇaḥ sadāmarṣī lōkadhiṣṭhānamadbhutaḥ || 95 ||"] }],
+  96:  [{ n:96,  tlines:["sanātsanātanatamaḥ kapilaḥ kapiravyayaḥ |","svastidaḥ svastikṛtsvastiḥ svastibhuk svastidakṣiṇaḥ || 96 ||"] }],
+  97:  [{ n:97,  tlines:["araudraḥ kuṇḍalī chakrī vikramyūrjitaśāsanaḥ |","śabdātigaḥ śabdasahaḥ śiśiraḥ śarvarīkaraḥ || 97 ||"] }],
+  98:  [{ n:98,  tlines:["akrūraḥ pēśalō dakṣō dakṣiṇaḥ, kṣamiṇāṃvaraḥ |","vidvattamō vītabhayaḥ puṇyaśravaṇakīrtanaḥ || 98 ||"] }],
+  99:  [{ n:99,  tlines:["uttāraṇō duṣkṛtihā puṇyō duḥsvapnanāśanaḥ |","vīrahā rakṣaṇaḥ santō jīvanaḥ paryavasthitaḥ || 99 ||"] }],
+  100: [{ n:100, tlines:["anantarūpō'nanta śrīrjitamanyurbhayāpahaḥ |","chaturaśrō gabhīrātmā vidiśō vyādiśō diśaḥ || 100 ||"] }],
+  101: [{ n:101, tlines:["anādirbhūrbhuvō lakṣmīḥ suvīrō ruchirāṅgadaḥ |","jananō janajanmādirbhīmō bhīmaparākramaḥ || 101 ||"] }],
+  102: [{ n:102, tlines:["ādhāranilayō'dhātā puṣpahāsaḥ prajāgaraḥ |","ūrdhvagaḥ satpathāchāraḥ prāṇadaḥ praṇavaḥ paṇaḥ || 102 ||"] }],
+  103: [{ n:103, tlines:["pramāṇaṃ prāṇanilayaḥ prāṇabhṛt prāṇajīvanaḥ |","tattvaṃ tattvavidēkātmā janmamṛtyujarātigaḥ || 103 ||"] }],
+  104: [{ n:104, tlines:["bhūrbhuvaḥ svastarustāraḥ savitā prapitāmahaḥ |","yajñō yajñapatiryajvā yajñāṅgō yajñavāhanaḥ || 104 ||"] }],
+  105: [{ n:105, tlines:["yajñabhṛd yajñakṛd yajñī yajñabhuk yajñasādhanaḥ |","yajñāntakṛd yajñaguhyamannamannāda ēva cha || 105 ||"] }],
+  106: [{ n:106, tlines:["ātmayōniḥ svayañjātō vaikhānaḥ sāmagāyanaḥ |","dēvakīnandanaḥ sraṣṭā kṣitīśaḥ pāpanāśanaḥ || 106 ||"] }],
+  107: [{ n:107, tlines:["śaṅkhabhṛnnandakī chakrī śārṅgadhanvā gadādharaḥ |","rathāṅgapāṇi-rakṣōbhyaḥ sarvapraharaṇāyudhaḥ || 107 ||"] }],
+  108: [{ n:108, tlines:["vanamālī gadī śārṅgī śaṅkhī chakrī cha nandakī |","śrīmānnārāyaṇō viṣṇurvāsudēvō'bhirakṣatu || 108 ||"] }],
+
+  // ── Phalaśruti + Uttara Pīṭhikā ──
   phala: [
-    { n:1, tlines:["itīdaṃ kīrtanīyasya kēśavasya mahātmanaḥ |","nāmnāṃ sahasraṃ divyānāmaśēṣēṇa prakīrtitam || 1 ||"] },
-    { n:2, tlines:["ya idaṃ śṛṇuyānnityaṃ yaścāpi parikīrtayēt |","nāśubhaṃ prāpnuyāt kiñcit sō'mutrēha ca mānavah || 2 ||"] },
-    { n:3, tlines:["vēdāntago brāhmaṇaḥ syāt kṣatriyo vijayī bhavēt |","vaiśyo dhanasamṛddhaḥ syācchūdraḥ sukhamavāpnuyāt || 3 ||"] },
-    { n:4, tlines:["dharmārthī prāpnuyāddharmam arthārthī cārthamāpnuyāt |","kāmānavāpnuyāt kāmī prajārthī cāpnuyāt prajāḥ || 4 ||"] },
-    { n:5, tlines:["bhaktimān yaḥ sadōtthāya śucistadgatamānasaḥ |","sahasraṃ vāsudēvasya nāmnāmētat prakīrtayēt || 5 ||"] },
-    { n:6, tlines:["yaśaḥ prāpnōti vipulaṃ jñāti prādhānyamēva ca |","acalāṃ śriyamāpnōti śrēyaḥ prāpnōtyanuttamam || 6 ||"] },
-    { n:7, tlines:["na bhayaṃ kvacidāpnōti vīryaṃ tējaśca vindati |","bhavatyarōgō dyutimān balarūpaguṇānvitaḥ || 7 ||"] },
-    { n:8, tlines:["rōgārtō mucyatē rōgādbaddhō mucyēta bandhanāt |","bhayānmucyēta bhītastu mucyētāpanna āpadaḥ || 8 ||"] },
-    { n:9, tlines:["durgāṇyatitaratyāśu puruṣaḥ puruṣōttamam |","stuvannāmasahasrēṇa nityaṃ bhaktisamanvitaḥ || 9 ||"] },
+    { n:1,  tlines:["itīdaṃ kīrtanīyasya kēśavasya mahātmanaḥ |","nāmnāṃ sahasraṃ divyānāmaśēṣēṇa prakīrtitam || 1 ||"] },
+    { n:2,  tlines:["ya idaṃ śṛṇuyānnityaṃ yaśchāpi parikīrtayēt |","nāśubhaṃ prāpnuyāt kiñchitsō'mutrēha cha mānavaḥ || 2 ||"] },
+    { n:3,  tlines:["vēdāntagō brāhmaṇaḥ syāt kṣatriyō vijayī bhavēt |","vaiśyō dhanasamṛddhaḥ syāt śūdraḥ sukhamavāpnuyāt || 3 ||"] },
+    { n:4,  tlines:["dharmārthī prāpnuyāddharmamarthārthī chārthamāpnuyāt |","kāmānavāpnuyāt kāmī prajārthī chāpnuyātprajām || 4 ||"] },
+    { n:5,  tlines:["bhaktimān yaḥ sadōtthāya śuchistadgatamānasaḥ |","sahasraṃ vāsudēvasya nāmnāmētat prakīrtayēt || 5 ||"] },
+    { n:6,  tlines:["yaśaḥ prāpnōti vipulaṃ yātiprādhānyamēva cha |","achalāṃ śriyamāpnōti śrēyaḥ prāpnōtyanuttamam || 6 ||"] },
+    { n:7,  tlines:["na bhayaṃ kvachidāpnōti vīryaṃ tējaścha vindati |","bhavatyarōgō dyutimān balarūpa guṇānvitaḥ || 7 ||"] },
+    { n:8,  tlines:["rōgārtō muchyatē rōgādbaddhō muchyēta bandhanāt |","bhayānmuchyēta bhītastu muchyētāpanna āpadaḥ || 8 ||"] },
+    { n:9,  tlines:["durgāṇyatitaratyāśu puruṣaḥ puruṣōttamam |","stuvannāmasahasrēṇa nityaṃ bhaktisamanvitaḥ || 9 ||"] },
     { n:10, tlines:["vāsudēvāśrayō martyō vāsudēvaparāyaṇaḥ |","sarvapāpaviśuddhātmā yāti brahma sanātanam || 10 ||"] },
-    { n:11, tlines:["na vāsudēvabhaktānāmaśubhaṃ vidyatē kvacit |","janmamṛtyujarāvyādhibhayaṃ naivōpajāyatē || 11 ||"] },
-    { n:12, tlines:["imaṃ stavamadhīyānaḥ śraddhābhaktisamanvitaḥ |","yujyētātmasukhakṣānti śrīdhṛtismṛtikīrtibhiḥ || 12 ||"] },
-    { n:13, tlines:["na krōdhō na ca mātsaryaṃ na lōbhō nāśubhā matiḥ |","bhavanti kṛtapuṇyānāṃ bhaktānāṃ puruṣōttamē || 13 ||"] },
-    { n:14, tlines:["dyauḥ sacandrārkanakṣatrā khaṃ diśō bhūrmahōdadhiḥ |","vāsudēvasya vīryēṇa vidhṛtāni mahātmanaḥ || 14 ||"] },
-    { n:15, tlines:["sasurāsuragandharvaṃ sayakṣōragarākṣasam |","jagadvaśē vartatēdaṃ kṛṣṇasya sacarācaram || 15 ||"] },
-    { n:16, tlines:["indriyāṇi manō buddhiḥ sattvaṃ tējō balaṃ dhṛtiḥ |","vāsudēvātmakānyāhuḥ kṣētraṃ kṣētrajña ēva ca || 16 ||"] },
-    { n:17, tlines:["sarvāgamānāmācāraḥ prathamaṃ parikalpitaḥ |","ācāraprathamo dharmō dharmasya prabhuracyutaḥ || 17 ||"] },
-    { n:18, tlines:["ṛṣayaḥ pitarō dēvā mahābhūtāni dhātavaḥ |","jaṅgamājaṅgamaṃ cēdaṃ jagannārāyaṇōdbhavam || 18 ||"] },
-    { n:19, tlines:["yōgajñānaṃ tathā sāṅkhyaṃ vidyāḥ śilpādikarmaca |","vēdāḥ śāstrāṇi vijñānamētatsarvaṃ janārdanāt || 19 ||"] },
-    { n:20, tlines:["ēkō viṣṇurmahadbhūtaṃ pṛthagbhūtānyanēkaśaḥ |","trīn lōkān vyāpya bhūtātmā bhuṅktē viśvabhugavyayaḥ || 20 ||"] },
-    { n:21, tlines:["imaṃ stavaṃ bhagavatō viṣṇōrvyāsēna kīrtitam |","paṭhēdya icchēt puruṣaḥ śrēyaḥ prāptuṃ sukhāni ca || 21 ||"] },
-    { n:22, tlines:["viśvēśvaramajaṃ dēvaṃ jagataḥ prabhavāpyayam |","bhajanti yē puṣkarākṣaṃ na tē yānti parābhavam || 22 ||"] },
+    { n:11, tlines:["na vāsudēva bhaktānāmaśubhaṃ vidyatē kvachit |","janmamṛtyujarāvyādhibhayaṃ naivōpajāyatē || 11 ||"] },
+    { n:12, tlines:["imaṃ stavamadhīyānaḥ śraddhābhaktisamanvitaḥ |","yujyētātma sukhakṣānti śrīdhṛti smṛti kīrtibhiḥ || 12 ||"] },
+    { n:13, tlines:["na krōdhō na cha mātsaryaṃ na lōbhō nāśubhāmatiḥ |","bhavanti kṛtapuṇyānāṃ bhaktānāṃ puruṣōttamē || 13 ||"] },
+    { n:14, tlines:["dyauḥ sa-chandrārka nakṣatrā khaṃ diśō bhūrmahōdadhiḥ |","vāsudēvasya vīryēṇa vidhṛtāni mahātmanaḥ || 14 ||"] },
+    { n:15, tlines:["sasurāsuragandharvaṃ sayakṣōragarākṣasam |","jagadvaśē vartatēdaṃ kṛṣṇasya sa charācharam || 15 ||"] },
+    { n:16, tlines:["indriyāṇi manōbuddhiḥ sattvaṃ tējō balaṃ dhṛtiḥ |","vāsudēvātmakānyāhuḥ, kṣētraṃ kṣētrajña ēva cha || 16 ||"] },
+    { n:17, tlines:["sarvāgamānāmāchāraḥ prathamaṃ parikalpatē |","āchāraprabhavō dharmō dharmasya prabhurachyutaḥ || 17 ||"] },
+    { n:18, tlines:["ṛṣayaḥ pitarō dēvā mahābhūtāni dhātavaḥ |","jaṅgamājaṅgamaṃ chēdaṃ jagannārāyaṇōdbhavam || 18 ||"] },
+    { n:19, tlines:["yōgōjñānaṃ tathā sāṅkhyaṃ vidyāḥ śilpādikarma cha |","vēdāḥ śāstrāṇi vijñānamētatsarvaṃ janārdanāt || 19 ||"] },
+    { n:20, tlines:["ēkō viṣṇurmahadbhūtaṃ pṛthagbhūtānyanēkaśaḥ |","trīṃlōkānvyāpya bhūtātmā bhuṅktē viśvabhugavyayaḥ || 20 ||"] },
+    { n:21, tlines:["imaṃ stavaṃ bhagavatō viṣṇōrvyāsēna kīrtitam |","paṭhēdya ichchētpuruṣaḥ śrēyaḥ prāptuṃ sukhāni cha || 21 ||"] },
+    { n:22, tlines:["viśvēśvaramajaṃ dēvaṃ jagataḥ prabhumavyayam |","bhajanti yē puṣkarākṣaṃ na tē yānti parābhavam || 22 ||"] },
+    // Uttara pīṭhikā dialogue verses
+    { n:23, speaker:'Arjuna uvācha', tlines:[
+      "padmapatra viśālākṣa padmanābha surōttama |",
+      "bhaktānā-manuraktānāṃ trātā bhava janārdana || 23 ||"
+    ]},
+    { n:24, speaker:'Śrī Bhagavān uvācha', tlines:[
+      "yō māṃ nāmasahasrēṇa stōtumichChati pāṇḍava |",
+      "sō'hamēkēna ślōkēna stuta ēva na saṃśayaḥ || 24 ||"
+    ]},
+    { n:25, speaker:'Vyāsa uvācha', tlines:[
+      "vāsanādvāsudēvasya vāsitaṃ bhuvanatrayam |",
+      "sarvabhūtanivāsō'si vāsudēva namō'stu tē || 25 ||"
+    ]},
+    { n:26, speaker:'Pārvatī uvācha', tlines:[
+      "kēnōpāyēna laghunā viṣṇōrnāmasahasrakam |",
+      "paṭhyatē paṇḍitairnityaṃ śrōtumichChāmyahaṃ prabhō || 26 ||"
+    ]},
+    { n:27, speaker:'Īśvara uvācha', tlines:[
+      "śrīrāma rāma rāmēti ramē rāmē manōramē |",
+      "sahasranāma tattulyaṃ rāmanāma varānanē || 27 ||"
+    ]},
+    { n:28, speaker:'Brahma uvācha', tlines:[
+      "namō'stvanantāya sahasramūrtayē sahasrapādākṣiśirōrubāhavē |",
+      "sahasranāmnē puruṣāya śāśvatē sahasrakōṭī yugadhāriṇē namaḥ || 28 ||"
+    ]},
+    { n:29, speaker:'Sañjaya uvācha', tlines:[
+      "yatra yōgēśvaraḥ kṛṣṇō yatra pārthō dhanurdharaḥ |",
+      "tatra śrīrvijayō bhūtirdhruvā nītirmatirmama || 29 ||"
+    ]},
+    { n:30, speaker:'Śrī Bhagavān uvācha', tlines:[
+      "ananyāśchintayantō māṃ yē janāḥ paryupāsatē |",
+      "tēṣāṃ nityābhiyuktānāṃ yōgakṣēmaṃ vahāmyaham || 30 ||"
+    ]},
+    { n:31, tlines:[
+      "paritrāṇāya sādhūnāṃ vināśāya cha duṣkṛtām |",
+      "dharmasaṃsthāpanārthāya sambhavāmi yugē yugē || 31 ||"
+    ]},
+    { n:32, tlines:[
+      "ārtāḥ viṣaṇṇāḥ śithilāścha bhītāḥ ghōrēṣu cha vyādhiṣu vartamānāḥ |",
+      "saṅkīrtya nārāyaṇaśabdamātraṃ vimuktaduḥkhāḥ sukhinō bhavanti || 32 ||"
+    ]},
+    { n:33, tlines:[
+      "kāyēna vāchā manasēndriyairvā buddhyātmanā vā prakṛtēḥ svabhāvāt |",
+      "karōmi yadyatsakalaṃ parasmai nārāyaṇāyēti samarpayāmi || 33 ||"
+    ]},
+  ],
+};
+
+const VSN_TE_DATA = {
+  preamble: [
+    { n:1, tlines:[`ప్రసన్నవదనం ధ్యాయేత్ సర్వవిఘ్నోపశాంతయే ॥ 1 ॥`, `యస్యద్విరదవక్త్రాద్యాః పారిషద్యాః పరః శతమ్ ।`] },
+    { n:2, tlines:[`విఘ్నం నిఘ్నంతి సతతం విష్వక్సేనం తమాశ్రయే ॥ 2 ॥`, `వ్యాసం వసిష్ఠ నప్తారం శక్తేః పౌత్రమకల్మషమ్ ।`] },
+  ],
+  purva: [
+    { n:3, tlines:[`పరాశరాత్మజం వందే శుకతాతం తపోనిధిమ్ ॥ 3 ॥`, `వ్యాసాయ విష్ణు రూపాయ వ్యాసరూపాయ విష్ణవే ।`] },
+    { n:4, tlines:[`నమో వై బ్రహ్మనిధయే వాసిష్ఠాయ నమో నమః ॥ 4 ॥`, `అవికారాయ శుద్ధాయ నిత్యాయ పరమాత్మనే ।`] },
+    { n:5, tlines:[`సదైక రూప రూపాయ విష్ణవే సర్వజిష్ణవే ॥ 5 ॥`, `యస్య స్మరణమాత్రేణ జన్మసంసారబంధనాత్ ।`] },
+    { n:6, tlines:[`విముచ్యతే నమస్తస్మై విష్ణవే ప్రభవిష్ణవే ॥ 6 ॥`, `ఓం నమో విష్ణవే ప్రభవిష్ణవే ।`] },
+    { n:7, tlines:[`యుధిష్ఠిరః శాంతనవం పునరేవాభ్య భాషత ॥ 7 ॥`] },
+    { n:8, tlines:[`స్తువంతః కం కమర్చంతః ప్రాప్నుయుర్మానవాః శుభమ్ ॥ 8 ॥`, `కో ధర్మః సర్వధర్మాణాం భవతః పరమో మతః ।`] },
+    { n:9, tlines:[`కిం జపన్ముచ్యతే జంతుర్జన్మసంసార బంధనాత్ ॥ 9 ॥`] },
+    { n:10, tlines:[`స్తువన్నామ సహస్రేణ పురుషః సతతోత్థితః ॥ 10 ॥`, `తమేవ చార్చయన్నిత్యం భక్త్యా పురుషమవ్యయమ్ ।`] },
+    { n:11, tlines:[`ధ్యాయన్ స్తువన్నమస్యంశ్చ యజమానస్తమేవ చ ॥ 11 ॥`, `అనాది నిధనం విష్ణుం సర్వలోక మహేశ్వరమ్ ।`] },
+    { n:12, tlines:[`లోకాధ్యక్షం స్తువన్నిత్యం సర్వ దుఃఖాతిగో భవేత్ ॥ 12 ॥`, `బ్రహ్మణ్యం సర్వ ధర్మజ్ఞం లోకానాం కీర్తి వర్ధనమ్ ।`] },
+    { n:13, tlines:[`లోకనాథం మహద్భూతం సర్వభూత భవోద్భవం॥ 13 ॥`, `ఏష మే సర్వ ధర్మాణాం ధర్మోఽధిక తమోమతః ।`] },
+    { n:14, tlines:[`యద్భక్త్యా పుండరీకాక్షం స్తవైరర్చేన్నరః సదా ॥ 14 ॥`, `పరమం యో మహత్తేజః పరమం యో మహత్తపః ।`] },
+    { n:15, tlines:[`పరమం యో మహద్బ్రహ్మ పరమం యః పరాయణమ్ ॥ 15 ॥`, `పవిత్రాణాం పవిత్రం యో మంగళానాం చ మంగళమ్ ।`] },
+    { n:16, tlines:[`దైవతం దేవతానాం చ భూతానాం యోఽవ్యయః పితా ॥ 16 ॥`, `యతః సర్వాణి భూతాని భవంత్యాది యుగాగమే ।`] },
+    { n:17, tlines:[`యస్మింశ్చ ప్రళయం యాంతి పునరేవ యుగక్షయే ॥ 17 ॥`, `తస్య లోక ప్రధానస్య జగన్నాథస్య భూపతే ।`] },
+    { n:18, tlines:[`విష్ణోర్నామ సహస్రం మే శృణు పాప భయాపహమ్ ॥ 18 ॥`, `యాని నామాని గౌణాని విఖ్యాతాని మహాత్మనః ।`] },
+    { n:19, tlines:[`ఋషిభిః పరిగీతాని తాని వక్ష్యామి భూతయే ॥ 19 ॥`, `ఋషిర్నామ్నాం సహస్రస్య వేదవ్యాసో మహామునిః ॥`] },
+    { n:20, tlines:[`ఛందోఽనుష్టుప్ తథా దేవో భగవాన్ దేవకీసుతః ॥ 20 ॥`, `అమృతాంశూద్భవో బీజం శక్తిర్దేవకినందనః ।`] },
+    { n:21, tlines:[`త్రిసామా హృదయం తస్య శాంత్యర్థే వినియుజ్యతే ॥ 21 ॥`, `విష్ణుం జిష్ణుం మహావిష్ణుం ప్రభవిష్ణుం మహేశ్వరమ్ ॥`] },
+    { n:22, tlines:[`అనేకరూప దైత్యాంతం నమామి పురుషోత్తమమ్ ॥ 22 ॥`, `పూర్వన్యాసః`, `అస్య శ్రీ విష్ణోర్దివ్య సహస్రనామ స్తోత్ర మహామంత్రస్య ॥`, `శ్రీ వేదవ్యాసో భగవాన్ ఋషిః ।`, `అనుష్టుప్ ఛందః ।`, `శ్రీమహావిష్ణుః పరమాత్మా శ్రీమన్నారాయణో దేవతా ।`, `అమృతాంశూద్భవో భానురితి బీజమ్ ।`, `దేవకీనందనః స్రష్టేతి శక్తిః ।`, `ఉద్భవః, క్షోభణో దేవ ఇతి పరమోమంత్రః ।`, `శంఖభృన్నందకీ చక్రీతి కీలకమ్ ।`, `శార్​ఙ్గధన్వా గదాధర ఇత్యస్త్రమ్ ।`, `రథాంగపాణి-రక్షోభ్య ఇతి నేత్రమ్ ।`, `త్రిసామాసామగః సామేతి కవచమ్ ।`, `ఆనందం పరబ్రహ్మేతి యోనిః ।`, `ఋతుస్సుదర్శనః కాల ఇతి దిగ్బంధః ॥`, `శ్రీవిశ్వరూప ఇతి ధ్యానమ్ ।`, `శ్రీ మహావిష్ణు ప్రీత్యర్థే సహస్రనామ జపే పారాయణే వినియోగః ।`, `కరన్యాసః`, `విశ్వం విష్ణుర్వషట్కార ఇత్యంగుష్ఠాభ్యాం నమః`, `అమృతాంశూద్భవో భానురితి తర్జనీభ్యాం నమః`, `బ్రహ్మణ్యో బ్రహ్మకృత్ బ్రహ్మేతి మధ్యమాభ్యాం నమః`, `సువర్ణబిందు-రక్షోభ్య ఇతి అనామికాభ్యాం నమః`, `నిమిషోఽనిమిషః స్రగ్వీతి కనిష్ఠికాభ్యాం నమః`, `రథాంగపాణి-రక్షోభ్య ఇతి కరతల కరపృష్ఠాభ్యాం నమః`, `అంగన్యాసః`, `సువ్రతః సుముఖః సూక్ష్మ ఇతి జ్ఞానాయ హృదయాయ నమః`, `సహస్రమూర్తిః విశ్వాత్మా ఇతి ఐశ్వర్యాయ శిరసే స్వాహా`, `సహస్రార్చిః సప్తజిహ్వ ఇతి శక్త్యై శిఖాయై వషట్`, `త్రిసామా సామగస్సామేతి బలాయ కవచాయ హుం`, `రథాంగపాణి-రక్షోభ్య ఇతి నేత్రాభ్యాం వౌషట్`, `శార్​ఙ్గధన్వా గదాధర ఇతి వీర్యాయ అస్త్రాయఫట్`, `ఋతుః సుదర్శనః కాల ఇతి దిగ్భంధః`, `క్షీరోధన్వత్ప్రదేశే శుచిమణి-విలస-త్సైకతే-మౌక్తికానాం`, `మాలా-కౢప్తాసనస్థః స్ఫటిక-మణినిభై-ర్మౌక్తికై-ర్మండితాంగః ।`, `శుభ్రై-రభ్రై-రదభ్రై-రుపరివిరచితై-ర్ముక్త పీయూష వర్షైః`] },
+  ],
+  dhyanam: [
+    { n:1, tlines:[`ఆనందీ నః పునీయా-దరినలినగదా శంఖపాణి-ర్ముకుందః ॥ 1 ॥`, `భూః పాదౌ యస్య నాభిర్వియ-దసుర నిలశ్చంద్ర సూర్యౌ చ నేత్రే`, `కర్ణావాశాః శిరోద్యౌర్ముఖమపి దహనో యస్య వాస్తేయమబ్ధిః ।`, `అంతఃస్థం యస్య విశ్వం సుర నరఖగగోభోగి గంధర్వదైత్యైః`] },
+    { n:2, tlines:[`చిత్రం రం రమ్యతే తం త్రిభువన వపుశం విష్ణుమీశం నమామి ॥ 2 ॥`, `ఓం నమో భగవతే వాసుదేవాయ !`, `శాంతాకారం భుజగశయనం పద్మనాభం సురేశం`, `విశ్వాధారం గగనసదృశం మేఘవర్ణం శుభాంగమ్ ।`, `లక్ష్మీకాంతం కమలనయనం యోగిహృద్ధ్యానగమ్యం`] },
+    { n:3, tlines:[`వందే విష్ణుం భవభయహరం సర్వలోకైకనాథమ్ ॥ 3 ॥`, `మేఘశ్యామం పీతకౌశేయవాసం`, `శ్రీవత్సాంకం కౌస్తుభోద్భాసితాంగమ్ ।`, `పుణ్యోపేతం పుండరీకాయతాక్షం`] },
+    { n:4, tlines:[`విష్ణుం వందే సర్వలోకైకనాథమ్ ॥ 4 ॥`, `నమః సమస్త భూతానాం ఆది భూతాయ భూభృతే ।`] },
+    { n:5, tlines:[`అనేకరూప రూపాయ విష్ణవే ప్రభవిష్ణవే ॥ 5॥`, `సశంఖచక్రం సకిరీటకుండలం`, `సపీతవస్త్రం సరసీరుహేక్షణమ్ ।`, `సహార వక్షఃస్థల శోభి కౌస్తుభం`, `నమామి విష్ణుం శిరసా చతుర్భుజమ్ । 6॥`, `ఛాయాయాం పారిజాతస్య హేమసింహాసనోపరి`] },
+    { n:7, tlines:[`ఆసీనమంబుదశ్యామమాయతాక్షమలంకృతమ్ ॥ 7 ॥`, `చంద్రాననం చతుర్బాహుం శ్రీవత్సాంకిత వక్షసం`] },
+    { n:8, tlines:[`రుక్మిణీ సత్యభామాభ్యాం సహితం కృష్ణమాశ్రయే ॥ 8 ॥`, `లం - పృథివ్యాత్మనే గంధం సమర్పయామి`, `హం - ఆకాశాత్మనే పుష్పైః పూజయామి`, `యం - వాయ్వాత్మనే ధూపమాఘ్రాపయామి`, `రం - అగ్న్యాత్మనే దీపం దర్శయామి`, `వం - అమృతాత్మనే నైవేద్యం నివేదయామి`, `సం - సర్వాత్మనే సర్వోపచార పూజా నమస్కారాన్ సమర్పయామి`, `విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః ।`] },
+  ],
+  1: [{ n:1, tlines:[`భూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః ॥ 1 ॥`, `పూతాత్మా పరమాత్మా చ ముక్తానాం పరమాగతిః ।`] }],
+  2: [{ n:2, tlines:[`అవ్యయః పురుషః సాక్షీ క్షేత్రజ్ఞోఽక్షర ఏవ చ ॥ 2 ॥`, `యోగో యోగవిదాం నేతా ప్రధాన పురుషేశ్వరః ।`] }],
+  3: [{ n:3, tlines:[`నారసింహవపుః శ్రీమాన్ కేశవః పురుషోత్తమః ॥ 3 ॥`, `సర్వః శర్వః శివః స్థాణుర్భూతాదిర్నిధిరవ్యయః ।`] }],
+  4: [{ n:4, tlines:[`సంభవో భావనో భర్తా ప్రభవః ప్రభురీశ్వరః ॥ 4 ॥`, `స్వయంభూః శంభురాదిత్యః పుష్కరాక్షో మహాస్వనః ।`] }],
+  5: [{ n:5, tlines:[`అనాదినిధనో ధాతా విధాతా ధాతురుత్తమః ॥ 5 ॥`, `అప్రమేయో హృషీకేశః పద్మనాభోఽమరప్రభుః ।`] }],
+  6: [{ n:6, tlines:[`విశ్వకర్మా మనుస్త్వష్టా స్థవిష్ఠః స్థవిరో ధ్రువః ॥ 6 ॥`, `అగ్రాహ్యః శాశ్వతో కృష్ణో లోహితాక్షః ప్రతర్దనః ।`] }],
+  7: [{ n:7, tlines:[`ప్రభూతస్త్రికకుబ్ధామ పవిత్రం మంగళం పరమ్ ॥ 7 ॥`, `ఈశానః ప్రాణదః ప్రాణో జ్యేష్ఠః శ్రేష్ఠః ప్రజాపతిః ।`] }],
+  8: [{ n:8, tlines:[`హిరణ్యగర్భో భూగర్భో మాధవో మధుసూదనః ॥ 8 ॥`, `ఈశ్వరో విక్రమీధన్వీ మేధావీ విక్రమః క్రమః ।`] }],
+  9: [{ n:9, tlines:[`అనుత్తమో దురాధర్షః కృతజ్ఞః కృతిరాత్మవాన్॥ 9 ॥`, `సురేశః శరణం శర్మ విశ్వరేతాః ప్రజాభవః ।`] }],
+  10: [{ n:10, tlines:[`అహస్సంవత్సరో వ్యాళః ప్రత్యయః సర్వదర్శనః ॥ 10 ॥`, `అజస్సర్వేశ్వరః సిద్ధః సిద్ధిః సర్వాదిరచ్యుతః ।`] }],
+  11: [{ n:11, tlines:[`వృషాకపిరమేయాత్మా సర్వయోగవినిస్సృతః ॥ 11 ॥`, `వసుర్వసుమనాః సత్యః సమాత్మా సమ్మితస్సమః ।`] }],
+  12: [{ n:12, tlines:[`అమోఘః పుండరీకాక్షో వృషకర్మా వృషాకృతిః ॥ 12 ॥`, `రుద్రో బహుశిరా బభ్రుర్విశ్వయోనిః శుచిశ్రవాః ।`] }],
+  13: [{ n:13, tlines:[`అమృతః శాశ్వతస్థాణుర్వరారోహో మహాతపాః ॥ 13 ॥`, `సర్వగః సర్వ విద్భానుర్విష్వక్సేనో జనార్దనః ।`] }],
+  14: [{ n:14, tlines:[`వేదో వేదవిదవ్యంగో వేదాంగో వేదవిత్కవిః ॥ 14 ॥`, `లోకాధ్యక్షః సురాధ్యక్షో ధర్మాధ్యక్షః కృతాకృతః ।`] }],
+  15: [{ n:15, tlines:[`చతురాత్మా చతుర్వ్యూహశ్చతుర్దంష్ట్రశ్చతుర్భుజః ॥ 15 ॥`, `భ్రాజిష్ణుర్భోజనం భోక్తా సహిష్ణుర్జగదాదిజః ।`] }],
+  16: [{ n:16, tlines:[`అనఘో విజయో జేతా విశ్వయోనిః పునర్వసుః ॥ 16 ॥`, `ఉపేంద్రో వామనః ప్రాంశురమోఘః శుచిరూర్జితః ।`] }],
+  17: [{ n:17, tlines:[`అతీంద్రః సంగ్రహః సర్గో ధృతాత్మా నియమో యమః ॥ 17 ॥`, `వేద్యో వైద్యః సదాయోగీ వీరహా మాధవో మధుః ।`] }],
+  18: [{ n:18, tlines:[`అతీంద్రియో మహామాయో మహోత్సాహో మహాబలః ॥ 18 ॥`, `మహాబుద్ధిర్మహావీర్యో మహాశక్తిర్మహాద్యుతిః ।`] }],
+  19: [{ n:19, tlines:[`అనిర్దేశ్యవపుః శ్రీమానమేయాత్మా మహాద్రిధృక్ ॥ 19 ॥`, `మహేశ్వాసో మహీభర్తా శ్రీనివాసః సతాంగతిః ।`] }],
+  20: [{ n:20, tlines:[`అనిరుద్ధః సురానందో గోవిందో గోవిదాం పతిః ॥ 20 ॥`, `మరీచిర్దమనో హంసః సుపర్ణో భుజగోత్తమః ।`] }],
+  21: [{ n:21, tlines:[`హిరణ్యనాభః సుతపాః పద్మనాభః ప్రజాపతిః ॥ 21 ॥`, `అమృత్యుః సర్వదృక్ సింహః సంధాతా సంధిమాన్ స్థిరః ।`] }],
+  22: [{ n:22, tlines:[`అజో దుర్మర్షణః శాస్తా విశ్రుతాత్మా సురారిహా ॥ 22 ॥`, `గురుర్గురుతమో ధామ సత్యః సత్యపరాక్రమః ।`] }],
+  23: [{ n:23, tlines:[`నిమిషోఽనిమిషః స్రగ్వీ వాచస్పతిరుదారధీః ॥ 23 ॥`, `అగ్రణీగ్రామణీః శ్రీమాన్ న్యాయో నేతా సమీరణః`] }],
+  24: [{ n:24, tlines:[`సహస్రమూర్ధా విశ్వాత్మా సహస్రాక్షః సహస్రపాత్ ॥ 24 ॥`, `ఆవర్తనో నివృత్తాత్మా సంవృతః సంప్రమర్దనః ।`] }],
+  25: [{ n:25, tlines:[`అహః సంవర్తకో వహ్నిరనిలో ధరణీధరః ॥ 25 ॥`, `సుప్రసాదః ప్రసన్నాత్మా విశ్వధృగ్విశ్వభుగ్విభుః ।`] }],
+  26: [{ n:26, tlines:[`సత్కర్తా సత్కృతః సాధుర్జహ్నుర్నారాయణో నరః ॥ 26 ॥`, `అసంఖ్యేయోఽప్రమేయాత్మా విశిష్టః శిష్టకృచ్ఛుచిః ।`] }],
+  27: [{ n:27, tlines:[`సిద్ధార్థః సిద్ధసంకల్పః సిద్ధిదః సిద్ధి సాధనః ॥ 27 ॥`, `వృషాహీ వృషభో విష్ణుర్వృషపర్వా వృషోదరః ।`] }],
+  28: [{ n:28, tlines:[`వర్ధనో వర్ధమానశ్చ వివిక్తః శ్రుతిసాగరః ॥ 28 ॥`, `సుభుజో దుర్ధరో వాగ్మీ మహేంద్రో వసుదో వసుః ।`] }],
+  29: [{ n:29, tlines:[`నైకరూపో బృహద్రూపః శిపివిష్టః ప్రకాశనః ॥ 29 ॥`, `ఓజస్తేజోద్యుతిధరః ప్రకాశాత్మా ప్రతాపనః ।`] }],
+  30: [{ n:30, tlines:[`ఋద్ధః స్పష్టాక్షరో మంత్రశ్చంద్రాంశుర్భాస్కరద్యుతిః ॥ 30 ॥`, `అమృతాంశూద్భవో భానుః శశబిందుః సురేశ్వరః ।`] }],
+  31: [{ n:31, tlines:[`ఔషధం జగతః సేతుః సత్యధర్మపరాక్రమః ॥ 31 ॥`, `భూతభవ్యభవన్నాథః పవనః పావనోఽనలః ।`] }],
+  32: [{ n:32, tlines:[`కామహా కామకృత్కాంతః కామః కామప్రదః ప్రభుః ॥ 32 ॥`, `యుగాది కృద్యుగావర్తో నైకమాయో మహాశనః ।`] }],
+  33: [{ n:33, tlines:[`అదృశ్యో వ్యక్తరూపశ్చ సహస్రజిదనంతజిత్ ॥ 33 ॥`, `ఇష్టోఽవిశిష్టః శిష్టేష్టః శిఖండీ నహుషో వృషః ।`] }],
+  34: [{ n:34, tlines:[`క్రోధహా క్రోధకృత్కర్తా విశ్వబాహుర్మహీధరః ॥ 34 ॥`, `అచ్యుతః ప్రథితః ప్రాణః ప్రాణదో వాసవానుజః ।`] }],
+  35: [{ n:35, tlines:[`అపాంనిధిరధిష్ఠానమప్రమత్తః ప్రతిష్ఠితః ॥ 35 ॥`, `స్కందః స్కందధరో ధుర్యో వరదో వాయువాహనః ।`] }],
+  36: [{ n:36, tlines:[`వాసుదేవో బృహద్భానురాదిదేవః పురంధరః ॥ 36 ॥`, `అశోకస్తారణస్తారః శూరః శౌరిర్జనేశ్వరః ।`] }],
+  37: [{ n:37, tlines:[`అనుకూలః శతావర్తః పద్మీ పద్మనిభేక్షణః ॥ 37 ॥`, `పద్మనాభోఽరవిందాక్షః పద్మగర్భః శరీరభృత్ ।`] }],
+  38: [{ n:38, tlines:[`మహర్ధిరృద్ధో వృద్ధాత్మా మహాక్షో గరుడధ్వజః ॥ 38 ॥`, `అతులః శరభో భీమః సమయజ్ఞో హవిర్హరిః ।`] }],
+  39: [{ n:39, tlines:[`సర్వలక్షణలక్షణ్యో లక్ష్మీవాన్ సమితింజయః ॥ 39 ॥`, `విక్షరో రోహితో మార్గో హేతుర్దామోదరః సహః ।`] }],
+  40: [{ n:40, tlines:[`మహీధరో మహాభాగో వేగవానమితాశనః ॥ 40 ॥`, `ఉద్భవః, క్షోభణో దేవః శ్రీగర్భః పరమేశ్వరః ।`] }],
+  41: [{ n:41, tlines:[`కరణం కారణం కర్తా వికర్తా గహనో గుహః ॥ 41 ॥`, `వ్యవసాయో వ్యవస్థానః సంస్థానః స్థానదో ధ్రువః ।`] }],
+  42: [{ n:42, tlines:[`పరర్ధిః పరమస్పష్టః తుష్టః పుష్టః శుభేక్షణః ॥ 42 ॥`, `రామో విరామో విరజో మార్గోనేయో నయోఽనయః ।`] }],
+  43: [{ n:43, tlines:[`వీరః శక్తిమతాం శ్రేష్ఠో ధర్మోధర్మ విదుత్తమః ॥ 43 ॥`, `వైకుంఠః పురుషః ప్రాణః ప్రాణదః ప్రణవః పృథుః ।`] }],
+  44: [{ n:44, tlines:[`హిరణ్యగర్భః శత్రుఘ్నో వ్యాప్తో వాయురధోక్షజః ॥ 44 ॥`, `ఋతుః సుదర్శనః కాలః పరమేష్ఠీ పరిగ్రహః ।`] }],
+  45: [{ n:45, tlines:[`ఉగ్రః సంవత్సరో దక్షో విశ్రామో విశ్వదక్షిణః ॥ 45 ॥`, `విస్తారః స్థావర స్థాణుః ప్రమాణం బీజమవ్యయమ్ ।`] }],
+  46: [{ n:46, tlines:[`అర్థోఽనర్థో మహాకోశో మహాభోగో మహాధనః ॥ 46 ॥`, `అనిర్విణ్ణః స్థవిష్ఠో భూర్ధర్మయూపో మహామఖః ।`] }],
+  47: [{ n:47, tlines:[`నక్షత్రనేమిర్నక్షత్రీ క్షమః, క్షామః సమీహనః ॥ 47 ॥`, `యజ్ఞ ఇజ్యో మహేజ్యశ్చ క్రతుః సత్రం సతాంగతిః ।`] }],
+  48: [{ n:48, tlines:[`సర్వదర్శీ విముక్తాత్మా సర్వజ్ఞో జ్ఞానముత్తమమ్ ॥ 48 ॥`, `సువ్రతః సుముఖః సూక్ష్మః సుఘోషః సుఖదః సుహృత్ ।`] }],
+  49: [{ n:49, tlines:[`మనోహరో జితక్రోధో వీర బాహుర్విదారణః ॥ 49 ॥`, `స్వాపనః స్వవశో వ్యాపీ నైకాత్మా నైకకర్మకృత్। ।`] }],
+  50: [{ n:50, tlines:[`వత్సరో వత్సలో వత్సీ రత్నగర్భో ధనేశ్వరః ॥ 50 ॥`, `ధర్మగుబ్ధర్మకృద్ధర్మీ సదసత్క్షరమక్షరం॥`] }],
+  51: [{ n:51, tlines:[`అవిజ్ఞాతా సహస్రాంశుర్విధాతా కృతలక్షణః ॥ 51 ॥`, `గభస్తినేమిః సత్త్వస్థః సింహో భూత మహేశ్వరః ।`] }],
+  52: [{ n:52, tlines:[`ఆదిదేవో మహాదేవో దేవేశో దేవభృద్గురుః ॥ 52 ॥`, `ఉత్తరో గోపతిర్గోప్తా జ్ఞానగమ్యః పురాతనః ।`] }],
+  53: [{ n:53, tlines:[`శరీర భూతభృద్ భోక్తా కపీంద్రో భూరిదక్షిణః ॥ 53 ॥`, `సోమపోఽమృతపః సోమః పురుజిత్ పురుసత్తమః ।`] }],
+  54: [{ n:54, tlines:[`వినయో జయః సత్యసంధో దాశార్హః సాత్వతాం పతిః ॥ 54 ॥`, `జీవో వినయితా సాక్షీ ముకుందోఽమిత విక్రమః ।`] }],
+  55: [{ n:55, tlines:[`అంభోనిధిరనంతాత్మా మహోదధి శయోంతకః ॥ 55 ॥`, `అజో మహార్హః స్వాభావ్యో జితామిత్రః ప్రమోదనః ।`] }],
+  56: [{ n:56, tlines:[`ఆనందోఽనందనోనందః సత్యధర్మా త్రివిక్రమః ॥ 56 ॥`, `మహర్షిః కపిలాచార్యః కృతజ్ఞో మేదినీపతిః ।`] }],
+  57: [{ n:57, tlines:[`త్రిపదస్త్రిదశాధ్యక్షో మహాశృంగః కృతాంతకృత్ ॥ 57 ॥`, `మహావరాహో గోవిందః సుషేణః కనకాంగదీ ।`] }],
+  58: [{ n:58, tlines:[`గుహ్యో గభీరో గహనో గుప్తశ్చక్ర గదాధరః ॥ 58 ॥`, `వేధాః స్వాంగోఽజితః కృష్ణో దృఢః సంకర్షణోఽచ్యుతః ।`] }],
+  59: [{ n:59, tlines:[`వరుణో వారుణో వృక్షః పుష్కరాక్షో మహామనాః ॥ 59 ॥`, `భగవాన్ భగహాఽఽనందీ వనమాలీ హలాయుధః ।`] }],
+  60: [{ n:60, tlines:[`ఆదిత్యో జ్యోతిరాదిత్యః సహిష్ణుర్గతిసత్తమః ॥ 60 ॥`, `సుధన్వా ఖండపరశుర్దారుణో ద్రవిణప్రదః ।`] }],
+  61: [{ n:61, tlines:[`దివఃస్పృక్ సర్వదృగ్వ్యాసో వాచస్పతిరయోనిజః ॥ 61 ॥`, `త్రిసామా సామగః సామ నిర్వాణం భేషజం భిషక్ ।`, `సంన్యాసకృచ్ఛమః శాంతో నిష్ఠా శాంతిః పరాయణం। 62 ॥`, `శుభాంగః శాంతిదః స్రష్టా కుముదః కువలేశయః ।`] }],
+  62: [{ n:62, tlines:[`॥ 62 ॥`] }],
+  63: [{ n:63, tlines:[`గోహితో గోపతిర్గోప్తా వృషభాక్షో వృషప్రియః ॥ 63 ॥`, `అనివర్తీ నివృత్తాత్మా సంక్షేప్తా క్షేమకృచ్ఛివః ।`] }],
+  64: [{ n:64, tlines:[`శ్రీవత్సవక్షాః శ్రీవాసః శ్రీపతిః శ్రీమతాంవరః ॥ 64 ॥`, `శ్రీదః శ్రీశః శ్రీనివాసః శ్రీనిధిః శ్రీవిభావనః ।`] }],
+  65: [{ n:65, tlines:[`శ్రీధరః శ్రీకరః శ్రేయః శ్రీమాँల్లోకత్రయాశ్రయః ॥ 65 ॥`, `స్వక్షః స్వంగః శతానందో నందిర్జ్యోతిర్గణేశ్వరః ।`] }],
+  66: [{ n:66, tlines:[`విజితాత్మాఽవిధేయాత్మా సత్కీర్తిశ్చిన్నసంశయః ॥ 66 ॥`, `ఉదీర్ణః సర్వతశ్చక్షురనీశః శాశ్వతస్థిరః ।`] }],
+  67: [{ n:67, tlines:[`భూశయో భూషణో భూతిర్విశోకః శోకనాశనః ॥ 67 ॥`, `అర్చిష్మానర్చితః కుంభో విశుద్ధాత్మా విశోధనః ।`] }],
+  68: [{ n:68, tlines:[`అనిరుద్ధోఽప్రతిరథః ప్రద్యుమ్నోఽమితవిక్రమః ॥ 68 ॥`, `కాలనేమినిహా వీరః శౌరిః శూరజనేశ్వరః ।`] }],
+  69: [{ n:69, tlines:[`త్రిలోకాత్మా త్రిలోకేశః కేశవః కేశిహా హరిః ॥ 69 ॥`, `కామదేవః కామపాలః కామీ కాంతః కృతాగమః ।`] }],
+  70: [{ n:70, tlines:[`అనిర్దేశ్యవపుర్విష్ణుర్వీరోఽనంతో ధనంజయః ॥ 70 ॥`, `బ్రహ్మణ్యో బ్రహ్మకృద్ బ్రహ్మా బ్రహ్మ బ్రహ్మవివర్ధనః ।`] }],
+  71: [{ n:71, tlines:[`బ్రహ్మవిద్ బ్రాహ్మణో బ్రహ్మీ బ్రహ్మజ్ఞో బ్రాహ్మణప్రియః ॥ 71 ॥`, `మహాక్రమో మహాకర్మా మహాతేజా మహోరగః ।`] }],
+  72: [{ n:72, tlines:[`మహాక్రతుర్మహాయజ్వా మహాయజ్ఞో మహాహవిః ॥ 72 ॥`, `స్తవ్యః స్తవప్రియః స్తోత్రం స్తుతిః స్తోతా రణప్రియః ।`] }],
+  73: [{ n:73, tlines:[`పూర్ణః పూరయితా పుణ్యః పుణ్యకీర్తిరనామయః ॥ 73 ॥`, `మనోజవస్తీర్థకరో వసురేతా వసుప్రదః ।`] }],
+  74: [{ n:74, tlines:[`వసుప్రదో వాసుదేవో వసుర్వసుమనా హవిః ॥ 74 ॥`, `సద్గతిః సత్కృతిః సత్తా సద్భూతిః సత్పరాయణః ।`] }],
+  75: [{ n:75, tlines:[`శూరసేనో యదుశ్రేష్ఠః సన్నివాసః సుయామునః ॥ 75 ॥`, `భూతావాసో వాసుదేవః సర్వాసునిలయోఽనలః ।`] }],
+  76: [{ n:76, tlines:[`దర్పహా దర్పదో దృప్తో దుర్ధరోఽథాపరాజితః ॥ 76 ॥`, `విశ్వమూర్తిర్మహామూర్తిర్దీప్తమూర్తిరమూర్తిమాన్ ।`] }],
+  77: [{ n:77, tlines:[`అనేకమూర్తిరవ్యక్తః శతమూర్తిః శతాననః ॥ 77 ॥`, `ఏకో నైకః సవః కః కిం యత్తత్ పదమనుత్తమమ్ ।`] }],
+  78: [{ n:78, tlines:[`లోకబంధుర్లోకనాథో మాధవో భక్తవత్సలః ॥ 78 ॥`, `సువర్ణవర్ణో హేమాంగో వరాంగశ్చందనాంగదీ ।`] }],
+  79: [{ n:79, tlines:[`వీరహా విషమః శూన్యో ఘృతాశీరచలశ్చలః ॥ 79 ॥`, `అమానీ మానదో మాన్యో లోకస్వామీ త్రిలోకధృత్ । [త్రిలోకధృక్]`] }],
+  80: [{ n:80, tlines:[`సుమేధా మేధజో ధన్యః సత్యమేధా ధరాధరః ॥ 80 ॥`, `తేజోఽవృషో ద్యుతిధరః సర్వశస్త్రభృతాంవరః ।`] }],
+  81: [{ n:81, tlines:[`ప్రగ్రహో నిగ్రహో వ్యగ్రో నైకశృంగో గదాగ్రజః ॥ 81 ॥`, `చతుర్మూర్తి శ్చతుర్బాహు శ్చతుర్వ్యూహ శ్చతుర్గతిః ।`] }],
+  82: [{ n:82, tlines:[`చతురాత్మా చతుర్భావశ్చతుర్వేదవిదేకపాత్ ॥ 82 ॥`, `సమావర్తోఽనివృత్తాత్మా దుర్జయో దురతిక్రమః ।`] }],
+  83: [{ n:83, tlines:[`దుర్లభో దుర్గమో దుర్గో దురావాసో దురారిహా ॥ 83 ॥`, `శుభాంగో లోకసారంగః సుతంతుస్తంతువర్ధనః ।`] }],
+  84: [{ n:84, tlines:[`ఇంద్రకర్మా మహాకర్మా కృతకర్మా కృతాగమః ॥ 84 ॥`, `ఉద్భవః సుందరః సుందో రత్ననాభః సులోచనః ।`] }],
+  85: [{ n:85, tlines:[`అర్కో వాజసనః శృంగీ జయంతః సర్వవిజ్జయీ ॥ 85 ॥`, `సువర్ణబిందు-రక్షోభ్యః సర్వవాగీశ్వరేశ్వరః ।`] }],
+  86: [{ n:86, tlines:[`మహాహ్రదో మహాగర్తో మహాభూతో మహానిధిః ॥ 86 ॥`, `కుముదః కుందరః కుందః పర్జన్యః పావనోఽనిలః ।`] }],
+  87: [{ n:87, tlines:[`అమృతాశోఽమృతవపుః సర్వజ్ఞః సర్వతోముఖః ॥ 87 ॥`, `సులభః సువ్రతః సిద్ధః శత్రుజిచ్ఛత్రుతాపనః ।`] }],
+  88: [{ n:88, tlines:[`న్యగ్రోధోఽదుంబరోఽశ్వత్థశ్చాణూరాంధ్ర నిషూదనః ॥ 88 ॥`, `సహస్రార్చిః సప్తజిహ్వః సప్తైధాః సప్తవాహనః ।`] }],
+  89: [{ n:89, tlines:[`అమూర్తిరనఘోఽచింత్యో భయకృద్భయనాశనః ॥ 89 ॥`, `అణుర్బృహత్కృశః స్థూలో గుణభృన్నిర్గుణో మహాన్ ।`] }],
+  90: [{ n:90, tlines:[`అధృతః స్వధృతః స్వాస్యః ప్రాగ్వంశో వంశవర్ధనః ॥ 90 ॥`, `భారభృత్ కథితో యోగీ యోగీశః సర్వకామదః ।`] }],
+  91: [{ n:91, tlines:[`ఆశ్రమః శ్రమణః, క్షామః సుపర్ణో వాయువాహనః ॥ 91 ॥`, `ధనుర్ధరో ధనుర్వేదో దండో దమయితా దమః ।`] }],
+  92: [{ n:92, tlines:[`అపరాజితః సర్వసహో నియంతాఽనియమోఽయమః ॥ 92 ॥`, `సత్త్వవాన్ సాత్త్వికః సత్యః సత్యధర్మపరాయణః ।`] }],
+  93: [{ n:93, tlines:[`అభిప్రాయః ప్రియార్హోఽర్హః ప్రియకృత్ ప్రీతివర్ధనః ॥ 93 ॥`, `విహాయసగతిర్జ్యోతిః సురుచిర్హుతభుగ్విభుః ।`] }],
+  94: [{ n:94, tlines:[`రవిర్విరోచనః సూర్యః సవితా రవిలోచనః ॥ 94 ॥`, `అనంతో హుతభుగ్భోక్తా సుఖదో నైకజోఽగ్రజః ।`] }],
+  95: [{ n:95, tlines:[`అనిర్విణ్ణః సదామర్షీ లోకధిష్ఠానమద్భుతః ॥ 95 ॥`, `సనాత్సనాతనతమః కపిలః కపిరవ్యయః ।`] }],
+  96: [{ n:96, tlines:[`స్వస్తిదః స్వస్తికృత్స్వస్తిః స్వస్తిభుక్ స్వస్తిదక్షిణః ॥ 96 ॥`, `అరౌద్రః కుండలీ చక్రీ విక్రమ్యూర్జితశాసనః ।`] }],
+  97: [{ n:97, tlines:[`శబ్దాతిగః శబ్దసహః శిశిరః శర్వరీకరః ॥ 97 ॥`, `అక్రూరః పేశలో దక్షో దక్షిణః, క్షమిణాంవరః ।`] }],
+  98: [{ n:98, tlines:[`విద్వత్తమో వీతభయః పుణ్యశ్రవణకీర్తనః ॥ 98 ॥`, `ఉత్తారణో దుష్కృతిహా పుణ్యో దుఃస్వప్ననాశనః ।`] }],
+  99: [{ n:99, tlines:[`వీరహా రక్షణః సంతో జీవనః పర్యవస్థితః ॥ 99 ॥`, `అనంతరూపోఽనంత శ్రీర్జితమన్యుర్భయాపహః ।`] }],
+  100: [{ n:100, tlines:[`చతురశ్రో గభీరాత్మా విదిశో వ్యాదిశో దిశః ॥ 100 ॥`, `అనాదిర్భూర్భువో లక్ష్మీః సువీరో రుచిరాంగదః ।`] }],
+  101: [{ n:101, tlines:[`జననో జనజన్మాదిర్భీమో భీమపరాక్రమః ॥ 101 ॥`, `ఆధారనిలయోఽధాతా పుష్పహాసః ప్రజాగరః ।`] }],
+  102: [{ n:102, tlines:[`ఊర్ధ్వగః సత్పథాచారః ప్రాణదః ప్రణవః పణః ॥ 102 ॥`, `ప్రమాణం ప్రాణనిలయః ప్రాణభృత్ ప్రాణజీవనః ।`] }],
+  103: [{ n:103, tlines:[`తత్త్వం తత్త్వవిదేకాత్మా జన్మమృత్యుజరాతిగః ॥ 103 ॥`, `భూర్భువః స్వస్తరుస్తారః సవితా ప్రపితామహః ।`] }],
+  104: [{ n:104, tlines:[`యజ్ఞో యజ్ఞపతిర్యజ్వా యజ్ఞాంగో యజ్ఞవాహనః ॥ 104 ॥`, `యజ్ఞభృద్ యజ్ఞకృద్ యజ్ఞీ యజ్ఞభుక్ యజ్ఞసాధనః ।`] }],
+  105: [{ n:105, tlines:[`యజ్ఞాంతకృద్ యజ్ఞగుహ్యమన్నమన్నాద ఏవ చ ॥ 105 ॥`, `ఆత్మయోనిః స్వయంజాతో వైఖానః సామగాయనః ।`] }],
+  106: [{ n:106, tlines:[`దేవకీనందనః స్రష్టా క్షితీశః పాపనాశనః ॥ 106 ॥`, `శంఖభృన్నందకీ చక్రీ శార్​ఙ్గధన్వా గదాధరః ।`] }],
+  107: [{ n:107, tlines:[`రథాంగపాణి-రక్షోభ్యః సర్వప్రహరణాయుధః ॥ 107 ॥`, `శ్రీ సర్వప్రహరణాయుధ ఓం నమ ఇతి ।`, `వనమాలీ గదీ శార్​ఙ్గీ శంఖీ చక్రీ చ నందకీ ।`] }],
+  108: [{ n:108, tlines:[`శ్రీమాన్నారాయణో విష్ణుర్వాసుదేవోఽభిరక్షతు ॥ 108 ॥`, `శ్రీ వాసుదేవోఽభిరక్షతు ఓం నమ ఇతి ।`, `ఉత్తర పీఠికా`, `ఇతీదం కీర్తనీయస్య కేశవస్య మహాత్మనః ।`] }],
+  phala: [
+    { n:1, tlines:[`నామ్నాం సహస్రం దివ్యానామశేషేణ ప్రకీర్తితం। ॥ 1 ॥`, `య ఇదం శృణుయాన్నిత్యం యశ్చాపి పరికీర్తయేత్॥`] },
+    { n:2, tlines:[`నాశుభం ప్రాప్నుయాత్ కించిత్సోఽముత్రేహ చ మానవః ॥ 2 ॥`, `వేదాంతగో బ్రాహ్మణః స్యాత్ క్షత్రియో విజయీ భవేత్ ।`] },
+    { n:3, tlines:[`వైశ్యో ధనసమృద్ధః స్యాత్ శూద్రః సుఖమవాప్నుయాత్ ॥ 3 ॥`, `ధర్మార్థీ ప్రాప్నుయాద్ధర్మమర్థార్థీ చార్థమాప్నుయాత్ ।`] },
+    { n:4, tlines:[`కామానవాప్నుయాత్ కామీ ప్రజార్థీ చాప్నుయాత్ప్రజామ్ ॥ 4 ॥ [ప్రాప్నుయాత్ప్రజాం]`, `భక్తిమాన్ యః సదోత్థాయ శుచిస్తద్గతమానసః ।`] },
+    { n:5, tlines:[`సహస్రం వాసుదేవస్య నామ్నామేతత్ ప్రకీర్తయేత్ ॥ 5 ॥`, `యశః ప్రాప్నోతి విపులం యాతిప్రాధాన్యమేవ చ । [జ్ఞాతి]`] },
+    { n:6, tlines:[`అచలాం శ్రియమాప్నోతి శ్రేయః ప్రాప్నోత్యనుత్తమం। ॥ 6 ॥`, `న భయం క్వచిదాప్నోతి వీర్యం తేజశ్చ విందతి ।`] },
+    { n:7, tlines:[`భవత్యరోగో ద్యుతిమాన్ బలరూప గుణాన్వితః ॥ 7 ॥`, `రోగార్తో ముచ్యతే రోగాద్బద్ధో ముచ్యేత బంధనాత్ ।`] },
+    { n:8, tlines:[`భయాన్ముచ్యేత భీతస్తు ముచ్యేతాపన్న ఆపదః ॥ 8 ॥`, `దుర్గాణ్యతితరత్యాశు పురుషః పురుషోత్తమమ్ ।`] },
+    { n:9, tlines:[`స్తువన్నామసహస్రేణ నిత్యం భక్తిసమన్వితః ॥ 9 ॥`, `వాసుదేవాశ్రయో మర్త్యో వాసుదేవపరాయణః ।`] },
+    { n:10, tlines:[`సర్వపాపవిశుద్ధాత్మా యాతి బ్రహ్మ సనాతనం। ॥ 10 ॥`, `న వాసుదేవ భక్తానామశుభం విద్యతే క్వచిత్ ।`] },
+    { n:11, tlines:[`జన్మమృత్యుజరావ్యాధిభయం నైవోపజాయతే ॥ 11 ॥`, `ఇమం స్తవమధీయానః శ్రద్ధాభక్తిసమన్వితః ।`] },
+    { n:12, tlines:[`యుజ్యేతాత్మ సుఖక్షాంతి శ్రీధృతి స్మృతి కీర్తిభిః ॥ 12 ॥`, `న క్రోధో న చ మాత్సర్యం న లోభో నాశుభామతిః ।`] },
+    { n:13, tlines:[`భవంతి కృతపుణ్యానాం భక్తానాం పురుషోత్తమే ॥ 13 ॥`, `ద్యౌః స-చంద్రార్క నక్షత్రా ఖం దిశో భూర్మహోదధిః ।`] },
+    { n:14, tlines:[`వాసుదేవస్య వీర్యేణ విధృతాని మహాత్మనః ॥ 14 ॥`, `ససురాసురగంధర్వం సయక్షోరగరాక్షసమ్ ।`] },
+    { n:15, tlines:[`జగద్వశే వర్తతేదం కృష్ణస్య స చరాచరం। ॥ 15 ॥`, `ఇంద్రియాణి మనోబుద్ధిః సత్త్వం తేజో బలం ధృతిః ।`] },
+    { n:16, tlines:[`వాసుదేవాత్మకాన్యాహుః, క్షేత్రం క్షేత్రజ్ఞ ఏవ చ ॥ 16 ॥`, `సర్వాగమానామాచారః ప్రథమం పరికల్పతే ।`] },
+    { n:17, tlines:[`ఆచారప్రభవో ధర్మో ధర్మస్య ప్రభురచ్యుతః ॥ 17 ॥`, `ఋషయః పితరో దేవా మహాభూతాని ధాతవః ।`] },
+    { n:18, tlines:[`జంగమాజంగమం చేదం జగన్నారాయణోద్భవమ్ ॥ 18 ॥`, `యోగోజ్ఞానం తథా సాంఖ్యం విద్యాః శిల్పాదికర్మ చ ।`] },
+    { n:19, tlines:[`వేదాః శాస్త్రాణి విజ్ఞానమేతత్సర్వం జనార్దనాత్ ॥ 19 ॥`, `ఏకో విష్ణుర్మహద్భూతం పృథగ్భూతాన్యనేకశః ।`] },
+    { n:20, tlines:[`త్రీంలోకాన్వ్యాప్య భూతాత్మా భుంక్తే విశ్వభుగవ్యయః ॥ 20 ॥`, `ఇమం స్తవం భగవతో విష్ణోర్వ్యాసేన కీర్తితమ్ ।`] },
+    { n:21, tlines:[`పఠేద్య ఇచ్చేత్పురుషః శ్రేయః ప్రాప్తుం సుఖాని చ ॥ 21 ॥`, `విశ్వేశ్వరమజం దేవం జగతః ప్రభుమవ్యయం।`] },
+    { n:22, tlines:[`భజంతి యే పుష్కరాక్షం న తే యాంతి పరాభవమ్ ॥ 22 ॥`, `న తే యాంతి పరాభవం ఓం నమ ఇతి ।`] },
+    { n:23, tlines:[`భక్తానా-మనురక్తానాం త్రాతా భవ జనార్దన ॥ 23 ॥`, `శ్రీభగవానువాచ`, `యో మాం నామసహస్రేణ స్తోతుమిచ్ఛతి పాండవ ।`] },
+    { n:24, tlines:[`సోఽహమేకేన శ్లోకేన స్తుత ఏవ న సంశయః ॥ 24 ॥`, `స్తుత ఏవ న సంశయ ఓం నమ ఇతి ।`] },
+    { n:25, tlines:[`సర్వభూతనివాసోఽసి వాసుదేవ నమోఽస్తు తే ॥ 25 ॥`, `శ్రీవాసుదేవ నమోఽస్తు తే ఓం నమ ఇతి ।`, `పార్వత్యువాచ`, `కేనోపాయేన లఘునా విష్ణోర్నామసహస్రకమ్ ।`] },
+    { n:26, tlines:[`పఠ్యతే పండితైర్నిత్యం శ్రోతుమిచ్ఛామ్యహం ప్రభో ॥ 26 ॥`] },
+    { n:27, tlines:[`సహస్రనామ తత్తుల్యం రామనామ వరాననే ॥ 27 ॥`, `శ్రీరామ నామ వరానన ఓం నమ ఇతి ।`, `బ్రహ్మోవాచ`, `నమోఽస్త్వనంతాయ సహస్రమూర్తయే సహస్రపాదాక్షిశిరోరుబాహవే ।`] },
+    { n:28, tlines:[`సహస్రనామ్నే పురుషాయ శాశ్వతే సహస్రకోటీ యుగధారిణే నమః ॥ 28 ॥`, `శ్రీ సహస్రకోటీ యుగధారిణే నమ ఓం నమ ఇతి ।`] },
+    { n:29, tlines:[`తత్ర శ్రీర్విజయో భూతిర్ధ్రువా నీతిర్మతిర్మమ ॥ 29 ॥`] },
+    { n:30, tlines:[`తేషాం నిత్యాభియుక్తానాం యోగక్షేమం వహామ్యహం। ॥ 30 ॥`, `పరిత్రాణాయ సాధూనాం వినాశాయ చ దుష్కృతాం। ।`] },
+    { n:31, tlines:[`ధర్మసంస్థాపనార్థాయ సంభవామి యుగే యుగే ॥ 31 ॥`, `ఆర్తాః విషణ్ణాః శిథిలాశ్చ భీతాః ఘోరేషు చ వ్యాధిషు వర్తమానాః ।`] },
+    { n:32, tlines:[`సంకీర్త్య నారాయణశబ్దమాత్రం విముక్తదుఃఖాః సుఖినో భవంతి ॥ 32 ॥`, `కాయేన వాచా మనసేంద్రియైర్వా బుద్ధ్యాత్మనా వా ప్రకృతేః స్వభావాత్ ।`] },
+    { n:33, tlines:[`కరోమి యద్యత్సకలం పరస్మై నారాయణాయేతి సమర్పయామి ॥ 33 ॥`, `యదక్షర పదభ్రష్టం మాత్రాహీనం తు యద్భవేత్`, `తత్సర్వం క్షమ్యతాం దేవ నారాయణ నమోఽస్తు తే ।`, `విసర్గ బిందు మాత్రాణి పదపాదాక్షరాణి చ`, `న్యూనాని చాతిరిక్తాని క్షమస్వ పురుషోత్తమ ॥`, `ఇతి శ్రీ మహాభారతే శతసాహస్రికాయాం సంహితాయాం వైయాసిక్యామనుశాసన పర్వాంతర్గత ఆనుశాసనిక పర్వణి, మోక్షధర్మే భీష్మ యుధిష్ఠిర సంవాదే శ్రీ విష్ణోర్దివ్య సహస్రనామ స్తోత్రం నామైకోన పంచ శతాధిక శతతమోధ్యాయః ॥`, `శ్రీ విష్ణు సహస్రనామ స్తోత్రం సమాప్తమ్ ॥`, `ఓం తత్సత్ సర్వం శ్రీ కృష్ణార్పణమస్తు ॥`] },
   ],
 };
 
 const VSN_SECTIONS_ORDER = [
-  'dhyana',
+  'preamble', 'purva', 'dhyanam',
   ...Array.from({length:108}, (_,i) => String(i+1)),
   'phala',
+];
+
+
+// ─────────────── SRI RUDRAM NAMAKAM DATA ───────────────
+const NAMAKAM_META = {
+  closing: 'Kṣamāpaṇa',
+};
+
+const NAMAKAM_DATA = {
+  1: [{
+    n: 1,
+    tlines: [
+      `nama̍stē rudra ma̠nyava̍ u̠tōta̠ iṣa̍vē̠ nama̍ḥ ।`,
+      `nama̍stē astu̠ dhanva̍nē bā̠hubhyā̍mu̠ta tē̠ nama̍ḥ ॥`,
+      `yā ta̠ iṣu̍-śśi̠vata̍mā śi̠va-mba̠bhūva̍ tē̠ dhanu̍ḥ ।`,
+      `śi̠vā śa̍ra̠vyā̍ yā tava̠ tayā̍ nō rudra mṛḍaya ।`,
+      `yā tē̍ rudra śi̠vā ta̠nūraghō̠rā-'pā̍pakāśinī ।`,
+      `tayā̍ nasta̠nuvā̠ śanta̍mayā̠ giri̍śantā̠bhichā̍kaśīhi ॥`,
+      `yāmiṣu̍-ṅgiriśanta̠ hastē̠ bibha̠r​ṣyasta̍vē ।`,
+      `śi̠vā-ṅgi̍ritra̠ tā-ṅku̍ru̠ mā hig̍ṃsī̠ḥ puru̍ṣa̠-ñjaga̍t॥`,
+      `śi̠vēna̠ vacha̍sā tvā̠ giri̠śāchChā̍ vadāmasi ।`,
+      `yathā̍ na̠-ssarva̠mijjaga̍daya̠kṣmagṃ su̠manā̠ asa̍t ॥`,
+      `adhya̍vōchadadhiva̠ktā pra̍tha̠mō daivyō̍ bhi̠ṣak ।`,
+      `ahīg̍ścha̠ sarvā̎mja̠mbhaya̠n-thsarvā̎ścha yātudhā̠nya̍ḥ ॥`,
+      `a̠sau yastā̠mrō a̍ru̠ṇa u̠ta ba̠bhrussu̍ma̠ṅgala̍ḥ ।`,
+      `yē chē̠māgṃ ru̠drā a̠bhitō̍ di̠kṣu śri̠tā-ssa̍hasra̠śō-'vai̍ṣā̠gṃ̠ hēḍa̍ īmahē ॥`,
+      `a̠sau yō̍-'va̠sarpa̍ti̠ nīla̍grīvō̠ vilō̍hitaḥ ।`,
+      `u̠taina̍-ṅgō̠pā a̍dṛśa̠nnadṛ̍śannudahā̠rya̍ḥ ।`,
+      `u̠taina̠ṃ viśvā̍ bhū̠tāni̠ sa dṛ̠ṣṭō mṛ̍ḍayāti naḥ ॥`,
+      `namō̍ astu̠ nīla̍grīvāya sahasrā̠kṣāya̍ mī̠ḍhuṣē̎ ।`,
+      `athō̠ yē a̍sya̠ satvā̍nō̠-'ha-ntēbhyō̍-'kara̠nnama̍ḥ ॥`,
+      `pramu̍ñcha̠ dhanva̍na̠stvamu̠bhayō̠rārtni̍ yō̠rjyām ।`,
+      `yāścha̍ tē̠ hasta̠ iṣa̍va̠ḥ parā̠ tā bha̍gavō vapa ॥`,
+      `a̠va̠tatya̠ dhanu̠stvagṃ saha̍srākṣa̠ śatē̍ṣudhē ।`,
+      `ni̠śīrya̍ śa̠lyānā̠-mmukhā̍ śi̠vō na̍-ssu̠manā̍ bhava ॥`,
+      `vijya̠-ndhanu̍ḥ kapa̠rdinō̠ viśa̍lyō̠ bāṇa̍vāgṃ u̠ta ।`,
+      `anē̍śanna̠syēṣa̍va ā̠bhura̍sya niṣa̠ṅgathi̍ḥ ॥`,
+      `yā tē̍ hē̠tirmī̍ḍuṣṭama̠ hastē̍ ba̠bhūva̍ tē̠ dhanu̍ḥ ।`,
+      `tayā̠-'smān, vi̠śvata̠stvama̍ya̠kṣmayā̠ pari̍bbhuja ॥`,
+      `nama̍stē a̠stvāyu̍dhā̠yānā̍tatāya dhṛ̠ṣṇavē̎ ।`,
+      `u̠bhābhyā̍mu̠ta tē̠ namō̍ bā̠hubhyā̠-ntava̠ dhanva̍nē ॥`,
+      `pari̍ tē̠ dhanva̍nō hē̠tira̠smān vṛ̍ṇaktu vi̠śvata̍ḥ ।`,
+      `athō̠ ya i̍ṣu̠dhistavā̠rē a̠smannidhē̍hi̠ tam ॥ 1 ॥`
+    ]
+  }],
+  2: [{
+    n: 2,
+    tlines: [
+      `śrī śambha̍vē̠ nama̍ḥ ॥`,
+      `nama̍stē astu bhagavan-viśvēśva̠rāya̍ mahādē̠vāya̍ tryamba̠kāya̍ tripurānta̠kāya̍ trikāgnikā̠lāya̍ kālāgniru̠drāya̍ nīlaka̠ṇṭhāya̍ mṛtyuñja̠yāya̍ sarvēśva̠rāya̍ sadāśi̠vāya̍ [śaṅka̠rāya̍] śrīma-nmahādē̠vāya̠ nama̍ḥ ।`,
+      `namō̠ hira̍ṇya bāhavē sēnā̠nyē̍ di̠śā-ñcha̠ pata̍yē̠ namō̠`,
+      `namō̍ vṛ̠kṣēbhyō̠ hari̍kēśēbhyaḥ paśū̠nā-mpata̍yē̠ namō̠`,
+      `nama̍-ssa̠spiñja̍rāya̠ tviṣī̍matē pathī̠nā-mpata̍yē̠ namō̠`,
+      `namō̍ babhlu̠śāya̍ vivyā̠dhinē-'nnā̍nā̠-mpata̍yē̠ namō̠`,
+      `namō̠ hari̍kēśāyōpavī̠tinē̍ pu̠ṣṭānā̠-mpata̍yē̠ namō̠`,
+      `namō̍ bha̠vasya̍ hē̠tyai jaga̍tā̠-mpata̍yē̠ namō̠`,
+      `namō̍ ru̠drāyā̍tatā̠vinē̠ kṣētrā̍ṇā̠-mpata̍yē̠ namō̠`,
+      `nama̍ssū̠tāyāha̍ntyāya̠ vanā̍nā̠-mpata̍yē̠ namō̠`,
+      `namō̠ rōhi̍tāya stha̠pata̍yē vṛ̠kṣāṇā̠-mpata̍yē̠ namō̠`,
+      `namō̍ ma̠ntriṇē̍ vāṇi̠jāya̠ kakṣā̍ṇā̠-mpata̍yē̠ namō̠`,
+      `namō̍ bhuva̠ntayē̍ vārivaskṛ̠tā-yauṣa̍dhīnā̠-mpata̍yē̠ namō̠`,
+      `nama̍ u̠chchairghō̍ṣāyākra̠ndaya̍tē pattī̠nā-mpata̍yē̠ namō̠`,
+      `nama̍ḥ kṛtsnavī̠tāya̠ dhāva̍tē̠ sattva̍nā̠-mpata̍yē̠ nama̍ḥ ॥ 2 ॥`
+    ]
+  }],
+  3: [{
+    n: 3,
+    tlines: [
+      `nama̠-ssaha̍mānāya nivyā̠dhina̍ āvyā̠dhinī̍nā̠-mpata̍yē̠ namō̠`,
+      `nama̍ḥ kaku̠bhāya̍ niṣa̠ṅgiṇē̎ stē̠nānā̠-mpata̍yē̠ namō̠`,
+      `namō̍ niṣa̠ṅgiṇa̍ iṣudhi̠matē̠ taska̍rāṇā̠-mpata̍yē̠ namō̠`,
+      `namō̠ vañcha̍tē pari̠vañcha̍tē stāyū̠nā-mpata̍yē̠ namō̠`,
+      `namō̍ nichē̠ravē̍ paricha̠rāyāra̍ṇyānā̠-mpata̍yē̠ namō̠`,
+      `nama̍-ssṛkā̠vibhyō̠ jighāg̍ṃsadbhyō muṣṇa̠tā-mpata̍yē̠ namō̠`,
+      `namō̍-'si̠madbhyō̠ nakta̠ñchara̍dbhyaḥ prakṛ̠ntānā̠-mpata̍yē̠ namō̠`,
+      `nama̍ uṣṇī̠ṣiṇē̍ giricha̠rāya̍ kulu̠ñchānā̠-mpata̍yē̠ namō̠`,
+      `nama̠ iṣu̍madbhyō dhanvā̠vibhya̍ścha vō̠ namō̠`,
+      `nama̍ ātan-vā̠nēbhya̍ḥ prati̠dadhā̍nēbhyaścha vō̠ namō̠`,
+      `nama̍ ā̠yachCha̍dbhyō visṛ̠jadbhya̍ścha vō̠ namō̠`,
+      `namō-'sya̍dbhyō̠ vidya̍dbhyaścha vō̠ namō̠`,
+      `nama̠ āsī̍nēbhya̠-śśayā̍nēbhyaścha vō̠ namō̠`,
+      `nama̍-ssva̠padbhyō̠ jāgra̍dbhyaścha vō̠ namō̠`,
+      `nama̠stiṣṭha̍dbhyō̠ dhāva̍dbhyaścha vō̠ namō̠`,
+      `nama̍-ssa̠bhābhya̍-ssa̠bhāpa̍tibhyaścha vō̠ namō̠`,
+      `namō̠ aśvē̠bhyō-'śva̍patibhyaścha vō̠ nama̍ḥ ॥ 3 ॥`
+    ]
+  }],
+  4: [{
+    n: 4,
+    tlines: [
+      `nama̍ āvyā̠dhinī̎bhyō vi̠vidhya̍ntībhyaścha vō̠ namō̠`,
+      `nama̠ uga̍ṇābhyastṛgṃ-ha̠tībhya̍ścha vō̠ namō̠`,
+      `namō̍ gṛ̠tsēbhyō̍ gṛ̠tsapa̍tibhyaścha vō̠ namō̠`,
+      `namō̠ vrātē̎bhyō̠ vrāta̍patibhyaścha vō̠ namō̠`,
+      `namō̍ ga̠ṇēbhyō̍ ga̠ṇapa̍tibhyaścha vō̠ namō̠`,
+      `namō̠ virū̍pēbhyō vi̠śvarū̍pēbhyaścha vō̠ namō̠`,
+      `namō̍ maha̠dbhya̍ḥ, kṣulla̠kēbhya̍ścha vō̠ namō̠`,
+      `namō̍ ra̠thibhyō̍-'ra̠thēbhya̍ścha vō̠ namō̠`,
+      `namō̠ rathē̎bhyō̠ ratha̍patibhyaścha vō̠ namō̠`,
+      `nama̠-ssēnā̎bhya-ssēnā̠nibhya̍ścha vō̠ namō̠`,
+      `nama̍ḥ, kṣa̠ttṛbhya̍-ssaṅgrahī̠tṛbhya̍ścha vō̠ namō̠`,
+      `nama̠stakṣa̍bhyō rathakā̠rēbhya̍ścha vō̠ namō̠`,
+      `nama̠ḥ kulā̍lēbhyaḥ ka̠rmārē̎bhyaścha vō̠ namō̠`,
+      `nama̍ḥ pu̠ñjiṣṭē̎bhyō niṣā̠dēbhya̍ścha vō̠ namō̠`,
+      `nama̍ iṣu̠kṛdbhyō̍ dhanva̠kṛdbhya̍ścha vō̠ namō̠`,
+      `namō̍ mṛga̠yubhya̍-śśva̠nibhya̍ścha vō̠ namō̠`,
+      `nama̠-śśvabhya̠-śśvapa̍tibhyaścha vō̠ nama̍ḥ ॥ 4 ॥`
+    ]
+  }],
+  5: [{
+    n: 5,
+    tlines: [
+      `namō̍ bha̠vāya̍ cha ru̠drāya̍ cha̠`,
+      `nama̍-śśa̠rvāya̍ cha paśu̠pata̍yē cha̠`,
+      `namō̠ nīla̍grīvāya cha śiti̠kaṇṭhā̍ya cha̠`,
+      `nama̍ḥ kapa̠rdinē̍ cha̠ vyu̍ptakēśāya cha̠`,
+      `nama̍-ssahasrā̠kṣāya̍ cha śa̠tadha̍nvanē cha̠`,
+      `namō̍ giri̠śāya̍ cha śipivi̠ṣṭāya̍ cha̠`,
+      `namō̍ mī̠ḍhuṣṭa̍māya̠ chēṣu̍matē cha̠`,
+      `namō̎ hra̠svāya̍ cha vāma̠nāya̍ cha̠`,
+      `namō̍ bṛha̠tē cha̠ var​ṣī̍yasē cha̠`,
+      `namō̍ vṛ̠ddhāya̍ cha sa̠ṃvṛdhva̍nē cha̠`,
+      `namō̠ agri̍yāya cha pratha̠māya̍ cha̠`,
+      `nama̍ ā̠śavē̍ chāji̠rāya̍ cha̠`,
+      `nama̠-śśīghri̍yāya cha̠ śībhyā̍ya cha̠`,
+      `nama̍ ū̠rmyā̍ya chāvasva̠nyā̍ya cha̠`,
+      `nama̍-ssrōta̠syā̍ya cha̠ dvīpyā̍ya cha ॥ 5 ॥`
+    ]
+  }],
+  6: [{
+    n: 6,
+    tlines: [
+      `namō̎ jyē̠ṣṭhāya̍ cha kani̠ṣṭhāya̍ cha̠`,
+      `nama̍ḥ pūrva̠jāya̍ chāpara̠jāya̍ cha̠`,
+      `namō̍ madhya̠māya̍ chāpaga̠lbhāya̍ cha̠`,
+      `namō̍ jagha̠nyā̍ya cha̠ budhni̍yāya cha̠`,
+      `nama̍-ssō̠bhyā̍ya cha pratisa̠ryā̍ya cha̠`,
+      `namō̠ yāmyā̍ya cha̠ kṣēmyā̍ya cha̠`,
+      `nama̍ urva̠ryā̍ya cha̠ khalyā̍ya cha̠`,
+      `nama̠-śślōkyā̍ya chā-'vasā̠nyā̍ya cha̠`,
+      `namō̠ vanyā̍ya cha̠ kakṣyā̍ya cha̠`,
+      `nama̍-śśra̠vāya̍ cha pratiśra̠vāya̍ cha̠`,
+      `nama̍ ā̠śuṣē̍ṇāya chā̠śura̍thāya cha̠`,
+      `nama̠-śśūrā̍ya chāvabhinda̠tē cha̠`,
+      `namō̍ va̠rmiṇē̍ cha varū̠thinē̍ cha̠`,
+      `namō̍ bi̠lminē̍ cha kava̠chinē̍ cha̠`,
+      `nama̍-śśru̠tāya̍ cha śrutasē̠nāya̍ cha ॥ 6 ॥`
+    ]
+  }],
+  7: [{
+    n: 7,
+    tlines: [
+      `namō̍ dundu̠bhyā̍ya chāhana̠nyā̍ya cha̠`,
+      `namō̍ dhṛ̠ṣṇavē̍ cha pramṛ̠śāya̍ cha̠`,
+      `namō̍ dū̠tāya̍ cha̠ prahi̍tāya cha̠`,
+      `namō̍ niṣa̠ṅgiṇē̍ chēṣudhi̠matē̍ cha̠`,
+      `nama̍stī̠kṣṇēṣa̍vē chāyu̠dhinē̍ cha̠`,
+      `nama̍-ssvāyu̠dhāya̍ cha su̠dhanva̍nē cha̠`,
+      `nama̠-ssrutyā̍ya cha̠ pathyā̍ya cha̠`,
+      `nama̍ḥ kā̠ṭyā̍ya cha nī̠pyā̍ya cha̠`,
+      `nama̠-ssūdyā̍ya cha sara̠syā̍ya cha̠`,
+      `namō̍ nā̠dyāya̍ cha vaiśa̠ntāya̍ cha̠`,
+      `nama̠ḥ kūpyā̍ya chāva̠ṭyā̍ya cha̠`,
+      `namō̠ var​ṣyā̍ya chāva̠r​ṣyāya̍ cha̠`,
+      `namō̍ mē̠ghyā̍ya cha vidyu̠tyā̍ya cha̠`,
+      `nama ī̠dhriyā̍ya chāta̠pyā̍ya cha̠`,
+      `namō̠ vātyā̍ya cha̠ rēṣmi̍yāya cha̠`,
+      `namō̍ vāsta̠vyā̍ya cha vāstu̠pāya̍ cha ॥ 7 ॥`
+    ]
+  }],
+  8: [{
+    n: 8,
+    tlines: [
+      `nama̠-ssōmā̍ya cha ru̠drāya̍ cha̠`,
+      `nama̍stā̠mrāya̍ chāru̠ṇāya̍ cha̠`,
+      `nama̍-śśa̠ṅgāya̍ cha paśu̠pata̍yē cha̠`,
+      `nama̍ u̠grāya̍ cha bhī̠māya̍ cha̠`,
+      `namō̍ agrēva̠dhāya̍ cha dūrēva̠dhāya̍ cha̠`,
+      `namō̍ ha̠ntrē cha̠ hanī̍yasē cha̠`,
+      `namō̍ vṛ̠kṣēbhyō̠ hari̍kēśēbhyō̠`,
+      `nama̍stā̠rāya̠`,
+      `nama̍śśa̠mbhavē̍ cha mayō̠bhavē̍ cha̠`,
+      `nama̍-śśaṅka̠rāya̍ cha mayaska̠rāya̍ cha̠`,
+      `nama̍-śśi̠vāya̍ cha śi̠vata̍rāya cha̠`,
+      `nama̠stīrthyā̍ya cha̠ kūlyā̍ya cha̠`,
+      `nama̍ḥ pā̠ryā̍ya chāvā̠ryā̍ya cha̠`,
+      `nama̍ḥ pra̠tara̍ṇāya chō̠ttara̍ṇāya cha̠`,
+      `nama̍ ātā̠ryā̍ya chālā̠dyā̍ya cha̠`,
+      `nama̠-śśaṣpyā̍ya cha̠ phēnyā̍ya cha̠`,
+      `nama̍-ssika̠tyā̍ya cha pravā̠hyā̍ya cha ॥ 8 ॥`
+    ]
+  }],
+  9: [{
+    n: 9,
+    tlines: [
+      `nama̍ iri̠ṇyā̍ya cha prapa̠thyā̍ya cha̠`,
+      `nama̍ḥ kigṃśi̠lāya̍ cha̠ kṣaya̍ṇāya cha̠`,
+      `nama̍ḥ kapa̠rdinē̍ cha pula̠stayē̍ cha̠`,
+      `namō̠ gōṣṭhyā̍ya cha̠ gṛhyā̍ya cha̠`,
+      `nama̠stalpyā̍ya cha̠ gēhyā̍ya cha̠`,
+      `nama̍ḥ kā̠ṭyā̍ya cha gahvarē̠ṣṭhāya̍ cha̠`,
+      `namō̎ hrada̠yyā̍ya cha nivē̠ṣpyā̍ya cha̠`,
+      `nama̍ḥ pāgṃ sa̠vyā̍ya cha raja̠syā̍ya cha̠`,
+      `nama̠-śśuṣkyā̍ya cha hari̠tyā̍ya cha̠`,
+      `namō̠ lōpyā̍ya chōla̠pyā̍ya cha̠`,
+      `nama̍ ū̠rvyā̍ya cha sū̠rmyā̍ya cha̠`,
+      `nama̍ḥ pa̠rṇyā̍ya cha parṇaśa̠dyā̍ya cha̠`,
+      `namō̍-'pagu̠ramā̍ṇāya chābhighna̠tē cha̠`,
+      `nama̍ ākkhida̠tē cha̍ prakkhida̠tē cha̠`,
+      `namō̍ vaḥ kiri̠kēbhyō̍ dē̠vānā̠g̠m̠ hṛda̍yēbhyō̠`,
+      `namō̍ vikṣīṇa̠kēbhyō̠ namō̍ vichinva̠tkēbhyō̠`,
+      `nama̍ ānir ha̠tēbhyō̠ nama̍ āmīva̠tkēbhya̍ḥ ॥ 9 ॥`
+    ]
+  }],
+  10: [{
+    n: 10,
+    tlines: [
+      `drāpē̠ andha̍saspatē̠ dari̍dra̠nnīla̍lōhita ।`,
+      `ē̠ṣā-mpuru̍ṣāṇāmē̠ṣā-mpa̍śū̠nā-mmā bhērmā-'rō̠ mō ē̍ṣā̠-ṅkiñcha̠nāma̍mat ।`,
+      `yā tē̍ rudra śi̠vā ta̠nū-śśi̠vā vi̠śvāha̍bhēṣajī ।`,
+      `śi̠vā ru̠drasya̍ bhēṣa̠jī tayā̍ nō mṛḍa jī̠vasē̎ ॥`,
+      `i̠māgṃ ru̠drāya̍ ta̠vasē̍ kapa̠rdinē̎ kṣa̠yadvī̍rāya̠ prabha̍rāmahē ma̠tim ।`,
+      `yathā̍ na̠śśamasa̍ddvi̠padē̠ chatu̍ṣpadē̠ viśva̍-mpu̠ṣṭa-ṅgrāmē̍ a̠sminnanā̍turam ।`,
+      `mṛ̠ḍā nō̍ rudrō̠ta nō̠ maya̍skṛdhi kṣa̠yadvī̍rāya̠ nama̍sā vidhēma tē ।`,
+      `yachCha-ñcha̠ yōścha̠ manu̍rāya̠jē pi̠tā tada̍śyāma̠ tava̍ rudra̠ praṇī̍tau ।`,
+      `mā nō̍ ma̠hānta̍mu̠ta mā nō̍ arbha̠ka-mmā na̠ ukṣa̍ntamu̠ta mā na̍ ukṣi̠tam ।`,
+      `mā nō̍-'vadhīḥ pi̠tara̠-mmōta mā̠tara̍-mpri̠yā mā na̍sta̠nuvō̍ rudra rīriṣaḥ ।`,
+      `mā na̍stō̠kē tana̍yē̠ mā na̠ āyu̍ṣi̠ mā nō̠ gōṣu̠ mā nō̠ aśvē̍ṣu rīriṣaḥ ।`,
+      `vī̠rānmā nō̍ rudra bhāmi̠tō-'va̍dhīr​ha̠viṣmaṃ̍tō̠ nama̍sā vidhēma tē ।`,
+      `ā̠rāttē̍ gō̠ghna u̠ta pū̍ruṣa̠ghnē kṣa̠yadvī̍rāya su̠mnama̠smē tē̍ astu ।`,
+      `rakṣā̍ cha nō̠ adhi̍ cha dēva brū̠hyadhā̍ cha na̠-śśarma̍ yachCha dvi̠bar​hā̎ḥ ।`,
+      `stu̠hi śru̠ta-ṅga̍rta̠sada̠ṃ yuvā̍na-mmṛ̠ganna bhī̠mamu̍paha̠tnumu̠gram ।`,
+      `mṛ̠ḍā ja̍ri̠trē ru̍dra̠ stavā̍nō a̠nyantē̍ a̠smanniva̍pantu̠ sēnā̎ḥ ।`,
+      `pari̍ṇō ru̠drasya̍ hē̠tirvṛ̍ṇaktu̠ pari̍ tvē̠ṣasya̍ durma̠ti ra̍ghā̠yōḥ ।`,
+      `ava̍ sthi̠rā ma̠ghava̍dbhya-stanuṣva̠ mīḍhva̍stō̠kāya̠ tana̍yāya mṛḍaya ।`,
+      `mīḍhu̍ṣṭama̠ śiva̍tama śi̠vō na̍-ssu̠manā̍ bhava ।`,
+      `pa̠ra̠mē vṛ̠kṣa āyu̍dhanni̠dhāya̠ kṛtti̠ṃ vasā̍na̠ ācha̍ra̠ pinā̍ka̠-mbibhra̠dāga̍hi ।`,
+      `viki̍rida̠ vilō̍hita̠ nama̍stē astu bhagavaḥ ।`,
+      `yāstē̍ sa̠hasragṃ̍ hē̠tayō̠nyama̠smanniva̍pantu̠ tāḥ ।`,
+      `sa̠hasrā̍ṇi sahasra̠dhā bā̍hu̠vōstava̍ hē̠taya̍ḥ ।`,
+      `tāsā̠mīśā̍nō bhagavaḥ parā̠chīnā̠ mukhā̍ kṛdhi ॥ 10 ॥`
+    ]
+  }],
+  11: [{
+    n: 11,
+    tlines: [
+      `sa̠hasrā̍ṇi sahasra̠śō yē ru̠drā adhi̠ bhūmyā̎m ।`,
+      `tēṣāg̍ṃ sahasrayōja̠nē-'va̠dhanvā̍ni tanmasi ।`,
+      `a̠sminma̍ha̠tya̍rṇa̠vē̎-'ntari̍kṣē bha̠vā adhi̍ ।`,
+      `nīla̍grīvā-śśiti̠kaṇṭhā̎-śśa̠rvā a̠dhaḥ, kṣa̍mācha̠rāḥ ।`,
+      `nīla̍grīvā-śśiti̠kaṇṭhā̠ divag̍ṃ ru̠drā upa̍śritāḥ ।`,
+      `yē vṛ̠kṣēṣu̍ sa̠spiñja̍rā̠ nīla̍grīvā̠ vilō̍hitāḥ ।`,
+      `yē bhū̠tānā̠madhi̍patayō viśi̠khāsa̍ḥ kapa̠rdina̍ḥ ।`,
+      `yē annē̍ṣu vi̠vidhya̍nti̠ pātrē̍ṣu̠ piba̍tō̠ janān̍ ।`,
+      `yē pa̠thā-mpa̍thi̠rakṣa̍ya ailabṛ̠dā̍ ya̠vyudha̍ḥ ।`,
+      `yē tī̠rthāni̍ pra̠chara̍nti sṛ̠kāva̍ntō niṣa̠ṅgiṇa̍ḥ ।`,
+      `ya ē̠tāva̍ntaścha̠ bhūyāg̍ṃsaścha̠ diśō̍ ru̠drā vi̍tasthi̠rē ।`,
+      `tēṣāg̍ṃ sahasrayōja̠nē-'va̠dhanvā̍ni tanmasi ।`,
+      `namō̍ ru̠drēbhyō̠ yē pṛ̍thi̠vyāṃ yē̎-'ntari̍kṣē̠ yē di̠vi yēṣā̠manna̠ṃ vātō̍ va̠r​ṣa̠miṣa̍va̠stēbhyō̠ daśa̠ prāchī̠rdaśa̍ dakṣi̠ṇā daśa̍ pra̠tīchī̠-rdaśō-dī̍chī̠-rdaśō̠rdhvāstēbhyō̠ nama̠stē nō̍ mṛḍayantu̠ tē ya-ndvi̠ṣmō yaścha̍ nō̠ dvēṣṭi̠ taṃ vō̠ jambhē̍ dadhāmi ॥ 11 ॥`
+    ]
+  }],
+  closing: [{
+    n: 1,
+    tlines: [
+      `trya̍mbakaṃ yajāmahē suga̠ndhi-mpu̍ṣṭi̠vardha̍nam ।`,
+      `u̠rvā̠ru̠kami̍va̠ bandha̍nānmṛ̠tyōrmu̍kṣīya̠ mā-'mṛtā̎t ।`,
+      `yō ru̠drō a̠gnau yō a̠psu ya ōṣa̍dhīṣu̠ yō ru̠drō viśvā̠ bhuva̍nā vi̠vēśa̠ tasmai̍ ru̠drāya̠ namō̍ astu ।`,
+      `tamu̍ ṣṭuhi̠ ya-ssvi̠ṣussu̠dhanvā̠ yō viśva̍sya̠ kṣaya̍ti bhēṣa̠jasya̍ ।`,
+      `yakṣvā̎ma̠hē sau̎mana̠sāya̍ ru̠dra-nnamō̎bhirdē̠vamasu̍ra-nduvasya ।`,
+      `a̠ya-mmē̠ hastō̠ bhaga̍vāna̠ya-mmē̠ bhaga̍vattaraḥ ।`,
+      `a̠ya-mmē̎ vi̠śvabhē̎ṣajō̠-'yagṃ śi̠vābhi̍mar​śanaḥ ।`,
+      `yē tē̍ sa̠hasra̍ma̠yuta̠-mpāśā̠ mṛtyō̠ martyā̍ya̠ hanta̍vē ।`,
+      `tān ya̠jñasya̍ mā̠yayā̠ sarvā̠nava̍ yajāmahē ।`,
+      `mṛ̠tyavē̠ svāhā̍ mṛ̠tyavē̠ svāhā̎ ।`,
+      `ō-nnamō bhagavatē rudrāya viṣṇavē mṛtyu̍rmē pā̠hi ॥`,
+      `prāṇānā-ṅgranthirasi rudrō mā̍ viśā̠ntakaḥ ।`,
+      `tēnānnēnā̎pyāya̠sva ॥`,
+      `namō rudrāya viṣṇavē mṛtyu̍rmē pā̠hi ॥`,
+      `sadāśi̠vōm ।`,
+      `ōṃ śānti̠-śśānti̠-śśānti̍ḥ ।`
+    ]
+  }],
+};
+
+const NAMAKAM_SECTIONS_ORDER = [
+  ...Array.from({length:11}, (_,i) => String(i+1)),
+  'closing',
 ];
 
 const RUDRAM_META = {
@@ -1157,7 +1798,7 @@ function switchSection(sec) {
   state.expandedVerse = null;
   if (sec === 'gita') state.chapter = state.chapter || '12';
   else if (sec === 'rudram') state.chapter = state.chapter && parseInt(state.chapter) <= 11 ? state.chapter : '1';
-  else if (sec === 'vsn') state.chapter = state.chapter && VSN_SECTIONS_ORDER.includes(state.chapter) ? state.chapter : 'dhyana';
+  else if (sec === 'vsn') state.chapter = state.chapter && VSN_SECTIONS_ORDER.includes(state.chapter) ? state.chapter : 'preamble';
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
   saveState();
   showView('index');
@@ -1376,9 +2017,13 @@ function renderDhyanaPractice(el) {
     const key = `gita_dhyana_${s.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
+    const teSlokas = VSN_TE_DATA[ch] || [];
+    const teSloka = teSlokas.find(x => x.n === s.n);
     const linesHtml = s.tlines.map((ln,i) => {
       const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(iastToTelugu(ln))}</span>` : '';
+      // Use provided Telugu text if available, otherwise auto-convert
+      const teLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : iastToTelugu(ln);
+      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
       return enLine + teLine + br;
     }).join('');
@@ -1403,11 +2048,13 @@ function renderVSNPractice(el) {
   const secIdx = VSN_SECTIONS_ORDER.indexOf(ch);
   const hasPrev = secIdx > 0;
   const hasNext = secIdx < VSN_SECTIONS_ORDER.length - 1;
-  const isMainSloka = ch !== 'dhyana' && ch !== 'phala';
+  const isMainSloka = !['preamble','purva','dhyanam','phala'].includes(ch);
   const slokaNum = isMainSloka ? parseInt(ch) : 0;
 
   let navLabel;
-  if (ch === 'dhyana') navLabel = 'Dhyānam';
+  if (ch === 'preamble') navLabel = 'Invocation';
+  else if (ch === 'purva') navLabel = 'Pūrva Pīṭhikā';
+  else if (ch === 'dhyanam') navLabel = 'Dhyānam';
   else if (ch === 'phala') navLabel = 'Phalaśruti';
   else navLabel = `Śloka ${ch} of 108`;
 
@@ -1427,14 +2074,20 @@ function renderVSNPractice(el) {
     const key = `vsn_${ch}_${s.n}`;
     const isDone = done.has(key);
     const isExpanded = state.expandedVerse === key;
+    const speakerLabel = s.speaker ? `<div class="verse-speaker">${esc(s.speaker)}</div>` : '';
+    const teSlokas = VSN_TE_DATA[ch] || [];
+    const teSloka = teSlokas.find(x => x.n === s.n);
     const linesHtml = s.tlines.map((ln,i) => {
       const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(iastToTelugu(ln))}</span>` : '';
+      // Use provided Telugu text if available, otherwise auto-convert
+      const teLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : iastToTelugu(ln);
+      const teLine = settings.language !== 'en' ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       const br = (i < s.tlines.length-1 && settings.language !== 'te') ? '<br>' : '';
       return enLine + teLine + br;
     }).join('');
     html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
       <span class="verse-done-mark">✓</span>
+      ${speakerLabel}
       <div class="verse-text">${linesHtml}</div>
     </div>`;
   }
@@ -1685,15 +2338,43 @@ function renderIndex() {
         </div>
       </div>
       <div class="idx-list">`;
-    // Dhyana section
-    const vsnDhyanaDone = [...done].filter(k => k.startsWith('vsn_dhyana_')).length;
-    const vsnDhyanaTotal = VSN_DATA.dhyana.length;
-    const vsnDhyanaPct = vsnDhyanaTotal ? Math.round(vsnDhyanaDone/vsnDhyanaTotal*100) : 0;
-    const isDhyanaCurr = (state.chapter === 'dhyana' && state.section === 'vsn');
-    html += `<div class="idx-row${isDhyanaCurr?' current':''}" onclick="goToChapter('vsn','dhyana')">
-      <div class="idx-row-num" style="font-size:0.65rem">ध्यान</div>
+    // preamble
+    const vsnPreambleDone = [...done].filter(k => k.startsWith('vsn_preamble_')).length;
+    const vsnPreambleTotal = VSN_DATA.preamble.length;
+    const vsnPreamblePct = vsnPreambleTotal ? Math.round(vsnPreambleDone/vsnPreambleTotal*100) : 0;
+    const isPreambleCurr = (state.chapter === 'preamble' && state.section === 'vsn');
+    html += `<div class="idx-row${isPreambleCurr?' current':''}" onclick="goToChapter('vsn','preamble')">
+      <div class="idx-row-num" style="font-size:0.55rem">OM</div>
       <div class="idx-row-body">
-        <div class="idx-row-name">Dhyāna & Pūrva Pīṭhikā</div>
+        <div class="idx-row-name">Invocation</div>
+        <div class="idx-row-meta">${vsnPreambleTotal} verses</div>
+        <div class="idx-prog"><div class="idx-prog-fill" style="width:${vsnPreamblePct}%"></div></div>
+      </div>
+      <div class="idx-row-pct">${vsnPreamblePct}%</div>
+    </div>`;
+    // purva pitika
+    const vsnPurvaDone = [...done].filter(k => k.startsWith('vsn_purva_')).length;
+    const vsnPurvaTotal = VSN_DATA.purva.length;
+    const vsnPurvaPct = vsnPurvaTotal ? Math.round(vsnPurvaDone/vsnPurvaTotal*100) : 0;
+    const isPurvaCurr = (state.chapter === 'purva' && state.section === 'vsn');
+    html += `<div class="idx-row${isPurvaCurr?' current':''}" onclick="goToChapter('vsn','purva')">
+      <div class="idx-row-num" style="font-size:0.55rem">पूर्व</div>
+      <div class="idx-row-body">
+        <div class="idx-row-name">Pūrva Pīṭhikā</div>
+        <div class="idx-row-meta">${vsnPurvaTotal} verses</div>
+        <div class="idx-prog"><div class="idx-prog-fill" style="width:${vsnPurvaPct}%"></div></div>
+      </div>
+      <div class="idx-row-pct">${vsnPurvaPct}%</div>
+    </div>`;
+    // dhyanam
+    const vsnDhyanaDone = [...done].filter(k => k.startsWith('vsn_dhyanam_')).length;
+    const vsnDhyanaTotal = VSN_DATA.dhyanam.length;
+    const vsnDhyanaPct = vsnDhyanaTotal ? Math.round(vsnDhyanaDone/vsnDhyanaTotal*100) : 0;
+    const isDhyanaCurr = (state.chapter === 'dhyanam' && state.section === 'vsn');
+    html += `<div class="idx-row${isDhyanaCurr?' current':''}" onclick="goToChapter('vsn','dhyanam')">
+      <div class="idx-row-num" style="font-size:0.55rem">ध्यान</div>
+      <div class="idx-row-body">
+        <div class="idx-row-name">Dhyānam</div>
         <div class="idx-row-meta">${vsnDhyanaTotal} verses</div>
         <div class="idx-prog"><div class="idx-prog-fill" style="width:${vsnDhyanaPct}%"></div></div>
       </div>
@@ -1804,7 +2485,9 @@ function renderProgress() {
     vsnTotal += slokas.length;
     vsnDoneCount += d;
     const pct = slokas.length ? Math.round(d/slokas.length*100) : 0;
-    const label = VSN_META[sec] || 'Śloka ' + sec;
+    const label = VSN_META[sec] ? VSN_META[sec] :
+                  (['preamble','purva','dhyanam'].includes(sec) ? sec :
+                  'Śloka ' + sec);
     if (sec === 'dhyana' || sec === 'phala') {
       html += `<div class="prog-row">
         <span class="prog-label">${label}</span>
