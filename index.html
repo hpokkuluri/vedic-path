@@ -1160,7 +1160,7 @@ function switchSection(sec) {
   else if (sec === 'vsn') state.chapter = state.chapter && VSN_SECTIONS_ORDER.includes(state.chapter) ? state.chapter : 'dhyana';
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
   saveState();
-  renderCurrentView();
+  showView('index');
 }
 
 // ─────────────── VIEW SWITCHING ───────────────
