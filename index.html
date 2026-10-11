@@ -589,6 +589,38 @@ body {
 .placeholder-msg h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--fg2); }
 .placeholder-msg p { font-size: 0.9rem; }
 
+/* ── Additional theme tokens ── */
+:root[data-theme="saffron"] {
+  --bg: #fff8f0; --fg: #2a1000; --fg2: #7a3800; --fg3: #b87030;
+  --accent: #c84800; --accent2: #e86000; --accent3: #f08000;
+  --border: #f0d0a0; --card-bg: #fffaf5; --card-shadow: 0 2px 12px rgba(200,80,0,0.12);
+  --nav-bg: #fff8f0; --nav-border: #f0d0a0;
+  --home-gradient: linear-gradient(160deg, #6a1800 0%, #c84800 40%, #3a0800 100%);
+  --home-gold: #ffcc44; --home-gold2: #e08000;
+  --tag-bg: #fde8cc; --tag-fg: #c84800; --done-bg: #eef6ee; --done-border: #5aaa5a;
+  color-scheme: light;
+}
+:root[data-theme="forest"] {
+  --bg: #f0f8f4; --fg: #0a2010; --fg2: #2a6040; --fg3: #5a9070;
+  --accent: #1a6040; --accent2: #2a9060; --accent3: #40b878;
+  --border: #c0e0d0; --card-bg: #f8fff8; --card-shadow: 0 2px 12px rgba(0,100,50,0.10);
+  --nav-bg: #f0f8f4; --nav-border: #c0e0d0;
+  --home-gradient: linear-gradient(160deg, #062010 0%, #1a6040 40%, #0a1820 100%);
+  --home-gold: #80ffb0; --home-gold2: #40b878;
+  --tag-bg: #d0eedc; --tag-fg: #1a6040; --done-bg: #eef6ee; --done-border: #5aaa5a;
+  color-scheme: light;
+}
+:root[data-theme="night"] {
+  --bg: #080c18; --fg: #d0e0ff; --fg2: #8090c0; --fg3: #4050a0;
+  --accent: #4080ff; --accent2: #6098ff; --accent3: #80b0ff;
+  --border: #1a2040; --card-bg: #0e1428; --card-shadow: 0 2px 12px rgba(0,0,80,0.50);
+  --nav-bg: #060a14; --nav-border: #1a2040;
+  --home-gradient: linear-gradient(160deg, #02040e 0%, #0a1640 40%, #060012 100%);
+  --home-gold: #80b0ff; --home-gold2: #6098ff;
+  --tag-bg: #0e1840; --tag-fg: #6098ff; --done-bg: #0a180a; --done-border: #40aa40;
+  color-scheme: dark;
+}
+
 /* ── Home page ── */
 #view-home {
   display: none;
@@ -598,18 +630,38 @@ body {
   min-height: 100%;
   padding: 0;
   max-width: 100%;
+  overflow-y: auto;
 }
 #view-home.active { display: flex; }
+
+/* Hero */
 .home-hero {
   width: 100%;
   background: var(--home-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 24px 40px;
+  padding: 36px 24px 32px;
   position: relative;
   overflow: hidden;
 }
+.home-hero-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+.home-settings-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; cursor: pointer;
+  transition: background 0.15s;
+}
+.home-settings-btn:hover { background: rgba(255,255,255,0.25); }
 .home-hero::before {
   content: '';
   position: absolute;
@@ -618,168 +670,193 @@ body {
   pointer-events: none;
 }
 .home-mandala {
-  width: 160px;
-  height: 160px;
-  margin-bottom: 24px;
+  width: 130px; height: 130px;
+  margin-bottom: 18px;
   filter: drop-shadow(0 0 24px rgba(240,192,64,0.5));
 }
 .home-title {
   font-family: 'Crimson Text', Georgia, serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 8px;
+  font-size: 2rem; font-weight: 700;
+  color: #fff; letter-spacing: 0.02em;
+  text-align: center; line-height: 1.2; margin-bottom: 6px;
 }
 .home-title span { color: var(--home-gold); }
 .home-title-script {
-  font-size: 1.05rem;
-  color: rgba(240,210,140,0.85);
-  text-align: center;
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
+  font-size: 0.95rem; color: rgba(240,210,140,0.85);
+  text-align: center; margin-bottom: 6px; letter-spacing: 0.04em;
 }
 .home-subtitle {
-  font-size: 0.82rem;
-  color: rgba(240,220,180,0.6);
-  text-align: center;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  margin-bottom: 0;
+  font-size: 0.78rem; color: rgba(240,220,180,0.6);
+  text-align: center; letter-spacing: 0.10em; text-transform: uppercase;
 }
-.home-menu {
-  width: 100%;
-  max-width: 480px;
-  padding: 28px 20px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+
+/* Lang toggle + layout toggle row */
+.home-top-row {
+  width: 100%; max-width: 480px;
+  padding: 14px 20px 4px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
 }
-.home-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--card-shadow);
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.home-card:active { transform: scale(0.98); }
-.home-card-header {
-  display: flex;
-  align-items: center;
-  padding: 16px 18px;
-  gap: 14px;
-}
-.home-card-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-}
-.home-card-icon.gita { background: linear-gradient(135deg, #7b3a10, #b8720a); }
-.home-card-icon.rudram { background: linear-gradient(135deg, #1a4a6a, #2a7ab0); }
-.home-card-icon.vsn { background: linear-gradient(135deg, #2a5a1a, #4aaa2a); }
-.home-card-text { flex: 1; }
-.home-card-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--fg);
-  line-height: 1.2;
-}
-.home-card-desc {
-  font-size: 0.8rem;
-  color: var(--fg3);
-  margin-top: 2px;
-}
-.home-card-arrow {
-  color: var(--accent2);
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-/* Rudram sub-menu */
-.home-submenu {
-  display: none;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
-}
-.home-submenu.open { display: block; }
-.home-submenu-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 18px 12px 76px;
-  gap: 10px;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  transition: background 0.12s;
-}
-.home-submenu-item:last-child { border-bottom: none; }
-.home-submenu-item:hover, .home-submenu-item:active { background: var(--card-bg); }
-.home-submenu-item .sub-label {
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--fg);
-}
-.home-submenu-item .sub-desc {
-  font-size: 0.78rem;
-  color: var(--fg3);
-  margin-top: 1px;
-}
-.home-submenu-item .sub-arrow {
-  margin-left: auto;
-  color: var(--accent2);
-  font-size: 1rem;
-}
-.home-controls {
-  padding: 0 20px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.home-lang-row {
-  display: flex;
-  gap: 8px;
-}
+.home-lang-row { display: flex; gap: 6px; }
 .home-lang-btn {
-  padding: 7px 18px;
-  border-radius: 20px;
+  padding: 5px 14px; border-radius: 16px;
   border: 1.5px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  font-size: 0.85rem;
-  cursor: pointer;
-  font-family: inherit;
+  background: transparent; color: var(--accent);
+  font-size: 0.82rem; cursor: pointer; font-family: inherit;
   transition: background 0.15s, color 0.15s;
 }
-.home-lang-btn.active {
-  background: var(--accent);
-  color: #fff;
+.home-lang-btn.active { background: var(--accent); color: #fff; }
+.home-layout-toggle {
+  display: flex; gap: 4px;
 }
-.home-refresh-btn {
-  padding: 7px 20px;
-  border-radius: 20px;
-  border: 1.5px solid var(--fg3);
-  background: transparent;
-  color: var(--fg3);
-  font-size: 0.82rem;
-  cursor: pointer;
-  font-family: inherit;
-  transition: border-color 0.15s, color 0.15s;
+.home-layout-btn {
+  padding: 5px 10px; border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: transparent; color: var(--fg3);
+  font-size: 0.88rem; cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
-.home-refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
+.home-layout-btn.active {
+  background: var(--accent); color: #fff; border-color: var(--accent);
+}
+
+/* Grid layout */
+.home-grid {
+  width: 100%; max-width: 480px;
+  padding: 16px 16px 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.home-tile {
+  position: relative; border-radius: 16px; overflow: hidden;
+  cursor: pointer; aspect-ratio: 1/1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  padding: 14px 12px 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.20);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.home-tile:active { transform: scale(0.97); }
+.home-tile.coming-soon { cursor: default; opacity: 0.7; }
+.home-tile-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.home-tile-content { position: relative; z-index: 1; text-align: center; }
+.home-tile-icon { font-size: 2.2rem; margin-bottom: 6px; display: block; }
+.home-tile-name {
+  font-size: 0.88rem; font-weight: 700; color: #fff;
+  line-height: 1.25; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.home-tile-desc {
+  font-size: 0.68rem; color: rgba(255,255,255,0.75);
+  margin-top: 3px; text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.home-tile-badge {
+  position: absolute; top: 10px; right: 10px;
+  background: rgba(0,0,0,0.55);
+  color: rgba(255,220,100,0.95);
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 7px; border-radius: 8px; z-index: 2;
+}
+
+/* List layout */
+.home-list {
+  width: 100%; max-width: 480px;
+  padding: 12px 16px 8px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.home-list-group-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--fg3);
+  padding: 6px 4px 2px;
+}
+.home-list-row {
+  background: var(--card-bg); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 13px 14px;
+  display: flex; align-items: center; gap: 12px;
+  cursor: pointer; transition: background 0.12s;
+}
+.home-list-row:active { background: var(--border); }
+.home-list-row.coming-soon { opacity: 0.55; cursor: default; }
+.home-list-dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+}
+.home-list-text { flex: 1; }
+.home-list-name {
+  font-size: 0.95rem; font-weight: 700; color: var(--fg); line-height: 1.2;
+}
+.home-list-meta {
+  font-size: 0.75rem; color: var(--fg3); margin-top: 2px;
+}
+.home-list-arrow { color: var(--accent2); font-size: 1rem; flex-shrink: 0; }
+.home-list-badge {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--fg3); background: var(--border);
+  padding: 2px 7px; border-radius: 7px;
+}
+
+/* Footer */
 .home-footer {
-  text-align: center;
-  font-size: 0.75rem;
-  color: var(--fg3);
-  padding: 0 20px 24px;
-  letter-spacing: 0.04em;
+  text-align: center; font-size: 0.72rem; color: var(--fg3);
+  padding: 8px 20px 24px; letter-spacing: 0.04em;
+}
+
+/* Settings modal */
+.home-settings-modal {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.55);
+  align-items: flex-end; justify-content: center;
+}
+.home-settings-modal.open { display: flex; }
+.home-settings-sheet {
+  background: var(--bg); border-radius: 20px 20px 0 0;
+  width: 100%; max-width: 480px;
+  padding: 20px 20px 32px;
+  box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+  animation: sheetUp 0.25s ease;
+}
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.home-settings-handle {
+  width: 40px; height: 4px; border-radius: 2px;
+  background: var(--border); margin: 0 auto 18px;
+}
+.home-settings-title {
+  font-size: 1rem; font-weight: 700; color: var(--fg);
+  margin-bottom: 16px; text-align: center;
+}
+.home-settings-section {
+  margin-bottom: 18px;
+}
+.home-settings-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--fg3); margin-bottom: 8px;
+}
+.theme-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.theme-chip {
+  border-radius: 10px; border: 2px solid var(--border);
+  padding: 8px 6px; cursor: pointer; text-align: center;
+  transition: border-color 0.15s;
+}
+.theme-chip.active { border-color: var(--accent); }
+.theme-chip-swatch {
+  height: 24px; border-radius: 6px; margin-bottom: 4px;
+}
+.theme-chip-label {
+  font-size: 0.72rem; font-weight: 600; color: var(--fg);
+}
+.font-size-row {
+  display: flex; align-items: center; gap: 10px;
+}
+.font-size-row .sz-btn {
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg); color: var(--fg);
+  font-size: 1.1rem; cursor: pointer; font-family: inherit;
+}
+.font-size-row .sz-val {
+  flex: 1; text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--fg);
 }
 
 /* ── Chapter nav bar (prev / chapter title / next) ── */
@@ -917,12 +994,6 @@ body {
       <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
     </svg>
     <span>Progress</span>
-  </button>
-  <button class="bnav-btn" id="bnav-settings" onclick="showView('settings')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
-    </svg>
-    <span>Settings</span>
   </button>
 </nav>
 
@@ -2845,9 +2916,118 @@ const CHAMAKAM_DATA = {"1":[{"n":1,"tlines":["ōṃ agnā̍viṣṇū sa̠jōṣ
 // ─────────────── SRI RUDRAM CHAMAKAM TELUGU DATA ───────────────
 const CHAMAKAM_TE_DATA = {"1":[{"n":1,"tlines":["ఓం అగ్నా॑విష్ణూ స॒జోష॑సే॒మావ॑ర్ధంతు వాం॒ గిరః॑ ।","ద్యు॒మ్నైర్వాజే॑భి॒రాగ॑తమ్ ।","వాజ॑శ్చ మే ప్రస॒వశ్చ॑ మే॒","ప్రయ॑తిశ్చ మే॒ ప్రసి॑తిశ్చ మే","ధీ॒తిశ్చ॑ మే॒ క్రతు॑శ్చ మే॒","స్వర॑శ్చ మే॒ శ్లోక॑శ్చ మే","శ్రా॒వశ్చ॑ మే॒ శ్రుతి॑శ్చ మే॒","జ్యోతి॑శ్చ మే॒ సువ॑శ్చ మే","ప్రా॒ణశ్చ॑ మేఽపా॒నశ్చ॑ మే","వ్యా॒నశ్చ॒ మేఽసు॑శ్చ మే","చి॒త్తం చ॑ మ॒ ఆధీ॑తం చ మే॒","వాక్చ॑ మే॒ మన॑శ్చ మే॒","చక్షు॑శ్చ మే॒ శ్రోత్రం॑ చ మే॒","దక్ష॑శ్చ మే॒ బలం॑ చ మ॒","ఓజ॑శ్చ మే॒ సహ॑శ్చ మ॒","ఆయు॑శ్చ మే జ॒రా చ॑ మ","ఆ॒త్మా చ॑ మే త॒నూశ్చ॑ మే॒","శర్మ॑ చ మే॒ వర్మ॑ చ॒ మేఽంగా॑ని చ మే॒ఽస్థాని॑ చ మే॒","పరూగ్ం॑షి చ మే॒ శరీ॑రాణి చ మే ॥ 1 ॥"]}],"2":[{"n":1,"tlines":["జైష్ఠ్యం॑ చ మ॒ ఆధి॑పత్యం చ మే","మ॒న్యుశ్చ॑ మే॒ భామ॑శ్చ॒ మేఽమ॑శ్చ॒ మేఽంభ॑శ్చ మే","జే॒మా చ॑ మే మహి॒మా చ॑ మే","వరి॒మా చ॑ మే ప్రథి॒మా చ॑ మే","వ॒ర్​ష్మా చ॑ మే ద్రాఘు॒యా చ॑ మే","వృ॒ద్ధం చ॑ మే॒ వృద్ధి॑శ్చ మే","స॒త్యం చ॑ మే శ్ర॒ద్ధా చ॑ మే॒","జగ॑చ్చ మే॒ ధనం॑ చ మే॒","వశ॑శ్చ మే॒ త్విషి॑శ్చ మే","క్రీ॒డా చ॑ మే॒ మోద॑శ్చ మే","జా॒తం చ॑ మే జని॒ష్యమా॑ణం చ మే","సూ॒క్తం చ॑ మే సుకృ॒తం చ॑ మే","వి॒త్తం చ॑ మే॒ వేద్యం॑ చ మే","భూ॒తం చ॑ మే భవి॒ష్యచ్చ॑ మే","సు॒గం చ॑ మే సు॒పథం॑ చ మ","ఋ॒ద్ధం చ॑ మ॒ ఋద్ధి॑శ్చ మే","కౢ॒ప్తం చ॑ మే॒ కౢప్తి॑శ్చ మే","మ॒తిశ్చ॑ మే సుమ॒తిశ్చ॑ మే ॥ 2 ॥"]}],"3":[{"n":1,"tlines":["శం చ॑ మే॒ మయ॑శ్చ మే","ప్రి॒యం చ॑ మేఽనుకా॒మశ్చ॑ మే॒ కామ॑శ్చ మే","సౌమన॒సశ్చ॑ మే భ॒ద్రం చ॑ మే॒","శ్రేయ॑శ్చ మే॒ వస్య॑శ్చ మే॒","యశ॑శ్చ మే॒ భగ॑శ్చ మే॒ ద్రవి॑ణం చ మే","యం॒తా చ॑ మే ధ॒ర్తా చ॑ మే॒","క్షేమ॑శ్చ మే॒ ధృతి॑శ్చ మే॒","విశ్వం॑ చ మే॒ మహ॑శ్చ మే","సం॒​విఀచ్చ॑ మే॒ జ్ఞాత్రం॑ చ మే॒","సూశ్చ॑ మే ప్ర॒సూశ్చ॑ మే॒","సీరం॑ చ మే ల॒యశ్చ॑ మ","ఋ॒తం చ॑ మే॒ఽమృతం॑ చ మేఽయ॒క్ష్మం చ॒ మేఽనా॑మయచ్చ మే","జీ॒వాతు॑శ్చ మే దీర్ఘాయు॒త్వం చ॑ మేఽనమి॒త్రం చ॒ మేఽభ॑యం చ మే","సు॒గం చ॑ మే॒ శయ॑నం చ మే","సూ॒షా చ॑ మే సు॒దినం॑ చ మే ॥ 3 ॥"]}],"4":[{"n":1,"tlines":["ఊర్క్చ॑ మే సూ॒నృతా॑ చ మే॒","పయ॑శ్చ మే॒ రస॑శ్చ మే","ఘృ॒తం చ॑ మే॒ మధు॑ చ మే॒","సగ్ధి॑శ్చ మే॒ సపీ॑తిశ్చ మే","కృ॒షిశ్చ॑ మే॒ వృష్టి॑శ్చ మే॒","జైత్రం॑ చ మ॒ ఔద్భి॑ద్యం చ మే","ర॒యిశ్చ॑ మే॒ రాయ॑శ్చ మే","పు॒ష్టం చ॑ మే॒ పుష్టి॑శ్చ మే","వి॒భు చ॑ మే ప్ర॒భు చ॑ మే","బ॒హు చ॑ మే॒ భూయ॑శ్చ మే","పూ॒ర్ణం చ॑ మే పూ॒ర్ణత॑రం చ॒ మేఽక్షి॑తిశ్చ మే॒ కూయ॑వాశ్చ॒ మేఽన్నం॑ చ॒ మేఽక్షు॑చ్చ మే","వ్రీ॒హయ॑శ్చ మే॒ యవా᳚శ్చ మే॒","మాషా᳚శ్చ మే॒ తిలా᳚శ్చ మే","ము॒ద్గాశ్చ॑ మే ఖ॒ల్వా᳚శ్చ మే","గో॒ధూమా᳚శ్చ మే మ॒సురా᳚శ్చ మే","ప్రి॒యంగ॑వశ్చ॒ మేఽణ॑వశ్చ మే","శ్యా॒మాకా᳚శ్చ మే నీ॒వారా᳚శ్చ మే ॥ 4 ॥"]}],"5":[{"n":1,"tlines":["అశ్మా॑ చ మే॒ మృత్తి॑కా చ మే","గి॒రయ॑శ్చ మే॒ పర్వ॑తాశ్చ మే॒","సిక॑తాశ్చ మే॒ వన॒స్పత॑యశ్చ మే॒","హిర॑ణ్యం చ॒ మేఽయ॑శ్చ మే॒","సీసం॑ చ॒ మే త్రపు॑శ్చ మే","శ్యా॒మం చ॑ మే లో॒హం చ॑ మే॒ఽగ్నిశ్చ॑ మ॒","ఆప॑శ్చ మే వీ॒రుధ॑శ్చ మ॒ ఓష॑ధయశ్చ మే","కృష్టప॒చ్యం చ॑ మేఽకృష్టప॒చ్యం చ॑ మే","గ్రా॒మ్యాశ్చ॑ మే ప॒శవ॑ ఆర॒ణ్యాశ్చ॑ య॒జ్ఞేన॑ కల్పంతాం","వి॒త్తం చ॑ మే॒ విత్తి॑శ్చ మే","భూ॒తం చ॑ మే॒ భూతి॑శ్చ మే॒","వసు॑ చ మే వస॒తిశ్చ॑ మే॒","కర్మ॑ చ మే॒ శక్తి॑శ్చ॒ మేఽర్థ॑శ్చ మ॒","ఏమ॑శ్చ మ॒ ఇతి॑శ్చ మే॒ గతి॑శ్చ మే ॥ 5 ॥"]}],"6":[{"n":1,"tlines":["అ॒గ్నిశ్చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","సోమ॑శ్చ మ॒ ఇంద్ర॑శ్చ మే","సవి॒తా చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","సర॑స్వతీ చ మ॒ ఇంద్ర॑శ్చ మే","పూ॒షా చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","బృహ॒స్పతి॑శ్చ మ॒ ఇంద్ర॑శ్చ మే","మి॒త్రశ్చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","వరు॑ణశ్చ మ॒ ఇంద్ర॑శ్చ మే॒","త్వష్ఠా॑ చ మ॒ ఇంద్ర॑శ్చ మే","ధా॒తా చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","విష్ణు॑శ్చ మ॒ ఇంద్ర॑శ్చ మే॒ఽశ్వినౌ॑ చ మ॒ ఇంద్ర॑శ్చ మే","మ॒రుత॑శ్చ మ॒ ఇంద్ర॑శ్చ మే॒","విశ్వే॑ చ మే దే॒వా ఇంద్ర॑శ్చ మే","పృథి॒వీ చ॑ మ॒ ఇంద్ర॑శ్చ మే॒ఽంతరి॑క్షం చ మ॒ ఇంద్ర॑శ్చ మే॒","ద్యౌశ్చ॑ మ॒ ఇంద్ర॑శ్చ మే॒","దిశ॑శ్చ మ॒ ఇంద్ర॑శ్చ మే","మూ॒ర్ధా చ॑ మ॒ ఇంద్ర॑శ్చ మే","ప్ర॒జాప॑తిశ్చ మ॒ ఇంద్ర॑శ్చ మే ॥ 6 ॥"]}],"7":[{"n":1,"tlines":["అ॒గ్ం॒శుశ్చ॑ మే ర॒శ్మిశ్చ॒ మేఽదా᳚భ్యశ్చ॒ మేఽధి॑పతిశ్చ మ","ఉపా॒గ్ం॒శుశ్చ॑ మేఽంతర్యా॒మశ్చ॑ మ","ఐంద్రవాయ॒వశ్చ॑ మే మైత్రావరు॒ణశ్చ॑ మ","ఆశ్వి॒నశ్చ॑ మే ప్రతిప్ర॒స్థాన॑శ్చ మే","శు॒క్రశ్చ॑ మే మం॒థీ చ॑ మ","ఆగ్రయ॒ణశ్చ॑ మే వైశ్వదే॒వశ్చ॑ మే","ధ్రు॒వశ్చ॑ మే వైశ్వాన॒రశ్చ॑ మ","ఋతుగ్ర॒హాశ్చ॑ మేఽతిగ్రా॒హ్యా᳚శ్చ మ","ఐంద్రా॒గ్నశ్చ॑ మే వైశ్వదే॒వశ్చ॑ మే","మరుత్వ॒తీయా᳚శ్చ మే మాహేం॒ద్రశ్చ॑ మ","ఆది॒త్యశ్చ॑ మే సావి॒త్రశ్చ॑ మే","సారస్వ॒తశ్చ॑ మే పౌ॒ష్ణశ్చ॑ మే","పాత్నీవ॒తశ్చ॑ మే హారియోజ॒నశ్చ॑ మే ॥ 7 ॥"]}],"8":[{"n":1,"tlines":["ఇ॒ధ్మశ్చ॑ మే బ॒ర్॒హిశ్చ॑ మే॒","వేది॑శ్చ మే॒ ధిష్ణి॑యాశ్చ మే॒","స్రుచ॑శ్చ మే చమ॒సాశ్చ॑ మే॒","గ్రావా॑ణశ్చ మే॒ స్వర॑వశ్చ మ","ఉపర॒వాశ్చ॑ మేఽధి॒షవ॑ణే చ మే","ద్రోణకల॒శశ్చ॑ మే వాయ॒వ్యా॑ని చ మే","పూత॒భృచ్చ॑ మ ఆధవ॒నీయ॑శ్చ మ॒","ఆగ్నీ᳚ధ్రం చ మే హవి॒ర్ధానం॑ చ మే","గృ॒హాశ్చ॑ మే॒ సద॑శ్చ మే పురో॒డాశా᳚శ్చ మే","పచ॒తాశ్చ॑ మేఽవభృ॒థశ్చ॑ మే స్వగాకా॒రశ్చ॑ మే ॥ 8 ॥"]}],"9":[{"n":1,"tlines":["అ॒గ్నిశ్చ॑ మే ఘ॒ర్మశ్చ॑ మే॒ఽర్కశ్చ॑ మే॒","సూర్య॑శ్చ మే ప్రా॒ణశ్చ॑ మేఽశ్వమే॒ధశ్చ॑ మే","పృథి॒వీ చ॒ మేఽది॑తిశ్చ మే॒ దితి॑శ్చ మే॒","ద్యౌశ్చ॑ మే॒ శక్వ॑రీరం॒గుల॑యో॒ దిశ॑శ్చ మే","య॒జ్ఞేన॑ కల్పంతా॒మృక్చ॑ మే॒","సామ॑ చ మే॒ స్తోమ॑శ్చ మే॒","యజు॑శ్చ మే దీ॒క్షా చ॑ మే॒","తప॑శ్చ మ ఋ॒తుశ్చ॑ మే","వ్ర॒తం చ॑ మేఽహోరా॒త్రయో᳚ర్వృ॒ష్ట్యా బృ॑హద్రథంత॒రే చ॑ మే","య॒జ్ఞేన॑ కల్పేతామ్ ॥ 9 ॥"]}],"10":[{"n":1,"tlines":["గర్భా᳚శ్చ మే వ॒త్సాశ్చ॑ మే॒","త్ర్యవి॑శ్చ మే త్ర్య॒వీచ॑ మే","దిత్య॒వాట్ చ॑ మే దిత్యౌ॒హీ చ॑ మే॒","పంచా॑విశ్చ మే పంచా॒వీ చ॑ మే","త్రివ॒త్సశ్చ॑ మే త్రివ॒త్సా చ॑ మే","తుర్య॒వాట్ చ॑ మే తుర్యౌ॒హీ చ॑ మే","పష్ఠ॒వాట్ చ॑ మే పష్ఠౌ॒హీ చ॑ మ","ఉ॒క్షా చ॑ మే వ॒శా చ॑ మ","ఋష॒భశ్చ॑ మే వే॒హచ్చ॑ మేఽన॒డ్వాంచ॑ మే","ధే॒నుశ్చ॑ మ॒ ఆయు॑ర్య॒జ్ఞేన॑ కల్పతాం","ప్రా॒ణో య॒జ్ఞేన॑ కల్పతామపా॒నో య॒జ్ఞేన॑ కల్పతాం","వ్యా॒నో య॒జ్ఞేన॑ కల్పతాం॒","చక్షు॑ర్య॒జ్ఞేన॑ కల్పతా॒గ్॒ శ్రోత్రం॑-యఀ॒జ్ఞేన॑ కల్పతాం॒","మనో॑ య॒జ్ఞేన॑ కల్పతాం॒","వాగ్య॒జ్ఞేన॑ కల్పతామా॒త్మా య॒జ్ఞేన॑ కల్పతాం","య॒జ్ఞో య॒జ్ఞేన॑ కల్పతామ్ ॥ 10 ॥"]}],"11":[{"n":1,"tlines":["ఏకా॑ చ మే తి॒స్రశ్చ॑ మే॒","పంచ॑ చ మే స॒ప్త చ॑ మే॒","నవ॑ చ మ॒ ఏకా॑దశ చ మే॒","త్రయో॑దశ చ మే॒ పంచ॑దశ చ మే","స॒ప్తద॑శ చ మే॒ నవ॑దశ చ మ॒","ఏక॑విగ్ంశతిశ్చ మే॒ త్రయో॑విగ్ంశతిశ్చ మే॒","పంచ॑విగ్ంశతిశ్చ మే స॒ప్తవిగ్ం॑శతిశ్చ మే॒","నవ॑విగ్ంశతిశ్చ మ॒ ఏక॑త్రిగ్ంశచ్చ మే॒","త్రయ॑స్త్రిగ్ంశచ్చ మే॒ చత॑స్రశ్చ మే॒ఽష్టౌ చ॑ మే॒","ద్వాద॑శ చ మే॒ షోడ॑శ చ మే","విగ్ంశ॒తిశ్చ॑ మే॒ చతు॑ర్విగ్ంశతిశ్చ మే॒ఽష్టావిగ్ం॑శతిశ్చ మే॒","ద్వాత్రిగ్ం॑శచ్చ మే॒ షట్-త్రిగ్ం॑శచ్చ మే","చత్వారి॒గ్ం॒శచ్చ॑ మే॒ చతు॑శ్చత్వారిగ్ంశచ్చ మే॒ఽష్టాచ॑త్వారిగ్ంశచ్చ మే॒","వాజ॑శ్చ ప్రస॒వశ్చా॑పి॒జశ్చ॒","క్రతు॑శ్చ॒ సువ॑శ్చ మూ॒ర్ధా చ॒","వ్యశ్ని॑యశ్చాంత్యాయ॒నశ్చాంత్య॑శ్చ","భౌవ॒నశ్చ॒ భువ॑న॒శ్చాధి॑పతిశ్చ ॥ 11 ॥"]}],"closing":[{"n":1,"tlines":["ఓం ఇడా॑ దేవ॒హూ-ర్మను॑ర్యజ్ఞ॒నీ-ర్బృహ॒స్పతి॑రుక్థామ॒దాని॑","శగ్ంసిష॒ద్విశ్వే॑ దే॒వాః సూ᳚క్త॒వాచః॒ పృథి॑విమాత॒ర్మా","మా॑ హిగ్ంసీ॒ర్మధు॑ మనిష్యే॒ మధు॑ జనిష్యే॒","మధు॑ వక్ష్యామి॒ మధు॑ వదిష్యామి॒","మధు॑మతీం దే॒వేభ్యో॒ వాచ॒ముద్యాసగ్ంశుశ్రూషే॒ణ్యాం᳚","మను॒ష్యే᳚భ్య॒స్తం","మా॑ దే॒వా అ॑వంతు శో॒భాయై॑ పి॒తరోఽను॑మదంతు ॥","ఓం శాంతిః॒ శాంతిః॒ శాంతిః॑ ॥"]}]};
 
+// ─────────────── HANUMAN CHALISA DATA ───────────────
+const HC_DATA = {
+  "doha1": [{"n":1,"tlines":["śrī guru charaṇa sarōja raja nijamana mukura sudhāri ।","varaṇau raghuvara vimalayaśa jō dāyaka phalachāri ॥","buddhihīna tanujānikai sumirau pavana kumāra ।","bala buddhi vidyā dēhu mōhi harahu kalēśa vikāra ॥"]}],
+  "dhyana": [{"n":1,"tlines":["atulita baladhāmaṃ svarṇa śailābha dēham ।","danuja vana kṛśānuṃ jñāninā-magragaṇyam ॥","sakala guṇa nidhānaṃ vānarāṇā-madhīśam ।","raghupati priya bhaktaṃ vātajātaṃ namāmi ॥","gōṣpadīkṛta vārāśiṃ maśakīkṛta rākṣasam ।","rāmāyaṇa mahāmālā ratnaṃ vandē-(a)nilātmajam ॥","yatra yatra raghunātha kīrtanaṃ tatra tatra kṛtamastakāñjalim ।","bhāṣpavāri paripūrṇa lōchanaṃ mārutiṃ namata rākṣasāntakam ॥","manōjavaṃ māruta tulyavēgam ।","jitēndriyaṃ buddhimatāṃ variṣṭham ॥","vātātmajaṃ vānarayūtha mukhyam ।","śrī rāma dūtaṃ śirasā namāmi ॥"]}],
+  "1": [{"n":1,"tlines":["jaya hanumāna jñāna guṇa sāgara ।","jaya kapīśa tihu lōka ujāgara ॥ 1 ॥"]}],
+  "2": [{"n":2,"tlines":["rāmadūta atulita baladhāmā ।","añjani putra pavanasuta nāmā ॥ 2 ॥"]}],
+  "3": [{"n":3,"tlines":["mahāvīra vikrama bajaraṅgī ।","kumati nivāra sumati kē saṅgī ॥ 3 ॥"]}],
+  "4": [{"n":4,"tlines":["kañchana varaṇa virāja suvēśā ।","kānana kuṇḍala kuñchita kēśā ॥ 4 ॥"]}],
+  "5": [{"n":5,"tlines":["hāthavajra au dhvajā virājai ।","kāndhē mūñja janēvū sājai ॥ 5 ॥"]}],
+  "6": [{"n":6,"tlines":["śaṅkara suvana kēsarī nandana ।","tēja pratāpa mahājaga vandana ॥ 6 ॥"]}],
+  "7": [{"n":7,"tlines":["vidyāvāna guṇī ati chātura ।","rāma kāja karivē kō ātura ॥ 7 ॥"]}],
+  "8": [{"n":8,"tlines":["prabhu charitra sunivē kō rasiyā ।","rāmalakhana sītā mana basiyā ॥ 8 ॥"]}],
+  "9": [{"n":9,"tlines":["sūkṣma rūpadhari siyahi dikhāvā ।","vikaṭa rūpadhari laṅka jalāvā ॥ 9 ॥"]}],
+  "10": [{"n":10,"tlines":["bhīma rūpadhari asura saṃhārē ।","rāmachandra kē kāja saṃvārē ॥ 10 ॥"]}],
+  "11": [{"n":11,"tlines":["lāya sañjīvana lakhana jiyāyē ।","śrī raghuvīra haraṣi uralāyē ॥ 11 ॥"]}],
+  "12": [{"n":12,"tlines":["raghupati kīnhī bahuta baḍāyī ।","tuma mama priya bharata sama bhāyī ॥ 12 ॥"]}],
+  "13": [{"n":13,"tlines":["sahasra vadana tumharō yaśagāvai ।","asa kahi śrīpati kaṇṭha lagāvai ॥ 13 ॥"]}],
+  "14": [{"n":14,"tlines":["sanakādika brahmādi munīśā ।","nārada śārada sahita ahīśā ॥ 14 ॥"]}],
+  "15": [{"n":15,"tlines":["yama kubēra digapāla jahāṃ tē ।","kavi kōvida kahi sakē kahāṃ tē ॥ 15 ॥"]}],
+  "16": [{"n":16,"tlines":["tuma upakāra sugrīvahi kīnhā ।","rāma milāya rājapada dīnhā ॥ 16 ॥"]}],
+  "17": [{"n":17,"tlines":["tumharō mantra vibhīṣaṇa mānā ।","laṅkēśvara bhayē saba jaga jānā ॥ 17 ॥"]}],
+  "18": [{"n":18,"tlines":["yuga sahasra yōjana para bhānū ।","līlyō tāhi madhura phala jānū ॥ 18 ॥"]}],
+  "19": [{"n":19,"tlines":["prabhu mudrikā mēli mukha māhī ।","jaladhi lāṅghi gayē acharaja nāhī ॥ 19 ॥"]}],
+  "20": [{"n":20,"tlines":["durgama kāja jagata kē jētē ।","sugama anugraha tumharē tētē ॥ 20 ॥"]}],
+  "21": [{"n":21,"tlines":["rāma duārē tuma rakhavārē ।","hōta na ājñā binu paisārē ॥ 21 ॥"]}],
+  "22": [{"n":22,"tlines":["saba sukha lahai tumhārī śaraṇā ।","tuma rakṣaka kāhū kō ḍara nā ॥ 22 ॥"]}],
+  "23": [{"n":23,"tlines":["āpana tēja samhārō āpai ।","tīnōṃ lōka hāṅka tē kāmpai ॥ 23 ॥"]}],
+  "24": [{"n":24,"tlines":["bhūta piśācha nikaṭa nahi āvai ।","mahavīra jaba nāma sunāvai ॥ 24 ॥"]}],
+  "25": [{"n":25,"tlines":["nāsai rōga harai saba pīrā ।","japata nirantara hanumata vīrā ॥ 25 ॥"]}],
+  "26": [{"n":26,"tlines":["saṅkaṭa sē hanumāna chuḍāvai ।","mana krama vachana dhyāna jō lāvai ॥ 26 ॥"]}],
+  "27": [{"n":27,"tlines":["saba para rāma tapasvī rājā ।","tinakē kāja sakala tuma sājā ॥ 27 ॥"]}],
+  "28": [{"n":28,"tlines":["aura manōratha jō kōyi lāvai ।","tāsu amita jīvana phala pāvai ॥ 28 ॥"]}],
+  "29": [{"n":29,"tlines":["chārō yuga pratāpa tumhārā ।","hai parasiddha jagata ujiyārā ॥ 29 ॥"]}],
+  "30": [{"n":30,"tlines":["sādhu santa kē tuma rakhavārē ।","asura nikandana rāma dulārē ॥ 30 ॥"]}],
+  "31": [{"n":31,"tlines":["aṣṭasiddhi nava nidhi kē dātā ।","asa vara dīnha jānakī mātā ॥ 31 ॥"]}],
+  "32": [{"n":32,"tlines":["rāma rasāyana tumhārē pāsā ।","sadā rahō raghupati kē dāsā ॥ 32 ॥"]}],
+  "33": [{"n":33,"tlines":["tumharē bhajana rāmakō pāvai ।","janma janma kē dukha bisarāvai ॥ 33 ॥"]}],
+  "34": [{"n":34,"tlines":["anta kāla raghupati purajāyī ।","jahāṃ janma haribhakta kahāyī ॥ 34 ॥"]}],
+  "35": [{"n":35,"tlines":["aura dēvatā chitta na dharayī ।","hanumata sēyi sarva sukha karayī ॥ 35 ॥"]}],
+  "36": [{"n":36,"tlines":["saṅkaṭa kaṭai miṭai saba pīrā ।","jō sumirai hanumata bala vīrā ॥ 36 ॥"]}],
+  "37": [{"n":37,"tlines":["jai jai jai hanumāna gōsāyī ।","kṛpā karahu gurudēva kī nāyī ॥ 37 ॥"]}],
+  "38": [{"n":38,"tlines":["yaha śata vāra pāṭha kara kōyī ।","chūṭahi bandi mahā sukha hōyī ॥ 38 ॥"]}],
+  "39": [{"n":39,"tlines":["jō yaha paḍai hanumāna chālīsā ।","hōya siddhi sākhī gaurīśā ॥ 39 ॥"]}],
+  "40": [{"n":40,"tlines":["tulasīdāsa sadā hari chērā ।","kījai nātha hṛdaya maha ḍērā ॥ 40 ॥"]}],
+  "doha2": [{"n":1,"tlines":["pavana tanaya saṅkaṭa haraṇa - maṅgaḻa mūrati rūp ।","rāma lakhana sītā sahita - hṛdaya basahu surabhūp ॥","siyāvara rāmachandrakī jaya । pavanasuta hanumānakī jaya ।","bōlō bhāyī saba santanakī jaya ।"]}]
+};
+
+const HC_TE_DATA = {
+  "doha1": [{"n":1,"tlines":["శ్రీ గురు చరణ సరోజ రజ నిజమన ముకుర సుధారి ।","వరణౌ రఘువర విమలయశ జో దాయక ఫలచారి ॥","బుద్ధిహీన తనుజానికై సుమిరౌ పవన కుమార ।","బల బుద్ధి విద్యా దేహు మోహి హరహు కలేశ వికార ॥"]}],
+  "dhyana": [{"n":1,"tlines":["అతులిత బలధామం స్వర్ణ శైలాభ దేహమ్ ।","దనుజ వన కృశానుం జ్ఞానినా-మగ్రగణ్యమ్ ॥","సకల గుణ నిధానం వానరాణా-మధీశమ్ ।","రఘుపతి ప్రియ భక్తం వాతజాతం నమామి ॥","గోష్పదీకృత వారాశిం మశకీకృత రాక్షసమ్ ।","రామాయణ మహామాలా రత్నం వందే-(అ)నిలాత్మజమ్ ॥","యత్ర యత్ర రఘునాథ కీర్తనం తత్ర తత్ర కృతమస్తకాంజలిమ్ ।","భాష్పవారి పరిపూర్ణ లోచనం మారుతిం నమత రాక్షసాంతకమ్ ॥","మనోజవం మారుత తుల్యవేగమ్ ।","జితేంద్రియం బుద్ధిమతాం వరిష్ఠమ్ ॥","వాతాత్మజం వానరయూథ ముఖ్యమ్ ।","శ్రీ రామ దూతం శిరసా నమామి ॥"]}],
+  "1": [{"n":1,"tlines":["జయ హనుమాన జ్ఞాన గుణ సాగర ।","జయ కపీశ తిహు లోక ఉజాగర ॥ 1 ॥"]}],
+  "2": [{"n":2,"tlines":["రామదూత అతులిత బలధామా ।","అంజని పుత్ర పవనసుత నామా ॥ 2 ॥"]}],
+  "3": [{"n":3,"tlines":["మహావీర విక్రమ బజరంగీ ।","కుమతి నివార సుమతి కే సంగీ ॥ 3 ॥"]}],
+  "4": [{"n":4,"tlines":["కంచన వరణ విరాజ సువేశా ।","కానన కుండల కుంచిత కేశా ॥ 4 ॥"]}],
+  "5": [{"n":5,"tlines":["హాథవజ్ర ఔ ధ్వజా విరాజై ।","కాంధే మూంజ జనేవూ సాజై ॥ 5 ॥"]}],
+  "6": [{"n":6,"tlines":["శంకర సువన కేసరీ నందన ।","తేజ ప్రతాప మహాజగ వందన ॥ 6 ॥"]}],
+  "7": [{"n":7,"tlines":["విద్యావాన గుణీ అతి చాతుర ।","రామ కాజ కరివే కో ఆతుర ॥ 7 ॥"]}],
+  "8": [{"n":8,"tlines":["ప్రభు చరిత్ర సునివే కో రసియా ।","రామలఖన సీతా మన బసియా ॥ 8 ॥"]}],
+  "9": [{"n":9,"tlines":["సూక్ష్మ రూపధరి సియహి దిఖావా ।","వికట రూపధరి లంక జలావా ॥ 9 ॥"]}],
+  "10": [{"n":10,"tlines":["భీమ రూపధరి అసుర సంహారే ।","రామచంద్ర కే కాజ సంవారే ॥ 10 ॥"]}],
+  "11": [{"n":11,"tlines":["లాయ సంజీవన లఖన జియాయే ।","శ్రీ రఘువీర హరషి ఉరలాయే ॥ 11 ॥"]}],
+  "12": [{"n":12,"tlines":["రఘుపతి కీన్హీ బహుత బడాయీ ।","తుమ మమ ప్రియ భరత సమ భాయీ ॥ 12 ॥"]}],
+  "13": [{"n":13,"tlines":["సహస్ర వదన తుమ్హరో యశగావై ।","అస కహి శ్రీపతి కంఠ లగావై ॥ 13 ॥"]}],
+  "14": [{"n":14,"tlines":["సనకాదిక బ్రహ్మాది మునీశా ।","నారద శారద సహిత అహీశా ॥ 14 ॥"]}],
+  "15": [{"n":15,"tlines":["యమ కుబేర దిగపాల జహాం తే ।","కవి కోవిద కహి సకే కహాం తే ॥ 15 ॥"]}],
+  "16": [{"n":16,"tlines":["తుమ ఉపకార సుగ్రీవహి కీన్హా ।","రామ మిలాయ రాజపద దీన్హా ॥ 16 ॥"]}],
+  "17": [{"n":17,"tlines":["తుమ్హరో మంత్ర విభీషణ మానా ।","లంకేశ్వర భయే సబ జగ జానా ॥ 17 ॥"]}],
+  "18": [{"n":18,"tlines":["యుగ సహస్ర యోజన పర భానూ ।","లీల్యో తాహి మధుర ఫల జానూ ॥ 18 ॥"]}],
+  "19": [{"n":19,"tlines":["ప్రభు ముద్రికా మేలి ముఖ మాహీ ।","జలధి లాంఘి గయే అచరజ నాహీ ॥ 19 ॥"]}],
+  "20": [{"n":20,"tlines":["దుర్గమ కాజ జగత కే జేతే ।","సుగమ అనుగ్రహ తుమ్హరే తేతే ॥ 20 ॥"]}],
+  "21": [{"n":21,"tlines":["రామ దుఆరే తుమ రఖవారే ।","హోత న ఆజ్ఞా బిను పైసారే ॥ 21 ॥"]}],
+  "22": [{"n":22,"tlines":["సబ సుఖ లహై తుమ్హారీ శరణా ।","తుమ రక్షక కాహూ కో డర నా ॥ 22 ॥"]}],
+  "23": [{"n":23,"tlines":["ఆపన తేజ సమ్హారో ఆపై ।","తీనోం లోక హాంక తే కాంపై ॥ 23 ॥"]}],
+  "24": [{"n":24,"tlines":["భూత పిశాచ నికట నహి ఆవై ।","మహవీర జబ నామ సునావై ॥ 24 ॥"]}],
+  "25": [{"n":25,"tlines":["నాసై రోగ హరై సబ పీరా ।","జపత నిరంతర హనుమత వీరా ॥ 25 ॥"]}],
+  "26": [{"n":26,"tlines":["సంకట సే హనుమాన ఛుడావై ।","మన క్రమ వచన ధ్యాన జో లావై ॥ 26 ॥"]}],
+  "27": [{"n":27,"tlines":["సబ పర రామ తపస్వీ రాజా ।","తినకే కాజ సకల తుమ సాజా ॥ 27 ॥"]}],
+  "28": [{"n":28,"tlines":["ఔర మనోరథ జో కోయి లావై ।","తాసు అమిత జీవన ఫల పావై ॥ 28 ॥"]}],
+  "29": [{"n":29,"tlines":["చారో యుగ ప్రతాప తుమ్హారా ।","హై పరసిద్ధ జగత ఉజియారా ॥ 29 ॥"]}],
+  "30": [{"n":30,"tlines":["సాధు సంత కే తుమ రఖవారే ।","అసుర నికందన రామ దులారే ॥ 30 ॥"]}],
+  "31": [{"n":31,"tlines":["అష్టసిద్ధి నవ నిధి కే దాతా ।","అస వర దీన్హ జానకీ మాతా ॥ 31 ॥"]}],
+  "32": [{"n":32,"tlines":["రామ రసాయన తుమ్హారే పాసా ।","సదా రహో రఘుపతి కే దాసా ॥ 32 ॥"]}],
+  "33": [{"n":33,"tlines":["తుమ్హరే భజన రామకో పావై ।","జన్మ జన్మ కే దుఖ బిసరావై ॥ 33 ॥"]}],
+  "34": [{"n":34,"tlines":["అంత కాల రఘుపతి పురజాయీ ।","జహాం జన్మ హరిభక్త కహాయీ ॥ 34 ॥"]}],
+  "35": [{"n":35,"tlines":["ఔర దేవతా చిత్త న ధరయీ ।","హనుమత సేయి సర్వ సుఖ కరయీ ॥ 35 ॥"]}],
+  "36": [{"n":36,"tlines":["సంకట కటై మిటై సబ పీరా ।","జో సుమిరై హనుమత బల వీరా ॥ 36 ॥"]}],
+  "37": [{"n":37,"tlines":["జై జై జై హనుమాన గోసాయీ ।","కృపా కరహు గురుదేవ కీ నాయీ ॥ 37 ॥"]}],
+  "38": [{"n":38,"tlines":["యహ శత వార పాఠ కర కోయీ ।","ఛూటహి బంది మహా సుఖ హోయీ ॥ 38 ॥"]}],
+  "39": [{"n":39,"tlines":["జో యహ పడై హనుమాన చాలీసా ।","హోయ సిద్ధి సాఖీ గౌరీశా ॥ 39 ॥"]}],
+  "40": [{"n":40,"tlines":["తులసీదాస సదా హరి చేరా ।","కీజై నాథ హృదయ మహ డేరా ॥ 40 ॥"]}],
+  "doha2": [{"n":1,"tlines":["పవన తనయ సంకట హరణ - మంగళ మూరతి రూప్ ।","రామ లఖన సీతా సహిత - హృదయ బసహు సురభూప్ ॥","సియావర రామచంద్రకీ జయ । పవనసుత హనుమానకీ జయ ।","బోలో భాయీ సబ సంతనకీ జయ ।"]}]
+};
+
+const HC_SECTIONS_ORDER = ["doha1","dhyana","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","doha2"];
+
+const HC_META = {
+  "doha1": "Dōhā · Invocation",
+  "dhyana": "Dhyānam",
+  "1":"Chaupāī 1","2":"Chaupāī 2","3":"Chaupāī 3","4":"Chaupāī 4","5":"Chaupāī 5",
+  "6":"Chaupāī 6","7":"Chaupāī 7","8":"Chaupāī 8","9":"Chaupāī 9","10":"Chaupāī 10",
+  "11":"Chaupāī 11","12":"Chaupāī 12","13":"Chaupāī 13","14":"Chaupāī 14","15":"Chaupāī 15",
+  "16":"Chaupāī 16","17":"Chaupāī 17","18":"Chaupāī 18","19":"Chaupāī 19","20":"Chaupāī 20",
+  "21":"Chaupāī 21","22":"Chaupāī 22","23":"Chaupāī 23","24":"Chaupāī 24","25":"Chaupāī 25",
+  "26":"Chaupāī 26","27":"Chaupāī 27","28":"Chaupāī 28","29":"Chaupāī 29","30":"Chaupāī 30",
+  "31":"Chaupāī 31","32":"Chaupāī 32","33":"Chaupāī 33","34":"Chaupāī 34","35":"Chaupāī 35",
+  "36":"Chaupāī 36","37":"Chaupāī 37","38":"Chaupāī 38","39":"Chaupāī 39","40":"Chaupāī 40",
+  "doha2": "Dōhā · Closing"
+};
+
 // ─────────────── STATE ───────────────
 let state = {
-  section: 'gita',   // gita | rudram | vsn
+  section: 'gita',   // gita | rudram | vsn | hc
   chapter: '12',     // for gita: chapter number string; for rudram: anuvaka number string
   view: 'practice',  // practice | index | progress
   expandedVerse: null,
@@ -2863,6 +3043,8 @@ const SETTINGS_DEFAULTS = {
   showMeaning: true,
   autoAdvance: false,
   language: 'en',        // 'en' = IAST only, 'te' = Telugu only, 'both' = IAST + Telugu
+  homeLayout: 'grid',    // 'grid' | 'list'
+  theme: 'auto',         // 'auto' | 'light' | 'dark' | 'saffron' | 'forest' | 'night'
 };
 const PRACTICE_FONT_SIZES = ['1.1rem','1.35rem','1.6rem','1.9rem'];
 const RECITE_FONT_SIZES   = ['1.5rem','1.9rem','2.4rem','3rem'];
@@ -2966,6 +3148,13 @@ function switchSection(sec) {
     showView('practice');
     return;
   }
+  else if (sec === 'hc') {
+    state.chapter = 'doha1';
+    document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
+    saveState();
+    showView('practice');
+    return;
+  }
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
   saveState();
   showView('index');
@@ -3005,112 +3194,203 @@ function updateTopbar() {
     t.textContent = m ? 'Ch.' + state.chapter + ' — ' + m.yoga : 'Bhagavad Gītā';
   } else if (state.section === 'rudram') {
     t.textContent = 'Śrī Rudram';
+  } else if (state.section === 'hc') {
+    t.textContent = 'Hanumān Chālīsā';
   } else {
     t.textContent = 'Viṣṇu Sahasranāmam';
   }
   // Show recite button only in practice view and when content available
   const hasContent = (state.section === 'gita' && GITA_DATA[state.chapter]?.length > 0) ||
                      (state.section === 'rudram' && RUDRAM_DATA[state.chapter]?.length > 0) ||
-                     (state.section === 'vsn' && VSN_DATA[state.chapter]?.length > 0);
+                     (state.section === 'vsn' && VSN_DATA[state.chapter]?.length > 0) ||
+                     (state.section === 'hc' && HC_DATA[state.chapter]?.length > 0);
   recBtn.style.display = (state.view === 'practice' && hasContent) ? '' : 'none';
 }
 
 // ─────────────── HOME VIEW ───────────────
+function applyTheme(t) {
+  const root = document.documentElement;
+  if (t === 'auto') { root.removeAttribute('data-theme'); }
+  else { root.setAttribute('data-theme', t); }
+}
+
 function renderHome() {
+  // Apply stored theme on every home render
+  applyTheme(settings.theme || 'auto');
+
   const el = document.getElementById('view-home');
+  const layout = settings.homeLayout || 'grid';
+
+  // Build the mandala SVG inline
+  const mandala = `<svg class="home-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(240,192,64,0.35)" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(240,192,64,0.25)" stroke-width="0.8"/>
+    ${Array.from({length:16},(_,i)=>{const a=i*22.5*Math.PI/180,r=58,rx=14,ry=28,cx2=100+r*Math.sin(a),cy2=100-r*Math.cos(a);return`<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.13)" stroke="rgba(240,192,64,0.50)" stroke-width="0.8"/>`;}).join('')}
+    ${Array.from({length:8},(_,i)=>{const a=(i*45+22.5)*Math.PI/180,r=34,rx=9,ry=18,cx2=100+r*Math.sin(a),cy2=100-r*Math.cos(a);return`<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*45+22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.18)" stroke="rgba(240,192,64,0.60)" stroke-width="0.9"/>`;}).join('')}
+    <circle cx="100" cy="100" r="22" fill="rgba(240,192,64,0.15)" stroke="rgba(240,192,64,0.5)" stroke-width="1"/>
+    <text x="100" y="109" text-anchor="middle" font-size="26" fill="#f0c040" font-family="serif">ॐ</text>
+    ${Array.from({length:16},(_,i)=>{const a=i*22.5*Math.PI/180,cx2=100+84*Math.sin(a),cy2=100-84*Math.cos(a);return`<circle cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" r="2" fill="rgba(240,192,64,0.6)"/>`;}).join('')}
+  </svg>`;
+
+  // Language buttons
+  const langBtns = ['en','both','te'].map(v => {
+    const labels = {en:'English', both:'Both', te:'తెలుగు'};
+    const sel = settings.language === v;
+    return `<button class="home-lang-btn${sel?' active':''}" onclick="setLanguage('${v}');renderHome()">${labels[v]}</button>`;
+  }).join('');
+
+  // Layout toggle
+  const layoutBtns = `
+    <div class="home-layout-toggle">
+      <button class="home-layout-btn${layout==='grid'?' active':''}" onclick="setHomeLayout('grid')" title="Grid view">⊞</button>
+      <button class="home-layout-btn${layout==='list'?' active':''}" onclick="setHomeLayout('list')" title="List view">☰</button>
+    </div>`;
+
+  // LIBRARY data
+  const texts = [
+    { key:'gita',  icon:'🪷', name:'Bhagavad Gītā',         desc:'18 Chapters · 700 Verses', action:"openSection('gita')",        gradient:'linear-gradient(160deg,#7b1a00,#c05000)', dot:'#c05000', tradition:'Itihāsa' },
+    { key:'rudram',icon:'🔱', name:'Śrī Rudram',             desc:'Namakam · Chamakam',        action:"switchSection('rudram')",    gradient:'linear-gradient(160deg,#0a2a60,#1a70c0)', dot:'#1a70c0', tradition:'Veda' },
+    { key:'vsn',   icon:'🌸', name:'Viṣṇu Sahasranāmam',    desc:'1000 Names · 108 Slokas',   action:"switchSection('vsn')",       gradient:'linear-gradient(160deg,#0a4020,#1a9050)', dot:'#1a9050', tradition:'Itihāsa' },
+    { key:'hc',    icon:'🙏', name:'Hanumān Chālīsā',        desc:'40 Chaupāī · Tulsidāsa',   action:"switchSection('hc')",        gradient:'linear-gradient(160deg,#5a0a2a,#c03060)', dot:'#c03060', tradition:'Stotra' },
+    { key:'lalita',icon:'🌺', name:'Lalitā Stotram',         desc:'Coming soon',               action:'',                           gradient:'linear-gradient(160deg,#3a0a4a,#8030a0)', dot:'#8030a0', tradition:'Stotra', soon:true },
+  ];
+
+  let content = '';
+  if (layout === 'grid') {
+    content = `<div class="home-grid">`;
+    for (const t of texts) {
+      const tile = `<div class="home-tile${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
+        <div class="home-tile-bg" style="background:${t.gradient}"></div>
+        ${t.soon ? `<div class="home-tile-badge">SOON</div>` : ''}
+        <div class="home-tile-content">
+          <span class="home-tile-icon">${t.icon}</span>
+          <div class="home-tile-name">${t.name}</div>
+          <div class="home-tile-desc">${t.desc}</div>
+        </div>
+      </div>`;
+      content += tile;
+    }
+    content += `</div>`;
+  } else {
+    // List layout — grouped by tradition
+    const groups = {};
+    for (const t of texts) {
+      (groups[t.tradition] = groups[t.tradition] || []).push(t);
+    }
+    content = `<div class="home-list">`;
+    for (const [grp, items] of Object.entries(groups)) {
+      content += `<div class="home-list-group-label">${grp}</div>`;
+      for (const t of items) {
+        content += `<div class="home-list-row${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
+          <div class="home-list-dot" style="background:${t.dot}"></div>
+          <div class="home-list-text">
+            <div class="home-list-name">${t.icon} ${t.name}</div>
+            <div class="home-list-meta">${t.desc}</div>
+          </div>
+          ${t.soon ? `<span class="home-list-badge">SOON</span>` : `<span class="home-list-arrow">›</span>`}
+        </div>`;
+      }
+    }
+    content += `</div>`;
+  }
+
   el.innerHTML = `
   <div class="home-hero">
-    <svg class="home-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer ring -->
-      <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(240,192,64,0.35)" stroke-width="1.5"/>
-      <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(240,192,64,0.25)" stroke-width="0.8"/>
-      <!-- 16-petal lotus -->
-      ${Array.from({length:16},(_,i)=>{
-        const a=i*22.5*Math.PI/180, r=58, rx=14, ry=28;
-        const cx2=100+r*Math.sin(a), cy2=100-r*Math.cos(a);
-        return `<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.13)" stroke="rgba(240,192,64,0.50)" stroke-width="0.8"/>`;
-      }).join('')}
-      <!-- 8-petal inner lotus -->
-      ${Array.from({length:8},(_,i)=>{
-        const a=(i*45+22.5)*Math.PI/180, r=34, rx=9, ry=18;
-        const cx2=100+r*Math.sin(a), cy2=100-r*Math.cos(a);
-        return `<ellipse cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" rx="${rx}" ry="${ry}" transform="rotate(${i*45+22.5} ${cx2.toFixed(1)} ${cy2.toFixed(1)})" fill="rgba(240,192,64,0.18)" stroke="rgba(240,192,64,0.60)" stroke-width="0.9"/>`;
-      }).join('')}
-      <!-- Inner circle glow -->
-      <circle cx="100" cy="100" r="22" fill="rgba(240,192,64,0.15)" stroke="rgba(240,192,64,0.5)" stroke-width="1"/>
-      <!-- OM symbol -->
-      <text x="100" y="109" text-anchor="middle" font-size="26" fill="#f0c040" font-family="serif" style="filter:drop-shadow(0 0 6px rgba(240,192,64,0.8))">ॐ</text>
-      <!-- Decorative dots at petal tips -->
-      ${Array.from({length:16},(_,i)=>{
-        const a=i*22.5*Math.PI/180;
-        const cx2=100+84*Math.sin(a), cy2=100-84*Math.cos(a);
-        return `<circle cx="${cx2.toFixed(1)}" cy="${cy2.toFixed(1)}" r="2" fill="rgba(240,192,64,0.6)"/>`;
-      }).join('')}
-    </svg>
+    <div class="home-hero-top">
+      <button class="home-settings-btn" onclick="openHomeSettings()" title="Settings">⚙</button>
+    </div>
+    ${mandala}
     <div class="home-title">Veda<span>saram</span></div>
     <div class="home-title-script">వేదసారం · वेदसारम्</div>
     <div class="home-subtitle">Sacred Texts · Learn &amp; Recite</div>
   </div>
 
-  <div class="home-menu">
-    <!-- Bhagavad Gita card -->
-    <div class="home-card" onclick="openSection('gita')">
-      <div class="home-card-header">
-        <div class="home-card-icon gita"><span style="color:#fff">🪷</span></div>
-        <div class="home-card-text">
-          <div class="home-card-name">Bhagavad Gītā</div>
-          <div class="home-card-desc">18 Chapters · 700 Verses</div>
-        </div>
-        <div class="home-card-arrow">›</div>
-      </div>
-    </div>
-
-    <!-- Rudram card with sub-menu -->
-    <div class="home-card" id="rudram-card">
-      <div class="home-card-header" onclick="toggleRudramMenu(event)">
-        <div class="home-card-icon rudram"><span style="color:#fff">🔱</span></div>
-        <div class="home-card-text">
-          <div class="home-card-name">Śrī Rudram</div>
-          <div class="home-card-desc">Namakam &amp; Chamakam</div>
-        </div>
-        <div class="home-card-arrow" id="rudram-arrow">›</div>
-      </div>
-      <div class="home-submenu" id="rudram-submenu">
-        <div class="home-submenu-item" onclick="switchSection('rudram')">
-          <div>
-            <div class="sub-label">Complete Rudram</div>
-            <div class="sub-desc">Namakam &amp; Chamakam</div>
-          </div>
-          <div class="sub-arrow">›</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Vishnu Sahasranamam card -->
-    <div class="home-card" onclick="switchSection('vsn')">
-      <div class="home-card-header">
-        <div class="home-card-icon vsn"><span style="color:#fff">🌸</span></div>
-        <div class="home-card-text">
-          <div class="home-card-name">Viṣṇu Sahasranāmam</div>
-          <div class="home-card-desc">1000 Names · 108 Slokas</div>
-        </div>
-        <div class="home-card-arrow">›</div>
-      </div>
-    </div>
+  <div class="home-top-row">
+    <div class="home-lang-row">${langBtns}</div>
+    ${layoutBtns}
   </div>
 
-  <div class="home-controls">
-    <div class="home-lang-row">
-      ${['en','both','te'].map(v => {
-        const labels = {en:'English', both:'Both', te:'తెలుగు'};
-        const sel = settings.language === v;
-        return `<button class="home-lang-btn${sel?' active':''}" onclick="setLanguage('${v}');renderHome()">${labels[v]}</button>`;
-      }).join('')}
-    </div>
-    <button class="home-refresh-btn" onclick="forceRefresh()" id="home-refresh-btn">↻ Check for Updates</button>
-  </div>
+  ${content}
+
   <div class="home-footer">Vedasaram · వేదసారం · वेदसारम्</div>
+
+  <!-- Settings modal -->
+  <div class="home-settings-modal" id="home-settings-modal" onclick="closeHomeSettings(event)">
+    <div class="home-settings-sheet">
+      <div class="home-settings-handle"></div>
+      <div class="home-settings-title">Settings</div>
+
+      <div class="home-settings-section">
+        <div class="home-settings-label">Theme</div>
+        <div class="theme-grid">
+          ${[
+            {id:'auto',   label:'Auto',    sw:'linear-gradient(135deg,#fff8f0 50%,#1c1208 50%)'},
+            {id:'light',  label:'Light',   sw:'linear-gradient(135deg,#fdf8f0,#e8d8c0)'},
+            {id:'dark',   label:'Dark',    sw:'linear-gradient(135deg,#1c1208,#3a2010)'},
+            {id:'saffron',label:'Saffron', sw:'linear-gradient(135deg,#c84800,#f08000)'},
+            {id:'forest', label:'Forest',  sw:'linear-gradient(135deg,#1a6040,#40b878)'},
+            {id:'night',  label:'Night',   sw:'linear-gradient(135deg,#080c18,#4080ff)'},
+          ].map(th=>`<div class="theme-chip${(settings.theme||'auto')===th.id?' active':''}" onclick="setTheme('${th.id}')">
+            <div class="theme-chip-swatch" style="background:${th.sw}"></div>
+            <div class="theme-chip-label">${th.label}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+
+      <div class="home-settings-section">
+        <div class="home-settings-label">Practice Font Size</div>
+        <div class="font-size-row">
+          <button class="sz-btn" onclick="changeFontSize('practice',-1)">−</button>
+          <div class="sz-val">${FONT_LABELS[settings.practiceFontSize]}</div>
+          <button class="sz-btn" onclick="changeFontSize('practice',1)">+</button>
+        </div>
+      </div>
+
+      <div class="home-settings-section">
+        <div class="home-settings-label">Recite Font Size</div>
+        <div class="font-size-row">
+          <button class="sz-btn" onclick="changeFontSize('recite',-1)">−</button>
+          <div class="sz-val">${FONT_LABELS[settings.reciteFontSize]}</div>
+          <button class="sz-btn" onclick="changeFontSize('recite',1)">+</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
   `;
+}
+
+function setHomeLayout(l) {
+  settings.homeLayout = l;
+  saveSettings();
+  renderHome();
+}
+
+function setTheme(t) {
+  settings.theme = t;
+  saveSettings();
+  applyTheme(t);
+  renderHome();
+}
+
+function changeFontSize(which, dir) {
+  if (which === 'practice') {
+    settings.practiceFontSize = Math.max(0, Math.min(3, settings.practiceFontSize + dir));
+  } else {
+    settings.reciteFontSize = Math.max(0, Math.min(3, settings.reciteFontSize + dir));
+  }
+  saveSettings();
+  renderHome(); // re-render to update displayed size label
+}
+
+function openHomeSettings() {
+  document.getElementById('home-settings-modal').classList.add('open');
+}
+
+function closeHomeSettings(e) {
+  if (e.target === document.getElementById('home-settings-modal')) {
+    document.getElementById('home-settings-modal').classList.remove('open');
+  }
 }
 
 function toggleRudramMenu(e) {
@@ -3207,6 +3487,7 @@ function renderPractice() {
   else if (state.section === 'gita') renderGitaPractice(el);
   else if (state.section === 'rudram') renderRudramPractice(el);
   else if (state.section === 'vsn') renderVSNPractice(el);
+  else if (state.section === 'hc') renderHCPractice(el);
 }
 
 function renderDhyanaPractice(el) {
@@ -3315,6 +3596,68 @@ function renderVSNPractice(el) {
   html += `<div class="lesson-end-banner">
     <div class="leb-title">🙏 Viṣṇu Sahasranāmam Complete</div>
     <div class="leb-sub">1000 names of the Lord have been recited</div>
+    <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+function renderHCPractice(el) {
+  // Hanuman Chalisa — one continuous scrollable page
+  let html = `
+  <div class="chapter-header">
+    <div class="chapter-num">Hanumān Chālīsā</div>
+    <h2>Complete Text</h2>
+    <div class="subtitle">Dōhā · Dhyānam · 40 Chaupāī · Closing Dōhā</div>
+  </div>
+  <div class="chapter-invocation">
+    <span class="vline">śrī hanumantē namaḥ</span><br>
+    <span class="vline">jai śrī rāma</span>
+  </div>`;
+
+  const SEC_LABELS = {
+    doha1: 'Dōhā — Invocation',
+    dhyana: 'Dhyānam',
+    doha2: 'Dōhā — Closing',
+  };
+
+  for (const sec of HC_SECTIONS_ORDER) {
+    const slokas = HC_DATA[sec] || [];
+    if (!slokas.length) continue;
+    const isNumbered = !isNaN(parseInt(sec));
+    const secLabel = SEC_LABELS[sec] || null;
+    if (secLabel) {
+      html += `<div class="chapter-section-hdr" style="margin:20px 0 8px;font-size:0.85rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;opacity:0.8">${secLabel}</div>`;
+    }
+    if (isNumbered && sec === '1') {
+      html += `<div class="chapter-section-hdr" style="margin:20px 0 8px;font-size:0.85rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;opacity:0.8">Chaupāī 1–40</div>`;
+    }
+    for (const s of slokas) {
+      const key = `hc_${sec}_${s.n}`;
+      const isDone = done.has(key);
+      const isExpanded = state.expandedVerse === key;
+      const teSlokas = HC_TE_DATA[sec] || [];
+      const teSloka = teSlokas.find(x => x.n === s.n);
+      const numLabel = isNumbered ? `<div class="verse-num">Chaupāī ${sec}</div>` : '';
+      const linesHtml = s.tlines.map((ln, i) => {
+        const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
+        const rawTeLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : null;
+        const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
+        const teLine = (settings.language !== 'en' && teLn) ? `<span class="vline-te">${esc(teLn)}</span>` : '';
+        const br = (i < s.tlines.length - 1 && settings.language !== 'te') ? '<br>' : '';
+        return enLine + teLine + br;
+      }).join('');
+      html += `<div class="verse-block${isDone?' done':''}${isExpanded?' expanded':''}" data-key="${key}" onclick="toggleVerse('${key}')">
+        <span class="verse-done-mark">✓</span>
+        ${numLabel}
+        <div class="verse-text">${linesHtml}</div>
+      </div>`;
+    }
+  }
+
+  html += `<div class="lesson-end-banner">
+    <div class="leb-title">🙏 Hanumān Chālīsā Complete</div>
+    <div class="leb-sub">40 verses of Hanumān's glory recited</div>
     <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
   </div>`;
 
@@ -3768,6 +4111,24 @@ function buildReciteItems() {
         });
       }
     }
+  } else if (state.section === 'hc') {
+    // Hanuman Chalisa — all sections in order
+    for (const sec of HC_SECTIONS_ORDER) {
+      const slokas = HC_DATA[sec] || [];
+      const secLabel = HC_META[sec] || sec;
+      const teSlokas = HC_TE_DATA[sec] || [];
+      for (const s of slokas) {
+        const teSloka = teSlokas.find(x => x.n === s.n);
+        items.push({
+          id: `hc_${sec}_${s.n}`,
+          label: secLabel,
+          lines: s.tlines,
+          teLines: teSloka ? teSloka.tlines : [],
+          sec,
+          n: s.n,
+        });
+      }
+    }
   }
   return items;
 }
@@ -4150,6 +4511,7 @@ function checkForUpdates(btn) {
 function init() {
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === state.section));
   applyFontSizes();
+  applyTheme(settings.theme || 'auto');
   showView('home');
 }
 
