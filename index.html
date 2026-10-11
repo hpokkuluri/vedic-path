@@ -795,6 +795,47 @@ body {
   padding: 2px 7px; border-radius: 7px;
 }
 
+/* Enter Practice button */
+.home-enter-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--home-gold);
+  color: #1a0800;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.25rem; font-weight: 700;
+  padding: 16px 44px; border-radius: 50px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 24px rgba(240,192,64,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.02em;
+  margin: 28px auto 0;
+}
+.home-enter-btn:active { transform: scale(0.96); box-shadow: 0 2px 12px rgba(240,192,64,0.2); }
+.home-enter-arrow { font-size: 1.4rem; line-height: 1; }
+
+/* Library view header */
+.lib-header {
+  background: var(--home-gradient);
+  padding: 18px 20px 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.lib-back-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.9);
+  border-radius: 50%; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; cursor: pointer; flex-shrink: 0;
+}
+.lib-header-title {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.25rem; font-weight: 700; color: #fff;
+  letter-spacing: 0.02em; flex: 1;
+}
+.lib-content {
+  display: flex; flex-direction: column; align-items: center;
+  padding-bottom: 20px;
+}
+
 /* Footer */
 .home-footer {
   text-align: center; font-size: 0.72rem; color: var(--fg3);
@@ -951,6 +992,7 @@ body {
     <button class="stab active" data-sec="gita" onclick="switchSection('gita')">Gītā</button>
     <button class="stab" data-sec="rudram" onclick="switchSection('rudram')">Rudram</button>
     <button class="stab" data-sec="vsn" onclick="switchSection('vsn')">VSN</button>
+    <button class="stab" data-sec="hc" onclick="switchSection('hc')">HC</button>
   </div>
   <button id="btn-recite" onclick="startRecite()">▶ Recite</button>
 </div>
@@ -967,6 +1009,8 @@ body {
   <div class="view" id="view-progress"></div>
   <!-- Settings view -->
   <div class="view" id="view-settings"></div>
+  <!-- Library view -->
+  <div class="view" id="view-library"></div>
 </div>
 
 <!-- Bottom nav (hidden on home) -->
@@ -988,6 +1032,12 @@ body {
       <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
     </svg>
     <span>Index</span>
+  </button>
+  <button class="bnav-btn" id="bnav-library" onclick="showView('library')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+    </svg>
+    <span>Library</span>
   </button>
   <button class="bnav-btn" id="bnav-progress" onclick="showView('progress')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3170,8 +3220,9 @@ function showView(v) {
   if (bn) bn.classList.add('active');
   // Show/hide chrome based on view
   const isHome = (v === 'home');
-  document.getElementById('topbar').style.display = isHome ? 'none' : '';
-  document.getElementById('bottomnav').style.display = isHome ? 'none' : '';
+  const isLibrary = (v === 'library');
+  document.getElementById('topbar').style.display = (isHome || isLibrary) ? 'none' : '';
+  document.getElementById('bottomnav').style.display = (isHome || isLibrary) ? 'none' : '';
   // Scroll main to top
   document.getElementById('main').scrollTop = 0;
   renderCurrentView();
@@ -3179,11 +3230,12 @@ function showView(v) {
 
 function renderCurrentView() {
   if (state.view === 'home') renderHome();
+  else if (state.view === 'library') renderLibrary();
   else if (state.view === 'practice') renderPractice();
   else if (state.view === 'index') renderIndex();
   else if (state.view === 'progress') renderProgress();
   else if (state.view === 'settings') renderSettings();
-  if (state.view !== 'home') updateTopbar();
+  if (state.view !== 'home' && state.view !== 'library') updateTopbar();
 }
 
 function updateTopbar() {
@@ -3219,7 +3271,6 @@ function renderHome() {
   applyTheme(settings.theme || 'auto');
 
   const el = document.getElementById('view-home');
-  const layout = settings.homeLayout || 'grid';
 
   // Build the mandala SVG inline
   const mandala = `<svg class="home-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -3239,61 +3290,6 @@ function renderHome() {
     return `<button class="home-lang-btn${sel?' active':''}" onclick="setLanguage('${v}');renderHome()">${labels[v]}</button>`;
   }).join('');
 
-  // Layout toggle
-  const layoutBtns = `
-    <div class="home-layout-toggle">
-      <button class="home-layout-btn${layout==='grid'?' active':''}" onclick="setHomeLayout('grid')" title="Grid view">⊞</button>
-      <button class="home-layout-btn${layout==='list'?' active':''}" onclick="setHomeLayout('list')" title="List view">☰</button>
-    </div>`;
-
-  // LIBRARY data
-  const texts = [
-    { key:'gita',  icon:'🪷', name:'Bhagavad Gītā',         desc:'18 Chapters · 700 Verses', action:"openSection('gita')",        gradient:'linear-gradient(160deg,#7b1a00,#c05000)', dot:'#c05000', tradition:'Itihāsa' },
-    { key:'rudram',icon:'🔱', name:'Śrī Rudram',             desc:'Namakam · Chamakam',        action:"switchSection('rudram')",    gradient:'linear-gradient(160deg,#0a2a60,#1a70c0)', dot:'#1a70c0', tradition:'Veda' },
-    { key:'vsn',   icon:'🌸', name:'Viṣṇu Sahasranāmam',    desc:'1000 Names · 108 Slokas',   action:"switchSection('vsn')",       gradient:'linear-gradient(160deg,#0a4020,#1a9050)', dot:'#1a9050', tradition:'Itihāsa' },
-    { key:'hc',    icon:'🙏', name:'Hanumān Chālīsā',        desc:'40 Chaupāī · Tulsidāsa',   action:"switchSection('hc')",        gradient:'linear-gradient(160deg,#5a0a2a,#c03060)', dot:'#c03060', tradition:'Stotra' },
-    { key:'lalita',icon:'🌺', name:'Lalitā Stotram',         desc:'Coming soon',               action:'',                           gradient:'linear-gradient(160deg,#3a0a4a,#8030a0)', dot:'#8030a0', tradition:'Stotra', soon:true },
-  ];
-
-  let content = '';
-  if (layout === 'grid') {
-    content = `<div class="home-grid">`;
-    for (const t of texts) {
-      const tile = `<div class="home-tile${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
-        <div class="home-tile-bg" style="background:${t.gradient}"></div>
-        ${t.soon ? `<div class="home-tile-badge">SOON</div>` : ''}
-        <div class="home-tile-content">
-          <span class="home-tile-icon">${t.icon}</span>
-          <div class="home-tile-name">${t.name}</div>
-          <div class="home-tile-desc">${t.desc}</div>
-        </div>
-      </div>`;
-      content += tile;
-    }
-    content += `</div>`;
-  } else {
-    // List layout — grouped by tradition
-    const groups = {};
-    for (const t of texts) {
-      (groups[t.tradition] = groups[t.tradition] || []).push(t);
-    }
-    content = `<div class="home-list">`;
-    for (const [grp, items] of Object.entries(groups)) {
-      content += `<div class="home-list-group-label">${grp}</div>`;
-      for (const t of items) {
-        content += `<div class="home-list-row${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
-          <div class="home-list-dot" style="background:${t.dot}"></div>
-          <div class="home-list-text">
-            <div class="home-list-name">${t.icon} ${t.name}</div>
-            <div class="home-list-meta">${t.desc}</div>
-          </div>
-          ${t.soon ? `<span class="home-list-badge">SOON</span>` : `<span class="home-list-arrow">›</span>`}
-        </div>`;
-      }
-    }
-    content += `</div>`;
-  }
-
   el.innerHTML = `
   <div class="home-hero">
     <div class="home-hero-top">
@@ -3303,14 +3299,14 @@ function renderHome() {
     <div class="home-title">Veda<span>saram</span></div>
     <div class="home-title-script">వేదసారం · वेदसारम्</div>
     <div class="home-subtitle">Sacred Texts · Learn &amp; Recite</div>
+    <button class="home-enter-btn" onclick="showView('library')">
+      Enter Practice <span class="home-enter-arrow">›</span>
+    </button>
   </div>
 
-  <div class="home-top-row">
+  <div class="home-top-row" style="justify-content:center;">
     <div class="home-lang-row">${langBtns}</div>
-    ${layoutBtns}
   </div>
-
-  ${content}
 
   <div class="home-footer">Vedasaram · వేదసారం · वेदसारम्</div>
 
@@ -3360,10 +3356,79 @@ function renderHome() {
   `;
 }
 
+// ─────────────── LIBRARY VIEW ───────────────
+function renderLibrary() {
+  const el = document.getElementById('view-library');
+  const layout = settings.homeLayout || 'grid';
+
+  const texts = [
+    { key:'gita',  icon:'🪷', name:'Bhagavad Gītā',         desc:'18 Chapters · 700 Verses', action:"openSection('gita')",        gradient:'linear-gradient(160deg,#7b1a00,#c05000)', dot:'#c05000', tradition:'Itihāsa' },
+    { key:'rudram',icon:'🔱', name:'Śrī Rudram',             desc:'Namakam · Chamakam',        action:"switchSection('rudram')",    gradient:'linear-gradient(160deg,#0a2a60,#1a70c0)', dot:'#1a70c0', tradition:'Veda' },
+    { key:'vsn',   icon:'🌸', name:'Viṣṇu Sahasranāmam',    desc:'1000 Names · 108 Slokas',   action:"switchSection('vsn')",       gradient:'linear-gradient(160deg,#0a4020,#1a9050)', dot:'#1a9050', tradition:'Itihāsa' },
+    { key:'hc',    icon:'🙏', name:'Hanumān Chālīsā',        desc:'40 Chaupāī · Tulsidāsa',   action:"switchSection('hc')",        gradient:'linear-gradient(160deg,#5a0a2a,#c03060)', dot:'#c03060', tradition:'Stotra' },
+    { key:'lalita',icon:'🌺', name:'Lalitā Stotram',         desc:'Coming soon',               action:'',                           gradient:'linear-gradient(160deg,#3a0a4a,#8030a0)', dot:'#8030a0', tradition:'Stotra', soon:true },
+  ];
+
+  const layoutBtns = `
+    <div class="home-layout-toggle">
+      <button class="home-layout-btn${layout==='grid'?' active':''}" onclick="setHomeLayout('grid')" title="Grid view">⊞</button>
+      <button class="home-layout-btn${layout==='list'?' active':''}" onclick="setHomeLayout('list')" title="List view">☰</button>
+    </div>`;
+
+  let content = '';
+  if (layout === 'grid') {
+    content = `<div class="home-grid">`;
+    for (const t of texts) {
+      content += `<div class="home-tile${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
+        <div class="home-tile-bg" style="background:${t.gradient}"></div>
+        ${t.soon ? `<div class="home-tile-badge">SOON</div>` : ''}
+        <div class="home-tile-content">
+          <span class="home-tile-icon">${t.icon}</span>
+          <div class="home-tile-name">${t.name}</div>
+          <div class="home-tile-desc">${t.desc}</div>
+        </div>
+      </div>`;
+    }
+    content += `</div>`;
+  } else {
+    const groups = {};
+    for (const t of texts) {
+      (groups[t.tradition] = groups[t.tradition] || []).push(t);
+    }
+    content = `<div class="home-list">`;
+    for (const [grp, items] of Object.entries(groups)) {
+      content += `<div class="home-list-group-label">${grp}</div>`;
+      for (const t of items) {
+        content += `<div class="home-list-row${t.soon?' coming-soon':''}" ${t.soon ? '' : `onclick="${t.action}"`}>
+          <div class="home-list-dot" style="background:${t.dot}"></div>
+          <div class="home-list-text">
+            <div class="home-list-name">${t.icon} ${t.name}</div>
+            <div class="home-list-meta">${t.desc}</div>
+          </div>
+          ${t.soon ? `<span class="home-list-badge">SOON</span>` : `<span class="home-list-arrow">›</span>`}
+        </div>`;
+      }
+    }
+    content += `</div>`;
+  }
+
+  el.innerHTML = `
+  <div class="lib-header">
+    <button class="lib-back-btn" onclick="showView('home')" title="Back">‹</button>
+    <div class="lib-header-title">Choose a Text</div>
+    ${layoutBtns}
+  </div>
+  <div class="lib-content">
+    ${content}
+  </div>
+  `;
+}
+
 function setHomeLayout(l) {
   settings.homeLayout = l;
   saveSettings();
-  renderHome();
+  if (state.view === 'library') renderLibrary();
+  else renderHome();
 }
 
 function setTheme(t) {
@@ -3466,8 +3531,9 @@ function showViewWithTransition(v, dir) {
   const bn = document.getElementById('bnav-' + v);
   if (bn) bn.classList.add('active');
   const isHome = (v === 'home');
-  document.getElementById('topbar').style.display = isHome ? 'none' : '';
-  document.getElementById('bottomnav').style.display = isHome ? 'none' : '';
+  const isLibrary2 = (v === 'library');
+  document.getElementById('topbar').style.display = (isHome || isLibrary2) ? 'none' : '';
+  document.getElementById('bottomnav').style.display = (isHome || isLibrary2) ? 'none' : '';
   renderCurrentView();
   // Scroll to top, then animate
   const main = document.getElementById('main');
