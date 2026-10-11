@@ -592,6 +592,23 @@ body {
 }
 .recite-dot.done { background: var(--recite-hl); }
 .recite-dot.cur { background: #fff; }
+/* Recite auto-advance timer */
+#recite-timer-bar {
+  position: absolute; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--recite-hl);
+}
+#recite-timer-bar.running { animation: reciteTimerFill linear forwards; }
+@keyframes reciteTimerFill { from { width: 0; } to { width: 100%; } }
+#recite-timer-ctrl {
+  display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;
+  color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 600;
+}
+.recite-timer-btn {
+  padding: 5px 12px; border-radius: 16px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8); font-size: 0.78rem; font-weight: 700;
+}
+.recite-timer-btn.active { background: var(--recite-hl); border-color: var(--recite-hl); color: #000; }
 /* Recite font controls — inside info bar */
 #recite-font-ctrl {
   display: flex;
@@ -1217,7 +1234,15 @@ body {
   </div>
   <div id="recite-lines"></div>
   <div id="recite-controls">
+    <div id="recite-timer-bar"></div>
     <div id="recite-dots"></div>
+    <div id="recite-timer-ctrl">
+      <span>Auto next</span>
+      <button class="recite-timer-btn" data-sec="0" onclick="setReciteTimer(0)">Off</button>
+      <button class="recite-timer-btn" data-sec="5" onclick="setReciteTimer(5)">5s</button>
+      <button class="recite-timer-btn" data-sec="15" onclick="setReciteTimer(15)">15s</button>
+      <button class="recite-timer-btn" data-sec="30" onclick="setReciteTimer(30)">30s</button>
+    </div>
     <div style="display:flex;gap:10px;justify-content:center;width:100%;flex-wrap:wrap">
       <button class="recite-btn" onclick="reciteGoTo(0)" title="Jump to first verse">⏮ First</button>
       <button class="recite-btn" onclick="recitePrev()">← Prev</button>
@@ -3251,6 +3276,7 @@ const SETTINGS_DEFAULTS = {
   reciteFontSize: 1,     // index: 0=small,1=med,2=large,3=xlarge
   showMeaning: true,
   autoAdvance: false,
+  reciteTimer: 0,        // recite auto-next, seconds: 0 (off) | 5 | 15 | 30
   language: 'en',        // 'en' = IAST only, 'te' = Telugu only, 'both' = IAST + Telugu
   homeLayout: 'grid',    // 'grid' | 'list'
   theme: 'auto',         // 'auto' | 'light' | 'dark' | 'saffron' | 'forest' | 'night'
@@ -4364,7 +4390,32 @@ function startRecite() {
   document.addEventListener('keydown', reciteKeyHandler);
 }
 
+// ── Recite auto-advance timer ──
+let reciteTimerId = null;
+function clearReciteTimer() {
+  if (reciteTimerId) { clearTimeout(reciteTimerId); reciteTimerId = null; }
+  const bar = document.getElementById('recite-timer-bar');
+  if (bar) { bar.classList.remove('running'); bar.style.animationDuration = ''; }
+}
+function scheduleReciteTimer() {
+  clearReciteTimer();
+  const secs = [5, 15, 30].includes(settings.reciteTimer) ? settings.reciteTimer : 0;
+  document.querySelectorAll('.recite-timer-btn').forEach(b => b.classList.toggle('active', Number(b.dataset.sec) === secs));
+  if (!secs || !state.reciting) return;
+  const bar = document.getElementById('recite-timer-bar');
+  void bar.offsetWidth;                      // restart the fill animation
+  bar.style.animationDuration = secs + 's';
+  bar.classList.add('running');
+  reciteTimerId = setTimeout(() => { reciteTimerId = null; if (state.reciting) reciteNext(); }, secs * 1000);
+}
+function setReciteTimer(secs) {
+  settings.reciteTimer = secs;
+  saveSettings();
+  scheduleReciteTimer();
+}
+
 function stopRecite() {
+  clearReciteTimer();
   state.reciting = false;
   document.getElementById('recite-overlay').classList.remove('active');
   // Reset end panel
@@ -4390,6 +4441,7 @@ function reciteNext() {
     renderRecite();
   } else {
     // Last item — show end panel
+    clearReciteTimer();
     const item = state.reciteItems[state.reciteIdx];
     done.add(item.id);
     saveDone();
@@ -4473,6 +4525,9 @@ function renderRecite() {
     const cls = i === idx ? 'cur' : (done.has(it.id) ? 'done' : '');
     return `<div class="recite-dot ${cls}" onclick="reciteGoTo(${i})" title="${esc(it.label||String(i+1))}"></div>`;
   }).join('');
+
+  // (Re)start the auto-next countdown for this verse
+  scheduleReciteTimer();
 }
 
 // ─────────────── UTILITIES ───────────────
