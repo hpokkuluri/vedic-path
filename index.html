@@ -159,6 +159,9 @@ body {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
+#main.no-scroll {
+  overflow: hidden;
+}
 .view { display: none; padding: 16px; max-width: 680px; margin: 0 auto; }
 .view.active { display: block; }
 #view-home.active, #view-library.active {
@@ -168,7 +171,7 @@ body {
   max-width: 100%;
   width: 100%;
   margin: 0;
-  min-height: 100%;
+  height: 100%;
 }
 /* Chapter transition animations — small translate so nothing clips */
 @keyframes slideInRight { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
@@ -673,8 +676,7 @@ body {
 }
 .home-screen {
   width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
+  flex: 1;
   background: var(--home-gradient);
   display: flex;
   flex-direction: column;
@@ -3340,8 +3342,14 @@ function showView(v) {
   const isLibrary = (v === 'library');
   document.getElementById('topbar').style.display = (isHome || isLibrary) ? 'none' : '';
   document.getElementById('bottomnav').style.display = (isHome || isLibrary) ? 'none' : '';
-  // Scroll main to top
-  document.getElementById('main').scrollTop = 0;
+  // Lock scroll on home/library so they fill exactly the viewport
+  const mainEl = document.getElementById('main');
+  if (isHome || isLibrary) {
+    mainEl.classList.add('no-scroll');
+  } else {
+    mainEl.classList.remove('no-scroll');
+    mainEl.scrollTop = 0;
+  }
   renderCurrentView();
 }
 
