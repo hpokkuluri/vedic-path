@@ -7,6 +7,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Vedasaram">
+<meta name="theme-color" content="#2a0e00">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
 <style>
 /* ── Design tokens ── */
 :root {
@@ -4950,6 +4954,13 @@ function forceRefresh() {
   fetch(url, { cache: 'reload' })
     .then(() => { location.reload(true); })
     .catch(() => { location.reload(true); });
+}
+
+// Offline support: the service worker keeps a copy of the app on the device
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
 }
 
 // On load: silently check if a newer version exists and reload if so
