@@ -3281,41 +3281,7 @@ try {
 } catch(e) {}
 state.view = 'home';
 
-// ─────────────── SCROLL-TO-ADVANCE ───────────────
-(function setupScrollAdvance() {
-  let _scrollAdvanceCooldown = false;
-  function _canAdvance() {
-    if (_scrollAdvanceCooldown) return false;
-    if (state.view !== 'practice') return false;
-    if (!state.section || !state.chapter) return false;
-    return true;
-  }
-  function _hasNextChapter() {
-    if (state.section === 'gita') {
-      const chNum = parseInt(state.chapter);
-      return chNum < 18;
-    } else if (state.section === 'rudram') {
-      const an = parseInt(state.chapter);
-      return !isNaN(an) && an < 11;
-    } else if (state.section === 'vsn') {
-      const idx = VSN_SECTIONS_ORDER.indexOf(state.chapter);
-      return idx >= 0 && idx < VSN_SECTIONS_ORDER.length - 1;
-    }
-    return false;
-  }
-  document.addEventListener('scroll', function(e) {
-    const main = document.getElementById('main');
-    if (!main || !_canAdvance()) return;
-    // Check if the scroll event is on #main
-    if (e.target !== main) return;
-    const nearBottom = main.scrollTop + main.clientHeight >= main.scrollHeight - 40;
-    if (nearBottom && _hasNextChapter()) {
-      _scrollAdvanceCooldown = true;
-      navChapter(1);
-      setTimeout(() => { _scrollAdvanceCooldown = false; }, 1200);
-    }
-  }, true);
-})();
+// scroll-to-advance removed
 
 // ─────────────── SECTIONS ───────────────
 function switchSection(sec) {
@@ -3738,12 +3704,6 @@ function renderDhyanaPractice(el) {
       <div class="verse-text">${linesHtml}<span class="verse-num">॥ ${s.n} ॥</span></div>
     </div>`;
   }
-  html += `<div class="lesson-end-banner">
-    <div class="leb-title">Dhyāna Śloka Complete 🙏</div>
-    <div class="leb-sub">Continue to Chapter 1 · Arjuna Viṣāda Yoga</div>
-    <button class="leb-next-btn" onclick="goToChapter('gita','1')">Chapter 1 →</button>
-    <div class="leb-done">The Yoga of Arjuna's Grief · 47 verses</div>
-  </div>`;
   el.innerHTML = html;
 }
 
@@ -3810,12 +3770,6 @@ function renderVSNPractice(el) {
     }
   }
 
-  html += `<div class="lesson-end-banner">
-    <div class="leb-title">🙏 Viṣṇu Sahasranāmam Complete</div>
-    <div class="leb-sub">1000 names of the Lord have been recited</div>
-    <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
-  </div>`;
-
   el.innerHTML = html;
 }
 
@@ -3871,12 +3825,6 @@ function renderHCPractice(el) {
       </div>`;
     }
   }
-
-  html += `<div class="lesson-end-banner">
-    <div class="leb-title">🙏 Hanumān Chālīsā Complete</div>
-    <div class="leb-sub">40 verses of Hanumān's glory recited</div>
-    <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
-  </div>`;
 
   el.innerHTML = html;
 }
@@ -3974,18 +3922,7 @@ function renderGitaPractice(el) {
 
   // Continuation banner
   if (hasNext && nextMeta) {
-    html += `<div class="lesson-end-banner">
-      <div class="leb-title">Chapter ${ch} Complete 🙏</div>
-      <div class="leb-sub">Continue to Chapter ${chNum+1} · ${nextMeta.yoga}</div>
-      <button class="leb-next-btn" onclick="nextChapterFromBanner()">Next Chapter →</button>
-      <div class="leb-done">${nextMeta.subtitle} · ${nextMeta.count} verses</div>
-    </div>`;
   } else if (!hasNext) {
-    html += `<div class="lesson-end-banner">
-      <div class="leb-title">🙏 Bhagavad Gītā Complete</div>
-      <div class="leb-sub">You have completed all 18 chapters</div>
-      <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
-    </div>`;
   }
 
   el.innerHTML = html;
@@ -4050,12 +3987,6 @@ function renderRudramPractice(el) {
     });
     html += `</div></div>`;
   }
-
-  html += `<div class="lesson-end-banner">
-    <div class="leb-title">🙏 Śrī Rudram Complete</div>
-    <div class="leb-sub">Namakam and Chamakam have been recited</div>
-    <button class="leb-next-btn" onclick="showView('home')">Return Home</button>
-  </div>`;
 
   el.innerHTML = html;
 }
