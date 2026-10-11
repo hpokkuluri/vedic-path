@@ -320,11 +320,31 @@ body {
 }
 .rudram-lines {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.0rem;
-  line-height: 2.0;
+  font-size: var(--practice-font, 1.6rem);
+  line-height: 2.1;
   color: var(--fg);
 }
 .rudram-lines span { display: block; }
+.rudram-lines .vline { margin-bottom: 6px; }
+
+/* ── Rudram part chooser (Namakam / Chamakam) ── */
+.rudram-choose { display: grid; gap: 14px; margin-top: 8px; }
+.rudram-choice {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  padding: 20px 18px; border-radius: 14px;
+  border: 1px solid var(--border); background: var(--card-bg); color: var(--fg);
+  font-family: inherit;
+}
+.rudram-choice:active { transform: scale(0.99); }
+.rudram-choice .rc-name { font-size: 1.35rem; font-weight: 700; color: var(--accent); }
+.rudram-choice .rc-desc { font-size: 0.9rem; color: var(--fg2); margin-top: 4px; }
+.rudram-switch { display: flex; gap: 8px; margin: 0 0 14px; }
+.rudram-switch button {
+  flex: 1; padding: 9px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border); background: transparent; color: var(--fg2);
+  font-family: inherit; font-size: 0.9rem; font-weight: 600;
+}
+.rudram-switch button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 /* ── Bottom nav ── */
 #bottomnav {
@@ -1110,7 +1130,7 @@ body {
 
 /* ── Responsive ── */
 @media (max-width: 480px) {
-  .verse-text { font-size: var(--practice-font, 1.4rem); }
+  .verse-text, .rudram-lines { font-size: var(--practice-font, 1.4rem); }
   .idx-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   .home-title { font-size: 1.9rem; }
   .home-mandala { width: 130px; height: 130px; }
@@ -3217,6 +3237,7 @@ const HC_META = {
 let state = {
   section: 'gita',   // gita | rudram | vsn | hc
   chapter: '12',     // for gita: chapter number string; for rudram: anuvaka number string
+  rudramPart: null,  // null (chooser) | 'namakam' | 'chamakam'
   view: 'practice',  // practice | index | progress
   expandedVerse: null,
   reciting: false,
@@ -3290,6 +3311,7 @@ function switchSection(sec) {
   if (sec === 'gita') state.chapter = state.chapter || '12';
   else if (sec === 'rudram') {
     state.chapter = '1';
+    state.rudramPart = null;   // always ask: Namakam or Chamakam
     document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
     saveState();
     showView('practice');
@@ -3355,7 +3377,7 @@ function updateTopbar() {
     const m = GITA_META[state.chapter];
     t.textContent = m ? 'Ch.' + state.chapter + ' — ' + m.yoga : 'Bhagavad Gītā';
   } else if (state.section === 'rudram') {
-    t.textContent = 'Śrī Rudram';
+    t.textContent = state.rudramPart === 'namakam' ? 'Namakam' : state.rudramPart === 'chamakam' ? 'Chamakam' : 'Śrī Rudram';
   } else if (state.section === 'hc') {
     t.textContent = 'Hanumān Chālīsā';
   } else {
@@ -3363,7 +3385,7 @@ function updateTopbar() {
   }
   // Show recite button only in practice view and when content available
   const hasContent = (state.section === 'gita' && GITA_DATA[state.chapter]?.length > 0) ||
-                     (state.section === 'rudram' && RUDRAM_DATA[state.chapter]?.length > 0) ||
+                     (state.section === 'rudram' && !!state.rudramPart && RUDRAM_DATA[state.chapter]?.length > 0) ||
                      (state.section === 'vsn' && VSN_DATA[state.chapter]?.length > 0) ||
                      (state.section === 'hc' && HC_DATA[state.chapter]?.length > 0);
   recBtn.style.display = (state.view === 'practice' && hasContent) ? '' : 'none';
@@ -3573,6 +3595,15 @@ function closeHomeSettings(e) {
   if (e.target === document.getElementById('home-settings-modal')) {
     document.getElementById('home-settings-modal').classList.remove('open');
   }
+}
+
+function chooseRudramPart(part) {
+  state.section = 'rudram';
+  state.rudramPart = part;
+  state.chapter = '1';
+  state.expandedVerse = null;
+  saveState();
+  showView('practice');
 }
 
 function toggleRudramMenu(e) {
@@ -3929,60 +3960,71 @@ function renderGitaPractice(el) {
 }
 
 function renderRudramPractice(el) {
-  // Entire Sri Rudram is ONE continuous page — Namakam (11 anuvakas) + Chamakam (11 anuvakas + closing)
+  const part = state.rudramPart;
+
+  // No part chosen yet — show the chooser
+  if (part !== 'namakam' && part !== 'chamakam') {
+    el.innerHTML = `
+    <div class="chapter-header">
+      <div class="chapter-num">Śrī Rudram</div>
+      <h2>Choose a Text</h2>
+    </div>
+    <div class="rudram-choose">
+      <button class="rudram-choice" onclick="chooseRudramPart('namakam')">
+        <div class="rc-name">Namakam</div>
+        <div class="rc-desc">11 Anuvakas · namastē rudra manyava</div>
+      </button>
+      <button class="rudram-choice" onclick="chooseRudramPart('chamakam')">
+        <div class="rc-name">Chamakam</div>
+        <div class="rc-desc">11 Anuvakas · Closing Prayer · agnāviṣṇū sajōṣasā</div>
+      </button>
+    </div>`;
+    return;
+  }
+
+  const isNam = (part === 'namakam');
   let html = `
+  <div class="rudram-switch">
+    <button class="${isNam ? 'active' : ''}" onclick="chooseRudramPart('namakam')">Namakam</button>
+    <button class="${isNam ? '' : 'active'}" onclick="chooseRudramPart('chamakam')">Chamakam</button>
+  </div>
   <div class="chapter-header">
     <div class="chapter-num">Śrī Rudram</div>
-    <h2>Complete Text</h2>
-    <div class="subtitle">Namakam · Chamakam</div>
+    <h2>${isNam ? 'Namakam' : 'Chamakam'}</h2>
+    <div class="subtitle">${isNam ? '11 Anuvakas' : '11 Anuvakas · Closing Prayer'}</div>
   </div>
   <div class="chapter-invocation">
-    <span class="vline">ōṃ namaḥ śivāya</span><br>
-    <span class="vline">ōṃ namas tē rudra manyava</span>
+    <span class="vline">ōṃ namaḥ śivāya</span>${isNam ? `<br>
+    <span class="vline">ōṃ namas tē rudra manyava</span>` : ''}
   </div>`;
 
-  // ── Namakam ──
-  html += `<div class="chapter-section-hdr" style="margin:20px 0 8px;font-size:0.85rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;opacity:0.8">Namakam</div>`;
+  const keys = isNam
+    ? ['1','2','3','4','5','6','7','8','9','10','11']
+    : ['1','2','3','4','5','6','7','8','9','10','11','closing'];
 
-  for (let a = 1; a <= 11; a++) {
-    const as = String(a);
-    const nmBlock = NAMAKAM_DATA[as];
-    const lines = nmBlock ? nmBlock[0].tlines : (RUDRAM_DATA[as] || []);
-    const teBlock = NAMAKAM_TE_DATA[as];
-    const teLines = teBlock ? teBlock[0].tlines : null;
-    const anLabel = RUDRAM_META[as] || ('Anuvaka ' + a);
+  for (const k of keys) {
+    let lines, teLines, label;
+    if (isNam) {
+      const nmBlock = NAMAKAM_DATA[k];
+      lines = nmBlock ? nmBlock[0].tlines : (RUDRAM_DATA[k] || []);
+      const teBlock = NAMAKAM_TE_DATA[k];
+      teLines = teBlock ? teBlock[0].tlines : null;
+      label = 'Anuvaka ' + k + ' — ' + (RUDRAM_META[k] || '').replace(/^Anuvaka \d+ — /, '');
+    } else {
+      const cmBlock = CHAMAKAM_DATA[k];
+      lines = cmBlock ? cmBlock[0].tlines : [];
+      const cmTeBlock = CHAMAKAM_TE_DATA[k];
+      teLines = cmTeBlock ? cmTeBlock[0].tlines : null;
+      label = (k === 'closing') ? 'Closing Prayer' : ('Anuvaka ' + k);
+    }
 
-    html += `<div class="chapter-section-hdr" style="margin:16px 0 4px;font-size:0.78rem;font-weight:600;color:var(--accent);opacity:0.65">Anuvaka ${a} — ${anLabel.replace(/^Anuvaka \d+ — /, '')}</div>`;
+    html += `<div class="chapter-section-hdr" style="margin:16px 0 4px;font-size:0.78rem;font-weight:600;color:var(--accent);opacity:0.65">${label}</div>`;
     html += `<div class="rudram-anuvaka"><div class="rudram-lines">`;
     lines.forEach((ln, i) => {
       const enPart = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
       const rawTeLn = (teLines && teLines[i]) ? teLines[i] : null;
       const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
-      const tePart = (settings.language !== 'en' && teLn) ? `<span class="vline-te" style="display:block;font-size:1.1rem">${esc(teLn)}</span>` : '';
-      html += enPart + tePart;
-    });
-    html += `</div></div>`;
-  }
-
-  // ── Chamakam ──
-  html += `<div class="chapter-section-hdr" style="margin:28px 0 8px;font-size:0.85rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.07em;opacity:0.8">Chamakam</div>`;
-
-  const CHAMAKAM_KEYS = ['1','2','3','4','5','6','7','8','9','10','11','closing'];
-  for (const ck of CHAMAKAM_KEYS) {
-    const cmBlock = CHAMAKAM_DATA[ck];
-    const cmLines = cmBlock ? cmBlock[0].tlines : [];
-    const cmTeBlock = CHAMAKAM_TE_DATA[ck];
-    const cmTeLines = cmTeBlock ? cmTeBlock[0].tlines : null;
-    const isClosing = (ck === 'closing');
-    const ckLabel = isClosing ? 'Closing Prayer' : ('Anuvaka ' + ck);
-
-    html += `<div class="chapter-section-hdr" style="margin:16px 0 4px;font-size:0.78rem;font-weight:600;color:var(--accent);opacity:0.65">${ckLabel}</div>`;
-    html += `<div class="rudram-anuvaka"><div class="rudram-lines">`;
-    cmLines.forEach((ln, i) => {
-      const enPart = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
-      const rawTeLn = (cmTeLines && cmTeLines[i]) ? cmTeLines[i] : null;
-      const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
-      const tePart = (settings.language !== 'en' && teLn) ? `<span class="vline-te" style="display:block;font-size:1.1rem">${esc(teLn)}</span>` : '';
+      const tePart = (settings.language !== 'en' && teLn) ? `<span class="vline-te">${esc(teLn)}</span>` : '';
       html += enPart + tePart;
     });
     html += `</div></div>`;
@@ -4225,17 +4267,31 @@ function buildReciteItems() {
     };
   } else if (state.section === 'rudram') {
     const an = state.chapter;
-    const nmBlock = NAMAKAM_DATA[an];
-    const lines = nmBlock ? nmBlock[0].tlines : (RUDRAM_DATA[an] || []);
-    const teBlock = NAMAKAM_TE_DATA[an];
-    const teLines = teBlock ? teBlock[0].tlines : null;
+    const isCham = (state.rudramPart === 'chamakam');
+    let lines, teLines;
+    if (isCham) {
+      // Chamakam: the closing prayer rides along with the last anuvaka
+      const ks = (an === '11') ? ['11', 'closing'] : [an];
+      lines = []; teLines = [];
+      for (const k of ks) {
+        const b = CHAMAKAM_DATA[k], tb = CHAMAKAM_TE_DATA[k];
+        const l = b ? b[0].tlines : [];
+        const tl = tb ? tb[0].tlines : [];
+        l.forEach((x, i) => { lines.push(x); teLines.push(tl[i] || ''); });
+      }
+    } else {
+      const nmBlock = NAMAKAM_DATA[an];
+      lines = nmBlock ? nmBlock[0].tlines : (RUDRAM_DATA[an] || []);
+      const teBlock = NAMAKAM_TE_DATA[an];
+      teLines = teBlock ? teBlock[0].tlines : null;
+    }
     // Group every 4 lines into a card
     for (let i = 0; i < lines.length; i += 4) {
       const cardLines = lines.slice(i, i+4);
       const cardTeLines = teLines ? teLines.slice(i, i+4) : [];
       items.push({
-        id: `rudram_an${an}_g${Math.floor(i/4)}`,
-        label: RUDRAM_META[an] || 'Anuvaka ' + an,
+        id: `${isCham ? 'chamakam' : 'rudram'}_an${an}_g${Math.floor(i/4)}`,
+        label: isCham ? ('Chamakam · Anuvaka ' + an) : (RUDRAM_META[an] || 'Anuvaka ' + an),
         lines: cardLines,
         teLines: cardTeLines,
       });
@@ -4346,7 +4402,7 @@ function reciteNext() {
       const nextLabel = state.section === 'gita'
         ? `Chapter ${chNum+1} · ${GITA_META[String(chNum+1)]?.yoga || ''}`
         : state.section === 'rudram'
-        ? `${RUDRAM_META[String(chNum+1)] || 'Anuvaka '+(chNum+1)}`
+        ? (state.rudramPart === 'chamakam' ? `Chamakam · Anuvaka ${chNum+1}` : `${RUDRAM_META[String(chNum+1)] || 'Anuvaka '+(chNum+1)}`)
         : `${VSN_META[VSN_SECTIONS_ORDER[vsnNextIdx]] || 'Śloka '+VSN_SECTIONS_ORDER[vsnNextIdx]}`;
       document.getElementById('recite-end-label').textContent = 'Up next: ' + nextLabel;
       btn.textContent = state.section === 'gita' ? 'Next Chapter →' : state.section === 'rudram' ? 'Next Anuvaka →' : 'Next Section →';
@@ -4354,7 +4410,7 @@ function reciteNext() {
     } else {
       document.getElementById('recite-end-label').textContent =
         state.section === 'gita' ? 'All 18 Chapters complete 🙏' :
-        state.section === 'rudram' ? 'All 11 Anuvakas complete 🙏' :
+        state.section === 'rudram' ? (state.rudramPart === 'chamakam' ? 'Chamakam complete 🙏' : 'Namakam complete 🙏') :
         'Viṣṇu Sahasranāmam complete 🙏';
       btn.style.display = 'none';
     }
