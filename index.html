@@ -3077,10 +3077,11 @@ function goVSNSection(sec) {
 }
 
 function showViewWithTransition(v, dir) {
-  // dir: 'next' (→), 'prev' (←), or falsy = no animation
+  // dir: 'next'/1 (→), 'prev'/-1 (←), or falsy = no animation
   const el = document.getElementById('view-' + v);
   if (!dir || !el) { showView(v); return; }
-  // Perform state change + render without scrolling first
+  const isForward = (dir === 'next' || dir > 0);
+  // Perform state change + render
   state.view = v;
   document.querySelectorAll('.view').forEach(e => e.classList.remove('active'));
   el.classList.add('active');
@@ -3091,10 +3092,13 @@ function showViewWithTransition(v, dir) {
   document.getElementById('topbar').style.display = isHome ? 'none' : '';
   document.getElementById('bottomnav').style.display = isHome ? 'none' : '';
   renderCurrentView();
-  // Scroll to top instantly, then apply animation class
+  // Scroll to top, then animate
   const main = document.getElementById('main');
   main.scrollTop = 0;
-  const cls = dir === 'next' ? 'chapter-enter-next' : 'chapter-enter-prev';
+  const cls = isForward ? 'chapter-enter-next' : 'chapter-enter-prev';
+  el.classList.remove('chapter-enter-next', 'chapter-enter-prev');
+  // Force reflow so animation restarts cleanly
+  void el.offsetWidth;
   el.classList.add(cls);
   el.addEventListener('animationend', () => el.classList.remove(cls), { once: true });
 }
