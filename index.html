@@ -2867,6 +2867,42 @@ try {
 } catch(e) {}
 state.view = 'home';
 
+// ─────────────── SCROLL-TO-ADVANCE ───────────────
+(function setupScrollAdvance() {
+  let _scrollAdvanceCooldown = false;
+  function _canAdvance() {
+    if (_scrollAdvanceCooldown) return false;
+    if (state.view !== 'practice') return false;
+    if (!state.section || !state.chapter) return false;
+    return true;
+  }
+  function _hasNextChapter() {
+    if (state.section === 'gita') {
+      const chNum = parseInt(state.chapter);
+      return chNum < 18;
+    } else if (state.section === 'rudram') {
+      const an = parseInt(state.chapter);
+      return !isNaN(an) && an < 11;
+    } else if (state.section === 'vsn') {
+      const idx = VSN_SECTIONS_ORDER.indexOf(state.chapter);
+      return idx >= 0 && idx < VSN_SECTIONS_ORDER.length - 1;
+    }
+    return false;
+  }
+  document.addEventListener('scroll', function(e) {
+    const main = document.getElementById('main');
+    if (!main || !_canAdvance()) return;
+    // Check if the scroll event is on #main
+    if (e.target !== main) return;
+    const nearBottom = main.scrollTop + main.clientHeight >= main.scrollHeight - 40;
+    if (nearBottom && _hasNextChapter()) {
+      _scrollAdvanceCooldown = true;
+      navChapter(1);
+      setTimeout(() => { _scrollAdvanceCooldown = false; }, 1200);
+    }
+  }, true);
+})();
+
 // ─────────────── SECTIONS ───────────────
 function switchSection(sec) {
   state.section = sec;
@@ -3813,18 +3849,22 @@ function buildReciteItems() {
     }
   
   } else if (state.section === 'vsn') {
-    const slokas = VSN_DATA[state.chapter] || [];
-    const secLabel = VSN_META[state.chapter] || ('Śloka ' + state.chapter);
-    const teSlokas = VSN_TE_DATA[state.chapter] || [];
-    for (const s of slokas) {
-      const teSloka = teSlokas.find(x => x.n === s.n);
-      items.push({
-        id: `vsn_${state.chapter}_${s.n}`,
-        label: secLabel + ' · ' + s.n,
-        lines: s.tlines,
-        teLines: teSloka ? teSloka.tlines : [],
-        n: s.n,
-      });
+    // Load ALL VSN sections in order as one continuous recite list
+    for (const sec of VSN_SECTIONS_ORDER) {
+      const slokas = VSN_DATA[sec] || [];
+      const secLabel = VSN_META[sec] || ('Śloka ' + sec);
+      const teSlokas = VSN_TE_DATA[sec] || [];
+      for (const s of slokas) {
+        const teSloka = teSlokas.find(x => x.n === s.n);
+        items.push({
+          id: `vsn_${sec}_${s.n}`,
+          label: secLabel + ' · ' + s.n,
+          lines: s.tlines,
+          teLines: teSloka ? teSloka.tlines : [],
+          sec,
+          n: s.n,
+        });
+      }
     }
   }
   return items;
