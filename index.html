@@ -3782,9 +3782,15 @@ function renderVSNPractice(el) {
       const isExpanded = state.expandedVerse === key;
       const speakerLabel = s.speaker ? `<div class="verse-speaker">${esc(s.speaker)}</div>` : '';
       const teSlokas = VSN_TE_DATA[sec] || [];
-      const teSloka = teSlokas.find(x => x.n === s.n);
+      // Telugu nāma slokas are all stored with n:1, so match numbered sections by position
+      const teSloka = teSlokas.find(x => x.n === s.n) || (isNumbered ? teSlokas[slokas.indexOf(s)] : null);
       const slokaNumLabel = isNumbered ? `<div class="verse-num">Śloka ${sec}</div>` : '';
-      const linesHtml = s.tlines.map((ln, i) => {
+      const cleanTe = t => t.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd();
+      // Telugu-only: skip verses with no Telugu text, and show every Telugu line of the verse
+      if (settings.language === 'te' && !teSloka) continue;
+      const linesHtml = (settings.language === 'te')
+        ? teSloka.tlines.map(t => `<span class="vline-te">${esc(cleanTe(t))}</span>`).join('')
+        : s.tlines.map((ln, i) => {
         const enLine = settings.language !== 'te' ? `<span class="vline">${esc(ln)}</span>` : '';
         const rawTeLn = (teSloka && teSloka.tlines[i]) ? teSloka.tlines[i] : null;
         const teLn = rawTeLn ? rawTeLn.replace(/[॥|]\s*\d+\s*[॥|]\s*$/, '').trimEnd() : null;
@@ -4303,8 +4309,9 @@ function buildReciteItems() {
       const slokas = VSN_DATA[sec] || [];
       const secLabel = VSN_META[sec] || ('Śloka ' + sec);
       const teSlokas = VSN_TE_DATA[sec] || [];
+      const secNumbered = !isNaN(parseInt(sec));
       for (const s of slokas) {
-        const teSloka = teSlokas.find(x => x.n === s.n);
+        const teSloka = teSlokas.find(x => x.n === s.n) || (secNumbered ? teSlokas[slokas.indexOf(s)] : null);
         items.push({
           id: `vsn_${sec}_${s.n}`,
           label: secLabel + ' · ' + s.n,
