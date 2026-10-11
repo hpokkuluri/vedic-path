@@ -736,6 +736,44 @@ body {
   color: var(--accent2);
   font-size: 1rem;
 }
+.home-controls {
+  padding: 0 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.home-lang-row {
+  display: flex;
+  gap: 8px;
+}
+.home-lang-btn {
+  padding: 7px 18px;
+  border-radius: 20px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+.home-lang-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.home-refresh-btn {
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 1.5px solid var(--fg3);
+  background: transparent;
+  color: var(--fg3);
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.home-refresh-btn:hover { border-color: var(--accent); color: var(--accent); }
 .home-footer {
   text-align: center;
   font-size: 0.75rem;
@@ -3055,6 +3093,16 @@ function renderHome() {
     </div>
   </div>
 
+  <div class="home-controls">
+    <div class="home-lang-row">
+      ${['en','both','te'].map(v => {
+        const labels = {en:'English', both:'Both', te:'తెలుగు'};
+        const sel = settings.language === v;
+        return `<button class="home-lang-btn${sel?' active':''}" onclick="setLanguage('${v}');renderHome()">${labels[v]}</button>`;
+      }).join('')}
+    </div>
+    <button class="home-refresh-btn" onclick="forceRefresh()" id="home-refresh-btn">↻ Check for Updates</button>
+  </div>
   <div class="home-footer">Vedasaram · వేదసారం · वेदसारम्</div>
   `;
 }
@@ -4042,6 +4090,37 @@ function changeSetting(key, dir) {
 function adjustReciteFont(dir) {
   changeSetting('reciteFontSize', dir);
 }
+
+// ─────────────── AUTO-UPDATE ───────────────
+function forceRefresh() {
+  const btn = document.getElementById('home-refresh-btn');
+  if (btn) { btn.textContent = '↻ Checking…'; btn.disabled = true; }
+  // Bust the cache by appending a timestamp, then reload
+  const url = location.href.split('?')[0] + '?v=' + Date.now();
+  fetch(url, { cache: 'reload' })
+    .then(() => { location.reload(true); })
+    .catch(() => { location.reload(true); });
+}
+
+// On load: silently check if a newer version exists and reload if so
+(function autoUpdate() {
+  try {
+    const CACHE_KEY = 'vedic_etag';
+    const url = location.href.split('?')[0];
+    fetch(url, { method: 'HEAD', cache: 'no-store' })
+      .then(r => {
+        const etag = r.headers.get('etag') || r.headers.get('last-modified') || '';
+        const saved = localStorage.getItem(CACHE_KEY) || '';
+        if (saved && etag && saved !== etag) {
+          // New version available — reload silently
+          localStorage.setItem(CACHE_KEY, etag);
+          location.reload(true);
+        } else if (etag) {
+          localStorage.setItem(CACHE_KEY, etag);
+        }
+      }).catch(() => {});
+  } catch(e) {}
+})();
 
 function setLanguage(lang) {
   settings.language = lang;
