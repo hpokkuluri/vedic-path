@@ -2909,7 +2909,13 @@ function switchSection(sec) {
   state.expandedVerse = null;
   if (sec === 'gita') state.chapter = state.chapter || '12';
   else if (sec === 'rudram') state.chapter = state.chapter && parseInt(state.chapter) <= 11 ? state.chapter : '1';
-  else if (sec === 'vsn') state.chapter = state.chapter && VSN_SECTIONS_ORDER.includes(state.chapter) ? state.chapter : 'preamble';
+  else if (sec === 'vsn') {
+    state.chapter = 'preamble';
+    document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
+    saveState();
+    showView('practice');
+    return;
+  }
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === sec));
   saveState();
   showView('index');
@@ -3536,31 +3542,9 @@ function renderIndex() {
 
 
   if (state.section === 'vsn') {
-    // One entry — full VSN as a single continuous practice page
-    const vsnAllDone = [...done].filter(k => k.startsWith('vsn_')).length;
-    let vsnAllTotal = 0;
-    for (const sec of VSN_SECTIONS_ORDER) vsnAllTotal += (VSN_DATA[sec] || []).length;
-    const vsnAllPct = vsnAllTotal ? Math.round(vsnAllDone/vsnAllTotal*100) : 0;
-    html += `<div class="idx-section">
-      <div class="idx-section-hdr">
-        <span class="idx-section-icon" style="background:linear-gradient(135deg,#2a5a1a,#4aaa2a)">🌸</span>
-        <div>
-          <div class="idx-section-title">Viṣṇu Sahasranāmam</div>
-          <div class="idx-section-sub">1000 Names of Viṣṇu</div>
-        </div>
-      </div>
-      <div class="idx-list">
-        <div class="idx-row current" onclick="goToChapter('vsn','preamble')">
-          <div class="idx-row-num" style="font-size:0.55rem">VSN</div>
-          <div class="idx-row-body">
-            <div class="idx-row-name">Complete Text</div>
-            <div class="idx-row-meta">Invocation · Dhyānam · 108 Slokas · Phalaśruti</div>
-            <div class="idx-prog"><div class="idx-prog-fill" style="width:${vsnAllPct}%"></div></div>
-          </div>
-          <div class="idx-row-pct">${vsnAllPct === 100 ? '✓' : vsnAllPct+'%'}</div>
-        </div>
-      </div>
-    </div>`;
+    // VSN goes directly to practice — redirect
+    showView('practice');
+    return;
   }
 
   el.innerHTML = html;
