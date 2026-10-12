@@ -300,6 +300,11 @@
 .kz-filter{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none}
 .kz-filter button{flex-shrink:0;border:1px solid var(--border);background:var(--card-bg);border-radius:999px;padding:6px 14px;font-size:.88rem}
 .kz-filter button.on{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.kz-chars{margin-top:-4px}
+.kz-chars button{font-size:.8rem;padding:5px 11px}
+.kz-chars small{opacity:.6;margin-left:2px}
+.kz-count{margin:0 0 10px;font-size:.8rem;color:var(--fg3)}
+.kz-story .kz-who{font-size:.78rem;color:var(--fg2);margin-top:2px}
 .kz-story{display:block;width:100%;text-align:left;border:1px solid var(--border);background:var(--card-bg);border-radius:18px;overflow:hidden;padding:0;margin-bottom:14px}
 .kz-story svg{display:block;width:100%;height:auto}
 .kz-story .meta{padding:10px 14px 12px}
@@ -587,23 +592,34 @@
     const added = new Date(s.added + 'T00:00:00');
     return (Date.now() - added) / 86400e3 <= NEW_DAYS;
   }
-  let filter = 'all', page = 0, curStory = null;
+  let filter = 'all', charFilter = '', page = 0, curStory = null;
   const lang = () => (typeof settings !== 'undefined' && settings.language) || 'both';
   window.renderStories = function () {
     const el = document.getElementById('view-stories');
-    const all = (window.KIDS_STORIES || []).slice().sort((a, b) => b.added.localeCompare(a.added));
+    const src = window.KIDS_STORIES || [];
+    const all = src.slice().sort((a, b) => b.added.localeCompare(a.added) || src.indexOf(b) - src.indexOf(a));   // newest first
     const s = all.find(x => x.id === state.kids);
     if (!s) {
-      const list = all.filter(x => filter === 'all' || x.epic === filter);
+      const inEpic = all.filter(x => filter === 'all' || x.epic === filter);
+      const counts = {};
+      inEpic.forEach(x => (x.chars || []).forEach(c => { counts[c] = (counts[c] || 0) + 1; }));
+      const chars = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+      if (charFilter && !counts[charFilter]) charFilter = '';
+      const list = inEpic.filter(x => !charFilter || (x.chars || []).includes(charFilter));
       el.innerHTML = `<div class="kz">
         <button class="kz-back" onclick="openKids()">‹ Kids Corner</button>
         <div class="kz-hero"><span class="kz-float">📖</span><h2>Stories</h2><p class="te">కథలు · a new story every day</p></div>
         <div class="kz-filter" data-noswipe>${[['all', 'All'], ['Ramayana', 'Rāmāyaṇa'], ['Mahabharata', 'Mahābhārata']].map(([k, t]) =>
           `<button class="${filter === k ? 'on' : ''}" onclick="kzFilter('${k}')">${t}</button>`).join('')}</div>
+        <div class="kz-filter kz-chars" data-noswipe><button class="${charFilter ? '' : 'on'}" onclick="kzChar('')">All characters</button>${chars.map(c =>
+          `<button class="${charFilter === c ? 'on' : ''}" onclick="kzChar('${c.replace(/'/g, "\\'")}')">${c} <small>${counts[c]}</small></button>`).join('')}</div>
+        <p class="kz-count">${list.length} ${list.length === 1 ? 'story' : 'stories'}${charFilter ? ` about ${charFilter}` : ''}</p>
         ${list.map(x => `<button class="kz-story" onclick="openStories('${x.id}')">${kidsScene(x.cover || x.pages[0].scene)}
           <div class="meta"><h3>${esc(x.title.en)}${isNewStory(x) ? '<span class="kz-badge">NEW</span>' : ''}<span class="te">${x.title.te}</span></h3>
-          <p>${x.epic === 'Ramayana' ? 'Rāmāyaṇa' : 'Mahābhārata'} · ${x.pages.length} pages${prog.read[x.id] ? ' · read ✓' : ''}</p></div></button>`).join('') || '<p>No stories yet.</p>'}
+          <p>${x.epic === 'Ramayana' ? 'Rāmāyaṇa' : 'Mahābhārata'} · ${x.pages.length} pages${prog.read[x.id] ? ' · read ✓' : ''}</p>${x.chars ? `<p class="kz-who">${x.chars.join(', ')}</p>` : ''}</div></button>`).join('') || '<p>No stories yet.</p>'}
       </div>`;
+      const on = el.querySelector('.kz-chars .on');
+      if (on) { const row = on.parentElement; row.scrollLeft = Math.max(0, on.offsetLeft - row.offsetLeft - (row.clientWidth - on.offsetWidth) / 2); }
       return;
     }
     if (curStory !== s.id) { curStory = s.id; page = 0; }
@@ -637,6 +653,7 @@
     }, { passive: true });
   };
   window.kzFilter = f => { filter = f; renderStories(); };
+  window.kzChar = c => { charFilter = c; renderStories(); };
   window.kzPage = d => { page = Math.max(0, page + d); renderStories(); document.getElementById('main').scrollTop = 0; };
 
   // ═════════════ SCENE KIT (simple illustrations for stories) ═════════════
@@ -676,7 +693,8 @@
       return `<path d="M-16 0 L-12 -40 Q0 -46 12 -40 L16 0Z" fill="${cloth}"/><path d="M-12 -40 Q0 -46 12 -40 L10 -26 Q0 -30 -10 -26Z" fill="${o.top || skin}"/>
         <path d="M-12 -38 L-20 -16" stroke="${skin}" stroke-width="5" stroke-linecap="round"/><path d="M12 -38 L${o.raise ? '24 -56' : '20 -16'}" stroke="${skin}" stroke-width="5" stroke-linecap="round"/>
         <circle cx="0" cy="-52" r="10" fill="${skin}"/><circle cx="-3.5" cy="-53" r="1.2" fill="#222"/><circle cx="3.5" cy="-53" r="1.2" fill="#222"/>
-        ${o.crown ? '<path d="M-9 -60 L-6 -72 L-2 -64 L0 -74 L2 -64 L6 -72 L9 -60Z" fill="#f0c040"/>' : `<path d="M-10 -55 Q0 -68 10 -55 Q6 -62 0 -62 Q-6 -62 -10 -55Z" fill="${o.hair || '#222'}"/>`}
+        ${o.female ? `<circle cx="0" cy="-54" r="11" fill="${o.hair || '#222'}"/><circle cx="0" cy="-52" r="9.5" fill="${skin}"/><circle cx="-3.5" cy="-53" r="1.2" fill="#222"/><circle cx="3.5" cy="-53" r="1.2" fill="#222"/><circle cx="9" cy="-60" r="5" fill="${o.hair || '#222'}"/><circle cx="12" cy="-63" r="2.4" fill="#f4f4f4"/><path d="M-12 -40 L12 -4" stroke="${o.pallu || '#c0392b'}" stroke-width="7" opacity=".85"/>` : ''}
+        ${o.crown ? '<path d="M-9 -60 L-6 -72 L-2 -64 L0 -74 L2 -64 L6 -72 L9 -60Z" fill="#f0c040"/>' : (o.female ? '' : `<path d="M-10 -55 Q0 -68 10 -55 Q6 -62 0 -62 Q-6 -62 -10 -55Z" fill="${o.hair || '#222'}"/>`)}
         ${o.beard ? `<path d="M-8 -48 Q0 -30 8 -48Z" fill="#eee"/>` : ''}${o.tilak ? '<line x1="0" y1="-60" x2="0" y2="-56" stroke="#d33" stroke-width="1.6"/>' : ''}`;
     },
     archer: (o = {}) => PROPS.person(Object.assign({ cloth: '#3a6ab0' }, o)) + `<path d="M22 -78 Q46 -40 22 -6" stroke="#7a4a1a" stroke-width="3" fill="none"/><line x1="22" y1="-78" x2="22" y2="-6" stroke="#ccc" stroke-width="1"/><line x1="4" y1="-42" x2="60" y2="-42" stroke="#5a3a1a" stroke-width="2"/><path d="M60 -45 L68 -42 L60 -39Z" fill="#888"/>`,
@@ -695,6 +713,17 @@
     flowers: () => `<g>${[-20, 0, 20].map((x, i) => `<line x1="${x}" y1="0" x2="${x}" y2="-18" stroke="#4f9d4f" stroke-width="2"/><circle cx="${x}" cy="-20" r="6" fill="${['#f08aa8', '#ffcf3f', '#f2a33a'][i]}"/>`).join('')}</g>`,
     mace: () => `<line x1="0" y1="0" x2="0" y2="-40" stroke="#7a5a2a" stroke-width="4"/><circle cx="0" cy="-48" r="11" fill="#c9952a"/>`,
     crown: () => `<path d="M-16 0 L-12 -20 L-4 -10 L0 -24 L4 -10 L12 -20 L16 0Z" fill="#f0c040"/>`,
+    basket: (o = {}) => `${o.glow !== false ? '<circle cx="0" cy="-22" r="26" fill="#ffd84a" opacity=".35"/>' : ''}<path d="M-34 -14 Q0 6 34 -14 L30 0 Q0 12 -30 0Z" fill="#b8823f"/><g stroke="#8a5a2a" stroke-width="1.5"><path d="M-26 -10 L-24 2 M-12 -6 L-11 6 M0 -5 L0 7 M12 -6 L11 6 M26 -10 L24 2"/></g><circle cx="0" cy="-20" r="9" fill="${SKIN.wheat}"/><circle cx="-3" cy="-21" r="1" fill="#222"/><circle cx="3" cy="-21" r="1" fill="#222"/><circle cx="-9" cy="-18" r="2.4" fill="#f0c040"/><circle cx="9" cy="-18" r="2.4" fill="#f0c040"/><path d="M-12 -12 Q0 -16 12 -12 L12 -8 Q0 -12 -12 -8Z" fill="#f0c040"/>`,
+    elephant: () => `<ellipse cx="0" cy="-40" rx="42" ry="26" fill="#8f8f9a"/><g fill="#8f8f9a"><rect x="-32" y="-24" width="13" height="24" rx="4"/><rect x="-10" y="-24" width="13" height="24" rx="4"/><rect x="14" y="-24" width="13" height="24" rx="4"/></g><circle cx="40" cy="-54" r="20" fill="#9a9aa5"/><ellipse cx="30" cy="-52" rx="13" ry="17" fill="#80808c"/><path d="M54 -48 Q66 -30 58 -10" stroke="#9a9aa5" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="48" cy="-60" r="2" fill="#222"/><path d="M50 -44 L60 -40" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M-42 -44 L-50 -30" stroke="#8f8f9a" stroke-width="3"/>`,
+    dog: (o = {}) => `<ellipse cx="0" cy="-20" rx="20" ry="10" fill="#c8a070"/><g stroke="#c8a070" stroke-width="4"><line x1="-14" y1="-14" x2="-14" y2="0"/><line x1="-4" y1="-14" x2="-4" y2="0"/><line x1="8" y1="-14" x2="8" y2="0"/><line x1="14" y1="-14" x2="15" y2="0"/></g><path d="M-20 -22 Q-30 -30 -28 -38" stroke="#c8a070" stroke-width="3" fill="none"/><circle cx="22" cy="-30" r="9" fill="#c8a070"/><path d="M18 -38 L14 -26 L20 -30Z" fill="#8a6a4a"/><ellipse cx="30" cy="-28" rx="5" ry="3.5" fill="#c8a070"/><circle cx="25" cy="-32" r="1.3" fill="#222"/>${o.arrows ? '<g stroke="#5a3a1a" stroke-width="1.5"><line x1="30" y1="-28" x2="46" y2="-34"/><line x1="30" y1="-27" x2="47" y2="-28"/><line x1="30" y1="-26" x2="45" y2="-21"/></g>' : ''}`,
+    sandals: () => `<rect x="-40" y="-10" width="80" height="10" rx="4" fill="#a8392a"/><g fill="#8a5a2a"><rect x="-30" y="-20" width="24" height="10" rx="5"/><rect x="6" y="-20" width="24" height="10" rx="5"/></g><g fill="#f0c040"><circle cx="-18" cy="-24" r="3.5"/><circle cx="18" cy="-24" r="3.5"/></g>`,
+    throne: () => `<path d="M-30 0 V-34 H30 V0Z" fill="#c9952a"/><path d="M-26 -34 V-74 Q0 -88 26 -74 V-34Z" fill="#e0b040"/><rect x="-34" y="-38" width="68" height="8" rx="3" fill="#a8392a"/><circle cx="0" cy="-66" r="6" fill="#a8392a"/>`,
+    scroll: () => `<g fill="#e8d29a" stroke="#a8823a" stroke-width="1">${[0, 1, 2, 3].map(i => `<rect x="-36" y="${-10 - i * 7}" width="72" height="6" rx="3"/>`).join('')}</g><g stroke="#8a6a3a" stroke-width="1">${[0, 1, 2, 3].map(i => `<line x1="-26" y1="${-7 - i * 7}" x2="22" y2="${-7 - i * 7}" stroke-dasharray="4 2"/>`).join('')}</g>`,
+    berries: () => `<path d="M-26 -14 Q0 6 26 -14 L22 0 Q0 8 -22 0Z" fill="#a8723a"/><g fill="#c0392b">${[[-14, -16], [-6, -19], [2, -17], [10, -19], [16, -15], [-10, -11], [6, -12]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3.6"/>`).join('')}</g>`,
+    sleeper: () => `<ellipse cx="0" cy="-22" rx="70" ry="22" fill="#5a3a5a"/><ellipse cx="-6" cy="-38" rx="34" ry="20" fill="#7a5a7a"/><circle cx="76" cy="-30" r="20" fill="#8a6a4a"/><path d="M66 -32 q4 3 8 0 M80 -32 q4 3 8 0" stroke="#222" stroke-width="2" fill="none"/><path d="M60 -46 L64 -60 L70 -48 L76 -62 L82 -48 L88 -58 L90 -44Z" fill="#c9952a"/><g fill="#fff" font-size="16" font-weight="700" font-family="sans-serif"><text x="96" y="-56">Z</text><text x="110" y="-72" font-size="12">z</text><text x="120" y="-84" font-size="9">z</text></g>`,
+    drum: () => `<ellipse cx="0" cy="-30" rx="18" ry="7" fill="#e8d2a0"/><path d="M-18 -30 V-4 Q0 4 18 -4 V-30" fill="#a8392a"/><path d="M-18 -26 L18 -8 M18 -26 L-18 -8" stroke="#f0c040" stroke-width="1.5"/><line x1="10" y1="-44" x2="22" y2="-60" stroke="#7a4a1a" stroke-width="3"/>`,
+    tail: () => `<path d="M-90 0 Q-60 -26 -20 -8 T50 -10 T100 -4" stroke="#9a6a3a" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+    ganesha: () => `<ellipse cx="0" cy="-22" rx="22" ry="22" fill="#f0a830"/><ellipse cx="0" cy="-26" rx="16" ry="14" fill="#e88a6a"/><circle cx="0" cy="-58" r="15" fill="#e88a6a"/><ellipse cx="-17" cy="-58" rx="9" ry="12" fill="#d9786a"/><ellipse cx="17" cy="-58" rx="9" ry="12" fill="#d9786a"/><path d="M2 -52 Q8 -36 -2 -30 Q-8 -28 -6 -34" stroke="#e88a6a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="-5" cy="-62" r="1.6" fill="#222"/><circle cx="5" cy="-62" r="1.6" fill="#222"/><path d="M-9 -70 L-6 -84 L0 -76 L6 -84 L9 -70Z" fill="#f0c040"/><path d="M8 -50 L16 -46" stroke="#fff" stroke-width="3" stroke-linecap="round"/><line x1="20" y1="-30" x2="34" y2="-44" stroke="#f4f4f4" stroke-width="3" stroke-linecap="round"/>`,
     chariot: () => `<rect x="-36" y="-34" width="56" height="22" rx="4" fill="#c9952a"/><circle cx="-14" cy="-10" r="12" fill="none" stroke="#7a4a1a" stroke-width="4"/><path d="M20 -30 L44 -20" stroke="#7a4a1a" stroke-width="3"/><path d="M-30 -34 L-30 -64" stroke="#7a4a1a" stroke-width="2"/><path d="M-30 -64 L-10 -58 L-30 -52Z" fill="#d33"/>`,
   };
   function kidsScene(scene) {

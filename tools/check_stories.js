@@ -18,6 +18,7 @@ for (const s of S) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s.added || '')) errs.push(`${where}: added must be YYYY-MM-DD`);
   if (!['Ramayana', 'Mahabharata'].includes(s.epic)) errs.push(`${where}: epic must be Ramayana or Mahabharata`);
   if (!s.title || !s.title.en || !teRe.test(s.title.te || '')) errs.push(`${where}: title.en and Telugu title.te required`);
+  if (s.chars && (!Array.isArray(s.chars) || !s.chars.length)) errs.push(`${where}: chars must be a non-empty list`);
   if (!s.moral || !s.moral.en || !teRe.test(s.moral.te || '')) errs.push(`${where}: moral.en and Telugu moral.te required`);
   if (!Array.isArray(s.pages) || s.pages.length < 2 || s.pages.length > 5) errs.push(`${where}: needs 2–5 pages`);
   (s.pages || []).forEach((p, i) => {
