@@ -11,6 +11,90 @@
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const sample = (a, n, not) => shuffle(a.filter(x => x !== not)).slice(0, n);
 
+  // ═════════════ VOICE RECORDINGS ═════════════
+  // A parent records each letter/word on their phone (kept in IndexedDB on that phone), then
+  // "Send recordings" shares the files. Published recordings live in audio/ and are listed in
+  // audio/index.js (window.KIDS_AUDIO). File names are the Telugu text as Unicode code points.
+  const audioKey = t => 'u' + [...t].map(c => c.codePointAt(0).toString(16).padStart(4, '0')).join('-');
+  const localAudio = {};        // key -> { url, blob, type }
+  let dbp = null;
+  function db() {
+    if (!dbp) dbp = new Promise((res, rej) => {
+      if (!window.indexedDB) return rej(new Error('no indexedDB'));
+      const r = indexedDB.open('vedic_kids_audio', 1);
+      r.onupgradeneeded = () => r.result.createObjectStore('rec');
+      r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+    });
+    return dbp;
+  }
+  async function idb(mode, fn) {
+    const d = await db();
+    return new Promise((res, rej) => {
+      const tx = d.transaction('rec', mode), q = fn(tx.objectStore('rec'));
+      tx.oncomplete = () => res(q && q.result); tx.onerror = () => rej(tx.error);
+    });
+  }
+  (async () => {     // load this phone's recordings
+    try {
+      const keys = await idb('readonly', st => st.getAllKeys());
+      const vals = await idb('readonly', st => st.getAll());
+      keys.forEach((k, i) => { localAudio[k] = { blob: vals[i].blob, type: vals[i].type, url: URL.createObjectURL(vals[i].blob) }; });
+      if (keys.length && typeof state !== 'undefined' && state.view === 'telugu') renderTelugu();
+    } catch (e) {}
+  })();
+  const audioUrl = key => (localAudio[key] && localAudio[key].url) || (window.KIDS_AUDIO || {})[key] || null;
+  const player = new Audio();
+  window.kzPlay = key => { const u = audioUrl(key); if (!u) return; try { player.pause(); player.src = u; player.currentTime = 0; player.play().catch(() => {}); } catch (e) {} };
+  let rec = null, recTimer = null;
+  window.kzRec = async (btn, key, maxSec) => {
+    if (rec) { rec.stop(); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder) { alert('This browser cannot record audio. Try Safari on iPhone or Chrome.'); return; }
+    let stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch (e) { alert('Microphone permission is needed to record. Allow the microphone for this site and try again.'); return; }
+    const type = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm'].find(t => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t)) || '';
+    const r = new MediaRecorder(stream, type ? { mimeType: type } : undefined), chunks = [];
+    r.ondataavailable = e => { if (e.data && e.data.size) chunks.push(e.data); };
+    r.onstop = async () => {
+      stream.getTracks().forEach(t => t.stop()); rec = null; clearTimeout(recTimer);
+      const mime = (r.mimeType || type || 'audio/mp4').split(';')[0];
+      const blob = new Blob(chunks, { type: mime });
+      if (blob.size < 800) { renderTelugu(); return; }          // too short — ignore an accidental tap
+      if (localAudio[key]) URL.revokeObjectURL(localAudio[key].url);
+      localAudio[key] = { blob, type: mime, url: URL.createObjectURL(blob) };
+      try { await idb('readwrite', st => st.put({ blob, type: mime, at: Date.now() }, key)); } catch (e) {}
+      renderTelugu(); kzPlay(key);
+    };
+    r.start(); rec = r;
+    btn.classList.add('on'); btn.textContent = '■ Stop';
+    recTimer = setTimeout(() => { if (r.state !== 'inactive') r.stop(); }, maxSec * 1000);
+  };
+  const extFor = t => /mp4|m4a|aac/.test(t) ? '.m4a' : /webm/.test(t) ? '.webm' : /ogg/.test(t) ? '.ogg' : '.m4a';
+  window.kzExport = async () => {
+    const keys = Object.keys(localAudio);
+    if (!keys.length) { alert('No recordings on this phone yet.'); return; }
+    const files = keys.map(k => new File([localAudio[k].blob], k + extFor(localAudio[k].type), { type: localAudio[k].type }));
+    try {
+      if (navigator.canShare && navigator.canShare({ files })) {
+        await navigator.share({ files, title: 'Vedasaram recordings', text: `${files.length} Telugu recordings for Vedasaram` });
+        return;
+      }
+    } catch (e) { if (e.name === 'AbortError') return; }
+    for (const f of files) {           // fallback: download each file
+      const a = document.createElement('a'); a.href = URL.createObjectURL(f); a.download = f.name;
+      document.body.appendChild(a); a.click(); a.remove();
+      await new Promise(r => setTimeout(r, 300));
+    }
+  };
+  window.kzParent = on => { prog.parent = !!on; save(prog); renderTelugu(); };
+  // 🔊 when a recording exists; 🎤 when recording mode is on
+  function voice(text, maxSec = 6) {
+    const k = audioKey(text);
+    const has = audioUrl(k), mine = !!localAudio[k];
+    return `<span class="kz-voice">${has ? `<button class="kz-snd" title="Listen" onclick="event.stopPropagation();kzPlay('${k}')">🔊</button>` : ''}`
+      + (prog.parent ? `<button class="kz-rec${mine ? ' done' : ''}" title="Record" onclick="event.stopPropagation();kzRec(this,'${k}',${maxSec})">🎤${mine ? ' Re-record' : ' Record'}</button>` : '') + '</span>';
+  }
+
   // ═════════════ TELUGU DATA ═════════════
   // Roman spelling for children: aa = long a, ee = long i, oo = long u, ae = long e, oh = long o.
   // Capital T D N L Sh = tongue curled back (retroflex).
@@ -201,6 +285,17 @@
 .kz-build{min-height:60px;border:2px dashed var(--border);border-radius:14px;padding:8px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin-bottom:10px}
 .kz-chip{border:1px solid var(--border);background:var(--card-bg);border-radius:12px;padding:8px 12px;font-family:'Noto Sans Telugu',sans-serif;font-size:1.25rem}
 .kz-chip.used{opacity:.25;pointer-events:none}
+/* Voice */
+.kz-voice{display:inline-flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap}
+.kz-snd{border:none;background:rgba(242,163,58,.18);border-radius:999px;width:40px;height:40px;font-size:1.15rem}
+.kz-rec{border:1px solid var(--kz-rose);color:var(--kz-rose);background:transparent;border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:700}
+.kz-rec.done{border-color:var(--kz-leaf);color:var(--kz-leaf)}
+.kz-rec.on{background:var(--kz-rose);color:#fff;border-color:var(--kz-rose);animation:kzpulse 1s infinite}
+@keyframes kzpulse{50%{opacity:.6}}
+.kz-parent{border:1px dashed var(--border);border-radius:16px;padding:12px 14px;margin-top:6px;font-size:.88rem;color:var(--fg2)}
+.kz-parent label{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--fg)}
+.kz-parent input{width:20px;height:20px}
+.kz-parent p{margin:6px 0 0}
 /* Stories */
 .kz-filter{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none}
 .kz-filter button{flex-shrink:0;border:1px solid var(--border);background:var(--card-bg);border-radius:999px;padding:6px 14px;font-size:.88rem}
@@ -262,7 +357,14 @@
             <span class="stone te" style="background:${LV_COLORS[i]}">${l.sample.split(' ')[0]}</span>
             <span><h3>Level ${i + 1}: ${l.en}<small class="te">${l.te}</small></h3><p>${l.sub}</p></span>
             ${starsHTML(prog.stars[l.id] || 0)}
-          </button>`).join('')}</div></div>`;
+          </button>`).join('')}</div>
+        <div class="kz-parent">
+          <label><input type="checkbox" ${prog.parent ? 'checked' : ''} onchange="kzParent(this.checked)"> Parent: record voices</label>
+          <p>Turn this on to show a 🎤 Record button on every letter, word and sentence. Record in a quiet room, about 1 second per letter.</p>
+          ${prog.parent ? `<p><b>${Object.keys(localAudio).length}</b> recordings on this phone.</p>
+          <div class="kz-row" style="justify-content:flex-start"><button class="kz-btn" onclick="kzExport()">Send recordings</button></div>
+          <p>Send the files to Claude, and they'll be published so every family using the app hears your voice.</p>` : ''}
+        </div></div>`;
       return;
     }
     if (curLevel !== lv.id) { curLevel = lv.id; mode = 'learn'; sel = 0; guniIdx = 0; quiz = null; }
@@ -293,8 +395,8 @@
     return `<div class="kz-chips" data-noswipe>${GUNI_BASE.map((c, i) => `<button class="${i === guniIdx ? 'on' : ''}" onclick="kzGuni(${i})">${c[0]}</button>`).join('')}</div>`;
   }
   function letterCard(x) {
-    return `<div class="kz-card"><div class="bigl">${x.l}</div><div class="rom">${x.r}</div>
-      ${x.w ? `<div class="ex"><span class="emo">${x.emo || ''}</span><span><span class="w">${x.w}</span><small>${x.wr} · ${x.en}</small></span></div>`
+    return `<div class="kz-card"><div class="bigl">${x.l}</div><div class="rom">${x.r}</div>${voice(x.l, 4)}
+      ${x.w ? `<div class="ex"><span class="emo">${x.emo || ''}</span><span><span class="w">${x.w}</span><small>${x.wr} · ${x.en}</small></span>${voice(x.w, 4)}</div>`
             : (x.en ? `<div class="rom" style="margin-top:8px;font-size:.85rem">${x.en}</div>` : '')}</div>`;
   }
 
@@ -303,22 +405,22 @@
       const set = letterSet(lv);
       body.innerHTML = (lv.id === 'L3' ? `<p style="margin:0 0 6px;color:var(--fg3);font-size:.85rem">Pick a letter to see it with every vowel sign:</p>` + guniChips() : '')
         + letterCard(set[sel] || set[0])
-        + `<div class="kz-grid">${set.map((x, i) => `<button class="kz-tile${i === sel ? ' sel' : ''}" onclick="kzSel(${i})"><div class="l">${x.l}</div><div class="r">${x.r}</div></button>`).join('')}</div>`;
+        + `<div class="kz-grid">${set.map((x, i) => `<button class="kz-tile${i === sel ? ' sel' : ''}" onclick="kzSel(${i});kzPlay('${audioKey(x.l)}')"><div class="l">${x.l}</div><div class="r">${x.r}</div></button>`).join('')}</div>`;
       return;
     }
     if (lv.id === 'L4' || lv.id === 'L5') {
       const list = lv.id === 'L4' ? WORDS : OTTU_WORDS;
-      body.innerHTML = `<div class="kz-words">${list.map(w => `<div class="kz-word"><div class="emo">${w[3]}</div><div class="w">${w[0]}</div><div class="r">${w[1]} · ${w[2]}</div></div>`).join('')}</div>`;
+      body.innerHTML = `<div class="kz-words">${list.map(w => `<div class="kz-word" onclick="kzPlay('${audioKey(w[0])}')"><div class="emo">${w[3]}</div><div class="w">${w[0]}</div><div class="r">${w[1]} · ${w[2]}</div>${voice(w[0], 4)}</div>`).join('')}</div>`;
       return;
     }
     if (lv.id === 'L6') {
-      body.innerHTML = SENTENCES.map(s => `<div class="kz-sent"><div class="t">${s[0]}</div><div class="e">${s[1]}</div></div>`).join('');
+      body.innerHTML = SENTENCES.map(s => `<div class="kz-sent"><div class="t">${s[0]}</div><div class="e">${s[1]}</div>${voice(s[0], 10)}</div>`).join('');
       return;
     }
     const p = PASSAGES[sel] || PASSAGES[0];
     body.innerHTML = `<div class="kz-chips" data-noswipe style="font-size:.9rem">${PASSAGES.map((x, i) => `<button class="${i === sel ? 'on' : ''}" style="font-size:.95rem" onclick="kzSel(${i})">${x.te}</button>`).join('')}</div>
       <div class="kz-card kz-passage"><div style="font-weight:700;margin-bottom:8px" class="te">${p.te} <span style="font-weight:400;color:var(--fg3);font-size:.85rem">· ${p.en}</span></div>
-      <div class="t">${p.text}</div><div class="e" id="kz-meaning" hidden>${p.meaning}</div>
+      <div class="t">${p.text}</div><div style="margin-top:8px">${voice(p.text, 60)}</div><div class="e" id="kz-meaning" hidden>${p.meaning}</div>
       <div class="kz-row"><button class="kz-btn soft" onclick="var m=document.getElementById('kz-meaning');m.hidden=!m.hidden;this.textContent=m.hidden?'Show meaning':'Hide meaning'">Show meaning</button></div></div>`;
   }
 
@@ -404,18 +506,18 @@
         if (k % 2) { const x = withWord[Math.floor(Math.random() * withWord.length)];
           qs.push({ prompt: `Which letter does <b>${x[4]}</b> start with?`, show: x[5] || '❓', opts: optsFrom(x, base, o => o[0]) });
         } else { const x = base[Math.floor(Math.random() * base.length)];
-          qs.push({ prompt: 'Find the letter', show: `“${x[1]}”`, opts: optsFrom(x, base, o => o[0]) }); }
+          qs.push({ prompt: 'Find the letter', show: `“${x[1]}”`, say: x[0], opts: optsFrom(x, base, o => o[0]) }); }
       }
     } else if (lv.id === 'L3') {
       for (let k = 0; k < 10; k++) {
         const c = GUNI_BASE[Math.floor(Math.random() * GUNI_BASE.length)], fs = forms(c);
         const x = fs[Math.floor(Math.random() * fs.length)];
-        qs.push({ prompt: 'Find', show: `“${x[1]}”`, opts: optsFrom(x, fs, o => o[0]) });
+        qs.push({ prompt: 'Find', show: `“${x[1]}”`, say: x[0], opts: optsFrom(x, fs, o => o[0]) });
       }
     } else if (lv.id === 'L4' || lv.id === 'L5') {
       const list = lv.id === 'L4' ? WORDS : OTTU_WORDS;
       shuffle(list).slice(0, 10).forEach((x, k) => {
-        if (k % 2) qs.push({ prompt: 'Which picture is this word?', show: `<span class="te">${x[0]}</span>`, showTe: true, opts: optsFrom(x, list, o => o[3]) });
+        if (k % 2) qs.push({ prompt: 'Which picture is this word?', show: `<span class="te">${x[0]}</span>`, showTe: true, say: x[0], opts: optsFrom(x, list, o => o[3]) });
         else qs.push({ prompt: `Which word means <b>${x[2]}</b>?`, show: x[3], opts: optsFrom(x, list, o => o[0]) });
       });
     } else if (lv.id === 'L6') {
@@ -449,10 +551,12 @@
         <div class="kz-row">${q.order.map(i => `<button class="kz-chip${Q.built.includes(i) ? ' used' : ''}" onclick="kzBuild(${i})">${q.words[i]}</button>`).join('')}</div>
         <div class="kz-row"><button class="kz-btn soft" onclick="kzBuildReset()">Start over</button></div>`;
     } else {
-      html += `<div class="kz-q"><div class="prompt">${q.prompt}</div><div class="show${q.showTe ? ' te' : ''}">${q.show}</div></div>
+      const sayKey = q.say && audioUrl(audioKey(q.say)) ? audioKey(q.say) : null;
+      html += `<div class="kz-q"><div class="prompt">${q.prompt}</div><div class="show${q.showTe ? ' te' : ''}">${q.show}</div>${sayKey ? `<button class="kz-snd" onclick="kzPlay('${sayKey}')">🔊</button>` : ''}</div>
         <div class="kz-opts">${q.opts.map((o, k) => `<button class="kz-opt${q.small ? ' small' : ''}" data-k="${k}" onclick="kzAnswer(${k})">${o.html}</button>`).join('')}</div>`;
     }
     body.innerHTML = html;
+    if (q.say && !q.spoken && audioUrl(audioKey(q.say))) { q.spoken = true; kzPlay(audioKey(q.say)); }
   }
   window.kzAnswer = k => {
     const q = quiz.qs[quiz.i]; if (quiz.locked) return; quiz.locked = true;
