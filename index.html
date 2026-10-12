@@ -113,15 +113,8 @@ body {
   padding: 8px 12px;
   flex-shrink: 0;
 }
-#topbar h1 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--accent);
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+#topbar h1 { display: none; }   /* tabs show where you are; the cut-off title is hidden */
+#topbar .section-tabs { flex: 1; }
 #topbar .section-tabs {
   display: flex;
   gap: 4px;
@@ -3626,8 +3619,66 @@ function showView(v) {
     mainEl.classList.remove('no-scroll');
     mainEl.scrollTop = 0;
   }
-  renderCurrentView();
+  navDepth++;
+  try { renderCurrentView(); } finally { navDepth--; }
+  navRecord();
 }
+
+// ─────────────── BACK NAVIGATION (history + swipe right) ───────────────
+// Every page change is recorded in the browser history, so Safari's own back
+// gesture and a left-to-right swipe anywhere on the page both go back a page.
+let navDepth = 0, navRestoring = false;
+function navSnapshot(idx) {
+  return { app: 'vedasaram', idx, view: state.view, section: state.section,
+           chapter: state.chapter, rudramPart: state.rudramPart || null };
+}
+function navSame(a, b) {
+  return a && b && a.view === b.view && a.section === b.section && a.chapter === b.chapter && a.rudramPart === b.rudramPart;
+}
+function navRecord() {
+  if (navDepth > 0) return;                       // inner redirects: record only the final page
+  const cur = history.state && history.state.app === 'vedasaram' ? history.state : null;
+  try {
+    if (!cur || navRestoring) history.replaceState(navSnapshot(cur ? cur.idx : 0), '');
+    else if (!navSame(cur, navSnapshot(cur.idx))) history.pushState(navSnapshot(cur.idx + 1), '');
+  } catch (e) {}
+}
+window.addEventListener('popstate', e => {
+  const s = e.state;
+  if (!s || s.app !== 'vedasaram') return;
+  if (state.reciting) stopRecite();
+  state.section = s.section; state.chapter = s.chapter; state.rudramPart = s.rudramPart; state.expandedVerse = null;
+  saveState();
+  navRestoring = true;
+  try {
+    const plain = (s.view === 'home' || s.view === 'library');
+    showViewWithTransition(s.view, plain ? null : -1);
+  } finally { navRestoring = false; }
+});
+function goBack() {
+  if (state.view === 'home') return;
+  const cur = history.state;
+  if (cur && cur.app === 'vedasaram' && cur.idx > 0) history.back();
+  else showView('home');                          // nothing earlier in the app: go home instead of leaving it
+}
+(function swipeBack() {
+  const standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  let x0 = null, y0 = 0, t0 = 0, blocked = false;
+  document.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; t0 = Date.now();
+    blocked = state.reciting
+      || (!standalone && x0 < 24)                 // in Safari the screen edge belongs to Safari's own back swipe
+      || !!(e.target.closest && e.target.closest('.section-tabs, input, select, textarea, [data-noswipe]'));
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    if (x0 === null || blocked) { x0 = null; return; }
+    const t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0, dt = Date.now() - t0;
+    x0 = null;
+    if (dx > 80 && Math.abs(dy) < dx * 0.5 && dt < 800) goBack();
+  }, { passive: true });
+})();
 
 function renderCurrentView() {
   if (state.view === 'home') renderHome();
@@ -3974,7 +4025,9 @@ function showViewWithTransition(v, dir) {
   const isLibrary2 = (v === 'library');
   document.getElementById('topbar').style.display = (isHome || isLibrary2) ? 'none' : '';
   document.getElementById('bottomnav').style.display = (isHome || isLibrary2) ? 'none' : '';
-  renderCurrentView();
+  navDepth++;
+  try { renderCurrentView(); } finally { navDepth--; }
+  navRecord();
   // Scroll to top, then animate
   const main = document.getElementById('main');
   main.scrollTop = 0;
