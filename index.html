@@ -173,8 +173,9 @@ body {
   max-width: 100%;
   width: 100%;
   margin: 0;
-  height: 100%;
 }
+#view-home.active { height: 100%; }
+#view-library.active { min-height: 100%; }
 /* Chapter transition animations — small translate so nothing clips */
 @keyframes slideInRight { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes slideInLeft  { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: translateX(0); } }
@@ -1010,7 +1011,7 @@ body {
 .lib-content {
   flex: 1;
   display: flex; flex-direction: column; align-items: center;
-  padding-bottom: 24px;
+  padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Footer */
@@ -3616,9 +3617,9 @@ function showView(v) {
   const isLibrary = (v === 'library');
   document.getElementById('topbar').style.display = (isHome || isLibrary) ? 'none' : '';
   document.getElementById('bottomnav').style.display = (isHome || isLibrary) ? 'none' : '';
-  // Lock scroll on home/library so they fill exactly the viewport
+  // Lock scroll on the home screen only; the library of texts scrolls as it grows
   const mainEl = document.getElementById('main');
-  if (isHome || isLibrary) {
+  if (isHome) {
     mainEl.classList.add('no-scroll');
   } else {
     mainEl.classList.remove('no-scroll');
