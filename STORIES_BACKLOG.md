@@ -1,44 +1,107 @@
 # Kids Stories — backlog
 
 Stories for the Kids Corner (`stories.js`). The daily task takes the **first unchecked** item,
-writes it, and ticks it here in the same commit. Add new ideas anywhere in the list.
+writes it, and moves it to "Done" in the same commit. Add new ideas anywhere in the list.
 
-Alternate between the two epics where possible. Keep each story true to the epic's events,
-told simply for ages 5–15, in fresh original wording (never copied from any book or comic).
+Aim for variety: rotate between the two epics and between characters, so every family member
+of the epics gets their own stories — births, boons and curses, childhoods, friendships, tests
+and turning points. Keep each story true to the epic's events, told simply for ages 5–15, in fresh
+original wording (never copied from any book, comic or website). Fill in `chars` for each story.
 
 ## Done
 - [x] The Squirrel Who Helped Build the Bridge (Rāmāyaṇa) — squirrel-and-the-bridge
 - [x] Arjuna and the Bird's Eye (Mahābhārata) — arjuna-and-the-birds-eye
 - [x] Hanumān's Great Leap (Rāmāyaṇa) — hanumans-great-leap
+- [x] Karṇa, the Son of the Sun — his birth (Mahābhārata) — karna-the-son-of-the-sun
+- [x] Karṇa Gives Away His Armour (Mahābhārata) — karna-gives-away-his-armour
+- [x] Ekalavya's Gift to His Teacher (Mahābhārata) — ekalavyas-guru-dakshina
+- [x] Gaṇeśa Writes the Mahābhārata (Mahābhārata) — ganesha-writes-the-mahabharata
+- [x] Bhīṣma's Promise (Mahābhārata) — bhishmas-promise
+- [x] Bhīma Meets Old Hanumān (Mahābhārata) — bhima-meets-hanuman
+- [x] Rāma Breaks Śiva's Bow (Rāmāyaṇa) — rama-breaks-shivas-bow
+- [x] Śabari's Berries (Rāmāyaṇa) — shabaris-berries
+- [x] Jaṭāyu the Brave Bird (Rāmāyaṇa) — jatayu-the-brave-bird
+- [x] Kumbhakarṇa, the Sleeping Giant (Rāmāyaṇa) — kumbhakarna-the-sleeping-giant
+- [x] Bharata and Rāma's Sandals (Rāmāyaṇa) — bharata-and-ramas-sandals
 
 ## Next
-- [ ] Ekalavya's Guru-dakṣiṇa (Mahābhārata)
-- [ ] Rāma Breaks Śiva's Bow (Rāmāyaṇa)
-- [ ] Bhīma Meets Old Hanumān (Mahābhārata)
-- [ ] Śabari's Berries (Rāmāyaṇa)
-- [ ] The Yakṣa's Questions at the Lake (Mahābhārata)
-- [ ] Jaṭāyu the Brave Bird (Rāmāyaṇa)
-- [ ] Little Kṛṣṇa and Sudāmā's Rice (Mahābhārata / Kṛṣṇa tales — keep to the friendship)
-- [ ] Viśvāmitra Takes the Boys to the Forest (Rāmāyaṇa)
-- [ ] Draupadī's Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata)
-- [ ] Bharata and Rāma's Sandals (Rāmāyaṇa)
-- [ ] Bhīṣma's Promise (Mahābhārata)
-- [ ] The Golden Deer (Rāmāyaṇa)
-- [ ] Arjuna Wins Draupadī's Svayaṃvara — the Fish Target (Mahābhārata)
-- [ ] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa)
-- [ ] The Pāṇḍavas Escape the House of Lac (Mahābhārata)
-- [ ] Hanumān Carries the Mountain (Rāmāyaṇa)
-- [ ] Bhīma and the Demon Bakāsura (Mahābhārata)
-- [ ] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa)
-- [ ] Abhimanyu Learns in His Mother's Womb (Mahābhārata)
-- [ ] Ahalyā Is Freed (Rāmāyaṇa)
-- [ ] Karṇa's Gift of Armour (Mahābhārata)
-- [ ] Guha the Boatman (Rāmāyaṇa)
-- [ ] Kṛṣṇa as Arjuna's Charioteer (Mahābhārata)
-- [ ] Rāma's Coronation — Pattābhiṣekam (Rāmāyaṇa)
-- [ ] The Mongoose with the Golden Side (Mahābhārata)
-- [ ] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa)
-- [ ] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata)
-- [ ] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa)
-- [ ] Yudhiṣṭhira and the Faithful Dog (Mahābhārata)
-- [ ] Sugrīva and the Friendship Fire (Rāmāyaṇa)
+- [ ] Hanumān's Childhood: Swallowing the Sun (Rāmāyaṇa) — Hanumān, Vāyu, Indra
+- [ ] Karṇa and Paraśurāma — the Bee and the Curse (Mahābhārata) — Karṇa, Paraśurāma
+- [ ] How Daśaratha's Four Sons Were Born — the Sacred Pāyasam (Rāmāyaṇa) — Daśaratha, Kausalyā, Kaikeyī, Sumitrā
+- [ ] How the Five Pāṇḍavas Were Born (Mahābhārata) — Kuntī, Mādrī, Pāṇḍu
+- [ ] Viśvāmitra Takes the Boys to the Forest — Tāṭakā (Rāmāyaṇa) — Viśvāmitra, Rāma, Lakṣmaṇa
+- [ ] Drona's Ring in the Well (Mahābhārata) — Droṇa, Bhīṣma, the princes
+- [ ] Ahalyā Is Freed (Rāmāyaṇa) — Ahalyā, Gautama, Rāma
+- [ ] The Pāṇḍavas Escape the House of Lac (Mahābhārata) — Vidura, Bhīma, Kuntī
+- [ ] Kaikeyī's Two Boons and Mantharā's Whisper (Rāmāyaṇa) — Kaikeyī, Mantharā, Daśaratha
+- [ ] Bhīma and the Demon Bakāsura (Mahābhārata) — Bhīma, Kuntī
+- [ ] Guha the Boatman (Rāmāyaṇa) — Guha, Rāma, Sītā
+- [ ] Hiḍimbā and Little Ghaṭotkaca (Mahābhārata) — Hiḍimbā, Bhīma, Ghaṭotkaca
+- [ ] Lakṣmaṇa's Line (Rāmāyaṇa) — Lakṣmaṇa, Sītā
+- [ ] Arjuna Wins Draupadī — the Fish Target (Mahābhārata) — Arjuna, Draupadī, Drupada
+- [ ] The Golden Deer — Mārīca's Trick (Rāmāyaṇa) — Mārīca, Rāvaṇa, Rāma
+- [ ] Draupadī Is Born from the Fire (Mahābhārata) — Drupada, Draupadī, Dhṛṣṭadyumna
+- [ ] Rāma Meets Hanumān and Sugrīva (Rāmāyaṇa) — Hanumān, Sugrīva, Rāma
+- [ ] The Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata) — Draupadī, Sūrya, Yudhiṣṭhira
+- [ ] Vāli and Sugrīva — Two Brothers (Rāmāyaṇa) — Vāli, Sugrīva, Tārā
+- [ ] Kṛṣṇa Eats a Single Leaf — Durvāsa's Visit (Mahābhārata) — Kṛṣṇa, Draupadī, Durvāsa
+- [ ] Sampāti, Jaṭāyu's Brother (Rāmāyaṇa) — Sampāti, Aṅgada, Hanumān
+- [ ] The Yakṣa's Questions at the Lake (Mahābhārata) — Yudhiṣṭhira, Yama
+- [ ] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa) — Hanumān, Sītā
+- [ ] Arjuna and Śiva the Hunter — the Pāśupata (Mahābhārata) — Arjuna, Śiva
+- [ ] Hanumān Sets Laṅkā on Fire (Rāmāyaṇa) — Hanumān, Rāvaṇa, Indrajit
+- [ ] Arjuna in Indra's Heaven — Urvaśī's Curse (Mahābhārata) — Arjuna, Indra, Urvaśī
+- [ ] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa) — Vibhīṣaṇa, Rāvaṇa, Rāma
+- [ ] Bhīma Fetches the Saugandhika Flowers (Mahābhārata) — Bhīma, Draupadī, Kubera's guards
+- [ ] Samudra, the Ocean King, Shows the Way (Rāmāyaṇa) — Rāma, Samudra, Nala
+- [ ] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata) — Yudhiṣṭhira, Bhīma, Arjuna as Bṛhannalā
+- [ ] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa) — Aṅgada, Rāvaṇa
+- [ ] Prince Uttara's Brave Ride (Mahābhārata) — Uttara, Arjuna
+- [ ] Hanumān Carries the Mountain (Rāmāyaṇa) — Hanumān, Lakṣmaṇa, Suṣeṇa
+- [ ] Kṛṣṇa the Peace Messenger (Mahābhārata) — Kṛṣṇa, Duryodhana, Vidura
+- [ ] Indrajit, the Cloud Warrior (Rāmāyaṇa) — Indrajit, Lakṣmaṇa
+- [ ] Vidura's Simple Meal for Kṛṣṇa (Mahābhārata) — Vidura, Kṛṣṇa
+- [ ] Rāvaṇa's Ten Heads and Brahmā's Boon (Rāmāyaṇa) — Rāvaṇa, Brahmā
+- [ ] Kuntī Meets Karṇa by the River (Mahābhārata) — Kuntī, Karṇa
+- [ ] The Victory at Laṅkā (Rāmāyaṇa) — Rāma, Rāvaṇa, Agastya
+- [ ] Arjuna Chooses Kṛṣṇa, Duryodhana Chooses the Army (Mahābhārata) — Arjuna, Duryodhana, Kṛṣṇa
+- [ ] Sītā's Return and the Fire (Rāmāyaṇa) — Sītā, Agni, Rāma
+- [ ] Kṛṣṇa's Song on the Battlefield — the Gītā (Mahābhārata) — Kṛṣṇa, Arjuna
+- [ ] The Puṣpaka Flight Home (Rāmāyaṇa) — Rāma, Sītā, Vibhīṣaṇa
+- [ ] Barbarīka, the Boy with Three Arrows (Mahābhārata, folk tradition) — Barbarīka, Kṛṣṇa
+- [ ] Rāma's Coronation — Paṭṭābhiṣekam (Rāmāyaṇa) — Rāma, Bharata, Hanumān
+- [ ] Little Abhimanyu Learns in His Mother's Womb (Mahābhārata) — Abhimanyu, Subhadrā, Arjuna
+- [ ] Hanumān Opens His Heart (Rāmāyaṇa, devotional tradition) — Hanumān, Sītā, Rāma
+- [ ] Abhimanyu and the Cakravyūha (Mahābhārata) — Abhimanyu
+- [ ] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa) — Lava, Kuśa, Vālmīki
+- [ ] Bhīṣma on the Bed of Arrows (Mahābhārata) — Bhīṣma, Arjuna, Yudhiṣṭhira
+- [ ] How Vālmīki Became a Poet — the Krauñca Birds (Rāmāyaṇa) — Vālmīki, Nārada
+- [ ] Ghaṭotkaca Saves the Pāṇḍavas (Mahābhārata) — Ghaṭotkaca, Karṇa
+- [ ] Śravaṇa Kumāra and King Daśaratha (Rāmāyaṇa tradition) — Śravaṇa, Daśaratha
+- [ ] The Mongoose with the Golden Side (Mahābhārata) — Yudhiṣṭhira, the mongoose
+- [ ] Hanumān and the Sanjīvanī Thief Kālanemi (Rāmāyaṇa) — Hanumān, Kālanemi
+- [ ] Yudhiṣṭhira and the Faithful Dog (Mahābhārata) — Yudhiṣṭhira, Dharma, Indra
+- [ ] Śūrpaṇakhā Comes to Pañcavaṭī (Rāmāyaṇa) — Śūrpaṇakhā, Lakṣmaṇa
+- [ ] Kṛṣṇa and Sudāmā's Handful of Rice (Kṛṣṇa tales) — Sudāmā, Kṛṣṇa
+- [ ] Sumitrā's Blessing to Lakṣmaṇa (Rāmāyaṇa) — Sumitrā, Lakṣmaṇa, Ūrmilā
+- [ ] Śikhaṇḍī's Story (Mahābhārata) — Śikhaṇḍī, Ambā, Bhīṣma
+- [ ] Ūrmilā's Long Sleep (Rāmāyaṇa tradition) — Ūrmilā, Lakṣmaṇa, Nidrā
+- [ ] Sahadeva, the Wise Youngest Brother (Mahābhārata) — Sahadeva, Nakula
+- [ ] Mandodarī's Advice (Rāmāyaṇa) — Mandodarī, Rāvaṇa
+- [ ] Nakula, the Most Handsome Pāṇḍava (Mahābhārata) — Nakula, Mādrī
+- [ ] Tārā's Wise Words (Rāmāyaṇa) — Tārā, Vāli, Sugrīva
+- [ ] Śakuni and the Game of Dice (Mahābhārata) — Śakuni, Duryodhana, Yudhiṣṭhira
+- [ ] Jāmbavān, the Oldest Bear (Rāmāyaṇa) — Jāmbavān
+- [ ] Draupadī's Endless Sari (Mahābhārata) — Draupadī, Kṛṣṇa
+- [ ] Nala and Nīla, the Floating-Stone Engineers (Rāmāyaṇa) — Nala, Nīla
+- [ ] Gāndhārī's Blindfold (Mahābhārata) — Gāndhārī, Dhṛtarāṣṭra
+- [ ] Hanumān and Surasā (Rāmāyaṇa) — Hanumān, Surasā
+- [ ] Sañjaya, the Man Who Saw the War from Afar (Mahābhārata) — Sañjaya, Dhṛtarāṣṭra, Vyāsa
+- [ ] Sītā Is Found in the Furrow (Rāmāyaṇa) — Janaka, Sītā
+- [ ] Aśvatthāmā and the Jewel on His Forehead (Mahābhārata) — Aśvatthāmā, Droṇa
+- [ ] Rāma's Bridge Is Blessed — Rāmeśvaram (Rāmāyaṇa) — Rāma, Śiva
+- [ ] Ulūpī and Arjuna's Journey (Mahābhārata) — Ulūpī, Arjuna
+- [ ] Hanumān Tests Arjuna's Arrow Bridge (folk tradition) — Hanumān, Arjuna, Kṛṣṇa
+- [ ] Babhruvāhana Meets His Father (Mahābhārata) — Babhruvāhana, Arjuna, Citrāṅgadā
+- [ ] The Story of Satyavatī and Vyāsa's Birth (Mahābhārata) — Satyavatī, Parāśara, Vyāsa
+- [ ] Kauśalyā Waits for Rāma (Rāmāyaṇa) — Kausalyā
