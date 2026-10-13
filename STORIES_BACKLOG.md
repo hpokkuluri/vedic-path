@@ -23,11 +23,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Jaṭāyu the Brave Bird (Rāmāyaṇa) — jatayu-the-brave-bird
 - [x] Kumbhakarṇa, the Sleeping Giant (Rāmāyaṇa) — kumbhakarna-the-sleeping-giant
 - [x] Bharata and Rāma's Sandals (Rāmāyaṇa) — bharata-and-ramas-sandals
+- [x] Little Hanumān and the Sun (Rāmāyaṇa) — hanuman-and-the-sun
+- [x] Karṇa and Paraśurāma — the Bee and the Curse (Mahābhārata) — karna-and-parashurama
+- [x] How Daśaratha's Four Sons Were Born — the Sacred Pāyasam (Rāmāyaṇa) — dasharathas-four-sons
 
 ## Next
-- [ ] Hanumān's Childhood: Swallowing the Sun (Rāmāyaṇa) — Hanumān, Vāyu, Indra
-- [ ] Karṇa and Paraśurāma — the Bee and the Curse (Mahābhārata) — Karṇa, Paraśurāma
-- [ ] How Daśaratha's Four Sons Were Born — the Sacred Pāyasam (Rāmāyaṇa) — Daśaratha, Kausalyā, Kaikeyī, Sumitrā
 - [ ] How the Five Pāṇḍavas Were Born (Mahābhārata) — Kuntī, Mādrī, Pāṇḍu
 - [ ] Viśvāmitra Takes the Boys to the Forest — Tāṭakā (Rāmāyaṇa) — Viśvāmitra, Rāma, Lakṣmaṇa
 - [ ] Drona's Ring in the Well (Mahābhārata) — Droṇa, Bhīṣma, the princes

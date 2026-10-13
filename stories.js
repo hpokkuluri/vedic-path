@@ -373,4 +373,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'hanuman-and-the-sun',
+    added: '2026-10-13',
+    epic: 'Ramayana',
+    chars: ['Hanumān', 'Vāyu', 'Indra', 'Añjanā', 'Brahmā'],
+    title: { en: 'Little Hanumān and the Sun', te: 'సూర్యుడిని పండు అనుకున్న బాల హనుమంతుడు' },
+    moral: { en: 'When we fall, love and kindness help us rise again — stronger than before.', te: 'మనం పడిపోయినప్పుడు ప్రేమ, ఆదరణ మనల్ని మళ్ళీ నిలబెడతాయి — ఇంకా బలంగా.' },
+    cover: { bg: 'sky', props: [['sun', 325, 85, 1.5], ['hanuman', 165, 140, 1], ['cloud', 70, 60, 1], ['cloud', 250, 175, 0.8]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['sun', 330, 115, 1.1], ['tree', 60, 198, 0.9], ['person', 120, 198, 1.2, { female: true, skin: 'wheat', cloth: '#d9577a', pallu: '#f0c040' }], ['monkey', 190, 198, 0.75, { color: '#d9772a', raise: true }], ['cloud', 220, 45, 0.9]] },
+        en: 'On a green mountain lived Añjanā and her husband Kesarī, a chief of the monkeys. They had a little son, born with the blessing of Vāyu, the Wind God. The baby was strong and quick — and he was always hungry! One morning his mother went out to gather fruit. The baby woke up and looked around for something to eat. Just then the sun was rising over the hills, round and red and shining. "Oh!" thought the baby. "What a big, ripe fruit!" He clapped his little hands, bent his knees, and with one mighty jump he shot up into the sky, straight towards the sun.',
+        te: 'పచ్చని ఒక కొండ మీద అంజనాదేవి, ఆమె భర్త వానర వీరుడు కేసరి ఉండేవారు. వాళ్ళకు ఒక చిన్న కొడుకు ఉన్నాడు. వాయుదేవుడి ఆశీస్సులతో పుట్టిన ఆ పిల్లవాడు చాలా బలంగా, చురుకుగా ఉండేవాడు. ఎప్పుడూ ఆకలి ఆకలి అంటూనే ఉండేవాడు! ఒక రోజు పొద్దున్నే అమ్మ పండ్లు తేవడానికి బయటకు వెళ్ళింది. పిల్లవాడు నిద్ర లేచి, తినడానికి ఏమైనా దొరుకుతుందేమో అని చుట్టూ చూశాడు. అప్పుడే కొండల వెనక నుంచి సూర్యుడు ఉదయిస్తున్నాడు — గుండ్రంగా, ఎర్రగా, మెరుస్తూ. "ఆహా!" అనుకున్నాడు పిల్లవాడు. "ఎంత పెద్ద పండు! ఎంత ఎర్రగా పండింది!" చిట్టి చేతులతో చప్పట్లు కొట్టి, మోకాళ్ళు వంచి, ఒక్క పెద్ద గెంతు గెంతాడు. సూర్యుడి వైపు ఆకాశంలోకి దూసుకుపోయాడు.',
+      },
+      {
+        scene: { bg: 'sky', props: [['sun', 345, 75, 1.2], ['hanuman', 220, 115, 0.9], ['cloud', 85, 195, 1.8], ['elephant', 85, 182, 0.75], ['person', 85, 140, 0.75, { skin: 'fair', cloth: '#3a6ab0', crown: true, raise: true }], ['cloud', 300, 175, 0.8]] },
+        en: 'Up, up he flew — higher than the birds, higher than the clouds. The gods in heaven watched in surprise. Sūrya, the Sun God, knew this was Vāyu\'s child, so he did not burn him with his heat. But Indra, the king of the gods, came riding on his white elephant, Airāvata. "Who is this who wants to swallow the sun?" he thundered. "Without the sun, the whole world will be dark!" Indra threw his thunderbolt, the vajra. It struck the little one on the chin, and he tumbled down out of the sky onto the mountain, where he lay very still.',
+        te: 'పైకి, ఇంకా పైకి — పక్షుల కన్నా ఎత్తుకు, మేఘాల కన్నా ఎత్తుకు ఎగిరాడు. స్వర్గంలో దేవతలు ఆశ్చర్యంగా చూశారు. ఇతడు వాయుదేవుడి బిడ్డ అని సూర్యభగవానుడికి తెలుసు. అందుకే తన వేడితో ఆ పిల్లవాడిని కాల్చలేదు. కానీ దేవతల రాజు ఇంద్రుడు తన తెల్ల ఏనుగు ఐరావతం మీద అక్కడికి వచ్చాడు. "సూర్యుడినే మింగాలని చూస్తున్న ఈ పిల్లవాడు ఎవరు?" అని గర్జించాడు. "సూర్యుడు లేకపోతే లోకమంతా చీకటి అయిపోతుంది!" ఇంద్రుడు తన వజ్రాయుధాన్ని విసిరాడు. అది ఆ చిన్నవాడి దవడకు తగిలింది. అతడు ఆకాశం నుంచి కొండ మీద పడిపోయి, కదలకుండా ఉండిపోయాడు.',
+      },
+      {
+        scene: { bg: 'mountain', props: [['cloud', 70, 55, 1], ['person', 110, 198, 1.2, { skin: 'fair', cloth: '#cfe9f7', top: '#9ccbe8' }], ['monkey', 190, 198, 0.75, { color: '#d9772a' }], ['person', 270, 198, 1.35, { skin: 'fair', cloth: '#e8a23a', crown: true, beard: true, hair: '#ddd', raise: true }], ['lotus', 345, 200, 1], ['flowers', 40, 200, 1]] },
+        en: 'Vāyu, the Wind God, was heartbroken. He lifted his son, carried him into a cave, and stopped blowing. Without wind, nothing in the world could breathe! Plants drooped, people and animals grew weak, and even the gods were in trouble. They all hurried to Brahmā, the Creator. Brahmā came to the cave and gently touched the child — and the little one opened his eyes and smiled! Vāyu was happy again, and the cool breeze blew once more. Then the gods gave the child their blessings: great strength, speed, wisdom and a long life. Because his chin, his "hanu", had been hurt, he was called Hanumān.',
+        te: 'వాయుదేవుడికి చాలా దుఃఖం కలిగింది. కొడుకును ఎత్తుకుని ఒక గుహలోకి వెళ్ళిపోయి, గాలి వీచడం ఆపేశాడు. గాలి లేకపోతే లోకంలో ఎవరూ ఊపిరి పీల్చుకోలేరు! మొక్కలు వాడిపోయాయి, మనుషులు, జంతువులు నీరసపడిపోయారు, దేవతలు కూడా ఇబ్బంది పడ్డారు. అందరూ కలిసి సృష్టికర్త బ్రహ్మదేవుడి దగ్గరకు పరుగెత్తారు. బ్రహ్మదేవుడు గుహకు వచ్చి పిల్లవాడిని ప్రేమగా తాకాడు — వెంటనే ఆ చిన్నవాడు కళ్ళు తెరిచి నవ్వాడు! వాయుదేవుడు సంతోషించాడు, మళ్ళీ చల్లని గాలి వీచింది. తరువాత దేవతలంతా ఆ బిడ్డకు వరాలు ఇచ్చారు — గొప్ప బలం, వేగం, తెలివి, దీర్ఘాయువు. దవడను సంస్కృతంలో "హనువు" అంటారు. దవడకు దెబ్బ తగిలింది కాబట్టి అతనికి "హనుమంతుడు" అనే పేరు వచ్చింది.',
+      },
+    ],
+  },
+  {
+    id: 'karna-and-parashurama',
+    added: '2026-10-13',
+    epic: 'Mahabharata',
+    chars: ['Karṇa', 'Paraśurāma'],
+    title: { en: 'Karṇa and Paraśurāma — the Bee and the Curse', te: 'కర్ణుడు, పరశురాముడు — పురుగు కాటు, గురువు శాపం' },
+    moral: { en: 'Honesty is the first lesson — what we gain by a lie does not stay with us.', te: 'నిజాయితీయే మొదటి పాఠం — అబద్ధంతో సంపాదించింది నిలవదు.' },
+    cover: { bg: 'ashram', props: [['archer', 120, 198, 1.3, { cloth: '#c9952a' }], ['bee', 205, 120, 1.3], ['person', 260, 198, 1.4, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['sun', 50, 50, 0.8]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['cloud', 200, 40, 0.9], ['person', 130, 198, 1.15, { cloth: '#c9952a', raise: true }], ['person', 270, 198, 1.45, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['tree', 360, 198, 0.9]] },
+        en: 'Young Karṇa dreamed of becoming the greatest archer in the world. But Guru Droṇa would not teach him the mightiest weapons. So Karṇa travelled far away to Mount Mahendra, where the great sage Paraśurāma lived. Paraśurāma was a fierce teacher with a famous axe, and he taught only brāhmaṇas. Karṇa bowed low. "Guru, I am a brāhmaṇa boy. Please make me your student." That was not true — Karṇa had grown up in a charioteer\'s home — but he wanted to learn so badly. The sage agreed. Karṇa practised hard every day, and soon he had learned even the most powerful weapon of all, the Brahmāstra.',
+        te: 'కర్ణుడికి లోకంలోనే గొప్ప విలుకాడు కావాలని కోరిక. కానీ ద్రోణాచార్యుడు అతనికి గొప్ప దివ్యాస్త్రాలు నేర్పడానికి ఒప్పుకోలేదు. అందుకే కర్ణుడు చాలా దూరంలో ఉన్న మహేంద్ర పర్వతానికి వెళ్ళాడు. అక్కడ మహర్షి పరశురాముడు ఉండేవాడు. గొడ్డలి పట్టుకునే పరశురాముడు చాలా కఠినమైన గురువు. ఆయన బ్రాహ్మణులకు మాత్రమే విద్య నేర్పేవాడు. కర్ణుడు వంగి నమస్కరించాడు. "గురువుగారూ, నేను బ్రాహ్మణ బాలుడిని. నన్ను మీ శిష్యుడిగా స్వీకరించండి." అది నిజం కాదు — కర్ణుడు ఒక సారథి ఇంట్లో పెరిగాడు. కానీ నేర్చుకోవాలనే తపన అతని చేత అలా చెప్పించింది. ముని ఒప్పుకున్నాడు. కర్ణుడు రోజూ కష్టపడి సాధన చేశాడు. త్వరలోనే అన్నిటికంటే శక్తివంతమైన బ్రహ్మాస్త్రాన్ని కూడా నేర్చుకున్నాడు.',
+      },
+      {
+        scene: { bg: 'forest', props: [['tree', 90, 198, 1.3], ['person', 185, 198, 1.35, { cloth: '#c9952a' }], ['bee', 212, 188, 1.1], ['person', 280, 198, 1.3, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['sun', 360, 50, 0.7]] },
+        en: 'One afternoon, Paraśurāma felt tired after the lessons. He lay down in the shade, rested his head on Karṇa\'s lap, and was soon fast asleep. Just then a stinging insect, something like a bee, landed on Karṇa\'s thigh and began to bite. It bit and bit. It hurt terribly! But Karṇa thought, "If I move, my guru will wake up." So he sat as still as a rock. He pressed his lips together and did not make a sound. The insect bit deeper, until a few warm drops of blood trickled down and touched the sleeping sage.',
+        te: 'ఒక మధ్యాహ్నం పాఠాలయ్యాక పరశురాముడికి అలసటగా అనిపించింది. నీడలో కర్ణుడి ఒడిలో తల పెట్టుకుని పడుకున్నాడు. కాసేపట్లోనే గాఢంగా నిద్రపోయాడు. అప్పుడే తుమ్మెద లాంటి ఒక కుట్టే పురుగు ఎగురుకుంటూ వచ్చి కర్ణుడి తొడ మీద వాలి కుట్టడం మొదలుపెట్టింది. కుడుతూనే ఉంది. భరించలేనంత నొప్పి! కానీ కర్ణుడు ఇలా అనుకున్నాడు: "నేను కదిలితే గురువుగారి నిద్ర చెడిపోతుంది." అందుకే బండరాయిలా కదలకుండా కూర్చున్నాడు. పెదవులు బిగబట్టాడు, చిన్న శబ్దం కూడా చేయలేదు. పురుగు ఇంకా లోతుగా తొలిచింది. చివరకు కొన్ని వెచ్చని రక్తపు చుక్కలు కారి, నిద్రపోతున్న గురువుగారిని తాకాయి.',
+      },
+      {
+        scene: { bg: 'ashram', props: [['person', 140, 198, 1.45, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd', raise: true }], ['person', 225, 198, 1.15, { cloth: '#c9952a' }], ['bow', 270, 198, 0.8], ['cloud', 80, 45, 0.9]] },
+        en: 'Paraśurāma woke and saw what had happened. First he was amazed — then his eyes flashed. "No brāhmaṇa could bear such pain without moving," he said. "Only a kṣatriya warrior could. Tell me the truth! Who are you?" Karṇa fell at his feet. "Forgive me, Guru. I am Karṇa, a charioteer\'s son. I lied because I wanted so much to learn." The lie hurt the old sage deeply. "You tricked your teacher," he said. "So on the day you need the Brahmāstra most, you will forget it." Then, more gently, he added, "Still, no warrior on earth will be your equal in battle." With tears in his eyes, Karṇa bowed and accepted the curse.',
+        te: 'పరశురాముడు నిద్రలేచి జరిగింది చూశాడు. మొదట ఆశ్చర్యపోయాడు — మరుక్షణం ఆయన కళ్ళు ఎర్రబడ్డాయి. "ఇంత నొప్పిని కదలకుండా ఏ బ్రాహ్మణుడూ భరించలేడు," అన్నాడు. "ఒక క్షత్రియ వీరుడు మాత్రమే భరించగలడు. నిజం చెప్పు! నువ్వు ఎవరు?" కర్ణుడు ఆయన పాదాల మీద పడ్డాడు. "క్షమించండి గురువుగారూ. నేను కర్ణుడిని, ఒక సారథి కొడుకుని. నేర్చుకోవాలనే ఆశతో అబద్ధం చెప్పాను." ఆ అబద్ధం ముసలి మహర్షి మనసును చాలా బాధపెట్టింది. "నువ్వు గురువును మోసం చేశావు. అందుకే బ్రహ్మాస్త్రం నీకు అత్యంత అవసరమైన రోజున అది నీకు గుర్తుకు రాదు," అని శపించాడు. తరువాత కాస్త మెత్తబడి, "అయినా యుద్ధంలో నీకు సమానమైన వీరుడు ఉండడు," అన్నాడు. కర్ణుడు కన్నీళ్ళతో తల వంచి ఆ శాపాన్ని స్వీకరించాడు.',
+      },
+    ],
+  },
+  {
+    id: 'dasharathas-four-sons',
+    added: '2026-10-13',
+    epic: 'Ramayana',
+    chars: ['Daśaratha', 'Kausalyā', 'Kaikeyī', 'Sumitrā', 'Ṛṣyaśṛṅga', 'Rāma'],
+    title: { en: 'How Daśaratha\'s Four Sons Were Born — the Sacred Pāyasam', te: 'దశరథుడి నలుగురు కుమారులు — దివ్య పాయసం' },
+    moral: { en: 'Wait with patience and a pure heart — good things come in their own time.', te: 'ఓపికతో, మంచి మనసుతో ఎదురుచూస్తే సరైన సమయానికి మంచే జరుగుతుంది.' },
+    cover: { bg: 'palace', props: [['person', 110, 198, 1.4, { skin: 'fair', cloth: '#a8392a', crown: true }], ['pot', 200, 196, 1.5], ['fire', 290, 198, 1.1], ['cloud', 330, 45, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'palace', props: [['person', 80, 198, 1.4, { skin: 'fair', cloth: '#a8392a', crown: true }], ['person', 150, 198, 1.3, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 240, 198, 1.2, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['person', 295, 198, 1.2, { female: true, skin: 'wheat', cloth: '#3a6ab0', pallu: '#f0c040' }], ['person', 350, 198, 1.2, { female: true, skin: 'fair', cloth: '#4f9d4f', pallu: '#f0c040' }]] },
+        en: 'Long ago, in the shining city of Ayodhyā, there ruled a good king named Daśaratha. His kingdom was rich and his people were happy, but the king carried one sorrow: he had no children. He had three queens — gentle Kausalyā, lively Kaikeyī and kind Sumitrā — and all of them longed for a baby. One day Daśaratha said sadly to his teacher, the sage Vasiṣṭha, "Who will care for Ayodhyā after me?" The wise men advised him, "Invite the holy sage Ṛṣyaśṛṅga. Let him lead a great fire-sacrifice so that sons may be born to you." So the king sent for the sage with great respect.',
+        te: 'చాలా కాలం క్రితం, అందమైన అయోధ్యా నగరాన్ని దశరథుడు అనే మంచి రాజు పరిపాలించేవాడు. రాజ్యం సిరిసంపదలతో కళకళలాడేది, ప్రజలు సంతోషంగా ఉండేవారు. కానీ రాజుకు ఒకే ఒక బాధ — ఆయనకు పిల్లలు లేరు. ఆయనకు ముగ్గురు రాణులు — సౌమ్యమైన కౌసల్య, చురుకైన కైకేయి, దయగల సుమిత్ర. ముగ్గురూ ఒక బిడ్డ కోసం ఎంతగానో ఎదురుచూశారు. ఒక రోజు దశరథుడు తన గురువు వసిష్ఠ మహర్షితో, "నా తరువాత అయోధ్యను ఎవరు చూసుకుంటారు?" అని బాధగా అన్నాడు. పెద్దలు ఇలా సలహా ఇచ్చారు: "ఋష్యశృంగ మహర్షిని ఆహ్వానించండి. ఆయన చేత పుత్రకామేష్టి యాగం చేయించండి. మీకు కుమారులు పుడతారు." రాజు ఎంతో గౌరవంతో ఆ మహర్షిని అయోధ్యకు పిలిపించాడు.',
+      },
+      {
+        scene: { bg: 'river', props: [['person', 90, 198, 1.35, { skin: 'fair', cloth: '#a8392a', crown: true }], ['fire', 185, 198, 1.6], ['person', 270, 198, 1.45, { skin: 'fair', cloth: '#f2a33a', top: '#ffd84a', crown: true, raise: true }], ['pot', 305, 126, 0.7], ['sun', 360, 45, 0.7]] },
+        en: 'On the banks of the river Sarayū, a great fire was lit. The sages chanted, and the king poured offerings of ghee into the flames. Suddenly the fire leapt up tall and bright, and out of it stepped a shining being, as dazzling as the sun. In his hands he held a golden vessel with a silver lid. "O King," he said, "the gods are pleased with you. Take this pāyasam, this sweet rice pudding, and share it with your queens. Sons will be born to you." Daśaratha took the vessel with trembling hands. He was as happy as a poor man who has suddenly found treasure.',
+        te: 'సరయూ నది ఒడ్డున పెద్ద యజ్ఞం మొదలైంది. ఋషులు మంత్రాలు చదువుతుంటే, రాజు అగ్నిలో నెయ్యి ఆహుతులు పోశాడు. ఒక్కసారిగా అగ్ని ఎత్తుగా, ప్రకాశవంతంగా ఎగిసింది. ఆ మంటల్లోంచి సూర్యుడిలా మెరిసిపోతున్న ఒక దివ్య పురుషుడు బయటకు వచ్చాడు. ఆయన చేతుల్లో వెండి మూత ఉన్న ఒక బంగారు పాత్ర ఉంది. "రాజా," అన్నాడు ఆయన, "దేవతలు నీ మీద ప్రసన్నులయ్యారు. ఈ తియ్యని పాయసాన్ని తీసుకుని నీ రాణులకు పంచి ఇవ్వు. నీకు కుమారులు పుడతారు." దశరథుడు వణుకుతున్న చేతులతో ఆ పాత్రను అందుకున్నాడు. పేదవాడికి ఒక్కసారిగా నిధి దొరికినంత సంతోషం కలిగింది ఆయనకు.',
+      },
+      {
+        scene: { bg: 'palace', props: [['person', 55, 198, 1.2, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['person', 110, 198, 1.2, { female: true, skin: 'wheat', cloth: '#3a6ab0', pallu: '#f0c040' }], ['person', 345, 198, 1.2, { female: true, skin: 'fair', cloth: '#4f9d4f', pallu: '#f0c040' }], ['person', 175, 198, 0.75, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 215, 198, 0.75, { skin: 'wheat', cloth: '#a8392a' }], ['person', 255, 198, 0.75, { skin: 'fair', cloth: '#e8a23a' }], ['person', 295, 198, 0.75, { skin: 'fair', cloth: '#7a5ab0' }]] },
+        en: 'The king hurried to the palace. He gave half of the pāyasam to Queen Kausalyā. Of what was left, he gave a share to Sumitrā, a share to Kaikeyī, and the last share to Sumitrā again — so Sumitrā had two! In time, on the ninth day of the spring month of Caitra, Kausalyā gave birth to Rāma. Kaikeyī\'s son was Bharata, and Sumitrā had twins, Lakṣmaṇa and Śatrughna. All of Ayodhyā danced with joy! The four princes grew up together, playing and learning side by side. Lakṣmaṇa always stayed close to Rāma, and Śatrughna to Bharata — bound together, it is said, by their shares of the pāyasam. Even today we celebrate Rāma\'s birthday as Śrī Rāma Navamī.',
+        te: 'రాజు సంతోషంగా అంతఃపురానికి వెళ్ళాడు. పాయసంలో సగం కౌసల్యకు ఇచ్చాడు. మిగిలిన దానిలో ఒక భాగం సుమిత్రకు, ఒక భాగం కైకేయికి ఇచ్చి, చివరి భాగం మళ్ళీ సుమిత్రకే ఇచ్చాడు. అలా సుమిత్రకు రెండు భాగాలు దక్కాయి! కొంత కాలానికి, వసంత కాలంలో చైత్ర మాసం నవమి నాడు కౌసల్యకు రాముడు పుట్టాడు. కైకేయికి భరతుడు పుట్టాడు. సుమిత్రకు కవల పిల్లలు — లక్ష్మణుడు, శత్రుఘ్నుడు. అయోధ్య అంతా ఆనందంతో పండుగ చేసుకుంది! నలుగురు రాకుమారులు కలిసి ఆడుకుంటూ, కలిసి చదువుకుంటూ పెరిగారు. లక్ష్మణుడు ఎప్పుడూ రాముడి వెంటే, శత్రుఘ్నుడు భరతుడి వెంటే ఉండేవారు — పాయసంలోని ఆ భాగాలే వాళ్ళను అలా కలిపాయని అంటారు. ఇప్పటికీ రాముడి పుట్టినరోజును మనం శ్రీరామ నవమిగా జరుపుకుంటాం.',
+      },
+    ],
+  },
 ];
