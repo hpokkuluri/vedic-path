@@ -56,6 +56,27 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "ముని కుమారుడు",
   "d": "A devoted young hermit who cared for his blind, aged parents in the forest, and was killed by Daśaratha's arrow by mistake. Later tellings call him Śravaṇa Kumāra.",
   "dt": "అడవిలో గుడ్డివారైన వృద్ధ తల్లిదండ్రులను సేవించిన యువ ముని; దశరథుని బాణానికి పొరపాటున బలయ్యాడు. తర్వాతి కథనాలు అతనిని శ్రవణ కుమారుడు అంటాయి."
+ },
+ "jabali": {
+  "av": "🗣️",
+  "en": "Jābāli",
+  "te": "జాబాలి",
+  "d": "A learned priest of Daśaratha's court who tried to persuade Rāma with clever arguments to return and take the kingdom.",
+  "dt": "దశరథుని ఆస్థానంలోని విద్వాంసుడైన పురోహితుడు; తెలివైన వాదనలతో రాముడిని తిరిగి వచ్చి రాజ్యం స్వీకరించమని ఒప్పించడానికి ప్రయత్నించాడు."
+ },
+ "atri": {
+  "av": "🌟",
+  "en": "Atri",
+  "te": "అత్రి మహర్షి",
+  "d": "One of the seven great sages (Saptarṣis), who lived with his wife Anasūyā in an āśrama south of Citrakūṭa.",
+  "dt": "సప్తర్షులలో ఒకరైన మహర్షి; భార్య అనసూయతో చిత్రకూటానికి దక్షిణాన ఆశ్రమంలో నివసించాడు."
+ },
+ "anasuya": {
+  "av": "🪷",
+  "en": "Anasūyā",
+  "te": "అనసూయ",
+  "d": "Atri's wife, an elderly woman of immense tapas and devotion, whose name means “free from envy”. She blessed Sītā with gifts that never faded.",
+  "dt": "అత్రి మహర్షి భార్య; అపారమైన తపస్సు, పాతివ్రత్యం కల వృద్ధురాలు. ఆమె పేరుకు “అసూయ లేనిది” అని అర్థం. ఎప్పటికీ వాడిపోని కానుకలతో సీతను ఆశీర్వదించింది."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -1878,6 +1899,621 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "Guha almost fought Bharata because he misjudged him. Have you ever misjudged someone and later found out you were wrong?",
   "భరతుడిని తప్పుగా అంచనా వేసినందుకు గుహుడు దాదాపు అతనితో యుద్ధం చేయబోయాడు. మీరు ఎప్పుడైనా ఎవరినైనా తప్పుగా అంచనా వేసి, తర్వాత పొరపాటు తెలుసుకున్నారా?"
+ ]
+},
+{
+ "id": "ayodhya-16",
+ "kanda": "ayodhya",
+ "n": 16,
+ "order": 216,
+ "date": "2026-10-13",
+ "title": "Bharadvāja's Feast",
+ "titleTe": "భరద్వాజుని ఆతిథ్యం",
+ "sargas": "89–92",
+ "scene": "yajna",
+ "who": [
+  "bharata",
+  "bharadvajamuni",
+  "vasishtha",
+  "kaikeyi",
+  "kausalya",
+  "sumitra"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Bharata left his army a krośa away, so as not to disturb the hermitage, and walked with Vasiṣṭha to the āśrama of {bharadvajamuni|Bharadvāja} at Prayāga, dressed simply, without his royal ornaments. The great sage welcomed them, and then looked closely at Bharata. “You rule a kingdom. Why have you come here? I hope you do not mean any harm to Rāma, so that you can enjoy the throne without fear?”",
+    "ఆశ్రమానికి ఆటంకం కలగకూడదని భరతుడు సైన్యాన్ని ఒక క్రోసు దూరంలో ఉంచి, రాజాభరణాలు లేకుండా సాదాగా, వసిష్ఠునితో కలిసి ప్రయాగలోని {bharadvajamuni|భరద్వాజ} ఆశ్రమానికి నడిచి వెళ్ళాడు. మహర్షి వారిని స్వాగతించి, తర్వాత భరతుని తీక్షణంగా చూశాడు. “నువ్వు రాజ్యాన్ని పాలిస్తున్నావు. ఇక్కడికి ఎందుకు వచ్చావు? భయం లేకుండా సింహాసనం అనుభవించడానికి రామునికి హాని తలపెట్టలేదు కదా?”"
+   ],
+   [
+    "p",
+    "Bharata's eyes filled with tears. “If even you, great sage, think that of me, then I am truly lost. I did not want any of this. I have come to fall at Rāma's feet and bring him back to Ayodhyā. Please tell me where he is.”",
+    "భరతుని కళ్ళు నీళ్ళతో నిండాయి. “మహర్షీ, మీరు కూడా నన్ను అలా అనుకుంటే నేను నిజంగా నశించిపోయాను. ఇదేదీ నేను కోరుకోలేదు. రాముని పాదాలపై పడి ఆయనను అయోధ్యకు తీసుకువెళ్ళడానికి వచ్చాను. దయచేసి ఆయన ఎక్కడ ఉన్నాడో చెప్పండి.”"
+   ],
+   [
+    "p",
+    "Bharadvāja smiled. “I knew your heart, Bharata. I only asked so that your goodness would shine even more brightly. Rāma lives on Citrakūṭa. But stay here tonight with your army — you will set out tomorrow.”",
+    "భరద్వాజుడు చిరునవ్వు నవ్వాడు. “భరతా, నీ మనసు నాకు తెలుసు. నీ మంచితనం ఇంకా ఎక్కువగా ప్రకాశించాలనే అలా అడిగాను. రాముడు చిత్రకూటంలో ఉన్నాడు. కానీ ఈ రాత్రి నీ సైన్యంతో ఇక్కడే ఉండు — రేపు బయలుదేరుదువు గాని.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“I would like to feed your whole army,” said Bharadvāja. Bharata hesitated — how could a forest sage feed so many thousands without hardship? But Bharadvāja went into his fire-hall, sipped water, and called upon the gods: Viśvakarmā the divine builder, Indra, Kubera, Yama and Varuṇa, the rivers of earth and heaven, the gandharvas and the apsaras. “Prepare a welcome for my guests!”",
+    "“నీ సైన్యమంతటికీ ఆతిథ్యం ఇవ్వాలనుకుంటున్నాను,” అన్నాడు భరద్వాజుడు. భరతుడు సంకోచించాడు — అడవిలోని ముని కష్టం లేకుండా ఇన్ని వేల మందికి ఎలా భోజనం పెట్టగలడు? కానీ భరద్వాజుడు అగ్నిశాలలోకి వెళ్ళి, ఆచమనం చేసి, దేవతలను ఆవాహన చేశాడు: దివ్య శిల్పి విశ్వకర్మ, ఇంద్రుడు, కుబేరుడు, యముడు, వరుణుడు, భూమి స్వర్గాల నదులు, గంధర్వులు, అప్సరసలు. “నా అతిథులకు స్వాగతం సిద్ధం చేయండి!”"
+   ],
+   [
+    "p",
+    "At once a sweet, cool breeze began to blow, and flowers rained from the sky. The plain filled with shining palaces and halls, stables for the elephants and horses, beds and seats and couches. Rivers flowed with sweet drinks. There were mountains of rice and lakes of curd and milk, heaps of sweets and fruits, and pots of honey. Gandharvas sang, and apsaras danced among the trees.",
+    "వెంటనే చల్లని, మధురమైన గాలి వీచసాగింది; ఆకాశం నుండి పూలు కురిశాయి. మైదానమంతా తేజోమయమైన భవనాలు, మందిరాలు, ఏనుగులు గుర్రాలకు శాలలు, పడకలు, ఆసనాలు, మంచాలతో నిండిపోయింది. నదులు మధుర పానీయాలతో ప్రవహించాయి. అన్నం కొండలు, పెరుగు పాల సరస్సులు, మిఠాయిలు పండ్ల రాశులు, తేనె కుండలు ఉన్నాయి. గంధర్వులు పాడారు; చెట్ల మధ్య అప్సరసలు నాట్యం చేశారు."
+   ],
+   [
+    "p",
+    "The soldiers ate and drank and rested like gods. “We will never go back to Ayodhyā,” they laughed, “and we won't go to the Daṇḍaka forest either! This is heaven itself!” Only Bharata, thinking of Rāma, took no pleasure in any of it. And at dawn, all of it — the palaces, the rivers, the music — vanished like a dream.",
+    "సైనికులు దేవతల్లా తిని, తాగి, విశ్రమించారు. “మేము అయోధ్యకు తిరిగి వెళ్ళం,” అని నవ్వారు, “దండకారణ్యానికీ వెళ్ళం! ఇదే స్వర్గం!” రాముని గురించే ఆలోచిస్తున్న భరతుడు ఒక్కడే వాటిలో దేనిలోనూ ఆనందం పొందలేదు. తెల్లవారగానే అదంతా — భవనాలు, నదులు, సంగీతం — కలలా మాయమైంది."
+   ],
+   [
+    "dyk",
+    "✨",
+    "The power of a sage's tapas could summon the gods themselves to serve guests. Bharadvāja's feast is one of the most magical scenes in the Rāmāyaṇa.",
+    "ఒక ముని తపశ్శక్తి అతిథులకు సేవ చేయడానికి దేవతలనే పిలిపించగలదు. భరద్వాజుని విందు రామాయణంలోని అత్యంత అద్భుతమైన దృశ్యాలలో ఒకటి."
+   ]
+  ],
+  [
+   [
+    "p",
+    "In the morning, Bharata introduced the three queens to the sage. “This is Kausalyā, Rāma's mother, thin from fasting and grief. This is Sumitrā, mother of Lakṣmaṇa and Śatrughna. And this,” he said bitterly, “is my mother Kaikeyī — proud, angry and cruel, the cause of all our sorrow.”",
+    "ఉదయం భరతుడు ముగ్గురు రాణులను మహర్షికి పరిచయం చేశాడు. “ఈమె రాముని తల్లి కౌసల్య; ఉపవాసాలతో, దుఃఖంతో చిక్కిపోయారు. ఈమె లక్ష్మణ శత్రుఘ్నుల తల్లి సుమిత్ర. ఈమె,” అని చేదుగా అన్నాడు, “మా అమ్మ కైకేయి — గర్విష్ఠి, కోపిష్ఠి, క్రూరురాలు; మా దుఃఖానికంతటికీ కారణం.”"
+   ],
+   [
+    "p",
+    "Bharadvāja raised his hand gently. “Do not blame Kaikeyī, Bharata. Rāma's exile will bring great good — to the gods, to the sages, and to the whole world.” Then he told Bharata the way: “Go south, past the river Mandākinī. On the hill of Citrakūṭa, in a hut of leaves, you will find Rāma.”",
+    "భరద్వాజుడు మృదువుగా చేయి ఎత్తాడు. “భరతా, కైకేయిని నిందించకు. రాముని వనవాసం దేవతలకు, మునులకు, లోకమంతటికీ గొప్ప మేలు చేస్తుంది.” తర్వాత భరతునికి దారి చెప్పాడు: “దక్షిణంగా, మందాకినీ నదిని దాటి వెళ్ళు. చిత్రకూట పర్వతంపై ఒక పర్ణశాలలో రాముడు కనిపిస్తాడు.”"
+   ],
+   [
+    "dyk",
+    "🔮",
+    "Bharadvāja knew what Bharata did not: that Rāma had to go to the forest so that he could meet Rāvaṇa and fulfil the promise Viṣṇu made to the gods.",
+    "భరతునికి తెలియనిది భరద్వాజునికి తెలుసు: రావణుడిని ఎదుర్కొని, విష్ణువు దేవతలకు ఇచ్చిన మాట నెరవేర్చడానికే రాముడు అడవికి వెళ్ళవలసి వచ్చింది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharadvāja tested Bharata's intentions, then praised his goodness.",
+   "భరద్వాజుడు భరతుని ఉద్దేశాన్ని పరీక్షించి, తర్వాత అతని మంచితనాన్ని ప్రశంసించాడు."
+  ],
+  [
+   "By the power of his tapas, the sage summoned the gods to give the whole army a heavenly feast.",
+   "తపశ్శక్తితో మహర్షి దేవతలను పిలిపించి సైన్యమంతటికీ స్వర్గతుల్యమైన విందు ఇచ్చాడు."
+  ],
+  [
+   "Only Bharata took no pleasure in it, thinking of Rāma.",
+   "రాముని గురించి ఆలోచిస్తూ భరతుడు ఒక్కడే దానిలో ఆనందం పొందలేదు."
+  ],
+  [
+   "Bharadvāja told Bharata not to blame Kaikeyī, and showed him the way to Citrakūṭa.",
+   "కైకేయిని నిందించవద్దని చెప్పి, భరద్వాజుడు చిత్రకూటానికి దారి చూపాడు."
+  ]
+ ],
+ "think": [
+  "The soldiers forgot everything at the feast, but Bharata did not forget his purpose. How do you stay focused on something important when there are fun distractions around?",
+  "విందులో సైనికులు అంతా మరచిపోయారు, కానీ భరతుడు తన లక్ష్యాన్ని మరచిపోలేదు. చుట్టూ సరదాగా ఆకర్షించేవి ఉన్నప్పుడు ముఖ్యమైన దానిపై దృష్టి ఎలా నిలుపుకుంటారు?"
+ ]
+},
+{
+ "id": "ayodhya-17",
+ "kanda": "ayodhya",
+ "n": 17,
+ "order": 217,
+ "date": "2026-10-13",
+ "title": "Life at Citrakūṭa",
+ "titleTe": "చిత్రకూటంలో జీవితం",
+ "sargas": "93–98",
+ "scene": "hill",
+ "who": [
+  "rama",
+  "sita",
+  "lakshmana",
+  "bharata"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Meanwhile, on Citrakūṭa, Rāma was showing Sītā the beauty of the mountain. “Look, Sītā. See how the peaks shine — some like silver, some red as blood, some yellow, some like sapphires, some glittering like crystal. Waterfalls tumble down the slopes. Kinnaras play on the rocks, and the trees are heavy with flowers and fruit.”",
+    "ఇంతలో చిత్రకూటంపై రాముడు సీతకు ఆ పర్వత సౌందర్యాన్ని చూపిస్తున్నాడు. “చూడు సీతా. శిఖరాలు ఎలా మెరుస్తున్నాయో — కొన్ని వెండిలా, కొన్ని రక్తంలా ఎర్రగా, కొన్ని పసుపుగా, కొన్ని నీలమణుల్లా, కొన్ని స్ఫటికంలా. సానువుల మీదుగా జలపాతాలు దూకుతున్నాయి. రాళ్ళపై కిన్నరులు ఆడుకుంటున్నారు; చెట్లు పూలు, పండ్లతో వంగిపోతున్నాయి.”"
+   ],
+   [
+    "p",
+    "“With you beside me, Sītā, I do not miss the kingdom at all. Living here, I feel I am repaying my father's debt, and I am happy. Do you like living with me here?”",
+    "“సీతా, నువ్వు పక్కన ఉంటే నాకు రాజ్యం గుర్తే రాదు. ఇక్కడ జీవిస్తూ నా తండ్రి ఋణం తీర్చుకుంటున్నట్లు అనిపిస్తుంది; సంతోషంగా ఉన్నాను. నాతో ఇక్కడ ఉండటం నీకు ఇష్టమేనా?”"
+   ],
+   [
+    "p",
+    "Then they walked down to the river Mandākinī, with its sandy banks and clear water, where sages bathed and deer came to drink without fear. “Bathe with me here, Sītā,” said Rāma. “Think of these deer as the people of Ayodhyā, this mountain as our city, and this river as the Sarayū.”",
+    "తర్వాత ఇసుక తిన్నెలు, స్వచ్ఛమైన నీటితో, మునులు స్నానం చేస్తూ, జింకలు భయం లేకుండా నీళ్ళు తాగుతున్న మందాకినీ నదికి నడిచి వెళ్ళారు. “సీతా, నాతో ఇక్కడ స్నానం చెయ్యి,” అన్నాడు రాముడు. “ఈ జింకలను అయోధ్య ప్రజలుగా, ఈ పర్వతాన్ని మన నగరంగా, ఈ నదిని సరయూగా భావించు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Suddenly a great cloud of dust rose into the sky, and they heard a roaring noise like the sea. Frightened animals ran in every direction — elephants, deer, bears. “Lakṣmaṇa,” said Rāma, “find out what is happening. Is it a king hunting, or some fierce animal?”",
+    "అకస్మాత్తుగా ఆకాశంలోకి పెద్ద దుమ్ము మేఘం లేచింది; సముద్ర ఘోష వంటి గర్జన వినిపించింది. భయపడిన జంతువులు — ఏనుగులు, జింకలు, ఎలుగుబంట్లు — అన్ని దిక్కులకూ పరుగెత్తాయి. “లక్ష్మణా,” అన్నాడు రాముడు, “ఏమి జరుగుతోందో కనుక్కో. ఏ రాజైనా వేటకు వచ్చాడా, లేక ఏదైనా క్రూర జంతువా?”"
+   ],
+   [
+    "p",
+    "Lakṣmaṇa climbed to the top of a tall śāla tree and looked north. He saw a huge army — elephants, horses, chariots and foot soldiers — and above it, a flag bearing the kovidāra tree. “It is Bharata!” he shouted. “He has come with an army to kill us, so that he can rule without fear! Put out the fire, Rāma! Take Sītā into a cave and put on your armour! Today I will kill Bharata, and Kaikeyī too!”",
+    "లక్ష్మణుడు ఎత్తైన మద్ది చెట్టు ఎక్కి ఉత్తరం వైపు చూశాడు. ఏనుగులు, గుర్రాలు, రథాలు, కాల్బలంతో పెద్ద సైన్యం, దానిపై కోవిదార వృక్ష చిహ్నంతో పతాకం కనిపించాయి. “భరతుడు!” అని అరిచాడు. “భయం లేకుండా పాలించడానికి మనల్ని చంపడానికి సైన్యంతో వచ్చాడు! రామా, నిప్పు ఆర్పేయి! సీతను గుహలోకి తీసుకెళ్ళి కవచం ధరించు! ఈ రోజు భరతుడిని, కైకేయిని కూడా చంపుతాను!”"
+   ],
+   [
+    "dyk",
+    "🌳",
+    "The *kovidāra* tree was the emblem on the flag of Ayodhyā's kings — just as a country today has its own flag.",
+    "*కోవిదార* వృక్షం అయోధ్య రాజుల పతాకంపై ఉండే చిహ్నం — ఈ రోజు ప్రతి దేశానికి సొంత జెండా ఉన్నట్లే."
+   ]
+  ],
+  [
+   [
+    "p",
+    "But Rāma was calm. “Lakṣmaṇa, why are you so angry? Bharata has never done anything to hurt us. He loves me more than his own life. I am sure he has come to see me — perhaps to give me back the kingdom. Have we ever done him any wrong, that he should fear us?”",
+    "కానీ రాముడు ప్రశాంతంగా ఉన్నాడు. “లక్ష్మణా, ఎందుకు ఇంత కోపం? భరతుడు మనల్ని బాధపెట్టే పని ఎప్పుడూ చేయలేదు. అతను నన్ను తన ప్రాణం కంటే ఎక్కువగా ప్రేమిస్తాడు. నన్ను చూడటానికే వచ్చి ఉంటాడు — బహుశా రాజ్యాన్ని తిరిగి ఇవ్వడానికి. మనల్ని చూసి భయపడేంత అపకారం మనం అతనికి ఎప్పుడైనా చేశామా?”"
+   ],
+   [
+    "p",
+    "“And if it is the kingdom you want, Lakṣmaṇa,” Rāma added gently, “I will tell Bharata to give it to you. He will agree at once.” Lakṣmaṇa's face burned with shame, and he lowered his head. “Perhaps father himself has come to see us,” he said softly.",
+    "“లక్ష్మణా, నీకు రాజ్యం కావాలంటే,” అని రాముడు మృదువుగా అన్నాడు, “దానిని నీకు ఇవ్వమని భరతునికి చెబుతాను. అతను వెంటనే అంగీకరిస్తాడు.” సిగ్గుతో లక్ష్మణుని ముఖం ఎర్రబడింది; తల దించుకున్నాడు. “బహుశా నాన్నగారే మనల్ని చూడటానికి వచ్చారేమో,” అని మెల్లగా అన్నాడు."
+   ],
+   [
+    "p",
+    "“Perhaps,” said Rāma. But then he looked again. “But I do not see father's white royal umbrella or his great elephant Śatruñjaya among the army.” A shadow of worry crossed his face.",
+    "“కావచ్చు,” అన్నాడు రాముడు. కానీ మళ్ళీ చూశాడు. “కానీ సైన్యంలో నాన్నగారి తెల్లని రాజచ్ఛత్రం గానీ, ఆయన మహాగజం శత్రుంజయం గానీ కనిపించడం లేదు.” ఆయన ముఖంపై ఆందోళన నీడ కనిపించింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Down in the valley, Bharata stopped his army so that it would not disturb the āśrama. Then he set out on foot with Śatrughna, Guha and a few companions to search for Rāma's hut. He saw the smoke of a fire rising through the trees. “That must be Rāma's āśrama! At last I will see my brother's face!”",
+    "కింద లోయలో ఆశ్రమానికి ఆటంకం కలగకూడదని భరతుడు సైన్యాన్ని ఆపాడు. తర్వాత రాముని పర్ణశాలను వెతుకుతూ శత్రుఘ్నుడు, గుహుడు, కొద్దిమంది సహచరులతో కాలినడకన బయలుదేరాడు. చెట్ల మధ్య నుండి లేస్తున్న అగ్ని పొగను చూశాడు. “అదే రాముని ఆశ్రమం అయి ఉండాలి! చివరికి అన్న ముఖం చూస్తాను!”"
+   ],
+   [
+    "dyk",
+    "💭",
+    "Lakṣmaṇa judged Bharata by appearances — an army must mean war. Rāma judged him by his heart. Both loved Rāma, but only one saw clearly.",
+    "లక్ష్మణుడు భరతుడిని బయటి రూపాన్ని బట్టి అంచనా వేశాడు — సైన్యం అంటే యుద్ధమే అనుకున్నాడు. రాముడు అతని మనసును బట్టి అంచనా వేశాడు. ఇద్దరూ రాముడిని ప్రేమించారు, కానీ ఒక్కరే స్పష్టంగా చూశారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "On Citrakūṭa, Rāma showed Sītā the beautiful peaks and the river Mandākinī.",
+   "చిత్రకూటంలో రాముడు సీతకు అందమైన శిఖరాలను, మందాకినీ నదిని చూపించాడు."
+  ],
+  [
+   "Lakṣmaṇa saw Bharata's army with the kovidāra flag and thought he had come to attack.",
+   "కోవిదార పతాకంతో భరతుని సైన్యాన్ని చూసి దాడికి వచ్చాడని లక్ష్మణుడు అనుకున్నాడు."
+  ],
+  [
+   "Rāma calmed him: Bharata loves us and must have come in peace.",
+   "రాముడు అతనిని శాంతపరిచాడు: భరతుడు మనల్ని ప్రేమిస్తాడు, శాంతితోనే వచ్చి ఉంటాడు."
+  ],
+  [
+   "Rāma worried when he did not see his father's umbrella in the army.",
+   "సైన్యంలో తండ్రి రాజచ్ఛత్రం కనిపించకపోవడంతో రాముడు ఆందోళన చెందాడు."
+  ]
+ ],
+ "think": [
+  "Lakṣmaṇa and Rāma saw the same army but came to opposite conclusions. Why is it important to think before reacting?",
+  "లక్ష్మణుడు, రాముడు ఒకే సైన్యాన్ని చూసి వ్యతిరేక నిర్ణయాలకు వచ్చారు. స్పందించే ముందు ఆలోచించడం ఎందుకు ముఖ్యం?"
+ ]
+},
+{
+ "id": "ayodhya-18",
+ "kanda": "ayodhya",
+ "n": 18,
+ "order": 218,
+ "date": "2026-10-13",
+ "title": "The Brothers Meet",
+ "titleTe": "సోదరుల కలయిక",
+ "sargas": "99–104",
+ "scene": "hill",
+ "who": [
+  "bharata",
+  "rama",
+  "shatrughna",
+  "lakshmana",
+  "sita",
+  "kausalya",
+  "vasishtha"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Bharata came to the clearing. He saw a hut of leaves, and on its walls hung great bows decorated with gold, quivers full of arrows, swords in golden sheaths, and shields. In front of it stood an altar with a sacred fire. And there, seated on the ground in bark clothes and deer-skin, with matted hair, glowing like a fire, was Rāma — with Sītā and Lakṣmaṇa beside him.",
+    "భరతుడు ఆ ఖాళీ ప్రదేశానికి వచ్చాడు. ఒక పర్ణశాల, దాని గోడలపై బంగారంతో అలంకరించిన మహాధనుస్సులు, బాణాలతో నిండిన అమ్ములపొదులు, బంగారు ఒరలలో ఖడ్గాలు, డాళ్ళు వేళ్ళాడుతూ కనిపించాయి. దాని ముందు పవిత్రాగ్నితో ఒక వేదిక ఉంది. అక్కడ నారచీరలు, జింక చర్మం ధరించి, జటలతో, అగ్నిలా ప్రకాశిస్తూ నేలపై కూర్చుని ఉన్నాడు రాముడు — పక్కన సీతా లక్ష్మణులు."
+   ],
+   [
+    "p",
+    "“Ārya!” cried Bharata, and ran towards him, weeping. “My brother, who should be sitting on a throne, sits on the bare ground! He who wore silk wears bark! And it is because of me!” Before he could reach Rāma, he fell to the ground. Śatrughna too fell at Rāma's feet, weeping.",
+    "“ఆర్యా!” అని అరుస్తూ భరతుడు ఏడుస్తూ ఆయన వైపు పరుగెత్తాడు. “సింహాసనంపై కూర్చోవలసిన నా అన్న నేలపై కూర్చున్నాడు! పట్టు ధరించినవాడు నారచీర కట్టాడు! ఇదంతా నా వల్లే!” రాముని చేరకముందే నేలపై కూలిపోయాడు. శత్రుఘ్నుడు కూడా ఏడుస్తూ రాముని పాదాలపై పడ్డాడు."
+   ],
+   [
+    "p",
+    "Rāma could hardly recognise Bharata — he was so thin, so pale, and dressed in bark like a hermit. He lifted his brother up, held him close, and kissed his head. “Bharata, my dear brother! Where is father? Why have you come to the forest, leaving him alone?”",
+    "రాముడు భరతుడిని గుర్తుపట్టలేకపోయాడు — అంత చిక్కిపోయి, పాలిపోయి, మునిలా నారచీర కట్టుకుని ఉన్నాడు. తమ్ముడిని లేపి దగ్గరకు తీసుకుని తలపై ముద్దు పెట్టాడు. “భరతా, నా ప్రియ సోదరా! నాన్నగారు ఎక్కడ? ఆయనను ఒంటరిగా వదిలి అడవికి ఎందుకు వచ్చావు?”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then, as an elder brother should, Rāma asked after everything in the kingdom. “Are you looking after our mothers? Do you honour the gods, the elders and the brāhmaṇas? Do you choose ministers who are honest and brave? Do you take advice from many but keep your plans secret? Do you get up early? Do you pay your soldiers on time? Are the farmers and cattle-keepers happy? Do you protect the weak from the strong, and judge fairly between rich and poor?”",
+    "తర్వాత అన్నగా రాముడు రాజ్యంలోని అన్ని విషయాల గురించి అడిగాడు. “మన తల్లులను చూసుకుంటున్నావా? దేవతలను, పెద్దలను, బ్రాహ్మణులను గౌరవిస్తున్నావా? నిజాయితీపరులు, ధైర్యవంతులైన మంత్రులను ఎంచుకుంటున్నావా? ఎందరి సలహా అయినా తీసుకుంటూ నీ ఆలోచనలను రహస్యంగా ఉంచుతున్నావా? తెల్లవారుజామునే లేస్తున్నావా? సైనికులకు సకాలంలో జీతాలు ఇస్తున్నావా? రైతులు, పశుపాలకులు సంతోషంగా ఉన్నారా? బలవంతుల నుండి బలహీనులను కాపాడుతున్నావా? ధనికులకు, పేదలకు మధ్య న్యాయంగా తీర్పు చెబుతున్నావా?”"
+   ],
+   [
+    "dyk",
+    "📋",
+    "This long list of questions is called the *Kaccit Sarga* — the “Do you…?” chapter. It is a complete lesson in good government, and leaders still study it today.",
+    "ఈ సుదీర్ఘ ప్రశ్నల జాబితాను *కచ్చిత్ సర్గ* — “...చేస్తున్నావా?” అధ్యాయం — అంటారు. ఇది సుపరిపాలనపై సంపూర్ణ పాఠం; నాయకులు ఇప్పటికీ దీనిని అధ్యయనం చేస్తారు."
+   ],
+   [
+    "p",
+    "Bharata wept. “Brother, what use are these questions to me? I am not the king. Our father is gone — he died of grief for you, calling your name, after you left. My mother's wicked deed has ruined everything. I have come to beg you: come back and be our king. The people, the ministers, our mothers — all of us are here to bring you home.”",
+    "భరతుడు ఏడ్చాడు. “అన్నా, ఈ ప్రశ్నల వల్ల నాకేం లాభం? నేను రాజును కాను. మన నాన్నగారు వెళ్ళిపోయారు — నువ్వు వెళ్ళిన తర్వాత నీ పేరు పలుకుతూ నీ కోసం దుఃఖంతో చనిపోయారు. మా అమ్మ చేసిన దుష్కార్యం అంతా నాశనం చేసింది. నిన్ను వేడుకోవడానికే వచ్చాను: తిరిగి వచ్చి మాకు రాజువు కా. ప్రజలు, మంత్రులు, మన తల్లులు — నిన్ను ఇంటికి తీసుకువెళ్ళడానికి అందరం ఇక్కడ ఉన్నాం.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "When Rāma heard that his father was dead, he fell to the ground like a tree struck by lightning. When he came to, he wept bitterly. “What will I do in Ayodhyā now, without my father? Who will guide me? I could not even perform his last rites. Bharata and Śatrughna, you are blessed — you were able to do it.” Sītā and Lakṣmaṇa wept with him.",
+    "తండ్రి మరణించాడని విని రాముడు పిడుగుపాటుకు గురైన చెట్టులా నేలపై పడిపోయాడు. తేరుకున్నాక బోరున ఏడ్చాడు. “నాన్నగారు లేకుండా ఇప్పుడు అయోధ్యలో నేనేం చేయాలి? నాకు దారి చూపేవారెవరు? ఆయనకు అంత్యక్రియలు కూడా చేయలేకపోయాను. భరత శత్రుఘ్నులారా, మీరు ధన్యులు — మీరు ఆ పని చేయగలిగారు.” సీతా లక్ష్మణులు ఆయనతో కలిసి ఏడ్చారు."
+   ],
+   [
+    "p",
+    "Then Rāma went down to the Mandākinī with his brothers and Sītā, and offered water to his father's spirit. He made an offering of food from the pulp of the iṅgudī fruit mixed with jujube berries, and placed it on darbha grass. “Father, accept this with joy. What we eat here in the forest, our ancestors must eat too.”",
+    "తర్వాత రాముడు సోదరులతో, సీతతో కలిసి మందాకినీకి వెళ్ళి తండ్రి ఆత్మకు జలతర్పణం చేశాడు. గార పండ్ల గుజ్జును రేగుపండ్లతో కలిపి పిండం చేసి దర్భలపై ఉంచాడు. “నాన్నగారూ, దీనిని ఆనందంగా స్వీకరించండి. అడవిలో మేము ఏది తింటామో అదే మా పితృదేవతలూ తినాలి.”"
+   ],
+   [
+    "p",
+    "The sound of the four brothers weeping echoed through the mountain, and the soldiers far below heard it and knew that Bharata had found Rāma.",
+    "నలుగురు సోదరుల రోదన ధ్వని పర్వతమంతా ప్రతిధ్వనించింది; దూరంగా కింద ఉన్న సైనికులు అది విని భరతునికి రాముడు దొరికాడని గ్రహించారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Vasiṣṭha came up the path with the three queens. Kausalyā saw the little offering of iṅgudī pulp on the darbha grass and burst into tears. “This is what the son of the great Daśaratha offers to his father? A king who ate from golden plates, offered forest berries?”",
+    "తర్వాత వసిష్ఠుడు ముగ్గురు రాణులతో దారిలో పైకి వచ్చాడు. దర్భలపై ఉన్న గార గుజ్జు పిండాన్ని చూసి కౌసల్య బోరున ఏడ్చింది. “మహారాజు దశరథుని కుమారుడు తండ్రికి సమర్పించేది ఇదా? బంగారు పళ్ళెంలో భుజించిన రాజుకు అడవి రేగుపండ్లా?”"
+   ],
+   [
+    "p",
+    "Rāma ran to his mothers and touched their feet one by one — Kausalyā, Sumitrā and even Kaikeyī, with the same love. Lakṣmaṇa and Sītā did the same. Kausalyā held Sītā close, as a mother holds her daughter. “Child, how thin you have become, like a lotus wilting in the sun. How can a princess of Videha live in the forest?”",
+    "రాముడు తల్లుల దగ్గరకు పరుగెత్తి ఒక్కొక్కరి పాదాలకూ నమస్కరించాడు — కౌసల్యకు, సుమిత్రకు, కైకేయికి కూడా అదే ప్రేమతో. లక్ష్మణుడు, సీత కూడా అలాగే చేశారు. తల్లి కూతురును హత్తుకున్నట్లు కౌసల్య సీతను దగ్గరకు తీసుకుంది. “బిడ్డా, ఎండకు వాడిన తామరలా ఎంత చిక్కిపోయావు. విదేహ రాకుమార్తె అడవిలో ఎలా ఉండగలదు?”"
+   ],
+   [
+    "p",
+    "Rāma bowed to Vasiṣṭha as Indra bows to Bṛhaspati. And the whole assembly — the queens, the ministers, the citizens — sat down around Rāma, waiting to hear what he would say.",
+    "ఇంద్రుడు బృహస్పతికి నమస్కరించినట్లు రాముడు వసిష్ఠునికి నమస్కరించాడు. రాణులు, మంత్రులు, పౌరులు — సభ అంతా రాముడు ఏమి చెబుతాడో వినడానికి ఆయన చుట్టూ కూర్చుంది."
+   ],
+   [
+    "dyk",
+    "🙇",
+    "Rāma bowed to Kaikeyī with the same love as to his own mother. He did not hold anger in his heart, even towards the one who had caused his exile.",
+    "రాముడు సొంత తల్లికి నమస్కరించిన ప్రేమతోనే కైకేయికి కూడా నమస్కరించాడు. తన వనవాసానికి కారణమైనవారి పట్ల కూడా ఆయన మనసులో కోపం ఉంచుకోలేదు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharata found Rāma at his hut on Citrakūṭa and fell at his feet.",
+   "భరతుడు చిత్రకూటంలోని పర్ణశాలలో రాముడిని చూసి ఆయన పాదాలపై పడ్డాడు."
+  ],
+  [
+   "Rāma asked about the kingdom in the famous Kaccit Sarga — a lesson in good government.",
+   "ప్రసిద్ధ కచ్చిత్ సర్గలో రాముడు రాజ్యం గురించి అడిగాడు — సుపరిపాలనపై పాఠం."
+  ],
+  [
+   "Hearing of his father's death, Rāma grieved and offered tarpaṇa at the Mandākinī.",
+   "తండ్రి మరణవార్త విని రాముడు దుఃఖించి మందాకినీ తీరంలో తర్పణం చేశాడు."
+  ],
+  [
+   "The mothers arrived; Rāma bowed to all three, including Kaikeyī, with equal love.",
+   "తల్లులు వచ్చారు; కైకేయితో సహా ముగ్గురికీ రాముడు సమాన ప్రేమతో నమస్కరించాడు."
+  ]
+ ],
+ "think": [
+  "Even in his grief, Rāma asked Bharata whether the farmers were happy and the poor were treated fairly. What does that tell you about what a good leader cares about?",
+  "దుఃఖంలో కూడా రైతులు సంతోషంగా ఉన్నారా, పేదలకు న్యాయం జరుగుతోందా అని రాముడు భరతుడిని అడిగాడు. మంచి నాయకుడు దేని గురించి శ్రద్ధ వహిస్తాడో దీని వల్ల ఏమి తెలుస్తుంది?"
+ ]
+},
+{
+ "id": "ayodhya-19",
+ "kanda": "ayodhya",
+ "n": 19,
+ "order": 219,
+ "date": "2026-10-13",
+ "title": "Bharata's Plea and the Pādukās",
+ "titleTe": "భరతుని ప్రార్థన, పాదుకలు",
+ "sargas": "105–112",
+ "scene": "paduka",
+ "who": [
+  "bharata",
+  "rama",
+  "jabali",
+  "vasishtha",
+  "kaikeyi"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "The next morning Bharata folded his hands before Rāma in front of everyone. “Brother, father gave the kingdom to me, and I give it to you. Take it. I cannot carry it — just as a donkey cannot keep pace with a horse, or a crow fly like Garuḍa. Be crowned here, today, and let the people rejoice.”",
+    "మరుసటి ఉదయం అందరి ఎదుట భరతుడు రాముని ముందు చేతులు జోడించాడు. “అన్నా, నాన్నగారు రాజ్యాన్ని నాకు ఇచ్చారు; నేను దానిని నీకు ఇస్తున్నాను. స్వీకరించు. దానిని నేను మోయలేను — గాడిద గుర్రంతో సమానంగా పరుగెత్తలేనట్లు, కాకి గరుడునిలా ఎగరలేనట్లు. ఈ రోజే ఇక్కడే పట్టాభిషిక్తుడవై ప్రజలను ఆనందింపజేయి.”"
+   ],
+   [
+    "p",
+    "Rāma answered gently. “Bharata, no one is free to do just as he likes. Time drags everyone along. Think of it this way:”",
+    "రాముడు మృదువుగా జవాబిచ్చాడు. “భరతా, ఎవరూ తమ ఇష్టం వచ్చినట్లు చేయలేరు. కాలం అందరినీ లాక్కువెళ్తుంది. ఇలా ఆలోచించు:”"
+   ],
+   [
+    "sloka",
+    [
+     "సర్వే క్షయాంతా నిచయాః",
+     "పతనాంతాః సముచ్ఛ్రయాః ।",
+     "సంయోగా విప్రయోగాంతా",
+     "మరణాంతం చ జీవితమ్ ॥"
+    ],
+    [
+     "sarve kṣayāntā nicayāḥ",
+     "patanāntāḥ samucchrayāḥ ।",
+     "saṃyogā viprayogāntā",
+     "maraṇāntaṃ ca jīvitam ॥"
+    ],
+    "Everything gathered ends in loss; everything raised up ends in a fall; every meeting ends in parting; and every life ends in death.",
+    "కూడబెట్టినవన్నీ క్షీణించి ముగుస్తాయి; పైకి లేచినవన్నీ పతనంతో ముగుస్తాయి; ప్రతి కలయికా వియోగంతో ముగుస్తుంది; ప్రతి జీవితం మరణంతో ముగుస్తుంది."
+   ],
+   [
+    "p",
+    "“Father lived a full life of dharma and has gone to heaven. We should not grieve for him beyond measure. And I must keep the word he gave. You rule Ayodhyā, and I will live in the forest, as father wished.”",
+    "“నాన్నగారు ధర్మబద్ధమైన పూర్ణ జీవితం గడిపి స్వర్గానికి వెళ్ళారు. హద్దు మీరి ఆయన కోసం బాధపడకూడదు. ఆయన ఇచ్చిన మాటను నేను నిలబెట్టాలి. నువ్వు అయోధ్యను పాలించు; నాన్నగారు కోరినట్లు నేను అడవిలో ఉంటాను.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Bharata argued and pleaded. “Father was deceived. He acted out of love for my mother, not out of dharma. Why should you keep a promise made like that?”",
+    "భరతుడు వాదించాడు, వేడుకున్నాడు. “నాన్నగారు మోసపోయారు. ధర్మంతో కాదు, మా అమ్మ పట్ల ప్రేమతో అలా చేశారు. అలా ఇచ్చిన మాటను నువ్వెందుకు నిలబెట్టాలి?”"
+   ],
+   [
+    "p",
+    "Then Rāma told him something Bharata had never known. “Bharata, when father married your mother, long ago, he promised your grandfather, the king of Kekaya, that the son born of Kaikeyī would one day rule the kingdom. And later he gave her the two boons as well. So father was not wrong. Rule Ayodhyā with a clear heart — you will be king of the people, and I will be king of the forest animals.”",
+    "అప్పుడు భరతునికి ఎప్పుడూ తెలియని ఒక విషయం రాముడు చెప్పాడు. “భరతా, చాలా కాలం క్రితం నాన్నగారు మీ అమ్మను వివాహం చేసుకున్నప్పుడు, కైకేయికి పుట్టిన కుమారుడే ఒకరోజు రాజ్యాన్ని పాలిస్తాడని మీ తాతగారైన కేకయ రాజుకు మాట ఇచ్చారు. తర్వాత ఆమెకు రెండు వరాలు కూడా ఇచ్చారు. కనుక నాన్నగారు తప్పు చేయలేదు. స్వచ్ఛమైన మనసుతో అయోధ్యను పాలించు — నువ్వు ప్రజలకు రాజువు, నేను అడవి జంతువులకు రాజును.”"
+   ],
+   [
+    "dyk",
+    "💍",
+    "Vālmīki tells us this surprising fact: Daśaratha had promised the kingdom to Kaikeyī's son at their wedding. So Kaikeyī's demand was not entirely without reason.",
+    "వాల్మీకి ఈ ఆశ్చర్యకరమైన విషయం చెబుతాడు: వివాహ సమయంలోనే కైకేయి కుమారునికి రాజ్యం ఇస్తానని దశరథుడు మాట ఇచ్చాడు. కనుక కైకేయి కోరికకు పూర్తిగా కారణం లేకపోలేదు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then the learned priest {jabali|Jābāli} stood up. “Rāma, why do you think like a simple man? Who is anyone's father? Every person comes into the world alone and goes alone. Daśaratha was just a body, and now he is gone. There is no world after this one — that is only a story told by priests to make people give gifts. Enjoy what is in front of you. Take the kingdom!”",
+    "అప్పుడు విద్వాంసుడైన పురోహితుడు {jabali|జాబాలి} లేచి నిలబడ్డాడు. “రామా, సామాన్యునిలా ఎందుకు ఆలోచిస్తున్నావు? ఎవరికి ఎవరు తండ్రి? ప్రతి ఒక్కరూ ఒంటరిగా పుడతారు, ఒంటరిగా వెళ్ళిపోతారు. దశరథుడు కేవలం ఒక శరీరం; ఇప్పుడు ఆయన లేరు. ఈ లోకం తర్వాత మరో లోకం లేదు — ప్రజలచేత దానాలు ఇప్పించడానికి పురోహితులు చెప్పే కథ అది. కళ్ళ ముందున్నదాన్ని అనుభవించు. రాజ్యం తీసుకో!”"
+   ],
+   [
+    "p",
+    "Rāma's face hardened. “Jābāli, your words sound clever, but they lead away from dharma. Truth is the root of this world. Truth is the highest dharma; even the gods honour it. A king who speaks falsely is followed by a kingdom of liars. I will not break the word I gave to my father — not for a kingdom, not for anything.”",
+    "రాముని ముఖం కఠినమైంది. “జాబాలీ, నీ మాటలు తెలివిగా వినిపిస్తాయి, కానీ అవి ధర్మం నుండి దూరం చేస్తాయి. సత్యమే ఈ లోకానికి మూలం. సత్యమే పరమ ధర్మం; దేవతలు కూడా దానిని గౌరవిస్తారు. అబద్ధమాడే రాజు వెనుక అబద్ధాలకోరుల రాజ్యం నడుస్తుంది. నాన్నగారికి ఇచ్చిన మాటను తప్పను — రాజ్యం కోసం కాదు, దేని కోసమూ కాదు.”"
+   ],
+   [
+    "p",
+    "Vasiṣṭha spoke kindly. “Rāma, Jābāli does not truly believe what he said — he only said it to persuade you to come back. But hear me: in the Ikṣvāku line, the eldest son has always become king. And I am your guru — obey me.” “Guru,” said Rāma, “my father's command comes first. I cannot break it.”",
+    "వసిష్ఠుడు ప్రేమగా మాట్లాడాడు. “రామా, జాబాలి నిజంగా అలా నమ్మడు — నిన్ను తిరిగి రప్పించడానికే అలా అన్నాడు. కానీ నా మాట విను: ఇక్ష్వాకు వంశంలో ఎప్పుడూ పెద్ద కుమారుడే రాజయ్యాడు. నేను నీ గురువును — నా మాట విను.” “గురువర్యా,” అన్నాడు రాముడు, “నాన్నగారి ఆజ్ఞకే ప్రథమ స్థానం. దానిని అతిక్రమించలేను.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Bharata said to Sumantra, “Spread kuśa grass here. I will sit before Rāma's hut and fast until he agrees to come back.” And he lay down on the ground in front of the hut.",
+    "అప్పుడు భరతుడు సుమంత్రునితో, “ఇక్కడ దర్భలు పరువు. రాముడు తిరిగి రావడానికి అంగీకరించే వరకు ఆయన పర్ణశాల ముందు ఉపవాసం ఉంటాను” అని, పర్ణశాల ఎదుట నేలపై పడుకున్నాడు."
+   ],
+   [
+    "p",
+    "“Get up, Bharata,” said Rāma. “A kṣatriya does not force others by fasting — that is not our way.” Bharata turned to the people. “Why do you say nothing? Help me!” But they answered, “We cannot ask Rāma to break his word. He is right.” “Then let me stay in the forest in his place for fourteen years,” Bharata pleaded, “and let him go home and rule.” “That cannot be,” said Rāma gently. “A promise cannot be traded. It is mine to keep.”",
+    "“లే భరతా,” అన్నాడు రాముడు. “ఉపవాసంతో ఇతరులను బలవంతపెట్టడం క్షత్రియుల పద్ధతి కాదు.” భరతుడు ప్రజల వైపు తిరిగాడు. “మీరెందుకు మాట్లాడరు? నాకు సహాయం చేయండి!” కానీ వారు, “రాముడిని మాట తప్పమని మేము అడగలేము. ఆయన చెప్పింది సరైనదే” అన్నారు. “అయితే ఆయన స్థానంలో పద్నాలుగేళ్ళు నన్ను అడవిలో ఉండనివ్వండి,” అని భరతుడు వేడుకున్నాడు, “ఆయన ఇంటికి వెళ్ళి పాలించనివ్వండి.” “అది కుదరదు,” అన్నాడు రాముడు మృదువుగా. “మాటను మార్చుకోలేము. అది నేనే నిలబెట్టాలి.”"
+   ],
+   [
+    "p",
+    "At that moment the great sages appeared in the sky and spoke to Bharata. “Bharata, Rāma is right. If you love him, accept his word, so that he may be free from his debt to his father.”",
+    "ఆ క్షణంలో మహర్షులు ఆకాశంలో ప్రత్యక్షమై భరతునితో ఇలా అన్నారు: “భరతా, రాముడు చెప్పింది సరైనదే. నువ్వు ఆయనను ప్రేమిస్తే, తండ్రి ఋణం నుండి ఆయన విముక్తుడయ్యేలా ఆయన మాటను అంగీకరించు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Bharata bowed his head. Then he took out a pair of wooden sandals decorated with gold. “Then, brother, step into these pādukās and give them to me. They will rule the kingdom in your place. I will live outside the city in bark and matted hair, eating fruits and roots, and I will look after the kingdom only as your servant. And if you do not come back on the very first day after the fourteen years are over, I will enter the fire.”",
+    "భరతుడు తల వంచాడు. తర్వాత బంగారంతో అలంకరించిన ఒక జత చెక్క పాదుకలను తీశాడు. “అయితే అన్నా, ఈ పాదుకలు తొడిగి నాకు ఇవ్వు. నీ స్థానంలో అవే రాజ్యాన్ని పాలిస్తాయి. నారచీరలు, జటలు ధరించి, పండ్లు, దుంపలు తింటూ నగరం బయట ఉంటాను; నీ సేవకునిగా మాత్రమే రాజ్యాన్ని చూసుకుంటాను. పద్నాలుగేళ్ళు పూర్తయిన మరుసటి రోజే నువ్వు తిరిగి రాకపోతే అగ్నిప్రవేశం చేస్తాను.”"
+   ],
+   [
+    "p",
+    "Rāma embraced him. “So be it.” He stepped into the sandals, then took them off and gave them to Bharata. “Look after our mothers, Bharata. And do not be angry with Kaikeyī — treat her with respect. I ask this of you, by me and by Sītā.”",
+    "రాముడు అతనిని ఆలింగనం చేసుకున్నాడు. “అలాగే.” పాదుకలు తొడిగి, తర్వాత విడిచి భరతునికి ఇచ్చాడు. “భరతా, మన తల్లులను చూసుకో. కైకేయిపై కోపం పెట్టుకోకు — ఆమెను గౌరవంగా చూడు. నా మీద, సీత మీద ఒట్టు పెట్టి ఇది అడుగుతున్నాను.”"
+   ],
+   [
+    "p",
+    "Bharata placed the pādukās on his head with great reverence, walked around Rāma, and bowed to him. Then, weeping, the brothers parted.",
+    "భరతుడు ఎంతో భక్తితో పాదుకలను తలపై పెట్టుకుని, రామునికి ప్రదక్షిణ చేసి నమస్కరించాడు. తర్వాత కన్నీళ్ళతో సోదరులు విడిపోయారు."
+   ],
+   [
+    "dyk",
+    "👣",
+    "*Pādukā Paṭṭābhiṣekam* — the coronation of Rāma's sandals — is one of the most beloved symbols of devotion and selfless service in our tradition.",
+    "*పాదుకా పట్టాభిషేకం* — రాముని పాదుకలకు పట్టాభిషేకం — మన సంప్రదాయంలో భక్తికి, నిస్వార్థ సేవకు అత్యంత ప్రియమైన ప్రతీకలలో ఒకటి."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharata begged Rāma to return and rule; Rāma said every meeting ends in parting and he must keep his father's word.",
+   "తిరిగి వచ్చి పాలించమని భరతుడు వేడుకున్నాడు; ప్రతి కలయికా వియోగంతో ముగుస్తుందని, తండ్రి మాట నిలబెట్టాలని రాముడు చెప్పాడు."
+  ],
+  [
+   "Rāma revealed that Daśaratha had promised the kingdom to Kaikeyī's son at their wedding.",
+   "వివాహ సమయంలోనే కైకేయి కుమారునికి రాజ్యం ఇస్తానని దశరథుడు మాట ఇచ్చాడని రాముడు వెల్లడించాడు."
+  ],
+  [
+   "Jābāli argued that nothing matters but this life; Rāma replied that truth is the root of the world.",
+   "ఈ జీవితం తప్ప ఏదీ ముఖ్యం కాదని జాబాలి వాదించాడు; సత్యమే లోకానికి మూలమని రాముడు జవాబిచ్చాడు."
+  ],
+  [
+   "Bharata fasted, then asked for Rāma's pādukās to rule in his place.",
+   "భరతుడు ఉపవాసం చేశాడు; తర్వాత తన స్థానంలో పాలించడానికి రాముని పాదుకలు అడిగాడు."
+  ],
+  [
+   "Rāma gave them, and asked Bharata to treat Kaikeyī with respect.",
+   "రాముడు వాటిని ఇచ్చి, కైకేయిని గౌరవంగా చూడమని భరతుడిని కోరాడు."
+  ]
+ ],
+ "think": [
+  "Bharata could not change Rāma's mind, so he found another way to serve him. When you cannot get what you want, how can you still do something good?",
+  "రాముని మనసు మార్చలేకపోయినా, ఆయనను సేవించడానికి భరతుడు వేరే మార్గం కనుగొన్నాడు. మీరు కోరినది దక్కనప్పుడు కూడా మంచి పని ఎలా చేయగలరు?"
+ ]
+},
+{
+ "id": "ayodhya-20",
+ "kanda": "ayodhya",
+ "n": 20,
+ "order": 220,
+ "date": "2026-10-13",
+ "title": "Nandigrāma, Atri and Anasūyā",
+ "titleTe": "నందిగ్రామం, అత్రి, అనసూయ",
+ "sargas": "113–119",
+ "scene": "ahalya",
+ "who": [
+  "bharata",
+  "rama",
+  "sita",
+  "atri",
+  "anasuya",
+  "lakshmana"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Bharata placed Rāma's pādukās on the head of the royal elephant Śatruñjaya and set out for home with the whole procession. They stopped to thank Bharadvāja, and crossed the Gaṅgā with Guha's help. But when they reached Ayodhyā, the city was still dark and empty, like a night without the moon. Without Rāma, nothing shone.",
+    "భరతుడు రాముని పాదుకలను రాజగజం శత్రుంజయం తలపై ఉంచి, ఊరేగింపుతో ఇంటికి బయలుదేరాడు. భరద్వాజునికి కృతజ్ఞతలు చెప్పడానికి ఆగారు; గుహుని సహాయంతో గంగను దాటారు. కానీ అయోధ్యకు చేరేసరికి నగరం ఇంకా చంద్రుడు లేని రాత్రిలా చీకటిగా, శూన్యంగా ఉంది. రాముడు లేకుండా ఏదీ ప్రకాశించలేదు."
+   ],
+   [
+    "p",
+    "Bharata would not live in the palace. He went to the village of Nandigrāma, just outside the city. There he placed Rāma's pādukās on the royal throne, held the white umbrella over them, and had the yak-tail fans waved before them, as for a king. He wore bark and matted hair and slept on the ground. Every matter of the kingdom he first reported to the pādukās, and every gift that came to the kingdom he placed before them. For fourteen years he ruled — not as king, but as Rāma's servant.",
+    "భరతుడు రాజభవనంలో ఉండలేదు. నగరానికి కొంచెం బయట ఉన్న నందిగ్రామానికి వెళ్ళాడు. అక్కడ రాముని పాదుకలను రాజసింహాసనంపై ఉంచి, వాటిపై తెల్లని గొడుగు పట్టి, రాజుకు వలె వింజామరలు వీచాడు. నారచీరలు, జటలు ధరించి నేలపై పడుకున్నాడు. రాజ్యంలోని ప్రతి విషయాన్నీ ముందుగా పాదుకలకు నివేదించాడు; రాజ్యానికి వచ్చిన ప్రతి కానుకనూ వాటి ఎదుట ఉంచాడు. పద్నాలుగేళ్ళు పాలించాడు — రాజుగా కాదు, రాముని సేవకునిగా."
+   ],
+   [
+    "dyk",
+    "🏛️",
+    "Nandigrāma still exists near Ayodhyā, and the place where Bharata kept the pādukās is visited by pilgrims to this day.",
+    "నందిగ్రామం ఇప్పటికీ అయోధ్య దగ్గర ఉంది; భరతుడు పాదుకలను ఉంచిన ప్రదేశాన్ని ఈ రోజుకూ యాత్రికులు దర్శిస్తారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "On Citrakūṭa, Rāma began to notice that the sages were worried and whispering among themselves. “What is wrong?” he asked. An old sage explained: “Rāma, since you came here, the rākṣasas have begun to hate this place. Khara, Rāvaṇa's brother, is harassing the sages — spoiling their yajñas and frightening them. Many of us are leaving for safer places.”",
+    "చిత్రకూటంలో మునులు ఆందోళనగా ఒకరితో ఒకరు గుసగుసలాడుకుంటున్నారని రాముడు గమనించాడు. “ఏమైంది?” అని అడిగాడు. ఒక వృద్ధ ముని వివరించాడు: “రామా, నువ్వు ఇక్కడికి వచ్చినప్పటి నుండి రాక్షసులు ఈ ప్రదేశాన్ని ద్వేషిస్తున్నారు. రావణుని సోదరుడు ఖరుడు మునులను వేధిస్తున్నాడు — యాగాలు భంగం చేస్తూ, భయపెడుతూ. మాలో చాలామంది సురక్షిత ప్రదేశాలకు వెళ్ళిపోతున్నాం.”"
+   ],
+   [
+    "p",
+    "Rāma too felt it was time to leave. Everything at Citrakūṭa reminded him of Bharata, of his mothers and of the sorrowful parting — and the army had trampled the meadows. So he, Sītā and Lakṣmaṇa set out further south.",
+    "రామునికి కూడా బయలుదేరే సమయం వచ్చిందనిపించింది. చిత్రకూటంలో ప్రతిదీ భరతుడిని, తల్లులను, బాధాకరమైన వీడ్కోలును గుర్తుచేస్తోంది — సైన్యం పచ్చిక బయళ్ళను తొక్కేసింది కూడా. అందుకే ఆయన, సీత, లక్ష్మణుడు మరింత దక్షిణానికి బయలుదేరారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "They came to the āśrama of the great sage {atri|Atri}, one of the seven Saptarṣis. Atri welcomed them like his own sons. Then he called his wife, {anasuya|Anasūyā} — very old, her hair white, her body trembling like a plantain leaf in the wind, but shining with the power of her tapas.",
+    "వారు సప్తర్షులలో ఒకరైన మహర్షి {atri|అత్రి} ఆశ్రమానికి వచ్చారు. అత్రి వారిని సొంత కొడుకుల్లా స్వాగతించాడు. తర్వాత తన భార్య {anasuya|అనసూయను} పిలిచాడు — ఎంతో వృద్ధురాలు, తెల్లని జుట్టు, గాలికి అరటి ఆకులా వణికే శరీరం, కానీ తపశ్శక్తితో ప్రకాశిస్తోంది."
+   ],
+   [
+    "p",
+    "“Sītā,” said Atri, “go to her as you would to your own mother. Once, when there was no rain for ten years and the world was burning, Anasūyā by her tapas made fruits and roots grow and caused the Gaṅgā to flow here. Once, to help a woman in trouble, she made ten nights into one. She is the most honoured of women.”",
+    "“సీతా,” అన్నాడు అత్రి, “సొంత తల్లి దగ్గరకు వెళ్ళినట్లు ఆమె దగ్గరకు వెళ్ళు. ఒకప్పుడు పదేళ్ళు వర్షం లేక లోకం అల్లాడుతున్నప్పుడు, అనసూయ తపశ్శక్తితో పండ్లు, దుంపలు పండించి, ఇక్కడ గంగను ప్రవహింపజేసింది. ఒకప్పుడు కష్టంలో ఉన్న ఒక స్త్రీకి సహాయం చేయడానికి పది రాత్రులను ఒక్క రాత్రిగా మార్చింది. స్త్రీలలో ఆమె అత్యంత పూజనీయురాలు.”"
+   ],
+   [
+    "p",
+    "Sītā bowed at Anasūyā's feet. The old lady held her lovingly. “Sītā, you have left your family, your wealth and your comfort to follow your husband into the forest. Blessed are you. A wife who loves her husband, whether he is in a city or a forest, rich or poor, reaches the highest worlds.”",
+    "సీత అనసూయ పాదాలకు నమస్కరించింది. ఆ వృద్ధురాలు ఆమెను ప్రేమగా దగ్గరకు తీసుకుంది. “సీతా, భర్తను అనుసరించడానికి నీ కుటుంబాన్ని, సంపదను, సుఖాన్ని వదిలి అడవికి వచ్చావు. నువ్వు ధన్యురాలివి. భర్త నగరంలో ఉన్నా అడవిలో ఉన్నా, ధనవంతుడైనా పేదవాడైనా అతనిని ప్రేమించే భార్య ఉత్తమ లోకాలను చేరుకుంటుంది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“I am so pleased with you,” said Anasūyā, “that I want to give you something.” She gave Sītā a divine garland, beautiful garments, jewels, and a fragrant ointment. “These will never fade or grow old. Wear them, and you will always shine beside Rāma, as Lakṣmī shines beside Viṣṇu.”",
+    "“నీ మీద నాకు ఎంతో సంతోషంగా ఉంది,” అంది అనసూయ, “నీకు ఏదైనా ఇవ్వాలనుకుంటున్నాను.” సీతకు దివ్యమైన పూలమాల, అందమైన వస్త్రాలు, ఆభరణాలు, సుగంధ లేపనం ఇచ్చింది. “ఇవి ఎప్పటికీ వాడిపోవు, పాతబడవు. వీటిని ధరించు; విష్ణువు పక్కన లక్ష్మిలా రాముని పక్కన ఎప్పుడూ ప్రకాశిస్తావు.”"
+   ],
+   [
+    "p",
+    "Then Anasūyā said, “Tell me, child — how did Rāma win you? I have heard there was a svayaṃvara.” Sītā smiled and told her the whole story: how King Janaka had found her in the furrow of a field; how he had worried about finding a worthy husband; how Śiva's great bow was kept for the test; how kings came and failed; and how Rāma, the son of Daśaratha, lifted it, strung it and broke it, and how her father gave her to him beside the sacred fire.",
+    "తర్వాత అనసూయ, “బిడ్డా, చెప్పు — రాముడు నిన్ను ఎలా గెలుచుకున్నాడు? స్వయంవరం జరిగిందని విన్నాను” అంది. సీత చిరునవ్వుతో కథంతా చెప్పింది: పొలంలోని నాగటిచాలులో జనక మహారాజు తనను ఎలా కనుగొన్నాడో; యోగ్యుడైన వరుని గురించి ఆయన ఎలా ఆందోళన చెందాడో; పరీక్ష కోసం శివుని మహాధనుస్సును ఎలా ఉంచారో; రాజులు వచ్చి ఎలా విఫలమయ్యారో; దశరథ కుమారుడు రాముడు దానిని ఎత్తి, నారి ఎక్కించి, ఎలా విరిచాడో; పవిత్రాగ్ని సాక్షిగా తండ్రి తనను ఆయనకు ఎలా ఇచ్చాడో."
+   ],
+   [
+    "p",
+    "Anasūyā listened with delight and embraced her. “What a wonderful story! Now it is night, and the birds have gone to their nests. Put on these gifts, Sītā, and go to Rāma.” That evening Sītā came to Rāma wearing Anasūyā's gifts, and he rejoiced to see her so happy.",
+    "అనసూయ ఆనందంగా విని ఆమెను కౌగిలించుకుంది. “ఎంత అద్భుతమైన కథ! ఇప్పుడు రాత్రైంది; పక్షులు గూళ్ళకు చేరాయి. సీతా, ఈ కానుకలు ధరించి రాముని దగ్గరకు వెళ్ళు.” ఆ సాయంత్రం అనసూయ కానుకలు ధరించి సీత రాముని దగ్గరకు వచ్చింది; ఆమె అంత సంతోషంగా ఉండటం చూసి ఆయన ఆనందించాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The next morning, the sages of Atri's āśrama showed them the way. “Rāma, beyond here lies the great Daṇḍaka forest. Rākṣasas and wild beasts roam there, and they trouble the sages who live in its depths. Take this path — the one the sages use to gather fruits and flowers. May you be safe.”",
+    "మరుసటి ఉదయం అత్రి ఆశ్రమ మునులు వారికి దారి చూపారు. “రామా, ఇక్కడి నుండి అవతల మహా దండకారణ్యం ఉంది. అక్కడ రాక్షసులు, క్రూర జంతువులు తిరుగుతుంటాయి; దాని లోతుల్లో నివసించే మునులను బాధిస్తుంటాయి. ఈ దారిలో వెళ్ళండి — పండ్లు, పూలు సేకరించడానికి మునులు వెళ్ళే దారి ఇదే. మీకు క్షేమం కలుగుగాక.”"
+   ],
+   [
+    "p",
+    "Rāma, Sītā and Lakṣmaṇa bowed to the sages, and walked into the deep, dark Daṇḍaka forest — like the sun disappearing into a bank of clouds.",
+    "రాముడు, సీత, లక్ష్మణుడు మునులకు నమస్కరించి, దట్టమైన, చీకటి దండకారణ్యంలోకి నడిచారు — మేఘాల గుంపులోకి సూర్యుడు ప్రవేశించినట్లు."
+   ],
+   [
+    "p",
+    "So ends the Ayodhyā Kāṇḍa. Ahead lie the forest, the sages, the rākṣasas — and the greatest test of Rāma's life.",
+    "అలా అయోధ్యాకాండ ముగుస్తుంది. ముందు అడవి, మునులు, రాక్షసులు — రాముని జీవితంలో అతి గొప్ప పరీక్ష ఎదురుచూస్తున్నాయి."
+   ],
+   [
+    "dyk",
+    "🙏",
+    "Atri and Anasūyā are the parents of Lord Dattātreya, who is worshipped as Brahmā, Viṣṇu and Śiva in one form.",
+    "అత్రి, అనసూయలు దత్తాత్రేయ స్వామి తల్లిదండ్రులు; బ్రహ్మ, విష్ణు, శివుల ఏకరూపంగా ఆయనను పూజిస్తారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharata placed Rāma's pādukās on the throne at Nandigrāma and ruled as their servant.",
+   "భరతుడు నందిగ్రామంలో రాముని పాదుకలను సింహాసనంపై ఉంచి వాటి సేవకునిగా పాలించాడు."
+  ],
+  [
+   "As rākṣasas troubled the sages, Rāma left Citrakūṭa and went south.",
+   "రాక్షసులు మునులను బాధిస్తుండటంతో రాముడు చిత్రకూటం విడిచి దక్షిణానికి వెళ్ళాడు."
+  ],
+  [
+   "At Atri's āśrama, Anasūyā blessed Sītā with gifts that would never fade.",
+   "అత్రి ఆశ్రమంలో అనసూయ ఎప్పటికీ వాడిపోని కానుకలతో సీతను ఆశీర్వదించింది."
+  ],
+  [
+   "Sītā told Anasūyā the story of her svayaṃvara.",
+   "సీత తన స్వయంవర కథను అనసూయకు చెప్పింది."
+  ],
+  [
+   "The three entered the great Daṇḍaka forest.",
+   "ముగ్గురూ మహా దండకారణ్యంలోకి ప్రవేశించారు."
+  ]
+ ],
+ "think": [
+  "Bharata had all the power of a king, but chose to act only as Rāma's servant. What is the difference between having power and using it for yourself?",
+  "భరతునికి రాజుకుండే అధికారమంతా ఉంది, కానీ రాముని సేవకునిగానే నడుచుకున్నాడు. అధికారం ఉండటానికీ, దానిని సొంతానికి వాడుకోవడానికీ తేడా ఏమిటి?"
  ]
 }
 ]);
