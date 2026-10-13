@@ -8,11 +8,17 @@
 //   ['more', titleEn, titleTe, noteEn, noteTe, blocks[]]   tap-to-open box
 // Reading progress stays on this phone (localStorage 'vedic_rmy').
 (function () {
+  // [key, name, Telugu, subtitle, Telugu subtitle, icon, gradient, photo]
   const KANDAS = [
-    ['bala', 'Bāla', 'బాల'], ['ayodhya', 'Ayodhyā', 'అయోధ్య'], ['aranya', 'Araṇya', 'అరణ్య'],
-    ['kishkindha', 'Kiṣkindhā', 'కిష్కింధ'], ['sundara', 'Sundara', 'సుందర'], ['yuddha', 'Yuddha', 'యుద్ధ'], ['uttara', 'Uttara', 'ఉత్తర'],
+    ['bala', 'Bāla Kāṇḍa', 'బాల కాండ', 'The Book of Childhood', 'బాల్యం', '🏹', 'linear-gradient(160deg,#5a1e06,#e08a2c)', 'icons/tile-ramayana.jpg'],
+    ['ayodhya', 'Ayodhyā Kāṇḍa', 'అయోధ్య కాండ', 'The Book of Ayodhyā', 'పట్టాభిషేకం, వనవాసం', '👑', 'linear-gradient(160deg,#4a1a3a,#c0507a)'],
+    ['aranya', 'Araṇya Kāṇḍa', 'అరణ్య కాండ', 'The Book of the Forest', 'అడవిలో జీవితం', '🌲', 'linear-gradient(160deg,#0f3a22,#3f9a5a)'],
+    ['kishkindha', 'Kiṣkindhā Kāṇḍa', 'కిష్కింధ కాండ', 'The Kingdom of the Vānaras', 'వానర రాజ్యం', '🐒', 'linear-gradient(160deg,#5a3a0a,#c8902a)'],
+    ['sundara', 'Sundara Kāṇḍa', 'సుందర కాండ', 'The Beautiful Book — Hanumān', 'హనుమంతుని సాహసం', '🙏', 'linear-gradient(160deg,#0a2a5a,#2a7ac0)'],
+    ['yuddha', 'Yuddha Kāṇḍa', 'యుద్ధ కాండ', 'The Book of the War', 'లంకా యుద్ధం', '⚔️', 'linear-gradient(160deg,#4a0a0a,#c03a2a)'],
+    ['uttara', 'Uttara Kāṇḍa', 'ఉత్తర కాండ', 'The Later Book', 'తరువాతి కథ', '🪷', 'linear-gradient(160deg,#2a1a4a,#8a5ac0)'],
   ];
-  const KANDA_SUB = { bala: 'The Book of Childhood' };
+  const KMETA = k => KANDAS.find(x => x[0] === k) || KANDAS[0];
   const NEW_DAYS = 21;
   const FS = ['1.08rem', '1.22rem', '1.38rem', '1.6rem'];
 
@@ -89,38 +95,70 @@
 
   // ── book home ──
   window.openRamayana = () => { state.kids = ''; showView('ramayana'); };
+  window.openRmyKanda = k => { state.kids = 'k:' + k; showView('ramayana'); };
   window.openRmyChapter = id => { state.kids = id; showView('rmyread'); };
+  // state.kids: '' → the seven kāṇḍas; 'k:<kanda>' → that kāṇḍa's chapters
+  const cover = () => `<div class="cover">
+      <svg class="bow" viewBox="0 0 100 200" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M30 10 C95 60 95 140 30 190"/><path d="M30 10 L30 190" stroke-width="2"/><path d="M10 100 L88 100" stroke-width="3"/><path d="M80 92 L92 100 L80 108"/></svg>
+      <h1>Śrī Rāmāyaṇa</h1><div class="h1te">శ్రీ రామాయణం</div>
+      <p>Vālmīki's story of Rāma, retold for the whole family.</p>
+      <div class="byline">Retold by <b>Hari Pokkuluri</b><span class="te">కథనం: హరి పొక్కులూరి</span></div>
+    </div>`;
+  function continueCard() {
+    const cont = chap(S.last) || chapters()[0];
+    if (!cont) return '';
+    const pct = Math.round(((S.pos[cont.id] || 0) / (cont.pages.length + 1)) * 100);
+    return `<div class="continue" onclick="openRmyChapter('${cont.id}')">
+      <div class="thumb">${scene(cont.scene, 't')}</div>
+      <div class="ci"><small>${S.pos[cont.id] ? 'Continue reading' : 'Start reading'}</small><b>${esc(cont.title)}</b>
+      <span>${KMETA(cont.kanda)[1]} · Chapter ${cont.n}</span><div class="bar"><i style="width:${pct}%"></i></div></div>
+      <span class="go">▶</span></div>`;
+  }
   window.renderRamayana = function () {
     const el = document.getElementById('view-ramayana');
-    const kanda = 'bala';
-    const list = chapters().filter(c => c.kanda === kanda);
-    const cont = chap(S.last) || list[0];
-    const contPct = cont ? Math.round(((S.pos[cont.id] || 0) / (cont.pages.length + 1)) * 100) : 0;
-    const rows = plan(kanda).map((p, i) => {
+    const sel = (state.kids || '').startsWith('k:') ? state.kids.slice(2) : '';
+    if (sel) { renderKanda(el, sel); return; }
+    const tiles = KANDAS.map(([k, n, nt, sub, subTe, icon, grad, photo], i) => {
+      const list = chapters().filter(c => c.kanda === k), total = plan(k).length;
+      const read = list.filter(c => S.done[c.id]).length, fresh = list.some(isNew);
+      const meta = list.length ? `${list.length}${total ? ' of ' + total : ''} chapters${read ? ' · ' + read + ' read' : ''}` : 'Coming soon';
+      return `<button class="ktile${list.length ? '' : ' soon'}" onclick="openRmyKanda('${k}')">
+        <span class="kbg" style="background:${grad}"></span>
+        ${photo ? `<span class="kphoto" style="background-image:url('${photo}')"></span><span class="kshade"></span>` : ''}
+        ${fresh ? '<span class="knew">NEW</span>' : ''}
+        <span class="kno">${i + 1}</span>
+        ${photo ? '' : `<span class="kic">${icon}</span>`}
+        <span class="kname">${n}</span><span class="kte">${nt}</span>
+        <span class="kmeta">${meta}</span>
+      </button>`;
+    }).join('');
+    el.innerHTML = `<div class="rmy">${cover()}${continueCard()}
+      <div class="sec-t">The Seven Kāṇḍas · ఏడు కాండలు</div>
+      <div class="kgrid">${tiles}</div></div>`;
+  };
+  function renderKanda(el, k) {
+    const [key, n, nt, sub, subTe, icon, grad, photo] = KMETA(k);
+    const list = chapters().filter(c => c.kanda === key), pl = plan(key);
+    const read = list.filter(c => S.done[c.id]).length;
+    const rows = pl.length ? pl.map((p, i) => {
       const c = list.find(x => x.n === i + 1);
       if (!c) return `<div class="ch soon"><span class="n">${i + 1}</span><span class="t"><b>${esc(p[0])}</b><span>${esc(p[1])} · coming soon</span></span></div>`;
       const d = S.done[c.id];
       return `<button class="ch${d ? ' done' : ''}" onclick="openRmyChapter('${c.id}')"><span class="n">${d ? '✓' : c.n}</span>
         <span class="t"><b>${esc(c.title)}</b><span class="tt">${esc(c.titleTe)}</span><span>Sargas ${esc(c.sargas)} · ${c.pages.length + 2} pages · ~${minutes(c)} min</span></span>
         ${isNew(c) ? '<span class="new">NEW</span>' : ''}</button>`;
-    }).join('');
+    }).join('') : `<div class="kempty">${icon}<p>The chapters of ${n} are being written.<br><span class="te">ఈ కాండ అధ్యాయాలు త్వరలో వస్తాయి.</span></p></div>`;
     el.innerHTML = `<div class="rmy">
-      <div class="cover">
-        <svg class="bow" viewBox="0 0 100 200" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M30 10 C95 60 95 140 30 190"/><path d="M30 10 L30 190" stroke-width="2"/><path d="M10 100 L88 100" stroke-width="3"/><path d="M80 92 L92 100 L80 108"/></svg>
-        <h1>Śrī Rāmāyaṇa</h1><div class="h1te">శ్రీ రామాయణం</div>
-        <p>Vālmīki's story of Rāma, retold for the whole family.</p>
-        <div class="byline">Retold by <b>Hari Pokkuluri</b><span class="te">కథనం: హరి పొక్కులూరి</span></div>
+      <div class="khead" style="background:${grad}">
+        ${photo ? `<span class="kphoto" style="background-image:url('${photo}')"></span><span class="kshade"></span>` : ''}
+        <button class="kback" onclick="openRamayana()" aria-label="All kāṇḍas">‹</button>
+        <div class="kht">${photo ? '' : `<span class="kic">${icon}</span>`}<h1>${n}</h1><div class="h1te">${nt}</div>
+        <p>${sub} · <span class="te">${subTe}</span></p>
+        ${pl.length ? `<div class="kprog"><div class="bar"><i style="width:${Math.round(read / pl.length * 100)}%"></i></div><span>${read} of ${pl.length} chapters read</span></div>` : ''}</div>
       </div>
-      <div class="kandas" data-noswipe>${KANDAS.map(([k, n], i) => `<span class="kchip${k === kanda ? ' on' : ''}${plan(k).length ? '' : ' lock'}">${i + 1} · ${n}</span>`).join('')}</div>
-      ${cont ? `<div class="continue" onclick="openRmyChapter('${cont.id}')">
-        <div class="thumb">${scene(cont.scene, 't')}</div>
-        <div class="ci"><small>${S.pos[cont.id] ? 'Continue reading' : 'Start reading'}</small><b>${esc(cont.title)}</b>
-        <span>Bāla Kāṇḍa · Chapter ${cont.n}</span><div class="bar"><i style="width:${contPct}%"></i></div></div>
-        <span class="go">▶</span></div>` : ''}
-      <div class="sec-t">Bāla Kāṇḍa · ${KANDA_SUB[kanda]}</div>
-      <div class="chlist">${rows}</div>
+      <div class="chlist" style="padding-top:16px">${rows}</div>
     </div>`;
-  };
+  }
 
   // ── reader ──
   let page = 0;
@@ -133,7 +171,7 @@
     page = Math.min(S.pos[c.id] || 0, total - 1);
     const who = (c.who || []).filter(k => WHO()[k]);
     const opener = `<div class="scene">${scene(c.scene, 'o')}</div>
-      <div class="chno">Bāla Kāṇḍa · Chapter ${c.n}</div>
+      <div class="chno">${KMETA(c.kanda)[1]} · Chapter ${c.n}</div>
       <div class="optitle">${esc(c.title)}</div><div class="optitle-te">${esc(c.titleTe)}</div>
       <div class="meta"><span>📖 Sargas ${esc(c.sargas)}</span><span>⏱ ~${minutes(c)} min</span><span>📄 ${total} pages</span></div>
       ${c.n === 1 ? `<div class="opby">Retold by <b>Hari Pokkuluri</b> · <span class="te">కథనం: హరి పొక్కులూరి</span></div>` : ''}
@@ -147,7 +185,7 @@
       <button class="markbtn${S.done[c.id] ? ' did' : ''}" onclick="rmyDone('${c.id}', this)">${S.done[c.id] ? '✓ Read' : 'Mark chapter as read'}</button>`;
     const pages = [opener, ...c.pages.map((b, i) => blocks(b, i === 0)), end];
     el.innerHTML = `<div class="rmy rmy-read mode-${MODE()}" id="rmy-read" style="--fs:${FS[S.fs] || FS[1]}" data-noswipe>
-      <div class="rbar"><button class="x" onclick="openRamayana()" aria-label="Chapters">☰</button>
+      <div class="rbar"><button class="x" onclick="openRmyKanda('${c.kanda}')" aria-label="Chapters">☰</button>
         <div class="where"><b>Ch ${c.n}</b></div>
         <div class="lang">${[['en', 'English'], ['te', 'తెలుగు'], ['both', 'Both']].map(([m, t]) => `<button data-m="${m}" class="${MODE() === m ? 'on' : ''}${m === 'te' ? ' te' : ''}" onclick="rmyMode('${m}')">${t}</button>`).join('')}</div>
         <button class="aa" onclick="rmyFont()" aria-label="Text size">Aa</button></div>
@@ -239,6 +277,30 @@
 .rmy .continue b{display:block;font-family:'Crimson Text',serif;font-size:1.18rem;margin:2px 0;line-height:1.15}.rmy .continue span{font-size:.76rem;color:var(--fg3)}
 .rmy .bar{height:5px;border-radius:5px;background:var(--border);margin-top:8px;overflow:hidden}.rmy .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold))}
 .rmy .go{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-size:1rem}
+.rmy .kgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 16px 40px}
+.rmy .ktile{position:relative;overflow:hidden;border-radius:18px;height:calc((min(100vw,680px) - 76px) / 2);max-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:12px 10px 14px;color:#fff;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.rmy .ktile:active{transform:scale(.97)}
+.rmy .kbg,.rmy .kphoto,.rmy .kshade{position:absolute;inset:0}
+.rmy .kphoto{background-size:cover;background-position:center}
+.rmy .kshade{background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(30,10,0,.78) 100%)}
+.rmy .ktile>span:not(.kbg):not(.kphoto):not(.kshade){position:relative}
+.rmy .kno{position:absolute!important;top:10px;left:12px;font-family:'Crimson Text',serif;font-weight:700;font-size:1.1rem;opacity:.85}
+.rmy .knew{position:absolute!important;top:10px;right:10px;font-size:.6rem;font-weight:700;background:#fff;color:var(--accent);border-radius:6px;padding:2px 6px;letter-spacing:.05em}
+.rmy .kic{font-size:1.9rem;line-height:1;margin-bottom:6px}
+.rmy .kname{font-family:'Crimson Text',serif;font-weight:700;font-size:1.12rem;line-height:1.1;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.rmy .kte{font-family:'Noto Sans Telugu',sans-serif;font-size:.78rem;opacity:.92;margin-top:2px}
+.rmy .kmeta{font-size:.68rem;opacity:.85;margin-top:5px;letter-spacing:.02em}
+.rmy .ktile.soon .kbg{filter:saturate(.55) brightness(.85)}.rmy .ktile.soon .kmeta{opacity:.7}
+.rmy .khead{position:relative;overflow:hidden;color:#fff;padding:18px 20px 22px;min-height:200px;display:flex;flex-direction:column}
+.rmy .khead .kphoto{background-position:center 30%}.rmy .khead .kshade{background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(30,10,0,.82))}
+.rmy .kback{position:relative;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18)!important;border:1.5px solid rgba(255,255,255,.35)!important;color:#fff!important;font-size:1.3rem}
+.rmy .kht{position:relative;margin-top:auto;padding-top:18px}
+.rmy .kht .kic{display:block;font-size:2rem}
+.rmy .kht h1{font-family:'Crimson Text',serif;font-size:2.1rem;line-height:1.05;margin:4px 0 0}
+.rmy .kht .h1te{font-family:'Noto Sans Telugu',sans-serif;font-size:1.05rem;opacity:.92;margin-top:4px}
+.rmy .kht p{font-size:.84rem;opacity:.88;margin:6px 0 0}
+.rmy .kprog{margin-top:12px}.rmy .kprog .bar{background:rgba(255,255,255,.3)}.rmy .kprog span{font-size:.74rem;opacity:.85;display:block;margin-top:5px}
+.rmy .kempty{text-align:center;padding:40px 20px;color:var(--fg3);font-size:2.4rem}.rmy .kempty p{font-size:.92rem;line-height:1.6;margin-top:10px}
 .rmy .sec-t{padding:18px 20px 8px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3)}
 .rmy .chlist{padding:0 16px 40px;display:flex;flex-direction:column;gap:8px}
 .rmy .ch{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:var(--card-bg);border:1px solid var(--border);text-align:left;width:100%}
