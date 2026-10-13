@@ -225,6 +225,69 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "కార్తికేయుడు (కుమారస్వామి)",
   "d": "Śiva's son, nursed by the six Kṛttikā stars and so given six faces. He became the commander of the gods. Also called Skanda, Subrahmaṇya and Murugan.",
   "dt": "శివుని కుమారుడు; ఆరుగురు కృత్తికలు పాలిచ్చి పెంచినందుకు ఆరు ముఖాలు కలవాడు. దేవసేనాపతి అయ్యాడు. స్కందుడు, సుబ్రహ్మణ్యుడు, మురుగన్ అని కూడా అంటారు."
+ },
+ "sagara": {
+  "av": "👑",
+  "en": "Sagara",
+  "te": "సగరుడు",
+  "d": "A great king of Ayodhyā and an ancestor of Rāma. His sixty thousand sons dug the earth so deep that the ocean is named after him — *sāgara*.",
+  "dt": "అయోధ్యను పాలించిన గొప్ప రాజు, రాముని పూర్వీకుడు. అతని అరవై వేల మంది కుమారులు భూమిని తవ్విన చోటే సముద్రమైంది — అందుకే *సాగరం* అంటారు."
+ },
+ "anshuman": {
+  "av": "🐎",
+  "en": "Aṃśumān",
+  "te": "అంశుమంతుడు",
+  "d": "King Sagara's grandson, gentle and wise, who brought back the lost horse.",
+  "dt": "సగరుని మనుమడు; సౌమ్యుడు, జ్ఞాని; తప్పిపోయిన యజ్ఞాశ్వాన్ని తిరిగి తెచ్చాడు."
+ },
+ "kapila": {
+  "av": "🧘",
+  "en": "Kapila",
+  "te": "కపిల మహర్షి",
+  "d": "A great sage — a form of Viṣṇu himself — who sat in deep meditation in the underworld.",
+  "dt": "సాక్షాత్తు విష్ణువు అంశ అయిన మహర్షి; పాతాళంలో గాఢ ధ్యానంలో కూర్చున్నాడు."
+ },
+ "bhagiratha": {
+  "av": "🙌",
+  "en": "Bhagīratha",
+  "te": "భగీరథుడు",
+  "d": "Sagara's great-great-grandson, whose tireless tapas brought the Gaṅgā down from heaven. A huge effort is still called a “Bhagīratha prayatnam”.",
+  "dt": "సగరుని వంశంలో పుట్టిన రాజు; అలుపెరగని తపస్సుతో గంగను స్వర్గం నుండి భూమికి తెచ్చాడు. గొప్ప కృషిని ఇప్పటికీ “భగీరథ ప్రయత్నం” అంటారు."
+ },
+ "jahnu": {
+  "av": "💧",
+  "en": "Jahnu",
+  "te": "జహ్ను మహర్షి",
+  "d": "A sage whose yajña was flooded by the Gaṅgā. He drank her up, then let her out again — so she is called Jāhnavī, his daughter.",
+  "dt": "గంగ వరద తన యాగాన్ని ముంచెత్తగా, ఆమెను తాగేసి తర్వాత విడిచిపెట్టిన మహర్షి. అందుకే గంగను జాహ్నవి — జహ్ను కుమార్తె — అంటారు."
+ },
+ "indra": {
+  "av": "⚡",
+  "en": "Indra",
+  "te": "ఇంద్రుడు",
+  "d": "King of the gods and lord of heaven, who wields the thunderbolt (vajra) and rides the white elephant Airāvata.",
+  "dt": "దేవతల రాజు, స్వర్గాధిపతి; వజ్రాయుధధారి; తెల్లని ఏనుగు ఐరావతంపై తిరుగుతాడు."
+ },
+ "diti": {
+  "av": "🌑",
+  "en": "Diti",
+  "te": "దితి",
+  "d": "Wife of the sage Kaśyapa and mother of the daityas (asuras). Her sister Aditi was the mother of the gods.",
+  "dt": "కశ్యప మహర్షి భార్య, దైత్యుల (అసురుల) తల్లి. ఆమె సోదరి అదితి దేవతల తల్లి."
+ },
+ "ahalya": {
+  "av": "🪔",
+  "en": "Ahalyā",
+  "te": "అహల్య",
+  "d": "The beautiful wife of the sage Gautama. Cursed for a wrong choice, she lived unseen in penance until Rāma came, and is remembered among the five great women, the Pañcakanyās.",
+  "dt": "గౌతమ మహర్షి భార్య. ఒక తప్పు ఎంపికకు శాపం పొంది, రాముడు వచ్చేవరకు ఎవరికీ కనిపించకుండా తపస్సులో గడిపింది. పంచకన్యలలో ఒకరిగా స్మరించబడుతుంది."
+ },
+ "gautama": {
+  "av": "📿",
+  "en": "Gautama",
+  "te": "గౌతమ మహర్షి",
+  "d": "A great sage, husband of Ahalyā and father of Śatānanda, the priest of King Janaka.",
+  "dt": "అహల్య భర్త, జనక మహారాజు పురోహితుడు శతానందుని తండ్రి అయిన మహర్షి."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -1808,6 +1871,462 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "The princesses chose to forgive instead of taking revenge. Is forgiving someone a sign of weakness or strength? Why?",
   "రాకుమార్తెలు ప్రతీకారం తీర్చుకోకుండా క్షమించారు. క్షమించడం బలహీనతా, బలమా? ఎందుకు?"
+ ]
+},
+{
+ "id": "bala-9",
+ "kanda": "bala",
+ "n": 9,
+ "order": 109,
+ "date": "2026-10-13",
+ "title": "Sagara's Sons and Bhagīratha's Gaṅgā",
+ "titleTe": "సగర పుత్రులు, భగీరథుని గంగ",
+ "sargas": "38–44",
+ "scene": "ganga",
+ "who": [
+  "sagara",
+  "anshuman",
+  "kapila",
+  "bhagiratha",
+  "ganga",
+  "shiva",
+  "jahnu"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "“Long ago,” said Viśvāmitra, “your ancestor {sagara|Sagara} was king of Ayodhyā. He was good and mighty, but he had no children. He had two queens — Keśinī, princess of Vidarbha, and Sumati, the sister of Garuḍa. With both queens he went to the Himālaya and did tapas for a hundred years.”",
+    "“పూర్వం,” అన్నాడు విశ్వామిత్రుడు, “మీ పూర్వీకుడు {sagara|సగరుడు} అయోధ్యకు రాజు. అతను మంచివాడు, బలవంతుడు; కానీ సంతానం లేదు. అతనికి ఇద్దరు రాణులు — విదర్భ రాకుమార్తె కేశిని, గరుడుని సోదరి సుమతి. ఇద్దరు రాణులతో హిమాలయాలకు వెళ్ళి వంద సంవత్సరాలు తపస్సు చేశాడు.”"
+   ],
+   [
+    "p",
+    "“The sage Bhṛgu was pleased and gave him a boon: ‘One of your queens will have a single son who will carry on your family. The other will have sixty thousand sons.’ Keśinī chose the one son; Sumati chose the sixty thousand. Keśinī's son was Asamañja. Sumati gave birth to a gourd, and from its seeds came sixty thousand babies, who were raised in jars of ghee until they grew strong and handsome.”",
+    "“భృగు మహర్షి సంతోషించి వరం ఇచ్చాడు: ‘నీ రాణులలో ఒకరికి వంశాన్ని కొనసాగించే ఒక్క కుమారుడు పుడతాడు. మరొకరికి అరవై వేల మంది కుమారులు పుడతారు.’ కేశిని ఒక్క కుమారుడిని ఎంచుకుంది; సుమతి అరవై వేల మందిని ఎంచుకుంది. కేశిని కుమారుడు అసమంజుడు. సుమతి ఒక సొరకాయకు జన్మనిచ్చింది; దాని గింజల నుండి అరవై వేల మంది శిశువులు వచ్చారు; వారిని నేతి కుండలలో పెంచగా బలవంతులుగా, అందంగా పెరిగారు.”"
+   ],
+   [
+    "p",
+    "“But Asamañja grew up cruel. He would throw the little children of the city into the Sarayū and laugh as they struggled. So Sagara banished his own son from the kingdom. Asamañja's son, {anshuman|Aṃśumān}, however, was gentle, brave and loved by everyone.”",
+    "“కానీ అసమంజుడు క్రూరుడిగా పెరిగాడు. నగరంలోని చిన్న పిల్లలను సరయూలోకి విసిరేసి, వారు గిలగిలలాడుతుంటే నవ్వేవాడు. అందుకే సగరుడు సొంత కొడుకునే రాజ్యం నుండి వెళ్ళగొట్టాడు. అసమంజుని కుమారుడు {anshuman|అంశుమంతుడు} మాత్రం సౌమ్యుడు, వీరుడు, అందరికీ ప్రియమైనవాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Sagara decided to perform an Aśvamedha. But while the horse was wandering, Indra, disguised as a rākṣasa, stole it. Sagara told his sixty thousand sons, ‘Find the horse, wherever it is. Search the whole earth — dig into it if you must!’”",
+    "“సగరుడు అశ్వమేధం చేయాలని నిర్ణయించాడు. కానీ యజ్ఞాశ్వం తిరుగుతుండగా ఇంద్రుడు రాక్షసుని వేషంలో దానిని దొంగిలించాడు. సగరుడు తన అరవై వేల మంది కుమారులతో, ‘గుర్రం ఎక్కడ ఉన్నా వెతకండి. భూమి అంతా గాలించండి — అవసరమైతే తవ్వండి!’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“The princes searched everywhere and could not find it. So they began to dig. Each of them dug a yojana deep with spades and ploughs as hard as diamonds, killing countless creatures of the earth and of the underworld. The earth cried out in pain. The gods ran to Brahmā in fear, and Brahmā said, ‘This earth belongs to Viṣṇu, who in the form of the sage Kapila holds it up. His anger will destroy those princes.’”",
+    "“రాకుమారులు అన్ని చోట్లా వెతికినా గుర్రం దొరకలేదు. దాంతో తవ్వడం మొదలుపెట్టారు. వజ్రాల వంటి గునపాలు, నాగళ్ళతో ఒక్కొక్కరు ఒక్కో యోజనం లోతు తవ్వారు; భూమిలోని, పాతాళంలోని లెక్కలేనన్ని జీవులను చంపారు. భూమి బాధతో విలపించింది. భయపడిన దేవతలు బ్రహ్మ దగ్గరకు పరుగెత్తగా, ఆయన ఇలా అన్నాడు: ‘ఈ భూమి విష్ణువుది; ఆయనే కపిల మహర్షి రూపంలో దీనిని ధరించి ఉన్నాడు. ఆయన కోపం ఆ రాకుమారులను నాశనం చేస్తుంది.’”"
+   ],
+   [
+    "p",
+    "“The princes dug down to the very bottom of the earth. They saw the four great elephants who hold up the world in the four directions, walked around them in respect, and dug on. At last, in the north-east, they found the horse grazing peacefully — and beside it sat the sage {kapila|Kapila}, deep in meditation.”",
+    "“రాకుమారులు భూమి అట్టడుగు వరకు తవ్వారు. నాలుగు దిక్కులలో లోకాన్ని మోస్తున్న నాలుగు దిగ్గజాలను చూసి, వాటికి ప్రదక్షిణ చేసి, ఇంకా తవ్వారు. చివరికి ఈశాన్య దిశలో గుర్రం ప్రశాంతంగా మేస్తుండటం చూశారు — దాని పక్కనే {kapila|కపిల మహర్షి} గాఢ ధ్యానంలో కూర్చుని ఉన్నాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“‘There's the thief!’ shouted the princes. Waving their spades and stones, they rushed at Kapila. The sage opened his eyes and let out a single sound — ‘Hum!’ — and in that instant all sixty thousand princes were burned to a heap of ashes.”",
+    "“‘అదిగో దొంగ!’ అని రాకుమారులు అరిచారు. గునపాలు, రాళ్ళు ఊపుకుంటూ కపిలుని మీదికి దూకారు. ఆ మహర్షి కళ్ళు తెరిచి ఒక్క శబ్దం చేశాడు — ‘హుం!’ — ఆ క్షణంలోనే అరవై వేల మంది రాకుమారులూ బూడిద కుప్పగా మారిపోయారు.”"
+   ],
+   [
+    "dyk",
+    "🌊",
+    "Because Sagara's sons dug the great hollow that filled with water, the ocean is called *sāgara* — “belonging to Sagara”.",
+    "సగరుని కుమారులు తవ్విన గొప్ప గొయ్యి నీటితో నిండినందుకే సముద్రాన్ని *సాగరం* — “సగరునిది” — అంటారు."
+   ],
+   [
+    "p",
+    "“When his sons did not return, Sagara sent his grandson Aṃśumān to find them. Aṃśumān followed the path they had dug, bowing respectfully to each of the great elephants, who blessed him. At last he found the horse — and the ashes of his uncles. He wept bitterly and looked for water to offer them, but there was none.”",
+    "“కుమారులు తిరిగి రాకపోవడంతో సగరుడు వారిని వెతకడానికి మనుమడు అంశుమంతుడిని పంపాడు. వారు తవ్విన దారిలోనే వెళ్తూ, ప్రతి దిగ్గజానికీ వినయంగా నమస్కరించగా అవి అతనిని ఆశీర్వదించాయి. చివరికి అతనికి గుర్రం — తన పినతండ్రుల బూడిద — కనిపించాయి. బోరున ఏడ్చి, వారికి తర్పణం ఇవ్వడానికి నీటి కోసం వెతికాడు; కానీ ఎక్కడా నీరు లేదు.”"
+   ],
+   [
+    "p",
+    "“Then Garuḍa, their uncle, appeared. ‘Do not grieve, Aṃśumān. Your uncles were burned by the great Kapila. Ordinary water cannot free them. Only the Gaṅgā, the daughter of Himavān, flowing down from heaven, can wash these ashes and send their souls to heaven. Take the horse now, and let your grandfather finish his yajña.’”",
+    "“అప్పుడు వారి మేనమామ గరుడుడు ప్రత్యక్షమయ్యాడు. ‘అంశుమంతా, బాధపడకు. మహాత్ముడైన కపిలుడు నీ పినతండ్రులను దహించాడు. సాధారణ నీరు వారికి ముక్తినివ్వదు. హిమవంతుని కుమార్తె గంగ స్వర్గం నుండి దిగి వచ్చి ఈ బూడిదను తాకితేనే వారి ఆత్మలు స్వర్గానికి వెళ్తాయి. ఇప్పుడు గుర్రాన్ని తీసుకువెళ్ళు; నీ తాత యాగం పూర్తి చేయనివ్వు.’”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Aṃśumān brought the horse home, and Sagara completed his yajña. But though he ruled for thirty thousand years, he never found a way to bring the Gaṅgā down to earth. Aṃśumān tried too, with years of tapas in the Himālaya, and so did his son Dilīpa — but neither succeeded.”",
+    "“అంశుమంతుడు గుర్రాన్ని ఇంటికి తీసుకువచ్చాడు; సగరుడు యాగం పూర్తి చేశాడు. కానీ ముప్పై వేల సంవత్సరాలు పాలించినా గంగను భూమికి తెచ్చే మార్గం అతనికి దొరకలేదు. అంశుమంతుడు కూడా హిమాలయాలలో ఏళ్ళ తరబడి తపస్సు చేసి ప్రయత్నించాడు; అతని కుమారుడు దిలీపుడు కూడా ప్రయత్నించాడు — కానీ ఎవరూ సఫలం కాలేదు.”"
+   ],
+   [
+    "p",
+    "“Dilīpa's son was {bhagiratha|Bhagīratha}. He handed his kingdom over to his ministers and went to Gokarṇa to do tapas. For a thousand years he stood with his arms raised, surrounded by four fires with the blazing sun above him, eating only once a month. At last Brahmā appeared. ‘I am pleased, Bhagīratha. What do you wish for?’”",
+    "“దిలీపుని కుమారుడు {bhagiratha|భగీరథుడు}. రాజ్యాన్ని మంత్రులకు అప్పగించి తపస్సు చేయడానికి గోకర్ణానికి వెళ్ళాడు. వెయ్యి సంవత్సరాలు చేతులు పైకెత్తి, నాలుగు వైపులా అగ్నులు, పైన మండుతున్న సూర్యుని మధ్య, నెలకోసారి మాత్రమే ఆహారం తీసుకుంటూ నిలబడ్డాడు. చివరికి బ్రహ్మ ప్రత్యక్షమయ్యాడు. ‘భగీరథా, సంతోషించాను. ఏమి కావాలి?’”"
+   ],
+   [
+    "p",
+    "“‘Let the Gaṅgā come down to earth and wash my ancestors' ashes,’ said Bhagīratha, ‘and let me have a son to carry on our family.’ Brahmā agreed. ‘But be careful,’ he said. ‘The earth cannot bear the force of the Gaṅgā falling from heaven. Only Śiva can. You must please him first.’”",
+    "“‘గంగ భూమికి దిగి వచ్చి నా పూర్వీకుల బూడిదను తాకాలి,’ అన్నాడు భగీరథుడు, ‘మా వంశాన్ని కొనసాగించడానికి నాకు ఒక కుమారుడు కావాలి.’ బ్రహ్మ అంగీకరించాడు. ‘కానీ జాగ్రత్త,’ అన్నాడు. ‘స్వర్గం నుండి పడే గంగ వేగాన్ని భూమి భరించలేదు. శివుడు మాత్రమే భరించగలడు. ముందు నువ్వు ఆయనను ప్రసన్నం చేసుకోవాలి.’”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“So Bhagīratha stood on the tip of one toe for a whole year, praying to Śiva. Śiva was pleased. ‘I will hold the Gaṅgā on my head,’ he said.”",
+    "“అప్పుడు భగీరథుడు ఒక సంవత్సరం పాటు ఒక కాలి బొటనవేలిపై నిలబడి శివుడిని ప్రార్థించాడు. శివుడు ప్రసన్నుడయ్యాడు. ‘గంగను నా శిరస్సుపై ధరిస్తాను’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“Then the Gaṅgā came crashing down from the sky in a mighty torrent. She was proud, and thought, ‘I will sweep Śiva away with me all the way down to the underworld!’ But Śiva knew her thoughts. He caught her in his thick, matted hair — and there she was trapped, wandering round and round in his locks for many years, unable to find a way out.”",
+    "“అప్పుడు గంగ మహా ప్రవాహంగా ఆకాశం నుండి దూకింది. ఆమె గర్వంతో, ‘శివుడిని కూడా నాతో పాటు పాతాళం వరకు కొట్టుకుపోయేలా చేస్తాను!’ అనుకుంది. కానీ శివునికి ఆమె ఆలోచన తెలిసింది. దట్టమైన తన జటాజూటంలో ఆమెను బంధించాడు — బయటపడే దారి దొరకక ఆమె ఎన్నో సంవత్సరాలు ఆయన జటలలో గుండ్రంగా తిరుగుతూ ఉండిపోయింది.”"
+   ],
+   [
+    "p",
+    "“Bhagīratha prayed to Śiva once more, and at last Śiva gently released her into the lake Bindusaras. From there she flowed out in seven streams — three to the east, three to the west — and the seventh followed behind Bhagīratha's chariot wherever he went.”",
+    "“భగీరథుడు మళ్ళీ శివుడిని ప్రార్థించాడు; చివరికి శివుడు ఆమెను మెల్లగా బిందుసరోవరంలోకి విడిచిపెట్టాడు. అక్కడి నుండి ఆమె ఏడు ధారలుగా ప్రవహించింది — మూడు తూర్పుకు, మూడు పడమరకు — ఏడవ ధార భగీరథుని రథం ఎక్కడికి వెళ్తే అక్కడికి వెనకే ప్రవహించింది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“What a sight it was! The gods, sages and gandharvas came in their shining chariots to watch. The sky glittered as if a hundred suns had risen. Fish and dolphins leapt in the water like flashes of lightning, and the spray rose like flocks of white swans. Wherever the Gaṅgā flowed, people bathed in her and were made pure.”",
+    "“ఆ దృశ్యం ఎంత అద్భుతం! దేవతలు, మునులు, గంధర్వులు తమ తేజోమయ విమానాలలో చూడటానికి వచ్చారు. వంద సూర్యులు ఉదయించినట్లు ఆకాశం మెరిసిపోయింది. చేపలు, డాల్ఫిన్లు మెరుపుల్లా నీటిలో ఎగిరిపడ్డాయి; నీటి తుంపరలు తెల్లని హంసల గుంపుల్లా లేచాయి. గంగ ప్రవహించిన చోటల్లా ప్రజలు ఆమెలో స్నానం చేసి పవిత్రులయ్యారు.”"
+   ],
+   [
+    "p",
+    "“On the way, the Gaṅgā flooded the yajña of the sage {jahnu|Jahnu}. Angry at her pride, Jahnu drank up the entire river! The gods begged him to release her, and he let her flow out again through his ears. That is why the Gaṅgā is also called Jāhnavī — Jahnu's daughter.”",
+    "“దారిలో గంగ {jahnu|జహ్ను మహర్షి} యాగాన్ని ముంచెత్తింది. ఆమె గర్వానికి కోపించిన జహ్నుడు నదినంతా తాగేశాడు! దేవతలు వేడుకోగా, తన చెవుల ద్వారా ఆమెను మళ్ళీ ప్రవహించనిచ్చాడు. అందుకే గంగను జాహ్నవి — జహ్ను కుమార్తె — అని కూడా అంటారు.”"
+   ],
+   [
+    "p",
+    "“Following Bhagīratha's chariot, the Gaṅgā reached the ocean and then flowed down into the underworld, to the place where the ashes of Sagara's sons lay. The moment her waters touched the ashes, all sixty thousand souls were freed and rose up to heaven.”",
+    "“భగీరథుని రథాన్ని అనుసరిస్తూ గంగ సముద్రాన్ని చేరి, అక్కడి నుండి పాతాళానికి — సగర పుత్రుల బూడిద ఉన్న చోటుకి — ప్రవహించింది. ఆమె జలాలు ఆ బూడిదను తాకిన క్షణమే అరవై వేల ఆత్మలూ విముక్తి పొంది స్వర్గానికి చేరుకున్నాయి.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Brahmā appeared and blessed Bhagīratha. ‘You have done what Sagara, Aṃśumān and Dilīpa could not. From now on the Gaṅgā will be known as your daughter — *Bhāgīrathī*. And she will flow through all three worlds, and so be called *Tripathagā*.’ Bhagīratha offered the holy water to his ancestors and returned to Ayodhyā, where he ruled happily.”",
+    "“బ్రహ్మ ప్రత్యక్షమై భగీరథుడిని ఆశీర్వదించాడు. ‘సగరుడు, అంశుమంతుడు, దిలీపుడు చేయలేనిది నువ్వు చేశావు. ఇక నుండి గంగ నీ కుమార్తెగా — *భాగీరథి*గా — ప్రసిద్ధి పొందుతుంది. మూడు లోకాలలో ప్రవహిస్తుంది కనుక *త్రిపథగ* అని కూడా పిలువబడుతుంది.’ భగీరథుడు ఆ పవిత్ర జలంతో పూర్వీకులకు తర్పణాలు ఇచ్చి, అయోధ్యకు తిరిగి వెళ్ళి సంతోషంగా పాలించాడు.”"
+   ],
+   [
+    "p",
+    "“That, Rāma, is the story of how the Gaṅgā came to earth,” said Viśvāmitra. “Whoever hears it will be blessed. But look — the night is over, and it is time for your morning prayers.”",
+    "“రామా, గంగ భూమికి ఎలా వచ్చిందో చెప్పే కథ ఇదే,” అన్నాడు విశ్వామిత్రుడు. “దీనిని విన్నవారు ధన్యులవుతారు. కానీ చూడు — రాత్రి గడిచిపోయింది; నీ ఉదయ సంధ్యావందనానికి సమయమైంది.”"
+   ],
+   [
+    "dyk",
+    "💪",
+    "Bhagīratha never gave up, even when his great-grandfather, grandfather and father had all failed. In Telugu we still call a huge, determined effort a *Bhagīratha prayatnam*.",
+    "తన ముత్తాత, తాత, తండ్రి విఫలమైనా భగీరథుడు పట్టు వదలలేదు. అందుకే ఎంతో పట్టుదలతో చేసే గొప్ప కృషిని తెలుగులో ఇప్పటికీ *భగీరథ ప్రయత్నం* అంటాం."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Sagara's sixty thousand sons dug the earth looking for the stolen horse; the ocean is named sāgara after them.",
+   "దొంగిలించబడిన గుర్రం కోసం సగరుని అరవై వేల మంది కుమారులు భూమిని తవ్వారు; వారి వల్లే సముద్రానికి సాగరం అని పేరు."
+  ],
+  [
+   "When they attacked the sage Kapila, they were burned to ashes.",
+   "కపిల మహర్షి మీద దాడి చేయగా వారు భస్మమైపోయారు."
+  ],
+  [
+   "Only the Gaṅgā could free them; three generations tried and failed.",
+   "గంగ మాత్రమే వారికి ముక్తినివ్వగలదు; మూడు తరాలు ప్రయత్నించి విఫలమయ్యాయి."
+  ],
+  [
+   "Bhagīratha's tapas brought Gaṅgā down; Śiva caught her in his hair to protect the earth.",
+   "భగీరథుని తపస్సు గంగను దించింది; భూమిని కాపాడటానికి శివుడు ఆమెను తన జటలలో బంధించాడు."
+  ],
+  [
+   "Gaṅgā is also called Bhāgīrathī, Jāhnavī and Tripathagā.",
+   "గంగను భాగీరథి, జాహ్నవి, త్రిపథగ అని కూడా అంటారు."
+  ]
+ ],
+ "think": [
+  "Bhagīratha finished what three generations before him could not. Is there something you kept trying at until you finally succeeded?",
+  "తనకంటే ముందు మూడు తరాలు చేయలేనిది భగీరథుడు పూర్తి చేశాడు. చివరికి సాధించే వరకు పట్టు వదలకుండా ప్రయత్నించిన పని మీకు ఏదైనా ఉందా?"
+ ]
+},
+{
+ "id": "bala-10",
+ "kanda": "bala",
+ "n": 10,
+ "order": 110,
+ "date": "2026-10-13",
+ "title": "The Churning of the Ocean",
+ "titleTe": "క్షీరసాగర మథనం",
+ "sargas": "45–47",
+ "scene": "ocean",
+ "who": [
+  "vishvamitra",
+  "rama",
+  "vishnu",
+  "shiva",
+  "indra",
+  "diti"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "At dawn they crossed the Gaṅgā by boat and saw on the northern bank a city as beautiful as heaven — Viśālā. “Whose city is this?” asked Rāma. “Tell us its story.” And Viśvāmitra began one of the oldest stories of all.",
+    "తెల్లవారగానే పడవలో గంగను దాటి, ఉత్తర తీరంలో స్వర్గం అంత అందమైన నగరాన్ని — విశాలను — చూశారు. “ఈ నగరం ఎవరిది?” అని రాముడు అడిగాడు. “దాని కథ చెప్పండి.” విశ్వామిత్రుడు అన్నిటికంటే ప్రాచీనమైన కథలలో ఒకటి ప్రారంభించాడు."
+   ],
+   [
+    "p",
+    "“In the first age, the Kṛta yuga, there lived the sons of Diti — the daityas, who were mighty — and the sons of Aditi — the gods, who were good and strong. Both wanted to live forever, free from old age and sickness. So they decided together: ‘Let us churn the Ocean of Milk and draw out *amṛta*, the nectar of immortality.’”",
+    "“మొదటి యుగమైన కృతయుగంలో దితి కుమారులు — మహాబలులైన దైత్యులు — అదితి కుమారులు — మంచివారు, బలవంతులు అయిన దేవతలు — ఉండేవారు. ఇద్దరికీ ముసలితనం, రోగాలు లేకుండా శాశ్వతంగా జీవించాలని ఉంది. అందుకే కలిసి నిర్ణయించుకున్నారు: ‘క్షీరసాగరాన్ని మథించి, అమరత్వాన్నిచ్చే *అమృతాన్ని* బయటకు తీద్దాం.’”"
+   ],
+   [
+    "p",
+    "“They used the great mountain Mandara as their churning-rod and the serpent-king Vāsuki as the rope. The gods held one end, the daityas the other, and they began to pull — back and forth, back and forth — for a thousand years.”",
+    "“మహా మందర పర్వతాన్ని కవ్వంగా, సర్పరాజు వాసుకిని తాడుగా చేసుకున్నారు. ఒక చివర దేవతలు, మరో చివర దైత్యులు పట్టుకుని లాగడం మొదలుపెట్టారు — ఇటు అటు, ఇటు అటు — వెయ్యి సంవత్సరాల పాటు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Suddenly the serpent Vāsuki, exhausted, spat out a terrible poison — the Hālāhala. It spread over the world, burning everything — gods, daityas and humans alike. The gods ran to Śiva for help, and {vishnu|Viṣṇu}, appearing there, said with a smile, ‘Śiva, you are the eldest of the gods. Whatever comes first from the churning is your share. Please accept it.’”",
+    "“అకస్మాత్తుగా అలసిపోయిన వాసుకి సర్పం భయంకరమైన విషాన్ని — హాలాహలాన్ని — కక్కింది. అది లోకమంతా వ్యాపించి దేవతలు, దైత్యులు, మనుషులు అందరినీ దహించసాగింది. దేవతలు సహాయం కోసం శివుని దగ్గరకు పరుగెత్తారు; అక్కడ ప్రత్యక్షమైన {vishnu|విష్ణువు} చిరునవ్వుతో, ‘శివా, దేవతలలో నువ్వే పెద్దవాడివి. మథనంలో మొదట వచ్చేది నీ భాగమే. దయచేసి స్వీకరించు’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“So {shiva|Śiva}, to save the worlds, took the deadly poison and drank it as if it were amṛta. Then he went back to his home on Kailāsa.”",
+    "“లోకాలను కాపాడటానికి {shiva|శివుడు} ఆ ప్రాణాంతక విషాన్ని అమృతంలా తాగి, తన నివాసమైన కైలాసానికి తిరిగి వెళ్ళాడు.”"
+   ],
+   [
+    "dyk",
+    "💙",
+    "The poison stayed in Śiva's throat and turned it blue. That is why he is called Nīlakaṇṭha — the blue-throated one.",
+    "ఆ విషం శివుని కంఠంలోనే నిలిచి దానిని నీలంగా మార్చింది. అందుకే ఆయనను నీలకంఠుడు — నీలి కంఠం కలవాడు — అంటారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“The churning went on. But soon the mountain Mandara began to sink down into the underworld. The gods prayed to Viṣṇu, and Viṣṇu took the form of a giant tortoise. He dived under the ocean, lay beneath the mountain and held it up on his back — and with his hand he held its peak steady from above. And so the churning continued.”",
+    "“మథనం కొనసాగింది. కానీ కొంతసేపటికే మందర పర్వతం పాతాళంలోకి మునిగిపోసాగింది. దేవతలు విష్ణువును ప్రార్థించగా, విష్ణువు పెద్ద తాబేలు రూపం ధరించాడు. సముద్రంలో మునిగి, పర్వతం కింద పడుకుని దానిని తన వీపుపై మోశాడు — పైనుండి దాని శిఖరాన్ని చేతితో స్థిరంగా పట్టుకున్నాడు. అలా మథనం కొనసాగింది.”"
+   ],
+   [
+    "dyk",
+    "🐢",
+    "This is Viṣṇu's Kūrma avatāra — his form as a tortoise.",
+    "ఇదే విష్ణువు కూర్మావతారం — తాబేలు రూపం."
+   ],
+   [
+    "p",
+    "“After a thousand years, wonderful things began to rise from the ocean. First came Dhanvantari, the physician of the gods, holding a staff and a water pot. Then came the apsaras, sixty crores of them, shining and beautiful. Then came Vāruṇī, the daughter of Varuṇa. The sons of Aditi welcomed her, and so they are called *suras*; the sons of Diti refused her, and so they are called *asuras*.”",
+    "“వెయ్యి సంవత్సరాల తర్వాత సముద్రం నుండి అద్భుతమైనవి ఒక్కొక్కటిగా పైకి రాసాగాయి. మొదట దేవవైద్యుడు ధన్వంతరి దండం, కమండలం పట్టుకుని వచ్చాడు. తర్వాత అరవై కోట్ల మంది తేజోమయ అప్సరసలు వచ్చారు. తర్వాత వరుణుని కుమార్తె వారుణి వచ్చింది. అదితి కుమారులు ఆమెను స్వీకరించారు కనుక వారిని *సురులు* అంటారు; దితి కుమారులు స్వీకరించలేదు కనుక వారిని *అసురులు* అంటారు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Then came Uccaiḥśravas, the finest of horses; the gem Kaustubha; and at last, the amṛta itself. But as soon as the amṛta appeared, the sons of Diti and Aditi began to fight over it, and a terrible war broke out.”",
+    "“తర్వాత అశ్వశ్రేష్ఠమైన ఉచ్చైఃశ్రవం, కౌస్తుభ మణి, చివరికి అమృతమే వచ్చాయి. కానీ అమృతం కనిపించగానే దితి, అదితి కుమారులు దాని కోసం కొట్లాడటం మొదలుపెట్టారు; భయంకరమైన యుద్ధం జరిగింది.”"
+   ],
+   [
+    "p",
+    "“Then Viṣṇu took the form of Mohinī, an enchanting woman, and by his magic carried the amṛta away from the asuras and gave it to the gods. In the war that followed, the gods defeated the sons of Diti, and {indra|Indra} became king of the three worlds once more.”",
+    "“అప్పుడు విష్ణువు మోహిని అనే మనోహరమైన స్త్రీ రూపం ధరించి, తన మాయతో అసురుల నుండి అమృతాన్ని తీసుకుని దేవతలకు ఇచ్చాడు. తర్వాత జరిగిన యుద్ధంలో దేవతలు దితి కుమారులను ఓడించారు; {indra|ఇంద్రుడు} మళ్ళీ మూడు లోకాలకు రాజయ్యాడు.”"
+   ],
+   [
+    "dyk",
+    "🌀",
+    "The churning of the ocean is called *Kṣīrasāgara Mathanam*. Lakṣmī, the goddess of fortune, is also said to have risen from it — and in other Purāṇas the list of treasures grows to fourteen.",
+    "సముద్ర మథనాన్ని *క్షీరసాగర మథనం* అంటారు. ఐశ్వర్య దేవత లక్ష్మి కూడా అందులో నుండే ఉద్భవించిందని చెబుతారు — ఇతర పురాణాలలో ఆ రత్నాల సంఖ్య పద్నాలుగు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“{diti|Diti} was heartbroken — her sons had been killed. She went to her husband, the sage Kaśyapa, and said, ‘Give me a son so mighty that he can kill Indra.’ Kaśyapa said, ‘If you stay pure in body and mind for a thousand years, you will have such a son.’ And Diti began her long tapas.”",
+    "“{diti|దితి} గుండె పగిలింది — ఆమె కుమారులు చనిపోయారు. తన భర్త కశ్యప మహర్షి దగ్గరకు వెళ్ళి, ‘ఇంద్రుడిని చంపగలిగేంత బలవంతుడైన కుమారుడిని నాకు ప్రసాదించండి’ అని అడిగింది. కశ్యపుడు, ‘వెయ్యి సంవత్సరాలు శరీరంలోనూ మనసులోనూ పవిత్రంగా ఉంటే అలాంటి కుమారుడు కలుగుతాడు’ అన్నాడు. దితి సుదీర్ఘ తపస్సు ప్రారంభించింది.”"
+   ],
+   [
+    "p",
+    "“Indra came to serve her — bringing her fire, firewood, water, fruit and roots, and pressing her tired feet — but he was secretly afraid. When only ten years were left, Diti, tired one afternoon, fell asleep with her head where her feet should be. In that moment of carelessness, her vow was broken.”",
+    "“ఇంద్రుడు ఆమెకు సేవ చేయడానికి వచ్చాడు — అగ్ని, సమిధలు, నీళ్ళు, పండ్లు, దుంపలు తెచ్చి ఇస్తూ, అలసిన ఆమె పాదాలు ఒత్తుతూ — కానీ లోలోపల భయపడ్డాడు. ఇంకా పది సంవత్సరాలే మిగిలి ఉండగా, ఒక మధ్యాహ్నం అలసిపోయిన దితి, కాళ్ళు ఉండవలసిన వైపు తల పెట్టి నిద్రపోయింది. ఆ ఏమరుపాటు క్షణంలో ఆమె నియమం భంగమైంది.”"
+   ],
+   [
+    "p",
+    "“Indra seized his chance. With his thunderbolt, he divided the unborn child into seven parts. The babies began to cry, and Indra kept saying, ‘*Mā rudaḥ* — don't cry, don't cry!’ Diti woke up and cried out, ‘Do not harm them!’ Indra stopped and bowed to her, ashamed.”",
+    "“ఇంద్రుడు అవకాశాన్ని అందిపుచ్చుకున్నాడు. వజ్రాయుధంతో గర్భంలోని శిశువును ఏడు భాగాలుగా చేశాడు. ఆ శిశువులు ఏడవసాగారు; ఇంద్రుడు, ‘*మా రుదః* — ఏడవకండి, ఏడవకండి!’ అంటూనే ఉన్నాడు. దితి మేలుకొని, ‘వారికి హాని చేయకు!’ అని అరిచింది. ఇంద్రుడు ఆగి, సిగ్గుపడి, ఆమెకు నమస్కరించాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“‘It was my own mistake that broke the vow,’ said Diti. ‘Let these seven children live, Indra. Let them become the Maruts — the winds that guard the seven regions of the sky — and let them be your companions.’ Indra agreed with joy. And so the seven Maruts became gods of the wind, and friends of Indra.”",
+    "“‘నా పొరపాటు వల్లే నియమం భంగమైంది,’ అంది దితి. ‘ఇంద్రా, ఈ ఏడుగురు బిడ్డలను బతకనివ్వు. ఆకాశంలోని ఏడు దిక్కులను కాపాడే వాయువులు — మరుత్తులు — కానివ్వు; వారు నీకు తోడుగా ఉండనివ్వు.’ ఇంద్రుడు ఆనందంగా అంగీకరించాడు. అలా ఏడుగురు మరుత్తులు వాయుదేవతలై ఇంద్రునికి మిత్రులయ్యారు.”"
+   ],
+   [
+    "dyk",
+    "🌬️",
+    "Because Indra said *mā rudaḥ* — “don't cry” — the seven brothers were called the *Maruts*.",
+    "ఇంద్రుడు *మా రుదః* — “ఏడవకండి” — అన్నందుకే ఆ ఏడుగురు సోదరులకు *మరుత్తులు* అని పేరు వచ్చింది."
+   ],
+   [
+    "p",
+    "“This is the very place where Diti did her tapas,” said Viśvāmitra. “Later, King Viśāla, a son of Ikṣvāku, built this city and named it Viśālā. Its king today is Sumati, a good and righteous ruler.” As he spoke, King Sumati himself came out to greet them with great respect, and they spent the night happily in his city.",
+    "“దితి తపస్సు చేసిన ప్రదేశం ఇదే,” అన్నాడు విశ్వామిత్రుడు. “తర్వాత ఇక్ష్వాకు కుమారుడు విశాల మహారాజు ఈ నగరాన్ని నిర్మించి దానికి విశాల అని పేరు పెట్టాడు. ఈ రోజు దీని రాజు సుమతి — మంచివాడు, ధర్మాత్ముడైన పాలకుడు.” ఆయన మాట్లాడుతుండగానే సుమతి మహారాజే స్వయంగా ఎంతో గౌరవంతో ఎదురువచ్చి వారిని స్వాగతించాడు; ఆ రాత్రి వారు అతని నగరంలో సంతోషంగా గడిపారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "The gods and daityas churned the Ocean of Milk with Mount Mandara and the serpent Vāsuki.",
+   "దేవతలు, దైత్యులు మందర పర్వతం, వాసుకి సర్పంతో క్షీరసాగరాన్ని మథించారు."
+  ],
+  [
+   "Śiva drank the Hālāhala poison to save the worlds.",
+   "లోకాలను కాపాడటానికి శివుడు హాలాహల విషం తాగాడు."
+  ],
+  [
+   "Viṣṇu became a tortoise to hold up the sinking mountain, and Mohinī to give the amṛta to the gods.",
+   "మునిగిపోతున్న పర్వతాన్ని మోయడానికి విష్ణువు తాబేలుగా, దేవతలకు అమృతం ఇవ్వడానికి మోహినిగా మారాడు."
+  ],
+  [
+   "Those who accepted Vāruṇī were called suras; those who refused, asuras.",
+   "వారుణిని స్వీకరించినవారు సురులు; నిరాకరించినవారు అసురులు."
+  ],
+  [
+   "Diti's unborn child became the seven Maruts, the wind gods.",
+   "దితి గర్భంలోని శిశువు ఏడుగురు మరుత్తులుగా — వాయుదేవతలుగా — మారాడు."
+  ]
+ ],
+ "think": [
+  "Śiva drank poison so that everyone else could be safe. Can you think of people who take on hard things so that others don't have to?",
+  "అందరూ క్షేమంగా ఉండాలని శివుడు విషం తాగాడు. ఇతరులకు కష్టం రాకుండా తామే కష్టాన్ని భరించే వ్యక్తులు మీకు ఎవరైనా తెలుసా?"
+ ]
+},
+{
+ "id": "bala-11",
+ "kanda": "bala",
+ "n": 11,
+ "order": 111,
+ "date": "2026-10-13",
+ "title": "Ahalyā",
+ "titleTe": "అహల్య",
+ "sargas": "48–49",
+ "scene": "ahalya",
+ "who": [
+  "ahalya",
+  "gautama",
+  "indra",
+  "rama",
+  "lakshmana",
+  "vishvamitra"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "King Sumati could not stop looking at the two princes. “Great sage,” he asked Viśvāmitra, “who are these young men? They walk like elephants and lions, they carry bows and swords like warriors, and they shine like the Aśvins come down from heaven. Why have they come here on foot?” Viśvāmitra told him everything — about Siddhāśrama, about the rākṣasas, and about their journey to Mithilā. Sumati was amazed, and honoured the princes as his dearest guests.",
+    "సుమతి మహారాజు ఇద్దరు రాకుమారులను చూస్తూనే ఉండిపోయాడు. “మహర్షీ,” అని విశ్వామిత్రుడిని అడిగాడు, “ఈ యువకులు ఎవరు? ఏనుగుల్లా, సింహాల్లా నడుస్తున్నారు; యోధుల్లా ధనుస్సులు, ఖడ్గాలు ధరించారు; స్వర్గం నుండి దిగివచ్చిన అశ్వినీ దేవతల్లా ప్రకాశిస్తున్నారు. కాలినడకన ఇక్కడికి ఎందుకు వచ్చారు?” విశ్వామిత్రుడు అతనికి అంతా చెప్పాడు — సిద్ధాశ్రమం, రాక్షసులు, మిథిలకు వారి ప్రయాణం గురించి. సుమతి ఆశ్చర్యపోయి రాకుమారులను అత్యంత ప్రియమైన అతిథులుగా సత్కరించాడు."
+   ],
+   [
+    "p",
+    "The next morning they set out for Mithilā. As they came near the city, Rāma noticed an old āśrama in a lovely grove. It was clearly a holy place — and yet it was completely empty. No sage lived there, no fire burned, no voices chanted. “Guru,” Rāma asked, “whose āśrama is this? It looks like a sage's home, but no one is here.”",
+    "మరుసటి ఉదయం వారు మిథిలకు బయలుదేరారు. నగరానికి దగ్గరవుతుండగా ఒక అందమైన తోటలో పాత ఆశ్రమాన్ని రాముడు గమనించాడు. అది పవిత్ర స్థలమని స్పష్టంగా తెలుస్తోంది — అయినా పూర్తిగా ఖాళీగా ఉంది. అక్కడ ఏ మునీ నివసించడం లేదు, ఏ అగ్నీ మండడం లేదు, ఏ మంత్రమూ వినిపించడం లేదు. “గురువర్యా,” అని రాముడు అడిగాడు, “ఈ ఆశ్రమం ఎవరిది? ఇది ఒక ముని నివాసంలా ఉంది, కానీ ఇక్కడ ఎవరూ లేరు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“This was once the āśrama of the great sage {gautama|Gautama},” said Viśvāmitra, “and of his wife {ahalya|Ahalyā}, who was famous for her beauty. Gautama did tapas here for many thousands of years, and the place was full of peace.”",
+    "“ఒకప్పుడు ఇది మహర్షి {gautama|గౌతముని}, అందానికి ప్రసిద్ధి చెందిన ఆయన భార్య {ahalya|అహల్య} ఆశ్రమం,” అన్నాడు విశ్వామిత్రుడు. “గౌతముడు ఇక్కడ ఎన్నో వేల సంవత్సరాలు తపస్సు చేశాడు; ఈ ప్రదేశం శాంతితో నిండి ఉండేది.”"
+   ],
+   [
+    "p",
+    "“But {indra|Indra}, king of the gods, desired Ahalyā. One day, when Gautama had gone out, Indra came to the āśrama disguised as Gautama himself. Ahalyā realised that it was Indra in disguise — and yet she did not send him away. That was her great mistake.”",
+    "“కానీ దేవరాజు {indra|ఇంద్రుడు} అహల్యను కోరాడు. ఒక రోజు గౌతముడు బయటకు వెళ్ళినప్పుడు, ఇంద్రుడు గౌతముని వేషంలోనే ఆశ్రమానికి వచ్చాడు. వచ్చింది మారువేషంలో ఉన్న ఇంద్రుడని అహల్య గ్రహించింది — అయినా అతనిని పంపించివేయలేదు. అదే ఆమె చేసిన పెద్ద తప్పు.”"
+   ],
+   [
+    "p",
+    "“As Indra hurried away, he came face to face with the real Gautama, returning from the river with sacred grass and firewood in his hands, glowing with the power of his tapas. Seeing Indra in his own form, Gautama understood at once what had happened.”",
+    "“ఇంద్రుడు హడావుడిగా వెళ్ళిపోతుండగా, నది నుండి చేతిలో దర్భలు, సమిధలతో, తపశ్శక్తితో వెలిగిపోతూ తిరిగి వస్తున్న అసలు గౌతముడు అతనికి ఎదురుపడ్డాడు. తన రూపంలో ఉన్న ఇంద్రుడిని చూడగానే ఏమి జరిగిందో గౌతమునికి వెంటనే అర్థమైంది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“In his anger, Gautama cursed Indra, and Indra lost his strength and his glory. (Later, the other gods had to help restore him.)”",
+    "“కోపంతో గౌతముడు ఇంద్రుడిని శపించాడు; ఇంద్రుడు తన బలాన్నీ, తేజస్సునూ కోల్పోయాడు. (తర్వాత ఇతర దేవతలు అతనిని తిరిగి మామూలు స్థితికి తేవడానికి సహాయం చేయవలసి వచ్చింది.)”"
+   ],
+   [
+    "p",
+    "“Then Gautama turned to Ahalyā. ‘For many thousands of years you will live here, unseen by any living being. You will eat nothing but air, and lie on ashes, and suffer for what you have done. But when Rāma, the son of Daśaratha, comes to this forest, and you welcome him as your guest, you will be made pure. Then you will regain your own form and come back to me.’”",
+    "“తర్వాత గౌతముడు అహల్య వైపు తిరిగాడు. ‘ఎన్నో వేల సంవత్సరాలు నువ్వు ఇక్కడే, ఏ ప్రాణికీ కనిపించకుండా జీవిస్తావు. గాలిని తప్ప ఏమీ తినకుండా, బూడిదపై పడుకుని, చేసిన దానికి పశ్చాత్తాపపడుతూ ఉంటావు. కానీ దశరథ కుమారుడు రాముడు ఈ వనానికి వచ్చినప్పుడు, అతనిని అతిథిగా ఆదరిస్తే నువ్వు పవిత్రురాలవుతావు. అప్పుడు నీ రూపం తిరిగి పొంది నా దగ్గరకు వస్తావు.’”"
+   ],
+   [
+    "p",
+    "“Then Gautama left this āśrama and went to the Himālaya to continue his tapas. And Ahalyā has been here ever since, alone and unseen, waiting. Come, Rāma — enter the āśrama and free her.”",
+    "“తర్వాత గౌతముడు ఈ ఆశ్రమాన్ని వదిలి తపస్సు కొనసాగించడానికి హిమాలయాలకు వెళ్ళిపోయాడు. అప్పటి నుండి అహల్య ఇక్కడే, ఒంటరిగా, ఎవరికీ కనిపించకుండా ఎదురుచూస్తోంది. రా రామా — ఆశ్రమంలోకి ప్రవేశించి ఆమెను విముక్తురాలిని చెయ్యి.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "With Viśvāmitra leading the way, Rāma and Lakṣmaṇa stepped into the āśrama. And there they saw her — Ahalyā, shining with the power of her long penance. She was like a flame hidden in smoke, like moonlight veiled by mist, like sunlight glimmering on water — so radiant that no one had been able to see her until now. The moment Rāma arrived, the curse ended.",
+    "విశ్వామిత్రుడు ముందు నడవగా రామలక్ష్మణులు ఆశ్రమంలోకి అడుగుపెట్టారు. అక్కడ ఆమెను చూశారు — సుదీర్ఘ తపస్సు తేజస్సుతో ప్రకాశిస్తున్న అహల్యను. పొగలో దాగిన జ్వాలలా, మంచుతెరలో కప్పబడిన వెన్నెలలా, నీటిపై మెరిసే సూర్యకాంతిలా ఉంది — ఇప్పటివరకు ఎవరూ ఆమెను చూడలేనంత తేజస్సుతో. రాముడు రాగానే శాపం తీరిపోయింది."
+   ],
+   [
+    "p",
+    "Rāma and Lakṣmaṇa bowed and touched her feet with respect. Ahalyā, remembering Gautama's words, welcomed them joyfully as her guests and offered them water to wash their feet, water to drink, and fruits — and Rāma accepted her hospitality.",
+    "రామలక్ష్మణులు వినయంగా నమస్కరించి ఆమె పాదాలను తాకారు. గౌతముని మాటలు గుర్తుచేసుకుని అహల్య వారిని ఆనందంగా అతిథులుగా ఆహ్వానించి, పాద్యం, అర్ఘ్యం, ఫలాలు సమర్పించింది — రాముడు ఆమె ఆతిథ్యాన్ని స్వీకరించాడు."
+   ],
+   [
+    "p",
+    "At that moment flowers rained down from the sky, gandharvas sang and apsaras danced, and the gods praised Ahalyā: “She is pure again!” And Gautama, knowing through his powers what had happened, came back to his āśrama. Husband and wife were together again, and Gautama honoured Rāma with joy.",
+    "ఆ క్షణంలో ఆకాశం నుండి పూలవాన కురిసింది; గంధర్వులు పాడారు, అప్సరసలు నాట్యం చేశారు; “ఆమె మళ్ళీ పవిత్రురాలైంది!” అని దేవతలు అహల్యను ప్రశంసించారు. తపశ్శక్తితో జరిగినది తెలుసుకున్న గౌతముడు తన ఆశ్రమానికి తిరిగి వచ్చాడు. భార్యాభర్తలు మళ్ళీ కలిశారు; గౌతముడు ఆనందంతో రాముడిని సత్కరించాడు."
+   ]
+  ],
+  [
+   [
+    "dyk",
+    "🪨",
+    "In Vālmīki's Rāmāyaṇa, Ahalyā is not turned to stone — she lives unseen in penance, and is freed when she welcomes Rāma. The famous version where she becomes a stone and is freed by the touch of Rāma's foot comes from later retellings, such as the Adhyātma Rāmāyaṇa and Kamba Rāmāyaṇam.",
+    "వాల్మీకి రామాయణంలో అహల్య రాయిగా మారదు — ఎవరికీ కనిపించకుండా తపస్సులో జీవిస్తుంది; రాముడిని ఆదరించినప్పుడు విముక్తి పొందుతుంది. ఆమె రాయిగా మారి రాముని పాదస్పర్శతో విముక్తి పొందే ప్రసిద్ధ కథ అధ్యాత్మ రామాయణం, కంబ రామాయణం వంటి తర్వాతి కథనాల నుండి వచ్చింది."
+   ],
+   [
+    "dyk",
+    "🌸",
+    "Ahalyā is one of the *Pañcakanyās* — five great women (Ahalyā, Draupadī, Sītā, Tārā and Mandodarī) remembered every morning in a famous prayer.",
+    "అహల్య *పంచకన్యలలో* ఒకరు — ప్రతి ఉదయం ఒక ప్రసిద్ధ ప్రార్థనలో స్మరించుకునే ఐదుగురు మహిళలు (అహల్య, ద్రౌపది, సీత, తార, మండోదరి)."
+   ],
+   [
+    "p",
+    "Then, with Viśvāmitra, the princes walked on towards the north-east, towards the city of Mithilā, where King Janaka's great yajña was about to begin.",
+    "తర్వాత విశ్వామిత్రునితో కలిసి రాకుమారులు ఈశాన్యంగా, జనక మహారాజు మహాయాగం ప్రారంభం కాబోతున్న మిథిలా నగరం వైపు నడిచారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Viśvāmitra told the story of Gautama's empty āśrama near Mithilā.",
+   "మిథిలకు దగ్గరలోని గౌతముని ఖాళీ ఆశ్రమం కథను విశ్వామిత్రుడు చెప్పాడు."
+  ],
+  [
+   "Ahalyā did not send Indra away, though she knew who he was — and was cursed to live unseen in penance.",
+   "వచ్చినది ఇంద్రుడని తెలిసినా అహల్య అతనిని పంపివేయలేదు — ఎవరికీ కనిపించకుండా తపస్సులో జీవించమని శాపం పొందింది."
+  ],
+  [
+   "When Rāma came and she welcomed him as a guest, she was made pure again.",
+   "రాముడు వచ్చినప్పుడు అతనిని అతిథిగా ఆదరించడంతో ఆమె మళ్ళీ పవిత్రురాలైంది."
+  ],
+  [
+   "In Vālmīki she is not a stone — that comes from later retellings.",
+   "వాల్మీకిలో ఆమె రాయి కాదు — అది తర్వాతి కథనాల నుండి వచ్చింది."
+  ],
+  [
+   "Gautama returned, and husband and wife were together again.",
+   "గౌతముడు తిరిగి వచ్చాడు; భార్యాభర్తలు మళ్ళీ కలిశారు."
+  ]
+ ],
+ "think": [
+  "Ahalyā made a mistake, paid for it with long penance, and was forgiven. Do you think everyone deserves a second chance?",
+  "అహల్య తప్పు చేసింది, సుదీర్ఘ తపస్సుతో పశ్చాత్తాపపడింది, క్షమించబడింది. ప్రతి ఒక్కరికీ రెండో అవకాశం దక్కాలని మీరు అనుకుంటున్నారా?"
  ]
 }
 ]);
