@@ -103,7 +103,8 @@ body {
 /* ── Top bar ── */
 #topbar {
   position: sticky;
-  top: env(safe-area-inset-top, 0px);
+  top: 0;
+  padding-top: calc(8px + env(safe-area-inset-top, 0px)) !important;   /* clear the iPhone status bar */
   z-index: 100;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -869,7 +870,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+  flex-shrink: 0;
 }
+/* iPhone Safari under-measures square (aspect-ratio) tiles in this grid, which cut off the
+   last row; give library tiles an explicit height equal to their width instead */
+.lib-content .home-tile { aspect-ratio: auto; height: calc((min(100vw, 480px) - 46px) / 2); }
 .home-tile {
   position: relative; border-radius: 16px; overflow: hidden;
   cursor: pointer; aspect-ratio: 1/1;
@@ -991,6 +996,7 @@ body {
 .lib-header {
   background: var(--home-gradient);
   padding: 18px 20px 22px;
+  padding-top: calc(18px + env(safe-area-inset-top, 0px));   /* clear the iPhone status bar */
   display: flex; align-items: center; gap: 12px;
   position: sticky; top: 0; z-index: 10;
 }
