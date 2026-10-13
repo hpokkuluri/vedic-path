@@ -146,6 +146,15 @@
         <g transform="translate(150 180)" fill="#e8a060"><circle cx="0" cy="-74" r="10"/><path d="M-6 -86 Q0 -100 8 -84" stroke="#3a1a0a" stroke-width="5" fill="none"/><path d="M-16 -62 Q0 -68 16 -62 L22 0 L-22 0Z" fill="#c0392b"/>
         <path d="M18 -60 L46 -100" stroke="#8a6a4a" stroke-width="4"/><path d="M40 -112 Q60 -104 52 -88 L44 -96Z" fill="#cfd8e0"/></g>
         <g transform="translate(250 180)" fill="#f6e2c0"><circle cx="0" cy="-40" r="7"/><path d="M-9 -32 L9 -32 L11 0 L-11 0Z"/><path d="M-16 -54 Q-28 -28 -16 2" stroke="#f6e2c0" stroke-width="2.5" fill="none"/></g>`,
+      // moonlit river with the Himālaya far away
+      night: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1838"/><stop offset="1" stop-color="#2a3a6a"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="250" cy="46" r="20" fill="#f6f0d0"/>
+        <g fill="#fff" opacity=".8"><circle cx="40" cy="30" r="1.3"/><circle cx="90" cy="50" r="1"/><circle cx="150" cy="24" r="1.4"/><circle cx="200" cy="70" r="1"/><circle cx="30" cy="80" r="1"/></g>
+        <g fill="#7f8fb8"><path d="M0 130 L40 90 L70 112 L110 70 L150 110 L190 84 L240 120 L280 92 L320 124 L320 140 L0 140Z"/></g><g fill="#e8eef8" opacity=".8"><path d="M110 70 L122 84 L98 84Z M40 90 L50 100 L30 100Z M280 92 L290 102 L270 102Z"/></g>
+        <path d="M0 140 L320 140 L320 220 L0 220Z" fill="#1d2d52"/><path d="M200 140 Q240 170 250 220 L280 220 Q260 170 230 140Z" fill="#f6f0d0" opacity=".25"/>
+        <g fill="#2a4a2a"><ellipse cx="40" cy="150" rx="40" ry="12"/></g>
+        <g fill="#6a9a8a"><path d="M30 214 Q34 180 38 214Z M44 214 Q50 176 54 214Z M58 214 Q62 186 66 214Z"/></g>
+        <g fill="#c8d4ef"><circle cx="160" cy="34" r="2.2"/><circle cx="168" cy="38" r="2.2"/><circle cx="174" cy="32" r="2.2"/><circle cx="162" cy="44" r="2.2"/><circle cx="170" cy="46" r="2.2"/><circle cx="178" cy="42" r="2.2"/></g>`,
     };
     if (SC[name]) return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">${SC[name]}</svg>`;
     // default: tamasa — river at dusk, sage, krauñca birds
