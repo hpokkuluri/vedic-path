@@ -155,6 +155,76 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "మన్మథుడు",
   "d": "The god of love, who shoots flower-arrows to make people fall in love. Burnt by Śiva's third eye, he became Anaṅga — “the bodiless one”.",
   "dt": "పూలబాణాలతో ప్రేమను కలిగించే దేవుడు. శివుని మూడో కంటి మంటకు దగ్ధమై అనంగుడు — “శరీరం లేనివాడు” — అయ్యాడు."
+ },
+ "tataka": {
+  "av": "👹",
+  "en": "Tāṭakā",
+  "te": "తాటకి",
+  "d": "A yakṣī with the strength of a thousand elephants. Cursed by Agastya, she became a fearsome rākṣasī who destroyed the lands of Malada and Karūṣa.",
+  "dt": "వేయి ఏనుగుల బలం కల యక్షిణి. అగస్త్యుని శాపంతో భయంకర రాక్షసిగా మారి మలద, కరూశ దేశాలను నాశనం చేసింది."
+ },
+ "marica": {
+  "av": "🦌",
+  "en": "Mārīca",
+  "te": "మారీచుడు",
+  "d": "Tāṭakā's son, a rākṣasa skilled in magic. Remember him — he will appear again later in the story.",
+  "dt": "తాటకి కుమారుడు, మాయలలో నేర్పరి అయిన రాక్షసుడు. ఇతనిని గుర్తుంచుకోండి — కథలో తర్వాత మళ్ళీ కనిపిస్తాడు."
+ },
+ "agastya": {
+  "av": "🌟",
+  "en": "Agastya",
+  "te": "అగస్త్యుడు",
+  "d": "A great sage of immense power, who once drank up the whole ocean. He lives in the south, and Rāma will meet him in the forest.",
+  "dt": "మహా శక్తిమంతుడైన మహర్షి; ఒకప్పుడు సముద్రాన్నంతా తాగేశాడు. దక్షిణాన నివసిస్తాడు; అడవిలో రాముడు ఆయనను కలుస్తాడు."
+ },
+ "vamana": {
+  "av": "☂️",
+  "en": "Vāmana",
+  "te": "వామనుడు",
+  "d": "Viṣṇu's avatāra as a small brāhmaṇa boy, son of Kaśyapa and Aditi, who won back the three worlds from King Bali with three steps.",
+  "dt": "కశ్యప అదితుల కుమారునిగా, చిన్న బ్రాహ్మణ బాలునిగా అవతరించిన విష్ణువు. మూడు అడుగులతో బలి చక్రవర్తి నుండి మూడు లోకాలనూ తిరిగి గెలుచుకున్నాడు."
+ },
+ "subahu": {
+  "av": "👺",
+  "en": "Subāhu",
+  "te": "సుబాహుడు",
+  "d": "A rākṣasa companion of Mārīca who kept ruining Viśvāmitra's yajña.",
+  "dt": "విశ్వామిత్రుని యాగాన్ని పదే పదే భంగపరిచిన మారీచుని సహచర రాక్షసుడు."
+ },
+ "bali": {
+  "av": "👑",
+  "en": "Bali",
+  "te": "బలి చక్రవర్తి",
+  "d": "A generous and mighty asura king, grandson of Prahlāda, who conquered the three worlds and then gave them away to Vāmana.",
+  "dt": "ప్రహ్లాదుని మనుమడు; దాన గుణం కల మహా బలవంతుడైన అసుర రాజు. మూడు లోకాలనూ జయించి, తర్వాత వామనునికి దానం చేశాడు."
+ },
+ "ganga": {
+  "av": "🌊",
+  "en": "Gaṅgā",
+  "te": "గంగాదేవి",
+  "d": "The holy river, elder daughter of Himavān, king of the mountains. She flows through heaven, earth and the underworld — so she is called Tripathagā.",
+  "dt": "పవిత్ర నది; పర్వతరాజు హిమవంతుని పెద్ద కుమార్తె. స్వర్గం, భూమి, పాతాళం మూడింటిలో ప్రవహిస్తుంది — అందుకే త్రిపథగ అంటారు."
+ },
+ "uma": {
+  "av": "🌺",
+  "en": "Umā (Pārvatī)",
+  "te": "ఉమాదేవి (పార్వతి)",
+  "d": "Younger daughter of Himavān and Menā. Through great tapas she won Śiva as her husband.",
+  "dt": "హిమవంతుడు, మేనల చిన్న కుమార్తె. గొప్ప తపస్సుతో శివుడిని భర్తగా పొందింది."
+ },
+ "shiva": {
+  "av": "🔱",
+  "en": "Śiva",
+  "te": "శివుడు",
+  "d": "The great god of yoga and tapas, who lives on Kailāsa, wears the moon and the Gaṅgā in his matted hair, and has a third eye of fire.",
+  "dt": "కైలాసంలో నివసించే యోగీశ్వరుడు; జటాజూటంలో చంద్రుడిని, గంగను ధరించినవాడు; అగ్ని రూపమైన మూడో కన్ను కలవాడు."
+ },
+ "kartikeya": {
+  "av": "🦚",
+  "en": "Kārttikeya (Kumāra)",
+  "te": "కార్తికేయుడు (కుమారస్వామి)",
+  "d": "Śiva's son, nursed by the six Kṛttikā stars and so given six faces. He became the commander of the gods. Also called Skanda, Subrahmaṇya and Murugan.",
+  "dt": "శివుని కుమారుడు; ఆరుగురు కృత్తికలు పాలిచ్చి పెంచినందుకు ఆరు ముఖాలు కలవాడు. దేవసేనాపతి అయ్యాడు. స్కందుడు, సుబ్రహ్మణ్యుడు, మురుగన్ అని కూడా అంటారు."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -1291,6 +1361,453 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "Vasiṣṭha told Daśaratha that keeping a promise matters even when it is hard. Can you remember a time you kept a promise that was difficult?",
   "కష్టమైనా మాట నిలబెట్టుకోవడం ముఖ్యమని వసిష్ఠుడు దశరథునికి చెప్పాడు. కష్టమైనా మాట నిలబెట్టుకున్న సందర్భం మీకు గుర్తుందా?"
+ ]
+},
+{
+ "id": "bala-6",
+ "kanda": "bala",
+ "n": 6,
+ "order": 106,
+ "date": "2026-10-13",
+ "title": "Tāṭakā",
+ "titleTe": "తాటకి",
+ "sargas": "24–26",
+ "scene": "forest",
+ "who": [
+  "rama",
+  "lakshmana",
+  "vishvamitra",
+  "tataka",
+  "marica",
+  "agastya"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "At dawn the sages of the āśrama brought a boat, and Viśvāmitra and the princes set out across the Gaṅgā. In the middle of the river they heard a great roaring sound of rushing water. “What is that noise?” asked Rāma.",
+    "తెల్లవారగానే ఆశ్రమ మునులు ఒక పడవ తెచ్చారు; విశ్వామిత్రుడు, రాకుమారులు గంగను దాటడానికి బయలుదేరారు. నది మధ్యలో ఉరకలెత్తే నీటి గొప్ప హోరు వినిపించింది. “ఆ శబ్దం ఏమిటి?” అని రాముడు అడిగాడు."
+   ],
+   [
+    "p",
+    "“On Mount Kailāsa there is a lake that Brahmā created from his own mind — it is called Mānasa,” said Viśvāmitra. “A river flows out of that lake, and because it comes from a *saras*, a lake, it is called the Sarayū. It flows past Ayodhyā and here it rushes into the Gaṅgā. That roar is the meeting of the two rivers. Bow to them both.” The princes bowed to the rivers with folded hands.",
+    "“కైలాస పర్వతంపై బ్రహ్మ తన మనసుతో సృష్టించిన ఒక సరస్సు ఉంది — దానిని మానస సరోవరం అంటారు,” అన్నాడు విశ్వామిత్రుడు. “ఆ సరస్సు నుండి ఒక నది ప్రవహిస్తుంది; *సరస్సు* నుండి పుట్టినందుకు దానిని సరయూ అంటారు. అది అయోధ్య పక్కగా ప్రవహించి ఇక్కడ గంగలోకి దూకుతుంది. ఆ హోరు రెండు నదుల సంగమమే. రెండింటికీ నమస్కరించండి.” రాకుమారులు చేతులు జోడించి నదులకు నమస్కరించారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "On the southern bank they stepped into a terrifying forest. There were no paths at all. Crickets screeched, wild animals howled, vultures circled overhead, and lions, tigers, boars and elephants roamed among thick, dark trees. “What a frightening place,” said Rāma. “Whose forest is this?”",
+    "దక్షిణ తీరంలో వారు ఒక భయంకరమైన అడవిలోకి అడుగుపెట్టారు. అక్కడ దారే లేదు. కీచురాళ్ళు అరుస్తున్నాయి, అడవి జంతువులు ఊళలు వేస్తున్నాయి, పైన రాబందులు తిరుగుతున్నాయి; దట్టమైన చీకటి చెట్ల మధ్య సింహాలు, పులులు, అడవిపందులు, ఏనుగులు సంచరిస్తున్నాయి. “ఎంత భయంకరమైన ప్రదేశం,” అన్నాడు రాముడు. “ఈ అడవి ఎవరిది?”"
+   ],
+   [
+    "p",
+    "“Once this was not a forest at all,” said Viśvāmitra. “It was two rich and happy lands called Malada and Karūṣa. Long ago, after Indra killed the demon Vṛtra, he was stained by sin and tormented by hunger. The gods bathed him here and washed away his impurity, and the earth received it. Pleased, Indra blessed this land, and for many years it was full of grain and wealth.”",
+    "“ఒకప్పుడు ఇది అడవే కాదు,” అన్నాడు విశ్వామిత్రుడు. “మలద, కరూశ అనే సంపన్నమైన, సంతోషకరమైన రెండు దేశాలు ఇక్కడ ఉండేవి. చాలా కాలం క్రితం వృత్రాసురుడిని చంపిన తర్వాత ఇంద్రునికి పాపం అంటుకుని, ఆకలి బాధించింది. దేవతలు అతనికి ఇక్కడ స్నానం చేయించి అతని మాలిన్యాన్ని కడిగారు; భూమి దానిని స్వీకరించింది. సంతోషించిన ఇంద్రుడు ఈ భూమిని ఆశీర్వదించాడు; ఎన్నో ఏళ్ళు ఇది ధనధాన్యాలతో నిండి ఉంది.”"
+   ],
+   [
+    "p",
+    "“But then came {tataka|Tāṭakā}. She is a yakṣī who can take any form she likes, with the strength of a thousand elephants. She is the wife of Sunda and the mother of {marica|Mārīca}, who is as strong as Indra. She lives just a yojana and a half from here, and she has destroyed both these lands. No one dares to come near. Rāma, for the sake of the sages and the people, kill her and make this land safe again.”",
+    "“కానీ తర్వాత {tataka|తాటకి} వచ్చింది. ఆమె కోరిన రూపం ధరించగల యక్షిణి; వేయి ఏనుగుల బలం కలది. సుందుని భార్య; ఇంద్రుని అంత బలవంతుడైన {marica|మారీచుని} తల్లి. ఇక్కడి నుండి ఒకటిన్నర యోజనాల దూరంలోనే ఉంటుంది; ఈ రెండు దేశాలనూ నాశనం చేసింది. ఎవరూ దగ్గరకు రావడానికి సాహసించరు. రామా, మునుల కోసం, ప్రజల కోసం ఆమెను సంహరించి ఈ భూమిని మళ్ళీ సురక్షితం చెయ్యి.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Rāma was puzzled. “I have heard that yakṣas are not very strong. How can a woman have the strength of a thousand elephants?”",
+    "రాముడు ఆశ్చర్యపోయాడు. “యక్షులు అంత బలవంతులు కాదని విన్నాను. ఒక స్త్రీకి వేయి ఏనుగుల బలం ఎలా వచ్చింది?”"
+   ],
+   [
+    "p",
+    "“There was once a great yakṣa named Suketu,” said Viśvāmitra. “He had no children, so he did hard tapas. Brahmā was pleased and gave him a daughter — Tāṭakā — with the strength of a thousand elephants. When she grew up, she married Sunda, and they had a son, Mārīca.”",
+    "“ఒకప్పుడు సుకేతుడనే గొప్ప యక్షుడు ఉండేవాడు,” అన్నాడు విశ్వామిత్రుడు. “సంతానం లేనందున కఠిన తపస్సు చేశాడు. బ్రహ్మ సంతోషించి అతనికి వేయి ఏనుగుల బలం కల కుమార్తెను — తాటకిని — ఇచ్చాడు. పెద్దయ్యాక ఆమె సుందుని వివాహం చేసుకుంది; వారికి మారీచుడు అనే కుమారుడు పుట్టాడు.”"
+   ],
+   [
+    "p",
+    "“When Sunda was killed by the curse of the great sage {agastya|Agastya}, Tāṭakā and Mārīca rushed at Agastya, roaring, to eat him up. Agastya cursed them: ‘Mārīca, become a rākṣasa! Tāṭakā, lose your beautiful form and become a terrible man-eating monster!’ Ever since, full of rage, she has been destroying this land, which once belonged to Agastya.”",
+    "“మహర్షి {agastya|అగస్త్యుని} శాపంతో సుందుడు మరణించినప్పుడు, తాటకి, మారీచుడు గర్జిస్తూ అగస్త్యుడిని తినేయడానికి ఆయన మీదికి దూకారు. అగస్త్యుడు వారిని శపించాడు: ‘మారీచా, రాక్షసుడివి అవ్వు! తాటకీ, నీ అందమైన రూపం పోయి భయంకరమైన నరభక్షక రాక్షసివి అవ్వు!’ అప్పటి నుండి కోపంతో రగిలిపోతూ, ఒకప్పుడు అగస్త్యునిదైన ఈ భూమిని ఆమె నాశనం చేస్తోంది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Rāma, do not hesitate because she is a woman,” Viśvāmitra went on. “A prince's duty is to protect the people. When someone is destroying innocent lives, those who rule must stop them — whether it is pleasant or not, whether the wrongdoer is a man or a woman. This is the eternal duty of protectors.”",
+    "“రామా, ఆమె స్త్రీ అని సంకోచించకు,” అని విశ్వామిత్రుడు కొనసాగించాడు. “ప్రజలను కాపాడటమే రాకుమారుని ధర్మం. ఎవరైనా అమాయకుల ప్రాణాలు తీస్తుంటే, పాలకులు వారిని ఆపాలి — అది ఇష్టమైనా కాకపోయినా, తప్పు చేసినది పురుషుడైనా స్త్రీ అయినా. ఇది రక్షకుల శాశ్వత ధర్మం.”"
+   ],
+   [
+    "p",
+    "“Long ago, Indra himself killed Mantharā, the daughter of Virocana, when she tried to destroy the earth. And Viṣṇu killed the wife of the sage Bhṛgu when she tried to rid the world of Indra. Such people, who do great evil, must be stopped.”",
+    "“పూర్వం భూమిని నాశనం చేయాలనుకున్న విరోచనుని కుమార్తె మంథరను ఇంద్రుడే స్వయంగా చంపాడు. ఇంద్రుడు లేని లోకం కావాలనుకున్న భృగు మహర్షి భార్యను విష్ణువు సంహరించాడు. ఇంత చెడు చేసేవారిని ఆపాలి.”"
+   ],
+   [
+    "p",
+    "Rāma folded his hands. “When I left Ayodhyā, my father told me: ‘Do whatever Viśvāmitra says, without any doubt.’ So I will. For the good of the sages, the cows and this land, I will kill Tāṭakā.” Then he took his bow and twanged the string. The sound was so loud that it filled every corner of the forest and echoed in the sky.",
+    "రాముడు చేతులు జోడించాడు. “అయోధ్య నుండి బయలుదేరినప్పుడు నా తండ్రి నాతో, ‘విశ్వామిత్రుడు ఏం చెప్పినా సందేహం లేకుండా చెయ్యి’ అన్నారు. అలాగే చేస్తాను. మునుల మేలు కోసం, గోవుల కోసం, ఈ భూమి కోసం తాటకిని సంహరిస్తాను.” తర్వాత ధనుస్సు అందుకుని నారిని మోగించాడు. ఆ ధ్వని ఎంత పెద్దదంటే అడవి అంతా నిండి, ఆకాశంలో ప్రతిధ్వనించింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Tāṭakā heard the sound. At first she was startled; then she was furious. She came rushing towards them — huge, hideous and roaring — and a great cloud of dust rose around her. Then, using her magic, she began to rain huge rocks down on the princes.",
+    "తాటకి ఆ ధ్వని విన్నది. మొదట ఉలిక్కిపడింది; తర్వాత ఆగ్రహించింది. భారీ, వికారమైన రూపంతో గర్జిస్తూ వారి వైపు పరుగెత్తుకుంటూ వచ్చింది; ఆమె చుట్టూ పెద్ద దుమ్ముమేఘం లేచింది. తర్వాత మాయతో రాకుమారులపై పెద్ద పెద్ద బండరాళ్ళ వర్షం కురిపించసాగింది."
+   ],
+   [
+    "p",
+    "“Look at her, Lakṣmaṇa,” said Rāma. “I would rather not kill a woman. Let me only take away her power to do harm.” With his arrows he cut off the arms she was using to hurl the rocks, and Lakṣmaṇa, angry, cut off her nose and ears.",
+    "“ఆమెను చూడు లక్ష్మణా,” అన్నాడు రాముడు. “స్త్రీని చంపకుండా ఉండాలనే అనుకుంటున్నాను. హాని చేసే శక్తిని మాత్రం తీసేస్తాను.” బండలు విసురుతున్న ఆమె చేతులను బాణాలతో ఖండించాడు; కోపంతో లక్ష్మణుడు ఆమె ముక్కు చెవులు కోశాడు."
+   ],
+   [
+    "p",
+    "But Tāṭakā did not stop. She made herself invisible, changed into one form after another, and kept showering stones from the sky. “Enough mercy, Rāma!” cried Viśvāmitra. “She is wicked and destroys yajñas. Dusk is coming, and at dusk rākṣasas become far stronger. Kill her now!”",
+    "కానీ తాటకి ఆగలేదు. కనిపించకుండా మాయమై, ఒక రూపం తర్వాత ఒక రూపం మారుస్తూ, ఆకాశం నుండి రాళ్ళు కురిపిస్తూనే ఉంది. “ఇక దయ చాలు రామా!” అని విశ్వామిత్రుడు అరిచాడు. “ఆమె దుష్టురాలు, యాగాలను నాశనం చేస్తుంది. సంధ్యాకాలం వస్తోంది; సంధ్యలో రాక్షసుల బలం ఎంతో పెరుగుతుంది. ఇప్పుడే ఆమెను సంహరించు!”"
+   ],
+   [
+    "p",
+    "Rāma could not see her, but he could hear her. Aiming only by the sound of her voice, he shot his arrows and trapped her. As she rushed at him, roaring like thunder, Rāma's arrow struck her in the chest. Tāṭakā fell to the ground, dead.",
+    "రాముడు ఆమెను చూడలేకపోయినా ఆమె శబ్దం వినగలిగాడు. ఆమె గొంతు ధ్వని ఆధారంగా మాత్రమే గురి చూసి బాణాలు వేసి ఆమెను కట్టడి చేశాడు. ఉరుములా గర్జిస్తూ ఆమె తన మీదికి దూకుతుండగా, రాముని బాణం ఆమె వక్షస్థలంలో దిగింది. తాటకి నేలపై పడి మరణించింది."
+   ],
+   [
+    "dyk",
+    "👂",
+    "Shooting at a target by sound alone is called *śabdavedhī*. Rāma's father Daśaratha had this skill too — and in Ayodhyā Kāṇḍa you will learn how it once led him to a terrible mistake.",
+    "కేవలం శబ్దం ఆధారంగా గురి చూసి కొట్టడాన్ని *శబ్దవేధి* అంటారు. రాముని తండ్రి దశరథునికీ ఈ విద్య తెలుసు — అది ఒకప్పుడు ఆయనను ఎంత ఘోరమైన పొరపాటుకు దారితీసిందో అయోధ్యకాండలో తెలుసుకుంటారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The gods, led by Indra, appeared in the sky and praised Rāma. “Well done!” they said. Then they turned to Viśvāmitra. “Great sage, we are pleased. Now give Rāma the divine weapons — the sons of Kṛśāśva. He is truly worthy of them, and he has great work ahead of him for the sake of the gods.”",
+    "ఇంద్రుని నాయకత్వంలో దేవతలు ఆకాశంలో ప్రత్యక్షమై రాముడిని ప్రశంసించారు. “శభాష్!” అన్నారు. తర్వాత విశ్వామిత్రునితో, “మహర్షీ, మేము సంతోషించాం. ఇప్పుడు రామునికి దివ్యాస్త్రాలను — కృశాశ్వుని పుత్రులను — ఇవ్వండి. అతను వాటికి నిజంగా అర్హుడు; దేవతల కోసం అతను ముందు చేయవలసిన గొప్ప కార్యం ఉంది” అన్నారు."
+   ],
+   [
+    "p",
+    "Viśvāmitra kissed Rāma on the head with love. That night they slept in the forest — and the forest, freed from Tāṭakā, became calm and beautiful again, like Kubera's lovely garden Caitraratha.",
+    "విశ్వామిత్రుడు ప్రేమతో రాముని శిరస్సుపై ముద్దు పెట్టుకున్నాడు. ఆ రాత్రి వారు అడవిలోనే నిద్రించారు — తాటకి నుండి విముక్తి పొందిన ఆ అడవి, కుబేరుని అందమైన చైత్రరథ ఉద్యానవనంలా మళ్ళీ ప్రశాంతంగా, అందంగా మారింది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "The roar where they crossed was the Sarayū rushing into the Gaṅgā.",
+   "వారు దాటిన చోటి హోరు సరయూ గంగలో కలిసే సంగమానిది."
+  ],
+  [
+   "Tāṭakā, cursed by Agastya, had turned two rich lands into a terrifying forest.",
+   "అగస్త్యుని శాపం పొందిన తాటకి రెండు సంపన్న దేశాలను భయంకరమైన అడవిగా మార్చింది."
+  ],
+  [
+   "Rāma first tried only to stop her from doing harm; when she would not stop, he killed her.",
+   "హాని చేయకుండా ఆపాలని మాత్రమే రాముడు మొదట ప్రయత్నించాడు; ఆమె ఆగకపోవడంతో సంహరించాడు."
+  ],
+  [
+   "Rāma aimed by sound alone — śabdavedhī.",
+   "రాముడు కేవలం శబ్దం ఆధారంగా గురి చూశాడు — శబ్దవేధి."
+  ],
+  [
+   "The gods asked Viśvāmitra to give Rāma the divine weapons.",
+   "రామునికి దివ్యాస్త్రాలు ఇవ్వమని దేవతలు విశ్వామిత్రుడిని కోరారు."
+  ]
+ ],
+ "think": [
+  "Rāma did not want to kill Tāṭakā and first tried another way. Why do you think he tried that first? When is it right to use force?",
+  "రాముడు తాటకిని చంపాలనుకోలేదు; మొదట వేరే మార్గం ప్రయత్నించాడు. ఎందుకు అలా చేశాడనుకుంటున్నారు? బలప్రయోగం ఎప్పుడు సరైనది?"
+ ]
+},
+{
+ "id": "bala-7",
+ "kanda": "bala",
+ "n": 7,
+ "order": 107,
+ "date": "2026-10-13",
+ "title": "Divine Weapons and the Yajña",
+ "titleTe": "దివ్యాస్త్రాలు, యాగరక్షణ",
+ "sargas": "27–31",
+ "scene": "weapons",
+ "who": [
+  "vishvamitra",
+  "rama",
+  "lakshmana",
+  "vamana",
+  "marica",
+  "subahu"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "In the morning, Viśvāmitra smiled at Rāma. “I am very pleased with you, prince. I will now give you all the divine weapons, the *astras*. With them you will be able to defeat any enemy — whether gods, asuras, gandharvas or nāgas.”",
+    "ఉదయం విశ్వామిత్రుడు రాముని చూసి చిరునవ్వు నవ్వాడు. “రాకుమారా, నీ మీద నాకు ఎంతో సంతోషంగా ఉంది. ఇప్పుడు నీకు దివ్య *అస్త్రాలన్నీ* ఇస్తాను. వాటితో దేవతలు, అసురులు, గంధర్వులు, నాగులు — ఏ శత్రువునైనా జయించగలవు.”"
+   ],
+   [
+    "p",
+    "Rāma bathed, purified himself and sat facing east. Then, one by one, Viśvāmitra taught him the mantras: the great discs — the Daṇḍa-cakra, the Dharma-cakra, the Kāla-cakra and the Viṣṇu-cakra; Indra's thunderbolt, the vajra; Śiva's trident; the Brahmaśiras and the mighty Brahmāstra; the maces Modakī and Śikharī; the nooses of Dharma, of Kāla and of Varuṇa; the Āgneya weapon of fire and the Vāyavya weapon of wind; the Nārāyaṇāstra; the Mānavāstra; and weapons that bring sleep, calm, rain, drying, burning heat, tears and confusion — and many more.",
+    "రాముడు స్నానం చేసి, శుచియై, తూర్పుకు అభిముఖంగా కూర్చున్నాడు. తర్వాత విశ్వామిత్రుడు ఒక్కొక్కటిగా మంత్రాలు ఉపదేశించాడు: మహా చక్రాలు — దండచక్రం, ధర్మచక్రం, కాలచక్రం, విష్ణుచక్రం; ఇంద్రుని వజ్రాయుధం; శివుని త్రిశూలం; బ్రహ్మశిరస్సు, మహా బ్రహ్మాస్త్రం; మోదకి, శిఖరి అనే గదలు; ధర్మపాశం, కాలపాశం, వరుణపాశం; అగ్ని ఆయుధం ఆగ్నేయాస్త్రం, వాయువు ఆయుధం వాయవ్యాస్త్రం; నారాయణాస్త్రం; మానవాస్త్రం; నిద్ర, శాంతి, వర్షం, శోషణం, తాపం, ఏడుపు, భ్రమ కలిగించే అస్త్రాలు — ఇంకా ఎన్నో."
+   ],
+   [
+    "p",
+    "As soon as the mantras were spoken, the weapons themselves appeared before Rāma in shining, living forms. Some glowed like fire, some like smoke, some like the sun and the moon. They folded their hands and said, “O noble Rāma, we are your servants. Command us, and we will do whatever you wish.”",
+    "మంత్రాలు ఉచ్చరించగానే ఆ అస్త్రాలే తేజోమయమైన, సజీవ రూపాలతో రాముని ఎదుట ప్రత్యక్షమయ్యాయి. కొన్ని అగ్నిలా, కొన్ని పొగలా, కొన్ని సూర్యచంద్రుల్లా ప్రకాశిస్తున్నాయి. అవి చేతులు జోడించి, “ఉదాత్తుడవైన రామా, మేము నీ సేవకులం. ఆజ్ఞాపించు; నీవు కోరినదంతా చేస్తాం” అన్నాయి."
+   ],
+   [
+    "p",
+    "Rāma touched each of them with his hand and said, “Live in my mind. When I need you, come to me.” With all the weapons of the gods in his keeping, his face shone with joy.",
+    "రాముడు ఒక్కొక్కదానినీ చేతితో తాకి, “నా మనసులో నివసించండి. అవసరమైనప్పుడు నా దగ్గరకు రండి” అన్నాడు. దేవతల ఆయుధాలన్నీ తన వశంలో ఉండటంతో ఆయన ముఖం ఆనందంతో వెలిగిపోయింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "As they walked on, Rāma said, “Guru, I have received the weapons. Now please teach me how to call them back, too.” Pleased, Viśvāmitra taught him the *saṃhāra* mantras — the secrets of withdrawing each weapon. These too came before Rāma in radiant forms, with names like Satyavān, Satyakīrti, Dhṛṣṭa, Rabhasa, Lakṣya, Alakṣya, Padmanābha and many others, and offered him their service.",
+    "ముందుకు నడుస్తుండగా రాముడు, “గురువర్యా, అస్త్రాలను పొందాను. ఇప్పుడు వాటిని ఉపసంహరించడం కూడా దయచేసి నేర్పండి” అన్నాడు. సంతోషించిన విశ్వామిత్రుడు అతనికి *ఉపసంహార* మంత్రాలు — ప్రతి అస్త్రాన్నీ వెనక్కి పిలిచే రహస్యాలు — ఉపదేశించాడు. సత్యవంతుడు, సత్యకీర్తి, ధృష్టుడు, రభసుడు, లక్ష్యుడు, అలక్ష్యుడు, పద్మనాభుడు వంటి పేర్లు గల అవి కూడా తేజోరూపాలతో రాముని ఎదుట నిలిచి సేవ చేస్తామన్నాయి."
+   ],
+   [
+    "dyk",
+    "🎯",
+    "Rāma asked to learn how to *withdraw* the weapons, not just how to use them. A great warrior knows that power must always be kept under control.",
+    "అస్త్రాలను ఎలా ప్రయోగించాలో మాత్రమే కాదు, ఎలా *ఉపసంహరించాలో* కూడా రాముడు నేర్చుకోవాలనుకున్నాడు. శక్తిని ఎప్పుడూ అదుపులో ఉంచుకోవాలని గొప్ప యోధునికి తెలుసు."
+   ],
+   [
+    "p",
+    "Soon they saw, near a hill, a beautiful hermitage like a dark rain-cloud, surrounded by trees and full of birds and deer. “Whose āśrama is that?” asked Rāma. “It looks so peaceful. Is that where the wicked rākṣasas come to ruin your yajña?”",
+    "త్వరలోనే ఒక కొండ దగ్గర, నల్లని వర్షమేఘంలా, చెట్ల మధ్య, పక్షులు, జింకలతో నిండిన ఒక అందమైన ఆశ్రమాన్ని చూశారు. “ఆ ఆశ్రమం ఎవరిది?” అని రాముడు అడిగాడు. “ఎంతో ప్రశాంతంగా ఉంది. దుష్ట రాక్షసులు మీ యాగాన్ని భంగపరచడానికి వచ్చేది అక్కడికేనా?”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“That is Siddhāśrama,” said Viśvāmitra, “the place where Viṣṇu himself once did tapas. Long ago, the mighty asura king {bali|Bali} conquered all three worlds and drove out the gods. When he was holding a great yajña, the gods came to Viṣṇu and begged him for help.”",
+    "“అది సిద్ధాశ్రమం,” అన్నాడు విశ్వామిత్రుడు, “ఒకప్పుడు విష్ణువే స్వయంగా తపస్సు చేసిన ప్రదేశం. పూర్వం మహాబలుడైన అసుర రాజు {bali|బలి} మూడు లోకాలనూ జయించి దేవతలను వెళ్ళగొట్టాడు. అతను ఒక గొప్ప యాగం చేస్తున్నప్పుడు దేవతలు విష్ణువు దగ్గరకు వచ్చి సహాయం కోసం వేడుకున్నారు.”"
+   ],
+   [
+    "p",
+    "“So Viṣṇu was born as {vamana|Vāmana}, a tiny brāhmaṇa boy, the son of the sage Kaśyapa and Aditi. He went to Bali's yajña and asked for a small gift — just three steps of land. Bali, who never refused anyone, agreed at once. Then Vāmana grew and grew until he filled the sky. With his first step he covered the earth, with his second the heavens, and with the third he pressed Bali down to the underworld. And he gave the three worlds back to Indra.”",
+    "“అప్పుడు విష్ణువు కశ్యప మహర్షి, అదితుల కుమారునిగా, చిన్న బ్రాహ్మణ బాలుడు {vamana|వామనునిగా} జన్మించాడు. బలి యాగానికి వెళ్ళి చిన్న దానం అడిగాడు — కేవలం మూడు అడుగుల నేల. ఎవరినీ కాదనని బలి వెంటనే అంగీకరించాడు. అప్పుడు వామనుడు ఆకాశమంతా నిండేలా పెరిగిపోయాడు. మొదటి అడుగుతో భూమిని, రెండో అడుగుతో స్వర్గాన్ని కొలిచి, మూడో అడుగుతో బలిని పాతాళానికి అణచివేశాడు. మూడు లోకాలనూ ఇంద్రునికి తిరిగి ఇచ్చాడు.”"
+   ],
+   [
+    "p",
+    "“Vāmana lived in this very āśrama. I am his devotee, and now it is my home. This is where the rākṣasas come. Today, Rāma, it is your āśrama too.” Then the sages of Siddhāśrama came out joyfully and welcomed them. Rāma said, “Begin your yajña today, guru. Let your name for this place — Siddhāśrama, ‘the hermitage of success’ — come true.”",
+    "“వామనుడు ఈ ఆశ్రమంలోనే నివసించాడు. నేను ఆయన భక్తుడిని; ఇప్పుడు ఇది నా నివాసం. రాక్షసులు వచ్చేది ఇక్కడికే. రామా, ఈ రోజు నుండి ఇది నీ ఆశ్రమం కూడా.” అప్పుడు సిద్ధాశ్రమ మునులు ఆనందంగా బయటకు వచ్చి వారిని స్వాగతించారు. రాముడు, “గురువర్యా, ఈ రోజే మీ యాగం ప్రారంభించండి. ఈ ప్రదేశానికి మీరిచ్చిన పేరు — సిద్ధాశ్రమం, ‘సిద్ధి కలిగే ఆశ్రమం’ — నిజమవుగాక” అన్నాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "That same day, Viśvāmitra began the yajña, taking a vow of silence. The princes asked the sages, “When will the rākṣasas come?” “Guard the yajña for six nights,” they replied. “The sage will not speak until it is over.”",
+    "అదే రోజు విశ్వామిత్రుడు మౌనవ్రతం స్వీకరించి యాగం ప్రారంభించాడు. “రాక్షసులు ఎప్పుడు వస్తారు?” అని రాకుమారులు మునులను అడిగారు. “ఆరు రాత్రులు యాగాన్ని కాపాడండి,” అన్నారు వారు. “యాగం పూర్తయ్యే వరకు మహర్షి మాట్లాడరు.”"
+   ],
+   [
+    "p",
+    "For six days and six nights, Rāma and Lakṣmaṇa stood guard without sleeping, bows in hand, watching every direction. On the sixth day, the fire on the altar suddenly blazed up high. Then a terrible roar filled the sky. Mārīca and {subahu|Subāhu} came rushing with their followers, spreading over the sky like dark rain-clouds, and began to pour down streams of blood.",
+    "ఆరు పగళ్ళు, ఆరు రాత్రులు రామలక్ష్మణులు నిద్ర లేకుండా, ధనుస్సులు చేతబట్టి, అన్ని దిక్కులనూ గమనిస్తూ కాపలా కాశారు. ఆరో రోజు యజ్ఞవేదికపై అగ్ని అకస్మాత్తుగా ఎత్తుగా ఎగసింది. తర్వాత ఆకాశాన్ని ఒక భయంకర గర్జన నింపింది. మారీచుడు, {subahu|సుబాహుడు} తమ అనుచరులతో నల్లని వర్షమేఘాల్లా ఆకాశమంతా కమ్ముకుంటూ దూసుకువచ్చి రక్తధారలు కురిపించసాగారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Watch, Lakṣmaṇa,” said Rāma calmly. “I will scatter them as the wind scatters clouds.” He fitted the Mānavāstra to his bow and shot it straight at Mārīca's chest. The weapon did not kill him — it hurled him through the air, spinning and senseless, a hundred yojanas away, and dropped him into the ocean.",
+    "“చూడు లక్ష్మణా,” అన్నాడు రాముడు ప్రశాంతంగా. “గాలి మేఘాలను చెదరగొట్టినట్లు వీరిని చెదరగొడతాను.” మానవాస్త్రాన్ని ధనుస్సుకు సంధించి నేరుగా మారీచుని వక్షస్థలానికి వేశాడు. ఆ అస్త్రం అతనిని చంపలేదు — స్పృహ కోల్పోయి గిరగిరా తిరుగుతుండగా గాలిలో నూరు యోజనాల దూరం విసిరేసి సముద్రంలో పడేసింది."
+   ],
+   [
+    "p",
+    "Then Rāma fired the Āgneyāstra, the weapon of fire, at Subāhu, and Subāhu fell dead. With the Vāyavyāstra, the weapon of wind, he swept away all the rest of the rākṣasas. The sky grew clear, and the yajña was saved.",
+    "తర్వాత రాముడు అగ్ని ఆయుధమైన ఆగ్నేయాస్త్రాన్ని సుబాహునిపై ప్రయోగించగా సుబాహుడు మరణించాడు. గాలి ఆయుధమైన వాయవ్యాస్త్రంతో మిగిలిన రాక్షసులందరినీ తుడిచిపెట్టేశాడు. ఆకాశం నిర్మలమైంది; యాగం రక్షించబడింది."
+   ],
+   [
+    "p",
+    "The sages praised Rāma as the gods praise Indra after a victory. When the yajña was complete, Viśvāmitra said, “Rāma, you have done what I asked. You have made the name of Siddhāśrama come true.”",
+    "విజయం తర్వాత దేవతలు ఇంద్రుని స్తుతించినట్లు మునులు రాముడిని స్తుతించారు. యాగం పూర్తయ్యాక విశ్వామిత్రుడు, “రామా, నేను అడిగినది నువ్వు చేశావు. సిద్ధాశ్రమం అనే పేరును సార్థకం చేశావు” అన్నాడు."
+   ],
+   [
+    "dyk",
+    "🦌",
+    "Rāma spared Mārīca's life. Keep him in mind — years later, in the forest, he will return in the form of a golden deer.",
+    "రాముడు మారీచుని ప్రాణం తీయలేదు. అతనిని గుర్తుంచుకోండి — కొన్నేళ్ళ తర్వాత అడవిలో అతను బంగారు జింక రూపంలో మళ్ళీ వస్తాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The next morning the princes came to Viśvāmitra. “We are at your service. What shall we do next?” The sages answered for him: “King Janaka of Mithilā is about to hold a great yajña, and we are all going. Come with us. There you will see a wonderful bow — the bow of Śiva himself, given long ago by the gods to Janaka's ancestor. No god, gandharva, asura or rākṣasa has ever been able to string it, and many kings have tried and failed.”",
+    "మరుసటి ఉదయం రాకుమారులు విశ్వామిత్రుని దగ్గరకు వచ్చారు. “మేము మీ సేవకు సిద్ధం. తర్వాత ఏమి చేయాలి?” ఆయన తరఫున మునులు జవాబిచ్చారు: “మిథిలా రాజు జనకుడు ఒక గొప్ప యాగం చేయబోతున్నాడు; మేమంతా వెళ్తున్నాం. మాతో రండి. అక్కడ మీరు ఒక అద్భుతమైన ధనుస్సును చూస్తారు — సాక్షాత్తు శివుని ధనుస్సు; చాలా కాలం క్రితం దేవతలు జనకుని పూర్వీకునికి ఇచ్చారు. ఏ దేవుడూ, గంధర్వుడూ, అసురుడూ, రాక్షసుడూ దానికి నారి ఎక్కించలేకపోయారు; ఎందరో రాజులు ప్రయత్నించి విఫలమయ్యారు.”"
+   ],
+   [
+    "p",
+    "So Viśvāmitra bowed to the gods of the forest, said goodbye to Siddhāśrama, and set out northwards towards the Himālaya. A hundred carts of sages followed him, and even the birds and deer of the āśrama followed until he gently sent them back. By evening they reached the banks of the river Śoṇa. “Whose land is this?” Rāma asked — and Viśvāmitra began another story.",
+    "అలా విశ్వామిత్రుడు వనదేవతలకు నమస్కరించి, సిద్ధాశ్రమానికి వీడ్కోలు చెప్పి, ఉత్తరాన హిమాలయాల వైపు బయలుదేరాడు. నూరు బండ్లలో మునులు ఆయనను అనుసరించారు; ఆశ్రమంలోని పక్షులు, జింకలు కూడా వెంట వచ్చాయి — ఆయన వాటిని మృదువుగా వెనక్కి పంపే వరకు. సాయంత్రానికి శోణ నది తీరానికి చేరుకున్నారు. “ఈ దేశం ఎవరిది?” అని రాముడు అడిగాడు — విశ్వామిత్రుడు మరో కథ ప్రారంభించాడు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Viśvāmitra gave Rāma all the divine weapons — and, at Rāma's request, how to withdraw them.",
+   "విశ్వామిత్రుడు రామునికి దివ్యాస్త్రాలన్నీ ఇచ్చాడు — రాముని కోరికపై వాటి ఉపసంహారం కూడా నేర్పాడు."
+  ],
+  [
+   "Siddhāśrama is where Viṣṇu lived as Vāmana, who won the three worlds back from Bali.",
+   "బలి నుండి మూడు లోకాలనూ తిరిగి గెలుచుకున్న వామనుడు నివసించిన ప్రదేశం సిద్ధాశ్రమం."
+  ],
+  [
+   "Rāma and Lakṣmaṇa guarded the yajña for six days and nights without sleep.",
+   "రామలక్ష్మణులు నిద్ర లేకుండా ఆరు పగళ్ళు, రాత్రులు యాగాన్ని కాపాడారు."
+  ],
+  [
+   "Rāma threw Mārīca into the ocean, killed Subāhu, and saved the yajña.",
+   "రాముడు మారీచుడిని సముద్రంలోకి విసిరేసి, సుబాహుడిని సంహరించి, యాగాన్ని కాపాడాడు."
+  ],
+  [
+   "The sages invited the princes to Mithilā to see Śiva's great bow.",
+   "శివ ధనుస్సును చూడటానికి మునులు రాకుమారులను మిథిలకు ఆహ్వానించారు."
+  ]
+ ],
+ "think": [
+  "Bali kept his promise to Vāmana even though it cost him everything. What does that tell you about him?",
+  "అన్నీ పోగొట్టుకున్నా బలి వామనునికి ఇచ్చిన మాట నిలబెట్టుకున్నాడు. దీని వల్ల అతని గురించి మీకు ఏమి తెలుస్తుంది?"
+ ]
+},
+{
+ "id": "bala-8",
+ "kanda": "bala",
+ "n": 8,
+ "order": 108,
+ "date": "2026-10-13",
+ "title": "Kauśikī and the Birth of Kumāra",
+ "titleTe": "కౌశికి, కుమారస్వామి జననం",
+ "sargas": "32–37",
+ "scene": "night",
+ "who": [
+  "vishvamitra",
+  "rama",
+  "ganga",
+  "uma",
+  "shiva",
+  "kartikeya"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "“This land has a story that is also my own,” said {vishvamitra|Viśvāmitra}. “Long ago, Brahmā's son Kuśa had four sons — Kuśāmba, Kuśanābha, Asūrtarajasa and Vasu. Each built a great city: Kuśāmba built Kauśāmbī, Kuśanābha built Mahodaya, Asūrtarajasa built Dharmāraṇya, and Vasu built Girivraja, here in Magadha, ringed by five mountains, with the river Sumāgadhī winding through it like a garland.”",
+    "“ఈ దేశానికి నా సొంత కథతో సంబంధం ఉంది,” అన్నాడు {vishvamitra|విశ్వామిత్రుడు}. “పూర్వం బ్రహ్మ కుమారుడైన కుశునికి నలుగురు కుమారులు — కుశాంబుడు, కుశనాభుడు, అసూర్తరజసుడు, వసువు. ఒక్కొక్కరూ ఒక గొప్ప నగరాన్ని నిర్మించారు: కుశాంబుడు కౌశాంబిని, కుశనాభుడు మహోదయాన్ని, అసూర్తరజసుడు ధర్మారణ్యాన్ని, వసువు ఇక్కడ మగధలో, ఐదు పర్వతాల మధ్య, సుమాగధి నది హారంలా చుట్టుకున్న గిరివ్రజాన్ని నిర్మించారు.”"
+   ],
+   [
+    "p",
+    "“Kuśanābha had a hundred daughters by the apsara Ghṛtācī — beautiful and full of life. One day, as they were playing in a garden, shining like lightning among clouds, Vāyu, the wind god, saw them and wished to marry them all. ‘Marry me,’ he said, ‘and you will never grow old or die.’”",
+    "“కుశనాభునికి అప్సరస ఘృతాచి ద్వారా వంద మంది కుమార్తెలు — అందమైనవారు, ఉత్సాహంతో నిండినవారు. ఒక రోజు మేఘాల మధ్య మెరుపుల్లా ఒక ఉద్యానవనంలో వారు ఆడుకుంటుండగా, వాయుదేవుడు వారిని చూసి అందరినీ వివాహం చేసుకోవాలనుకున్నాడు. ‘నన్ను పెళ్ళి చేసుకోండి, మీకు ముసలితనం గానీ మరణం గానీ రాదు’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“The princesses laughed. ‘We know your greatness, Vāyu,’ they said, ‘but we will not choose a husband for ourselves. Our father will decide. May the day never come when we disrespect our father.’ Vāyu was furious. He entered their bodies and twisted them, so that they became bent and hunched.”",
+    "“రాకుమార్తెలు నవ్వారు. ‘వాయుదేవా, నీ గొప్పతనం మాకు తెలుసు, కానీ మా భర్తను మేమే ఎంచుకోం. మా తండ్రి నిర్ణయిస్తారు. మా తండ్రిని అగౌరవపరిచే రోజు ఎప్పుడూ రాకూడదు.’ వాయువు ఆగ్రహించాడు. వారి శరీరాలలోకి ప్రవేశించి వాటిని వంచేశాడు; వారు వంగిపోయి గూనివారయ్యారు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Weeping, the princesses ran to their father and told him everything. Kuśanābha said, ‘My daughters, you were insulted and yet you did not curse him back. You forgave. Forgiveness is the greatest gift — it is the ornament of women and of men alike. Forgiveness is truth, it is yajña, it is fame, it is dharma. The whole world rests on forgiveness.’”",
+    "“ఏడుస్తూ రాకుమార్తెలు తండ్రి దగ్గరకు పరుగెత్తి అంతా చెప్పారు. కుశనాభుడు ఇలా అన్నాడు: ‘నా బిడ్డలారా, అవమానం జరిగినా మీరు తిరిగి శపించలేదు. క్షమించారు. క్షమయే గొప్ప దానం — స్త్రీలకూ, పురుషులకూ అదే ఆభరణం. క్షమే సత్యం, క్షమే యజ్ఞం, క్షమే కీర్తి, క్షమే ధర్మం. లోకమంతా క్షమ మీదే నిలిచి ఉంది.’”"
+   ],
+   [
+    "p",
+    "“Then Kuśanābha married them all to Brahmadatta, a wise and gentle king, the son of the sage Cūlī. And the moment Brahmadatta took each princess by the hand, her body became straight and beautiful again.”",
+    "“తర్వాత కుశనాభుడు వారందరినీ చూళి మహర్షి కుమారుడు, జ్ఞాని, సౌమ్యుడు అయిన బ్రహ్మదత్తుడనే రాజుకిచ్చి వివాహం చేశాడు. బ్రహ్మదత్తుడు ఒక్కొక్క రాకుమార్తె చేయి పట్టుకోగానే ఆమె శరీరం మళ్ళీ నిటారుగా, అందంగా మారిపోయింది.”"
+   ],
+   [
+    "dyk",
+    "🙏",
+    "The princesses could have cursed the wind god back — but they chose to forgive. Their father praised forgiveness as the greatest strength of all.",
+    "రాకుమార్తెలు వాయుదేవుడిని తిరిగి శపించగలిగేవారు — కానీ క్షమించడాన్నే ఎంచుకున్నారు. వారి తండ్రి క్షమను అన్నిటికంటే గొప్ప బలంగా ప్రశంసించాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Later, Kuśanābha had a son named Gādhi. And Gādhi's son is me — that is why I am called Kauśika, of the family of Kuśa. My elder sister, Satyavatī, married the sage Ṛcīka. When her life on earth ended, she rose to heaven in her own body, and now she flows down from the Himālaya as the holy river Kauśikī. I live happily on her banks — I came away only for my yajña.”",
+    "“తర్వాత కుశనాభునికి గాధి అనే కుమారుడు పుట్టాడు. గాధి కుమారుడిని నేనే — అందుకే నన్ను కుశ వంశానికి చెందిన కౌశికుడు అంటారు. నా అక్క సత్యవతి ఋచీక మహర్షిని వివాహం చేసుకుంది. భూమిపై ఆమె జీవితం ముగిసినప్పుడు సశరీరంగా స్వర్గానికి వెళ్ళింది; ఇప్పుడు హిమాలయాల నుండి కౌశికి అనే పవిత్ర నదిగా ప్రవహిస్తోంది. నేను ఆమె తీరంలో సంతోషంగా నివసిస్తాను — యాగం కోసమే అక్కడి నుండి వచ్చాను.”"
+   ],
+   [
+    "p",
+    "“But look, Rāma — it is midnight. The trees are still, the birds are asleep, the stars fill the sky and the moon has risen, washing the world in cool light. Only the creatures of the night are awake. Let us sleep now, so that we can travel well tomorrow.”",
+    "“కానీ చూడు రామా — అర్ధరాత్రి అయింది. చెట్లు నిశ్చలంగా ఉన్నాయి, పక్షులు నిద్రపోతున్నాయి, ఆకాశమంతా నక్షత్రాలు నిండాయి; చంద్రుడు ఉదయించి లోకాన్ని చల్లని వెన్నెలతో తడుపుతున్నాడు. రాత్రి జీవులు మాత్రమే మేలుకుని ఉన్నాయి. రేపు బాగా ప్రయాణం చేయడానికి ఇప్పుడు నిద్రపోదాం.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "The next morning they crossed the Śoṇa and by noon reached the banks of the {ganga|Gaṅgā}, where swans and cranes floated on the water. They bathed, offered water to their ancestors, and rested. Then Rāma asked, “Guru, how does the Gaṅgā flow through all three worlds — heaven, earth and the underworld? Please tell us.”",
+    "మరుసటి ఉదయం వారు శోణ నదిని దాటి, మధ్యాహ్నానికి హంసలు, కొంగలు తేలియాడే {ganga|గంగానది} తీరానికి చేరుకున్నారు. స్నానం చేసి, పితృదేవతలకు తర్పణాలు ఇచ్చి విశ్రాంతి తీసుకున్నారు. తర్వాత రాముడు, “గురువర్యా, గంగ మూడు లోకాలలో — స్వర్గం, భూమి, పాతాళంలో — ఎలా ప్రవహిస్తుంది? దయచేసి చెప్పండి” అని అడిగాడు."
+   ],
+   [
+    "p",
+    "“Himavān, the king of mountains, and his wife Menā had two daughters,” said Viśvāmitra. “The elder was Gaṅgā; the younger was {uma|Umā}. The gods asked Himavān for Gaṅgā, so that she could purify heaven, and he gave her to them for the good of the worlds. So Gaṅgā went up to heaven and flowed there.”",
+    "“పర్వతరాజు హిమవంతునికి, అతని భార్య మేనకు ఇద్దరు కుమార్తెలు,” అన్నాడు విశ్వామిత్రుడు. “పెద్దది గంగ; చిన్నది {uma|ఉమ}. స్వర్గాన్ని పవిత్రం చేయడానికి దేవతలు గంగను ఇమ్మని హిమవంతుడిని అడిగారు; లోకహితం కోసం అతను ఆమెను వారికి ఇచ్చాడు. అలా గంగ స్వర్గానికి వెళ్ళి అక్కడ ప్రవహించింది.”"
+   ],
+   [
+    "p",
+    "“Umā did tapas so fierce that the whole world was amazed. And Himavān gave her in marriage to {shiva|Śiva}, the great god, whom no one in the world can equal.”",
+    "“ఉమ లోకమంతా ఆశ్చర్యపోయేంత కఠోర తపస్సు చేసింది. లోకంలో సాటిలేని మహాదేవుడు {shiva|శివునికి} హిమవంతుడు ఆమెనిచ్చి వివాహం చేశాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“After their marriage, Śiva and Umā lived together in great joy for a very long time. But the gods grew worried. ‘If a child is born from the great energy of Śiva and Umā,’ they said, ‘who in the worlds will be able to bear its power?’ So they went to Śiva and begged him to hold back his tremendous energy, his *tejas*.”",
+    "“వివాహం తర్వాత శివుడు, ఉమ ఎంతో కాలం గొప్ప ఆనందంతో కలిసి జీవించారు. కానీ దేవతలు ఆందోళన చెందారు. ‘శివ ఉమల మహాశక్తి నుండి ఒక బిడ్డ పుడితే, దాని శక్తిని లోకాలలో ఎవరు భరించగలరు?’ అనుకున్నారు. అందుకే శివుని దగ్గరకు వెళ్ళి ఆయన అపారమైన శక్తిని, *తేజస్సును*, తనలోనే నిలుపుకోమని వేడుకున్నారు.”"
+   ],
+   [
+    "p",
+    "“Śiva agreed. But some of that blazing energy had already been released, and it fell upon the earth, spreading over the mountains and forests. Umā was upset that the gods had come between her and the child she might have had, and she was angry with them. Then Śiva went away to the northern slopes of the Himālaya to do tapas, and Umā went with him.”",
+    "“శివుడు అంగీకరించాడు. కానీ ఆ జ్వలించే శక్తిలో కొంత అప్పటికే వెలువడింది; అది భూమిపై పడి పర్వతాలు, అడవులపై వ్యాపించింది. తనకు కలగగల సంతానానికీ తనకూ మధ్య దేవతలు అడ్డు వచ్చినందుకు ఉమ బాధపడి, వారిపై కోపించింది. తర్వాత శివుడు తపస్సు కోసం హిమాలయాల ఉత్తర సానువులకు వెళ్ళాడు; ఉమ కూడా ఆయనతో వెళ్ళింది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Some time later, the gods were in trouble — they needed a commander to lead them against the asuras. They went to Brahmā, and he said, ‘Agni will carry Śiva's energy to Gaṅgā. From her a son will be born, and he will lead your armies.’”",
+    "“కొంతకాలం తర్వాత దేవతలు కష్టంలో పడ్డారు — అసురులతో యుద్ధానికి వారికి ఒక సేనాపతి కావాలి. బ్రహ్మ దగ్గరకు వెళ్ళగా, ఆయన ఇలా అన్నాడు: ‘శివుని తేజస్సును అగ్ని గంగ దగ్గరకు తీసుకువెళ్తాడు. ఆమె నుండి ఒక కుమారుడు జన్మిస్తాడు; అతనే మీ సైన్యాలకు నాయకత్వం వహిస్తాడు.’”"
+   ],
+   [
+    "p",
+    "“So Agni carried the shining energy to Gaṅgā. But it burned so fiercely that even Gaṅgā could not hold it, and she placed it at the foot of the Himālaya. Wherever it touched, the earth turned into gold and silver, and into copper, iron, tin and lead. And in a forest of tall reeds, a radiant baby boy was born.”",
+    "“అలా అగ్ని ఆ తేజస్సును గంగ దగ్గరకు తీసుకువెళ్ళాడు. కానీ అది ఎంత తీవ్రంగా మండిందంటే గంగ కూడా దానిని భరించలేక హిమాలయాల పాదాల దగ్గర ఉంచింది. అది తాకిన చోటల్లా భూమి బంగారంగా, వెండిగా, రాగి, ఇనుము, తగరం, సీసంగా మారింది. ఎత్తైన రెల్లు వనంలో ఒక తేజోమయమైన బాలుడు జన్మించాడు.”"
+   ],
+   [
+    "p",
+    "“The six Kṛttikās — the stars of the Pleiades — came down to nurse him. To drink from all six at once, the baby grew six faces! So he is called Ṣaṇmukha, the six-faced one, and {kartikeya|Kārttikeya}, son of the Kṛttikās. He is also called Skanda, and Kumāra. When he grew up, he became the commander of the gods' army and defeated the asuras.”",
+    "“ఆరుగురు కృత్తికలు — కృత్తికా నక్షత్రాలు — అతనికి పాలివ్వడానికి దిగివచ్చారు. ఒకేసారి ఆరుగురి దగ్గరా పాలు తాగడానికి ఆ బిడ్డకు ఆరు ముఖాలు వచ్చాయి! అందుకే అతనిని షణ్ముఖుడు అంటారు; కృత్తికల కుమారుడు కనుక {kartikeya|కార్తికేయుడు} అంటారు. స్కందుడు, కుమారుడు అని కూడా పిలుస్తారు. పెద్దయ్యాక అతను దేవసేనాపతి అయి అసురులను ఓడించాడు.”"
+   ],
+   [
+    "dyk",
+    "🦚",
+    "Kārttikeya is the same god worshipped as Subrahmaṇya Swāmi in Andhra and Karnataka, and as Murugan in Tamil Nadu. His festival Skanda Ṣaṣṭhī is celebrated in many Telugu homes.",
+    "కార్తికేయుడే ఆంధ్ర, కర్ణాటకలలో సుబ్రహ్మణ్యస్వామిగా, తమిళనాడులో మురుగన్‌గా పూజలందుకునే దేవుడు. ఆయన పండుగ స్కంద షష్ఠిని ఎన్నో తెలుగు ఇళ్ళలో జరుపుకుంటారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Viśvāmitra belongs to the family of Kuśa — that is why he is called Kauśika.",
+   "విశ్వామిత్రుడు కుశ వంశానికి చెందినవాడు — అందుకే కౌశికుడు అంటారు."
+  ],
+  [
+   "Kuśanābha's daughters forgave the wind god, and their father praised forgiveness as the greatest strength.",
+   "కుశనాభుని కుమార్తెలు వాయువును క్షమించారు; క్షమయే గొప్ప బలమని వారి తండ్రి ప్రశంసించాడు."
+  ],
+  [
+   "Viśvāmitra's sister Satyavatī flows as the river Kauśikī.",
+   "విశ్వామిత్రుని అక్క సత్యవతి కౌశికి నదిగా ప్రవహిస్తోంది."
+  ],
+  [
+   "Gaṅgā and Umā were the daughters of Himavān; Gaṅgā went to heaven and Umā married Śiva.",
+   "గంగ, ఉమ హిమవంతుని కుమార్తెలు; గంగ స్వర్గానికి వెళ్ళింది, ఉమ శివుడిని వివాహం చేసుకుంది."
+  ],
+  [
+   "Kārttikeya, nursed by the six Kṛttikās, became the commander of the gods.",
+   "ఆరుగురు కృత్తికలు పెంచిన కార్తికేయుడు దేవసేనాపతి అయ్యాడు."
+  ]
+ ],
+ "think": [
+  "The princesses chose to forgive instead of taking revenge. Is forgiving someone a sign of weakness or strength? Why?",
+  "రాకుమార్తెలు ప్రతీకారం తీర్చుకోకుండా క్షమించారు. క్షమించడం బలహీనతా, బలమా? ఎందుకు?"
  ]
 }
 ]);
