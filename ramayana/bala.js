@@ -288,6 +288,62 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "గౌతమ మహర్షి",
   "d": "A great sage, husband of Ahalyā and father of Śatānanda, the priest of King Janaka.",
   "dt": "అహల్య భర్త, జనక మహారాజు పురోహితుడు శతానందుని తండ్రి అయిన మహర్షి."
+ },
+ "janaka": {
+  "av": "🌾",
+  "en": "Janaka",
+  "te": "జనకుడు",
+  "d": "The wise king of Mithilā (Videha), famous for his learning and detachment — and the father of Sītā.",
+  "dt": "మిథిల (విదేహ) రాజు; జ్ఞానానికి, వైరాగ్యానికి ప్రసిద్ధుడు — సీత తండ్రి."
+ },
+ "shatananda": {
+  "av": "🙏",
+  "en": "Śatānanda",
+  "te": "శతానందుడు",
+  "d": "King Janaka's chief priest, the son of the sage Gautama and Ahalyā.",
+  "dt": "జనక మహారాజు ప్రధాన పురోహితుడు; గౌతమ మహర్షి, అహల్యల కుమారుడు."
+ },
+ "trishanku": {
+  "av": "⭐",
+  "en": "Triśaṅku",
+  "te": "త్రిశంకుడు",
+  "d": "A king of the Ikṣvāku line who wished to go to heaven in his own body. Viśvāmitra created a new heaven of stars for him.",
+  "dt": "సశరీరంగా స్వర్గానికి వెళ్ళాలనుకున్న ఇక్ష్వాకు వంశపు రాజు. విశ్వామిత్రుడు అతని కోసం కొత్త నక్షత్ర స్వర్గాన్ని సృష్టించాడు."
+ },
+ "shunahshepa": {
+  "av": "🧒",
+  "en": "Śunaḥśepa",
+  "te": "శునఃశేపుడు",
+  "d": "A young boy, son of the sage Ṛcīka, who was saved by Viśvāmitra's mantras.",
+  "dt": "ఋచీక మహర్షి కుమారుడైన బాలుడు; విశ్వామిత్రుని మంత్రాలతో రక్షించబడ్డాడు."
+ },
+ "menaka": {
+  "av": "💃",
+  "en": "Menakā",
+  "te": "మేనక",
+  "d": "The most beautiful of the apsaras, sent by Indra to break Viśvāmitra's tapas.",
+  "dt": "అప్సరసలలో అత్యంత సౌందర్యవతి; విశ్వామిత్రుని తపస్సు భంగం చేయడానికి ఇంద్రుడు పంపాడు."
+ },
+ "sita": {
+  "av": "🌸",
+  "en": "Sītā",
+  "te": "సీత",
+  "d": "Daughter of King Janaka, found in a furrow of the earth while he ploughed. Gentle, brave and devoted, she is Lakṣmī herself born on earth.",
+  "dt": "భూమిని దున్నుతుండగా నాగటిచాలులో దొరికిన జనక మహారాజు కుమార్తె. సౌమ్యురాలు, ధైర్యవంతురాలు, పతివ్రత — భూమిపై అవతరించిన లక్ష్మీదేవి."
+ },
+ "urmila": {
+  "av": "🌷",
+  "en": "Ūrmilā",
+  "te": "ఊర్మిళ",
+  "d": "Janaka's second daughter and Sītā's sister, who married Lakṣmaṇa.",
+  "dt": "జనకుని రెండో కుమార్తె, సీత సోదరి; లక్ష్మణుడిని వివాహం చేసుకుంది."
+ },
+ "parashurama": {
+  "av": "🪓",
+  "en": "Paraśurāma",
+  "te": "పరశురాముడు",
+  "d": "Son of the sage Jamadagni, an avatāra of Viṣṇu armed with an axe, who once destroyed the wicked kings of the earth twenty-one times and then gave the whole earth away.",
+  "dt": "జమదగ్ని మహర్షి కుమారుడు; గొడ్డలి ధరించిన విష్ణువు అవతారం. దుష్ట రాజులను ఇరవై ఒక్కసార్లు నాశనం చేసి, తర్వాత భూమినంతా దానం చేశాడు."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -2327,6 +2383,591 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "Ahalyā made a mistake, paid for it with long penance, and was forgiven. Do you think everyone deserves a second chance?",
   "అహల్య తప్పు చేసింది, సుదీర్ఘ తపస్సుతో పశ్చాత్తాపపడింది, క్షమించబడింది. ప్రతి ఒక్కరికీ రెండో అవకాశం దక్కాలని మీరు అనుకుంటున్నారా?"
+ ]
+},
+{
+ "id": "bala-12",
+ "kanda": "bala",
+ "n": 12,
+ "order": 112,
+ "date": "2026-10-13",
+ "title": "Viśvāmitra: From King to Brahmarṣi",
+ "titleTe": "విశ్వామిత్రుడు: రాజు నుండి బ్రహ్మర్షి వరకు",
+ "sargas": "50–65",
+ "scene": "tapas",
+ "who": [
+  "vishvamitra",
+  "vasishtha",
+  "janaka",
+  "shatananda",
+  "trishanku",
+  "shunahshepa",
+  "menaka"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "At last they reached Mithilā, where Janaka's yajña was being prepared, and set up camp in a quiet place nearby. As soon as King {janaka|Janaka} heard that Viśvāmitra had come, he hurried out with his priest {shatananda|Śatānanda} to welcome him. Janaka bowed and said, “Today my yajña is blessed, because you have come.” Then he looked at the princes. “Who are these two young men, as handsome as gods, as strong as lions?”",
+    "చివరికి జనకుని యాగం సిద్ధమవుతున్న మిథిలకు చేరుకుని, దగ్గరలో ఒక ప్రశాంత ప్రదేశంలో విడిది చేశారు. విశ్వామిత్రుడు వచ్చాడని వినగానే {janaka|జనక మహారాజు} తన పురోహితుడు {shatananda|శతానందునితో} కలిసి ఆయనను స్వాగతించడానికి హడావుడిగా వచ్చాడు. జనకుడు నమస్కరించి, “మీరు వచ్చినందుకు ఈ రోజు నా యాగం ధన్యమైంది” అన్నాడు. తర్వాత రాకుమారులను చూసి, “దేవతల్లా అందమైన, సింహాల్లా బలవంతులైన ఈ ఇద్దరు యువకులు ఎవరు?” అని అడిగాడు."
+   ],
+   [
+    "p",
+    "Viśvāmitra told him: these were the sons of Daśaratha; they had come to protect his yajña, killed Tāṭakā and Subāhu, received the divine weapons, freed Ahalyā, and now wished to see the great bow of Śiva.",
+    "విశ్వామిత్రుడు చెప్పాడు: వీరు దశరథుని కుమారులు; తన యాగాన్ని కాపాడటానికి వచ్చి, తాటకిని, సుబాహుని సంహరించారు; దివ్యాస్త్రాలు పొందారు; అహల్యకు విముక్తి కలిగించారు; ఇప్పుడు శివుని మహాధనుస్సును చూడాలనుకుంటున్నారు."
+   ],
+   [
+    "p",
+    "When Śatānanda heard that his mother Ahalyā had been freed, his eyes filled with tears of joy. He thanked Rāma again and again. Then he said, “Rāma, you are fortunate to have Viśvāmitra as your guide. Do you know who he really is? Let me tell you his story — there is no one like him in the world.”",
+    "తన తల్లి అహల్యకు విముక్తి కలిగిందని విని శతానందుని కళ్ళు ఆనందబాష్పాలతో నిండాయి. రాముడికి మళ్ళీ మళ్ళీ కృతజ్ఞతలు చెప్పాడు. తర్వాత, “రామా, విశ్వామిత్రుడు నీకు గురువు కావడం నీ అదృష్టం. ఆయన నిజంగా ఎవరో నీకు తెలుసా? ఆయన కథ చెబుతాను — లోకంలో ఆయన వంటివారు లేరు” అన్నాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Viśvāmitra was once a king — King Kauśika, son of Gādhi, a mighty ruler who reigned for thousands of years. Once, travelling with his whole army, he came to the āśrama of the sage Vasiṣṭha. Vasiṣṭha welcomed him warmly and invited the king and his entire army to a feast.”",
+    "“విశ్వామిత్రుడు ఒకప్పుడు రాజు — గాధి కుమారుడైన కౌశిక మహారాజు; వేల సంవత్సరాలు పాలించిన మహా బలవంతుడు. ఒకసారి సైన్యమంతటితో ప్రయాణిస్తూ వసిష్ఠ మహర్షి ఆశ్రమానికి వచ్చాడు. వసిష్ఠుడు ఆయనను ఆప్యాయంగా స్వాగతించి, రాజును, ఆయన సైన్యమంతటినీ విందుకు ఆహ్వానించాడు.”"
+   ],
+   [
+    "p",
+    "“How could a sage in the forest feed a whole army? Vasiṣṭha called his wonderful cow, Śabalā — a Kāmadhenu who could give anything one wished for. From her came mountains of rice, sweets, milk, curd, fruits, drinks and every kind of delicacy. Every soldier ate until he was full.”",
+    "“అడవిలోని ఒక ముని సైన్యమంతటికీ ఎలా భోజనం పెట్టగలడు? వసిష్ఠుడు తన అద్భుతమైన గోవు శబలను — కోరినదంతా ఇచ్చే కామధేనువును — పిలిచాడు. ఆమె నుండి అన్నం రాశులు, మిఠాయిలు, పాలు, పెరుగు, పండ్లు, పానీయాలు, అన్ని రకాల రుచికరమైన పదార్థాలు వచ్చాయి. ప్రతి సైనికుడూ కడుపు నిండా తిన్నాడు.”"
+   ],
+   [
+    "p",
+    "“King Kauśika wanted that cow. ‘Give me Śabalā,’ he said, ‘and I will give you a hundred thousand cows in exchange. A jewel like her belongs with a king.’ But Vasiṣṭha refused. ‘I will not give her up, even for a hundred crore cows or mountains of silver. She is everything to me — my offerings to the gods and ancestors, my very life.’”",
+    "“కౌశిక మహారాజు ఆ గోవును కోరాడు. ‘శబలను నాకు ఇవ్వండి, బదులుగా లక్ష గోవులు ఇస్తాను. ఇలాంటి రత్నం రాజు దగ్గర ఉండాలి’ అన్నాడు. కానీ వసిష్ఠుడు నిరాకరించాడు. ‘వంద కోట్ల గోవులకైనా, వెండి కొండలకైనా ఆమెను వదులుకోను. ఆమే నా సర్వస్వం — దేవతలకు, పితృదేవతలకు నేను సమర్పించేవన్నీ ఆమె వల్లే; ఆమే నా ప్రాణం.’”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“So the king took Śabalā by force. But she broke free from his soldiers and ran back to Vasiṣṭha, weeping. ‘Have you abandoned me?’ she asked. ‘Never,’ said Vasiṣṭha. ‘But he is a king with a great army; how can I fight him?’ ‘A king's strength is nothing compared to the strength of a true brāhmaṇa,’ said Śabalā. ‘Just command me.’ And when Vasiṣṭha did, she created whole armies of warriors who destroyed the king's army.”",
+    "“అప్పుడు రాజు శబలను బలవంతంగా తీసుకుపోయాడు. కానీ ఆమె సైనికుల నుండి తప్పించుకుని ఏడుస్తూ వసిష్ఠుని దగ్గరకు పరుగెత్తి వచ్చింది. ‘నన్ను వదిలేశారా?’ అని అడిగింది. ‘ఎప్పటికీ కాదు,’ అన్నాడు వసిష్ఠుడు. ‘కానీ అతను గొప్ప సైన్యం కల రాజు; అతనితో ఎలా పోరాడగలను?’ ‘నిజమైన బ్రాహ్మణుని బలం ముందు రాజు బలం ఏమీ కాదు,’ అంది శబల. ‘ఆజ్ఞాపించండి చాలు.’ వసిష్ఠుడు ఆజ్ఞాపించగానే ఆమె యోధుల సైన్యాలను సృష్టించింది; అవి రాజు సైన్యాన్ని నాశనం చేశాయి.”"
+   ],
+   [
+    "p",
+    "“Furious, Kauśika's hundred sons rushed at Vasiṣṭha — and with a single ‘Hum!’ the sage burned them all to ashes. The broken king went to the Himālaya and did fierce tapas to Śiva, who gave him every divine weapon. Then he came back and attacked Vasiṣṭha's āśrama with fire and weapons, and the sages fled in terror.”",
+    "“ఆగ్రహించిన కౌశికుని వంద మంది కుమారులు వసిష్ఠుని మీదికి దూకారు — ఒక్క ‘హుం!’తో ఆ మహర్షి వారందరినీ భస్మం చేశాడు. ఓడిపోయిన రాజు హిమాలయాలకు వెళ్ళి శివుని కోసం కఠోర తపస్సు చేశాడు; శివుడు అతనికి అన్ని దివ్యాస్త్రాలూ ఇచ్చాడు. తర్వాత తిరిగి వచ్చి అగ్నితో, ఆయుధాలతో వసిష్ఠుని ఆశ్రమంపై దాడి చేశాడు; మునులు భయంతో పారిపోయారు.”"
+   ],
+   [
+    "p",
+    "“Vasiṣṭha simply raised his wooden staff, the *brahmadaṇḍa*. One by one, every weapon Kauśika hurled at him — even the mighty Brahmāstra — was swallowed by that staff. Vasiṣṭha stood untouched, blazing like the fire at the end of time. Then Kauśika lowered his bow and said:”",
+    "“వసిష్ఠుడు తన కర్ర దండాన్ని — *బ్రహ్మదండాన్ని* — మాత్రమే పైకెత్తాడు. కౌశికుడు విసిరిన ప్రతి ఆయుధాన్నీ — మహా బ్రహ్మాస్త్రాన్ని కూడా — ఆ దండం ఒక్కొక్కటిగా మింగేసింది. ప్రళయాగ్నిలా ప్రకాశిస్తూ వసిష్ఠుడు చెక్కుచెదరకుండా నిలబడ్డాడు. అప్పుడు కౌశికుడు ధనుస్సు దించి ఇలా అన్నాడు:”"
+   ],
+   [
+    "sloka",
+    [
+     "ధిగ్బలం క్షత్రియబలం",
+     "బ్రహ్మతేజోబలం బలమ్ ।",
+     "ఏకేన బ్రహ్మదండేన",
+     "సర్వాస్త్రాణి హతాని మే ॥"
+    ],
+    [
+     "dhig balaṃ kṣatriya-balaṃ",
+     "brahma-tejo-balaṃ balam ।",
+     "ekena brahma-daṇḍena",
+     "sarvāstrāṇi hatāni me ॥"
+    ],
+    "Shame on the strength of a warrior! The power of a brāhmaṇa's spirit is the true power. With a single staff, he has destroyed all my weapons.",
+    "క్షత్రియ బలానికి ధిక్కారం! బ్రహ్మతేజస్సే నిజమైన బలం. ఒక్క బ్రహ్మదండంతో నా అస్త్రాలన్నీ నశించాయి."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“From that day, Kauśika gave up his kingdom. He decided that he too would become a brahmarṣi — the highest kind of sage — just like Vasiṣṭha. He went south with his queen and did tapas for a thousand years. Brahmā came and said, ‘You are now a *rājarṣi* — a royal sage.’ But Viśvāmitra was not satisfied. ‘After all this, only a rājarṣi?’”",
+    "“ఆ రోజు నుండి కౌశికుడు రాజ్యాన్ని వదిలేశాడు. వసిష్ఠునిలాగే తానూ బ్రహ్మర్షి — అత్యున్నత మహర్షి — కావాలని నిశ్చయించుకున్నాడు. రాణితో కలిసి దక్షిణానికి వెళ్ళి వెయ్యి సంవత్సరాలు తపస్సు చేశాడు. బ్రహ్మ వచ్చి, ‘నువ్వు ఇప్పుడు *రాజర్షివి*’ అన్నాడు. కానీ విశ్వామిత్రునికి తృప్తి కలగలేదు. ‘ఇంత చేసినా రాజర్షినేనా?’”"
+   ],
+   [
+    "p",
+    "“Around that time, King {trishanku|Triśaṅku} of the Ikṣvāku line wished to go to heaven in his own body. Vasiṣṭha said it was impossible, and Vasiṣṭha's sons, angry at his stubbornness, cursed him to become an outcast. Triśaṅku came to Viśvāmitra for help. ‘I will send you to heaven in your body,’ promised Viśvāmitra, and he began a great yajña for him.”",
+    "“అదే సమయంలో ఇక్ష్వాకు వంశపు రాజు {trishanku|త్రిశంకుడు} సశరీరంగా స్వర్గానికి వెళ్ళాలనుకున్నాడు. అది అసాధ్యమని వసిష్ఠుడు చెప్పాడు; అతని పట్టుదలకు కోపించిన వసిష్ఠుని కుమారులు అతనిని చండాలుడివి కమ్మని శపించారు. త్రిశంకుడు సహాయం కోసం విశ్వామిత్రుని దగ్గరకు వచ్చాడు. ‘నిన్ను సశరీరంగా స్వర్గానికి పంపుతాను’ అని విశ్వామిత్రుడు మాట ఇచ్చి, అతని కోసం ఒక గొప్ప యాగం ప్రారంభించాడు.”"
+   ],
+   [
+    "p",
+    "“The gods would not come to accept their share. So Viśvāmitra, by the power of his tapas alone, sent Triśaṅku rising up into the sky. But Indra pushed him back down: ‘Fall, Triśaṅku! You do not belong in heaven!’ As Triśaṅku tumbled head-first, crying for help, Viśvāmitra shouted, ‘Stay!’ — and Triśaṅku stopped in mid-air.”",
+    "“దేవతలు తమ భాగాలు స్వీకరించడానికి రాలేదు. అప్పుడు విశ్వామిత్రుడు కేవలం తన తపశ్శక్తితో త్రిశంకుడిని ఆకాశంలోకి పంపాడు. కానీ ఇంద్రుడు అతనిని కిందికి తోసేశాడు: ‘పడిపో త్రిశంకూ! నీకు స్వర్గంలో స్థానం లేదు!’ తలకిందులుగా పడిపోతూ త్రిశంకుడు సహాయం కోసం అరవగా, విశ్వామిత్రుడు ‘ఆగు!’ అని గర్జించాడు — త్రిశంకుడు గాలిలోనే ఆగిపోయాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Then, in his anger, Viśvāmitra began to create a whole new heaven in the southern sky — new stars, new constellations, even new Seven Sages. He was about to create a new Indra and new gods too! The gods rushed to him in alarm and begged him to stop. They agreed: Triśaṅku could stay where he was, shining head-down among Viśvāmitra's new stars, like a god. And so he does to this day.”",
+    "“అప్పుడు కోపంతో విశ్వామిత్రుడు దక్షిణాకాశంలో సరికొత్త స్వర్గాన్నే సృష్టించడం మొదలుపెట్టాడు — కొత్త నక్షత్రాలు, కొత్త నక్షత్రమండలాలు, కొత్త సప్తర్షులు కూడా. కొత్త ఇంద్రుడిని, కొత్త దేవతలను కూడా సృష్టించబోయాడు! దేవతలు ఆందోళనతో పరుగెత్తి వచ్చి ఆపమని వేడుకున్నారు. ఒప్పందం కుదిరింది: విశ్వామిత్రుని కొత్త నక్షత్రాల మధ్య, తలకిందులుగా, దేవునిలా ప్రకాశిస్తూ త్రిశంకుడు అక్కడే ఉండవచ్చు. ఇప్పటికీ అలాగే ఉన్నాడు.”"
+   ],
+   [
+    "dyk",
+    "🌌",
+    "“Triśaṅku svarga” has become a saying for being stuck halfway — neither here nor there.",
+    "ఎటూ కాకుండా మధ్యలో చిక్కుకుపోవడాన్ని “త్రిశంకు స్వర్గం” అని ఇప్పటికీ సామెతగా అంటాం."
+   ],
+   [
+    "p",
+    "“Viśvāmitra then went west, to Puṣkara, and did tapas there. Meanwhile King Ambarīṣa's sacrificial animal was stolen, and his priest told him he must find a human being to offer in its place. The king searched everywhere, and at last the poor sage Ṛcīka sold him his middle son, a boy named {shunahshepa|Śunaḥśepa}.”",
+    "“తర్వాత విశ్వామిత్రుడు పడమరగా పుష్కరానికి వెళ్ళి అక్కడ తపస్సు చేశాడు. ఇంతలో అంబరీష మహారాజు యజ్ఞపశువు దొంగిలించబడింది; దానికి బదులు ఒక మనిషిని సమర్పించాలని పురోహితుడు చెప్పాడు. రాజు అన్ని చోట్లా వెతకగా, చివరికి పేదవాడైన ఋచీక మహర్షి తన మధ్య కుమారుడు {shunahshepa|శునఃశేపుడు} అనే బాలుడిని అతనికి అమ్మాడు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“On the way, the terrified boy saw Viśvāmitra — his own uncle — at Puṣkara, and fell at his feet. ‘Save me!’ Viśvāmitra asked his own sons to take the boy's place, but they refused, and he cursed them. Then he taught Śunaḥśepa two sacred hymns. ‘When you are tied to the post, sing these to Indra and Viṣṇu.’ The boy did — and Indra, pleased, gave him long life and set him free. And Ambarīṣa's yajña was completed too.”",
+    "“దారిలో భయపడిపోయిన ఆ బాలుడు పుష్కరంలో తన మేనమామ విశ్వామిత్రుడిని చూసి ఆయన పాదాలపై పడ్డాడు. ‘నన్ను కాపాడండి!’ ఆ బాలుని స్థానంలో వెళ్ళమని విశ్వామిత్రుడు తన కుమారులను అడిగాడు; వారు నిరాకరించగా వారిని శపించాడు. తర్వాత శునఃశేపునికి రెండు పవిత్ర స్తోత్రాలు నేర్పాడు. ‘యూపస్తంభానికి కట్టినప్పుడు వీటిని ఇంద్రునికి, విష్ణువుకు పాడు.’ బాలుడు అలాగే చేశాడు — సంతోషించిన ఇంద్రుడు అతనికి దీర్ఘాయువు ఇచ్చి విడిపించాడు. అంబరీషుని యాగం కూడా పూర్తయింది.”"
+   ],
+   [
+    "p",
+    "“After another thousand years of tapas, Brahmā came again. ‘You are now a *ṛṣi*.’ But still Viśvāmitra was not content, and he went on.”",
+    "“మరో వెయ్యి సంవత్సరాల తపస్సు తర్వాత బ్రహ్మ మళ్ళీ వచ్చాడు. ‘నువ్వు ఇప్పుడు *ఋషివి*.’ అయినా విశ్వామిత్రునికి తృప్తి కలగక తపస్సు కొనసాగించాడు.”"
+   ],
+   [
+    "p",
+    "“Then the beautiful apsara {menaka|Menakā} came to bathe in the lake at Puṣkara. Viśvāmitra saw her and fell in love, and he forgot his tapas. Ten years passed like a single day. Then he came to his senses. ‘The gods sent her to break my tapas,’ he realised. He did not curse Menakā — he gently let her go — and went north, to the banks of the Kauśikī, to begin again.”",
+    "“అప్పుడు అందమైన అప్సరస {menaka|మేనక} పుష్కర సరస్సులో స్నానం చేయడానికి వచ్చింది. విశ్వామిత్రుడు ఆమెను చూసి ప్రేమలో పడ్డాడు; తపస్సు మరచిపోయాడు. పది సంవత్సరాలు ఒక్క రోజులా గడిచిపోయాయి. తర్వాత ఆయనకు జ్ఞానోదయమైంది. ‘నా తపస్సు భంగం చేయడానికి దేవతలు ఆమెను పంపారు’ అని గ్రహించాడు. మేనకను శపించలేదు — మృదువుగా ఆమెను పంపించివేసి — మళ్ళీ మొదలుపెట్టడానికి ఉత్తరాన కౌశికి తీరానికి వెళ్ళాడు.”"
+   ],
+   [
+    "dyk",
+    "👶",
+    "The Mahābhārata tells that Viśvāmitra and Menakā had a daughter, Śakuntalā — whose son Bharata gave his name to our land, Bhārata.",
+    "విశ్వామిత్ర మేనకలకు శకుంతల అనే కుమార్తె పుట్టిందని మహాభారతం చెబుతుంది — ఆమె కుమారుడు భరతుని పేరు మీదే మన దేశానికి భారతదేశం అని పేరు వచ్చింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“After a thousand more years of tapas, Brahmā called him a *maharṣi*, a great sage. ‘Am I a brahmarṣi yet?’ asked Viśvāmitra. ‘Have I conquered my senses?’ ‘Not yet,’ said Brahmā. ‘You have not yet conquered them.’”",
+    "“మరో వెయ్యి సంవత్సరాల తపస్సు తర్వాత బ్రహ్మ ఆయనను *మహర్షి* అన్నాడు. ‘నేను ఇంకా బ్రహ్మర్షిని కాలేదా? ఇంద్రియాలను జయించానా?’ అని విశ్వామిత్రుడు అడిగాడు. ‘ఇంకా లేదు,’ అన్నాడు బ్రహ్మ. ‘వాటిని ఇంకా జయించలేదు.’”"
+   ],
+   [
+    "p",
+    "“So Viśvāmitra stood in the burning summer amid five fires, and in the rainy season under the open sky, and in winter in icy water, for a thousand years. Frightened, Indra sent another apsara, Rambhā, to tempt him. But this time Viśvāmitra saw through the trick at once — and in his anger he cursed Rambhā to stand as a rock for a thousand years. Then he realised: ‘I have lost all my tapas — to anger, this time.’”",
+    "“అప్పుడు విశ్వామిత్రుడు వేసవిలో పంచాగ్నుల మధ్య, వర్షాకాలంలో ఆరుబయట, చలికాలంలో చల్లని నీటిలో నిలబడి వెయ్యి సంవత్సరాలు తపస్సు చేశాడు. భయపడిన ఇంద్రుడు ఆయనను ప్రలోభపెట్టడానికి రంభ అనే మరో అప్సరసను పంపాడు. ఈసారి విశ్వామిత్రుడు ఆ ఎత్తును వెంటనే గ్రహించాడు — కోపంతో రంభను వెయ్యి సంవత్సరాలు రాయిగా ఉండమని శపించాడు. తర్వాత గ్రహించాడు: ‘ఈసారి కోపానికి లొంగి నా తపస్సంతా పోగొట్టుకున్నాను.’”"
+   ],
+   [
+    "p",
+    "“He went east and took a vow never to speak and never to be angry again. For a thousand years he did not even breathe. When at last the vow was over and he sat down to eat, Indra came disguised as a hungry brāhmaṇa and asked for his food. Viśvāmitra gave it all away without a word, without a flicker of anger — and went straight back to his tapas. Smoke rose from his head, and the three worlds trembled with the heat of his tapas.”",
+    "“తూర్పుకు వెళ్ళి ఇక ఎప్పుడూ మాట్లాడకూడదని, కోపించకూడదని వ్రతం పట్టాడు. వెయ్యి సంవత్సరాలు ఊపిరి కూడా తీయలేదు. చివరికి వ్రతం ముగిసి భోజనానికి కూర్చున్నప్పుడు, ఇంద్రుడు ఆకలితో ఉన్న బ్రాహ్మణుని వేషంలో వచ్చి ఆహారం అడిగాడు. విశ్వామిత్రుడు ఒక్క మాటైనా లేకుండా, కొంచెమైనా కోపం లేకుండా మొత్తం ఇచ్చేసి — వెంటనే తపస్సులోకి వెళ్ళిపోయాడు. ఆయన శిరస్సు నుండి పొగ లేచింది; ఆయన తపస్సు వేడికి మూడు లోకాలూ కంపించాయి.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“At last Brahmā and all the gods came to him. ‘Welcome, *brahmarṣi*! We are pleased with your tapas. You have truly become a brāhmaṇa.’ But Viśvāmitra said, ‘If I am truly a brahmarṣi, let Vasiṣṭha say so.’”",
+    "“చివరికి బ్రహ్మ, దేవతలందరూ ఆయన దగ్గరకు వచ్చారు. ‘స్వాగతం *బ్రహ్మర్షీ*! నీ తపస్సుకు సంతోషించాం. నువ్వు నిజంగా బ్రాహ్మణుడివయ్యావు.’ కానీ విశ్వామిత్రుడు, ‘నేను నిజంగా బ్రహ్మర్షినైతే, ఆ మాట వసిష్ఠుడు చెప్పాలి’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“So Vasiṣṭha came. And the sage whose hundred sons had once been burned, the sage whose āśrama Viśvāmitra had attacked, looked at him and said gladly, ‘You are a brahmarṣi.’ The two great sages embraced and became friends. Viśvāmitra bowed to Vasiṣṭha, and Vasiṣṭha honoured him.”",
+    "“అప్పుడు వసిష్ఠుడు వచ్చాడు. ఒకప్పుడు తన ఆశ్రమంపై దాడి చేసిన విశ్వామిత్రుని వైపు చూసి వసిష్ఠుడు ఆనందంగా, ‘నువ్వు బ్రహ్మర్షివి’ అన్నాడు. ఆ ఇద్దరు మహర్షులు ఆలింగనం చేసుకుని మిత్రులయ్యారు. విశ్వామిత్రుడు వసిష్ఠునికి నమస్కరించాడు; వసిష్ఠుడు ఆయనను సత్కరించాడు.”"
+   ],
+   [
+    "p",
+    "“That, Rāma, is the story of Viśvāmitra,” said Śatānanda. “He is the greatest of sages, the embodiment of tapas.” Janaka bowed to Viśvāmitra. “I am blessed that you have come. Tomorrow morning, please come to the yajña hall.” And with that, the king returned to his palace.",
+    "“రామా, ఇదే విశ్వామిత్రుని కథ,” అన్నాడు శతానందుడు. “ఆయన మహర్షులలో శ్రేష్ఠుడు, తపస్సుకు ప్రతిరూపం.” జనకుడు విశ్వామిత్రునికి నమస్కరించాడు. “మీరు రావడం నా అదృష్టం. రేపు ఉదయం దయచేసి యాగశాలకు రండి.” అలా చెప్పి రాజు తన భవనానికి తిరిగి వెళ్ళాడు."
+   ],
+   [
+    "dyk",
+    "☀️",
+    "Viśvāmitra is the seer of the Gāyatrī mantra — the most sacred mantra of the Vedas, chanted at every sandhyāvandanam.",
+    "వేదాలలో అత్యంత పవిత్రమైన, ప్రతి సంధ్యావందనంలో జపించే గాయత్రీ మంత్రాన్ని దర్శించిన ఋషి విశ్వామిత్రుడే."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Viśvāmitra was once King Kauśika, who tried to take Vasiṣṭha's wish-giving cow Śabalā.",
+   "విశ్వామిత్రుడు ఒకప్పుడు కౌశిక మహారాజు; వసిష్ఠుని కామధేనువు శబలను తీసుకోవాలని ప్రయత్నించాడు."
+  ],
+  [
+   "Vasiṣṭha's staff swallowed all his weapons — “dhig balaṃ kṣatriya-balaṃ”.",
+   "వసిష్ఠుని దండం అతని అస్త్రాలన్నిటినీ మింగేసింది — “ధిగ్బలం క్షత్రియబలం”."
+  ],
+  [
+   "He created a new heaven of stars for Triśaṅku and saved the boy Śunaḥśepa.",
+   "త్రిశంకుని కోసం కొత్త నక్షత్ర స్వర్గాన్ని సృష్టించాడు; బాలుడు శునఃశేపుడిని రక్షించాడు."
+  ],
+  [
+   "He fell for Menakā and lost his temper with Rambhā — and each time began again.",
+   "మేనకకు లొంగిపోయాడు, రంభపై కోపించాడు — ప్రతిసారీ మళ్ళీ మొదలుపెట్టాడు."
+  ],
+  [
+   "When he conquered anger and desire, Vasiṣṭha himself called him a brahmarṣi.",
+   "కోపాన్నీ, కోరికనూ జయించినప్పుడు వసిష్ఠుడే ఆయనను బ్రహ్మర్షి అన్నాడు."
+  ]
+ ],
+ "think": [
+  "Viśvāmitra failed again and again — but each time he started over. What helped him finally succeed? Is it harder to defeat an army or your own anger?",
+  "విశ్వామిత్రుడు మళ్ళీ మళ్ళీ విఫలమయ్యాడు — కానీ ప్రతిసారీ మళ్ళీ మొదలుపెట్టాడు. చివరికి ఆయన సాధించడానికి ఏది సహాయపడింది? సైన్యాన్ని ఓడించడం కష్టమా, మన కోపాన్ని జయించడం కష్టమా?"
+ ]
+},
+{
+ "id": "bala-13",
+ "kanda": "bala",
+ "n": 13,
+ "order": 113,
+ "date": "2026-10-13",
+ "title": "Śiva's Bow and Four Weddings",
+ "titleTe": "శివధనుర్భంగం, నాలుగు కళ్యాణాలు",
+ "sargas": "66–74",
+ "scene": "mithila",
+ "who": [
+  "rama",
+  "sita",
+  "janaka",
+  "dasaratha",
+  "vasishtha",
+  "vishvamitra",
+  "urmila"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "The next morning, King Janaka welcomed Viśvāmitra and the princes to the yajña hall. “Great sage, what can I do for you?” Viśvāmitra replied, “These sons of Daśaratha, famous warriors, wish to see the great bow that you keep.”",
+    "మరుసటి ఉదయం జనక మహారాజు విశ్వామిత్రుడిని, రాకుమారులను యాగశాలకు ఆహ్వానించాడు. “మహర్షీ, మీకు ఏమి చేయగలను?” విశ్వామిత్రుడు, “ప్రసిద్ధ యోధులైన ఈ దశరథ పుత్రులు మీ దగ్గర ఉన్న మహాధనుస్సును చూడాలనుకుంటున్నారు” అన్నాడు."
+   ],
+   [
+    "p",
+    "“Then let me tell you its story,” said Janaka. “This bow belonged to Lord Śiva. Long ago, at Dakṣa's yajña, Śiva was not given his share. In his anger he raised this very bow and threatened the gods, and they bowed to him in fear. Pleased again, Śiva gave the bow to the gods, and the gods gave it to my ancestor Devarāta. Since then it has been kept in our family and worshipped.”",
+    "“అయితే దాని కథ చెబుతాను,” అన్నాడు జనకుడు. “ఈ ధనుస్సు శివునిది. పూర్వం దక్షుని యాగంలో శివునికి ఆయన భాగం ఇవ్వలేదు. కోపంతో ఆయన ఇదే ధనుస్సును ఎత్తి దేవతలను బెదిరించాడు; వారు భయంతో ఆయనకు నమస్కరించారు. మళ్ళీ ప్రసన్నుడైన శివుడు ధనుస్సును దేవతలకు ఇచ్చాడు; దేవతలు దానిని మా పూర్వీకుడు దేవరాతునికి ఇచ్చారు. అప్పటి నుండి ఇది మా వంశంలో పూజలందుకుంటోంది.”"
+   ],
+   [
+    "p",
+    "“One day, as I was ploughing a field to prepare for a yajña, a baby girl rose up out of the furrow made by my plough. I named her {sita|Sītā} — ‘the furrow’ — and raised her as my own daughter. She was not born from any mother; she came from the earth itself.”",
+    "“ఒక రోజు యాగం కోసం పొలం దున్నుతుండగా, నా నాగలి చేసిన చాలులో నుండి ఒక పసిపాప పైకి వచ్చింది. ఆమెకు {sita|సీత} — ‘నాగటిచాలు’ — అని పేరు పెట్టి సొంత కుమార్తెలా పెంచాను. ఆమె ఏ తల్లి గర్భం నుండీ పుట్టలేదు; భూమి నుండే వచ్చింది.”"
+   ],
+   [
+    "dyk",
+    "🌾",
+    "*Sītā* means “furrow”. Because she came from the earth, she is called *Bhūmijā* — daughter of the earth — and *Ayonijā* — not born of a womb. As Janaka's daughter she is *Jānakī*, and as the princess of Videha, *Vaidehī*.",
+    "*సీత* అంటే “నాగటిచాలు”. భూమి నుండి వచ్చినందుకు *భూమిజ* అని, గర్భం నుండి పుట్టనందుకు *అయోనిజ* అని, జనకుని కుమార్తె కనుక *జానకి* అని, విదేహ రాకుమార్తె కనుక *వైదేహి* అని పిలుస్తారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“I decided that Sītā would marry only the one who could string Śiva's bow. Many kings came to try. They could not even lift it. Angry and ashamed, they joined together and laid siege to Mithilā for a whole year. My kingdom suffered, until I prayed to the gods and they gave me an army to drive the kings away.”",
+    "“శివధనుస్సుకు నారి ఎక్కించగలిగినవానికే సీతనిచ్చి వివాహం చేయాలని నిర్ణయించాను. ఎందరో రాజులు ప్రయత్నించడానికి వచ్చారు. వారు దానిని ఎత్తలేకపోయారు కూడా. కోపంతో, అవమానంతో వారంతా కలిసి ఒక సంవత్సరం పాటు మిథిలను ముట్టడించారు. నా రాజ్యం కష్టాలు పడింది; చివరికి దేవతలను ప్రార్థించగా వారు నాకు సైన్యాన్ని ఇచ్చారు; దానితో ఆ రాజులను తరిమేశాను.”"
+   ],
+   [
+    "p",
+    "“I will show the bow to Rāma. If he can string it, I will give him my daughter Sītā.” Janaka gave the order, and five thousand strong men slowly pulled in an iron chest on an eight-wheeled cart. Inside lay the great bow of Śiva, decorated with garlands and sandal paste.",
+    "“ధనుస్సును రామునికి చూపిస్తాను. అతను దానికి నారి ఎక్కించగలిగితే, నా కుమార్తె సీతనిచ్చి వివాహం చేస్తాను.” జనకుడు ఆజ్ఞాపించగా, ఐదు వేల మంది బలిష్ఠులు ఎనిమిది చక్రాల బండిపై ఒక ఇనుప పెట్టెను మెల్లగా లాగుకుంటూ తెచ్చారు. దానిలో పూలమాలలు, గంధంతో అలంకరించిన శివుని మహాధనుస్సు ఉంది."
+   ],
+   [
+    "p",
+    "Viśvāmitra turned to Rāma. “Look at the bow, my child.” Rāma opened the chest and gazed at the bow. “May I touch it?” he asked. “May I try to lift it and string it?” “Go ahead,” said the sage and the king together.",
+    "విశ్వామిత్రుడు రాముని వైపు తిరిగాడు. “నాయనా, ధనుస్సును చూడు.” రాముడు పెట్టె తెరిచి ధనుస్సును చూశాడు. “దీనిని తాకవచ్చా?” అని అడిగాడు. “ఎత్తి నారి ఎక్కించడానికి ప్రయత్నించవచ్చా?” “తప్పకుండా,” అని మహర్షి, రాజు ఇద్దరూ ఒకేసారి అన్నారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "In front of thousands of watching people, Rāma lifted the mighty bow from its box as easily as if it were a toy. He set it upright, bent it, and strung it in a moment. Then he drew the string back to his ear —",
+    "వేలమంది చూస్తుండగా రాముడు ఆ మహాధనుస్సును బొమ్మను ఎత్తినంత సులభంగా పెట్టె నుండి ఎత్తాడు. దానిని నిలబెట్టి, వంచి, క్షణంలో నారి ఎక్కించాడు. తర్వాత నారిని చెవి వరకు లాగాడు —"
+   ],
+   [
+    "p",
+    "— and with a crash like thunder, like a mountain splitting in two, the great bow broke in the middle! The sound was so tremendous that everyone in the hall fell down senseless — everyone except Viśvāmitra, King Janaka, Rāma and Lakṣmaṇa.",
+    "— పిడుగులా, పర్వతం రెండుగా చీలినట్లు పెద్ద శబ్దంతో ఆ మహాధనుస్సు మధ్యలో విరిగిపోయింది! ఆ శబ్దం ఎంత భయంకరంగా ఉందంటే సభలోని అందరూ స్పృహ తప్పి పడిపోయారు — విశ్వామిత్రుడు, జనక మహారాజు, రామలక్ష్మణులు తప్ప."
+   ],
+   [
+    "p",
+    "When the people woke, Janaka folded his hands, his heart overflowing. “I have seen the strength of Daśaratha's son. It is wonderful beyond imagining. My daughter Sītā will marry Rāma and bring glory to my family. My promise is fulfilled.” And he sent swift messengers to Ayodhyā to invite King Daśaratha.",
+    "ప్రజలు తేరుకున్నాక జనకుడు చేతులు జోడించాడు; ఆయన హృదయం ఉప్పొంగిపోయింది. “దశరథ కుమారుని బలాన్ని చూశాను. ఊహకందని అద్భుతం. నా కుమార్తె సీత రాముడిని వివాహం చేసుకుని నా వంశానికి కీర్తి తెస్తుంది. నా ప్రతిజ్ఞ నెరవేరింది.” దశరథ మహారాజును ఆహ్వానించడానికి వేగంగా వెళ్ళే దూతలను అయోధ్యకు పంపాడు."
+   ],
+   [
+    "dyk",
+    "🏹",
+    "In Telugu this moment is celebrated as *Śiva Dhanurbhaṅgam* — the breaking of Śiva's bow — and it is the scene in the picture on the Bāla Kāṇḍa tile.",
+    "ఈ ఘట్టాన్ని తెలుగులో *శివధనుర్భంగం* అంటారు — బాలకాండ టైల్‌పై ఉన్న చిత్రం ఈ దృశ్యమే."
+   ]
+  ],
+  [
+   [
+    "p",
+    "After three days of travel, the messengers reached Ayodhyā and told Daśaratha everything — how Rāma had broken Śiva's bow and won Sītā's hand. Daśaratha was overjoyed. He asked Vasiṣṭha, Vāmadeva and his ministers, “Shall we go?” “Yes!” they all said happily.",
+    "మూడు రోజుల ప్రయాణం తర్వాత దూతలు అయోధ్య చేరుకుని దశరథునికి అంతా చెప్పారు — రాముడు శివధనుస్సును విరిచి సీతను ఎలా గెలుచుకున్నాడో. దశరథుడు అమితానందం పొందాడు. వసిష్ఠుడు, వామదేవుడు, మంత్రులను “వెళ్దామా?” అని అడిగాడు. “వెళ్దాం!” అని అందరూ సంతోషంగా అన్నారు."
+   ],
+   [
+    "p",
+    "The very next morning Daśaratha set out with his priests, his army, and chariots loaded with treasures. After four days they reached Mithilā, and Janaka came out to welcome them with great honour. “Welcome, Mahārāja! Today my family is blessed, for we are to be joined with the great family of the Ikṣvākus.”",
+    "మరుసటి ఉదయమే దశరథుడు పురోహితులు, సైన్యం, సంపదలతో నిండిన రథాలతో బయలుదేరాడు. నాలుగు రోజులకు మిథిల చేరుకోగా, జనకుడు ఎదురువచ్చి గొప్ప మర్యాదతో స్వాగతించాడు. “స్వాగతం మహారాజా! మహనీయమైన ఇక్ష్వాకు వంశంతో బంధుత్వం కలుగుతున్నందుకు ఈ రోజు నా వంశం ధన్యమైంది.”"
+   ],
+   [
+    "p",
+    "Before a wedding, the families must know each other's ancestors. So Vasiṣṭha proudly recited the line of the Ikṣvākus — from Brahmā to Marīci, Kaśyapa, Vivasvān the Sun, Manu, Ikṣvāku, and on through great kings like Sagara, Dilīpa, Bhagīratha, Raghu and Aja, down to Daśaratha. Then Janaka recited his own line — from King Nimi and Mithi, who founded Mithilā, down to himself and his younger brother Kuśadhvaja.",
+    "వివాహానికి ముందు రెండు కుటుంబాలూ ఒకరి పూర్వీకుల గురించి ఒకరు తెలుసుకోవాలి. అందుకే వసిష్ఠుడు గర్వంగా ఇక్ష్వాకు వంశావళిని చదివాడు — బ్రహ్మ నుండి మరీచి, కశ్యపుడు, సూర్యుడు వివస్వంతుడు, మనువు, ఇక్ష్వాకుడు, తర్వాత సగరుడు, దిలీపుడు, భగీరథుడు, రఘువు, అజుడు వంటి మహారాజుల మీదుగా దశరథుని వరకు. తర్వాత జనకుడు తన వంశావళిని చదివాడు — నిమి మహారాజు, మిథిలను నిర్మించిన మిథి నుండి తన వరకు, తన తమ్ముడు కుశధ్వజుని వరకు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Janaka said, “I give my daughter Sītā to Rāma, and my second daughter {urmila|Ūrmilā} to Lakṣmaṇa.” And Viśvāmitra, smiling, added, “Your brother Kuśadhvaja has two lovely daughters too. Let Māṇḍavī marry Bharata, and Śrutakīrti marry Śatrughna. Then the two great families will be joined four times over!” Janaka and Daśaratha agreed with delight.",
+    "అప్పుడు జనకుడు, “నా కుమార్తె సీతను రామునికి, నా రెండో కుమార్తె {urmila|ఊర్మిళను} లక్ష్మణునికి ఇస్తాను” అన్నాడు. విశ్వామిత్రుడు చిరునవ్వుతో, “మీ తమ్ముడు కుశధ్వజునికి కూడా ఇద్దరు అందమైన కుమార్తెలు ఉన్నారు. మాండవి భరతుడిని, శ్రుతకీర్తి శత్రుఘ్నుడిని వివాహం చేసుకుంటే, రెండు గొప్ప వంశాలు నాలుగు రెట్లు కలిసిపోతాయి!” అన్నాడు. జనకుడు, దశరథుడు ఆనందంగా అంగీకరించారు."
+   ],
+   [
+    "p",
+    "Bharata's uncle Yudhājit, prince of Kekaya, arrived just in time to join them. Daśaratha gave away hundreds of thousands of cows to the brāhmaṇas for the blessing of his four sons. And on the auspicious day, under the star Uttara Phalgunī, the four princes, dressed in wedding finery and wearing their wedding threads, came to the wedding hall.",
+    "భరతుని మేనమామ, కేకయ రాకుమారుడు యుధాజిత్తు సరిగ్గా సమయానికి వచ్చి వారితో కలిశాడు. నలుగురు కుమారుల శ్రేయస్సు కోసం దశరథుడు బ్రాహ్మణులకు లక్షల గోవులు దానం చేశాడు. ఉత్తర ఫల్గుణీ నక్షత్రంతో కూడిన శుభదినాన, కళ్యాణ వస్త్రాలు, కంకణాలు ధరించిన నలుగురు రాకుమారులు కళ్యాణ మండపానికి వచ్చారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Vasiṣṭha prepared the sacred fire, decorated with flowers, golden vessels and sprouting seeds. Then King Janaka led Sītā, adorned with every jewel, to stand before the fire facing Rāma, and said:",
+    "వసిష్ఠుడు పూలు, బంగారు పాత్రలు, మొలకెత్తిన విత్తనాలతో అలంకరించిన పవిత్రాగ్నిని సిద్ధం చేశాడు. తర్వాత జనక మహారాజు సకలాభరణభూషితయైన సీతను అగ్ని ఎదుట రామునికి అభిముఖంగా నిలబెట్టి ఇలా అన్నాడు:"
+   ],
+   [
+    "sloka",
+    [
+     "ఇయం సీతా మమ సుతా",
+     "సహధర్మచరీ తవ ।",
+     "ప్రతీచ్ఛ చైనాం భద్రం తే",
+     "పాణిం గృహ్ణీష్వ పాణినా ॥"
+    ],
+    [
+     "iyaṃ sītā mama sutā",
+     "sahadharmacarī tava ।",
+     "pratīccha caināṃ bhadraṃ te",
+     "pāṇiṃ gṛhṇīṣva pāṇinā ॥"
+    ],
+    "This is Sītā, my daughter, who will walk the path of dharma with you. Accept her — may all be well with you — and take her hand in yours.",
+    "ఈమె నా కుమార్తె సీత; నీతో కలిసి ధర్మమార్గంలో నడిచే సహధర్మచారిణి. ఈమెను స్వీకరించు — నీకు శుభం కలుగుగాక — నీ చేతితో ఈమె చేయి పట్టుకో."
+   ],
+   [
+    "p",
+    "“She is devoted and blessed,” Janaka went on, “and she will follow you always, like your own shadow.” Then he poured the sacred water on their joined hands. In the same way, Lakṣmaṇa took the hand of Ūrmilā, Bharata of Māṇḍavī, and Śatrughna of Śrutakīrti.",
+    "“ఈమె పతివ్రత, మహాభాగ్యవతి,” అని జనకుడు కొనసాగించాడు, “నీ నీడలా ఎప్పుడూ నిన్ను అనుసరిస్తుంది.” తర్వాత జోడించిన వారి చేతులపై పవిత్ర జలం పోశాడు. అలాగే లక్ష్మణుడు ఊర్మిళ చేయి, భరతుడు మాండవి చేయి, శత్రుఘ్నుడు శ్రుతకీర్తి చేయి పట్టుకున్నారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The four couples walked around the sacred fire three times. Flowers rained down from the sky, heavenly drums sounded, gandharvas sang, apsaras danced, and the gods cried, “Wonderful! Wonderful!” It was the most beautiful wedding the worlds had ever seen.",
+    "నాలుగు జంటలూ అగ్ని చుట్టూ మూడుసార్లు ప్రదక్షిణ చేశారు. ఆకాశం నుండి పూలవాన కురిసింది; దేవదుందుభులు మోగాయి; గంధర్వులు పాడారు, అప్సరసలు నాట్యం చేశారు; “అద్భుతం! అద్భుతం!” అని దేవతలు జయజయధ్వానాలు చేశారు. లోకాలు ఎప్పుడూ చూడనంత అందమైన కళ్యాణం అది."
+   ],
+   [
+    "dyk",
+    "💍",
+    "This wedding is celebrated every year as *Sītā Rāma Kalyāṇam*, especially at Bhadrācalam on Śrī Rāma Navamī, when the whole Telugu world watches.",
+    "ఈ కళ్యాణాన్ని ప్రతి సంవత్సరం *సీతారామ కళ్యాణం*గా జరుపుకుంటాం — ముఖ్యంగా శ్రీరామనవమి నాడు భద్రాచలంలో; తెలుగువారందరూ ఆ వేడుకను చూస్తారు."
+   ],
+   [
+    "p",
+    "The next morning, Viśvāmitra blessed everyone, said goodbye to the two kings, and set out for the Himālaya — his work with Rāma was done. Janaka gave his daughters a great dowry — hundreds of thousands of cows, fine carpets, silks, elephants, horses, chariots, soldiers, maids, gold, silver and pearls — and the people of Ayodhyā prepared to go home.",
+    "మరుసటి ఉదయం విశ్వామిత్రుడు అందరినీ ఆశీర్వదించి, ఇద్దరు రాజులకు వీడ్కోలు చెప్పి, హిమాలయాలకు బయలుదేరాడు — రామునితో ఆయన కార్యం ముగిసింది. జనకుడు తన కుమార్తెలకు గొప్ప కట్నకానుకలు ఇచ్చాడు — లక్షల గోవులు, మేలైన తివాచీలు, పట్టువస్త్రాలు, ఏనుగులు, గుర్రాలు, రథాలు, సైనికులు, దాసీలు, బంగారం, వెండి, ముత్యాలు — అయోధ్యవాసులు ఇంటికి తిరిగి వెళ్ళడానికి సిద్ధమయ్యారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Śiva's bow came to Janaka's family from the gods; Sītā was found in a furrow of the earth.",
+   "శివధనుస్సు దేవతల నుండి జనకుని వంశానికి వచ్చింది; సీత భూమిలోని నాగటిచాలులో దొరికింది."
+  ],
+  [
+   "Rāma lifted, strung and broke the bow that no king could even lift.",
+   "ఏ రాజూ ఎత్తలేని ధనుస్సును రాముడు ఎత్తి, నారి ఎక్కించి, విరిచాడు."
+  ],
+  [
+   "Daśaratha came to Mithilā, and the two families recited their ancestors.",
+   "దశరథుడు మిథిలకు వచ్చాడు; రెండు కుటుంబాలూ తమ వంశావళులను చదివాయి."
+  ],
+  [
+   "Four weddings: Rāma–Sītā, Lakṣmaṇa–Ūrmilā, Bharata–Māṇḍavī, Śatrughna–Śrutakīrti.",
+   "నాలుగు కళ్యాణాలు: రామ–సీత, లక్ష్మణ–ఊర్మిళ, భరత–మాండవి, శత్రుఘ్న–శ్రుతకీర్తి."
+  ],
+  [
+   "Janaka gave Sītā with the words “iyaṃ sītā mama sutā”.",
+   "“ఇయం సీతా మమ సుతా” అంటూ జనకుడు సీతను కన్యాదానం చేశాడు."
+  ]
+ ],
+ "think": [
+  "Rāma asked permission before touching the bow, even though he was strong enough to lift it. Why do you think he asked first?",
+  "ధనుస్సును ఎత్తగల బలం ఉన్నా, దానిని తాకడానికి ముందు రాముడు అనుమతి అడిగాడు. ముందుగా ఎందుకు అడిగాడనుకుంటున్నారు?"
+ ]
+},
+{
+ "id": "bala-14",
+ "kanda": "bala",
+ "n": 14,
+ "order": 114,
+ "date": "2026-10-13",
+ "title": "Paraśurāma",
+ "titleTe": "పరశురాముడు",
+ "sargas": "75–77",
+ "scene": "storm",
+ "who": [
+  "parashurama",
+  "rama",
+  "dasaratha",
+  "vasishtha",
+  "sita",
+  "bharata"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "The wedding party set out for Ayodhyā — the four princes with their brides, Daśaratha, Vasiṣṭha, the ministers and the whole army. But they had not gone far when strange things began to happen. Birds cried out harshly all around them — a bad sign. And yet the deer walked around them on their right — a good sign.",
+    "కళ్యాణ బృందం అయోధ్యకు బయలుదేరింది — వధువులతో నలుగురు రాకుమారులు, దశరథుడు, వసిష్ఠుడు, మంత్రులు, సైన్యమంతా. కానీ ఎంతో దూరం వెళ్ళకముందే వింతలు జరగసాగాయి. చుట్టూ పక్షులు కర్కశంగా అరుస్తున్నాయి — అది అశుభ సూచన. అయినా జింకలు వారికి కుడివైపుగా ప్రదక్షిణ చేస్తున్నాయి — అది శుభ సూచన."
+   ],
+   [
+    "p",
+    "“What does this mean?” asked Daśaratha anxiously. “The birds warn of great danger,” said Vasiṣṭha, “but the deer say that the danger will pass. Do not be afraid.”",
+    "“దీని అర్థం ఏమిటి?” అని దశరథుడు ఆందోళనగా అడిగాడు. “పక్షులు గొప్ప ఆపదను సూచిస్తున్నాయి,” అన్నాడు వసిష్ఠుడు, “కానీ ఆ ఆపద తొలగిపోతుందని జింకలు చెబుతున్నాయి. భయపడకండి.”"
+   ],
+   [
+    "p",
+    "Just then a fierce wind began to blow. The earth shook, trees crashed to the ground, darkness covered the sun, and dust filled the air so thickly that no one could see. The whole army stood frozen with fear.",
+    "సరిగ్గా అప్పుడే భయంకరమైన గాలి వీచసాగింది. భూమి కంపించింది, చెట్లు నేలకూలాయి, సూర్యుడిని చీకటి కమ్మేసింది, ఎవరికీ ఏమీ కనిపించనంత దట్టంగా దుమ్ము లేచింది. సైన్యమంతా భయంతో నిశ్చేష్టమై నిలబడిపోయింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Out of the darkness strode a terrifying figure. His hair was matted, his eyes blazed like fire, an axe rested on his shoulder and a great bow was in his hand. He looked like Śiva himself come to destroy the world, or like the fire at the end of time. It was {parashurama|Paraśurāma}, son of the sage Jamadagni — the one who had destroyed the kings of the earth.",
+    "చీకటిలో నుండి ఒక భయంకర రూపం ముందుకు వచ్చింది. జటలు కట్టిన జుట్టు, అగ్నిలా మండే కళ్ళు, భుజంపై గొడ్డలి, చేతిలో మహాధనుస్సు. లోకాన్ని నాశనం చేయడానికి వచ్చిన శివునిలా, ప్రళయాగ్నిలా ఉన్నాడు. అతనే జమదగ్ని మహర్షి కుమారుడు {parashurama|పరశురాముడు} — భూమిపై రాజులను నాశనం చేసినవాడు."
+   ],
+   [
+    "p",
+    "The sages whispered in fear, “Has he come to destroy the kings again? He did it once, long ago, to avenge his father, and then gave up his anger. Surely he will not do it again?” Still, they offered him water and welcomed him with respect.",
+    "మునులు భయంతో గుసగుసలాడారు: “మళ్ళీ రాజులను నాశనం చేయడానికి వచ్చాడా? చాలా కాలం క్రితం తండ్రి మరణానికి ప్రతీకారంగా ఒకసారి అలా చేసి, తర్వాత కోపాన్ని విడిచిపెట్టాడు. మళ్ళీ అలా చేయడు కదా?” అయినా అర్ఘ్యం ఇచ్చి గౌరవంగా స్వాగతించారు."
+   ],
+   [
+    "p",
+    "Paraśurāma ignored them all and turned to Rāma. “Rāma, son of Daśaratha, I have heard of your strength — that you broke the bow of Śiva. Here is another bow — the bow of Viṣṇu. String it and fit an arrow to it. If you can, I will fight you.”",
+    "పరశురాముడు వారెవరినీ పట్టించుకోకుండా రాముని వైపు తిరిగాడు. “దశరథ కుమారా రామా, నీ బలం గురించి విన్నాను — శివధనుస్సును విరిచావని. ఇదిగో మరో ధనుస్సు — విష్ణువు ధనుస్సు. దీనికి నారి ఎక్కించి బాణం సంధించు. అలా చేయగలిగితే నీతో యుద్ధం చేస్తాను.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Daśaratha, pale with fear, folded his hands. “Great sage, you are a brāhmaṇa and you gave up anger long ago. You promised Indra you would lay down your weapons. My sons are only boys — please spare them. If Rāma dies, none of us will live.” But Paraśurāma did not even look at him.",
+    "భయంతో పాలిపోయిన దశరథుడు చేతులు జోడించాడు. “మహర్షీ, మీరు బ్రాహ్మణులు; చాలా కాలం క్రితమే కోపాన్ని విడిచిపెట్టారు. ఆయుధాలు వదిలేస్తానని ఇంద్రునికి మాట ఇచ్చారు. నా కుమారులు ఇంకా పిల్లలు — దయచేసి వారిని వదిలేయండి. రాముడు లేకపోతే మాలో ఎవరూ బతకం.” కానీ పరశురాముడు ఆయన వైపు చూడను కూడా చూడలేదు."
+   ],
+   [
+    "p",
+    "“Listen, Rāma,” he said. “Viśvakarmā, the divine craftsman, made two great bows. One he gave to Śiva — that is the one you broke. The other he gave to Viṣṇu. Once the gods wanted to know which of the two was stronger, and they made Śiva and Viṣṇu fight. With a single ‘Hum!’, Viṣṇu made Śiva's bow go slack. So the gods knew that Viṣṇu was stronger.”",
+    "“విను రామా,” అన్నాడు. “దివ్య శిల్పి విశ్వకర్మ రెండు మహాధనుస్సులు చేశాడు. ఒకటి శివునికి ఇచ్చాడు — నువ్వు విరిచింది అదే. రెండోది విష్ణువుకు ఇచ్చాడు. ఒకసారి ఆ ఇద్దరిలో ఎవరు బలవంతులో తెలుసుకోవాలని దేవతలు శివ విష్ణువులకు యుద్ధం పెట్టారు. ఒక్క ‘హుం!’తో విష్ణువు శివధనుస్సును సడలించాడు. అలా విష్ణువే బలవంతుడని దేవతలు తెలుసుకున్నారు.”"
+   ],
+   [
+    "p",
+    "“Viṣṇu gave his bow to the sage Ṛcīka, who gave it to my father Jamadagni. When King Kārtavīrya Arjuna killed my father, I took up arms and destroyed the wicked kings of the earth again and again. Then I gave the whole earth to the sage Kaśyapa and went to live on Mount Mahendra. Now I have heard that the bow of Śiva is broken, so I have come. Take this bow of Viṣṇu, Rāma — if you can.”",
+    "“విష్ణువు తన ధనుస్సును ఋచీక మహర్షికి ఇచ్చాడు; ఆయన దానిని నా తండ్రి జమదగ్నికి ఇచ్చాడు. కార్తవీర్యార్జునుడనే రాజు నా తండ్రిని చంపినప్పుడు, నేను ఆయుధం పట్టి దుష్ట రాజులను మళ్ళీ మళ్ళీ నాశనం చేశాను. తర్వాత భూమినంతా కశ్యప మహర్షికి దానం చేసి మహేంద్ర పర్వతంపై నివసించడానికి వెళ్ళాను. ఇప్పుడు శివధనుస్సు విరిగిందని విని వచ్చాను. రామా, చేతనైతే ఈ విష్ణుధనుస్సును అందుకో.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Rāma listened respectfully, out of regard for his father. Then he spoke calmly. “Bhārgava, you think I am weak and cannot do my duty as a kṣatriya. Watch my strength now.” And he took the bow of Viṣṇu — along with its arrow — out of Paraśurāma's hands, strung it in an instant and fitted the arrow to the string.",
+    "తండ్రి పట్ల గౌరవంతో రాముడు వినయంగా విన్నాడు. తర్వాత ప్రశాంతంగా ఇలా అన్నాడు: “భార్గవా, నేను బలహీనుడినని, క్షత్రియ ధర్మం నిర్వహించలేనని మీరు అనుకుంటున్నారు. ఇప్పుడు నా బలం చూడండి.” పరశురాముని చేతుల నుండి విష్ణుధనుస్సును, దాని బాణాన్నీ అందుకుని, క్షణంలో నారి ఎక్కించి బాణం సంధించాడు."
+   ],
+   [
+    "p",
+    "“You are a brāhmaṇa, and related to my guru Viśvāmitra, so I will not take your life,” said Rāma. “But an arrow from Viṣṇu's bow, once fitted, can never be wasted. Tell me what it should destroy — your power to travel anywhere at the speed of thought, or the heavenly worlds you have won by your tapas?”",
+    "“మీరు బ్రాహ్మణులు; నా గురువు విశ్వామిత్రునికి బంధువులు; అందుకే మీ ప్రాణం తీయను,” అన్నాడు రాముడు. “కానీ విష్ణుధనుస్సుకు ఒకసారి సంధించిన బాణం వృథా కాకూడదు. ఇది దేనిని నాశనం చేయాలో చెప్పండి — మనోవేగంతో ఎక్కడికైనా వెళ్ళగల మీ శక్తినా, లేక తపస్సుతో మీరు సంపాదించిన పుణ్యలోకాలనా?”"
+   ],
+   [
+    "p",
+    "The gods gathered in the sky to watch. And as Rāma stood holding Viṣṇu's bow, all of Paraśurāma's fierce power drained out of him. He became quiet and still, and he looked at Rāma with new eyes.",
+    "దేవతలు చూడటానికి ఆకాశంలో సమావేశమయ్యారు. విష్ణుధనుస్సు పట్టుకుని రాముడు నిలబడగానే పరశురాముని భయంకర శక్తి అంతా అతని నుండి తొలగిపోయింది. అతను నిశ్శబ్దంగా, నిశ్చలంగా మారిపోయి, కొత్త కళ్ళతో రాముడిని చూశాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Now I know who you are,” Paraśurāma said softly. “You are Viṣṇu himself — the imperishable lord, the slayer of Madhu. Being defeated by you, the lord of the three worlds, is no shame to me. Do not take away my power of movement — I promised to leave this earth to Kaśyapa, and I must be able to go away from it. Let your arrow destroy the worlds I won by my tapas.”",
+    "“ఇప్పుడు మీరెవరో నాకు తెలిసింది,” అన్నాడు పరశురాముడు మెల్లగా. “మీరు సాక్షాత్తు విష్ణువు — అవ్యయుడు, మధుసూదనుడు. త్రిలోకాధిపతి అయిన మీ చేతిలో ఓడిపోవడం నాకు అవమానం కాదు. నా గమనశక్తిని తీసివేయకండి — ఈ భూమిని కశ్యపునికి ఇస్తానని మాట ఇచ్చాను; దానిని వదిలి వెళ్ళగలగాలి. నా తపస్సుతో సంపాదించిన లోకాలను మీ బాణం నాశనం చేయనివ్వండి.”"
+   ],
+   [
+    "p",
+    "Rāma released the arrow, and it destroyed those worlds. Paraśurāma walked around Rāma respectfully, bowed, and went away to Mount Mahendra. The darkness lifted, the wind died down, and the sun shone again.",
+    "రాముడు బాణం విడిచాడు; అది ఆ లోకాలను నాశనం చేసింది. పరశురాముడు రామునికి ప్రదక్షిణ చేసి, నమస్కరించి, మహేంద్ర పర్వతానికి వెళ్ళిపోయాడు. చీకటి తొలగింది, గాలి శాంతించింది, సూర్యుడు మళ్ళీ ప్రకాశించాడు."
+   ],
+   [
+    "dyk",
+    "🪓",
+    "Paraśurāma and Rāma are both avatāras of Viṣṇu. In this meeting, the sixth avatāra hands over his mission to the seventh.",
+    "పరశురాముడు, రాముడు ఇద్దరూ విష్ణువు అవతారాలే. ఈ కలయికలో ఆరవ అవతారం తన కార్యాన్ని ఏడవ అవతారానికి అప్పగిస్తుంది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Rāma handed the bow of Viṣṇu to Varuṇa, the god of the waters, for safe keeping. Then he bowed to Vasiṣṭha and the elders and went to his father, who had fainted with fear. “Father, Paraśurāma has gone. Let us go on to Ayodhyā.” Daśaratha hugged his son and kissed his head again and again — he felt as if Rāma had been born a second time.",
+    "రాముడు విష్ణుధనుస్సును భద్రంగా ఉంచమని జలాధిపతి వరుణునికి అప్పగించాడు. తర్వాత వసిష్ఠునికి, పెద్దలకు నమస్కరించి, భయంతో మూర్ఛపోయిన తండ్రి దగ్గరకు వెళ్ళాడు. “నాన్నగారూ, పరశురాముడు వెళ్ళిపోయాడు. అయోధ్యకు వెళ్దాం.” దశరథుడు కొడుకుని హత్తుకుని తలపై మళ్ళీ మళ్ళీ ముద్దు పెట్టుకున్నాడు — రాముడు మళ్ళీ పుట్టినట్లు అనిపించింది."
+   ],
+   [
+    "p",
+    "Ayodhyā was decorated to welcome them: flags flew, the streets were sprinkled and strewn with flowers, and music filled the air. The queens — Kausalyā, Sumitrā and Kaikeyī — welcomed their new daughters-in-law, Sītā, Ūrmilā, Māṇḍavī and Śrutakīrti, with love. The brides worshipped the family gods and bowed to their elders, and the palace was filled with joy.",
+    "వారిని స్వాగతించడానికి అయోధ్యను అలంకరించారు: జెండాలు ఎగిరాయి; వీధులపై కళ్ళాపి చల్లి పూలు పరిచారు; సంగీతం వినిపించింది. కౌసల్య, సుమిత్ర, కైకేయి రాణులు తమ కొత్త కోడళ్ళు సీత, ఊర్మిళ, మాండవి, శ్రుతకీర్తిలను ప్రేమగా ఆహ్వానించారు. వధువులు కులదేవతలను పూజించి పెద్దలకు నమస్కరించారు; రాజభవనం ఆనందంతో నిండిపోయింది."
+   ],
+   [
+    "p",
+    "Some time later, {bharata|Bharata}'s uncle Yudhājit asked to take Bharata home to Kekaya to visit his grandfather. Daśaratha agreed, and Bharata set out with Śatrughna, after bowing to his father and to Rāma.",
+    "కొంతకాలం తర్వాత {bharata|భరతుని} మేనమామ యుధాజిత్తు, తాతగారిని చూడటానికి భరతుడిని కేకయకు తీసుకువెళ్తానని అడిగాడు. దశరథుడు అంగీకరించాడు; తండ్రికి, రామునికి నమస్కరించి భరతుడు శత్రుఘ్నునితో కలిసి బయలుదేరాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Rāma and Lakṣmaṇa stayed in Ayodhyā, serving their father with devotion and caring for the people. Rāma looked after everyone — he was gentle with the weak, kind to all, and wise in every decision. The people loved him more each day.",
+    "రామలక్ష్మణులు అయోధ్యలోనే ఉండి, భక్తితో తండ్రిని సేవిస్తూ ప్రజలను చూసుకున్నారు. రాముడు అందరినీ ఆదరించాడు — బలహీనుల పట్ల మృదువుగా, అందరి పట్ల దయతో, ప్రతి నిర్ణయంలో వివేకంతో ఉండేవాడు. ప్రజలు రోజురోజుకూ ఆయనను మరింత ప్రేమించారు."
+   ],
+   [
+    "p",
+    "And Rāma and Sītā lived together in great happiness. Sītā loved Rāma with all her heart, and Rāma loved her even more. Their hearts were so close that each knew what the other felt without a single word being spoken.",
+    "రాముడు, సీత ఎంతో ఆనందంగా కలిసి జీవించారు. సీత రాముడిని హృదయపూర్వకంగా ప్రేమించింది; రాముడు ఆమెను ఇంకా ఎక్కువగా ప్రేమించాడు. వారి హృదయాలు ఎంత దగ్గరగా ఉన్నాయంటే ఒక్క మాట కూడా లేకుండా ఒకరి మనసు మరొకరికి తెలిసిపోయేది."
+   ],
+   [
+    "sloka",
+    [
+     "రామస్తు సీతయా సార్ధం",
+     "విజహార బహూనృతూన్ ।",
+     "మనస్వీ తద్గతస్తస్యా",
+     "నిత్యం హృది సమర్పితః ॥"
+    ],
+    [
+     "rāmas tu sītayā sārdhaṃ",
+     "vijahāra bahūn ṛtūn ।",
+     "manasvī tadgatas tasyā",
+     "nityaṃ hṛdi samarpitaḥ ॥"
+    ],
+    "Rāma lived happily with Sītā through many seasons. His heart was devoted to her, and he was always enshrined in hers.",
+    "రాముడు సీతతో కలిసి ఎన్నో ఋతువులు ఆనందంగా గడిపాడు. ఆయన మనసు ఆమెకే అంకితమైంది; ఆయన ఎప్పుడూ ఆమె హృదయంలో నిలిచి ఉన్నాడు."
+   ],
+   [
+    "p",
+    "So ends the Bāla Kāṇḍa, the book of Rāma's childhood. But in Ayodhyā, a king was growing old — and soon he would begin to think about who should be crowned after him.",
+    "అలా రాముని బాల్య గాథ — బాలకాండ — ముగుస్తుంది. కానీ అయోధ్యలో ఒక రాజు వృద్ధుడవుతున్నాడు — త్వరలోనే తన తర్వాత ఎవరికి పట్టాభిషేకం చేయాలో ఆలోచించబోతున్నాడు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "On the way home, bad omens appeared and Paraśurāma blocked the road.",
+   "తిరుగు ప్రయాణంలో అపశకునాలు కనిపించాయి; పరశురాముడు దారికి అడ్డుగా నిలిచాడు."
+  ],
+  [
+   "Paraśurāma challenged Rāma to string the bow of Viṣṇu.",
+   "విష్ణుధనుస్సుకు నారి ఎక్కించమని పరశురాముడు రాముడికి సవాలు విసిరాడు."
+  ],
+  [
+   "Rāma strung it at once, but spared Paraśurāma's life; the arrow destroyed only his worlds of merit.",
+   "రాముడు వెంటనే నారి ఎక్కించాడు, కానీ పరశురాముని ప్రాణం తీయలేదు; బాణం అతని పుణ్యలోకాలను మాత్రమే నాశనం చేసింది."
+  ],
+  [
+   "Paraśurāma recognised Rāma as Viṣṇu and went away in peace.",
+   "పరశురాముడు రాముడిని విష్ణువుగా గుర్తించి శాంతంగా వెళ్ళిపోయాడు."
+  ],
+  [
+   "The family returned to Ayodhyā, and Rāma and Sītā lived together in great happiness.",
+   "కుటుంబం అయోధ్యకు తిరిగి వచ్చింది; రాముడు, సీత ఎంతో ఆనందంగా కలిసి జీవించారు."
+  ]
+ ],
+ "think": [
+  "Rāma won against Paraśurāma but still treated him with respect and spared his life. What does that show about how a true hero should behave after winning?",
+  "రాముడు పరశురాముడిపై గెలిచినా అతనిని గౌరవించి ప్రాణం తీయలేదు. గెలిచిన తర్వాత నిజమైన వీరుడు ఎలా ప్రవర్తించాలో దీని వల్ల ఏమి తెలుస్తుంది?"
  ]
 }
 ]);

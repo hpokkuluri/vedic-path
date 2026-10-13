@@ -155,6 +155,15 @@
         <g fill="#2a4a2a"><ellipse cx="40" cy="150" rx="40" ry="12"/></g>
         <g fill="#6a9a8a"><path d="M30 214 Q34 180 38 214Z M44 214 Q50 176 54 214Z M58 214 Q62 186 66 214Z"/></g>
         <g fill="#c8d4ef"><circle cx="160" cy="34" r="2.2"/><circle cx="168" cy="38" r="2.2"/><circle cx="174" cy="32" r="2.2"/><circle cx="162" cy="44" r="2.2"/><circle cx="170" cy="46" r="2.2"/><circle cx="178" cy="42" r="2.2"/></g>`,
+      // a sage in deep tapas before the Himālaya, smoke rising from his head
+      tapas: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8a24a"/><stop offset=".55" stop-color="#f6d8a0"/><stop offset="1" stop-color="#e2c48a"/></linearGradient><radialGradient id="${g}b" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2b0"/><stop offset="1" stop-color="#fff2b0" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <path d="M0 140 L60 70 L100 110 L160 40 L220 104 L270 66 L320 120 L320 160 L0 160Z" fill="#f6f2ea"/><path d="M160 40 L176 60 L140 80Z M60 70 L74 86 L50 92Z M270 66 L282 80 L256 86Z" fill="#c8c0b8"/>
+        <rect y="160" width="320" height="60" fill="#c49a5a"/>
+        <circle cx="160" cy="130" r="70" fill="url(#${g}b)"/>
+        <path d="M160 96 Q150 80 162 66 Q174 52 162 36 Q156 24 166 12" stroke="#8a8a9a" stroke-width="5" fill="none" opacity=".5" stroke-linecap="round"/>
+        <g fill="#5b3015"><circle cx="160" cy="112" r="10"/><path d="M160 98 q-4 -10 2 -14 q4 6 -2 14" /><path d="M140 124 Q160 118 180 124 L188 150 L132 150Z"/><path d="M120 158 Q160 140 200 158 L196 166 L124 166Z"/></g>
+        <g fill="#e2461a"><path d="M70 166 q6 -16 12 0Z"/><path d="M238 166 q6 -16 12 0Z"/><path d="M96 176 q5 -12 10 0Z"/><path d="M214 176 q5 -12 10 0Z"/></g>`,
     };
     if (SC[name]) return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">${SC[name]}</svg>`;
     // default: tamasa — river at dusk, sage, krauñca birds
