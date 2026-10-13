@@ -164,6 +164,37 @@
         <path d="M160 96 Q150 80 162 66 Q174 52 162 36 Q156 24 166 12" stroke="#8a8a9a" stroke-width="5" fill="none" opacity=".5" stroke-linecap="round"/>
         <g fill="#5b3015"><circle cx="160" cy="112" r="10"/><path d="M160 98 q-4 -10 2 -14 q4 6 -2 14" /><path d="M140 124 Q160 118 180 124 L188 150 L132 150Z"/><path d="M120 158 Q160 140 200 158 L196 166 L124 166Z"/></g>
         <g fill="#e2461a"><path d="M70 166 q6 -16 12 0Z"/><path d="M238 166 q6 -16 12 0Z"/><path d="M96 176 q5 -12 10 0Z"/><path d="M214 176 q5 -12 10 0Z"/></g>`,
+      // a dark chamber lit by one oil lamp, jewels scattered on the floor
+      lamp: `<defs><radialGradient id="${g}a" cx=".55" cy=".45" r=".7"><stop offset="0" stop-color="#7a3a1a"/><stop offset=".6" stop-color="#2a120a"/><stop offset="1" stop-color="#140806"/></radialGradient><radialGradient id="${g}b" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="214" cy="104" r="70" fill="url(#${g}b)"/>
+        <g fill="#4a2010"><rect x="30" y="20" width="16" height="160"/><path d="M60 40 Q90 10 120 40 V180 H60Z" opacity=".6"/></g>
+        <path d="M200 140 L228 140 L222 150 L206 150Z" fill="#c9962e"/><rect x="211" y="150" width="6" height="30" fill="#c9962e"/><path d="M214 140 C206 126 214 116 214 106 C214 116 222 126 214 140Z" fill="#ffcc4a"/>
+        <rect y="180" width="320" height="40" fill="#2a120a"/>
+        <path d="M60 196 Q100 184 150 192 Q170 196 186 190 L186 200 L60 204Z" fill="#8a2a3a"/><g fill="#f6d27a"><circle cx="90" cy="206" r="3"/><circle cx="120" cy="210" r="2.5"/><circle cx="170" cy="208" r="3"/><circle cx="196" cy="204" r="2"/><circle cx="240" cy="210" r="3"/></g>`,
+      // a boat crossing the wide Gaṅgā at morning
+      boat: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7c98a"/><stop offset="1" stop-color="#fbe6c6"/></linearGradient><linearGradient id="${g}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb8c8"/><stop offset="1" stop-color="#3a7a96"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="80" cy="70" r="22" fill="#fff1c4"/>
+        <path d="M0 118 Q60 108 120 116 T240 112 T320 116 L320 126 L0 126Z" fill="#6a9a5a"/><g fill="#3f7a46"><ellipse cx="260" cy="106" rx="30" ry="14"/><ellipse cx="30" cy="110" rx="26" ry="10"/></g>
+        <rect y="124" width="320" height="96" fill="url(#${g}w)"/><g stroke="#e0f2f7" stroke-width="2" opacity=".7"><path d="M30 150h30"/><path d="M220 160h36"/><path d="M90 200h28"/><path d="M250 196h24"/></g>
+        <path d="M100 168 Q160 190 230 168 L222 180 Q160 196 108 180Z" fill="#7a4a22"/>
+        <g fill="#5b3015"><g transform="translate(130 168)"><circle cx="0" cy="-22" r="5"/><path d="M-6 -16 L6 -16 L7 0 L-7 0Z"/></g><g transform="translate(150 168)"><circle cx="0" cy="-22" r="5" fill="#8a2a3a"/><path d="M-6 -16 L6 -16 L8 0 L-8 0Z" fill="#c0392b"/></g><g transform="translate(170 168)"><circle cx="0" cy="-22" r="5"/><path d="M-6 -16 L6 -16 L7 0 L-7 0Z"/></g><g transform="translate(206 168)"><circle cx="0" cy="-24" r="5"/><path d="M-6 -18 L6 -18 L7 0 L-7 0Z"/><path d="M8 -26 L22 12" stroke="#5b3015" stroke-width="2.5"/></g></g>`,
+      // Citrakūṭa: a green hill, a leaf hut, the Mandākinī river
+      hill: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe0f0"/><stop offset="1" stop-color="#eaf5f0"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <path d="M40 160 Q120 30 220 70 Q280 90 320 150 L320 170 L40 170Z" fill="#5a9a5a"/><path d="M0 170 Q60 120 140 150 L140 175 L0 175Z" fill="#7aae6a"/>
+        <g fill="#3f7a46"><circle cx="150" cy="70" r="12"/><circle cx="175" cy="66" r="10"/><circle cx="200" cy="78" r="12"/><circle cx="120" cy="96" r="10"/></g>
+        <path d="M0 178 Q80 170 160 182 T320 178 L320 220 L0 220Z" fill="#5aa0c0"/><g stroke="#e0f2f7" stroke-width="2" opacity=".7"><path d="M40 196h26"/><path d="M200 204h30"/></g>
+        <g transform="translate(222 150)"><path d="M-30 0 L0 -26 L30 0Z" fill="#a0783a"/><rect x="-24" y="0" width="48" height="22" fill="#c8a060"/><rect x="-6" y="6" width="12" height="16" fill="#5a3a1a"/></g>
+        <g fill="#f08aa0"><circle cx="70" cy="160" r="3"/><circle cx="96" cy="164" r="3"/><circle cx="180" cy="166" r="3"/></g>`,
+      // the pādukās placed on the royal throne
+      paduka: `<defs><radialGradient id="${g}a" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#d0802a"/><stop offset="1" stop-color="#4a1a0a"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <path d="M110 40 Q160 0 210 40 L210 150 L110 150Z" fill="#7a1a1a"/><path d="M118 46 Q160 12 202 46" stroke="#f6d27a" stroke-width="4" fill="none"/>
+        <rect x="96" y="150" width="128" height="18" rx="4" fill="#c9962e"/><rect x="110" y="168" width="100" height="36" fill="#a0702a"/>
+        <g fill="#8a5a2a" stroke="#f6d27a" stroke-width="2"><path d="M132 150 Q128 120 140 112 Q152 120 150 150Z"/><path d="M170 150 Q168 120 180 112 Q192 120 188 150Z"/></g>
+        <g fill="#f6d27a"><circle cx="141" cy="124" r="3"/><circle cx="179" cy="124" r="3"/></g>
+        <path d="M160 30 v-14 M150 20 h20" stroke="#f6d27a" stroke-width="3"/>
+        <g fill="#f6e2c0" opacity=".85"><circle cx="40" cy="190" r="7"/><path d="M30 220 Q40 196 50 220Z"/><circle cx="280" cy="190" r="7"/><path d="M270 220 Q280 196 290 220Z"/></g>`,
     };
     if (SC[name]) return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">${SC[name]}</svg>`;
     // default: tamasa — river at dusk, sage, krauñca birds
@@ -287,11 +318,14 @@
       ${c.n === 1 ? `<div class="opby">Retold by <b>Hari Pokkuluri</b> · <span class="te">కథనం: హరి పొక్కులూరి</span></div>` : ''}
       ${who.length ? `<div class="who-t">In this chapter</div><div class="whos">${who.map(k => `<button class="who" onclick="rmyWho('${k}')"><span class="av">${WHO()[k].av}</span><span class="wn">${esc(WHO()[k].en)}</span></button>`).join('')}</div>` : ''}
       <div class="hint">Swipe to begin →</div>`;
-    const p = plan(c.kanda), nextPlan = p[c.n], nextC = chapters().find(x => x.kanda === c.kanda && x.n === c.n + 1);
+    // next chapter — or, after a kāṇḍa's last chapter, the first chapter of the next kāṇḍa
+    let nk = c.kanda, nn = c.n + 1, nextPlan = plan(c.kanda)[c.n];
+    if (!nextPlan) { const ki = KANDAS.findIndex(x => x[0] === c.kanda) + 1; if (KANDAS[ki] && plan(KANDAS[ki][0]).length) { nk = KANDAS[ki][0]; nn = 1; nextPlan = plan(nk)[0]; } }
+    const nextC = chapters().find(x => x.kanda === nk && x.n === nn);
     const end = `<div class="end-h"><div class="lotus">🪷</div><h2>Chapter complete</h2><p class="te">అధ్యాయం పూర్తయింది</p></div>
       ${c.remember ? `<div class="box"><h3>Remember</h3><ul>${c.remember.map(r => `<li><span><span class="en">${fmt(r[0])}</span><span class="te">${fmt(r[1])}</span></span></li>`).join('')}</ul></div>` : ''}
       ${c.think ? `<div class="box think"><h3>Think about it</h3><p><span class="en">${fmt(c.think[0])}</span><span class="te">${fmt(c.think[1])}</span></p></div>` : ''}
-      ${nextPlan ? `<div class="box next"${nextC ? ` onclick="openRmyChapter('${nextC.id}')"` : ''}><div><small>Up next · Chapter ${c.n + 1}${nextC ? '' : ' · coming soon'}</small><b>${esc(nextPlan[0])}</b><span>Sargas ${esc(nextPlan[1].replace(/^Sargas? /, ''))}</span></div>${nextC ? '<span class="go">›</span>' : ''}</div>` : ''}
+      ${nextPlan ? `<div class="box next"${nextC ? ` onclick="openRmyChapter('${nextC.id}')"` : ''}><div><small>Up next · ${nk !== c.kanda ? KMETA(nk)[1] + ' · ' : ''}Chapter ${nn}${nextC ? '' : ' · coming soon'}</small><b>${esc(nextPlan[0])}</b><span>Sargas ${esc(nextPlan[1].replace(/^Sargas? /, ''))}</span></div>${nextC ? '<span class="go">›</span>' : ''}</div>` : ''}
       <button class="markbtn${S.done[c.id] ? ' did' : ''}" onclick="rmyDone('${c.id}', this)">${S.done[c.id] ? '✓ Read' : 'Mark chapter as read'}</button>`;
     const pages = [opener, ...c.pages.map((b, i) => blocks(b, i === 0)), end];
     el.innerHTML = `<div class="rmy rmy-read mode-${MODE()}" id="rmy-read" style="--fs:${FS[S.fs] || FS[1]}" data-noswipe>
