@@ -92,6 +92,69 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "శాంత",
   "d": "Princess of Aṅga, who married the sage Ṛṣyaśṛṅga.",
   "dt": "ఋశ్యశృంగ మునిని వివాహం చేసుకున్న అంగదేశపు రాకుమారి."
+ },
+ "vishnu": {
+  "av": "🪷",
+  "en": "Viṣṇu",
+  "te": "విష్ణువు",
+  "d": "The protector of the universe, who rides the great eagle Garuḍa and carries the conch, discus and mace. Whenever dharma is in danger, he takes birth on earth.",
+  "dt": "విశ్వ రక్షకుడు; గరుడ వాహనుడు; శంఖ, చక్ర, గదాధారి. ధర్మానికి ఆపద వచ్చినప్పుడల్లా భూమిపై అవతరిస్తాడు."
+ },
+ "ravana": {
+  "av": "👹",
+  "en": "Rāvaṇa",
+  "te": "రావణుడు",
+  "d": "The ten-headed king of the rākṣasas, ruler of Laṅkā. A great scholar and warrior, but proud and cruel, he tormented gods and sages alike.",
+  "dt": "పది తలల రాక్షసరాజు, లంకాధిపతి. గొప్ప పండితుడు, యోధుడు; కానీ గర్విష్ఠి, క్రూరుడు — దేవతలనూ మునులనూ బాధించాడు."
+ },
+ "hanuman": {
+  "av": "🐒",
+  "en": "Hanumān",
+  "te": "హనుమంతుడు",
+  "d": "Son of Vāyu, the wind god — the mightiest and wisest of the vānaras, and Rāma's greatest devotee.",
+  "dt": "వాయుదేవుని కుమారుడు — వానరులలో మహా బలవంతుడు, జ్ఞాని, శ్రీరాముని పరమ భక్తుడు."
+ },
+ "jambavan": {
+  "av": "🐻",
+  "en": "Jāmbavān",
+  "te": "జాంబవంతుడు",
+  "d": "The wise old king of the bears, born from Brahmā. He will guide the vānaras with his long experience.",
+  "dt": "బ్రహ్మ నుండి పుట్టిన వృద్ధ భల్లూక రాజు. తన అనుభవంతో వానరులకు మార్గదర్శనం చేస్తాడు."
+ },
+ "lakshmana": {
+  "av": "🛡️",
+  "en": "Lakṣmaṇa",
+  "te": "లక్ష్మణుడు",
+  "d": "Son of Sumitrā and twin of Śatrughna. From childhood he was Rāma's shadow — always at his side, guarding him with his bow.",
+  "dt": "సుమిత్ర కుమారుడు, శత్రుఘ్నుని కవల సోదరుడు. చిన్నతనం నుండి రాముని నీడలా — ఎప్పుడూ ఆయన పక్కనే ఉండి, ధనుస్సుతో కాపాడేవాడు."
+ },
+ "bharata": {
+  "av": "📜",
+  "en": "Bharata",
+  "te": "భరతుడు",
+  "d": "Son of Kaikeyī, gentle and deeply devoted to dharma and to his brother Rāma.",
+  "dt": "కైకేయి కుమారుడు; సౌమ్యుడు; ధర్మం పట్లా, అన్న రాముని పట్లా అపారమైన భక్తి కలవాడు."
+ },
+ "shatrughna": {
+  "av": "⚔️",
+  "en": "Śatrughna",
+  "te": "శత్రుఘ్నుడు",
+  "d": "Son of Sumitrā and twin of Lakṣmaṇa, always devoted to his brother Bharata.",
+  "dt": "సుమిత్ర కుమారుడు, లక్ష్మణుని కవల సోదరుడు; ఎప్పుడూ అన్న భరతునికి అంకితమైనవాడు."
+ },
+ "vishvamitra": {
+  "av": "🔥",
+  "en": "Viśvāmitra",
+  "te": "విశ్వామిత్రుడు",
+  "d": "A great sage who was once a king. Through thousands of years of tapas he became a brahmarṣi, and he knows every divine weapon.",
+  "dt": "ఒకప్పుడు రాజుగా ఉండి, వేల సంవత్సరాల తపస్సుతో బ్రహ్మర్షి అయిన మహర్షి. అన్ని దివ్యాస్త్రాలూ ఆయనకు తెలుసు."
+ },
+ "kama": {
+  "av": "🏹",
+  "en": "Kāma (Manmatha)",
+  "te": "మన్మథుడు",
+  "d": "The god of love, who shoots flower-arrows to make people fall in love. Burnt by Śiva's third eye, he became Anaṅga — “the bodiless one”.",
+  "dt": "పూలబాణాలతో ప్రేమను కలిగించే దేవుడు. శివుని మూడో కంటి మంటకు దగ్ధమై అనంగుడు — “శరీరం లేనివాడు” — అయ్యాడు."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -700,6 +763,534 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "The priests were offered a whole kingdom, and gave it back. Why do you think they did that? What would you have done?",
   "ఋత్విక్కులకు రాజ్యమంతా ఇస్తే, వారు తిరిగి ఇచ్చేశారు. వారు ఎందుకు అలా చేశారనుకుంటున్నారు? మీరైతే ఏం చేసేవారు?"
+ ]
+},
+{
+ "id": "bala-3",
+ "kanda": "bala",
+ "n": 3,
+ "order": 103,
+ "date": "2026-10-13",
+ "title": "Viṣṇu Promises to Come",
+ "titleTe": "విష్ణువు ఇచ్చిన మాట",
+ "sargas": "15–17",
+ "scene": "sky",
+ "who": [
+  "brahma",
+  "vishnu",
+  "ravana",
+  "dasaratha",
+  "hanuman",
+  "jambavan"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "The Putrakāmeṣṭi began. As {rishyashringa|Ṛṣyaśṛṅga} poured offerings into the fire, chanting the mantras of the Atharva Veda, the gods, gandharvas, siddhas and great sages gathered in the sky to receive their share of the yajña.",
+    "పుత్రకామేష్టి ప్రారంభమైంది. అథర్వవేద మంత్రాలు పఠిస్తూ {rishyashringa|ఋశ్యశృంగుడు} అగ్నిలో ఆహుతులు సమర్పిస్తుండగా, యజ్ఞభాగాలు స్వీకరించడానికి దేవతలు, గంధర్వులు, సిద్ధులు, మహర్షులు ఆకాశంలో సమావేశమయ్యారు."
+   ],
+   [
+    "p",
+    "But the gods had not come only for the offerings. Together they went to {brahma|Brahmā}, the creator, and said, “Lord, by the boon you gave him, the rākṣasa {ravana|Rāvaṇa} has become unbearable. He torments the three worlds. He insults the gods, attacks the sages and harasses the gandharvas and brāhmaṇas. The sun does not dare to burn him, the wind does not dare to blow hard near him, and even the ocean grows still when it sees him. We are terrified. Please find a way to destroy him.”",
+    "కానీ దేవతలు ఆహుతుల కోసం మాత్రమే రాలేదు. అందరూ కలిసి సృష్టికర్త {brahma|బ్రహ్మ} దగ్గరకు వెళ్ళి ఇలా అన్నారు: “ప్రభూ, మీరిచ్చిన వరం వల్ల {ravana|రావణుడు} అనే రాక్షసుడు భరించలేనివాడయ్యాడు. మూడు లోకాలనూ బాధిస్తున్నాడు. దేవతలను అవమానిస్తున్నాడు, మునులపై దాడి చేస్తున్నాడు, గంధర్వులను, బ్రాహ్మణులను వేధిస్తున్నాడు. అతనిని చూసి సూర్యుడు తీక్షణంగా ప్రకాశించడానికి, గాలి బలంగా వీచడానికి భయపడుతున్నాయి; సముద్రం కూడా కదలకుండా ఉండిపోతుంది. మేము భయపడిపోతున్నాం. అతనిని నాశనం చేసే మార్గం చూపండి.”"
+   ],
+   [
+    "p",
+    "Brahmā thought for a moment and then said, “There is a way. When Rāvaṇa asked me for his boon, he said: ‘Let me never be killed by gods, dānavas, yakṣas, gandharvas or rākṣasas.’ He did not even mention human beings — he thought they were too weak to matter. So no god can kill him. But a human can.”",
+    "బ్రహ్మ కొంచెం ఆలోచించి ఇలా అన్నారు: “ఒక మార్గం ఉంది. రావణుడు నన్ను వరం అడిగినప్పుడు, ‘దేవతలు, దానవులు, యక్షులు, గంధర్వులు, రాక్షసుల చేతిలో నాకు మరణం రాకూడదు’ అని కోరాడు. మనుషుల పేరే ఎత్తలేదు — వారు లెక్కలోకి రానంత బలహీనులని అనుకున్నాడు. కనుక ఏ దేవుడూ అతనిని చంపలేడు. కానీ ఒక మనిషి చంపగలడు.”"
+   ],
+   [
+    "dyk",
+    "💡",
+    "Rāvaṇa's pride was his weakness. Because he looked down on humans, he never asked for protection from them — and that is exactly how his end would come.",
+    "రావణుని గర్వమే అతని బలహీనత. మనుషులను చిన్నచూపు చూసినందుకే వారి నుండి రక్షణ కోరలేదు — సరిగ్గా అదే అతని అంతానికి దారి తీసింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Just then, a great light filled the sky. {vishnu|Viṣṇu}, the lord of the universe, arrived riding on Garuḍa, like the sun rising over a mountain. He wore yellow silk and held the conch, the discus and the mace in his hands, and his bracelets of gold shone brightly.",
+    "సరిగ్గా అప్పుడే ఆకాశమంతా గొప్ప వెలుగు నిండింది. పర్వతంపై ఉదయించే సూర్యునిలా, విశ్వప్రభువు {vishnu|విష్ణువు} గరుడునిపై వచ్చాడు. పచ్చని పట్టువస్త్రాలు ధరించి, చేతుల్లో శంఖం, చక్రం, గద పట్టుకుని ఉన్నాడు; ఆయన బంగారు కంకణాలు మెరిసిపోతున్నాయి."
+   ],
+   [
+    "p",
+    "The gods bowed to him and prayed: “Lord, King Daśaratha of Ayodhyā is righteous, generous and full of truth. Please divide yourself into four parts and be born as his sons, through his three queens, who are as noble as modesty, prosperity and fame themselves. Become a man, and destroy Rāvaṇa, the thorn of the worlds, whom no god can kill.”",
+    "దేవతలు ఆయనకు నమస్కరించి ఇలా ప్రార్థించారు: “ప్రభూ, అయోధ్య రాజు దశరథుడు ధర్మాత్ముడు, దాత, సత్యసంధుడు. వినయం, సంపద, కీర్తి అంత ఉత్తములైన ఆయన ముగ్గురు రాణుల ద్వారా, మిమ్మల్ని మీరు నాలుగు భాగాలుగా చేసుకుని ఆయన కుమారులుగా జన్మించండి. మానవునిగా అవతరించి, ఏ దేవుడూ చంపలేని, లోకాలకు ముల్లు వంటి రావణుడిని సంహరించండి.”"
+   ],
+   [
+    "p",
+    "Viṣṇu answered gently: “Do not be afraid. For your good, I will kill Rāvaṇa in battle, along with his sons, his ministers, his friends and his relatives. Then I will live among humans and rule the earth for eleven thousand years.” Then, thinking carefully about where to be born, he chose King Daśaratha as his father.",
+    "విష్ణువు మృదువుగా జవాబిచ్చాడు: “భయపడకండి. మీ మేలు కోసం, రావణుడిని అతని పుత్రులు, మంత్రులు, మిత్రులు, బంధువులతో సహా యుద్ధంలో సంహరిస్తాను. తర్వాత మనుషుల మధ్య నివసిస్తూ పదకొండు వేల సంవత్సరాలు భూమిని పాలిస్తాను.” తర్వాత ఎక్కడ జన్మించాలో జాగ్రత్తగా ఆలోచించి, దశరథ మహారాజును తండ్రిగా ఎంచుకున్నాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Down on earth, the yajña went on. Suddenly, from the sacred fire, a mighty being rose up — tall and shining, dark and glowing like flame, dressed in black and red, with a voice like a drum and the strength of a lion. In his hands he held a large golden vessel with a silver lid, as precious to him as a beloved wife.",
+    "భూమిపై యాగం కొనసాగుతోంది. అకస్మాత్తుగా పవిత్రాగ్ని నుండి ఒక మహాపురుషుడు పైకి లేచాడు — ఎత్తుగా, తేజస్సుతో, అగ్నిజ్వాలలా ప్రకాశిస్తూ, నలుపు ఎరుపు వస్త్రాలు ధరించి, దుందుభి వంటి గొంతుతో, సింహబలంతో. ఆయన చేతుల్లో వెండి మూత ఉన్న పెద్ద బంగారు పాత్ర ఉంది; దానిని ప్రియమైన భార్యను పట్టుకున్నంత జాగ్రత్తగా పట్టుకున్నాడు."
+   ],
+   [
+    "p",
+    "He looked at Daśaratha and said, “O king, I have been sent by Prajāpati. This is *pāyasam*, made by the gods. It brings children and good health. Give it to your queens to eat, and through them you will have the sons you have prayed for.”",
+    "ఆయన దశరథుని వైపు చూసి ఇలా అన్నాడు: “రాజా, నేను ప్రజాపతి పంపగా వచ్చాను. ఇది దేవతలు తయారు చేసిన *పాయసం*. ఇది సంతానాన్నీ ఆరోగ్యాన్నీ ఇస్తుంది. దీనిని మీ రాణులకు తినడానికి ఇవ్వండి; వారి ద్వారా మీరు ప్రార్థించిన కుమారులు మీకు కలుగుతారు.”"
+   ],
+   [
+    "p",
+    "Daśaratha received the golden vessel with bowed head, as joyfully as a poor man who finds a treasure. He walked around the shining being in respect, and the being disappeared back into the fire.",
+    "నిధి దొరికిన పేదవానిలా ఆనందంతో దశరథుడు తల వంచి ఆ బంగారు పాత్రను స్వీకరించాడు. ఆ తేజోమూర్తికి ప్రదక్షిణ చేశాడు; ఆ మహాపురుషుడు తిరిగి అగ్నిలోకి అంతర్ధానమయ్యాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Daśaratha hurried to the inner palace, his face shining like the autumn moon. He gave half of the pāyasam to Kausalyā, his eldest queen. Half of what remained he gave to Sumitrā. Then he gave half of the rest to Kaikeyī. And after thinking a little, he gave the last portion to Sumitrā again.",
+    "శరత్కాల చంద్రునిలా వెలిగిపోతున్న ముఖంతో దశరథుడు అంతఃపురానికి త్వరగా వెళ్ళాడు. పాయసంలో సగం పెద్ద రాణి కౌసల్యకు ఇచ్చాడు. మిగిలినదానిలో సగం సుమిత్రకు ఇచ్చాడు. తర్వాత మిగిలినదానిలో సగం కైకేయికి ఇచ్చాడు. కొంచెం ఆలోచించి, చివరి భాగాన్ని మళ్ళీ సుమిత్రకే ఇచ్చాడు."
+   ],
+   [
+    "dyk",
+    "🥣",
+    "Because Sumitrā received two portions of the pāyasam, she would become the mother of twins — Lakṣmaṇa and Śatrughna.",
+    "సుమిత్రకు పాయసంలో రెండు భాగాలు లభించినందుకే ఆమె కవలలకు — లక్ష్మణ శత్రుఘ్నులకు — తల్లి అయింది."
+   ],
+   [
+    "p",
+    "The three queens ate the pāyasam with joy, and soon each of them was expecting a child. They began to glow like the sun and the sacred fire. Seeing his wishes coming true, Daśaratha was as happy as Indra when the gods praise him.",
+    "ముగ్గురు రాణులూ ఆనందంగా పాయసం తిన్నారు; త్వరలోనే ముగ్గురూ గర్భవతులయ్యారు. వారు సూర్యునిలా, పవిత్రాగ్నిలా ప్రకాశించసాగారు. తన కోరికలు నెరవేరుతుండటం చూసి, దేవతలు స్తుతించినప్పుడు ఇంద్రుడు పొందే ఆనందం వంటి ఆనందం దశరథుడు పొందాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Meanwhile, in heaven, Brahmā spoke to the gods again. “Viṣṇu is going to be born as a man to fight Rāvaṇa. He will need strong, brave helpers. You must create them — mighty beings who can take any form they wish, who are wise, swift and skilled, and as strong as Viṣṇu himself in courage.”",
+    "అదే సమయంలో స్వర్గంలో బ్రహ్మ దేవతలతో మళ్ళీ మాట్లాడాడు: “రావణుడితో పోరాడటానికి విష్ణువు మనిషిగా జన్మించబోతున్నాడు. ఆయనకు బలవంతులైన, ధైర్యవంతులైన సహాయకులు కావాలి. మీరు వారిని సృష్టించాలి — కోరిన రూపం ధరించగలిగిన, జ్ఞానులైన, వేగవంతులైన, నేర్పరులైన, ధైర్యంలో విష్ణువు అంతటి మహాబలులను.”"
+   ],
+   [
+    "p",
+    "“I have already created one,” Brahmā added. “Once, as I yawned, the great bear {jambavan|Jāmbavān} came out of my mouth. He is ready.”",
+    "“ఒకరిని నేను ఇప్పటికే సృష్టించాను,” అన్నాడు బ్రహ్మ. “ఒకసారి నేను ఆవలించినప్పుడు, నా నోటి నుండి మహా భల్లూకం {jambavan|జాంబవంతుడు} బయటకు వచ్చాడు. అతను సిద్ధంగా ఉన్నాడు.”"
+   ],
+   [
+    "p",
+    "So the gods took birth on earth as vānaras — monkey-heroes of the forest. From Indra was born Vāli, huge as a mountain. From Sūrya, the sun, was born Sugrīva. From Bṛhaspati, the gods' teacher, came the wise Tāra. Kubera's son was Gandhamādana; Viśvakarmā's son was Nala, the great builder; Agni's son was Nīla, bright as fire. The twin Aśvins became the fathers of Mainda and Dvivida, Varuṇa of Suṣeṇa, and Parjanya of Śarabha.",
+    "అలా దేవతలు భూమిపై వానరులుగా — అడవి వీరులుగా — జన్మించారు. ఇంద్రుని నుండి పర్వతమంత పెద్దవాడైన వాలి పుట్టాడు. సూర్యుని నుండి సుగ్రీవుడు పుట్టాడు. దేవగురువు బృహస్పతి నుండి జ్ఞాని తారుడు వచ్చాడు. కుబేరుని కుమారుడు గంధమాదనుడు; విశ్వకర్మ కుమారుడు మహా నిర్మాత నలుడు; అగ్ని కుమారుడు అగ్నిలా వెలిగే నీలుడు. అశ్వినీ దేవతలు మైంద ద్వివిదులకు, వరుణుడు సుషేణునికి, పర్జన్యుడు శరభునికి తండ్రులయ్యారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "And from Vāyu, the wind god, was born the greatest of them all — {hanuman|Hanumān}. His body was as strong as a diamond, he was as swift as Garuḍa, and he was wiser than all the other vānaras.",
+    "వాయుదేవుని నుండి వారందరిలోకీ గొప్పవాడు — {hanuman|హనుమంతుడు} — జన్మించాడు. అతని శరీరం వజ్రమంత దృఢమైనది; గరుడునంత వేగవంతుడు; ఇతర వానరులందరికంటే జ్ఞాని."
+   ],
+   [
+    "p",
+    "Thousands upon thousands of vānaras and bears were born — as strong as elephants, able to uproot trees and lift mountains, to leap across the sky and stir up the ocean. Their roars could bring down flying birds. They lived on the mountains and in the forests, and the brothers Vāli and Sugrīva became their kings.",
+    "వేల వేల వానరులు, భల్లూకాలు పుట్టారు — ఏనుగులంత బలవంతులు; చెట్లను పెకలించగలవారు, పర్వతాలను ఎత్తగలవారు, ఆకాశంలో దూకగలవారు, సముద్రాన్ని కలచగలవారు. వారి గర్జనకు ఎగిరే పక్షులు కూడా కింద పడేవి. వారు పర్వతాలపై, అడవుల్లో నివసించారు; అన్నదమ్ములు వాలి సుగ్రీవులు వారికి రాజులయ్యారు."
+   ],
+   [
+    "p",
+    "Everything was now ready. The gods had their army in the forests, and in the palace of Ayodhyā three queens were waiting for their babies. All the worlds held their breath.",
+    "ఇప్పుడు అంతా సిద్ధమైంది. అడవుల్లో దేవతల సైన్యం సిద్ధంగా ఉంది; అయోధ్య రాజభవనంలో ముగ్గురు రాణులు తమ బిడ్డల కోసం ఎదురుచూస్తున్నారు. లోకాలన్నీ ఊపిరి బిగబట్టి ఎదురుచూశాయి."
+   ],
+   [
+    "dyk",
+    "🐒",
+    "Notice how many of these vānaras you will meet again later — Sugrīva, Hanumān, Nala, Nīla, Jāmbavān. Each one has a part to play in Rāma's story.",
+    "ఈ వానరులలో ఎంతమందిని మీరు తర్వాత మళ్ళీ కలుస్తారో గమనించండి — సుగ్రీవుడు, హనుమంతుడు, నలుడు, నీలుడు, జాంబవంతుడు. రామకథలో ప్రతి ఒక్కరికీ ఒక పాత్ర ఉంది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "The gods asked Brahmā for help against Rāvaṇa, who could not be killed by any god.",
+   "దేవతలు రావణుని గురించి బ్రహ్మను ఆశ్రయించారు; ఏ దేవుడూ రావణుడిని చంపలేడు."
+  ],
+  [
+   "Rāvaṇa never asked for protection from humans — so Viṣṇu agreed to be born as a man.",
+   "రావణుడు మనుషుల నుండి రక్షణ కోరలేదు — అందుకే విష్ణువు మనిషిగా జన్మించడానికి అంగీకరించాడు."
+  ],
+  [
+   "A being rose from the fire with divine pāyasam, which Daśaratha shared among his three queens.",
+   "అగ్ని నుండి ఒక మహాపురుషుడు దివ్య పాయసంతో వచ్చాడు; దశరథుడు దానిని ముగ్గురు రాణులకు పంచాడు."
+  ],
+  [
+   "The gods were born as vānaras — Hanumān from Vāyu, Sugrīva from Sūrya, Vāli from Indra — to help Rāma.",
+   "రామునికి సహాయం చేయడానికి దేవతలు వానరులుగా జన్మించారు — వాయువు నుండి హనుమంతుడు, సూర్యుని నుండి సుగ్రీవుడు, ఇంద్రుని నుండి వాలి."
+  ]
+ ],
+ "think": [
+  "Rāvaṇa thought humans were too weak to matter. Have you ever seen someone underestimate another person — and been surprised?",
+  "మనుషులు బలహీనులని రావణుడు అనుకున్నాడు. ఎవరైనా ఇంకొకరిని తక్కువ అంచనా వేసి, తర్వాత ఆశ్చర్యపోవడం మీరు ఎప్పుడైనా చూశారా?"
+ ]
+},
+{
+ "id": "bala-4",
+ "kanda": "bala",
+ "n": 4,
+ "order": 104,
+ "date": "2026-10-13",
+ "title": "Four Princes Are Born",
+ "titleTe": "నలుగురు రాకుమారుల జననం",
+ "sargas": "18",
+ "scene": "palace",
+ "who": [
+  "rama",
+  "lakshmana",
+  "bharata",
+  "shatrughna",
+  "dasaratha",
+  "vasishtha",
+  "vishvamitra"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "When the great yajña was over, the gods took their shares and returned to heaven. Daśaratha honoured the visiting kings with gifts and sent them home happily. He bowed to Ṛṣyaśṛṅga, who left for Aṅga with Śāntā, and then he entered Ayodhyā with his queens, full of hope.",
+    "మహాయాగం ముగిశాక దేవతలు తమ భాగాలు స్వీకరించి స్వర్గానికి తిరిగి వెళ్ళారు. దశరథుడు అతిథి రాజులను కానుకలతో సత్కరించి సంతోషంగా పంపించాడు. శాంతతో కలిసి అంగదేశానికి బయలుదేరిన ఋశ్యశృంగునికి నమస్కరించి, ఆశతో నిండిన మనసుతో రాణులతో కలిసి అయోధ్యలోకి ప్రవేశించాడు."
+   ],
+   [
+    "p",
+    "The seasons turned — six of them, one after another. And then, in the twelfth month, in the month of Caitra, on the ninth day of the bright fortnight…",
+    "ఋతువులు మారాయి — ఆరు ఋతువులు, ఒకదాని తర్వాత ఒకటి. ఆ తర్వాత పన్నెండో నెలలో, చైత్ర మాసంలో, శుక్లపక్ష నవమి నాడు…"
+   ],
+   [
+    "sloka",
+    [
+     "తతో యజ్ఞే సమాప్తే తు",
+     "ఋతూనాం షట్ సమత్యయుః ।",
+     "తతశ్చ ద్వాదశే మాసే",
+     "చైత్రే నావమికే తిథౌ ॥"
+    ],
+    [
+     "tato yajñe samāpte tu",
+     "ṛtūnāṃ ṣaṭ samatyayuḥ ।",
+     "tataś ca dvādaśe māse",
+     "caitre nāvamike tithau ॥"
+    ],
+    "When the yajña was complete, six seasons passed; and then, in the twelfth month, Caitra, on the ninth day…",
+    "యాగం పూర్తయిన తర్వాత ఆరు ఋతువులు గడిచాయి; తర్వాత పన్నెండో నెల అయిన చైత్రంలో, నవమి తిథి నాడు…"
+   ]
+  ],
+  [
+   [
+    "p",
+    "…under the star Punarvasu, when five great planets stood in their highest places, and Jupiter rose with the Moon in the sign of Cancer, Queen Kausalyā gave birth to a son. He was the lord of the worlds himself, born as a child — with eyes like lotuses, long arms, red lips and a voice deep as a drum. He was half of Viṣṇu, and his name would be {rama|Rāma}.",
+    "…పునర్వసు నక్షత్రంలో, ఐదు మహాగ్రహాలు ఉచ్చస్థానాలలో ఉండగా, కర్కాటక లగ్నంలో చంద్రునితో కలిసి గురుడు ఉదయిస్తుండగా, కౌసల్యా రాణి ఒక కుమారునికి జన్మనిచ్చింది. ఆయన లోకేశ్వరుడే బిడ్డగా జన్మించాడు — పద్మాల వంటి కళ్ళు, పొడవైన చేతులు, ఎర్రని పెదవులు, దుందుభి వంటి గంభీర స్వరం. ఆయన విష్ణువులో సగభాగం; ఆయన పేరు {rama|రాముడు}."
+   ],
+   [
+    "p",
+    "With her shining son, Kausalyā glowed like Aditi, mother of the gods, when she held Indra in her arms.",
+    "తేజస్వి అయిన కుమారునితో కౌసల్య, ఇంద్రుని ఒడిలోకి తీసుకున్న దేవమాత అదితిలా ప్రకాశించింది."
+   ],
+   [
+    "dyk",
+    "🎉",
+    "This day — Caitra Śukla Navamī — is celebrated every year as Śrī Rāma Navamī, Rāma's birthday.",
+    "ఈ రోజు — చైత్ర శుద్ధ నవమి — ప్రతి సంవత్సరం శ్రీరామనవమిగా, రాముని జన్మదినంగా జరుపుకుంటాం."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Queen Kaikeyī gave birth to {bharata|Bharata}, under the star Puṣya, with Pisces rising. He was a quarter of Viṣṇu — truthful, brave and full of every good quality.",
+    "తర్వాత కైకేయి రాణి పుష్యమీ నక్షత్రంలో, మీన లగ్నంలో {bharata|భరతునికి} జన్మనిచ్చింది. అతను విష్ణువులో నాలుగో భాగం — సత్యవంతుడు, ధైర్యవంతుడు, అన్ని మంచి గుణాలతో నిండినవాడు."
+   ],
+   [
+    "p",
+    "And Queen Sumitrā gave birth to twins — {lakshmana|Lakṣmaṇa} and {shatrughna|Śatrughna} — under the star Āśleṣā, as the sun was rising. Together they too carried a portion of Viṣṇu, skilled in every kind of weapon.",
+    "సుమిత్రా రాణి ఆశ్లేషా నక్షత్రంలో, సూర్యుడు ఉదయిస్తుండగా కవలలకు — {lakshmana|లక్ష్మణ}, {shatrughna|శత్రుఘ్నులకు} — జన్మనిచ్చింది. వారిద్దరూ కూడా విష్ణువు అంశ కలవారు, అన్ని ఆయుధాలలో నేర్పరులు."
+   ],
+   [
+    "p",
+    "All of creation celebrated. Gandharvas sang sweetly, apsaras danced, drums sounded in heaven and flowers rained from the sky. In Ayodhyā there was a great festival — the streets were crowded with dancers, singers and musicians, and covered with flowers and jewels. The king gave rich gifts to the bards and storytellers, and thousands of cows and heaps of gold to the brāhmaṇas.",
+    "సృష్టి అంతా పండుగ చేసుకుంది. గంధర్వులు మధురంగా పాడారు, అప్సరసలు నాట్యం చేశారు, స్వర్గంలో దుందుభులు మోగాయి, ఆకాశం నుండి పూలవాన కురిసింది. అయోధ్యలో గొప్ప ఉత్సవం జరిగింది — వీధులు నర్తకులు, గాయకులు, వాద్యకారులతో కిటకిటలాడాయి; పూలతో, రత్నాలతో నిండిపోయాయి. రాజు సూతులకు, మాగధులకు విలువైన కానుకలు, బ్రాహ్మణులకు వేల గోవులు, బంగారు రాశులు దానం చేశాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "On the eleventh day, the naming ceremony was held. Full of joy, {vasishtha|Vasiṣṭha} gave the four princes their names. The eldest, Kausalyā's son, was named Rāma. Kaikeyī's son was named Bharata. Sumitrā's sons were named Lakṣmaṇa and Śatrughna.",
+    "పదకొండో రోజు నామకరణ మహోత్సవం జరిగింది. ఎంతో ఆనందంతో {vasishtha|వసిష్ఠుడు} నలుగురు రాకుమారులకు పేర్లు పెట్టాడు. పెద్దవాడైన కౌసల్యా కుమారునికి రాముడు అని పేరు పెట్టాడు. కైకేయి కుమారునికి భరతుడు అని, సుమిత్ర కుమారులకు లక్ష్మణుడు, శత్రుఘ్నుడు అని పేర్లు పెట్టాడు."
+   ],
+   [
+    "dyk",
+    "📛",
+    "The names have meanings. *Rāma* — the one in whom everyone delights. *Bharata* — the one who upholds and supports. *Lakṣmaṇa* — the one marked with good fortune. *Śatrughna* — the destroyer of enemies.",
+    "ఈ పేర్లకు అర్థాలు ఉన్నాయి. *రాముడు* — అందరినీ ఆనందింపజేసేవాడు. *భరతుడు* — భరించేవాడు, పోషించేవాడు. *లక్ష్మణుడు* — శుభలక్షణాలు కలవాడు. *శత్రుఘ్నుడు* — శత్రువులను నాశనం చేసేవాడు."
+   ],
+   [
+    "p",
+    "Daśaratha fed the brāhmaṇas, the townspeople and the villagers, and gave away countless jewels. The king who had waited so long for a son now had four, and his happiness had no end.",
+    "దశరథుడు బ్రాహ్మణులకు, పౌరులకు, గ్రామీణులకు భోజనాలు పెట్టి, లెక్కలేనన్ని రత్నాలు దానం చేశాడు. కొడుకు కోసం ఇంత కాలం ఎదురుచూసిన రాజుకు ఇప్పుడు నలుగురు కుమారులు; ఆయన ఆనందానికి అంతు లేదు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The four princes grew up together — tall, strong and wise. They studied the Vedas, learned archery, and became experts at riding elephants and horses and driving chariots. They loved learning and served their parents with devotion.",
+    "నలుగురు రాకుమారులూ కలిసి పెరిగారు — ఎత్తుగా, బలంగా, తెలివిగా. వేదాలు చదివారు, విలువిద్య నేర్చుకున్నారు; ఏనుగులు, గుర్రాలు ఎక్కడంలో, రథం నడపడంలో నిపుణులయ్యారు. చదువును ప్రేమించారు; తల్లిదండ్రులను భక్తితో సేవించారు."
+   ],
+   [
+    "p",
+    "Of the four, Rāma was the most beloved — like a flag flying high over the family. He was truthful, brave and gentle, and everyone in Ayodhyā loved him like the full moon.",
+    "నలుగురిలో రాముడు అందరికంటే ప్రియమైనవాడు — వంశంపై ఎగిరే జెండాలా. సత్యవంతుడు, ధైర్యవంతుడు, సౌమ్యుడు; అయోధ్యలో అందరూ ఆయనను పూర్ణచంద్రునిలా ప్రేమించారు."
+   ],
+   [
+    "p",
+    "From the time he was a baby, Lakṣmaṇa loved Rāma more than anything. He was like Rāma's second life, living outside his body. Rāma could not fall asleep unless Lakṣmaṇa was beside him, and would not eat any sweet food without sharing it with him. When Rāma rode out on horseback to hunt, Lakṣmaṇa followed close behind with his bow, guarding him. In the same way, Śatrughna was always devoted to Bharata.",
+    "పసితనం నుండే లక్ష్మణునికి రాముడంటే అన్నిటికంటే ఎక్కువ ప్రేమ. శరీరం బయట ఉన్న రాముని రెండో ప్రాణంలా ఉండేవాడు. లక్ష్మణుడు పక్కన లేకపోతే రామునికి నిద్ర పట్టేది కాదు; ఏ మధుర పదార్థమైనా అతనితో పంచుకోకుండా తినేవాడు కాదు. రాముడు గుర్రంపై వేటకు వెళ్ళినప్పుడు, లక్ష్మణుడు ధనుస్సు పట్టుకుని వెనకే వెళ్తూ ఆయనను కాపాడేవాడు. అలాగే శత్రుఘ్నుడు ఎప్పుడూ భరతునికి అంకితమై ఉండేవాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "When the princes were nearly grown, Daśaratha began to think about their marriages. One day, as he sat discussing this with his priests and relatives, the doorkeeper came hurrying in. “Mahārāja, the great sage {vishvamitra|Viśvāmitra}, son of Gādhi, is at the gate. He wishes to see you.”",
+    "రాకుమారులు దాదాపు పెద్దవాళ్ళయ్యాక దశరథుడు వారి వివాహాల గురించి ఆలోచించసాగాడు. ఒక రోజు పురోహితులు, బంధువులతో ఈ విషయం చర్చిస్తుండగా, ద్వారపాలకుడు హడావుడిగా లోపలికి వచ్చాడు. “మహారాజా, గాధి కుమారుడైన మహర్షి {vishvamitra|విశ్వామిత్రుడు} ద్వారం దగ్గర ఉన్నారు. మిమ్మల్ని చూడాలనుకుంటున్నారు.”"
+   ],
+   [
+    "p",
+    "Daśaratha rose at once and went out with Vasiṣṭha to receive him, as Indra goes out to receive Brahmā. He welcomed the blazing sage, washed his feet, offered him water and a seat of honour, and said with folded hands:",
+    "దశరథుడు వెంటనే లేచి, బ్రహ్మను ఎదుర్కోవడానికి ఇంద్రుడు వెళ్ళినట్లు, వసిష్ఠునితో కలిసి ఆయనను ఆహ్వానించడానికి వెళ్ళాడు. తేజోమయుడైన ఆ మహర్షిని స్వాగతించి, పాదాలు కడిగి, అర్ఘ్యం, ఉచితాసనం ఇచ్చి, చేతులు జోడించి ఇలా అన్నాడు:"
+   ],
+   [
+    "p",
+    "“Your coming is like amṛta to me — like rain after a drought, like a son born to a childless man, like finding a lost treasure. Tell me why you have come. Whatever you wish, I will do it — consider it already done.”",
+    "“మీ రాక నాకు అమృతం వంటిది — కరువు తర్వాత కురిసిన వర్షం వంటిది, సంతానం లేనివానికి పుట్టిన కుమారుని వంటిది, పోయిన నిధి దొరికినట్లు. మీరు ఎందుకు వచ్చారో చెప్పండి. మీరు ఏది కోరినా చేస్తాను — అది అయిపోయినట్లే భావించండి.”"
+   ],
+   [
+    "p",
+    "Viśvāmitra's face lit up with pleasure at these words. But Daśaratha did not yet know what the sage was about to ask of him.",
+    "ఈ మాటలకు విశ్వామిత్రుని ముఖం ఆనందంతో వెలిగిపోయింది. కానీ ఆ మహర్షి తనను ఏమి అడగబోతున్నాడో దశరథునికి ఇంకా తెలియదు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Rāma was born to Kausalyā on Caitra Śukla Navamī under Punarvasu — the day we celebrate as Śrī Rāma Navamī.",
+   "చైత్ర శుద్ధ నవమి నాడు పునర్వసు నక్షత్రంలో కౌసల్యకు రాముడు జన్మించాడు — అదే శ్రీరామనవమి."
+  ],
+  [
+   "Kaikeyī's son was Bharata; Sumitrā had the twins Lakṣmaṇa and Śatrughna.",
+   "కైకేయి కుమారుడు భరతుడు; సుమిత్రకు కవలలు లక్ష్మణ శత్రుఘ్నులు."
+  ],
+  [
+   "Vasiṣṭha named the princes on the eleventh day.",
+   "పదకొండో రోజు వసిష్ఠుడు రాకుమారులకు నామకరణం చేశాడు."
+  ],
+  [
+   "Lakṣmaṇa was devoted to Rāma, and Śatrughna to Bharata, from childhood.",
+   "చిన్నతనం నుండే లక్ష్మణుడు రామునికి, శత్రుఘ్నుడు భరతునికి అంకితమై ఉన్నారు."
+  ],
+  [
+   "Viśvāmitra arrived, and Daśaratha promised to grant whatever he asked.",
+   "విశ్వామిత్రుడు వచ్చాడు; ఆయన ఏది కోరినా ఇస్తానని దశరథుడు మాట ఇచ్చాడు."
+  ]
+ ],
+ "think": [
+  "Daśaratha promised to give anything before he knew what Viśvāmitra wanted. Is it wise to promise something before you know what it is?",
+  "విశ్వామిత్రుడు ఏమి కోరతాడో తెలియకముందే దశరథుడు ఏది అడిగినా ఇస్తానన్నాడు. ఏమిటో తెలియకుండా మాట ఇవ్వడం తెలివైన పనేనా?"
+ ]
+},
+{
+ "id": "bala-5",
+ "kanda": "bala",
+ "n": 5,
+ "order": 105,
+ "date": "2026-10-13",
+ "title": "Viśvāmitra Asks for Rāma",
+ "titleTe": "రాముని కోరిన విశ్వామిత్రుడు",
+ "sargas": "19–23",
+ "scene": "road",
+ "who": [
+  "vishvamitra",
+  "dasaratha",
+  "vasishtha",
+  "rama",
+  "lakshmana"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Viśvāmitra spoke. “O king, I am performing a sacred yajña under a strict vow. But each time it is nearly complete, two rākṣasas — Mārīca and Subāhu, powerful and full of magic tricks — come and pour blood and flesh onto the altar. My vow is ruined, and all my effort is wasted.”",
+    "విశ్వామిత్రుడు ఇలా అన్నాడు: “రాజా, నేను కఠిన నియమంతో ఒక పవిత్ర యాగం చేస్తున్నాను. కానీ అది పూర్తి కాబోతున్న ప్రతిసారీ, మారీచుడు, సుబాహుడు అనే ఇద్దరు రాక్షసులు — మహా బలవంతులు, మాయలలో నేర్పరులు — వచ్చి యజ్ఞవేదికపై రక్తం, మాంసం కుమ్మరిస్తున్నారు. నా నియమం భంగమవుతోంది; నా శ్రమంతా వృథా అవుతోంది.”"
+   ],
+   [
+    "p",
+    "“I could curse them, but during such a vow one must not give in to anger. So I have come to you. Give me your eldest son, Rāma — the brave young prince with the side-locks of a boy. Protected by my power, he will destroy those rākṣasas, and I will bless him in many ways so that he becomes famous in all three worlds. Do not let your love for your son hold you back. I know who Rāma truly is — and so does Vasiṣṭha. Give him to me for just ten nights.”",
+    "“నేను వారిని శపించగలను, కానీ అలాంటి నియమం పాటిస్తున్నప్పుడు కోపానికి లొంగకూడదు. అందుకే మీ దగ్గరకు వచ్చాను. జులపాల జుట్టుతో ఉన్న మీ పెద్ద కుమారుడు, వీరుడైన యువ రాకుమారుడు రాముడిని నాకు ఇవ్వండి. నా శక్తి రక్షణలో అతను ఆ రాక్షసులను నాశనం చేస్తాడు; మూడు లోకాలలో కీర్తి పొందేలా నేను అతనిని ఎన్నో విధాలుగా ఆశీర్వదిస్తాను. కొడుకు మీద ప్రేమ మిమ్మల్ని ఆపకూడదు. రాముడు నిజంగా ఎవరో నాకు తెలుసు — వసిష్ఠునికీ తెలుసు. కేవలం పది రాత్రుల కోసం అతనిని నాకు ఇవ్వండి.”"
+   ],
+   [
+    "p",
+    "When Daśaratha heard this, his heart froze. He trembled, lost his senses for a moment, and nearly fell from his throne.",
+    "ఇది విని దశరథుని గుండె ఆగిపోయినట్లయింది. వణికిపోయి, ఒక్క క్షణం స్పృహ కోల్పోయి, సింహాసనం నుండి దాదాపు కింద పడబోయాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "When he recovered, Daśaratha pleaded with the sage.",
+    "తేరుకున్న తర్వాత దశరథుడు మహర్షిని ఇలా వేడుకున్నాడు:"
+   ],
+   [
+    "sloka",
+    [
+     "ఊనషోడశవర్షో మే",
+     "రామో రాజీవలోచనః ।",
+     "న యుద్ధయోగ్యతామస్య",
+     "పశ్యామి సహ రాక్షసైః ॥"
+    ],
+    [
+     "ūnaṣoḍaśavarṣo me",
+     "rāmo rājīvalocanaḥ ।",
+     "na yuddhayogyatām asya",
+     "paśyāmi saha rākṣasaiḥ ॥"
+    ],
+    "My lotus-eyed Rāma is not yet sixteen years old. I do not see how he is ready to fight rākṣasas.",
+    "నా రాజీవలోచనుడు రామునికి ఇంకా పదహారేళ్ళు కూడా నిండలేదు. రాక్షసులతో యుద్ధం చేసే యోగ్యత అతనికి ఉందని నాకు అనిపించడం లేదు."
+   ],
+   [
+    "p",
+    "“Take me instead! I will come myself with my whole army and fight those rākṣasas as long as I live. Rāma is just a boy — he does not know the tricks of rākṣasas, who fight with magic. I waited sixty thousand years for a son, and I got him only after great hardship. I cannot live without him even for a moment. Tell me — who are these rākṣasas? Who sends them?”",
+    "“దానికి బదులు నన్ను తీసుకువెళ్ళండి! నేనే నా సైన్యమంతటితో వచ్చి, ప్రాణం ఉన్నంతవరకు ఆ రాక్షసులతో పోరాడతాను. రాముడు ఇంకా చిన్న పిల్లవాడు — మాయలతో పోరాడే రాక్షసుల ఎత్తులు అతనికి తెలియవు. అరవై వేల సంవత్సరాలు కొడుకు కోసం ఎదురుచూశాను; ఎంతో కష్టం తర్వాత అతను దక్కాడు. ఒక్క క్షణం కూడా అతను లేకుండా నేను బతకలేను. చెప్పండి — ఆ రాక్షసులు ఎవరు? వారిని ఎవరు పంపుతున్నారు?”"
+   ],
+   [
+    "p",
+    "“They are sent by Rāvaṇa,” said Viśvāmitra, “the mighty king of the rākṣasas, brother of Kubera, who holds a boon from Brahmā. He does not bother to spoil small yajñas himself, so he sends Mārīca and Subāhu.” At the name of Rāvaṇa, Daśaratha went pale. “Even the gods cannot stand before Rāvaṇa. How can I? How can my child? No — I will not give you my son.”",
+    "“వారిని రావణుడు పంపుతున్నాడు,” అన్నాడు విశ్వామిత్రుడు, “బ్రహ్మ వరం పొందిన, కుబేరుని సోదరుడైన మహాబలుడైన రాక్షసరాజు. చిన్న యాగాలను స్వయంగా భంగం చేయడానికి అతను రాడు; అందుకే మారీచ సుబాహులను పంపుతున్నాడు.” రావణుని పేరు వినగానే దశరథుని ముఖం పాలిపోయింది. “దేవతలు కూడా రావణుని ఎదుట నిలవలేరు. నేనెలా నిలవగలను? నా బిడ్డ ఎలా నిలవగలడు? కాదు — నా కొడుకుని మీకు ఇవ్వను.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Viśvāmitra's eyes blazed like fire on which ghee has been poured. “You promised to give me whatever I asked — and now you take back your word! This is not worthy of the family of Raghu. Very well. If this is what you want, I will go back the way I came. Live happily with your family, O king who breaks his promise!”",
+    "నెయ్యి పోసిన అగ్నిలా విశ్వామిత్రుని కళ్ళు మండిపోయాయి. “నేను ఏది అడిగినా ఇస్తానని మాట ఇచ్చి, ఇప్పుడు వెనక్కి తీసుకుంటున్నావు! ఇది రఘువంశానికి తగదు. సరే. నీకు ఇదే కావాలంటే, వచ్చిన దారినే వెళ్ళిపోతాను. మాట తప్పిన రాజా, నీ కుటుంబంతో సుఖంగా జీవించు!”"
+   ],
+   [
+    "p",
+    "As the great sage grew angry, the whole earth shook and the gods themselves grew afraid. Then Vasiṣṭha, calm and wise, spoke to the king.",
+    "ఆ మహర్షి కోపించగానే భూమి అంతా కంపించింది; దేవతలు కూడా భయపడ్డారు. అప్పుడు శాంతుడు, జ్ఞాని అయిన వసిష్ఠుడు రాజుతో ఇలా అన్నాడు:"
+   ],
+   [
+    "p",
+    "“Mahārāja, you were born in the family of the Ikṣvākus — you are dharma itself. Do not abandon dharma now. If you break your promise, all the merit you have ever earned will be lost. Let Rāma go. Protected by Viśvāmitra, no one can harm him — just as no one can steal amṛta guarded by a ring of fire.”",
+    "“మహారాజా, మీరు ఇక్ష్వాకు వంశంలో పుట్టారు — మీరే ధర్మస్వరూపులు. ఇప్పుడు ధర్మాన్ని విడిచిపెట్టకండి. మాట తప్పితే, ఇంతవరకు మీరు సంపాదించిన పుణ్యమంతా నశిస్తుంది. రాముడిని వెళ్ళనివ్వండి. అగ్నివలయం కాపాడుతున్న అమృతాన్ని ఎవరూ దొంగిలించలేనట్లే, విశ్వామిత్రుని రక్షణలో ఉన్న రాముడికి ఎవరూ హాని చేయలేరు.”"
+   ],
+   [
+    "p",
+    "“Viśvāmitra is dharma in human form, the greatest of the mighty, the wisest of the wise. He knows every divine weapon — weapons that no god or asura knows. He could destroy those rākṣasas himself in a moment. He asks for Rāma only for Rāma's own good.”",
+    "“విశ్వామిత్రుడు మానవ రూపంలో ఉన్న ధర్మం; బలవంతులలో శ్రేష్ఠుడు, జ్ఞానులలో జ్ఞాని. దేవతలకు, అసురులకు కూడా తెలియని దివ్యాస్త్రాలన్నీ ఆయనకు తెలుసు. ఆ రాక్షసులను ఆయనే క్షణంలో నాశనం చేయగలరు. రాముని మేలు కోసమే ఆయన రాముడిని అడుగుతున్నారు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Hearing Vasiṣṭha, Daśaratha's heart grew calm and clear. He called for Rāma and Lakṣmaṇa. Their mothers blessed them, Vasiṣṭha chanted mantras for their protection, and Daśaratha kissed his sons on the forehead and placed them in Viśvāmitra's care.",
+    "వసిష్ఠుని మాటలు విని దశరథుని మనసు శాంతించింది, స్పష్టమైంది. రామలక్ష్మణులను పిలిపించాడు. తల్లులు వారిని ఆశీర్వదించారు; వసిష్ఠుడు రక్షా మంత్రాలు పఠించాడు; దశరథుడు కొడుకుల నుదుటిపై ముద్దు పెట్టి, వారిని విశ్వామిత్రునికి అప్పగించాడు."
+   ],
+   [
+    "p",
+    "As Rāma set out after the sage, a gentle breeze began to blow, flowers fell from the sky, conches and drums sounded, and the gods beat their drums in heaven. Viśvāmitra walked ahead. Behind him came Rāma, bow in hand, his hair in boyish side-locks, and behind Rāma came Lakṣmaṇa — each with a quiver on his back and a sword at his side, shining like two young flames.",
+    "రాముడు మహర్షి వెంట బయలుదేరగానే చల్లని గాలి వీచింది, ఆకాశం నుండి పూలు కురిశాయి, శంఖాలు, భేరీలు మోగాయి; స్వర్గంలో దేవతలు దుందుభులు మోగించారు. విశ్వామిత్రుడు ముందు నడిచాడు. ఆయన వెనుక ధనుస్సు పట్టుకుని, జులపాల జుట్టుతో రాముడు; రాముని వెనుక లక్ష్మణుడు — ఇద్దరి వీపుపై అమ్ములపొదులు, నడుమున ఖడ్గాలు — రెండు యువ జ్వాలల్లా ప్రకాశిస్తూ నడిచారు."
+   ],
+   [
+    "p",
+    "They walked one and a half yojanas and reached the southern bank of the river Sarayū.",
+    "ఒకటిన్నర యోజనాలు నడిచి సరయూ నది దక్షిణ తీరానికి చేరుకున్నారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "There Viśvāmitra said gently, “Rāma, sip some water and receive from me two sacred mantras — *Balā* and *Atibalā*. With them you will never feel tired or sick, and your strength and form will never fade. Even if you are asleep or off guard, no rākṣasa will be able to harm you. No one in the world will equal you in strength, skill or wisdom. You will feel no hunger and no thirst.”",
+    "అక్కడ విశ్వామిత్రుడు మృదువుగా ఇలా అన్నాడు: “రామా, ఆచమనం చేసి నా నుండి రెండు పవిత్ర మంత్రాలు — *బల*, *అతిబల* — స్వీకరించు. వీటితో నీకు ఎప్పుడూ అలసట, రోగం కలగవు; నీ బలం, రూపం ఎప్పుడూ తగ్గవు. నిద్రలో ఉన్నా, ఏమరుపాటుగా ఉన్నా ఏ రాక్షసుడూ నీకు హాని చేయలేడు. బలంలో, నేర్పులో, జ్ఞానంలో లోకంలో నీకు సాటి ఎవరూ ఉండరు. ఆకలి, దప్పిక నిన్ను బాధించవు.”"
+   ],
+   [
+    "p",
+    "Rāma purified himself and received the mantras with joy, and he shone like the autumn sun. Then the three of them spent the night on the riverbank. The princes, who had always slept on soft royal beds, lay down happily on beds of grass, lulled to sleep by Viśvāmitra's kind words.",
+    "రాముడు శుచియై ఆనందంగా ఆ మంత్రాలు స్వీకరించాడు; శరత్కాల సూర్యునిలా ప్రకాశించాడు. తర్వాత ముగ్గురూ నది ఒడ్డున రాత్రి గడిపారు. ఎప్పుడూ మెత్తని రాజ పరుపులపై పడుకున్న రాకుమారులు, విశ్వామిత్రుని ఆప్యాయమైన మాటలు వింటూ, గడ్డి పరుపులపై సంతోషంగా నిద్రపోయారు."
+   ],
+   [
+    "dyk",
+    "🌾",
+    "Balā and Atibalā are said to be the daughters of Brahmā. Notice that Viśvāmitra gives Rāma inner strength before any weapons — first the mind and body, then the bow.",
+    "బల, అతిబల బ్రహ్మ కుమార్తెలని చెబుతారు. ఆయుధాల కంటే ముందు విశ్వామిత్రుడు రామునికి అంతర్బలాన్ని ఇచ్చాడని గమనించండి — మొదట మనసు, శరీరం; తర్వాతే ధనుస్సు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "When the night was almost over, Viśvāmitra woke the sleeping prince with these words:",
+    "రాత్రి దాదాపు ముగుస్తుండగా, నిద్రిస్తున్న రాకుమారుడిని విశ్వామిత్రుడు ఈ మాటలతో మేల్కొలిపాడు:"
+   ],
+   [
+    "sloka",
+    [
+     "కౌసల్యా సుప్రజా రామ",
+     "పూర్వా సంధ్యా ప్రవర్తతే ।",
+     "ఉత్తిష్ఠ నరశార్దూల",
+     "కర్తవ్యం దైవమాహ్నికమ్ ॥"
+    ],
+    [
+     "kausalyā suprajā rāma",
+     "pūrvā sandhyā pravartate ।",
+     "uttiṣṭha naraśārdūla",
+     "kartavyaṃ daivam āhnikam ॥"
+    ],
+    "Rāma, dear son of Kausalyā, the dawn is breaking. Rise, O tiger among men — it is time for your morning prayers.",
+    "కౌసల్యా సుపుత్రా రామా, తూర్పున సంధ్య వెలుగుతోంది. నరశ్రేష్ఠా, లే — ఉదయకాల దైవకార్యాలు చేయవలసిన సమయం ఆసన్నమైంది."
+   ],
+   [
+    "dyk",
+    "🌅",
+    "This very verse is the first line of the *Śrī Veṅkaṭeśvara Suprabhātam*, sung every morning at Tirumala and in countless homes — the same words Viśvāmitra used to wake Rāma.",
+    "ఇదే శ్లోకం *శ్రీ వేంకటేశ్వర సుప్రభాతం*లో మొదటిది — తిరుమలలో, ఎన్నో ఇళ్ళలో ప్రతి ఉదయం పాడుతారు. విశ్వామిత్రుడు రాముడిని మేల్కొలిపిన మాటలే అవి."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Rāma and Lakṣmaṇa rose, bathed, offered water to the sun and chanted the Gāyatrī. Then they bowed to Viśvāmitra and walked on. Soon they reached the holy place where the Sarayū flows into the Gaṅgā, and there they saw a peaceful āśrama where great sages had done tapas for thousands of years.",
+    "రామలక్ష్మణులు లేచి, స్నానం చేసి, సూర్యునికి అర్ఘ్యం ఇచ్చి, గాయత్రి జపించారు. తర్వాత విశ్వామిత్రునికి నమస్కరించి ముందుకు నడిచారు. త్వరలోనే సరయూ గంగలో కలిసే పుణ్యస్థలానికి చేరుకున్నారు; అక్కడ వేల సంవత్సరాలు మహర్షులు తపస్సు చేసిన ప్రశాంతమైన ఆశ్రమాన్ని చూశారు."
+   ],
+   [
+    "p",
+    "“Whose āśrama is this?” Rāma asked. Viśvāmitra smiled and told them its story. “Long ago, {kama|Kāma}, the god of love, had a body like anyone else. Here, Lord Śiva sat in deep tapas. Kāma foolishly tried to disturb him with his flower-arrows. Śiva gave a terrible roar, and the fire of his third eye burned Kāma to ashes. Kāma's body fell away, and ever since he has been *Anaṅga* — the bodiless one. The land where his body fell is called Aṅga.”",
+    "“ఈ ఆశ్రమం ఎవరిది?” అని రాముడు అడిగాడు. విశ్వామిత్రుడు చిరునవ్వుతో దాని కథ చెప్పాడు: “చాలా కాలం క్రితం ప్రేమదేవుడు {kama|మన్మథునికి} అందరిలాగే శరీరం ఉండేది. ఇక్కడ శివుడు గాఢ తపస్సులో ఉండగా, మన్మథుడు అవివేకంతో పూలబాణాలతో ఆయనను కలవరపెట్టడానికి ప్రయత్నించాడు. శివుడు భయంకరంగా హుంకరించాడు; ఆయన మూడో కంటి అగ్ని మన్మథుడిని భస్మం చేసింది. మన్మథుని శరీరం రాలిపోయింది; అప్పటి నుండి అతను *అనంగుడు* — శరీరం లేనివాడు. అతని శరీరం రాలిన దేశాన్ని అంగదేశం అంటారు.”"
+   ],
+   [
+    "p",
+    "“This āśrama belongs to Śiva's disciples, who have lived here ever since. Let us spend the night with them.” The sages welcomed the three travellers with joy, and they spent the evening listening to wonderful stories.",
+    "“ఈ ఆశ్రమం అప్పటి నుండి ఇక్కడే నివసిస్తున్న శివుని శిష్యులది. ఈ రాత్రి వారితో గడుపుదాం.” మునులు ఆ ముగ్గురు బాటసారులను ఆనందంగా ఆహ్వానించారు; అద్భుతమైన కథలు వింటూ వారు ఆ సాయంత్రం గడిపారు."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Viśvāmitra asked for Rāma to protect his yajña from Mārīca and Subāhu.",
+   "మారీచ సుబాహుల నుండి తన యాగాన్ని కాపాడటానికి విశ్వామిత్రుడు రాముడిని అడిగాడు."
+  ],
+  [
+   "Daśaratha refused — Rāma was not yet sixteen — until Vasiṣṭha reminded him to keep his word.",
+   "రామునికి పదహారేళ్ళు కూడా లేవని దశరథుడు నిరాకరించాడు; మాట నిలబెట్టుకోమని వసిష్ఠుడు గుర్తుచేశాడు."
+  ],
+  [
+   "Viśvāmitra taught Rāma the Balā and Atibalā mantras on the bank of the Sarayū.",
+   "సరయూ తీరంలో విశ్వామిత్రుడు రామునికి బల, అతిబల మంత్రాలు ఉపదేశించాడు."
+  ],
+  [
+   "“Kausalyā suprajā Rāma” — Viśvāmitra's wake-up verse — begins the Suprabhātam.",
+   "“కౌసల్యా సుప్రజా రామ” — విశ్వామిత్రుడు రాముడిని మేల్కొలిపిన శ్లోకం — సుప్రభాతానికి ప్రారంభం."
+  ],
+  [
+   "At the meeting of the Sarayū and Gaṅgā, they heard how Śiva burned Kāma.",
+   "సరయూ గంగా సంగమం దగ్గర శివుడు మన్మథుడిని దహించిన కథ విన్నారు."
+  ]
+ ],
+ "think": [
+  "Vasiṣṭha told Daśaratha that keeping a promise matters even when it is hard. Can you remember a time you kept a promise that was difficult?",
+  "కష్టమైనా మాట నిలబెట్టుకోవడం ముఖ్యమని వసిష్ఠుడు దశరథునికి చెప్పాడు. కష్టమైనా మాట నిలబెట్టుకున్న సందర్భం మీకు గుర్తుందా?"
  ]
 }
 ]);
