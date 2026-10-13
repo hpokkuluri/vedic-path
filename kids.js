@@ -87,12 +87,20 @@
     }
   };
   window.kzParent = on => { prog.parent = !!on; save(prog); renderTelugu(); };
+  window.kzDel = async key => {
+    if (!localAudio[key] || !confirm('Delete this recording?')) return;
+    URL.revokeObjectURL(localAudio[key].url);
+    delete localAudio[key];
+    try { await idb('readwrite', st => st.delete(key)); } catch (e) {}
+    renderTelugu();
+  };
   // 🔊 when a recording exists; 🎤 when recording mode is on
   function voice(text, maxSec = 6) {
     const k = audioKey(text);
     const has = audioUrl(k), mine = !!localAudio[k];
     return `<span class="kz-voice">${has ? `<button class="kz-snd" title="Listen" onclick="event.stopPropagation();kzPlay('${k}')">🔊</button>` : ''}`
-      + (prog.parent ? `<button class="kz-rec${mine ? ' done' : ''}" title="Record" onclick="event.stopPropagation();kzRec(this,'${k}',${maxSec})">🎤${mine ? ' Re-record' : ' Record'}</button>` : '') + '</span>';
+      + (prog.parent ? `<button class="kz-rec${mine ? ' done' : ''}" title="Record" onclick="event.stopPropagation();kzRec(this,'${k}',${maxSec})">🎤${mine ? ' Re-record' : ' Record'}</button>` : '')
+      + (prog.parent && mine ? `<button class="kz-del" title="Delete recording" aria-label="Delete recording" onclick="event.stopPropagation();kzDel('${k}')">🗑</button>` : '') + '</span>';
   }
 
   // ═════════════ TELUGU DATA ═════════════
@@ -290,6 +298,9 @@
 .kz-snd{border:none;background:rgba(242,163,58,.18);border-radius:999px;width:40px;height:40px;font-size:1.15rem}
 .kz-rec{border:1px solid var(--kz-rose);color:var(--kz-rose);background:transparent;border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:700}
 .kz-rec.done{border-color:var(--kz-leaf);color:var(--kz-leaf)}
+.kz-del{border:1px solid var(--border);background:transparent;border-radius:999px;width:34px;height:34px;font-size:.95rem}
+.kz-recsw{display:flex;align-items:center;gap:8px;justify-content:flex-end;font-size:.82rem;color:var(--fg2);margin:-6px 0 10px}
+.kz-recsw input{width:18px;height:18px}
 .kz-rec.on{background:var(--kz-rose);color:#fff;border-color:var(--kz-rose);animation:kzpulse 1s infinite}
 @keyframes kzpulse{50%{opacity:.6}}
 .kz-parent{border:1px dashed var(--border);border-radius:16px;padding:12px 14px;margin-top:6px;font-size:.88rem;color:var(--fg2)}
@@ -381,6 +392,7 @@
       <div class="kz-lvhead"><span class="stone" style="background:${LV_COLORS[i]}">${i + 1}</span>
         <h2>${lv.en} <span class="te">· ${lv.te}</span><small>Level ${i + 1} of 7 · ${lv.sub}</small></h2>${starsHTML(prog.stars[lv.id] || 0)}</div>
       <div class="kz-modes">${modes.map(m => `<button class="${m === mode ? 'on' : ''}" onclick="kzMode('${m}')">${label[m]}</button>`).join('')}</div>
+      ${mode === 'learn' ? `<label class="kz-recsw"><input type="checkbox" ${prog.parent ? 'checked' : ''} onchange="kzParent(this.checked)"> 🎤 Record voices (parent)</label>` : ''}
       <div id="kz-body"></div></div>`;
     const body = document.getElementById('kz-body');
     if (mode === 'learn') learn(lv, body);
