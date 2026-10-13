@@ -49,6 +49,13 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "భరద్వాజ మహర్షి (ప్రయాగ)",
   "d": "A great sage whose āśrama stood where the Gaṅgā meets the Yamunā at Prayāga. He welcomed Rāma and showed him the way to Citrakūṭa.",
   "dt": "ప్రయాగలో గంగా యమునా సంగమం దగ్గర ఆశ్రమం ఉన్న మహర్షి. రాముడిని స్వాగతించి చిత్రకూటానికి దారి చూపాడు."
+ },
+ "munikumara": {
+  "av": "🏺",
+  "en": "The Young Ascetic",
+  "te": "ముని కుమారుడు",
+  "d": "A devoted young hermit who cared for his blind, aged parents in the forest, and was killed by Daśaratha's arrow by mistake. Later tellings call him Śravaṇa Kumāra.",
+  "dt": "అడవిలో గుడ్డివారైన వృద్ధ తల్లిదండ్రులను సేవించిన యువ ముని; దశరథుని బాణానికి పొరపాటున బలయ్యాడు. తర్వాతి కథనాలు అతనిని శ్రవణ కుమారుడు అంటాయి."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -1301,6 +1308,576 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
  "think": [
   "Rāma was happy in a simple leaf hut with the people he loved. What makes a place feel like home — the building, or the people in it?",
   "ప్రియమైనవారితో కలిసి సాదా పర్ణశాలలో రాముడు సంతోషంగా ఉన్నాడు. ఒక ప్రదేశం ఇల్లులా అనిపించేది దేని వల్ల — భవనం వల్లా, అందులో ఉన్నవారి వల్లా?"
+ ]
+},
+{
+ "id": "ayodhya-11",
+ "kanda": "ayodhya",
+ "n": 11,
+ "order": 211,
+ "date": "2026-10-13",
+ "title": "Sumantra Returns",
+ "titleTe": "సుమంత్రుని తిరుగు ప్రయాణం",
+ "sargas": "57–62",
+ "scene": "lamp",
+ "who": [
+  "sumantra",
+  "dasaratha",
+  "kausalya",
+  "guha"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Sumantra waited by the Gaṅgā with Guha until Guha's spies brought word that Rāma had safely reached Bharadvāja's āśrama and gone on to Citrakūṭa. Only then did he turn the chariot towards home.",
+    "రాముడు భరద్వాజ ఆశ్రమానికి క్షేమంగా చేరి, అక్కడి నుండి చిత్రకూటానికి వెళ్ళాడని గుహుని గూఢచారులు వార్త తెచ్చే వరకు సుమంత్రుడు గంగ ఒడ్డున గుహునితో కలిసి వేచి ఉన్నాడు. అప్పుడే రథాన్ని ఇంటి వైపు మళ్ళించాడు."
+   ],
+   [
+    "p",
+    "On the third evening he entered Ayodhyā. The city was silent and dark, like a lake whose lotuses have dried up. When people saw the empty chariot, they ran after it, crying, “Where is Rāma?” Women looked down from their windows and wept: “Sumantra, how could you come back without him?” Sumantra covered his face with his cloth and drove on to the palace.",
+    "మూడో సాయంత్రం అయోధ్యలోకి ప్రవేశించాడు. తామరలు ఎండిపోయిన సరస్సులా నగరం నిశ్శబ్దంగా, చీకటిగా ఉంది. ఖాళీ రథాన్ని చూసి ప్రజలు “రాముడు ఎక్కడ?” అని అరుస్తూ వెనుక పరుగెత్తారు. కిటికీల నుండి స్త్రీలు చూస్తూ ఏడ్చారు: “సుమంత్రా, ఆయన లేకుండా ఎలా తిరిగి వచ్చావు?” సుమంత్రుడు ఉత్తరీయంతో ముఖం కప్పుకుని రాజభవనానికి రథం నడిపాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Daśaratha lay in Kausalyā's palace, pale and weak. When Sumantra bowed before him, the old king pleaded, “Tell me everything. Where does Rāma sleep? What does he eat? Does he lie on the bare ground? Did he say anything to me?”",
+    "దశరథుడు పాలిపోయి, బలహీనంగా కౌసల్య భవనంలో పడుకుని ఉన్నాడు. సుమంత్రుడు నమస్కరించగానే ఆ వృద్ధ రాజు వేడుకున్నాడు: “అంతా చెప్పు. రాముడు ఎక్కడ పడుకుంటున్నాడు? ఏమి తింటున్నాడు? నేలపైనే పడుకుంటున్నాడా? నాతో ఏమైనా చెప్పమన్నాడా?”"
+   ],
+   [
+    "p",
+    "“Mahārāja,” said Sumantra, “Rāma bowed to you and sent you this message: ‘Keep your word with a calm heart. Do not grieve for me. Tell my mothers to be brave. Tell Bharata to rule justly and to treat all three mothers equally.’ He was calm and gentle, and he did not complain.”",
+    "“మహారాజా,” అన్నాడు సుమంత్రుడు, “రాముడు మీకు నమస్కరించి ఈ సందేశం పంపాడు: ‘ప్రశాంతమైన మనసుతో మాట నిలబెట్టుకోండి. నా గురించి బాధపడకండి. మా అమ్మలను ధైర్యంగా ఉండమని చెప్పండి. న్యాయంగా పాలించమని, ముగ్గురు తల్లులనూ సమానంగా చూడమని భరతునికి చెప్పండి.’ ఆయన ప్రశాంతంగా, మృదువుగా ఉన్నాడు; ఏ ఫిర్యాదూ చేయలేదు.”"
+   ],
+   [
+    "p",
+    "“But Lakṣmaṇa was angry,” Sumantra went on quietly. “He said, ‘What crime did Rāma commit, that he should be exiled? I cannot see a father in such a king.’ And Sītā said nothing at all. She only stood weeping, looking at the road back to Ayodhyā.”",
+    "“కానీ లక్ష్మణుడు కోపంగా ఉన్నాడు,” అని సుమంత్రుడు మెల్లగా కొనసాగించాడు. “‘రాముడు ఏ నేరం చేశాడని వనవాసానికి పంపారు? అలాంటి రాజులో నాకు తండ్రి కనిపించడం లేదు’ అన్నాడు. సీత ఏమీ మాట్లాడలేదు. అయోధ్యకు వెళ్ళే దారి వైపు చూస్తూ ఏడుస్తూ నిలబడింది అంతే.”"
+   ],
+   [
+    "p",
+    "“Take me to Rāma!” cried Daśaratha. “Take me to him, or I will die!”",
+    "“నన్ను రాముని దగ్గరకు తీసుకెళ్ళు!” అని దశరథుడు అరిచాడు. “తీసుకెళ్ళు, లేకపోతే చనిపోతాను!”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Kausalyā trembled, and Sumantra tried to comfort her. “My queen, do not grieve so much. Rāma lives in the forest as happily as in a palace. Lakṣmaṇa serves him day and night. And Sītā walks through the forest as cheerfully as a little girl at play, without fear, delighting in the flowers and birds. Her face is as bright as the moon. They are happy, my queen.”",
+    "కౌసల్య వణికిపోయింది; సుమంత్రుడు ఆమెను ఓదార్చడానికి ప్రయత్నించాడు. “రాణీ, ఇంతగా బాధపడకండి. రాముడు రాజభవనంలో ఉన్నంత సంతోషంగా అడవిలో ఉన్నాడు. లక్ష్మణుడు రాత్రింబవళ్ళు ఆయనను సేవిస్తున్నాడు. సీత భయం లేకుండా, ఆడుకునే చిన్నపిల్లలా ఉల్లాసంగా అడవిలో తిరుగుతూ, పూలను, పక్షులను చూసి ఆనందిస్తోంది. ఆమె ముఖం చంద్రునిలా ప్రకాశిస్తోంది. వారు సంతోషంగా ఉన్నారు రాణీ.”"
+   ],
+   [
+    "p",
+    "But Kausalyā's grief turned into anger. She faced her husband. “You have destroyed me. You have sent away your own son for the sake of a wicked woman. A woman has three supports — her husband, her son and her relatives. I have lost my husband to Kaikeyī and my son to the forest. What is left for me?”",
+    "కానీ కౌసల్య దుఃఖం కోపంగా మారింది. భర్త వైపు తిరిగింది. “మీరు నన్ను నాశనం చేశారు. ఒక దుష్ట స్త్రీ కోసం సొంత కొడుకునే పంపేశారు. స్త్రీకి మూడు ఆధారాలు — భర్త, కొడుకు, బంధువులు. కైకేయి వల్ల భర్తను, అడవి వల్ల కొడుకును పోగొట్టుకున్నాను. ఇక నాకు ఏమి మిగిలింది?”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Daśaratha did not answer in anger. He folded his hands to her, his eyes full of tears. “Kausalyā, forgive me. You have always been kind, even to strangers. Do not be harsh with me now. I am already broken.”",
+    "దశరథుడు కోపంగా జవాబివ్వలేదు. కన్నీళ్ళు నిండిన కళ్ళతో ఆమె ఎదుట చేతులు జోడించాడు. “కౌసల్యా, నన్ను క్షమించు. నువ్వు ఎప్పుడూ అపరిచితుల పట్ల కూడా దయతో ఉన్నావు. ఇప్పుడు నాతో కఠినంగా ఉండకు. నేను ఇప్పటికే కుంగిపోయాను.”"
+   ],
+   [
+    "p",
+    "Seeing her husband, the great king, folding his hands to her, Kausalyā was overcome with shame. She took his hands and bowed her head to them. “Forgive me, my lord. It is wrong for a husband to beg his wife. Grief took away my good sense. Grief destroys courage, it destroys learning — there is no enemy like grief.” And she sat beside him, quiet and sorrowful.",
+    "మహారాజైన భర్త తన ఎదుట చేతులు జోడించడం చూసి కౌసల్య సిగ్గుతో కుంచించుకుపోయింది. ఆయన చేతులు పట్టుకుని వాటికి తల వంచింది. “ప్రభూ, క్షమించండి. భర్త భార్యను వేడుకోవడం తప్పు. దుఃఖం నా వివేకాన్ని పోగొట్టింది. దుఃఖం ధైర్యాన్ని నాశనం చేస్తుంది, విద్యను నాశనం చేస్తుంది — దుఃఖం వంటి శత్రువు లేదు.” ఆమె మౌనంగా, బాధగా ఆయన పక్కన కూర్చుంది."
+   ],
+   [
+    "p",
+    "Then, as night deepened, something long forgotten rose in Daśaratha's memory — something he had done many, many years ago.",
+    "తర్వాత రాత్రి గాఢమవుతుండగా, ఎన్నో ఏళ్ళ క్రితం తాను చేసిన ఒక పని — చాలా కాలంగా మరచిపోయినది — దశరథుని జ్ఞాపకంలో మెదిలింది."
+   ],
+   [
+    "dyk",
+    "💔",
+    "Kausalyā and Daśaratha were both hurting, and each spoke harshly — but each also asked forgiveness. Grief can make kind people speak unkindly.",
+    "కౌసల్య, దశరథుడు ఇద్దరూ బాధలో ఉన్నారు; ఇద్దరూ కఠినంగా మాట్లాడారు — కానీ ఇద్దరూ క్షమాపణ కూడా కోరారు. దుఃఖం దయగలవారిని కూడా కఠినంగా మాట్లాడేలా చేస్తుంది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Sumantra waited until Rāma was safe, then returned to a silent, grieving Ayodhyā.",
+   "రాముడు క్షేమంగా ఉన్నాడని తెలిసే వరకు వేచి, సుమంత్రుడు నిశ్శబ్దంగా, దుఃఖంలో ఉన్న అయోధ్యకు తిరిగి వచ్చాడు."
+  ],
+  [
+   "He gave Daśaratha Rāma's gentle message, and told of Lakṣmaṇa's anger and Sītā's silent tears.",
+   "రాముని మృదువైన సందేశాన్ని, లక్ష్మణుని కోపాన్ని, సీత మౌన కన్నీళ్ళను దశరథునికి తెలియజేశాడు."
+  ],
+  [
+   "Kausalyā blamed Daśaratha; he folded his hands and asked her forgiveness.",
+   "కౌసల్య దశరథుడిని నిందించింది; ఆయన చేతులు జోడించి క్షమాపణ కోరాడు."
+  ],
+  [
+   "Ashamed, Kausalyā bowed to him: grief is the greatest enemy.",
+   "సిగ్గుపడిన కౌసల్య ఆయనకు నమస్కరించింది: దుఃఖమే గొప్ప శత్రువు."
+  ]
+ ],
+ "think": [
+  "Both Kausalyā and Daśaratha said hard words in grief, then said sorry. Why is it important to apologise even when we are hurting?",
+  "కౌసల్య, దశరథుడు ఇద్దరూ దుఃఖంలో కఠినమైన మాటలు అన్నారు, తర్వాత క్షమాపణ కోరారు. మనం బాధలో ఉన్నప్పుడు కూడా క్షమాపణ చెప్పడం ఎందుకు ముఖ్యం?"
+ ]
+},
+{
+ "id": "ayodhya-12",
+ "kanda": "ayodhya",
+ "n": 12,
+ "order": 212,
+ "date": "2026-10-13",
+ "title": "Daśaratha's Old Sin",
+ "titleTe": "దశరథుని పూర్వ పాపం",
+ "sargas": "63–64",
+ "scene": "night",
+ "who": [
+  "dasaratha",
+  "kausalya",
+  "munikumara"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "It was midnight. Daśaratha said to Kausalyā in a weak voice, “Kausalyā, every person reaps what they sow, whether good or bad. Long ago, I did something terrible, and now its fruit has come to me. Listen.”",
+    "అర్ధరాత్రి అయింది. దశరథుడు బలహీనమైన స్వరంతో కౌసల్యతో అన్నాడు: “కౌసల్యా, మంచైనా చెడైనా ప్రతి వ్యక్తీ తాను విత్తినదే కోసుకుంటాడు. చాలా కాలం క్రితం నేను ఒక ఘోరమైన పని చేశాను; ఇప్పుడు దాని ఫలం నాకు దక్కింది. విను.”"
+   ],
+   [
+    "p",
+    "“When I was a young prince, before I married you, I was very proud of one skill — I could shoot at a target by its sound alone, without seeing it. One night in the rainy season, I went hunting by the river Sarayū. In the darkness I heard a gurgling sound, like an elephant drinking water. Without seeing anything, I aimed at the sound and let fly a sharp arrow.”",
+    "“నేను యువ రాకుమారునిగా ఉన్నప్పుడు, నిన్ను వివాహం చేసుకోకముందు, ఒక విద్య గురించి ఎంతో గర్వపడేవాడిని — చూడకుండానే కేవలం శబ్దం ఆధారంగా లక్ష్యాన్ని కొట్టగలిగేవాడిని. వర్షాకాలంలో ఒక రాత్రి సరయూ తీరానికి వేటకు వెళ్ళాను. చీకటిలో ఏనుగు నీళ్ళు తాగుతున్నట్లు గుడగుడమనే శబ్దం విన్నాను. ఏమీ చూడకుండా ఆ శబ్దానికి గురిపెట్టి పదునైన బాణం వదిలాను.”"
+   ],
+   [
+    "p",
+    "“Then I heard a human cry. ‘Ah! Who has shot an arrow at a harmless ascetic? I came only to fill this pot with water for my old, blind parents. What harm have I done to anyone? My poor father and mother — who will care for them now?’”",
+    "“అప్పుడు ఒక మనిషి అరుపు వినిపించింది. ‘అయ్యో! హాని చేయని తాపసునిపై బాణం వేసింది ఎవరు? వృద్ధులు, గుడ్డివారైన నా తల్లిదండ్రుల కోసం ఈ కుండలో నీళ్ళు నింపడానికే వచ్చాను. నేను ఎవరికి హాని చేశాను? నా పేద తల్లిదండ్రులు — ఇక వారిని ఎవరు చూసుకుంటారు?’”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“My bow fell from my hand. I ran to the riverbank and found a young {munikumara|ascetic} lying in the water, his matted hair loose, an empty water pot beside him, my arrow in his chest. He looked at me and said, ‘King, what did I do to you? With one arrow you have killed three people — me, and my blind father and mother, who are waiting for me, thirsty.’”",
+    "“నా చేతి నుండి ధనుస్సు జారిపడింది. నది ఒడ్డుకు పరుగెత్తగా, జటలు విడిపోయి, పక్కన ఖాళీ కుండతో, ఛాతీలో నా బాణంతో నీటిలో పడి ఉన్న ఒక యువ {munikumara|తాపసుడు} కనిపించాడు. అతను నన్ను చూసి, ‘రాజా, నీకు నేనేం చేశాను? ఒక్క బాణంతో ముగ్గురిని చంపావు — నన్ను, దాహంతో నా కోసం ఎదురుచూస్తున్న గుడ్డివారైన నా తల్లిదండ్రులను’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“‘Go to my father,’ he said, ‘and tell him what happened, before his anger burns you like fire. But first pull out this arrow — it hurts so much.’ I pulled out the arrow, and the boy looked at me one last time, and died.”",
+    "“‘మా నాన్నగారి దగ్గరకు వెళ్ళి,’ అన్నాడు, ‘ఆయన కోపం నిన్ను అగ్నిలా దహించకముందే జరిగినది చెప్పు. కానీ ముందు ఈ బాణం తీసేయి — చాలా బాధగా ఉంది.’ నేను బాణం తీశాను; ఆ బాలుడు చివరిసారిగా నన్ను చూసి ప్రాణం విడిచాడు.”"
+   ],
+   [
+    "dyk",
+    "🏺",
+    "Vālmīki does not name this young ascetic. Later retellings call him Śravaṇa Kumāra, and tell how he carried his blind parents on pilgrimage in two baskets hung from a pole on his shoulders.",
+    "వాల్మీకి ఈ యువ తాపసునికి పేరు పెట్టలేదు. తర్వాతి కథనాలు అతనిని శ్రవణ కుమారుడు అంటాయి; గుడ్డివారైన తల్లిదండ్రులను కావడిలో రెండు బుట్టల్లో మోస్తూ తీర్థయాత్రలకు తీసుకువెళ్ళాడని చెబుతాయి."
+   ]
+  ],
+  [
+   [
+    "p",
+    "“I filled the pot and walked to the little hut where his parents sat, blind and helpless, like birds whose wings have been cut. Hearing my footsteps, the old man said, ‘Son, why have you been so long? Your mother has been worried. Have we done something to upset you? Speak to us.’”",
+    "“కుండ నింపుకుని, రెక్కలు తెగిన పక్షుల్లా గుడ్డివారై, నిస్సహాయంగా అతని తల్లిదండ్రులు కూర్చున్న చిన్న గుడిసెకు నడిచాను. నా అడుగుల చప్పుడు విని ఆ వృద్ధుడు, ‘నాయనా, ఇంత ఆలస్యమైందేం? మీ అమ్మ కంగారు పడుతోంది. మేమేమైనా నిన్ను బాధపెట్టామా? మాట్లాడు’ అన్నాడు.”"
+   ],
+   [
+    "p",
+    "“Trembling, I said, ‘I am not your son. I am Daśaratha, a kṣatriya. By mistake, thinking he was an elephant, I shot your son as he filled the pot. He is dead. Forgive me.’ The old couple fell to the ground, weeping. They begged me to take them to their son. I led them to the river. They touched his body and wept and blessed him as he went to heaven.”",
+    "“వణుకుతూ ఇలా అన్నాను: ‘నేను మీ కొడుకును కాను. దశరథుడనే క్షత్రియుడిని. కుండ నింపుతున్న మీ కొడుకును ఏనుగనుకుని పొరపాటున బాణం వేశాను. అతను చనిపోయాడు. క్షమించండి.’ ఆ వృద్ధ దంపతులు ఏడుస్తూ నేలపై పడిపోయారు. కొడుకు దగ్గరకు తీసుకెళ్ళమని వేడుకున్నారు. వారిని నది దగ్గరకు తీసుకువెళ్ళాను. అతని శరీరాన్ని తాకి ఏడ్చి, స్వర్గానికి వెళ్తున్న అతనిని ఆశీర్వదించారు.”"
+   ],
+   [
+    "p",
+    "“Then the old father turned to me. ‘Because you did this without knowing, I will not curse you to die now. But listen, king: just as I am dying now of grief for my son, so you too, one day, will die of grief for your son.’ Then the two old parents gave up their lives beside their son.”",
+    "“తర్వాత ఆ వృద్ధ తండ్రి నా వైపు తిరిగాడు. ‘తెలియక చేశావు కనుక ఇప్పుడే చనిపోమని శపించను. కానీ విను రాజా: ఇప్పుడు నేను కొడుకు కోసం దుఃఖంతో ప్రాణం విడుస్తున్నట్లే, ఒకరోజు నువ్వు కూడా నీ కొడుకు కోసం దుఃఖంతో ప్రాణం విడుస్తావు.’ తర్వాత ఆ వృద్ధ తల్లిదండ్రులు కొడుకు పక్కనే ప్రాణాలు వదిలారు.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "“Now that curse has come true, Kausalyā,” whispered Daśaratha. “I am dying for my son, as that old man said. My eyes are dark. I cannot see you. Touch me. If only Rāma would come back and touch me now, I could live. Oh Rāma! Oh Sītā! Oh Lakṣmaṇa!”",
+    "“కౌసల్యా, ఇప్పుడా శాపం నిజమైంది,” అని దశరథుడు గుసగుసగా అన్నాడు. “ఆ వృద్ధుడు చెప్పినట్లే కొడుకు కోసం చనిపోతున్నాను. నా కళ్ళు చీకటి కమ్మాయి. నువ్వు కనిపించడం లేదు. నన్ను తాకు. రాముడు ఇప్పుడు తిరిగి వచ్చి నన్ను తాకితే బతకగలను. హా రామా! హా సీతా! హా లక్ష్మణా!”"
+   ],
+   [
+    "p",
+    "“Those who will see Rāma return are blessed — they are gods, not men. Those who will see his lotus face again after fourteen years are truly lucky.” His voice grew softer and softer. And there, in the middle of the night, calling his son's name, King Daśaratha breathed his last.",
+    "“రాముడు తిరిగి రావడం చూసేవారు ధన్యులు — వారు మనుషులు కాదు, దేవతలు. పద్నాలుగేళ్ళ తర్వాత ఆయన పద్మముఖాన్ని మళ్ళీ చూసేవారు నిజంగా అదృష్టవంతులు.” ఆయన స్వరం మెల్లమెల్లగా తగ్గిపోయింది. అక్కడ, అర్ధరాత్రి వేళ, కొడుకు పేరు పలుకుతూ దశరథ మహారాజు తుదిశ్వాస విడిచాడు."
+   ],
+   [
+    "p",
+    "Kausalyā and Sumitrā, worn out with weeping, had fallen asleep beside him. No one knew yet that the king was gone.",
+    "ఏడ్చి ఏడ్చి అలసిపోయిన కౌసల్య, సుమిత్ర ఆయన పక్కనే నిద్రపోయారు. రాజు వెళ్ళిపోయాడని ఇంకా ఎవరికీ తెలియదు."
+   ],
+   [
+    "dyk",
+    "🕯️",
+    "This is the same skill — *śabdavedhī*, shooting by sound — that Rāma used against Tāṭakā. The same gift can do good or harm, depending on how carefully it is used.",
+    "తాటకిపై రాముడు ఉపయోగించిన విద్య — *శబ్దవేధి*, శబ్దం ఆధారంగా బాణం వేయడం — ఇదే. ఒకే నైపుణ్యం దానిని ఎంత జాగ్రత్తగా ఉపయోగిస్తామనే దానిపై మేలు గానీ కీడు గానీ చేస్తుంది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Daśaratha told Kausalyā about a terrible mistake from his youth.",
+   "యవ్వనంలో తాను చేసిన ఘోరమైన పొరపాటు గురించి దశరథుడు కౌసల్యకు చెప్పాడు."
+  ],
+  [
+   "Proud of shooting by sound, he killed a young ascetic who was fetching water for his blind parents.",
+   "శబ్దవేధి గర్వంతో, గుడ్డి తల్లిదండ్రుల కోసం నీళ్ళు తెస్తున్న యువ తాపసుడిని చంపాడు."
+  ],
+  [
+   "The grieving father cursed him: you too will die of grief for your son.",
+   "దుఃఖంలో ఉన్న తండ్రి శపించాడు: నువ్వు కూడా కొడుకు కోసం దుఃఖంతో చనిపోతావు."
+  ],
+  [
+   "At midnight, calling Rāma's name, Daśaratha died.",
+   "అర్ధరాత్రి రాముని పేరు పలుకుతూ దశరథుడు మరణించాడు."
+  ]
+ ],
+ "think": [
+  "Daśaratha's arrow was shot without looking. What can this story teach us about acting carefully, even when we are sure we are right?",
+  "దశరథుని బాణం చూడకుండా వేసినది. మనం సరైనదే చేస్తున్నామని అనుకున్నప్పుడు కూడా జాగ్రత్తగా ఉండటం గురించి ఈ కథ ఏమి నేర్పుతుంది?"
+ ]
+},
+{
+ "id": "ayodhya-13",
+ "kanda": "ayodhya",
+ "n": 13,
+ "order": 213,
+ "date": "2026-10-13",
+ "title": "Bharata Comes Home",
+ "titleTe": "భరతుని రాక",
+ "sargas": "65–72",
+ "scene": "palace",
+ "who": [
+  "bharata",
+  "shatrughna",
+  "kaikeyi",
+  "vasishtha",
+  "kausalya"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "At dawn the bards and musicians came as usual to wake the king with songs. The palace women brought water and fresh clothes. But the king did not stir. Someone touched him — and found him cold. A great cry went up through the palace, like the cry of birds when a great tree falls.",
+    "తెల్లవారగానే ఎప్పటిలాగే వందిమాగధులు, వాద్యకారులు పాటలతో రాజును మేల్కొలపడానికి వచ్చారు. అంతఃపుర స్త్రీలు నీళ్ళు, కొత్త వస్త్రాలు తెచ్చారు. కానీ రాజు కదలలేదు. ఎవరో తాకి చూడగా శరీరం చల్లగా ఉంది. పెద్ద చెట్టు కూలినప్పుడు పక్షుల అరుపుల్లా రాజభవనమంతా ఒక పెద్ద రోదన మారుమోగింది."
+   ],
+   [
+    "p",
+    "Kausalyā woke and threw her arms around her husband, weeping. “Kaikeyī, now you are happy! You have what you wanted — rule the kingdom without anyone in your way!” Sumitrā and all the queens wept around her.",
+    "కౌసల్య మేల్కొని భర్తను కౌగిలించుకుని ఏడ్చింది. “కైకేయీ, ఇప్పుడు నువ్వు సంతోషంగా ఉండు! నువ్వు కోరినది దక్కింది — ఎవరూ అడ్డు లేకుండా రాజ్యం ఏలుకో!” సుమిత్ర, రాణులందరూ ఆమె చుట్టూ చేరి ఏడ్చారు."
+   ],
+   [
+    "p",
+    "None of the king's sons was there to perform his last rites. So the ministers laid his body in a great vessel of oil to preserve it until Bharata could come.",
+    "రాజుకు అంత్యక్రియలు చేయడానికి ఆయన కుమారులెవరూ అక్కడ లేరు. అందుకే భరతుడు వచ్చే వరకు భద్రపరచడానికి మంత్రులు ఆయన శరీరాన్ని ఒక పెద్ద తైలద్రోణిలో ఉంచారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "The next morning the great sages — Mārkaṇḍeya, Vāmadeva, Kāśyapa, Kātyāyana, Gautama, Jābāli and others — gathered with the ministers and spoke to Vasiṣṭha. “A land without a king is in danger. Without a king, the clouds do not rain, farmers do not sow, festivals are not held, and the strong prey on the weak like fish eating smaller fish. Someone of the Ikṣvāku line must be made king at once.”",
+    "మరుసటి ఉదయం మహర్షులు — మార్కండేయుడు, వామదేవుడు, కాశ్యపుడు, కాత్యాయనుడు, గౌతముడు, జాబాలి మొదలైనవారు — మంత్రులతో కలిసి వసిష్ఠునితో ఇలా అన్నారు: “రాజు లేని దేశం ప్రమాదంలో ఉంటుంది. రాజు లేకపోతే మేఘాలు వర్షించవు, రైతులు విత్తరు, పండుగలు జరగవు; పెద్ద చేపలు చిన్న చేపలను తిన్నట్లు బలవంతులు బలహీనులను పీడిస్తారు. ఇక్ష్వాకు వంశంలో ఒకరిని వెంటనే రాజును చేయాలి.”"
+   ],
+   [
+    "p",
+    "Vasiṣṭha sent swift messengers to Kekaya. “Tell Bharata only that the family priest and ministers ask him to come home at once on urgent business. Say nothing about the king's death, or about Rāma.” The messengers rode day and night along the rivers and through the forests, and reached the city of Girivraja in Kekaya.",
+    "వసిష్ఠుడు వేగంగా వెళ్ళే దూతలను కేకయకు పంపాడు. “కులపురోహితుడు, మంత్రులు అత్యవసర కార్యం మీద వెంటనే ఇంటికి రమ్మంటున్నారని మాత్రమే భరతునికి చెప్పండి. రాజు మరణం గురించి గానీ, రాముని గురించి గానీ ఏమీ చెప్పకండి.” దూతలు నదుల వెంట, అడవుల గుండా రాత్రింబవళ్ళు ప్రయాణించి కేకయలోని గిరివ్రజ నగరానికి చేరుకున్నారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "That very night, {bharata|Bharata} had a terrible dream. He saw his father, in dirty clothes and with untidy hair, falling from a mountain-top into a pit of filth. He saw him laughing and drinking oil, and riding south on a cart pulled by donkeys, while a rākṣasī dragged him by the hand. In the morning Bharata woke pale and silent. His friends played music and told jokes to cheer him, but he would not smile.",
+    "సరిగ్గా ఆ రాత్రే {bharata|భరతునికి} ఒక భయంకరమైన కల వచ్చింది. మాసిన బట్టలు, చెదిరిన జుట్టుతో తన తండ్రి పర్వత శిఖరం నుండి మురికి గుంటలో పడిపోవడం చూశాడు. ఆయన నవ్వుతూ నూనె తాగడం, ఒక రాక్షసి చేయి పట్టి లాగుతుండగా గాడిదలు లాగే బండిలో దక్షిణ దిశగా వెళ్ళడం చూశాడు. ఉదయం భరతుడు పాలిపోయి, మౌనంగా మేల్కొన్నాడు. ఉత్సాహపరచడానికి మిత్రులు సంగీతం వాయించి, హాస్యమాడారు, కానీ అతను నవ్వలేదు."
+   ],
+   [
+    "p",
+    "“I am afraid,” he said. “In dreams, riding south on a donkey-cart means death. Something has happened to my father, or to Rāma, or to Lakṣmaṇa.” Just then the messengers arrived. Bharata asked anxiously, “Are my father and my mothers well? Is Rāma well? Is Lakṣmaṇa well?” “All whom you ask about are well,” the messengers answered carefully. “But come at once.”",
+    "“నాకు భయంగా ఉంది,” అన్నాడు. “కలలో గాడిదల బండిలో దక్షిణానికి వెళ్ళడం మరణ సూచన. నా తండ్రికో, రామునికో, లక్ష్మణునికో ఏదో జరిగింది.” సరిగ్గా అప్పుడే దూతలు వచ్చారు. భరతుడు ఆందోళనగా అడిగాడు: “మా నాన్నగారు, మా అమ్మలు క్షేమమేనా? రాముడు క్షేమమేనా? లక్ష్మణుడు క్షేమమేనా?” “మీరు అడిగినవారందరూ క్షేమంగానే ఉన్నారు,” అని దూతలు జాగ్రత్తగా జవాబిచ్చారు. “కానీ వెంటనే రండి.”"
+   ],
+   [
+    "dyk",
+    "🌫️",
+    "The messengers' answer was carefully chosen. Those Bharata asked about — his father among them — are “well” in a hidden sense: for the departed, too, are said to be at peace.",
+    "దూతల జవాబు జాగ్రత్తగా ఎంచుకున్నది. భరతుడు అడిగినవారు — ఆయన తండ్రితో సహా — దాగిన అర్థంలో “క్షేమంగా” ఉన్నారు: మరణించినవారు కూడా శాంతిలో ఉంటారని అంటారు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Bharata and {shatrughna|Śatrughna} said goodbye to their grandfather, who gave them elephants, horses, fine cloth and even great hunting dogs. For seven days they travelled, crossing many rivers. On the eighth morning they saw Ayodhyā in the distance.",
+    "భరత {shatrughna|శత్రుఘ్నులు} తాతగారికి వీడ్కోలు చెప్పారు; ఆయన వారికి ఏనుగులు, గుర్రాలు, మేలైన వస్త్రాలు, పెద్ద వేటకుక్కలు కూడా ఇచ్చాడు. ఏడు రోజులు ఎన్నో నదులు దాటుతూ ప్రయాణించారు. ఎనిమిదో ఉదయం దూరంగా అయోధ్య కనిపించింది."
+   ],
+   [
+    "p",
+    "“Something is wrong,” Bharata said to his charioteer. “Where are the sounds of the city? Where are the people walking in the gardens, the music, the smell of incense? The streets are unswept. The doors are shut. The city looks like a lake where the lotuses have been trampled by elephants.” His heart sank.",
+    "“ఏదో తప్పు జరిగింది,” అని భరతుడు సారథితో అన్నాడు. “నగర సందడి ఎక్కడ? ఉద్యానవనాలలో తిరిగే ప్రజలు, సంగీతం, ధూపం వాసన ఎక్కడ? వీధులు ఊడ్వలేదు. తలుపులు మూసి ఉన్నాయి. ఏనుగులు తొక్కిన తామర కొలనులా నగరం కనిపిస్తోంది.” అతని గుండె కుంగిపోయింది."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Bharata hurried to his father's palace, but Daśaratha was not there. So he went to his mother Kaikeyī's rooms. Kaikeyī sprang up joyfully and embraced him. “My son! How is my father? How was your journey?” Bharata answered quickly, then asked, “Where is father? I want to touch his feet.”",
+    "భరతుడు తండ్రి భవనానికి హడావుడిగా వెళ్ళాడు, కానీ దశరథుడు అక్కడ లేడు. అప్పుడు తల్లి కైకేయి మందిరానికి వెళ్ళాడు. కైకేయి ఆనందంగా లేచి అతనిని కౌగిలించుకుంది. “నాయనా! మా నాన్నగారు ఎలా ఉన్నారు? ప్రయాణం ఎలా జరిగింది?” భరతుడు త్వరగా జవాబిచ్చి, “నాన్నగారు ఎక్కడ? ఆయన పాదాలకు నమస్కరించాలి” అని అడిగాడు."
+   ],
+   [
+    "p",
+    "Calmly, as if it were nothing, Kaikeyī said, “Your father has gone where all living beings must go.” Bharata fell to the floor like a tree cut down, weeping. “I came home so happy, hoping he would crown Rāma! Where is Rāma now? He is my father and my elder brother — let me go and bow to him. Did father say anything for me at the end?”",
+    "ఏమీ జరగనట్లు ప్రశాంతంగా కైకేయి, “మీ నాన్నగారు అన్ని ప్రాణులూ వెళ్ళవలసిన చోటికి వెళ్ళిపోయారు” అంది. నరికిన చెట్టులా భరతుడు ఏడుస్తూ నేలపై పడిపోయాడు. “రామునికి పట్టాభిషేకం చేస్తారని ఎంతో సంతోషంగా ఇంటికి వచ్చాను! రాముడు ఇప్పుడు ఎక్కడ? ఆయనే నాకు తండ్రి, అన్న — వెళ్ళి ఆయనకు నమస్కరిస్తాను. చివరిలో నాన్నగారు నా గురించి ఏమైనా అన్నారా?”"
+   ],
+   [
+    "p",
+    "“His last words were, ‘Ah Rāma, ah Sītā, ah Lakṣmaṇa,’” said Kaikeyī. “Rāma has gone to the Daṇḍaka forest with Sītā and Lakṣmaṇa.” Bharata was stunned. “Why? Did Rāma steal from a brāhmaṇa? Did he harm an innocent person? Did he desire another man's wife?” “No,” said Kaikeyī proudly. “I did it — for you. I asked your father for two boons. Now the kingdom is yours. Stop grieving and take the throne!”",
+    "“‘హా రామా, హా సీతా, హా లక్ష్మణా’ అన్నవే ఆయన చివరి మాటలు,” అంది కైకేయి. “రాముడు సీతా లక్ష్మణులతో దండకారణ్యానికి వెళ్ళాడు.” భరతుడు నిశ్చేష్టుడయ్యాడు. “ఎందుకు? రాముడు బ్రాహ్మణుని సొమ్ము దొంగిలించాడా? నిర్దోషికి హాని చేశాడా? పరస్త్రీని కోరాడా?” “లేదు,” అంది కైకేయి గర్వంగా. “నేనే చేశాను — నీ కోసం. మీ నాన్నగారిని రెండు వరాలు అడిగాను. ఇప్పుడు రాజ్యం నీదే. బాధపడటం ఆపి సింహాసనం ఎక్కు!”"
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "The palace discovered at dawn that Daśaratha had died; his body was kept in oil until Bharata came.",
+   "దశరథుడు మరణించాడని తెల్లవారగానే తెలిసింది; భరతుడు వచ్చే వరకు ఆయన శరీరాన్ని తైలంలో ఉంచారు."
+  ],
+  [
+   "The sages said a land without a king is in danger, and messengers were sent to Kekaya.",
+   "రాజు లేని దేశం ప్రమాదంలో ఉంటుందని మహర్షులు చెప్పారు; కేకయకు దూతలను పంపారు."
+  ],
+  [
+   "Bharata had a terrible dream about his father before the messengers arrived.",
+   "దూతలు రాకముందే భరతునికి తండ్రి గురించి భయంకరమైన కల వచ్చింది."
+  ],
+  [
+   "He found Ayodhyā silent and gloomy.",
+   "అయోధ్య నిశ్శబ్దంగా, విషాదంగా ఉండటం చూశాడు."
+  ],
+  [
+   "Kaikeyī proudly told him that she had exiled Rāma so that Bharata could be king.",
+   "భరతుడు రాజు కావడానికే రాముడిని వనవాసానికి పంపానని కైకేయి గర్వంగా చెప్పింది."
+  ]
+ ],
+ "think": [
+  "Bharata's first question was not about the kingdom but about Rāma and his father. What does that tell you about him?",
+  "భరతుని మొదటి ప్రశ్న రాజ్యం గురించి కాదు, రాముని గురించి, తండ్రి గురించి. దీని వల్ల అతని గురించి మీకు ఏమి తెలుస్తుంది?"
+ ]
+},
+{
+ "id": "ayodhya-14",
+ "kanda": "ayodhya",
+ "n": 14,
+ "order": 214,
+ "date": "2026-10-13",
+ "title": "Bharata's Grief and Vow",
+ "titleTe": "భరతుని దుఃఖం, ప్రతిజ్ఞ",
+ "sargas": "73–78",
+ "scene": "lamp",
+ "who": [
+  "bharata",
+  "kaikeyi",
+  "kausalya",
+  "vasishtha",
+  "shatrughna",
+  "manthara"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "Bharata's grief turned to fury. “Cruel woman! What have you done? You have killed my father and sent my brother into the forest! Did you think I would be happy with a kingdom stolen like this? Rāma treated you better than his own mother, and this is how you repay him? You are not my mother — you are my enemy, born as my mother!”",
+    "భరతుని దుఃఖం ఆగ్రహంగా మారింది. “క్రూరురాలా! ఏం చేశావు? నా తండ్రిని చంపి, నా అన్నను అడవికి పంపావు! ఇలా దొంగిలించిన రాజ్యంతో నేను సంతోషిస్తాననుకున్నావా? రాముడు నిన్ను సొంత తల్లి కంటే బాగా చూసుకున్నాడు; అతనికి నువ్విచ్చిన బదులు ఇదా? నువ్వు నా తల్లివి కావు — తల్లి రూపంలో పుట్టిన నా శత్రువువి!”"
+   ],
+   [
+    "p",
+    "“Listen to me. I will never take this kingdom. I will go to the forest myself and bring Rāma back, and I will serve him as his servant. And if I cannot bring him back, I will live in the forest in his place, for fourteen years.” Then, overwhelmed, he fell to the ground, roaring with grief like a wounded lion.",
+    "“నా మాట విను. ఈ రాజ్యాన్ని నేను ఎప్పటికీ తీసుకోను. నేనే స్వయంగా అడవికి వెళ్ళి రాముడిని తీసుకువచ్చి, ఆయనకు సేవకునిగా ఉంటాను. ఆయనను తీసుకురాలేకపోతే, ఆయన స్థానంలో పద్నాలుగేళ్ళు నేనే అడవిలో ఉంటాను.” తర్వాత దుఃఖాన్ని ఆపుకోలేక గాయపడిన సింహంలా గర్జిస్తూ నేలపై పడిపోయాడు."
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Bharata went to Kausalyā. But Kausalyā, still in grief, looked at him with suspicion. “So, you have the kingdom you wanted. Your mother has arranged it all. Now take me too to the forest where my son lives.”",
+    "తర్వాత భరతుడు కౌసల్య దగ్గరకు వెళ్ళాడు. కానీ దుఃఖంలో ఉన్న కౌసల్య అతనిని అనుమానంగా చూసింది. “అయితే నువ్వు కోరిన రాజ్యం దక్కింది. మీ అమ్మ అంతా ఏర్పాటు చేసింది. ఇప్పుడు నన్ను కూడా నా కొడుకు ఉన్న అడవికి పంపించు.”"
+   ],
+   [
+    "p",
+    "Those words cut Bharata like a knife. He fell at her feet and swore a long, solemn oath: “Mother, if I ever agreed to Rāma's exile, may I carry the sins of one who betrays his master, of one who strikes a sleeping person, of one who refuses water to the thirsty, of one who breaks a promise, of one who kills a cow! I knew nothing of this. I love Rāma more than my own life.”",
+    "ఆ మాటలు కత్తిలా భరతుని గుండెను చీల్చాయి. ఆమె పాదాలపై పడి సుదీర్ఘమైన, గంభీరమైన ప్రతిజ్ఞ చేశాడు: “అమ్మా, రాముని వనవాసానికి నేను ఎప్పుడైనా అంగీకరించి ఉంటే — యజమానికి ద్రోహం చేసినవాని పాపం, నిద్రపోతున్నవానిని కొట్టినవాని పాపం, దాహంతో ఉన్నవానికి నీళ్ళు ఇవ్వనివాని పాపం, మాట తప్పినవాని పాపం, గోవును చంపినవాని పాపం నాకు అంటుగాక! ఇది నాకు ఏమీ తెలియదు. రాముడిని నా ప్రాణం కంటే ఎక్కువగా ప్రేమిస్తాను.”"
+   ],
+   [
+    "p",
+    "Kausalyā saw that he spoke the truth. She lifted him up and held him close, and they wept together. “My son, your words have doubled my grief, and yet they comfort me — for I see that you are as true as Rāma.”",
+    "అతను నిజం చెబుతున్నాడని కౌసల్య గ్రహించింది. అతనిని లేపి దగ్గరకు తీసుకుంది; ఇద్దరూ కలిసి ఏడ్చారు. “నాయనా, నీ మాటలు నా దుఃఖాన్ని రెట్టింపు చేశాయి, అయినా ఊరట కలిగిస్తున్నాయి — నువ్వు రాముడంత సత్యవంతుడివని చూస్తున్నాను.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Vasiṣṭha came to Bharata. “Do not grieve so, prince. Now you must perform your father's last rites.” The king's body was lifted from the oil, laid on a golden bed, and carried to the bank of the Sarayū with the sacred fires going before it. There, amid the chanting of priests, the body of the great king was given to the fire, and the queens wept like curlews crying in the night.",
+    "వసిష్ఠుడు భరతుని దగ్గరకు వచ్చాడు. “రాకుమారా, ఇంతగా బాధపడకు. ఇప్పుడు నీ తండ్రికి అంత్యక్రియలు చేయాలి.” రాజు శరీరాన్ని తైలం నుండి తీసి, బంగారు పడకపై ఉంచి, ముందు పవిత్రాగ్నులు నడుస్తుండగా సరయూ తీరానికి తీసుకువెళ్ళారు. అక్కడ పురోహితుల మంత్రోచ్చారణల మధ్య ఆ మహారాజు శరీరాన్ని అగ్నికి అర్పించారు; రాణులు రాత్రి వేళ క్రౌంచ పక్షుల్లా రోదించారు."
+   ],
+   [
+    "p",
+    "After the days of mourning, Bharata and Śatrughna went to the place where their father had been cremated and wept over his ashes. “Father, you have gone to heaven and left us. Rāma has gone to the forest. Who will guide us now?” Vasiṣṭha comforted them: “Every living being must face hunger and thirst, sorrow and joy, birth and death. Do not grieve beyond measure.”",
+    "సంతాప దినాల తర్వాత భరత శత్రుఘ్నులు తండ్రిని దహనం చేసిన ప్రదేశానికి వెళ్ళి ఆయన అస్థికలపై పడి ఏడ్చారు. “నాన్నగారూ, మమ్మల్ని వదిలి స్వర్గానికి వెళ్ళిపోయారు. రాముడు అడవికి వెళ్ళాడు. ఇక మాకు దారి చూపేవారెవరు?” వసిష్ఠుడు వారిని ఓదార్చాడు: “ప్రతి ప్రాణీ ఆకలి దప్పికలు, సుఖదుఃఖాలు, జనన మరణాలు ఎదుర్కోవలసిందే. హద్దు మీరి బాధపడకండి.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "One day, as Bharata and Śatrughna were standing near the palace gate, out came {manthara|Mantharā}, decked in fine clothes and jewels, her body smeared with sandal paste. “That is the one,” said the doorkeeper, “who planned the whole thing.”",
+    "ఒక రోజు భరత శత్రుఘ్నులు రాజభవన ద్వారం దగ్గర నిలబడి ఉండగా, మేలైన వస్త్రాలు, ఆభరణాలు ధరించి, ఒంటికి గంధం పూసుకుని {manthara|మంథర} బయటకు వచ్చింది. “ఈమే,” అన్నాడు ద్వారపాలకుడు, “ఈ కుట్రంతా పన్నింది.”"
+   ],
+   [
+    "p",
+    "Śatrughna's anger blazed up. He seized Mantharā and dragged her across the floor, and her jewels scattered everywhere like stars falling from the sky. Mantharā screamed, and Kaikeyī came running to Bharata for help.",
+    "శత్రుఘ్నుని కోపం భగ్గుమంది. మంథరను పట్టుకుని నేలపై ఈడ్చాడు; ఆకాశం నుండి రాలే నక్షత్రాల్లా ఆమె ఆభరణాలు చెల్లాచెదురుగా పడ్డాయి. మంథర కేకలు వేసింది; కైకేయి సహాయం కోసం భరతుని దగ్గరకు పరుగెత్తింది."
+   ],
+   [
+    "p",
+    "Bharata stopped his brother. “Let her go, Śatrughna. A woman must not be killed. If it were not a sin, I would have punished Kaikeyī herself. But Rāma would never forgive us — he would never speak to us again if we killed a woman.” Śatrughna let go, and Mantharā crawled to Kaikeyī's feet, trembling.",
+    "భరతుడు తమ్ముడిని ఆపాడు. “శత్రుఘ్నా, ఆమెను వదిలేయ్. స్త్రీని చంపకూడదు. పాపం కాకపోతే కైకేయినే శిక్షించేవాడిని. కానీ స్త్రీని చంపితే రాముడు మనల్ని ఎప్పటికీ క్షమించడు — మనతో మళ్ళీ మాట్లాడడు.” శత్రుఘ్నుడు వదిలేశాడు; మంథర వణుకుతూ కైకేయి పాదాల దగ్గరకు పాకింది."
+   ],
+   [
+    "dyk",
+    "🛑",
+    "Even in his anger, Bharata asked himself, “What would Rāma want?” — and that question stopped him from doing wrong.",
+    "కోపంలో కూడా భరతుడు “రాముడు ఏమి కోరుకుంటాడు?” అని తనను తాను ప్రశ్నించుకున్నాడు — ఆ ప్రశ్నే అతనిని తప్పు చేయకుండా ఆపింది."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharata was furious with Kaikeyī and vowed never to take the kingdom.",
+   "భరతుడు కైకేయిపై ఆగ్రహించి రాజ్యాన్ని ఎప్పటికీ తీసుకోనని ప్రతిజ్ఞ చేశాడు."
+  ],
+  [
+   "Kausalyā suspected him, but his solemn oath convinced her he was innocent.",
+   "కౌసల్య అతనిని అనుమానించింది, కానీ అతని గంభీర ప్రతిజ్ఞ అతను నిర్దోషి అని ఆమెను నమ్మించింది."
+  ],
+  [
+   "Bharata performed his father's last rites by the Sarayū.",
+   "భరతుడు సరయూ తీరంలో తండ్రికి అంత్యక్రియలు చేశాడు."
+  ],
+  [
+   "Śatrughna attacked Mantharā, but Bharata stopped him for Rāma's sake.",
+   "శత్రుఘ్నుడు మంథరపై దాడి చేశాడు, కానీ రాముని కోసం భరతుడు అతనిని ఆపాడు."
+  ]
+ ],
+ "think": [
+  "Bharata could have had a kingdom without lifting a finger, yet he refused it. Why is it hard to refuse something you are offered, if you know it is not right?",
+  "వేలు కదపకుండానే భరతునికి రాజ్యం దక్కేది, అయినా నిరాకరించాడు. సరైనది కాదని తెలిసినా, మనకు ఇచ్చినదాన్ని నిరాకరించడం ఎందుకు కష్టం?"
+ ]
+},
+{
+ "id": "ayodhya-15",
+ "kanda": "ayodhya",
+ "n": 15,
+ "order": 215,
+ "date": "2026-10-13",
+ "title": "Bharata Sets Out",
+ "titleTe": "భరతుని ప్రయాణం",
+ "sargas": "79–88",
+ "scene": "boat",
+ "who": [
+  "bharata",
+  "guha",
+  "vasishtha",
+  "shatrughna",
+  "kausalya"
+ ],
+ "pages": [
+  [
+   [
+    "p",
+    "On the fourteenth day, the ministers and elders came to Bharata. “Your father is in heaven, and Rāma and Lakṣmaṇa are in the forest. You must be our king. Everything is ready for your coronation.”",
+    "పద్నాలుగో రోజు మంత్రులు, పెద్దలు భరతుని దగ్గరకు వచ్చారు. “మీ నాన్నగారు స్వర్గానికి వెళ్ళారు; రామ లక్ష్మణులు అడవిలో ఉన్నారు. మీరే మా రాజు కావాలి. మీ పట్టాభిషేకానికి అంతా సిద్ధంగా ఉంది.”"
+   ],
+   [
+    "p",
+    "Bharata walked around the coronation vessels respectfully and said, “In our family the kingdom always goes to the eldest son. Rāma is the eldest; he shall be king. I will go to the forest and bring him back, and if I must, I will stay in the forest in his place. Prepare an army, and let skilled workers build a road through the forest so that we can travel quickly.”",
+    "భరతుడు పట్టాభిషేక కలశాలకు గౌరవంగా ప్రదక్షిణ చేసి ఇలా అన్నాడు: “మన వంశంలో రాజ్యం ఎప్పుడూ పెద్ద కుమారునికే దక్కుతుంది. రాముడే పెద్దవాడు; ఆయనే రాజు. నేను అడవికి వెళ్ళి ఆయనను తీసుకువస్తాను; అవసరమైతే ఆయన స్థానంలో నేనే అడవిలో ఉంటాను. సైన్యాన్ని సిద్ధం చేయండి; మనం త్వరగా ప్రయాణించడానికి అడవి గుండా దారి వేయమని నిపుణులైన పనివారికి చెప్పండి.”"
+   ],
+   [
+    "p",
+    "The people shouted with joy: “Well said, Bharata! May Lakṣmī be with you, for you wish to give the kingdom to your brother!”",
+    "ప్రజలు ఆనందంతో జయజయధ్వానాలు చేశారు: “భరతా, చక్కగా చెప్పావు! అన్నకు రాజ్యం ఇవ్వాలనుకుంటున్నావు కనుక లక్ష్మి నీకు తోడుగా ఉండుగాక!”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Thousands of workers set out — surveyors, diggers, carpenters, well-makers, road-builders and guides. They cleared the forests, cut paths through rocks, built bridges over streams, dug wells, and raised camps along the way. The rough wilderness became a smooth royal road all the way to the Gaṅgā.",
+    "వేలాది పనివారు బయలుదేరారు — భూమిని కొలిచేవారు, తవ్వేవారు, వడ్రంగులు, బావులు తవ్వేవారు, దారులు వేసేవారు, మార్గదర్శకులు. అడవులు నరికి, రాళ్ళ గుండా దారులు చేసి, సెలయేళ్ళపై వంతెనలు కట్టి, బావులు తవ్వి, దారి పొడవునా విడిదులు ఏర్పాటు చేశారు. కఠినమైన అరణ్యం గంగ వరకు చక్కని రాజమార్గంగా మారిపోయింది."
+   ],
+   [
+    "p",
+    "The next morning, bards came to Bharata's door singing praises to wake “the king”. Bharata stopped them at once. “I am not the king. Do not sing to me like that.” Then, in a great assembly, he told everyone again that he was going to bring Rāma home.",
+    "మరుసటి ఉదయం “రాజును” మేల్కొలపడానికి వందిమాగధులు భరతుని ద్వారం దగ్గర స్తోత్రాలు పాడారు. భరతుడు వెంటనే ఆపాడు. “నేను రాజును కాను. నన్ను అలా కీర్తించకండి.” తర్వాత ఒక గొప్ప సభలో రాముడిని ఇంటికి తీసుకురావడానికి వెళ్తున్నానని అందరికీ మళ్ళీ చెప్పాడు."
+   ],
+   [
+    "p",
+    "Soon a vast procession left Ayodhyā — Vasiṣṭha and the priests, the three queens, the ministers, the army with its elephants, horses and chariots, and thousands of citizens of every trade: jewellers, potters, weavers, cooks, perfumers, actors, washermen — all eager to see Rāma again.",
+    "త్వరలోనే అయోధ్య నుండి పెద్ద ఊరేగింపు బయలుదేరింది — వసిష్ఠుడు, పురోహితులు, ముగ్గురు రాణులు, మంత్రులు, ఏనుగులు, గుర్రాలు, రథాలతో సైన్యం, అన్ని వృత్తుల వేలాది పౌరులు: స్వర్ణకారులు, కుమ్మరులు, నేతగాళ్ళు, వంటవారు, సుగంధ ద్రవ్యాలు అమ్మేవారు, నటులు, చాకలివారు — అందరూ రాముడిని మళ్ళీ చూడాలనే ఉత్సాహంతో."
+   ]
+  ],
+  [
+   [
+    "p",
+    "When the great army reached Śṛṅgaverapura on the Gaṅgā, {guha|Guha} watched from the far bank and grew worried. “Why has Bharata come with such a huge army? Has he come to kill Rāma, so that he can rule without fear?” He ordered five hundred boats to be filled with armed warriors. “If Bharata means harm to Rāma, not one of his men will cross this river.”",
+    "ఆ మహాసైన్యం గంగ దగ్గర శృంగిబేరపురానికి చేరగానే, అవతలి ఒడ్డు నుండి చూస్తున్న {guha|గుహుడు} ఆందోళన చెందాడు. “భరతుడు ఇంత పెద్ద సైన్యంతో ఎందుకు వచ్చాడు? భయం లేకుండా పాలించడానికి రాముడిని చంపడానికి వచ్చాడా?” ఐదు వందల పడవలను ఆయుధధారులైన యోధులతో నింపమని ఆజ్ఞాపించాడు. “భరతుడు రామునికి హాని తలపెడితే, అతని మనుషుల్లో ఒక్కడు కూడా ఈ నది దాటడు.”"
+   ],
+   [
+    "p",
+    "Then Guha went across to meet Bharata, carrying gifts of fish, meat and honey, to find out what he intended. Bharata welcomed him warmly. “Guha, you are Rāma's dear friend. Tell me — which way did Rāma go? I have come to bring him back to Ayodhyā.”",
+    "తర్వాత భరతుని ఉద్దేశం తెలుసుకోవడానికి గుహుడు చేపలు, మాంసం, తేనె కానుకలతో అవతలి ఒడ్డుకు వెళ్ళాడు. భరతుడు అతనిని ఆప్యాయంగా ఆహ్వానించాడు. “గుహా, నువ్వు రాముని ప్రియమిత్రుడివి. చెప్పు — రాముడు ఏ దారిలో వెళ్ళాడు? ఆయనను అయోధ్యకు తిరిగి తీసుకువెళ్ళడానికి వచ్చాను.”"
+   ],
+   [
+    "p",
+    "Guha's eyes filled with tears of relief. “Blessed are you, Bharata! I do not see anyone in the world like you — you are giving up a kingdom that came to you without any effort. Your fame will last forever.”",
+    "ఊరటతో గుహుని కళ్ళు నిండాయి. “భరతా, నువ్వు ధన్యుడివి! లోకంలో నీలాంటివారిని నేను చూడలేదు — ఏ శ్రమా లేకుండా నీకు దక్కిన రాజ్యాన్ని వదులుకుంటున్నావు. నీ కీర్తి శాశ్వతంగా నిలుస్తుంది.”"
+   ]
+  ],
+  [
+   [
+    "p",
+    "Then Guha told Bharata how Rāma had spent the night there — how Lakṣmaṇa had stood guard all night with his bow, saying he could not sleep while Rāma lay on the ground. Hearing this, Bharata fainted with grief. Śatrughna and the queens rushed to him. Kausalyā held him and wept, “My son, is something wrong with you? You are all we have left now.”",
+    "తర్వాత రాముడు అక్కడ రాత్రి ఎలా గడిపాడో గుహుడు భరతునికి చెప్పాడు — రాముడు నేలపై పడుకుంటే తనకు నిద్ర రాదని లక్ష్మణుడు ధనుస్సుతో రాత్రంతా ఎలా కాపలా కాశాడో. ఇది విని భరతుడు దుఃఖంతో మూర్ఛపోయాడు. శత్రుఘ్నుడు, రాణులు అతని దగ్గరకు పరుగెత్తారు. కౌసల్య అతనిని పట్టుకుని ఏడ్చింది: “నాయనా, నీకేమైనా అయిందా? ఇప్పుడు మాకు మిగిలింది నువ్వే.”"
+   ],
+   [
+    "p",
+    "When he recovered, Bharata asked, “Show me where Rāma slept.” Guha led him to the iṅgudī tree, where the grass was still pressed flat where Rāma and Sītā had lain. Bharata saw a few threads of gold from Sītā's silk caught in the grass. He wept. “Rāma, son of the king, slept on this grass? From today I too will sleep on the ground, wear bark and matted hair, and eat only fruits and roots, until he returns.”",
+    "తేరుకున్నాక భరతుడు, “రాముడు ఎక్కడ పడుకున్నాడో చూపించు” అని అడిగాడు. గుహుడు అతనిని గార చెట్టు దగ్గరకు తీసుకువెళ్ళాడు; రామ సీతలు పడుకున్న చోట గడ్డి ఇంకా అణిగి ఉంది. గడ్డిలో చిక్కుకున్న సీత పట్టుచీర బంగారు దారాలను భరతుడు చూశాడు. ఏడ్చాడు. “రాజకుమారుడైన రాముడు ఈ గడ్డిపై పడుకున్నాడా? ఈ రోజు నుండి ఆయన తిరిగి వచ్చే వరకు నేను కూడా నేలపై పడుకుని, నారచీరలు, జటలు ధరించి, పండ్లు, దుంపలు మాత్రమే తింటాను.”"
+   ],
+   [
+    "p",
+    "The next morning Guha brought five hundred boats, and the whole army, the queens and the citizens were ferried across the wide Gaṅgā, with the royal elephants swimming like moving mountains. On the far bank, Bharata set out towards Prayāga.",
+    "మరుసటి ఉదయం గుహుడు ఐదు వందల పడవలు తెచ్చాడు; సైన్యమంతా, రాణులు, పౌరులు విశాలమైన గంగను దాటారు; రాజగజాలు కదిలే పర్వతాల్లా ఈదాయి. అవతలి ఒడ్డున భరతుడు ప్రయాగ వైపు బయలుదేరాడు."
+   ],
+   [
+    "dyk",
+    "🌾",
+    "Guha first prepared to fight Bharata, because he loved Rāma. Once he saw Bharata's heart, he became his friend too. True friends protect, but they also listen.",
+    "రాముడిని ప్రేమించినందుకే గుహుడు మొదట భరతునితో యుద్ధానికి సిద్ధపడ్డాడు. భరతుని మనసు తెలిశాక అతనికీ మిత్రుడయ్యాడు. నిజమైన మిత్రులు రక్షిస్తారు, కానీ వింటారు కూడా."
+   ]
+  ]
+ ],
+ "remember": [
+  [
+   "Bharata refused the coronation: the kingdom belongs to Rāma, the eldest.",
+   "భరతుడు పట్టాభిషేకాన్ని నిరాకరించాడు: రాజ్యం పెద్దవాడైన రామునిది."
+  ],
+  [
+   "Workers built a royal road through the forest, and all Ayodhyā set out to bring Rāma home.",
+   "పనివారు అడవి గుండా రాజమార్గం వేశారు; రాముడిని తీసుకురావడానికి అయోధ్య అంతా బయలుదేరింది."
+  ],
+  [
+   "Guha, fearing Bharata meant harm, prepared his warriors — then saw Bharata's true heart.",
+   "భరతుడు హాని తలపెట్టాడేమోనని గుహుడు యోధులను సిద్ధం చేశాడు — తర్వాత భరతుని నిజమైన మనసు చూశాడు."
+  ],
+  [
+   "Seeing where Rāma had slept on the grass, Bharata vowed to live like a hermit too.",
+   "రాముడు గడ్డిపై పడుకున్న చోటు చూసి, తానూ మునిలా జీవిస్తానని భరతుడు ప్రతిజ్ఞ చేశాడు."
+  ]
+ ],
+ "think": [
+  "Guha almost fought Bharata because he misjudged him. Have you ever misjudged someone and later found out you were wrong?",
+  "భరతుడిని తప్పుగా అంచనా వేసినందుకు గుహుడు దాదాపు అతనితో యుద్ధం చేయబోయాడు. మీరు ఎప్పుడైనా ఎవరినైనా తప్పుగా అంచనా వేసి, తర్వాత పొరపాటు తెలుసుకున్నారా?"
  ]
 }
 ]);
