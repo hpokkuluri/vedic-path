@@ -40,8 +40,9 @@
     .replace(/\*([^*]+)\*/g, '<i>$1</i>');
 
   // ── scene art ──
+  let SCN = 0;
   function scene(name, uid) {
-    const g = `rmy${uid}`;
+    const g = `rmy${uid}${++SCN}`;
     if (name === 'yajna') return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">
       <defs><linearGradient id="${g}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a1a3e"/><stop offset=".6" stop-color="#b8540c"/><stop offset="1" stop-color="#f3b061"/></linearGradient>
       <radialGradient id="${g}f" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff3b0"/><stop offset=".5" stop-color="#ffb02e"/><stop offset="1" stop-color="#e2461a"/></radialGradient></defs>
@@ -56,6 +57,97 @@
       <g fill="#3a1608"><circle cx="104" cy="172" r="7"/><path d="M92 196 Q104 176 116 196Z"/><circle cx="216" cy="172" r="7"/><path d="M204 196 Q216 176 228 196Z"/></g>
       <g fill="#f6e2c0" opacity=".9" transform="translate(262 150)"><path d="M0 18 Q4 6 18 6 L32 6 Q40 0 44 6 L40 10 L38 22 L34 22 L34 14 L14 14 L12 24 L8 24 L8 16 Q2 20 0 18Z"/></g>
       </svg>`;
+    const SC = {
+      // gods in the night sky; Viṣṇu's light on Garuḍa
+      sky: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1440"/><stop offset="1" stop-color="#3b2a7a"/></linearGradient>
+        <radialGradient id="${g}b" cx=".5" cy=".42" r=".45"><stop offset="0" stop-color="#fff6c8"/><stop offset=".4" stop-color="#f3c25a" stop-opacity=".8"/><stop offset="1" stop-color="#f3c25a" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#fff" opacity=".8"><circle cx="30" cy="30" r="1.4"/><circle cx="80" cy="60" r="1"/><circle cx="270" cy="34" r="1.6"/><circle cx="240" cy="90" r="1"/><circle cx="50" cy="120" r="1.2"/><circle cx="300" cy="140" r="1.1"/><circle cx="120" cy="24" r="1"/></g>
+        <circle cx="160" cy="92" r="96" fill="url(#${g}b)"/>
+        <g fill="#f6d27a"><path d="M160 70 L120 96 L60 88 L118 108 L160 100 L202 108 L260 88 L200 96Z"/><circle cx="160" cy="66" r="10"/><path d="M150 112 L160 140 L170 112Z"/></g>
+        <g fill="#3a7ad0"><circle cx="160" cy="48" r="9"/><path d="M148 58 Q160 52 172 58 L170 84 L150 84Z"/></g>
+        <circle cx="160" cy="36" r="5" fill="#f6d27a"/>
+        <g fill="#efe6ff" opacity=".7"><ellipse cx="60" cy="190" rx="70" ry="22"/><ellipse cx="170" cy="200" rx="90" ry="20"/><ellipse cx="280" cy="188" rx="60" ry="22"/></g>`,
+      // palace of Ayodhyā with a cradle and festive lamps
+      palace: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7c873"/><stop offset="1" stop-color="#fbe7c2"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#c96f2a"><rect x="40" y="70" width="240" height="110"/><rect x="140" y="40" width="40" height="140"/></g>
+        <g fill="#e1b45a"><path d="M134 40 L160 10 L186 40Z"/><path d="M34 70 L70 44 L106 70Z"/><path d="M214 70 L250 44 L286 70Z"/></g>
+        <g fill="#7a2e0c"><path d="M70 180 V120 a14 14 0 0 1 28 0 V180Z"/><path d="M222 180 V120 a14 14 0 0 1 28 0 V180Z"/><path d="M148 180 V130 a12 12 0 0 1 24 0 V180Z"/></g>
+        <path d="M30 70 Q60 86 90 70 Q120 86 150 70 Q180 86 210 70 Q240 86 270 70 Q290 80 300 70" fill="none" stroke="#e2461a" stroke-width="3"/>
+        <g fill="#2f7a4f"><circle cx="60" cy="74" r="3"/><circle cx="120" cy="76" r="3"/><circle cx="200" cy="76" r="3"/><circle cx="260" cy="74" r="3"/></g>
+        <rect y="180" width="320" height="40" fill="#9c6a3c"/>
+        <g transform="translate(130 160)"><path d="M0 14 Q30 34 60 14 Z" fill="#f6e2c0" stroke="#7a4a22" stroke-width="2"/><circle cx="30" cy="12" r="7" fill="#7aa6e0"/><path d="M10 0 Q30 -14 50 0" stroke="#7a4a22" stroke-width="2" fill="none"/></g>
+        <g fill="#ffb02e"><circle cx="20" cy="196" r="4"/><circle cx="300" cy="196" r="4"/><circle cx="110" cy="200" r="3"/><circle cx="210" cy="200" r="3"/></g>`,
+      // sage and two boys walking at dawn along a river road
+      road: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf8a"/><stop offset=".6" stop-color="#fde8c4"/><stop offset="1" stop-color="#e9d2a6"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="250" cy="70" r="24" fill="#fff1c4"/>
+        <path d="M0 130 Q80 110 160 126 T320 120 L320 150 L0 150Z" fill="#a9c48a"/>
+        <path d="M0 150 L320 150 L320 220 L0 220Z" fill="#c8a46a"/><path d="M0 150 Q160 140 320 158 L320 172 Q160 156 0 166Z" fill="#7fb3b0" opacity=".8"/>
+        <g fill="#5a3015"><g transform="translate(70 150)"><circle cx="0" cy="-34" r="6"/><path d="M-9 -26 Q0 -30 9 -26 L11 4 L-11 4Z"/><path d="M12 -20 L22 4" stroke="#5a3015" stroke-width="2"/></g>
+        <g transform="translate(118 154)"><circle cx="0" cy="-26" r="5"/><path d="M-6 -20 L6 -20 L8 2 L-8 2Z"/><path d="M10 -30 Q18 -14 10 2" stroke="#5a3015" stroke-width="2" fill="none"/></g>
+        <g transform="translate(150 156)"><circle cx="0" cy="-24" r="5"/><path d="M-6 -18 L6 -18 L8 2 L-8 2Z"/><path d="M10 -28 Q17 -13 10 2" stroke="#5a3015" stroke-width="2" fill="none"/></g></g>
+        <g fill="#3f7a46"><ellipse cx="290" cy="128" rx="26" ry="18"/><ellipse cx="20" cy="124" rx="22" ry="14"/></g>`,
+      // dark forest at dusk with a looming shape
+      forest: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1a2e"/><stop offset="1" stop-color="#5a3a2a"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="250" cy="50" r="16" fill="#f3d39a" opacity=".8"/>
+        <g fill="#1a2a1a"><path d="M0 220 L0 90 L20 60 L40 90 L40 220Z"/><path d="M280 220 L280 80 L300 50 L320 80 L320 220Z"/><path d="M40 220 L40 120 L60 96 L80 120 L80 220Z"/><path d="M240 220 L240 110 L258 90 L276 110 L276 220Z"/></g>
+        <path d="M120 200 Q110 120 160 96 Q210 120 200 200Z" fill="#3a1010" opacity=".85"/><g fill="#ff5a2a"><circle cx="148" cy="124" r="4"/><circle cx="172" cy="124" r="4"/></g>
+        <rect y="196" width="320" height="24" fill="#2a1a10"/>
+        <g transform="translate(66 196)" fill="#f6e2c0"><circle cx="0" cy="-30" r="5"/><path d="M-6 -24 L6 -24 L8 0 L-8 0Z"/><path d="M12 -40 Q24 -18 12 4" stroke="#f6e2c0" stroke-width="2.5" fill="none"/><path d="M12 -18 L44 -26" stroke="#ffd36a" stroke-width="2"/></g>`,
+      // glowing divine weapons around a sage and a prince
+      weapons: `<defs><radialGradient id="${g}a" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#4a2a6a"/><stop offset="1" stop-color="#140a24"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g stroke-linecap="round" stroke-width="4" fill="none"><circle cx="160" cy="96" r="58" stroke="#f6d27a" opacity=".35"/>
+        <path d="M100 60 l20 20" stroke="#7ad0ff"/><path d="M220 60 l-20 20" stroke="#ff8a5a"/><path d="M90 130 l24 -6" stroke="#a6ff9a"/><path d="M230 130 l-24 -6" stroke="#ffd36a"/>
+        <circle cx="160" cy="30" r="12" stroke="#ffd36a"/><path d="M160 18 v-6 M160 42 v6 M148 30 h-6 M172 30 h6" stroke="#ffd36a"/></g>
+        <path d="M262 92 l14 -24 l14 24 M276 68 v50" stroke="#e8e0ff" stroke-width="3" fill="none"/>
+        <g fill="#f6e2c0"><g transform="translate(130 196)"><circle cx="0" cy="-48" r="8"/><path d="M-12 -38 Q0 -44 12 -38 L16 0 L-16 0Z"/></g>
+        <g transform="translate(192 196)"><circle cx="0" cy="-40" r="7"/><path d="M-9 -32 L9 -32 L11 0 L-11 0Z"/><path d="M14 -48 Q24 -24 14 2" stroke="#f6e2c0" stroke-width="2.5" fill="none"/></g></g>`,
+      // Gaṅgā falling from the sky into Śiva's hair, then flowing across the plains
+      ganga: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ab8e8"/><stop offset="1" stop-color="#d8eef7"/></linearGradient><linearGradient id="${g}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#5aa8d0"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#f4f8fb"><path d="M0 130 L50 60 L90 110 L140 40 L200 116 L250 66 L320 130Z"/></g><g fill="#9ab0c4"><path d="M0 130 L50 60 L64 80 L30 130Z M140 40 L160 66 L118 130 L100 130Z M250 66 L270 92 L240 130 L226 130Z"/></g>
+        <path d="M150 0 Q170 40 158 80 Q150 100 160 116" stroke="url(#${g}w)" stroke-width="16" fill="none" opacity=".9"/>
+        <ellipse cx="160" cy="120" rx="26" ry="14" fill="#3a2a1a"/><circle cx="160" cy="140" r="12" fill="#5a7aa8"/><path d="M146 152 L174 152 L180 176 L140 176Z" fill="#5a7aa8"/>
+        <path d="M0 196 Q80 176 160 188 T320 184 L320 220 L0 220Z" fill="#4a98c8"/><path d="M0 176 Q160 160 320 172 L320 190 Q160 176 0 196Z" fill="#a6c48a"/>
+        <g transform="translate(250 176)" fill="#7a4a22"><rect x="-14" y="-10" width="28" height="12" rx="3"/><circle cx="-8" cy="4" r="5" fill="#3a2a1a"/><circle cx="8" cy="4" r="5" fill="#3a2a1a"/><path d="M14 -6 L28 -12" stroke="#7a4a22" stroke-width="3"/></g>`,
+      // churning of the ocean: mountain, serpent rope, tortoise
+      ocean: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a3a6a"/><stop offset="1" stop-color="#4aa0c8"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="60" cy="40" r="14" fill="#f6f0d0"/>
+        <path d="M160 30 L210 150 L110 150Z" fill="#6a5a4a"/><path d="M160 30 L176 70 L144 70Z" fill="#e8e0d0"/>
+        <path d="M60 120 Q110 96 160 112 Q210 128 260 104" stroke="#2f7a4f" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="264" cy="102" r="8" fill="#2f7a4f"/>
+        <rect y="150" width="320" height="70" fill="#2a6a9a"/><g stroke="#cfeaf5" stroke-width="2" fill="none" opacity=".8"><path d="M20 168 q10 -6 20 0 t20 0"/><path d="M220 180 q10 -6 20 0 t20 0"/><path d="M110 196 q10 -6 20 0 t20 0"/></g>
+        <ellipse cx="160" cy="160" rx="56" ry="14" fill="#7a8a4a"/><g fill="#f6e2c0"><circle cx="40" cy="120" r="7"/><circle cx="282" cy="118" r="7"/></g>`,
+      // a quiet hermitage glowing as Ahalyā appears
+      ahalya: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8e8c8"/><stop offset="1" stop-color="#f6efd8"/></linearGradient><radialGradient id="${g}b" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6c8"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#7a5a3a"><path d="M30 150 L80 110 L130 150Z"/><rect x="40" y="150" width="80" height="40"/></g><rect x="70" y="164" width="18" height="26" fill="#3a2a1a"/>
+        <g fill="#4c8c51"><ellipse cx="270" cy="96" rx="40" ry="30"/><rect x="266" y="120" width="8" height="70" fill="#5a3a1e"/></g>
+        <circle cx="190" cy="140" r="62" fill="url(#${g}b)"/><g fill="#c0392b"><circle cx="190" cy="112" r="9"/><path d="M176 124 Q190 118 204 124 L210 186 L170 186Z"/></g>
+        <rect y="186" width="320" height="34" fill="#9cb07a"/>
+        <g fill="#5a3015"><g transform="translate(250 186)"><circle cx="0" cy="-28" r="6"/><path d="M-7 -21 L7 -21 L9 0 L-9 0Z"/></g><g transform="translate(276 186)"><circle cx="0" cy="-26" r="5"/><path d="M-6 -20 L6 -20 L8 0 L-8 0Z"/></g></g>
+        <g fill="#f08aa0"><circle cx="150" cy="40" r="3"/><circle cx="230" cy="30" r="3"/><circle cx="190" cy="54" r="3"/></g>`,
+      // Śiva's great bow on its cart in Janaka's hall
+      mithila: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a1a1a"/><stop offset="1" stop-color="#d0802a"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#5a120c" opacity=".6"><rect x="20" y="20" width="18" height="160"/><rect x="282" y="20" width="18" height="160"/></g>
+        <path d="M30 20 Q160 60 290 20" stroke="#f6d27a" stroke-width="4" fill="none"/>
+        <path d="M70 110 Q160 30 250 110" stroke="#e1b45a" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M160 54 l-6 -8 m6 8 l6 -8" stroke="#fff6c8" stroke-width="3"/>
+        <path d="M70 110 L250 110" stroke="#fff6c8" stroke-width="1.5"/>
+        <rect x="80" y="120" width="160" height="26" rx="4" fill="#5a3a1a"/><g fill="#3a2a1a"><circle cx="100" cy="152" r="10"/><circle cx="140" cy="152" r="10"/><circle cx="180" cy="152" r="10"/><circle cx="220" cy="152" r="10"/></g>
+        <rect y="168" width="320" height="52" fill="#8a4a1a"/><g fill="#f6e2c0" opacity=".9"><circle cx="40" cy="190" r="6"/><circle cx="60" cy="194" r="6"/><circle cx="262" cy="190" r="6"/><circle cx="282" cy="194" r="6"/></g>`,
+      // stormy sky and Paraśurāma with his axe
+      storm: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1a2a"/><stop offset="1" stop-color="#5a3a3a"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#3a3a4a"><ellipse cx="60" cy="40" rx="70" ry="26"/><ellipse cx="200" cy="30" rx="90" ry="28"/><ellipse cx="300" cy="50" rx="50" ry="22"/></g>
+        <path d="M230 50 L216 84 L230 84 L212 120" stroke="#fff6a0" stroke-width="3" fill="none"/>
+        <rect y="180" width="320" height="40" fill="#2a1a1a"/>
+        <g transform="translate(150 180)" fill="#e8a060"><circle cx="0" cy="-74" r="10"/><path d="M-6 -86 Q0 -100 8 -84" stroke="#3a1a0a" stroke-width="5" fill="none"/><path d="M-16 -62 Q0 -68 16 -62 L22 0 L-22 0Z" fill="#c0392b"/>
+        <path d="M18 -60 L46 -100" stroke="#8a6a4a" stroke-width="4"/><path d="M40 -112 Q60 -104 52 -88 L44 -96Z" fill="#cfd8e0"/></g>
+        <g transform="translate(250 180)" fill="#f6e2c0"><circle cx="0" cy="-40" r="7"/><path d="M-9 -32 L9 -32 L11 0 L-11 0Z"/><path d="M-16 -54 Q-28 -28 -16 2" stroke="#f6e2c0" stroke-width="2.5" fill="none"/></g>`,
+    };
+    if (SC[name]) return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">${SC[name]}</svg>`;
     // default: tamasa — river at dusk, sage, krauñca birds
     return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">
       <defs><linearGradient id="${g}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6b45c"/><stop offset=".55" stop-color="#f3d39a"/><stop offset="1" stop-color="#fbe9c8"/></linearGradient>
