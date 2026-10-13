@@ -23,7 +23,8 @@
 
   let S = { done: {}, pos: {}, opened: {}, last: '', mode: '', fs: 1 };
   try { Object.assign(S, JSON.parse(localStorage.getItem('vedic_rmy') || '{}')); } catch (e) {}
-  if (!S.mode) S.mode = (typeof settings !== 'undefined' && settings.language) || 'both';
+  // Language follows the app-wide setting (Home / Settings), so both always agree
+  const MODE = () => { const l = (typeof settings !== 'undefined' && settings.language) || 'both'; return ['en', 'te', 'both'].includes(l) ? l : 'both'; };
   const save = () => { try { localStorage.setItem('vedic_rmy', JSON.stringify(S)); } catch (e) {} };
 
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -145,10 +146,10 @@
       ${nextPlan ? `<div class="box next"${nextC ? ` onclick="openRmyChapter('${nextC.id}')"` : ''}><div><small>Up next · Chapter ${c.n + 1}${nextC ? '' : ' · coming soon'}</small><b>${esc(nextPlan[0])}</b><span>Sargas ${esc(nextPlan[1].replace(/^Sargas? /, ''))}</span></div>${nextC ? '<span class="go">›</span>' : ''}</div>` : ''}
       <button class="markbtn${S.done[c.id] ? ' did' : ''}" onclick="rmyDone('${c.id}', this)">${S.done[c.id] ? '✓ Read' : 'Mark chapter as read'}</button>`;
     const pages = [opener, ...c.pages.map((b, i) => blocks(b, i === 0)), end];
-    el.innerHTML = `<div class="rmy rmy-read mode-${S.mode}" id="rmy-read" style="--fs:${FS[S.fs] || FS[1]}" data-noswipe>
+    el.innerHTML = `<div class="rmy rmy-read mode-${MODE()}" id="rmy-read" style="--fs:${FS[S.fs] || FS[1]}" data-noswipe>
       <div class="rbar"><button class="x" onclick="openRamayana()" aria-label="Chapters">☰</button>
-        <div class="where"><b>Chapter ${c.n}</b> · Bāla Kāṇḍa</div>
-        <div class="lang">${[['en', 'EN'], ['te', 'తె'], ['both', 'Both']].map(([m, t]) => `<button data-m="${m}" class="${S.mode === m ? 'on' : ''}" onclick="rmyMode('${m}')">${t}</button>`).join('')}</div>
+        <div class="where"><b>Ch ${c.n}</b></div>
+        <div class="lang">${[['en', 'English'], ['te', 'తెలుగు'], ['both', 'Both']].map(([m, t]) => `<button data-m="${m}" class="${MODE() === m ? 'on' : ''}${m === 'te' ? ' te' : ''}" onclick="rmyMode('${m}')">${t}</button>`).join('')}</div>
         <button class="aa" onclick="rmyFont()" aria-label="Text size">Aa</button></div>
       <div class="prog"><i id="rmy-prog"></i></div>
       <div class="pages" id="rmy-pages"><div class="track" id="rmy-track">${pages.map(h => `<div class="page">${h}</div>`).join('')}</div></div>
@@ -193,7 +194,7 @@
     }, { passive: true });
   }
   window.rmyMode = m => {
-    S.mode = m; save();
+    if (typeof settings !== 'undefined') { settings.language = m; if (typeof saveSettings === 'function') saveSettings(); }
     const r = document.getElementById('rmy-read');
     r.classList.remove('mode-en', 'mode-te', 'mode-both'); r.classList.add('mode-' + m);
     r.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.m === m));
@@ -210,7 +211,7 @@
       bg = document.getElementById('rmy-sheetbg');
     }
     const sh = document.getElementById('rmy-sheet');
-    sh.className = `rmy rmy-sheet mode-${S.mode}`;
+    sh.className = `rmy rmy-sheet mode-${MODE()}`;
     document.getElementById('rmy-sheetc').innerHTML = `<div class="row"><span class="av">${w.av}</span><h4>${esc(w.en)}<span class="te">${esc(w.te)}</span></h4></div>
       <p><span class="en">${esc(w.d)}</span><span class="te">${esc(w.dt)}</span></p>`;
     requestAnimationFrame(() => { sh.classList.add('on'); bg.classList.add('on'); });
@@ -253,7 +254,7 @@
 .rmy .aa{font-family:'Crimson Text',serif;font-weight:700}
 .rmy .rbar .where{flex:1;min-width:0;font-size:.78rem;color:var(--fg3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rmy .rbar .where b{color:var(--fg);font-weight:600}
 .rmy .lang{display:flex;border:1.5px solid var(--border);border-radius:999px;overflow:hidden;flex:none}
-.rmy .lang button{padding:5px 10px;font-size:.75rem;font-weight:600;color:var(--fg3)}.rmy .lang button.on{background:var(--accent);color:#fff}
+.rmy .lang button{padding:7px 11px;font-size:.8rem;font-weight:600;color:var(--fg2)}.rmy .lang button.te{font-family:'Noto Sans Telugu',sans-serif;font-size:.84rem}.rmy .lang button.on{background:var(--accent);color:#fff}
 .rmy .prog{height:3px;background:var(--border)}.rmy .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .35s}
 .rmy .pages{overflow:hidden;touch-action:pan-y}
 .rmy .track{display:flex;align-items:flex-start;transition:transform .38s cubic-bezier(.2,.8,.2,1)}
