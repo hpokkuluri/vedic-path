@@ -3,7 +3,7 @@
 // The app page is fetched from the network first (so new versions arrive as soon
 // as you are online) and falls back to the saved copy when offline or slow.
 // Fonts and icons are served from the saved copy.
-const CACHE = 'vedasaram-v7';
+const CACHE = 'vedasaram-v8';
 const PAGE = './index.html';
 const SHELL = ['./', PAGE, './kids.js', './ramayana.js', './ramayana/bala.js', './ramayana/ayodhya.js', './stories.js', './audio/index.js', './manifest.json', './icons/icon-180.png', './icons/icon-192.png', './icons/icon-512.png', './icons/tile-ramayana.jpg'];
 const FONT_CSS = [
