@@ -26,11 +26,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Little Hanumān and the Sun (Rāmāyaṇa) — hanuman-and-the-sun
 - [x] Karṇa and Paraśurāma — the Bee and the Curse (Mahābhārata) — karna-and-parashurama
 - [x] How Daśaratha's Four Sons Were Born — the Sacred Pāyasam (Rāmāyaṇa) — dasharathas-four-sons
+- [x] How the Five Pāṇḍavas Were Born (Mahābhārata) — how-the-pandavas-were-born
+- [x] Viśvāmitra Takes the Boys to the Forest — Tāṭakā (Rāmāyaṇa) — vishvamitra-and-tataka
+- [x] Droṇa's Ring in the Well (Mahābhārata) — dronas-ring-in-the-well
 
 ## Next
-- [ ] How the Five Pāṇḍavas Were Born (Mahābhārata) — Kuntī, Mādrī, Pāṇḍu
-- [ ] Viśvāmitra Takes the Boys to the Forest — Tāṭakā (Rāmāyaṇa) — Viśvāmitra, Rāma, Lakṣmaṇa
-- [ ] Drona's Ring in the Well (Mahābhārata) — Droṇa, Bhīṣma, the princes
 - [ ] Ahalyā Is Freed (Rāmāyaṇa) — Ahalyā, Gautama, Rāma
 - [ ] The Pāṇḍavas Escape the House of Lac (Mahābhārata) — Vidura, Bhīma, Kuntī
 - [ ] Kaikeyī's Two Boons and Mantharā's Whisper (Rāmāyaṇa) — Kaikeyī, Mantharā, Daśaratha
