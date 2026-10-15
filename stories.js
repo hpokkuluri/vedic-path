@@ -529,4 +529,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'ahalya-is-freed',
+    added: '2026-10-15',
+    epic: 'Ramayana',
+    chars: ['Ahalyā', 'Gautama', 'Rāma', 'Lakṣmaṇa', 'Viśvāmitra'],
+    title: { en: 'Ahalyā Is Freed', te: 'అహల్యా శాప విమోచనం' },
+    moral: { en: 'Patience and a kind heart can undo even a curse.', te: 'ఓర్పు, మంచి మనసు ఉంటే శాపమైనా తొలగిపోతుంది.' },
+    cover: { bg: 'ashram', props: [['person', 120, 198, 1.35, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 210, 198, 1.4, { female: true, skin: 'fair', cloth: '#f4ead2', pallu: '#f0c040' }], ['flowers', 265, 198, 1], ['cloud', 70, 45, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'ashram', props: [['person', 90, 198, 1.45, { skin: 'wheat', cloth: '#e8a23a', beard: true, hair: '#ddd', raise: true }], ['person', 170, 198, 1.1, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 215, 198, 1.05, { skin: 'fair', cloth: '#a8392a' }], ['tree', 258, 198, 0.7], ['cloud', 190, 40, 0.8]] },
+        en: 'On the way to Mithilā, Sage Viśvāmitra led Rāma and Lakṣmaṇa past an old hermitage. The trees stood still, no birds sang, and the paths were covered with dry leaves. "Whose ashram is this, Guru?" asked Rāma. "Long ago," said Viśvāmitra, "the great sage Gautama lived here with his wife, Ahalyā. She was so lovely that, it is said, Brahmā himself shaped her with special care. Every morning Gautama went to the river to bathe and pray, and Ahalyā looked after their peaceful home. In those days this ashram was full of flowers, deer and happy songs."',
+        te: 'మిథిలకు వెళ్ళే దారిలో విశ్వామిత్ర మహర్షి రామలక్ష్మణులను ఒక పాత ఆశ్రమం దగ్గరకు తీసుకువచ్చాడు. అక్కడ చెట్లు కదలడం లేదు, పక్షులు పాడడం లేదు, దారుల నిండా ఎండిన ఆకులు పడి ఉన్నాయి. "గురువుగారూ, ఇది ఎవరి ఆశ్రమం?" అని అడిగాడు రాముడు. "చాలా కాలం క్రితం," అన్నాడు విశ్వామిత్రుడు, "గౌతమ మహర్షి తన భార్య అహల్యతో ఇక్కడ ఉండేవాడు. అహల్య ఎంత అందమైనదంటే, బ్రహ్మదేవుడే ఆమెను ఎంతో శ్రద్ధగా సృష్టించాడని చెబుతారు. రోజూ ఉదయం గౌతముడు స్నానం, సంధ్యావందనం కోసం నదికి వెళ్ళేవాడు. అహల్య వారి ప్రశాంతమైన ఇంటిని చూసుకునేది. ఆ రోజుల్లో ఈ ఆశ్రమం పూలతో, జింకలతో, సంతోషమైన పాటలతో నిండి ఉండేది."',
+      },
+      {
+        scene: { bg: 'ashram', props: [['person', 110, 198, 1.45, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd', raise: true }], ['person', 200, 198, 1.3, { female: true, skin: 'fair', cloth: '#f4ead2', pallu: '#7a5ab0' }], ['rock', 258, 198, 0.7], ['cloud', 220, 40, 1]] },
+        en: 'But Indra, the king of the gods, played a wicked trick. One day, while Gautama was away, Indra came to the ashram disguised as the sage himself. Just as he was slipping away, the real Gautama returned and understood everything. The sage\'s anger blazed like fire. He cursed Indra, and then he turned to Ahalyā. "You will stay here alone for thousands of years, unseen by anyone, living only on air and doing penance," he said. In the tellings we hear at home, it is said she became a stone. Then his anger cooled. "When Rāma, son of Daśaratha, comes here," he said more gently, "you will be free." And Gautama went away to the Himālayas.',
+        te: 'కానీ దేవతల రాజైన ఇంద్రుడు ఒక చెడ్డ మోసం చేశాడు. ఒక రోజు గౌతముడు బయటకు వెళ్ళినప్పుడు, ఇంద్రుడు గౌతముడి వేషంలోనే ఆశ్రమానికి వచ్చాడు. అతను దొంగచాటుగా వెళ్ళిపోతుండగా, అసలు గౌతముడు తిరిగి వచ్చి జరిగినదంతా గ్రహించాడు. మహర్షి కోపం అగ్నిలా మండింది. ఆయన ఇంద్రుడిని శపించాడు. తరువాత అహల్య వైపు తిరిగి, "నువ్వు వేల సంవత్సరాలు ఇక్కడ ఒంటరిగా, ఎవరికీ కనిపించకుండా, గాలిని మాత్రమే ఆహారంగా తీసుకుంటూ తపస్సు చేస్తూ ఉంటావు," అన్నాడు. మన ఇళ్ళలో చెప్పుకునే కథల్లో ఆమె రాయిగా మారిందని అంటారు. కొంతసేపటికి ఆయన కోపం చల్లారింది. "దశరథుడి కుమారుడైన రాముడు ఇక్కడికి వచ్చినప్పుడు నీకు శాప విముక్తి కలుగుతుంది," అని మెల్లగా చెప్పి, గౌతముడు హిమాలయాలకు వెళ్ళిపోయాడు.',
+      },
+      {
+        scene: { bg: 'ashram', props: [['person', 90, 198, 1.3, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 140, 198, 1.2, { skin: 'fair', cloth: '#a8392a' }], ['person', 220, 198, 1.4, { female: true, skin: 'fair', cloth: '#f4ead2', pallu: '#f0c040', raise: true }], ['flowers', 270, 198, 0.8], ['sun', 50, 45, 0.7], ['cloud', 200, 35, 0.8]] },
+        en: '"Rāma, come," said Viśvāmitra. "Ahalyā has waited long enough." Rāma stepped into the silent ashram. At once a soft light glowed, like the moon coming out from behind the clouds, and there stood Ahalyā, free at last! Rāma and Lakṣmaṇa bowed and touched her feet, as good children do to an elder. Ahalyā\'s eyes filled with happy tears. She welcomed the princes as honoured guests and gave them water and fruits. Flowers rained from the sky, and the gods sang. Then Sage Gautama returned, and the two were together again. The ashram woke up — the birds sang, and the deer came running back.',
+        te: '"రామా, రా," అన్నాడు విశ్వామిత్రుడు. "అహల్య చాలా కాలంగా ఎదురుచూస్తోంది." రాముడు ఆ నిశ్శబ్దమైన ఆశ్రమంలోకి అడుగు పెట్టాడు. వెంటనే మబ్బుల వెనుక నుంచి బయటకు వచ్చిన చంద్రుడిలా ఒక మెత్తని వెలుగు ప్రకాశించింది. ఆ వెలుగులో అహల్య నిలబడి ఉంది — చివరకు ఆమెకు శాప విముక్తి కలిగింది! రామలక్ష్మణులు పెద్దలకు మంచి పిల్లలు చేసినట్టే ఆమెకు నమస్కరించి పాదాలకు మొక్కారు. అహల్య కళ్ళు ఆనంద బాష్పాలతో నిండిపోయాయి. ఆమె యువరాజులను గౌరవంగా ఆహ్వానించి, నీళ్ళు, పండ్లు ఇచ్చింది. ఆకాశం నుంచి పూలవాన కురిసింది, దేవతలు పాటలు పాడారు. అప్పుడు గౌతమ మహర్షి తిరిగి వచ్చాడు, ఇద్దరూ మళ్ళీ కలిశారు. ఆశ్రమం మళ్ళీ మేల్కొంది — పక్షులు పాడాయి, జింకలు పరుగెత్తుకుంటూ తిరిగి వచ్చాయి.',
+      },
+    ],
+  },
+  {
+    id: 'pandavas-escape-the-house-of-lac',
+    added: '2026-10-15',
+    epic: 'Mahabharata',
+    chars: ['Vidura', 'Bhīma', 'Kuntī', 'Yudhiṣṭhira', 'Duryodhana'],
+    title: { en: 'The Pāṇḍavas Escape the House of Lac', te: 'లక్క ఇంటి నుంచి తప్పించుకున్న పాండవులు' },
+    moral: { en: 'With wisdom and true well-wishers, we can escape even great danger.', te: 'జ్ఞానం, మంచి ఆప్తులు ఉంటే ఎంత పెద్ద ఆపదనైనా దాటవచ్చు.' },
+    cover: { bg: 'night', props: [['hut', 185, 198, 1.1], ['fire', 145, 198, 1.5], ['fire', 228, 198, 1.3], ['person', 320, 198, 1.5, { skin: 'wheat', cloth: '#a8392a', raise: true }], ['moon', 60, 45, 1]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['throne', 110, 196, 1.2], ['person', 110, 192, 1.2, { skin: 'fair', cloth: '#4a4a8a', crown: true }], ['person', 220, 198, 1.3, { skin: 'wheat', cloth: '#7a5a3a', raise: true }], ['pot', 300, 198, 0.9]] },
+        en: 'The Pāṇḍava princes were growing up strong and kind, and the people of Hastināpura loved them. Their cousin Duryodhana burned with jealousy. "If they are gone, the kingdom will be mine," he thought. So he made a secret plan with a minister named Purocana. "Build a beautiful house in the town of Vāraṇāvata," he said, "but build it with lac, wax, oil and dry straw — things that catch fire in a moment. We will send the Pāṇḍavas there for a holiday, and one night, you will set it alight." Then Duryodhana smiled sweetly and invited his cousins and their mother Kuntī to enjoy the festival at Vāraṇāvata.',
+        te: 'పాండవులు బలంగా, మంచిగా పెరుగుతున్నారు. హస్తినాపుర ప్రజలు వారిని ఎంతో ప్రేమించేవారు. వారి దాయాది దుర్యోధనుడు అసూయతో రగిలిపోయాడు. "వీళ్ళు లేకపోతే రాజ్యం నాదే," అనుకున్నాడు. అందుకే పురోచనుడు అనే మంత్రితో కలిసి ఒక రహస్య పథకం వేశాడు. "వారణావతంలో ఒక అందమైన ఇల్లు కట్టించు," అన్నాడు. "కానీ దాన్ని లక్క, మైనం, నూనె, ఎండు గడ్డితో కట్టించు — క్షణంలో మంటలు అంటుకునే వస్తువులతో. పాండవులను అక్కడికి విహారానికి పంపుదాం. ఒక రాత్రి నువ్వు ఆ ఇంటికి నిప్పు పెట్టాలి." తరువాత దుర్యోధనుడు తియ్యగా నవ్వుతూ, వారణావతంలో జరిగే ఉత్సవం చూసి రమ్మని పాండవులను, వారి తల్లి కుంతిని ఆహ్వానించాడు.',
+      },
+      {
+        scene: { bg: 'palace', props: [['person', 100, 198, 1.4, { skin: 'wheat', cloth: '#f4ead2', beard: true, hair: '#ddd', raise: true }], ['person', 190, 198, 1.3, { skin: 'fair', cloth: '#f0c040' }], ['person', 260, 198, 1.3, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['person', 330, 198, 1.4, { skin: 'wheat', cloth: '#a8392a' }]] },
+        en: 'But wise Uncle Vidura had found out the plan. As the Pāṇḍavas set out, he spoke to Yudhiṣṭhira in a secret language that only the two of them understood. "A fire can burn a whole forest, but it cannot harm the rat that hides in its hole. The one who knows the way through the dark stays safe." Yudhiṣṭhira understood. At Vāraṇāvata, Purocana welcomed them to their shining new house. Yudhiṣṭhira sniffed the walls. "Lac and ghee," he whispered to Bhīma. "Act as if nothing is wrong." Soon a quiet digger arrived, sent by Vidura. Night after night, he secretly dug a tunnel under the floor, leading out into the forest.',
+        te: 'కానీ తెలివైన విదురుడికి ఈ పథకం తెలిసిపోయింది. పాండవులు బయలుదేరుతుండగా, ఆయన ధర్మరాజుతో వారిద్దరికి మాత్రమే అర్థమయ్యే రహస్య భాషలో మాట్లాడాడు. "అగ్ని అడవినంతా కాల్చేయగలదు, కానీ కలుగులో దాక్కున్న ఎలుకను ఏమీ చేయలేదు. చీకటిలో దారి తెలిసినవాడు క్షేమంగా ఉంటాడు." ధర్మరాజుకు అర్థమైంది. వారణావతంలో పురోచనుడు వారిని మెరిసిపోతున్న కొత్త ఇంట్లోకి ఆహ్వానించాడు. ధర్మరాజు గోడల వాసన చూశాడు. "లక్క, నెయ్యి," అని భీముడి చెవిలో గుసగుసలాడాడు. "ఏమీ తెలియనట్టే ఉందాం." త్వరలోనే విదురుడు పంపిన, సొరంగాలు తవ్వడంలో నేర్పరి అయిన ఒక వ్యక్తి వచ్చాడు. ప్రతి రాత్రీ అతను నేల కింద రహస్యంగా సొరంగం తవ్వాడు — అది అడవిలోకి దారి తీసింది.',
+      },
+      {
+        scene: { bg: 'night', props: [['hut', 110, 198, 1], ['fire', 80, 198, 1.2], ['fire', 140, 198, 1.1], ['person', 240, 198, 1.6, { skin: 'wheat', cloth: '#a8392a', raise: true }], ['person', 290, 198, 1.2, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['boat', 355, 198, 0.8], ['moon', 330, 40, 0.9]] },
+        en: 'For a whole year the Pāṇḍavas pretended to be happy guests, while they quietly learned every path in the forest. Then one dark night, they knew Purocana was ready to strike. So Bhīma set the house on fire first, and the family slipped into the tunnel. The house of lac burst into flames, and the wicked plan turned back on the man who made it. Kuntī was tired, so mighty Bhīma lifted his mother onto his shoulders, carried the twins on his hips, held his two brothers by the hand, and ran through the tunnel and the dark forest. At the river Gaṅgā, a boat sent by Vidura was waiting. Everyone in Hastināpura thought the Pāṇḍavas were gone — but they were safe.',
+        te: 'ఒక సంవత్సరమంతా పాండవులు సంతోషంగా ఉన్న అతిథుల్లా నటించారు. ఈలోగా అడవిలోని ప్రతి దారినీ నిశ్శబ్దంగా తెలుసుకున్నారు. ఒక చీకటి రాత్రి, పురోచనుడు దాడికి సిద్ధంగా ఉన్నాడని వారికి అర్థమైంది. అందుకే భీముడే ముందుగా ఆ ఇంటికి నిప్పు పెట్టాడు, కుటుంబమంతా సొరంగంలోకి జారుకుంది. లక్క ఇల్లు భగ్గున మండిపోయింది — చెడ్డ పథకం దాన్ని వేసినవాడి మీదికే తిరిగింది. కుంతీదేవి అలసిపోయింది. బలవంతుడైన భీముడు తల్లిని భుజాల మీద ఎక్కించుకుని, కవలలైన నకుల సహదేవులను నడుము మీద ఎత్తుకుని, ఇద్దరు సోదరుల చేతులు పట్టుకుని సొరంగం గుండా, చీకటి అడవి గుండా పరుగెత్తాడు. గంగా నది ఒడ్డున విదురుడు పంపిన పడవ వారి కోసం ఎదురుచూస్తోంది. పాండవులు ఇక లేరని హస్తినాపురంలో అందరూ అనుకున్నారు — కానీ వారు క్షేమంగా ఉన్నారు.',
+      },
+    ],
+  },
+  {
+    id: 'kaikeyis-two-boons',
+    added: '2026-10-15',
+    epic: 'Ramayana',
+    chars: ['Kaikeyī', 'Mantharā', 'Daśaratha', 'Rāma'],
+    title: { en: 'Kaikeyī\'s Two Boons and Mantharā\'s Whisper', te: 'కైకేయి రెండు వరాలు — మంథర చెప్పుడు మాటలు' },
+    moral: { en: 'Do not let jealous whispers cloud a loving heart.', te: 'అసూయతో చెప్పే చెప్పుడు మాటలకు మంచి మనసును పాడుచేసుకోకూడదు.' },
+    cover: { bg: 'palace', props: [['person', 140, 198, 1.2, { female: true, skin: 'wheat', cloth: '#7a6a5a', pallu: '#5a4a3a', hair: '#ddd', raise: true }], ['person', 220, 198, 1.4, { female: true, skin: 'fair', cloth: '#7a5ab0', pallu: '#f0c040' }], ['throne', 320, 196, 1]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['person', 110, 198, 1.3, { skin: 'fair', cloth: '#a8392a', crown: true }], ['chariot', 200, 198, 1.4], ['person', 280, 198, 1.3, { female: true, skin: 'fair', cloth: '#7a5ab0', pallu: '#f0c040', raise: true }], ['arrow', 330, 90, 1], ['cloud', 60, 40, 0.9]] },
+        en: 'Long before Rāma was born, King Daśaratha went to help Indra in a great battle against the demon Śambara. His young queen Kaikeyī rode with him in the chariot. In the thick of the fight, the king was badly wounded and fainted. Brave Kaikeyī grabbed the reins herself, drove the chariot swiftly out of danger, and cared for him until he was well. It is said she even held a broken wheel in place with her own finger! When Daśaratha opened his eyes, he said, "You saved my life. Ask me for two boons — anything at all." Kaikeyī smiled. "Keep them for me, my king. I will ask some other day."',
+        te: 'రాముడు పుట్టడానికి చాలా కాలం ముందు, దశరథ మహారాజు శంబరుడు అనే రాక్షసుడితో జరిగిన పెద్ద యుద్ధంలో ఇంద్రుడికి సహాయం చేయడానికి వెళ్ళాడు. ఆయన చిన్న రాణి కైకేయి కూడా ఆయనతో రథంలో వెళ్ళింది. యుద్ధం తీవ్రంగా జరుగుతుండగా రాజుకు పెద్ద గాయమై స్పృహ తప్పాడు. ధైర్యవంతురాలైన కైకేయి తానే కళ్ళాలు పట్టుకుని, రథాన్ని వేగంగా ప్రమాదం నుంచి బయటకు నడిపింది. ఆయన కోలుకునే వరకు సేవ చేసింది. విరిగిన చక్రం ఊడిపోకుండా తన వేలినే ఇరుసుకు అడ్డుగా పెట్టిందని కూడా చెబుతారు! దశరథుడు కళ్ళు తెరిచి, "నువ్వు నా ప్రాణాలు కాపాడావు. రెండు వరాలు కోరుకో — ఏదైనా సరే," అన్నాడు. కైకేయి చిరునవ్వు నవ్వింది. "అవి మీ దగ్గరే ఉంచండి మహారాజా. ఎప్పుడైనా అడుగుతాను."',
+      },
+      {
+        scene: { bg: 'palace', props: [['person', 140, 198, 1.4, { female: true, skin: 'fair', cloth: '#7a5ab0', pallu: '#f0c040' }], ['person', 230, 198, 1.2, { female: true, skin: 'wheat', cloth: '#7a6a5a', pallu: '#5a4a3a', hair: '#ddd', raise: true }], ['crown', 305, 198, 0.7], ['flowers', 60, 198, 0.8]] },
+        en: 'Many years later, Daśaratha announced, "Tomorrow Rāma will be crowned prince!" All Ayodhyā danced with joy. Kaikeyī loved Rāma like her own son, and she gave her maid Mantharā a precious ornament for bringing the good news. But Mantharā frowned. "Silly queen! Once Rāma is king, Kausalyā will be the great queen, and you and your son Bharata will live like servants." At first Kaikeyī laughed. But Mantharā kept whispering, one fear after another, until Kaikeyī\'s heart grew cloudy. "Remember the two boons," hissed Mantharā. "Ask for them now." So Kaikeyī threw off her jewels and lay on the floor of the anger-room, waiting for the king.',
+        te: 'చాలా ఏళ్ళ తరువాత దశరథుడు ప్రకటించాడు, "రేపే రాముడికి యువరాజ పట్టాభిషేకం!" అయోధ్య అంతా ఆనందంతో నాట్యం చేసింది. కైకేయికి రాముడంటే సొంత కొడుకంత ప్రేమ. ఆ శుభవార్త తెచ్చినందుకు ఆమె తన దాసి మంథరకు ఒక విలువైన ఆభరణం బహుమతిగా ఇచ్చింది. కానీ మంథర ముఖం చిట్లించింది. "అమాయకపు రాణీ! రాముడు రాజైతే కౌసల్య పెద్ద రాణి అవుతుంది. నువ్వూ, నీ కొడుకు భరతుడూ వాళ్ళకు సేవకుల్లా బతకాలి." మొదట కైకేయి నవ్వేసింది. కానీ మంథర ఒక భయం తరువాత ఇంకో భయం చెవిలో ఊదుతూనే ఉంది. చివరకు కైకేయి మనసుకు మబ్బు పట్టింది. "ఆ రెండు వరాలు గుర్తు తెచ్చుకో," అని బుసకొట్టింది మంథర. "ఇప్పుడే అడుగు." కైకేయి తన నగలన్నీ విసిరేసి, కోపగృహంలో నేల మీద పడుకుని రాజు కోసం ఎదురుచూసింది.',
+      },
+      {
+        scene: { bg: 'palace', props: [['person', 100, 198, 1.35, { skin: 'fair', cloth: '#a8392a', crown: true, beard: true, hair: '#ddd' }], ['person', 185, 198, 1.35, { female: true, skin: 'fair', cloth: '#7a5ab0', pallu: '#f0c040' }], ['person', 290, 198, 1.35, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['sun', 360, 45, 0.6]] },
+        en: 'When Daśaratha found her, he begged, "Tell me what is wrong, my dear. I will do anything!" "Then give me my two boons," said Kaikeyī. "First, let Bharata be crowned king. Second, send Rāma to the forest for fourteen years." The old king sank to the ground as if struck by lightning. All night he pleaded, but Kaikeyī would not change her mind. In the morning Rāma came. When he heard the news, his face stayed as calm and bright as ever. "Mother, if this keeps my father\'s word, I will go gladly," he said, and he bowed to Kaikeyī too. That is how one jealous whisper changed the story of Ayodhyā.',
+        te: 'దశరథుడు ఆమెను చూసి బతిమాలాడు, "ఏమైంది ప్రియా? చెప్పు, ఏదైనా చేస్తాను!" "అయితే నా రెండు వరాలు ఇవ్వండి," అంది కైకేయి. "మొదటిది, భరతుడికి పట్టాభిషేకం చేయాలి. రెండవది, రాముడు పద్నాలుగు సంవత్సరాలు అడవికి వెళ్ళాలి." ఆ మాటలు వినగానే ముసలి రాజు పిడుగు పడినట్టు నేల మీద కూలిపోయాడు. రాత్రంతా బతిమాలాడు, కానీ కైకేయి మనసు మారలేదు. ఉదయం రాముడు వచ్చాడు. విషయం విన్నా ఆయన ముఖం ఎప్పటిలాగే ప్రశాంతంగా, ప్రకాశంగా ఉంది. "అమ్మా, దీనివల్ల నాన్నగారి మాట నిలుస్తుందంటే, నేను సంతోషంగా వెళ్తాను," అని చెప్పి కైకేయికి కూడా నమస్కరించాడు. ఒక్క అసూయ నిండిన గుసగుస అయోధ్య కథనే ఇలా మార్చేసింది.',
+      },
+    ],
+  },
 ];

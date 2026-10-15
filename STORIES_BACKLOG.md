@@ -29,11 +29,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] How the Five Pāṇḍavas Were Born (Mahābhārata) — how-the-pandavas-were-born
 - [x] Viśvāmitra Takes the Boys to the Forest — Tāṭakā (Rāmāyaṇa) — vishvamitra-and-tataka
 - [x] Droṇa's Ring in the Well (Mahābhārata) — dronas-ring-in-the-well
+- [x] Ahalyā Is Freed (Rāmāyaṇa) — ahalya-is-freed
+- [x] The Pāṇḍavas Escape the House of Lac (Mahābhārata) — pandavas-escape-the-house-of-lac
+- [x] Kaikeyī's Two Boons and Mantharā's Whisper (Rāmāyaṇa) — kaikeyis-two-boons
 
 ## Next
-- [ ] Ahalyā Is Freed (Rāmāyaṇa) — Ahalyā, Gautama, Rāma
-- [ ] The Pāṇḍavas Escape the House of Lac (Mahābhārata) — Vidura, Bhīma, Kuntī
-- [ ] Kaikeyī's Two Boons and Mantharā's Whisper (Rāmāyaṇa) — Kaikeyī, Mantharā, Daśaratha
 - [ ] Bhīma and the Demon Bakāsura (Mahābhārata) — Bhīma, Kuntī
 - [ ] Guha the Boatman (Rāmāyaṇa) — Guha, Rāma, Sītā
 - [ ] Hiḍimbā and Little Ghaṭotkaca (Mahābhārata) — Hiḍimbā, Bhīma, Ghaṭotkaca
