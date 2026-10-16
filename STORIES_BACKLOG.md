@@ -32,11 +32,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Ahalyā Is Freed (Rāmāyaṇa) — ahalya-is-freed
 - [x] The Pāṇḍavas Escape the House of Lac (Mahābhārata) — pandavas-escape-the-house-of-lac
 - [x] Kaikeyī's Two Boons and Mantharā's Whisper (Rāmāyaṇa) — kaikeyis-two-boons
+- [x] Bhīma and the Demon Bakāsura (Mahābhārata) — bhima-and-bakasura
+- [x] Guha the Boatman (Rāmāyaṇa) — guha-the-boatman
+- [x] Hiḍimbā and Little Ghaṭotkaca (Mahābhārata) — hidimba-and-ghatotkacha
 
 ## Next
-- [ ] Bhīma and the Demon Bakāsura (Mahābhārata) — Bhīma, Kuntī
-- [ ] Guha the Boatman (Rāmāyaṇa) — Guha, Rāma, Sītā
-- [ ] Hiḍimbā and Little Ghaṭotkaca (Mahābhārata) — Hiḍimbā, Bhīma, Ghaṭotkaca
 - [ ] Lakṣmaṇa's Line (Rāmāyaṇa) — Lakṣmaṇa, Sītā
 - [ ] Arjuna Wins Draupadī — the Fish Target (Mahābhārata) — Arjuna, Draupadī, Drupada
 - [ ] The Golden Deer — Mārīca's Trick (Rāmāyaṇa) — Mārīca, Rāvaṇa, Rāma
