@@ -177,6 +177,7 @@ body {
 }
 #view-home.active { height: 100%; }
 #view-library.active { min-height: 100%; }
+#view-ramayana-cover.active { display: flex; flex-direction: column; padding: 0; max-width: 100%; width: 100%; margin: 0; height: 100%; }
 /* Chapter transition animations — small translate so nothing clips */
 @keyframes slideInRight { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes slideInLeft  { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: translateX(0); } }
@@ -1288,6 +1289,7 @@ body {
   <div class="view" id="view-kids"></div>
   <div class="view" id="view-telugu"></div>
   <div class="view" id="view-stories"></div>
+  <div class="view" id="view-ramayana-cover"></div>
   <div class="view" id="view-ramayana"></div>
   <div class="view" id="view-rmyread"></div>
   <div class="view" id="view-panch">
@@ -3672,11 +3674,12 @@ function showView(v) {
   // Show/hide chrome based on view
   const isHome = (v === 'home');
   const isLibrary = (v === 'library');
-  document.getElementById('topbar').style.display = (isHome || isLibrary) ? 'none' : '';
-  document.getElementById('bottomnav').style.display = (isHome || isLibrary) ? 'none' : '';
-  // Lock scroll on the home screen only; the library of texts scrolls as it grows
+  const isPoster = (v === 'ramayana-cover');
+  document.getElementById('topbar').style.display = (isHome || isLibrary || isPoster) ? 'none' : '';
+  document.getElementById('bottomnav').style.display = (isHome || isLibrary || isPoster) ? 'none' : '';
+  // Lock scroll on home and poster screens; library and others scroll freely
   const mainEl = document.getElementById('main');
-  if (isHome) {
+  if (isHome || isPoster) {
     mainEl.classList.add('no-scroll');
   } else {
     mainEl.classList.remove('no-scroll');
@@ -3756,6 +3759,7 @@ function renderCurrentView() {
   else if (state.view === 'kids') renderKids();
   else if (state.view === 'telugu') renderTelugu();
   else if (state.view === 'stories') renderStories();
+  else if (state.view === 'ramayana-cover') { if (window.renderRamayanaCover) renderRamayanaCover(); }
   else if (state.view === 'ramayana') { if (window.renderRamayana) renderRamayana(); }
   else if (state.view === 'rmyread') { if (window.renderRmyRead) renderRmyRead(); }
   if (state.view !== 'home' && state.view !== 'library') updateTopbar();
@@ -3764,7 +3768,7 @@ function renderCurrentView() {
 function updateTopbar() {
   const t = document.getElementById('topbar-title');
   const recBtn = document.getElementById('btn-recite');
-  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', ramayana: 'ramayana', rmyread: 'ramayana' };
+  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana' };
   const activeSec = VIEW_TAB[state.view] || state.section;
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === activeSec));
   if (VIEW_TAB[state.view]) {
@@ -4189,8 +4193,9 @@ function showViewWithTransition(v, dir) {
   if (bn) bn.classList.add('active');
   const isHome = (v === 'home');
   const isLibrary2 = (v === 'library');
-  document.getElementById('topbar').style.display = (isHome || isLibrary2) ? 'none' : '';
-  document.getElementById('bottomnav').style.display = (isHome || isLibrary2) ? 'none' : '';
+  const isPoster2 = (v === 'ramayana-cover');
+  document.getElementById('topbar').style.display = (isHome || isLibrary2 || isPoster2) ? 'none' : '';
+  document.getElementById('bottomnav').style.display = (isHome || isLibrary2 || isPoster2) ? 'none' : '';
   navDepth++;
   try { renderCurrentView(); } finally { navDepth--; }
   navRecord();
