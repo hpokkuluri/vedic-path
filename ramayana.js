@@ -217,8 +217,8 @@
         <rect width="320" height="220" fill="url(#${g}a)"/>
         <g fill="#3f7a46"><ellipse cx="30" cy="80" rx="44" ry="50"/><ellipse cx="300" cy="70" rx="46" ry="54"/></g><g fill="#5a3a1e"><rect x="26" y="110" width="9" height="70"/><rect x="296" y="104" width="9" height="76"/></g>
         <rect y="176" width="320" height="44" fill="#7aae5a"/><g fill="#f08aa8"><circle cx="60" cy="184" r="4"/><circle cx="90" cy="192" r="3"/><circle cx="240" cy="186" r="4"/><circle cx="270" cy="196" r="3"/></g>
-        <circle cx="160" cy="128" r="70" fill="url(#${g}b)"/>
-        <g transform="translate(160 176)"><g stroke="#d49a2a" stroke-width="5" stroke-linecap="round"><path d="M-26 -36 L-30 0"/><path d="M-14 -34 L-12 0"/><path d="M16 -34 L14 0"/><path d="M28 -36 L32 0"/></g>
+        <circle cx="150" cy="128" r="70" fill="url(#${g}b)"/>
+        <g transform="translate(140 176)"><g stroke="#d49a2a" stroke-width="5" stroke-linecap="round"><path d="M-26 -36 L-30 0"/><path d="M-14 -34 L-12 0"/><path d="M16 -34 L14 0"/><path d="M28 -36 L32 0"/></g>
         <ellipse cx="0" cy="-46" rx="36" ry="16" fill="#f0b830"/><path d="M28 -52 Q36 -76 46 -80 L54 -74 Q46 -64 40 -48Z" fill="#f0b830"/><ellipse cx="50" cy="-80" rx="11" ry="7" fill="#f0b830"/>
         <g fill="#e8e8f8">${[[-18, -50], [-4, -44], [10, -52], [-26, -42], [20, -42]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3"/>`).join('')}</g>
         <path d="M46 -86 L40 -104 M40 -104 L34 -110 M40 -104 L46 -112 M54 -86 L60 -104 M60 -104 L56 -112 M60 -104 L68 -108" stroke="#7a5ac0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
