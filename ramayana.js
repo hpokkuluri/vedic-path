@@ -195,6 +195,53 @@
         <g fill="#f6d27a"><circle cx="141" cy="124" r="3"/><circle cx="179" cy="124" r="3"/></g>
         <path d="M160 30 v-14 M150 20 h20" stroke="#f6d27a" stroke-width="3"/>
         <g fill="#f6e2c0" opacity=".85"><circle cx="40" cy="190" r="7"/><path d="M30 220 Q40 196 50 220Z"/><circle cx="280" cy="190" r="7"/><path d="M270 220 Q280 196 290 220Z"/></g>`,
+      // Pañcavaṭī: a leaf hut under five banyan trees beside the Godāvarī
+      panchavati: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe8f2"/><stop offset="1" stop-color="#f4f0dc"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="270" cy="46" r="18" fill="#fff4c8"/>
+        <path d="M0 120 Q70 96 150 112 T320 104 L320 160 L0 160Z" fill="#8cb77a"/>
+        <g fill="#3f7a46">${[30, 80, 250, 296].map((x, i) => `<rect x="${x - 4}" y="${84 + i % 2 * 6}" width="8" height="${56 - i % 2 * 6}" fill="#5a3a1e"/><ellipse cx="${x}" cy="${78 + i % 2 * 6}" rx="${30 - i % 2 * 4}" ry="22"/>`).join('')}</g>
+        <g transform="translate(160 150)"><path d="M-40 0 L0 -40 L40 0Z" fill="#a0783a"/><path d="M-34 -2 L0 -34 L34 -2" stroke="#7a5a2a" stroke-width="2" fill="none"/><rect x="-32" y="0" width="64" height="26" fill="#c8a060"/><rect x="-8" y="6" width="16" height="20" fill="#5a3a1a"/></g>
+        <rect y="176" width="320" height="44" fill="#5aa0c0"/><g stroke="#e0f2f7" stroke-width="2" opacity=".7"><path d="M30 194h28"/><path d="M200 204h34"/><path d="M120 212h22"/></g>
+        <g fill="#f08aa8"><circle cx="60" cy="188" r="4"/><circle cx="250" cy="190" r="4"/></g><g fill="#3f8a4f"><ellipse cx="60" cy="192" rx="9" ry="3"/><ellipse cx="250" cy="194" rx="9" ry="3"/></g>`,
+      // Laṅkā: a golden city on an island at night
+      lanka: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#140c30"/><stop offset="1" stop-color="#3a2050"/></linearGradient><radialGradient id="${g}b" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><g fill="#fff" opacity=".7"><circle cx="30" cy="24" r="1.2"/><circle cx="90" cy="40" r="1"/><circle cx="290" cy="30" r="1.4"/><circle cx="250" cy="60" r="1"/></g>
+        <circle cx="160" cy="110" r="110" fill="url(#${g}b)"/>
+        <path d="M30 170 Q60 120 120 116 Q160 96 200 116 Q260 120 290 170Z" fill="#2f5a3a"/>
+        <g fill="#e8b84a"><rect x="110" y="70" width="100" height="56"/><rect x="92" y="94" width="22" height="34"/><rect x="206" y="94" width="22" height="34"/><rect x="146" y="44" width="28" height="30"/></g>
+        <g fill="#f6d27a"><path d="M140 44 L160 18 L180 44Z"/><path d="M88 94 L103 76 L118 94Z"/><path d="M202 94 L217 76 L232 94Z"/></g>
+        <g fill="#7a3a1a">${[124, 144, 164, 184].map(x => `<rect x="${x}" y="98" width="10" height="16" rx="5"/>`).join('')}</g>
+        <rect y="168" width="320" height="52" fill="#1d2d52"/><g stroke="#f6d27a" stroke-width="2" opacity=".45"><path d="M120 182h80"/><path d="M140 196h44"/></g>`,
+      // the golden deer with jewelled antlers in a flowering glade
+      deer: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3c8"/><stop offset="1" stop-color="#eef6d8"/></linearGradient><radialGradient id="${g}b" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2a0" stop-opacity=".8"/><stop offset="1" stop-color="#fff2a0" stop-opacity="0"/></radialGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/>
+        <g fill="#3f7a46"><ellipse cx="30" cy="80" rx="44" ry="50"/><ellipse cx="300" cy="70" rx="46" ry="54"/></g><g fill="#5a3a1e"><rect x="26" y="110" width="9" height="70"/><rect x="296" y="104" width="9" height="76"/></g>
+        <rect y="176" width="320" height="44" fill="#7aae5a"/><g fill="#f08aa8"><circle cx="60" cy="184" r="4"/><circle cx="90" cy="192" r="3"/><circle cx="240" cy="186" r="4"/><circle cx="270" cy="196" r="3"/></g>
+        <circle cx="160" cy="128" r="70" fill="url(#${g}b)"/>
+        <g transform="translate(160 176)"><g stroke="#d49a2a" stroke-width="5" stroke-linecap="round"><path d="M-26 -36 L-30 0"/><path d="M-14 -34 L-12 0"/><path d="M16 -34 L14 0"/><path d="M28 -36 L32 0"/></g>
+        <ellipse cx="0" cy="-46" rx="36" ry="16" fill="#f0b830"/><path d="M28 -52 Q36 -76 46 -80 L54 -74 Q46 -64 40 -48Z" fill="#f0b830"/><ellipse cx="50" cy="-80" rx="11" ry="7" fill="#f0b830"/>
+        <g fill="#e8e8f8">${[[-18, -50], [-4, -44], [10, -52], [-26, -42], [20, -42]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="3"/>`).join('')}</g>
+        <path d="M46 -86 L40 -104 M40 -104 L34 -110 M40 -104 L46 -112 M54 -86 L60 -104 M60 -104 L56 -112 M60 -104 L68 -108" stroke="#7a5ac0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="54" cy="-82" r="1.6" fill="#222"/><path d="M-36 -48 l-8 -6" stroke="#f0b830" stroke-width="4" stroke-linecap="round"/></g>`,
+      // Jaṭāyu flies at Rāvaṇa’s chariot in a stormy sky
+      vulture: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3a5a"/><stop offset="1" stop-color="#c8865a"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><g fill="#5a4a6a" opacity=".7"><ellipse cx="70" cy="40" rx="80" ry="22"/><ellipse cx="260" cy="30" rx="70" ry="20"/></g>
+        <path d="M0 196 Q80 176 160 188 T320 182 L320 220 L0 220Z" fill="#4a5a3a"/>
+        <g transform="translate(220 120)"><path d="M-46 -6 H34 L22 14 H-34Z" fill="#c9962e"/><circle cx="-26" cy="16" r="9" fill="none" stroke="#7a4a1a" stroke-width="3"/><circle cx="16" cy="16" r="9" fill="none" stroke="#7a4a1a" stroke-width="3"/>
+        <rect x="-16" y="-34" width="12" height="28" fill="#3a1a3a"/><circle cx="-10" cy="-40" r="7" fill="#3a1a3a"/><path d="M-18 -46 L-10 -54 L-2 -46" fill="#e8b84a"/>
+        <circle cx="12" cy="-28" r="6" fill="#d8566a"/><path d="M6 -22 L18 -22 L20 -6 L4 -6Z" fill="#f0c040"/></g>
+        <g transform="translate(96 84)"><path d="M-70 -10 Q-36 -46 0 -14 Q36 -46 70 -10 Q36 -20 12 4 L-12 4 Q-36 -20 -70 -10Z" fill="#6a4a2a"/><circle cx="0" cy="-12" r="10" fill="#e8e0d0"/><path d="M8 -12 L20 -8 L8 -4Z" fill="#e0a020"/><circle cx="3" cy="-14" r="1.6" fill="#222"/>
+        <path d="M-8 6 L-12 18 M8 6 L12 18" stroke="#e0a020" stroke-width="3"/></g>`,
+      // Pampā lake with lotuses and Śabarī’s little hermitage
+      pampa: `<defs><linearGradient id="${g}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7d6a0"/><stop offset="1" stop-color="#fbeedb"/></linearGradient></defs>
+        <rect width="320" height="220" fill="url(#${g}a)"/><circle cx="70" cy="56" r="20" fill="#fff4cc"/>
+        <path d="M0 110 L50 70 L90 96 L140 56 L190 98 L240 66 L320 110 L320 130 L0 130Z" fill="#b89a7a" opacity=".7"/>
+        <path d="M0 126 Q160 110 320 126 L320 150 L0 150Z" fill="#8cb77a"/>
+        <rect y="148" width="320" height="72" fill="#6ab0c8"/><g stroke="#e0f2f7" stroke-width="2" opacity=".7"><path d="M40 160h26"/><path d="M180 172h30"/><path d="M110 200h22"/></g>
+        <g>${[[60, 182], [110, 168], [200, 190], [250, 166], [290, 196]].map(([x, y]) => `<ellipse cx="${x}" cy="${y + 4}" rx="12" ry="4" fill="#3f8a4f"/><path d="M${x - 6} ${y} Q${x} ${y - 14} ${x + 6} ${y} Z" fill="#f08aa8"/>`).join('')}</g>
+        <g transform="translate(260 132)"><path d="M-26 0 L0 -24 L26 0Z" fill="#a0783a"/><rect x="-20" y="0" width="40" height="14" fill="#c8a060"/></g>
+        <g transform="translate(206 146)"><circle cx="0" cy="-30" r="6" fill="#8a5a3a"/><path d="M-4 -36 Q0 -40 4 -36" stroke="#eee" stroke-width="3" fill="none"/><path d="M-9 -22 Q0 -26 9 -22 L11 0 L-11 0Z" fill="#a8723a"/>
+        <path d="M-22 -2 Q-14 6 -6 -2 L-8 4 Q-14 8 -20 4Z" fill="#8a5a2a"/><g fill="#7a3a8a"><circle cx="-16" cy="-4" r="2"/><circle cx="-12" cy="-5" r="2"/><circle cx="-14" cy="-7" r="2"/></g></g>`,
     };
     if (SC[name]) return `<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice">${SC[name]}</svg>`;
     // default: tamasa — river at dusk, sage, krauñca birds
