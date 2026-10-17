@@ -77,6 +77,20 @@ window.RMY_WHO = Object.assign(window.RMY_WHO || {}, {
   "te": "శబరి",
   "d": "A forest-dwelling woman who served the sages of Mataṅga’s āśrama and waited many years to see Rāma.",
   "dt": "మతంగ ఆశ్రమ మునులకు సేవ చేసిన అడవి స్త్రీ; రాముని దర్శనం కోసం ఎన్నో సంవత్సరాలు ఎదురుచూసింది."
+ },
+ "vibhishana": {
+  "av": "🙏",
+  "en": "Vibhīṣaṇa",
+  "te": "విభీషణుడు",
+  "d": "Rāvaṇa’s younger brother, righteous and devoted to Rāma. He objected to Sītā’s abduction and was eventually exiled from Laṅkā.",
+  "dt": "రావణుని తమ్ముడు, ధర్మపరుడు, రామభక్తుడు. సీతను అపహరించినందుకు వ్యతిరేకించి చివరకు లంక నుండి వెళ్ళగొట్టబడ్డాడు."
+ },
+ "sugriva": {
+  "av": "🐒",
+  "en": "Sugrīva",
+  "te": "సుగ్రీవుడు",
+  "d": "Monkey king of Kiṣkindhā, son of the sun-god Sūrya. Exiled by his brother Vāli, he hid on Mount Ṛśyamūka until Rāma came.",
+  "dt": "కిష్కింధ వానర రాజు, సూర్యదేవుని కుమారుడు. అన్న వాలి వల్ల బహిష్కరించబడి రాముడు వచ్చే వరకు ఋష్యమూక పర్వతంపై తలదాచుకున్నాడు."
  }
 });
 window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
@@ -1304,6 +1318,244 @@ window.RMY_CHAPTERS = (window.RMY_CHAPTERS || []).concat([
   "think": [
    "Even when she was alone and in danger, Sītā spoke bravely to Rāvaṇa. Where do you think her courage came from?",
    "ఒంటరిగా, ప్రమాదంలో ఉన్నప్పుడు కూడా సీత రావణునితో ధైర్యంగా మాట్లాడింది. ఆమెకు ఆ ధైర్యం ఎక్కడి నుండి వచ్చిందని మీరు అనుకుంటున్నారు?"
+  ]
+ },
+ {
+  "id": "aranya-13",
+  "kanda": "aranya",
+  "n": 13,
+  "order": 313,
+  "date": "2026-10-17",
+  "title": "Jaṭāyu's Battle",
+  "titleTe": "జటాయువు యుద్ధం",
+  "sargas": "50–52",
+  "scene": "storm",
+  "who": ["jatayu","ravana","sita","rama","lakshmana"],
+  "pages": [
+   [
+    ["p","When {jatayu|Jaṭāyu} heard Sītā's cry he leapt from his tree. He saw the golden chariot shooting through the sky, with Sītā weeping inside it, her yellow silk flying like a streak of lightning. "Stop, Rāvaṇa!" the old bird roared. "A coward steals a woman when her husband is away. I am Jaṭāyu, friend of Daśaratha. Turn back, or fight me!"",
+     "{jatayu|జటాయువు} సీత అరుపు విని చెట్టు నుండి లేచాడు. బంగారు రథం ఆకాశంలో దూసుకుపోతోంది, లోపల సీత ఏడుస్తోంది, ఆమె పసుపు పట్టుచీర మెరుపులా రెపరెపలాడుతోంది. "ఆగు రావణా!" వృద్ధ పక్షి గర్జించాడు. "భర్త లేని సమయంలో స్త్రీని ఎత్తుకుపోవడం పిరికితనం. నేను దశరథుని మిత్రుడు జటాయువును. వెనక్కి మళ్ళు, లేదా నాతో పోరాడు!""],
+    ["p","Rāvaṇa laughed and turned on Jaṭāyu. But the old bird was fiercer than he looked. Jaṭāyu raked Rāvaṇa's body with his talons, tore the canopy off the chariot with his beak, and sent his arrows scattering with his wings. He shattered Rāvaṇa's golden bow and killed the goblin-faced donkeys that pulled the chariot. The chariot crashed to the earth.",
+     "రావణుడు నవ్వి జటాయువు మీదికి తిరిగాడు. కానీ ఆ వృద్ధ పక్షి చూపులకు అనిపించినదానికంటే చాలా భయంకరంగా పోరాడాడు. జటాయువు తన గోళ్ళతో రావణుని శరీరాన్ని చీల్చాడు, ముక్కుతో రథం పైకప్పును పీకివేశాడు, రెక్కలతో బాణాలను చెదరగొట్టాడు. రావణుని బంగారు ధనుస్సును ముక్కలు చేసి, రథాన్ని లాగే పిశాచ ముఖాల గాడిదలను చంపాడు. రథం నేల మీద కూలింది."],
+    ["dyk","🦅","Jaṭāyu was very old — yet he fought one of the mightiest warriors in the world, alone, to protect Sītā. Real courage is not about being young or strong.","జటాయువు చాలా వయసు పైబడిన పక్షి — అయినా లోకంలో బలమైన వీరుల్లో ఒకనితో, ఒంటరిగా, సీత కోసం పోరాడాడు. నిజమైన ధైర్యానికి యువత్వం, బలం అవసరం లేదు."]
+   ],
+   [
+    ["p","Rāvaṇa jumped from the falling chariot, clutching Sītā. He took up another dreadful weapon and turned on the bird. Blow after blow fell on Jaṭāyu's wings and back. Still the old vulture fought on, tearing at Rāvaṇa's arms with beak and claw, until both his wings hung useless.",
+     "రావణుడు సీతను పట్టుకుని కూలే రథం నుండి దూకాడు. మరో భయంకరమైన ఆయుధం చేపట్టి పక్షి మీదికి తిరిగాడు. దెబ్బ మీద దెబ్బ జటాయువు రెక్కల మీద, వీపు మీద పడింది. అయినా ఆ వృద్ధ గ్రద్ద ముక్కుతో, గోళ్ళతో రావణుని చేతులను చీల్చుతూ పోరాడుతూనే ఉన్నాడు; చివరకు ఆయన రెండు రెక్కలూ నిష్ప్రయోజనంగా వేలాడాయి."],
+    ["p","At last Rāvaṇa cut off both Jaṭāyu's wings with his sword. The great bird fell, bleeding, to the earth. Sītā ran to him, weeping. But Rāvaṇa dragged her away, leapt back into the sky — now carrying her in his bare arms — and sped south towards Laṅkā.",
+     "చివరకు రావణుడు ఖడ్గంతో జటాయువు రెండు రెక్కలనూ నరికేశాడు. గొప్ప పక్షి రక్తమోడుతూ నేలమీద పడిపోయాడు. సీత ఏడుస్తూ ఆయన దగ్గరకు పరుగెత్తింది. కానీ రావణుడు ఆమెను లాక్కుని మళ్ళీ ఆకాశంలోకి దూకాడు — ఇప్పుడు తన చేతుల్లోనే పట్టుకుని — దక్షిణంగా లంక వైపు వేగంగా సాగిపోయాడు."],
+    ["p","As they flew over the mountains, Sītā saw five monkeys sitting on a peak below. Quickly she took off her veil and jewellery, wrapped them in her silk, and let the bundle fall — hoping those monkeys might one day reach Rāma. Then Laṅkā's shores rose ahead, and Sītā was gone from the forest forever.",
+     "పర్వతాల మీదుగా ఎగురుతుండగా సీత కింద ఒక శిఖరం మీద ఐదుగురు వానరులు కూర్చుని ఉండటం చూసింది. వెంటనే ఆమె తన వేలుపు, ఆభరణాలు తీసి పట్టు వస్త్రంలో చుట్టి కిందికి పడవేసింది — ఆ వానరులు ఏదైనా ఒక రోజు రాముడిని చేరుకుంటారేమోనని ఆశతో. తర్వాత లంక తీరం ముందు కనిపించింది; సీత అడవి నుండి ఎప్పటికీ మాయమైపోయింది."]
+   ]
+  ],
+  "remember": [
+   ["Jaṭāyu fought Rāvaṇa in the sky to save Sītā, despite his old age.","వయసు పైబడినా జటాయువు సీతను రక్షించడానికి ఆకాశంలో రావణునితో పోరాడాడు."],
+   ["Rāvaṇa cut off Jaṭāyu's wings; the great bird fell to the earth.","రావణుడు జటాయువు రెక్కలు నరికాడు; ఆ గొప్ప పక్షి నేల మీద పడిపోయాడు."],
+   ["Sītā dropped her jewels in a cloth bundle, hoping monkeys below would find them.","కింద ఉన్న వానరులు కనుగొంటారేమోనని సీత తన ఆభరణాలు గుడ్డలో చుట్టి పడవేసింది."]
+  ],
+  "think": [
+   "Jaṭāyu knew he could not win — yet he still fought. When is it right to try even when you might fail?",
+   "తను గెలవలేడని జటాయువుకు తెలుసు — అయినా పోరాడాడు. ఓడిపోయే అవకాశం ఉన్నా ప్రయత్నించడం ఎప్పుడు సరైనది?"
+  ]
+ },
+ {
+  "id": "aranya-14",
+  "kanda": "aranya",
+  "n": 14,
+  "order": 314,
+  "date": "2026-10-17",
+  "title": "Sītā in Laṅkā",
+  "titleTe": "లంకలో సీత",
+  "sargas": "53–56",
+  "scene": "lanka",
+  "who": ["ravana","sita","mandodari"],
+  "pages": [
+   [
+    ["p","Rāvaṇa brought Sītā down into golden Laṅkā. The city was breathtaking — towers of crystal and gold, wide streets, fragrant gardens, music everywhere. But Sītā saw none of its beauty. She was weeping, clinging to a pillar, her face turned away from Rāvaṇa.",
+     "రావణుడు సీతను బంగారు లంకలో దించాడు. ఆ నగరం అద్భుతంగా ఉంది — స్ఫటికం, బంగారంతో కట్టిన మిద్దెలు, వెడల్పాటి వీధులు, సువాసన తోటలు, అంతటా సంగీతం. కానీ సీత ఆ అందాన్నేదీ చూడలేదు. ఆమె ఒక స్తంభాన్ని పట్టుకుని ఏడుస్తోంది, రావణుని వైపు ముఖం తిప్పుకోకుండా."],
+    ["p","Rāvaṇa showed her his city and treasures, and promised her everything she could want. "One year," he said. "Give me one year. If in that time Rāma does not come for you, choose me instead. I will rule the three worlds at your feet." Sītā put a blade of grass between herself and Rāvaṇa, as if that small barrier were a wall of fire. "I will never be yours," she said.",
+     "రావణుడు తన నగరాన్ని, సంపదలను చూపించాడు, ఆమె కోరుకున్నదంతా ఇస్తానని మాట ఇచ్చాడు. "ఒక సంవత్సరం," అన్నాడు. "నాకు ఒక సంవత్సరం ఇవ్వు. ఆ సమయంలో రాముడు నీ కోసం రాకపోతే, బదులు నన్ను ఎంచుకో. నేను మూడు లోకాలను నీ పాదాల ముందు పాలిస్తాను." సీత రావణునికి, తనకు మధ్య ఒక గడ్డిపోచ ఉంచింది — ఆ చిన్న అడ్డు అగ్నిప్రాకారంలా. "నేను ఎప్పటికీ నీ దాన్ని కాను," అంది."],
+    ["dyk","🌿","Putting a blade of grass between herself and Rāvaṇa is one of the most famous images in the Rāmāyaṇa. Sītā had no weapon — only her faith in Rāma. That was enough.","సీత రావణునికి, తనకు మధ్య గడ్డిపోచ ఉంచడం రామాయణంలో అత్యంత ప్రసిద్ధమైన దృశ్యాలలో ఒకటి. ఆమె దగ్గర ఆయుధమేమీ లేదు — రాముని మీద విశ్వాసం మాత్రమే ఉంది. అది చాలు."]
+   ],
+   [
+    ["p","Rāvaṇa placed Sītā in a beautiful garden called the Aśoka grove. He set fierce rākṣasī guards around her — creatures with one ear, no ears, long noses, huge feet, twisted faces. They were told to frighten her, insult her, and wear her down until she agreed to marry Rāvaṇa.",
+     "రావణుడు సీతను అశోకవనం అనే అందమైన తోటలో ఉంచాడు. ఆమె చుట్టూ భయంకరమైన రాక్షసీ కాపలాదారులను నిలబెట్టాడు — ఒక చెవి ఉన్నవారు, చెవులు లేనివారు, పొడవైన ముక్కులు, పెద్ద పాదాలు, వంకర ముఖాలు ఉన్నవారు. ఆమెను భయపెట్టండి, అవమానించండి, రావణుడిని పెళ్ళి చేసుకుంటానని ఒప్పించేవరకు వేధించండి అని వారికి ఆదేశించాడు."],
+    ["p","Day after day they taunted her. Day after day Sītā sat under the great aśoka tree, thinking only of Rāma, clutching a blade of grass, refusing to eat, refusing to look at Rāvaṇa when he came to plead. She grew thin, her hair uncombed, her jewels dull. But her spirit never bent.",
+     "రోజూ వారు ఆమెను వేధించారు. రోజూ సీత ఆ పెద్ద అశోక వృక్షం కింద కూర్చుని, గడ్డిపోచ పట్టుకుని, రాముని గురించే ఆలోచిస్తూ, తినడానికి నిరాకరించి, రావణుడు వేడుకుంటూ వచ్చినప్పుడు అతని వైపు చూసేది కాదు. ఆమె సన్నబడింది, జుట్టు దువ్వుకోలేదు, ఆభరణాలు మెరుపు కోల్పోయాయి. కానీ ఆమె మనోధైర్యం ఏ నాడూ వంగలేదు."],
+    ["p","Among the rākṣasīs, one was different. Her name was Trijañā, and she was kind. She would sit with Sītā quietly, and once, after a frightening dream, she said, "Sītā, I dreamed of Rāma coming to Laṅkā, burning it, and carrying you home. Trust in Rāma. He will come."",
+     "రాక్షసీలలో ఒకరు భిన్నంగా ఉంది. ఆమె పేరు త్రిజట, మంచిది. ఆమె సీత దగ్గర మెల్లగా కూర్చునేది; ఒకసారి భయంకరమైన కల వచ్చిన తర్వాత ఇలా అంది: "సీతా, రాముడు లంకకు వచ్చి, దానిని తగలబెట్టి, నిన్ను ఇంటికి తీసుకెళ్ళే కల వచ్చింది. రాముని మీద నమ్మకం ఉంచు. ఆయన వస్తాడు.""]
+   ]
+  ],
+  "remember": [
+   ["Rāvaṇa gave Sītā one year to choose him; she refused utterly.","రావణుడు సీతకు తనను ఎంచుకోవడానికి ఒక సంవత్సరం ఇచ్చాడు; ఆమె పూర్తిగా నిరాకరించింది."],
+   ["Sītā placed a blade of grass between herself and Rāvaṇa.","సీత తనకు, రావణునికి మధ్య గడ్డిపోచ ఉంచింది."],
+   ["She was kept in the Aśoka grove, guarded by fierce rākṣasīs.","ఆమెను అశోకవనంలో భయంకరమైన రాక్షసీల కాపలాలో ఉంచారు."],
+   ["Trijañā, a kind rākṣasī, comforted Sītā and told her Rāma would come.","మంచి రాక్షసి త్రిజట సీతను ఓదార్చి రాముడు వస్తాడని చెప్పింది."]
+  ],
+  "think": [
+   "Sītā had no weapon but a blade of grass — yet she never gave in to Rāvaṇa. What kind of strength is this?",
+   "సీత దగ్గర గడ్డిపోచ తప్ప ఆయుధమేమీ లేదు — అయినా ఆమె రావణుని ముందు ఎప్పుడూ తలవంచలేదు. ఇది ఏ విధమైన శక్తి?"
+  ]
+ },
+ {
+  "id": "aranya-15",
+  "kanda": "aranya",
+  "n": 15,
+  "order": 315,
+  "date": "2026-10-17",
+  "title": "Rāma's Grief",
+  "titleTe": "రాముని శోకం",
+  "sargas": "57–66",
+  "scene": "forest",
+  "who": ["rama","lakshmana","sita"],
+  "pages": [
+   [
+    ["p","When Rāma came back from chasing the deer, Pañcavaṭī was silent. No Sītā at the door. No fire lit. He found Lakṣmaṇa coming through the forest and cried out in alarm — he had told Lakṣmaṇa never to leave her! But Lakṣmaṇa explained what Sītā had said, and Rāma's face went white.",
+     "జింకను తరిమి రాముడు తిరిగి వచ్చేసరికి పంచవటి నిశ్శబ్దంగా ఉంది. గుమ్మం దగ్గర సీత లేదు. అగ్ని వెలగడం లేదు. అడవిలో నుండి వస్తున్న లక్ష్మణుడు కనిపించగానే ఆందోళనగా అరిచాడు — సీతను విడిచి వెళ్ళవద్దని చెప్పాడు కదా! కానీ లక్ష్మణుడు సీత అన్న మాటలు వివరించాడు; రాముని ముఖం పాలిపోయింది."],
+    ["p","Rāma ran to the hut. Inside, he found Sītā's ornaments scattered on the floor, as if torn off in a struggle. He ran from tree to tree, calling her name. The trees did not answer. He asked the deer, the birds, the Godāvarī herself. Nobody had seen her. His mind began to unravel.",
+     "రాముడు కుటీరానికి పరుగెత్తాడు. లోపల సీత ఆభరణాలు నేల మీద చెల్లాచెదురుగా పడి ఉన్నాయి — పోరాటంలో తెగిపోయినట్లు. ఆయన చెట్టు నుండి చెట్టుకు పరుగెత్తి ఆమె పేరు పిలిచాడు. చెట్లు జవాబు చెప్పలేదు. జింకలను, పక్షులను, గోదావరినే అడిగాడు. ఎవరూ ఆమెను చూడలేదు. ఆయన మనసు చెదిరిపోవడం మొదలైంది."],
+    ["dyk","😢","Vālmīki devotes many verses to Rāma's grief — running from tree to tree, talking to the forest, almost losing his mind. Great sorrow is described honestly, not hidden away.","రాముని దుఃఖానికి వాల్మీకి చాలా శ్లోకాలు కేటాయించాడు — చెట్టు నుండి చెట్టుకు పరుగెత్తడం, అడవితో మాట్లాడడం, దాదాపు పిచ్చెత్తిపోవడం. గొప్ప దుఃఖాన్ని నిజాయితీగా చిత్రిస్తాడు, దాచిపెట్టడు."]
+   ],
+   [
+    ["p","Lakṣmaṇa stayed close to his brother, afraid of what Rāma might do in his grief. He gently reminded him: "You are the support of all living beings, brother. A great man does not lose himself to sorrow. Let us search the forest — signs will tell us what happened." Slowly Rāma pulled himself together.",
+     "రాముడు దుఃఖంలో ఏమైనా చేసుకుంటాడేమోనని లక్ష్మణుడు భయపడుతూ దగ్గరే ఉన్నాడు. మృదువుగా గుర్తు చేశాడు: "అన్నయ్యా, నువ్వు సర్వ జీవులకు ఆధారం. గొప్ప మనిషి శోకానికి లొంగిపోడు. అడవిని వెతుకుదాం — జాడలు ఏం జరిగిందో చెబుతాయి." మెల్లగా రాముడు తన్ను తాను సంభాళించుకున్నాడు."],
+    ["p","They followed the signs. They found the broken chariot, the dead goblin donkeys, the scattered arrows of Jaṭāyu's fight. They found flower garlands from Sītā's hair, lying on the grass. They found footprints of one enormous being — and the marks of a woman's feet, dragged and stumbling.",
+     "వారు ఆనవాళ్ళ వెంట నడిచారు. పగిలిన రథం, చనిపోయిన పిశాచ గాడిదలు, జటాయువు యుద్ధంలో చెల్లాచెదురైన బాణాలు కనుగొన్నారు. సీత జుట్టు నుండి రాలిన పూల దండలు గడ్డి మీద కనిపించాయి. ఒక అతిపెద్ద జీవి అడుగులు, వాటితోపాటు ఒక స్త్రీ కాళ్ళ గుర్తులు — లాగబడినట్లు, తడబడినట్లు."]
+   ],
+   [
+    ["p","Then they heard a weak sound. Under a tree lay the great vulture Jaṭāyu, his wings cut off, bathed in blood, barely breathing. When Rāma saw him he cried out — the bird was like a father to him now. "Who did this to you? Where is Sītā?"",
+     "అప్పుడు ఒక నీరసమైన శబ్దం వినిపించింది. ఒక చెట్టు కింద రెక్కలు నరికిపోయి, రక్తంలో తడిసి,辛కష్టంగా శ్వాసిస్తూ గొప్ప గ్రద్ద జటాయువు పడి ఉన్నాడు. ఆయనను చూసి రాముడు ఆక్రందించాడు — ఆ పక్షి ఇప్పుడు ఆయనకు తండ్రిలాంటివాడు. "నీకు ఇలా ఎవరు చేశారు? సీత ఎక్కడ?""],
+    ["p","With immense effort, Jaṭāyu opened his eyes. "Rāma… Rāvaṇa… king of Laṅkā… he took her… south… I fought him… as long as I could…" His voice faded. Rāma held the dying bird in his arms. "You did more than any warrior could have done, dear Jaṭāyu. Rest now."",
+     "అపారమైన శ్రమతో జటాయువు కళ్ళు తెరిచాడు. "రామా… రావణుడు… లంకా రాజు… ఆమెను తీసుకెళ్ళాడు… దక్షిణంగా… నేను వీలైనంత సేపు పోరాడాను…" గొంతు సన్నబడింది. రాముడు చనిపోతున్న పక్షిని తన చేతుల్లో పట్టుకున్నాడు. "ఏ వీరుడూ చేయగలిగినదానికంటే ఎక్కువ చేశావు, ప్రియమైన జటాయూ. ఇప్పుడు విశ్రమించు.""]
+   ]
+  ],
+  "remember": [
+   ["Rāma came back to find Sītā gone and the hut silent.","రాముడు తిరిగి వచ్చేసరికి సీత కనిపించలేదు, కుటీరం నిశ్శబ్దంగా ఉంది."],
+   ["He ran from tree to tree calling her name, nearly out of his mind with grief.","ఆయన చెట్టు నుండి చెట్టుకు పరుగెత్తి ఆమె పేరు పిలిచాడు, దుఃఖంతో దాదాపు పిచ్చెత్తిపోయాడు."],
+   ["Lakṣmaṇa steadied him; they found signs of the struggle and the chariot.","లక్ష్మణుడు ఆయనను సంభాళించాడు; వారు పోరాటపు ఆనవాళ్ళు, రథం కనుగొన్నారు."],
+   ["They found Jaṭāyu, barely alive, who told them Rāvaṇa had taken Sītā south.","వారు దాదాపు ప్రాణం పోతున్న జటాయువును కనుగొన్నారు; రావణుడు సీతను దక్షిణంగా తీసుకెళ్ళాడని ఆయన చెప్పాడు."]
+  ],
+  "think": [
+   "Lakṣmaṇa had to comfort his older brother when Rāma almost lost hope. Have you ever had to support someone stronger than you?",
+   "రాముడు దాదాపు ధైర్యం కోల్పోయినప్పుడు లక్ష్మణుడు తన అన్నయ్యను ఓదార్చవలసి వచ్చింది. మీకంటే బలమైన వారికి ఎప్పుడైనా మీరు మద్దతు ఇవ్వవలసి వచ్చిందా?"
+  ]
+ },
+ {
+  "id": "aranya-16",
+  "kanda": "aranya",
+  "n": 16,
+  "order": 316,
+  "date": "2026-10-17",
+  "title": "Jaṭāyu's Last Words",
+  "titleTe": "జటాయువు చివరి మాటలు",
+  "sargas": "67–68",
+  "scene": "forest",
+  "who": ["jatayu","rama","lakshmana"],
+  "pages": [
+   [
+    ["p","Rāma sat on the ground beside the fallen Jaṭāyu and took the old bird's head in his lap. Gently he stroked his feathers. Jaṭāyu described Rāvaṇa — his golden chariot drawn by goblin donkeys, his ten heads and twenty arms, his shining armour, the direction he had flown. He told Rāma everything he had seen.",
+     "రాముడు పడిపోయిన జటాయువు పక్కన నేల మీద కూర్చుని ఆ వృద్ధ పక్షి తలను తన ఒడిలో పెట్టుకున్నాడు. మృదువుగా రెక్కలను నిమిరాడు. జటాయువు రావణుని వర్ణించాడు — పిశాచ ముఖాల గాడిదలు కట్టిన బంగారు రథం, పది తలలు, ఇరవై చేతులు, మెరిసే కవచం, ఏ దిశలో ఎగిరిపోయాడో. తాను చూసిన ప్రతీదీ రామునికి చెప్పాడు."],
+    ["p","Then Jaṭāyu said, "I have done what I could, Rāma. Now I am ready to go. You will find Sītā. I know it." And as the sun stood bright in the sky, the great king of vultures breathed his last in the arms of Rāma.",
+     "తర్వాత జటాయువు అన్నాడు: "వీలైనంత చేశాను రామా. ఇప్పుడు వెళ్ళడానికి సిద్ధంగా ఉన్నాను. నువ్వు సీతను కనుగొంటావు. నాకు తెలుసు." ఆకాశంలో సూర్యుడు ప్రకాశంగా ఉన్న సమయంలో గ్రద్దల మహారాజు రాముని చేతుల్లో చివరి శ్వాస తీసుకున్నాడు."],
+    ["dyk","🔥","Rāma performed the last rites for Jaṭāyu as he would for his own father — with fire, with mantras, with tears. A king's duties do not end at the palace gate.","రాముడు జటాయువుకు తన తండ్రికి చేసినట్లే అంత్యక్రియలు చేశాడు — అగ్నితో, మంత్రాలతో, కన్నీళ్ళతో. రాజు కర్తవ్యాలు రాజభవనం గుమ్మం దాటి ఆగవు."]
+   ],
+   [
+    ["p","Rāma and Lakṣmaṇa gathered wood and made a pyre. Rāma placed Jaṭāyu upon it and lit the fire, chanting the funeral mantras. He offered water from the Godāvarī and prayed that the old bird's soul would go to a place of peace.",
+     "రాముడు, లక్ష్మణుడు కలపను సేకరించి చితి పేర్చారు. రాముడు అంత్యక్రియల మంత్రాలు చదువుతూ జటాయువును అందులో ఉంచి నిప్పు అంటించాడు. గోదావరి నీటితో తర్పణం విడిచి, ఆ వృద్ధ పక్షి ఆత్మ శాంతిలో ఉండాలని ప్రార్థించాడు."],
+    ["p","Then the two brothers set out into the vast, empty forest. They knew now: Rāvaṇa, king of Laṅkā, had Sītā. But where was Laṅkā? Who could help them? The way south stretched ahead, dark and unknown.",
+     "తర్వాత ఇద్దరు అన్నదమ్ములు విశాలమైన, నిర్జనమైన అడవిలోకి బయలుదేరారు. వారికి ఇప్పుడు తెలిసింది: లంకా రాజు రావణుని దగ్గర సీత ఉంది. కానీ లంక ఎక్కడ ఉంది? ఎవరు సహాయం చేస్తారు? దక్షిణం వైపు దారి చీకటిగా, తెలియని విధంగా ముందు సాగింది."]
+   ]
+  ],
+  "remember": [
+   ["Jaṭāyu described Rāvaṇa to Rāma before dying in his arms.","చనిపోయే ముందు జటాయువు రావణుని గురించి రామునికి వర్ణించాడు, రాముని చేతుల్లో ప్రాణం విడిచాడు."],
+   ["Rāma performed the last rites for Jaṭāyu as for his own father.","రాముడు జటాయువుకు తన తండ్రికి చేసినట్లే అంత్యక్రియలు చేశాడు."],
+   ["The brothers now knew Rāvaṇa had Sītā and set out south.","సీత రావణుని దగ్గర ఉందని తెలిసి అన్నదమ్ములు దక్షిణంగా బయలుదేరారు."]
+  ],
+  "think": [
+   "Rāma treated Jaṭāyu, a bird, with the same respect as a father. What does this tell you about how Rāma saw all living beings?",
+   "రాముడు జటాయువును, ఒక పక్షిని, తండ్రిలాగే గౌరవించాడు. సర్వ జీవుల పట్ల రాముడికి ఉన్న భావం ఏమిటో దీని వల్ల ఏం తెలుస్తుంది?"
+  ]
+ },
+ {
+  "id": "aranya-17",
+  "kanda": "aranya",
+  "n": 17,
+  "order": 317,
+  "date": "2026-10-17",
+  "title": "Kabandha",
+  "titleTe": "కబంధుడు",
+  "sargas": "69–73",
+  "scene": "forest",
+  "who": ["kabandha","rama","lakshmana"],
+  "pages": [
+   [
+    ["p","Deep in the Kravyāda forest, the brothers heard a crashing, roaring sound. Suddenly a monstrous creature burst through the trees — huge as a mountain, headless, with a single enormous mouth in its belly and arms a full yojana long. This was {kabandha|Kabandha}, the headless demon. He swept both brothers up in his arms before they could react.",
+     "క్రవ్యాద అరణ్యంలో లోపలికి వెళ్ళగానే అన్నదమ్ములకు ఒక భారీ శబ్దం వినిపించింది. అకస్మాత్తుగా చెట్ల మధ్య నుండి ఒక భయంకరమైన జీవి దూసుకువచ్చింది — కొండంత ఎత్తు, తల లేదు, కడుపులో ఒక్క పెద్ద నోరు, ఒక యోజన పొడవు చేతులు. ఇదే {kabandha|కబంధుడు}, తల లేని రాక్షసుడు. వారు కదలక ముందే ఆ చేతులు అన్నదమ్ములిద్దరినీ పట్టుకున్నాయి."],
+    ["p","Rāma and Lakṣmaṇa struggled in the enormous grip. But the arms were too strong. "Cut them off!" said Rāma. Lakṣmaṇa drew his sword and hacked off the left arm; Rāma cut off the right. With a howl of pain, the giant fell.",
+     "రాముడు, లక్ష్మణుడు ఆ భారీ పట్టులో కొట్టుమిట్టాడారు. కానీ ఆ చేతులు చాలా బలంగా ఉన్నాయి. "వాటిని నరకు!" అన్నాడు రాముడు. లక్ష్మణుడు ఖడ్గం తీసి ఎడమ చేతిని నరికాడు; రాముడు కుడి చేతిని నరికాడు. బాధతో అరుస్తూ ఆ రాక్షసుడు నేలకొరిగాడు."],
+    ["dyk","🌀","Kabandha means 'a body without a head'. His story is one of the most unusual in the Rāmāyaṇa — a terrifying monster who turns out to be a guide.","కబంధుడు అంటే 'తల లేని శరీరం'. ఆయన కథ రామాయణంలో అత్యంత అసాధారణమైనది — భయంకరమైన రాక్షసుడు మార్గదర్శకుడిగా తేలుతాడు."]
+   ],
+   [
+    ["p","From the ground, Kabandha spoke: "I knew you would come. I am not truly a rākṣasa. I was once Danu, a gandharva of beautiful form — but a sage's curse gave me this grotesque body. Indra's thunderbolt knocked off my head long ago, and this is how I have lived since. Who are you?"",
+     "నేల మీద నుండి కబంధుడు మాట్లాడాడు: "మీరు వస్తారని తెలుసు. నేను నిజానికి రాక్షసుడిని కాదు. నేను ఒకప్పుడు అందమైన రూపం గల గంధర్వుడు దనుడిని — కానీ ఒక మహర్షి శాపం వల్ల ఈ వికృతమైన శరీరం పొందాను. చాలా కాలం క్రితం ఇంద్రుని వజ్రాయుధం నా తలను పడగొట్టింది; అప్పటి నుండి ఇలా జీవిస్తున్నాను. మీరు ఎవరు?""],
+    ["p","When Rāma told him, Kabandha's eyes filled with relief. "Rāma! You are the one the sage foretold. Only by your hand could I be freed. Burn my body with fire — then I will rise in my true form and tell you how to find Sītā." Rāma and Lakṣmaṇa dug a pit and placed Kabandha in it with fire and offerings.",
+     "రాముడు తానెవరో చెప్పగానే కబంధుని కళ్ళు ఊరటతో నిండాయి. "రామా! మహర్షి చెప్పిన వాడివి నువ్వే. నీ చేతి వల్లే నాకు విముక్తి కలుగుతుంది. అగ్నితో నా శరీరాన్ని దహించు — అప్పుడు నేను నా నిజ రూపంలో లేచి సీతను ఎలా కనుగొనాలో చెబుతాను." రాముడు, లక్ష్మణుడు గొయ్యి తవ్వి కబంధుడిని అందులో ఉంచి అగ్నితో, ఆహుతులతో దహన సంస్కారాలు చేశారు."],
+    ["p","From the flames rose a shining being in golden garments, with garlands and earrings, beautiful as the sun. This was Danu the gandharva, free at last. He told Rāma: "Go to the lake Pampā. On its shore lives a hermit woman named {shabari|Śabarī}. She will know the next step. And seek Sugrīva, the monkey king on Mount Ṛśyamūka. Make him your ally — he will help you find Sītā."",
+     "ఆ జ్వాలల నుండి బంగారు వస్త్రాలు, మాలలు, చెవికమ్మలతో, సూర్యుని వంటి అందంతో ఒక తేజోమయ జీవి లేచాడు. ఇదే స్వేచ్ఛ పొందిన గంధర్వుడు దనుడు. రాముడికి ఇలా చెప్పాడు: "పంపా సరస్సుకు వెళ్ళు. దాని ఒడ్డున {shabari|శబరి} అనే తాపసి స్త్రీ ఉంటుంది. ఆమె తదుపరి అడుగు చెబుతుంది. ఋష్యమూక పర్వతంపై వానరరాజు సుగ్రీవుని కలు. ఆయనను మిత్రుడిగా చేసుకో — ఆయన సీతను కనుగొనడంలో సహాయం చేస్తాడు.""]
+   ]
+  ],
+  "remember": [
+   ["Kabandha, a headless monster, seized the brothers in his huge arms.","తల లేని రాక్షసుడు కబంధుడు తన పెద్ద చేతులతో అన్నదమ్ములను పట్టుకున్నాడు."],
+   ["The brothers cut off his arms; he revealed he was a cursed gandharva.","అన్నదమ్ములు ఆయన చేతులు నరికారు; తాను శాపగ్రస్తమైన గంధర్వుడనని ఆయన చెప్పాడు."],
+   ["Freed by Rāma's fire, Kabandha told them to seek Śabarī, then Sugrīva.","రాముని అగ్నితో విముక్తుడై, కబంధుడు శబరిని, తర్వాత సుగ్రీవుని చేరుకోమని చెప్పాడు."]
+  ],
+  "think": [
+   "Kabandha was terrifying to look at, but inside was a good being who had suffered unjustly. How can we avoid judging people by appearance alone?",
+   "కబంధుడు చూడటానికి భయంకరంగా ఉన్నాడు, కానీ లోపల అన్యాయంగా బాధపడిన మంచి జీవి ఉన్నాడు. రూపాన్ని బట్టి మాత్రమే తీర్పు ఇవ్వకుండా ఎలా ఉండగలం?"
+  ]
+ },
+ {
+  "id": "aranya-18",
+  "kanda": "aranya",
+  "n": 18,
+  "order": 318,
+  "date": "2026-10-17",
+  "title": "Śabarī",
+  "titleTe": "శబరి",
+  "sargas": "74–75",
+  "scene": "tapas",
+  "who": ["shabari","rama","lakshmana","matanga"],
+  "pages": [
+   [
+    ["p","Rāma and Lakṣmaṇa walked to the lake Pampā. Its waters were calm and blue, full of lotus flowers, and birds of every colour sang in the trees along its shore. Among flowering trees stood a small hermitage. Outside it sat an old woman, thin from long fasting, dressed in bark, her white hair matted, her face alight with joy.",
+     "రాముడు, లక్ష్మణుడు పంపా సరస్సుకు నడిచారు. దాని నీళ్ళు నిర్మలంగా, నీలంగా, తామర పూలతో నిండి ఉన్నాయి; ఒడ్డున చెట్లలో రంగురంగుల పక్షులు పాడుతున్నాయి. పూలచెట్ల మధ్య ఒక చిన్న ఆశ్రమం ఉంది. దాని ముందు ఒక వృద్ధ స్త్రీ కూర్చుని ఉంది — దీర్ఘ ఉపవాసంతో సన్నబడి, నారచీరలు ధరించి, తెల్లని జటాజూటం, ముఖంలో ఆనందం వెలుగుతోంది."],
+    ["p","This was {shabari|Śabarī}. All her life she had served the sages of the Mataṅga āśrama — fetching wood and water, sweeping the paths, gathering food. When the old sage Mataṅga was dying, he had said, "Śabarī, stay here after I am gone. Rāma will come one day. That will be the completion of your life's service."",
+     "ఇదే {shabari|శబరి}. తన జీవితమంతా మతంగ ఆశ్రమంలోని మునులకు సేవ చేసింది — కట్టెలు, నీళ్ళు తీసుకురావడం, దారులు ఊడ్చడం, ఆహారం సేకరించడం. మతంగ మహర్షి చనిపోతూ ఇలా అన్నాడు: "శబరీ, నేను పోయిన తర్వాత ఇక్కడే ఉండు. ఒక రోజు రాముడు వస్తాడు. అదే నీ జీవిత సేవకు పరిపూర్ణత.""],
+    ["dyk","🫐","Every day for many years Śabarī went into the forest to taste berries — throwing away the sour ones, keeping only the sweet. She wanted to offer Rāma only the best. This detail has moved hearts for thousands of years.","ఎన్నో సంవత్సరాలు రోజూ శబరి అడవిలోకి వెళ్ళి పళ్ళు రుచి చూసేది — పులుపుగా ఉన్నవి పారేసి, తీయగా ఉన్నవి మాత్రమే ఉంచేది. రామునికి ఉత్తమంగా ఉన్నవి మాత్రమే ఇవ్వాలని. ఈ వివరం వేల సంవత్సరాలుగా హృదయాలను కదిలిస్తోంది."]
+   ],
+   [
+    ["p","When Śabarī saw Rāma coming, she rose, her eyes full of tears. She bowed to him, touching his feet again and again. She washed his feet and Lakṣmaṇa's with her own hands, and offered them water and fruits she had gathered and tasted herself — keeping only the sweetest ones for him.",
+     "రాముడు వస్తుండటం చూసి శబరి లేచింది, కళ్ళు నీళ్ళతో నిండాయి. ఆయన పాదాలకు మళ్ళీ మళ్ళీ నమస్కరించింది. తన చేతులతో రాముని, లక్ష్మణుని పాదాలు కడిగి, నీళ్ళు, తాను స్వయంగా రుచి చూసి సేకరించిన పండ్లు — తీయగా ఉన్నవి మాత్రమే — వడ్డించింది."],
+    ["p","Rāma ate gladly. "Śabarī," he said, "tell me of this lake, this forest, your life here." For a long time she spoke, and Rāma listened with full attention. Then she said, "My life is complete now, Rāma. I have seen you." She lit a fire, stepped into it, and rose from the flames as a shining being — going to the world her tapas had earned.",
+     "రాముడు సంతోషంగా తిన్నాడు. "శబరీ," అన్నాడు, "ఈ సరస్సు గురించి, ఈ అడవి గురించి, ఇక్కడ నీ జీవితం గురించి చెప్పు." చాలా సేపు ఆమె మాట్లాడింది, రాముడు పూర్తి శ్రద్ధతో విన్నాడు. తర్వాత అంది: "నా జీవితం ఇప్పుడు పరిపూర్ణమైంది రామా. నిన్ను చూశాను." అగ్నిని వెలిగించి అందులో అడుగుపెట్టింది; ఆ జ్వాలల నుండి తేజోమయ జీవిగా లేచి, తన తపస్సుతో సంపాదించిన లోకానికి వెళ్ళింది."],
+    ["sloka",
+     ["అహ్మ్యతిభక్త్యా దేవేశ","రామేణ పరిపూజితా ।","న మయా సాధితం కిఞ్చి","త్సేవామేకా పురస్కృతా ॥"],
+     ["ahm yayi bhaktyā deveśa","rāmeṇa paripūjitā ।","na mayā sādhitaṃ kiñci","t sevām ekā puraskṛtā ॥"],
+     "I have done nothing great — only service, offered with love. Yet the Lord Rāma himself came to me.",
+     "నేను గొప్పగా చేసినది ఏమీ లేదు — ప్రేమతో అర్పించిన సేవ మాత్రమే. అయినా ప్రభువు రాముడే స్వయంగా నా దగ్గరకు వచ్చాడు."
+    ],
+    ["dyk","💛","Śabarī was from a tribal community — not a brāhmaṇa, not a king, not learned in the Vedas. Rāma ate her fruit and honoured her with the same care he gave the greatest sages. The Rāmāyaṇa says love and devotion matter more than birth.","శబరి గిరిజన సమాజానికి చెందిన మహిళ — బ్రాహ్మణురాలు కాదు, రాజకుమారి కాదు, వేదపండితురాలు కాదు. రాముడు ఆమె పండ్లు తిని, గొప్ప మహర్షులకు ఇచ్చినంత గౌరవంతో ఆమెను పూజించాడు. భక్తి, ప్రేమ జన్మకంటే ఎక్కువ అని రామాయణం చెబుతుంది."]
+   ]
+  ],
+  "remember": [
+   ["Śabarī had waited years at the hermitage, tasting berries to keep only the sweetest for Rāma.","శబరి ఆశ్రమంలో ఎన్నో సంవత్సరాలు ఎదురుచూసింది; రామునికి తీయగా ఉన్న పండ్లు మాత్రమే ఇవ్వడానికి రుచి చూస్తూ సేకరించింది."],
+   ["Rāma ate her fruit gladly and listened to her with full respect.","రాముడు ఆమె పండ్లు సంతోషంగా తిని, పూర్తి గౌరవంతో ఆమె మాటలు విన్నాడు."],
+   ["Śabarī entered fire and rose to the world she had earned through her devotion.","శబరి తన భక్తితో సంపాదించిన లోకానికి అగ్ని ద్వారా వెళ్ళింది."],
+   ["She told Rāma to seek Sugrīva at Mount Ṛśyamūka.","ఋష్యమూక పర్వతంపై సుగ్రీవుని చేరుకోమని శబరి రామునికి చెప్పింది."]
+  ],
+  "think": [
+   "Śabarī tasted every berry so Rāma would get only the sweetest. When have you worked very hard to give someone the best you possibly could?",
+   "రామునికి తీయగా ఉన్నవి మాత్రమే అందేందుకు శబరి ప్రతి పండునూ రుచి చూసింది. మీరు ఎవరికైనా మీకు సాధ్యమైన ఉత్తమం ఇవ్వడానికి ఎంతో కష్టపడిన సందర్భం ఏది?"
   ]
  }
 ]);
