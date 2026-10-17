@@ -685,4 +685,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'the-golden-deer',
+    added: '2026-10-17',
+    epic: 'Ramayana',
+    chars: ['Mārīca', 'Rāvaṇa', 'Rāma', 'Sītā', 'Lakṣmaṇa'],
+    title: { en: 'The Golden Deer — Mārīca\'s Trick', te: 'బంగారు లేడి — మారీచుడి మాయ' },
+    moral: { en: 'Not everything that glitters is what it seems.', te: 'మెరిసేదంతా బంగారం కాదు.' },
+    cover: { bg: 'forest', props: [['hut', 330, 196, 0.9], ['deer', 200, 192, 1.6], ['person', 80, 198, 1.3, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['sun', 360, 45, 0.8], ['cloud', 160, 45, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'shore', props: [['chariot', 80, 150, 1.2], ['demon', 170, 198, 1.2, { raise: true }], ['demon', 290, 198, 1, { color: '#5a7a5a', bald: true, flip: true }], ['palm', 365, 198, 1]] },
+        en: 'Rāvaṇa, the ten-headed king of Laṅkā, was burning with anger. In the forest, Rāma and Lakṣmaṇa had defeated his demon army, and he wanted revenge. So he flew in his chariot to the hermitage of Mārīca, a demon who could take any shape he liked. Years before, one of Rāma\'s arrows had flung Mārīca far out into the sea, and he had never forgotten it. "Rāma is like fire," Mārīca warned. "Do not go near him!" But Rāvaṇa roared, "Help me, or I will punish you myself!" Mārīca sighed. "Either way, trouble finds me," he said, and he agreed.',
+        te: 'పది తలల లంకాధిపతి రావణుడు కోపంతో రగిలిపోతున్నాడు. అడవిలో రామలక్ష్మణులు అతని రాక్షస సైన్యాన్ని ఓడించారు. ఎలాగైనా పగ తీర్చుకోవాలనుకున్నాడు. అందుకే తన రథంలో ఎగురుకుంటూ మారీచుడి ఆశ్రమానికి వెళ్ళాడు. మారీచుడు ఏ రూపమైనా ధరించగల రాక్షసుడు. చాలా ఏళ్ళ క్రితం రాముడి బాణం ఒకటి అతన్ని దూరంగా సముద్రంలోకి విసిరేసింది. ఆ సంగతి అతను ఎప్పుడూ మర్చిపోలేదు. "రాముడు నిప్పు లాంటివాడు," అని మారీచుడు హెచ్చరించాడు. "ఆయన జోలికి వెళ్ళకు!" కానీ రావణుడు గర్జించాడు, "నాకు సాయం చెయ్యి, లేకపోతే నేనే నిన్ను శిక్షిస్తాను!" మారీచుడు నిట్టూర్చాడు. "ఎటు చూసినా నాకు కష్టమే," అనుకుని ఒప్పుకున్నాడు.',
+      },
+      {
+        scene: { bg: 'forest', props: [['hut', 345, 196, 0.85], ['person', 55, 198, 1.3, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['person', 110, 198, 1.35, { skin: 'blue', cloth: '#f0c040' }], ['person', 160, 198, 1.25, { skin: 'fair', cloth: '#e0703a' }], ['flowers', 215, 198, 0.9], ['deer', 270, 196, 1.3]] },
+        en: 'Next morning, near the little hut at Pañcavaṭī, a wonderful deer appeared. Its skin shone like gold, it had silver spots, and its antlers sparkled like jewels. It nibbled flowers and skipped about, coming close and then dashing away. "Oh, how beautiful!" cried Sītā. "My lord, please catch it for me!" Lakṣmaṇa frowned. "Brother, no real deer looks like that. I think it is the demon Mārīca playing a trick." Rāma smiled. "If it is a deer, Sītā shall have it. If it is Mārīca, he deserves my arrow. Lakṣmaṇa, stay here and guard Sītā. Do not leave her alone." Then he took his bow and followed the deer.',
+        te: 'మరుసటి రోజు ఉదయం, పంచవటిలోని చిన్న పర్ణశాల దగ్గర ఒక అద్భుతమైన లేడి కనిపించింది. దాని ఒళ్ళు బంగారంలా మెరుస్తోంది, ఒంటి మీద వెండి చుక్కలు ఉన్నాయి, కొమ్ములు రత్నాల్లా తళతళలాడుతున్నాయి. అది పూలు తింటూ గెంతుతూ, దగ్గరికి వచ్చి మళ్ళీ దూరంగా పరుగెత్తుతోంది. "అబ్బ, ఎంత అందంగా ఉందో!" అంది సీతాదేవి. "స్వామీ, దయచేసి దాన్ని నాకు పట్టి తెండి!" లక్ష్మణుడు కనుబొమలు ముడిచాడు. "అన్నయ్యా, నిజమైన లేడి ఇలా ఉండదు. ఇది మారీచుడి మాయ అనిపిస్తోంది." రాముడు చిరునవ్వు నవ్వాడు. "నిజంగా లేడి అయితే సీతకు తెచ్చిస్తాను. మారీచుడైతే నా బాణానికి తగినవాడే. లక్ష్మణా, నువ్వు ఇక్కడే ఉండి సీతను కాపాడు. ఆమెను ఒంటరిగా వదలకు." అని చెప్పి విల్లు పట్టుకుని లేడి వెంట వెళ్ళాడు.',
+      },
+      {
+        scene: { bg: 'forest', props: [['tree', 30, 198, 0.9], ['archer', 100, 198, 1.4, { skin: 'blue', cloth: '#f0c040' }], ['arrow', 210, 168, 1], ['deer', 300, 196, 1.2, { flip: true }], ['tree', 370, 198, 1]] },
+        en: 'The golden deer ran deeper and deeper into the forest. Sometimes it vanished, sometimes it peeped out from behind a tree. Rāma chased it far, far away from the hut. At last he knew that Lakṣmaṇa was right. He fitted an arrow to his bow and let it fly. The arrow struck, and the deer fell — and turned back into the demon Mārīca. But Mārīca had one last trick. With his final breath he cried out in Rāma\'s own voice: "Hā Sītā! Hā Lakṣmaṇa!" The cry rang through the forest, all the way to the hut. Rāma\'s heart grew heavy. "This was a plan to draw us away," he thought, and he hurried back as fast as he could.',
+        te: 'బంగారు లేడి అడవిలోకి ఇంకా ఇంకా లోపలికి పరుగెత్తింది. ఒకసారి మాయమైపోయేది, మరోసారి చెట్టు చాటు నుంచి తొంగి చూసేది. రాముడు దాని వెంట పడి పర్ణశాలకు చాలా దూరం వెళ్ళిపోయాడు. చివరకు లక్ష్మణుడు చెప్పిందే నిజమని ఆయనకు అర్థమైంది. విల్లుకు బాణం సంధించి వదిలాడు. బాణం తగలగానే లేడి కింద పడి, మళ్ళీ మారీచుడిగా మారిపోయింది. కానీ మారీచుడి దగ్గర ఇంకో మాయ మిగిలి ఉంది. చివరి ఊపిరితో అతను అచ్చం రాముడి గొంతుతో అరిచాడు: "హా సీతా! హా లక్ష్మణా!" ఆ అరుపు అడవంతా మారుమోగి పర్ణశాల వరకు వినిపించింది. రాముడి మనసు బరువెక్కింది. "మమ్మల్ని దూరం చేయడానికే ఈ పన్నాగం," అనుకుని వీలైనంత వేగంగా వెనక్కి పరుగెత్తాడు.',
+      },
+    ],
+  },
+  {
+    id: 'arjuna-wins-draupadi',
+    added: '2026-10-17',
+    epic: 'Mahabharata',
+    chars: ['Arjuna', 'Draupadī', 'Drupada', 'Bhīma', 'Kṛṣṇa', 'Kuntī'],
+    title: { en: 'Arjuna Wins Draupadī — the Fish Target', te: 'మత్స్య యంత్రం — ద్రౌపదీ స్వయంవరం' },
+    moral: { en: 'Quiet skill and patience win where boasting fails.', te: 'గొప్పలు కాదు — ఓర్పుతో నేర్చిన విద్యే గెలిపిస్తుంది.' },
+    cover: { bg: 'court', props: [['archer', 130, 198, 1.5, { cloth: '#f4ead2' }], ['fishWheel', 270, 198, 1.4], ['person', 355, 198, 1.25, { female: true, skin: 'dark', cloth: '#c0392b', pallu: '#f0c040' }]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['person', 70, 198, 1.35, { crown: true, beard: true, hair: '#ddd', cloth: '#a83a3a' }], ['person', 135, 198, 1.25, { female: true, skin: 'dark', cloth: '#c0392b', pallu: '#f0c040' }], ['fishWheel', 255, 198, 1.3], ['bow', 335, 198, 1.1]] },
+        en: 'After escaping the house of lac, the five Pāṇḍavas lived quietly, dressed as poor brāhmaṇas, so that no one would know they were alive. One day they heard exciting news. King Drupada of Pāñcāla was holding a svayaṃvara for his daughter, Princess Draupadī — a ceremony where she would choose her own husband. Drupada secretly hoped Arjuna would win her. So he set a test that only a perfect archer could pass. A great, heavy bow lay ready. High above, a wooden fish turned round and round behind a spinning wheel. "Whoever strings this bow and strikes the fish with five arrows," the herald announced, "will marry the princess!"',
+        te: 'లక్క ఇంటి నుంచి తప్పించుకున్న తరువాత పాండవులు ఐదుగురూ పేద బ్రాహ్మణుల వేషంలో రహస్యంగా బతుకుతున్నారు. తాము బతికే ఉన్నామని ఎవరికీ తెలియకూడదు. ఒక రోజు వాళ్ళకు ఒక విశేషం తెలిసింది. పాంచాల దేశపు రాజు ద్రుపదుడు తన కూతురు ద్రౌపదికి స్వయంవరం ఏర్పాటు చేశాడు — అంటే రాకుమారి తనకు నచ్చిన వరుడిని తానే ఎంచుకుంటుంది. అర్జునుడే తన అల్లుడు కావాలని ద్రుపదుడు మనసులో కోరుకున్నాడు. అందుకే గొప్ప విలుకాడు మాత్రమే గెలవగలిగే పరీక్ష పెట్టాడు. అక్కడ చాలా బరువైన విల్లు సిద్ధంగా ఉంది. పైన ఎత్తులో, తిరిగే చక్రం వెనక ఒక చెక్క చేప గిరగిరా తిరుగుతోంది. "ఈ విల్లు ఎక్కుపెట్టి, ఐదు బాణాలతో ఆ చేపను కొట్టినవారే రాకుమారిని పెళ్ళాడతారు!" అని చాటింపు వేశారు.',
+      },
+      {
+        scene: { bg: 'court', props: [['person', 55, 198, 1.1, { crown: true, cloth: '#7a5ab0' }], ['person', 100, 198, 1.1, { crown: true, cloth: '#4f7a3a' }], ['archer', 190, 198, 1.4, { cloth: '#f4ead2' }], ['fishWheel', 310, 198, 1.3]] },
+        en: 'Kings and princes came from far and wide. One by one, they tried to lift the bow. Some could not even move it! Others bent it a little, and it sprang back and knocked them over, while the crowd laughed. Even mighty Karṇa stepped forward, but in the end the fish was not his to win. At last a young brāhmaṇa rose from among the priests. People whispered, "If great kings have failed, what can a priest do?" It was Arjuna in disguise. He bowed to the bow, lifted it easily and strung it in a flash. Then, it is said, he looked down — not up — into the pool of water below, where the spinning fish was reflected.',
+        te: 'దూరదూరాల నుంచి రాజులు, రాకుమారులు వచ్చారు. ఒక్కొక్కరుగా విల్లు ఎత్తడానికి ప్రయత్నించారు. కొందరు దాన్ని కదపనైనా కదపలేకపోయారు! మరికొందరు కొంచెం వంచగానే అది ఎగిరి వాళ్ళనే కింద పడేసింది. సభలో అందరూ నవ్వారు. మహావీరుడైన కర్ణుడు కూడా ముందుకు వచ్చాడు, కానీ ఆ చేప అతనికి దక్కలేదు. చివరకు బ్రాహ్మణుల మధ్య నుంచి ఒక యువకుడు లేచాడు. "గొప్ప గొప్ప రాజులే ఓడిపోయారు, ఈ బ్రాహ్మణుడు ఏం చేస్తాడు?" అని జనం గుసగుసలాడారు. అతను మారువేషంలో ఉన్న అర్జునుడు! విల్లుకు నమస్కరించి, సులభంగా ఎత్తి, క్షణంలో నారి కట్టాడు. తరువాత అతను పైకి కాదు — కిందకు చూశాడని అంటారు. కింద నీటి కొలనులో తిరుగుతున్న చేప నీడ కనిపిస్తోంది.',
+      },
+      {
+        scene: { bg: 'court', props: [['archer', 100, 198, 1.4, { cloth: '#f4ead2' }], ['person', 185, 198, 1.25, { female: true, skin: 'dark', cloth: '#c0392b', pallu: '#f0c040' }], ['arrow', 250, 72, 1], ['fishWheel', 310, 198, 1.3]] },
+        en: 'Arjuna kept his eyes on the reflection. The wheel turned, the fish turned, the water rippled. He waited… and waited… Then — twang! — five arrows flew up through the spinning wheel, one after another, and struck the fish. The hall burst into cheers! Draupadī smiled and placed her garland of flowers around Arjuna\'s neck. Some angry kings rushed forward, but Bhīma pulled up a whole tree to guard his brother, and they soon backed away. In the crowd, Kṛṣṇa smiled; he knew exactly who those \'brāhmaṇas\' were. That evening the brothers reached home. "Mother, see what we have brought today!" they called — and Kuntī welcomed Draupadī as her own dear daughter.',
+        te: 'అర్జునుడు చూపు నీటిలోని నీడ మీదే నిలిపాడు. చక్రం తిరుగుతోంది, చేప తిరుగుతోంది, నీళ్ళు అలలు అలలుగా కదులుతున్నాయి. అతను ఓపికగా ఎదురుచూశాడు... ఆగాడు... అంతే — ఝుం! — ఐదు బాణాలు ఒకదాని వెంట ఒకటి తిరిగే చక్రం గుండా పైకి దూసుకెళ్ళి చేపకు తగిలాయి. సభంతా జయజయధ్వానాలతో మారుమోగింది! ద్రౌపది చిరునవ్వుతో పూలమాలను అర్జునుడి మెడలో వేసింది. కోపంతో కొందరు రాజులు మీదికి వచ్చారు, కానీ భీముడు ఒక చెట్టునే పెకలించి తమ్ముడికి అండగా నిలిచాడు. వాళ్ళు వెంటనే వెనక్కి తగ్గారు. జనం మధ్య ఉన్న శ్రీకృష్ణుడు చిరునవ్వు నవ్వాడు — ఆ \'బ్రాహ్మణులు\' ఎవరో ఆయనకు బాగా తెలుసు. ఆ సాయంత్రం సోదరులు ఇంటికి చేరి, "అమ్మా, ఈ రోజు మేము ఏం తెచ్చామో చూడు!" అని పిలిచారు. కుంతీదేవి ద్రౌపదిని తన సొంత కూతురిలా ప్రేమగా దగ్గరకు తీసుకుంది.',
+      },
+    ],
+  },
+  {
+    id: 'lakshmanas-line',
+    added: '2026-10-17',
+    epic: 'Ramayana',
+    chars: ['Lakṣmaṇa', 'Sītā', 'Rāvaṇa'],
+    title: { en: 'Lakṣmaṇa\'s Line', te: 'లక్ష్మణ రేఖ' },
+    moral: { en: 'Wise limits keep us safe — think twice before you cross them.', te: 'పెద్దలు గీసిన హద్దులు మనల్ని కాపాడతాయి — దాటే ముందు ఆలోచించాలి.' },
+    cover: { bg: 'forest', props: [['hut', 200, 178, 1], ['rekha', 200, 196, 1.7], ['person', 252, 190, 1.15, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['archer', 110, 198, 1.3, { skin: 'fair', cloth: '#e0703a' }], ['sun', 360, 45, 0.8]] },
+    pages: [
+      {
+        scene: { bg: 'forest', props: [['tree', 40, 198, 1], ['archer', 130, 198, 1.35, { skin: 'fair', cloth: '#e0703a' }], ['person', 220, 198, 1.3, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['hut', 310, 196, 1]] },
+        en: 'At the little hut, Sītā and Lakṣmaṇa heard a terrible cry from deep in the forest: "Hā Sītā! Hā Lakṣmaṇa!" It sounded just like Rāma. Sītā turned pale. "Lakṣmaṇa, your brother is in danger! Run and help him!" But Lakṣmaṇa stayed calm. "Mother, no one in the three worlds can harm Rāma. This is a demon\'s trick. Brother told me to guard you, and I will not leave." Sītā was so frightened that she spoke sharp, unkind words, saying he did not truly care for Rāma. Lakṣmaṇa\'s eyes filled with tears, for he loved Rāma more than his own life. "I will go," he said softly, "but first, listen carefully."',
+        te: 'పర్ణశాలలో ఉన్న సీతాదేవికి, లక్ష్మణుడికి అడవి లోపలి నుంచి ఒక భయంకరమైన అరుపు వినిపించింది: "హా సీతా! హా లక్ష్మణా!" అది అచ్చం రాముడి గొంతులాగే ఉంది. సీతాదేవి ముఖం పాలిపోయింది. "లక్ష్మణా, మీ అన్నయ్య ఆపదలో ఉన్నారు! వెంటనే వెళ్ళి కాపాడు!" కానీ లక్ష్మణుడు నిబ్బరంగా ఉన్నాడు. "అమ్మా, ముల్లోకాల్లో ఎవరూ రాముడికి హాని చేయలేరు. ఇది ఏదో రాక్షస మాయ. మిమ్మల్ని కాపాడమని అన్నయ్య చెప్పారు. నేను మిమ్మల్ని వదిలి వెళ్ళను." భయంతో సీతాదేవి కటువైన మాటలు అంది — అతనికి రాముడి మీద నిజమైన ప్రేమ లేదంది. లక్ష్మణుడి కళ్ళలో నీళ్ళు తిరిగాయి. అతనికి తన ప్రాణం కంటే అన్నయ్యే ఎక్కువ. "వెళ్తాను అమ్మా," అన్నాడు మెల్లగా, "కానీ ముందు నేను చెప్పేది జాగ్రత్తగా వినండి."',
+      },
+      {
+        scene: { bg: 'forest', props: [['archer', 45, 198, 1.1, { skin: 'fair', cloth: '#e0703a', flip: true }], ['hut', 195, 178, 1], ['rekha', 195, 196, 1.7], ['person', 248, 190, 1.15, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['person', 340, 198, 1.3, { cloth: '#e08a3a', beard: true, hair: '#ddd' }], ['pot', 372, 198, 0.6]] },
+        en: 'It is said that Lakṣmaṇa took the tip of his arrow and drew a line on the ground all around the hut. He said a prayer, and the line glowed softly. "Mother, stay inside this line," he said. "As long as you are inside, no demon can touch you. Please do not step across it, for anyone." Then he bowed to Sītā and ran into the forest to find Rāma. Soon after, an old holy man came walking up to the hut, with a water pot in his hand. "Bhikṣām dehi! Alms, please, good lady!" he called. But this was no holy man. It was Rāvaṇa in disguise.',
+        te: 'అప్పుడు లక్ష్మణుడు తన బాణం కొనతో పర్ణశాల చుట్టూ నేల మీద ఒక గీత గీశాడని అంటారు. ఒక మంత్రం చదవగానే ఆ గీత మెల్లగా వెలిగింది. "అమ్మా, ఈ గీత లోపలే ఉండండి," అన్నాడు. "మీరు లోపల ఉన్నంత వరకు ఏ రాక్షసుడూ మిమ్మల్ని తాకలేడు. ఎవరి కోసమైనా సరే, దయచేసి దీన్ని దాటకండి." తరువాత సీతాదేవికి నమస్కరించి రాముడిని వెతుక్కుంటూ అడవిలోకి పరుగెత్తాడు. కాసేపటికి ఒక ముసలి సన్యాసి చేతిలో కమండలంతో పర్ణశాల దగ్గరకు వచ్చాడు. "భవతి భిక్షాం దేహి! అమ్మా, భిక్ష వేయండి!" అని పిలిచాడు. కానీ అతను నిజమైన సన్యాసి కాదు. మారువేషంలో వచ్చిన రావణుడు!',
+      },
+      {
+        scene: { bg: 'forest', props: [['hut', 90, 178, 1], ['rekha', 110, 196, 1.5], ['person', 140, 192, 1.15, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040' }], ['fire', 210, 198, 1], ['demon', 300, 198, 1.3, { raise: true, flip: true }]] },
+        en: 'Rāvaṇa stepped towards the hut, but the moment his foot touched the glowing line, flames leapt up and he sprang back! "Come out, lady," he said sweetly. "I am old and tired. Will you send a hungry guest away?" Sītā hesitated. In those days, turning away a guest was thought a great wrong. Holding fruits in her hands, she stepped across the line to give him food. At once the holy man vanished, and there stood Rāvaṇa, the ten-headed king! He seized Sītā, lifted her into his flying chariot and rose into the sky. "Rāma! Lakṣmaṇa!" she cried. Far below, a brave old bird heard her call — and that is the story of Jaṭāyu.',
+        te: 'రావణుడు పర్ణశాల వైపు అడుగు వేశాడు. కానీ అతని కాలు ఆ వెలిగే గీతను తాకగానే మంటలు ఎగిసిపడ్డాయి. అతను ఉలిక్కిపడి వెనక్కి దూకాడు! "అమ్మా, బయటకు రా," అన్నాడు తియ్యగా. "నేను ముసలివాడిని, అలసిపోయాను. ఆకలితో వచ్చిన అతిథిని ఉత్తచేతులతో పంపుతావా?" సీతాదేవి సంకోచించింది. ఆ రోజుల్లో అతిథిని వెనక్కి పంపడం పెద్ద తప్పుగా భావించేవారు. చేతుల్లో పండ్లు పట్టుకుని ఆమె గీత దాటి బయటకు అడుగు పెట్టింది. వెంటనే సన్యాసి మాయమయ్యాడు — అక్కడ పది తలల రావణుడు నిలబడ్డాడు! అతను సీతాదేవిని పట్టుకుని తన ఎగిరే రథంలో ఎక్కించుకుని ఆకాశంలోకి ఎగిరిపోయాడు. "రామా! లక్ష్మణా!" అని ఆమె కేకలు వేసింది. కింద ఒక ముసలి పక్షిరాజు ఆమె పిలుపు విన్నాడు — అదే జటాయువు కథ.',
+      },
+    ],
+  },
 ];

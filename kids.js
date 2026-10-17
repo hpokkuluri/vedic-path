@@ -747,6 +747,8 @@
     },
     cart: () => `<line x1="44" y1="-28" x2="80" y2="-20" stroke="#7a4a1a" stroke-width="4"/><path d="M-38 -34 Q-12 -72 16 -34Z" fill="#f4ead2"/><g fill="#f0b030">${[[-20, -46], [-10, -52], [0, -44], [-14, -38], [6, -38]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="4"/>`).join('')}</g><path d="M20 -34 Q16 -46 24 -52 H36 Q44 -46 40 -34Z" fill="#b0603a"/><rect x="-46" y="-36" width="92" height="12" rx="3" fill="#8a5a2a"/>
       ${[-26, 26].map(x => `<circle cx="${x}" cy="-14" r="13" fill="none" stroke="#5a3a1a" stroke-width="4"/><path d="M${x - 13} -14 H${x + 13} M${x} -27 V-1" stroke="#5a3a1a" stroke-width="2"/>`).join('')}`,
+    fishWheel: () => `<ellipse cx="0" cy="-3" rx="28" ry="6" fill="#4a9bd0"/><line x1="0" y1="-4" x2="0" y2="-80" stroke="#7a5230" stroke-width="4"/><circle cx="0" cy="-86" r="13" fill="none" stroke="#c9952a" stroke-width="3"/><path d="M-13 -86 H13 M0 -99 V-73" stroke="#c9952a" stroke-width="2"/><path d="M-15 -106 Q0 -116 12 -106 Q0 -98 -15 -106Z" fill="#e0703a"/><path d="M11 -106 L20 -112 L20 -100Z" fill="#e0703a"/><circle cx="-9" cy="-107" r="1.5" fill="#222"/>`,
+    rekha: () => `<path d="M-70 0 Q0 -18 70 0" stroke="#ffd84a" stroke-width="8" fill="none" opacity=".35" stroke-linecap="round"/><path d="M-70 0 Q0 -18 70 0" stroke="#f2a33a" stroke-width="2.5" fill="none" stroke-linecap="round"/>`,
   };
   function kidsScene(scene) {
     scene = scene || { bg: 'forest', props: [] };

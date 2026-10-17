@@ -35,11 +35,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Bhīma and the Demon Bakāsura (Mahābhārata) — bhima-and-bakasura
 - [x] Guha the Boatman (Rāmāyaṇa) — guha-the-boatman
 - [x] Hiḍimbā and Little Ghaṭotkaca (Mahābhārata) — hidimba-and-ghatotkacha
+- [x] The Golden Deer — Mārīca's Trick (Rāmāyaṇa) — the-golden-deer
+- [x] Arjuna Wins Draupadī — the Fish Target (Mahābhārata) — arjuna-wins-draupadi
+- [x] Lakṣmaṇa's Line (Rāmāyaṇa) — lakshmanas-line
 
 ## Next
-- [ ] Lakṣmaṇa's Line (Rāmāyaṇa) — Lakṣmaṇa, Sītā
-- [ ] Arjuna Wins Draupadī — the Fish Target (Mahābhārata) — Arjuna, Draupadī, Drupada
-- [ ] The Golden Deer — Mārīca's Trick (Rāmāyaṇa) — Mārīca, Rāvaṇa, Rāma
 - [ ] Draupadī Is Born from the Fire (Mahābhārata) — Drupada, Draupadī, Dhṛṣṭadyumna
 - [ ] Rāma Meets Hanumān and Sugrīva (Rāmāyaṇa) — Hanumān, Sugrīva, Rāma
 - [ ] The Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata) — Draupadī, Sūrya, Yudhiṣṭhira
