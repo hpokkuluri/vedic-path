@@ -78,6 +78,7 @@
       if (t === 'dyk') return `<div class="dyk"><div class="ic">${b[1]}</div><div><b>Did you know?</b><p><span class="en">${fmt(b[2])}</span><span class="te">${fmt(b[3])}</span></p></div></div>`;
       if (t === 'src') return `<div class="dyk sg-src"><div class="ic">📜</div><div><b>Where this is told</b><p><span class="en">${fmt(b[1])}</span><span class="te">${fmt(b[2])}</span></p></div></div>`;
       if (t === 'link') return `<button class="box next sg-link" onclick="openRmyChapter('${b[3]}')"><div><small>Śrī Rāmāyaṇa</small><b><span class="en">${esc(b[1])}</span><span class="te">${esc(b[2])}</span></b></div><span class="go">›</span></button>`;
+      if (t === 'sglink') return `<button class="box next sg-link" onclick="openSageChapter('${b[3]}')"><div><small>Great Sages</small><b><span class="en">${esc(b[1])}</span><span class="te">${esc(b[2])}</span></b></div><span class="go">›</span></button>`;
       if (t === 'more') return `<details class="sank"><summary><span class="en">${esc(b[1])}<small>${esc(b[3])}</small></span><span class="te">${esc(b[2])}<small>${esc(b[4])}</small></span></summary><div class="sank-body">${blocks(b[5], false)}</div></details>`;
       return '';
     }).join('');
