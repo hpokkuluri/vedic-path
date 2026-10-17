@@ -476,7 +476,8 @@
     const sh = document.getElementById('rmy-sheet');
     sh.className = `rmy rmy-sheet mode-${MODE()}`;
     document.getElementById('rmy-sheetc').innerHTML = `<div class="row"><span class="av">${w.av}</span><h4>${esc(w.en)}<span class="te">${esc(w.te)}</span></h4></div>
-      <p><span class="en">${esc(w.d)}</span><span class="te">${esc(w.dt)}</span></p>`;
+      <p><span class="en">${esc(w.d)}</span><span class="te">${esc(w.dt)}</span></p>
+      ${window.sageHasStory && sageHasStory(k) && state.view !== 'sageread' ? `<button class="sg-life" onclick="rmyWhoClose();openSage('${k}')"><span class="en">Read ${esc(w.en)}'s full life ›</span><span class="te">పూర్తి జీవిత కథ చదవండి ›</span></button>` : ''}`;
     requestAnimationFrame(() => { sh.classList.add('on'); bg.classList.add('on'); });
   };
   window.rmyWhoClose = () => { document.getElementById('rmy-sheet').classList.remove('on'); document.getElementById('rmy-sheetbg').classList.remove('on'); };

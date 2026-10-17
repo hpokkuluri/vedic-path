@@ -1267,6 +1267,7 @@ body {
     <button class="stab" data-sec="rama" onclick="switchSection('rama')">Rāma</button>
     <button class="stab" data-sec="panch" onclick="openPanch()">Panchāṅgam</button>
     <button class="stab" data-sec="ramayana" onclick="openRamayana()">Rāmāyaṇa</button>
+    <button class="stab" data-sec="sages" onclick="openSages()">Sages</button>
     <button class="stab" data-sec="kids" onclick="openKids()">Kids</button>
   </div>
   <button id="btn-recite" onclick="startRecite()">▶ Recite</button>
@@ -1292,6 +1293,8 @@ body {
   <div class="view" id="view-ramayana-cover"></div>
   <div class="view" id="view-ramayana"></div>
   <div class="view" id="view-rmyread"></div>
+  <div class="view" id="view-sages"></div>
+  <div class="view" id="view-sageread"></div>
   <div class="view" id="view-panch">
   <header class="sky">
     <div class="sky-top">
@@ -3762,17 +3765,19 @@ function renderCurrentView() {
   else if (state.view === 'ramayana-cover') { if (window.renderRamayanaCover) renderRamayanaCover(); }
   else if (state.view === 'ramayana') { if (window.renderRamayana) renderRamayana(); }
   else if (state.view === 'rmyread') { if (window.renderRmyRead) renderRmyRead(); }
+  else if (state.view === 'sages') { if (window.renderSages) renderSages(); }
+  else if (state.view === 'sageread') { if (window.renderSageRead) renderSageRead(); }
   if (state.view !== 'home' && state.view !== 'library') updateTopbar();
 }
 
 function updateTopbar() {
   const t = document.getElementById('topbar-title');
   const recBtn = document.getElementById('btn-recite');
-  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana' };
+  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana', sages: 'sages', sageread: 'sages' };
   const activeSec = VIEW_TAB[state.view] || state.section;
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === activeSec));
   if (VIEW_TAB[state.view]) {
-    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : 'Kids Corner';
+    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : VIEW_TAB[state.view] === 'sages' ? 'Great Sages' : 'Kids Corner';
     recBtn.style.display = 'none';
     const tabs = document.getElementById('section-tabs'), act = tabs.querySelector('.stab.active');
     if (act) tabs.scrollLeft = Math.max(0, act.offsetLeft - tabs.offsetLeft - (tabs.clientWidth - act.offsetWidth) / 2);
@@ -3916,6 +3921,7 @@ function renderLibrary() {
     { key:'songs', icon:'🪔', name:'Prārthanas',             desc:'Devotional Songs',          action:"switchSection('songs')",     gradient:'linear-gradient(160deg,#6a3a00,#d08a10)', dot:'#d08a10', tradition:'Bhajan' },
     { key:'panch', icon:'🌗', name:'Panchāṅgam',             desc:'Daily Telugu calendar',     action:"openPanch()",                gradient:'linear-gradient(160deg,#1a1040,#b8720a)', dot:'#b8720a', tradition:'Kālam' },
     { key:'ramayana', icon:'🏹', name:'Śrī Rāmāyaṇa',         desc:'Vālmīki · retold in EN & తె', action:"openRamayana()",          gradient:'linear-gradient(160deg,#5a1e06,#e08a2c)', dot:'#e08a2c', tradition:'Itihāsa', photo:'icons/tile-ramayana.jpg', photoPos:'center center' },
+    { key:'sages', icon:'🧘', name:'Great Sages',            desc:'Maharṣulu · full life stories', action:"openSages()",           gradient:'linear-gradient(160deg,#2a0a02,#d0601c)', dot:'#d0601c', tradition:'Itihāsa' },
     { key:'kids',  icon:'🧒', name:'Kids Corner',            desc:'Learn Telugu · Stories',    action:"openKids()",                 gradient:'linear-gradient(160deg,#c9572c,#8a5cc2)', dot:'#c9572c', tradition:'Children' },
     { key:'nrsimha',icon:'🦁', name:'Śrī Lakṣmī Nṛsiṃha',    desc:'Karāvalamba · Stotrams',   action:"switchSection('nrsimha')",  gradient:'linear-gradient(160deg,#5a1a00,#e0701a)', dot:'#e0701a', tradition:'Stotra', photo:'icons/tile-nrsimha.jpg', photoPos:'center center' },
     { key:'rama',  icon:'🛡️', name:'Śrī Rāma',               desc:'Rāma Rakṣā · Stotrams',    action:"switchSection('rama')",     gradient:'linear-gradient(160deg,#0a2a4a,#2a8a9a)', dot:'#2a8a9a', tradition:'Stotra', photo:'icons/tile-rama.jpg', photoPos:'center center' },
@@ -6080,5 +6086,7 @@ function openPanch() {
 <script src="ramayana/aranya.js"></script>
 <script src="ramayana/kishkindha.js"></script>
 <script src="ramayana.js"></script>
+<script src="sages/vishvamitra.js"></script>
+<script src="sages.js"></script>
 </body>
 </html>
