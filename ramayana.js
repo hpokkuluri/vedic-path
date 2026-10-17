@@ -494,20 +494,20 @@
 .rmy .byline{margin-top:12px;font-size:.84rem;font-family:'Crimson Text',serif;font-style:italic}
 .rmy .byline b{font-style:normal}.rmy .byline .te{display:block;font-style:normal;font-size:.78rem;opacity:.85;margin-top:2px}
 .rmy-poster{position:relative;width:100%;height:100%;display:flex;align-items:stretch;overflow:hidden}
-.rmy-poster-bg{position:absolute;inset:0;background-size:cover;background-position:center center;filter:brightness(1.18) saturate(0.72)}
-.rmy-poster-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,248,230,0.10) 0%,rgba(255,240,200,0.22) 40%,rgba(80,30,0,0.55) 100%)}
-.rmy-poster-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;padding:0 24px 52px;text-align:center}
-.rmy-poster-bow{width:90px;opacity:0.55;margin-bottom:8px}
-.rmy-poster-title{display:flex;flex-direction:column;align-items:center;gap:2px}
-.rmy-poster-sri{font-family:'Crimson Text',Georgia,serif;font-size:1.6rem;font-weight:600;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,0.55),0 0 30px rgba(255,200,80,0.4);letter-spacing:0.12em;line-height:1}
-.rmy-poster-h1{font-family:'Crimson Text',Georgia,serif;font-size:3.4rem;font-weight:700;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,0.6),0 0 40px rgba(255,200,80,0.5);line-height:1;letter-spacing:0.03em}
-.rmy-poster-te{font-family:'Noto Sans Telugu',sans-serif;font-size:1.15rem;color:rgba(255,240,200,0.92);text-shadow:0 1px 8px rgba(0,0,0,0.5);margin-top:6px}
-.rmy-poster-sub{font-size:0.88rem;color:rgba(255,245,220,0.88);text-shadow:0 1px 6px rgba(0,0,0,0.6);margin-top:18px;line-height:1.5;letter-spacing:0.01em}
-.rmy-poster-byline{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:3px}
-.rmy-poster-byname{font-family:'Crimson Text',Georgia,serif;font-size:1.65rem;font-weight:700;color:#fde98a;text-shadow:0 0 14px rgba(255,200,60,0.7),0 2px 10px rgba(0,0,0,0.7);letter-spacing:0.03em}
-.rmy-poster-byte{font-family:'Noto Sans Telugu',sans-serif;font-size:1rem;color:rgba(253,233,138,0.85);text-shadow:0 1px 8px rgba(0,0,0,0.6)}
-.rmy-poster-enter{margin-top:28px;padding:14px 44px;background:#f0c040;color:#1a0800;font-family:'Crimson Text',Georgia,serif;font-size:1.25rem;font-weight:700;border:none;border-radius:50px;cursor:pointer;letter-spacing:0.05em;box-shadow:0 4px 18px rgba(0,0,0,0.35);transition:transform .15s,box-shadow .15s}
-.rmy-poster-enter:active{transform:scale(0.96);box-shadow:0 2px 10px rgba(0,0,0,0.3)}
+.rmy-poster-bg{position:absolute;inset:0;background-size:cover;background-position:center top;filter:brightness(1.05) saturate(0.8)}
+.rmy-poster-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 35%,rgba(10,5,0,0.72) 62%,rgba(10,5,0,0.92) 100%)}
+.rmy-poster-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;padding:0 28px 56px;text-align:center}
+.rmy-poster-bow{width:70px;opacity:0.5;margin-bottom:4px}
+.rmy-poster-title{display:flex;flex-direction:column;align-items:center;gap:0}
+.rmy-poster-sri{font-family:'Crimson Text',Georgia,serif;font-size:1.4rem;font-weight:600;color:rgba(255,255,255,0.95);text-shadow:0 2px 12px rgba(0,0,0,0.9);letter-spacing:0.15em;line-height:1}
+.rmy-poster-h1{font-family:'Crimson Text',Georgia,serif;font-size:3.8rem;font-weight:700;color:#ffffff;text-shadow:0 3px 20px rgba(0,0,0,0.95),0 0 50px rgba(0,0,0,0.7);line-height:1;letter-spacing:0.02em}
+.rmy-poster-te{font-family:'Noto Sans Telugu',sans-serif;font-size:1.1rem;color:rgba(255,235,180,0.95);text-shadow:0 2px 10px rgba(0,0,0,0.9);margin-top:5px}
+.rmy-poster-sub{font-size:0.85rem;color:rgba(255,240,210,0.90);text-shadow:0 2px 8px rgba(0,0,0,0.95);margin-top:14px;line-height:1.55;letter-spacing:0.01em}
+.rmy-poster-byline{margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.rmy-poster-byname{font-family:'Crimson Text',Georgia,serif;font-size:2rem;font-weight:700;color:#fde98a;text-shadow:0 0 20px rgba(255,200,60,0.8),0 3px 14px rgba(0,0,0,0.95);letter-spacing:0.03em}
+.rmy-poster-byte{font-family:'Noto Sans Telugu',sans-serif;font-size:1rem;color:rgba(253,233,138,0.9);text-shadow:0 2px 10px rgba(0,0,0,0.9)}
+.rmy-poster-enter{margin-top:26px;padding:15px 52px;background:#f0c040;color:#1a0800;font-family:'Crimson Text',Georgia,serif;font-size:1.3rem;font-weight:700;border:none;border-radius:50px;cursor:pointer;letter-spacing:0.06em;box-shadow:0 4px 22px rgba(0,0,0,0.5);transition:transform .15s,box-shadow .15s}
+.rmy-poster-enter:active{transform:scale(0.96);box-shadow:0 2px 10px rgba(0,0,0,0.4)}
 .rmy .kandas{display:flex;gap:8px;overflow-x:auto;padding:16px 16px 4px;scrollbar-width:none}.rmy .kandas::-webkit-scrollbar{display:none}
 .rmy .kchip{flex:none;padding:7px 13px;border-radius:999px;border:1.5px solid var(--border);font-size:.8rem;font-weight:600;color:var(--fg2);background:var(--card-bg)}
 .rmy .kchip.on{background:var(--accent);border-color:var(--accent);color:#fff}.rmy .kchip.lock{opacity:.45}
