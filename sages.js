@@ -27,7 +27,7 @@
     ['kapila', 'Kapila', 'కపిలుడు', 'Founder of Sāṅkhya', 'సాంఖ్య దర్శన కర్త', '🕉️', 'linear-gradient(160deg,#3a1a0a,#c06a2a)'],
     ['jamadagni', 'Jamadagni & Paraśurāma', 'జమదగ్ని, పరశురాముడు', 'Father and son of the axe', 'పరశువు పట్టిన తండ్రీ కొడుకులు', '🪓', 'linear-gradient(160deg,#3a0a1a,#b02a5a)'],
     ['yajnavalkya', 'Yājñavalkya', 'యాజ్ఞవల్క్యుడు', 'Seer of the Śukla Yajurveda', 'శుక్ల యజుర్వేద ద్రష్ట', '☀️', 'linear-gradient(160deg,#4a2a06,#e0a020)'],
-    ['angiras', 'Aṅgiras', 'అంగిరసుడు', 'Seer of the Atharvaveda', 'అథర్వ వేద ద్రష్ట', '🔥', 'linear-gradient(160deg,#3a1a06,#e0802a)'],
+    ['angiras', 'Aṅgirasa', 'ఆంగీరసుడు', 'With Aamahaiya and Orukshaya', 'ఆమహయ్య, ఔరుక్షయలతో', '🔥', 'linear-gradient(160deg,#3a1a06,#e0802a)'],
   ];
   const SMETA = k => SAGES.find(x => x[0] === k) || SAGES[0];
   const NEW_DAYS = 21;

@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Aṅgiras, with Āmahīyava and Aurukṣaya (angiras) — Hari asked for these three by name, spelled by him as: 1. Angirasa (अङ्गिरस), 2. Aamahaiya (आममहीय / Āmahāyya), 3. Orukshaya (उरुक्षय / Urukṣaya). Use those names in the titles and Telugu as families recite them — ఆంగీరస, ఆమహయ్య, ఔరుక్షయ — and also give the Vedic forms (Amahīyu / Āmahīyava, Urukṣaya / Aurukṣaya). They are recited together as a pravara. Aṅgiras: mind-born son of Brahmā, one of the first Saptarṣis, Atharvāṅgirasa and the Atharvaveda, the Aṅgirases who found the hidden cows in the Ṛgveda (Vala myth), wives and children (Bṛhaspati, Utathya, Saṃvarta), teacher of Śaunaka in the Muṇḍaka Upaniṣad ("by knowing what is everything known?"), his line of gotras. Then one or two chapters on Āmahīyava (Amahīyu Āṅgirasa, seer of Ṛgveda 9.61, to Soma) and Aurukṣaya (Urukṣaya Āmahīyava, seer of Ṛgveda 10.118, to Agni): who they were in the Aṅgiras line, what their hymns say (in fresh translation), and what a pravara is and how it is recited in sandhyāvandana. The texts tell almost no stories about these two — say so plainly; do not invent any.
 - [ ] Agastya (agastya) — born from the pot with Vasiṣṭha; Lopāmudrā; Vātāpi and Ilvala; drinking the ocean; humbling the Vindhya; going south; Rāma's weapons; Āditya Hṛdayam; Tamil tradition
 - [ ] Bhṛgu (bhrigu) — mind-born son of Brahmā; Khyāti; testing Brahmā, Śiva and Viṣṇu (the kick on Viṣṇu's chest, Lakṣmī's anger, Tirumala); Bhṛgu Saṃhitā; Bhṛgu's curse on Agni; Pulomā and Cyavana; the Bhārgava line
 - [ ] Nārada (narada) — previous birth as a servant's son (Bhāgavata 1.5–6); Dakṣa's curse; the vīṇā; Vālmīki and Rāmāyaṇa; Dhruva and Prahlāda; Nārada's pride and the illusion (Nārada-moha, Rāmacaritamānasa); Nārada Bhakti Sūtras
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Viśvāmitra (vishvamitra) — 13 chapters — 2026-10-17
 - [x] Vasiṣṭha (vasishtha) — 9 chapters — 2026-10-17
 - [x] Śukrācārya (shukracharya) — 9 chapters — 2026-10-17
+- [x] Angirasa, with Aamahaiya and Orukshaya (angiras) — 11 chapters — 2026-10-17
