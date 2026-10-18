@@ -38,11 +38,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] The Golden Deer — Mārīca's Trick (Rāmāyaṇa) — the-golden-deer
 - [x] Arjuna Wins Draupadī — the Fish Target (Mahābhārata) — arjuna-wins-draupadi
 - [x] Lakṣmaṇa's Line (Rāmāyaṇa) — lakshmanas-line
+- [x] Draupadī Is Born from the Fire (Mahābhārata) — draupadi-born-from-the-fire
+- [x] Rāma Meets Hanumān and Sugrīva (Rāmāyaṇa) — rama-meets-hanuman-and-sugriva
+- [x] The Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata) — the-akshaya-patra
 
 ## Next
-- [ ] Draupadī Is Born from the Fire (Mahābhārata) — Drupada, Draupadī, Dhṛṣṭadyumna
-- [ ] Rāma Meets Hanumān and Sugrīva (Rāmāyaṇa) — Hanumān, Sugrīva, Rāma
-- [ ] The Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata) — Draupadī, Sūrya, Yudhiṣṭhira
 - [ ] Vāli and Sugrīva — Two Brothers (Rāmāyaṇa) — Vāli, Sugrīva, Tārā
 - [ ] Kṛṣṇa Eats a Single Leaf — Durvāsa's Visit (Mahābhārata) — Kṛṣṇa, Draupadī, Durvāsa
 - [ ] Sampāti, Jaṭāyu's Brother (Rāmāyaṇa) — Sampāti, Aṅgada, Hanumān
