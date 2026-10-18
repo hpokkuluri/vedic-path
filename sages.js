@@ -10,6 +10,7 @@
   // [key, name, Telugu, known for, Telugu known for, icon, gradient]
   const SAGES = [
     ['vishvamitra', 'Viśvāmitra', 'విశ్వామిత్రుడు', 'The king who became a Brahmarṣi', 'రాజు నుండి బ్రహ్మర్షి', '🔥', 'linear-gradient(160deg,#4a1206,#d0601c)'],
+    ['angiras', 'Aṅgiras', 'అంగిరసుడు', 'Seer of the Atharvaveda', 'అథర్వ వేద ద్రష్ట', '🔥', 'linear-gradient(160deg,#3a1a06,#e0802a)'],
     ['vasishtha', 'Vasiṣṭha', 'వసిష్ఠుడు', 'Guru of the Ikṣvākus', 'ఇక్ష్వాకుల కులగురువు', '🪷', 'linear-gradient(160deg,#0a2a4a,#2a7ab0)'],
     ['shukracharya', 'Śukrācārya', 'శుక్రాచార్యుడు', 'Guru of the Asuras', 'రాక్షస గురువు', '✨', 'linear-gradient(160deg,#1a0a3a,#7a4ac0)'],
     ['agastya', 'Agastya', 'అగస్త్యుడు', 'Who drank the ocean', 'సముద్రాన్ని తాగిన ముని', '🌊', 'linear-gradient(160deg,#06303a,#1a8a9a)'],
