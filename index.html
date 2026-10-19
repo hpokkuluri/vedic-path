@@ -1295,6 +1295,8 @@ body {
   <div class="view" id="view-rmyread"></div>
   <div class="view" id="view-sages"></div>
   <div class="view" id="view-sageread"></div>
+  <div class="view" id="view-vedas"></div>
+  <div class="view" id="view-vedaread"></div>
   <div class="view" id="view-panch">
   <header class="sky">
     <div class="sky-top">
@@ -3767,17 +3769,19 @@ function renderCurrentView() {
   else if (state.view === 'rmyread') { if (window.renderRmyRead) renderRmyRead(); }
   else if (state.view === 'sages') { if (window.renderSages) renderSages(); }
   else if (state.view === 'sageread') { if (window.renderSageRead) renderSageRead(); }
+  else if (state.view === 'vedas') { if (window.renderVedas) renderVedas(); }
+  else if (state.view === 'vedaread') { if (window.renderVedaRead) renderVedaRead(); }
   if (state.view !== 'home' && state.view !== 'library') updateTopbar();
 }
 
 function updateTopbar() {
   const t = document.getElementById('topbar-title');
   const recBtn = document.getElementById('btn-recite');
-  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana', sages: 'sages', sageread: 'sages' };
+  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana', sages: 'sages', sageread: 'sages', vedas: 'vedas', vedaread: 'vedas' };
   const activeSec = VIEW_TAB[state.view] || state.section;
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === activeSec));
   if (VIEW_TAB[state.view]) {
-    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : VIEW_TAB[state.view] === 'sages' ? 'Great Sages' : 'Kids Corner';
+    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : VIEW_TAB[state.view] === 'sages' ? 'Great Sages' : VIEW_TAB[state.view] === 'vedas' ? 'The Vedas' : 'Kids Corner';
     recBtn.style.display = 'none';
     const tabs = document.getElementById('section-tabs'), act = tabs.querySelector('.stab.active');
     if (act) tabs.scrollLeft = Math.max(0, act.offsetLeft - tabs.offsetLeft - (tabs.clientWidth - act.offsetWidth) / 2);
@@ -6092,5 +6096,6 @@ function openPanch() {
 <script src="sages/angiras.js"></script>
 <script src="sages/agastya.js"></script>
 <script src="sages.js"></script>
+<script src="vedas.js"></script>
 </body>
 </html>
