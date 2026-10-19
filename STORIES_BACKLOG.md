@@ -41,11 +41,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Draupadī Is Born from the Fire (Mahābhārata) — draupadi-born-from-the-fire
 - [x] Rāma Meets Hanumān and Sugrīva (Rāmāyaṇa) — rama-meets-hanuman-and-sugriva
 - [x] The Akṣaya Pātra — the Bowl That Never Emptied (Mahābhārata) — the-akshaya-patra
+- [x] Vāli and Sugrīva — Two Brothers (Rāmāyaṇa) — vali-and-sugriva
+- [x] Kṛṣṇa Eats a Single Leaf — Durvāsa's Visit (Mahābhārata) — krishna-eats-a-single-leaf
+- [x] Sampāti, Jaṭāyu's Brother (Rāmāyaṇa) — sampati-jatayus-brother
 
 ## Next
-- [ ] Vāli and Sugrīva — Two Brothers (Rāmāyaṇa) — Vāli, Sugrīva, Tārā
-- [ ] Kṛṣṇa Eats a Single Leaf — Durvāsa's Visit (Mahābhārata) — Kṛṣṇa, Draupadī, Durvāsa
-- [ ] Sampāti, Jaṭāyu's Brother (Rāmāyaṇa) — Sampāti, Aṅgada, Hanumān
 - [ ] The Yakṣa's Questions at the Lake (Mahābhārata) — Yudhiṣṭhira, Yama
 - [ ] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa) — Hanumān, Sītā
 - [ ] Arjuna and Śiva the Hunter — the Pāśupata (Mahābhārata) — Arjuna, Śiva
