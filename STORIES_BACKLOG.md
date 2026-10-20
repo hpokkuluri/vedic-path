@@ -44,11 +44,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Vāli and Sugrīva — Two Brothers (Rāmāyaṇa) — vali-and-sugriva
 - [x] Kṛṣṇa Eats a Single Leaf — Durvāsa's Visit (Mahābhārata) — krishna-eats-a-single-leaf
 - [x] Sampāti, Jaṭāyu's Brother (Rāmāyaṇa) — sampati-jatayus-brother
+- [x] The Yakṣa's Questions at the Lake (Mahābhārata) — yakshas-questions-at-the-lake
+- [x] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa) — hanuman-meets-sita
+- [x] Arjuna and Śiva the Hunter — the Pāśupata (Mahābhārata) — arjuna-and-shiva-the-hunter
 
 ## Next
-- [ ] The Yakṣa's Questions at the Lake (Mahābhārata) — Yudhiṣṭhira, Yama
-- [ ] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa) — Hanumān, Sītā
-- [ ] Arjuna and Śiva the Hunter — the Pāśupata (Mahābhārata) — Arjuna, Śiva
 - [ ] Hanumān Sets Laṅkā on Fire (Rāmāyaṇa) — Hanumān, Rāvaṇa, Indrajit
 - [ ] Arjuna in Indra's Heaven — Urvaśī's Curse (Mahābhārata) — Arjuna, Indra, Urvaśī
 - [ ] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa) — Vibhīṣaṇa, Rāvaṇa, Rāma
