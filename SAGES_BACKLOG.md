@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Vyāsa (vyasa) — Satyavatī and Parāśara; born on an island; dividing the Vedas; Dhṛtarāṣṭra, Pāṇḍu, Vidura by niyoga; Gaṇeśa writing the Mahābhārata; Śuka; Gāndhārī's hundred sons; Brahma Sūtras; Guru Pūrṇimā
 - [ ] Vālmīki (valmiki) — the hunter Ratnākara (later tradition) and the Rāma mantra; the anthill; the krauñca birds and the first śloka; Nārada; Sītā and Lava-Kuśa in his āśrama; the Rāmāyaṇa sung at Rāma's court
 - [ ] Durvāsa (durvasa) — born of Atri and Anasūyā as Śiva's part; Kuntī's mantra; Śakuntalā's curse; Indra and the garland (churning of the ocean); Ambarīṣa and the Sudarśana; Draupadī's akṣaya-pātra; Lakṣmaṇa and Rāma's departure
 - [ ] Atri and Anasūyā (atri) — Atri in the Ṛgveda (eclipse hymn); Anasūyā and the Trimūrti as babies; Dattātreya, Durvāsa, Candra; Anasūyā gifts Sītā; the Ganga at Citrakūṭa (Mandākinī)
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Agastya (agastya) — 12 chapters — 2026-10-18
 - [x] Bhṛgu (bhrigu) — 11 chapters — 2026-10-19
 - [x] Nārada (narada) — 12 chapters — 2026-10-20
+- [x] Vyāsa (vyasa) — 12 chapters — 2026-10-21
