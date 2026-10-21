@@ -1268,6 +1268,7 @@ body {
     <button class="stab" data-sec="panch" onclick="openPanch()">Panchāṅgam</button>
     <button class="stab" data-sec="ramayana" onclick="openRamayana()">Rāmāyaṇa</button>
     <button class="stab" data-sec="sages" onclick="openSages()">Sages</button>
+    <button class="stab" data-sec="vedas" onclick="openVedas()">Vedas</button>
     <button class="stab" data-sec="kids" onclick="openKids()">Kids</button>
   </div>
   <button id="btn-recite" onclick="startRecite()">▶ Recite</button>
@@ -3926,6 +3927,7 @@ function renderLibrary() {
     { key:'panch', icon:'🌗', name:'Panchāṅgam',             desc:'Daily Telugu calendar',     action:"openPanch()",                gradient:'linear-gradient(160deg,#1a1040,#b8720a)', dot:'#b8720a', tradition:'Kālam' },
     { key:'ramayana', icon:'🏹', name:'Śrī Rāmāyaṇa',         desc:'Vālmīki · retold in EN & తె', action:"openRamayana()",          gradient:'linear-gradient(160deg,#5a1e06,#e08a2c)', dot:'#e08a2c', tradition:'Itihāsa', photo:'icons/tile-ramayana.jpg', photoPos:'center center' },
     { key:'sages', icon:'🧘', name:'Great Sages',            desc:'Maharṣulu · full life stories', action:"openSages()",           gradient:'linear-gradient(160deg,#2a0a02,#d0601c)', dot:'#d0601c', tradition:'Itihāsa' },
+    { key:'vedas', icon:'🕉️', name:'The Vedas', desc:'Vedālu · explained simply', action:"openVedas()", gradient:'linear-gradient(160deg,#3a1406,#c0601c)', dot:'#c0601c', tradition:'Veda' },
     { key:'kids',  icon:'🧒', name:'Kids Corner',            desc:'Learn Telugu · Stories',    action:"openKids()",                 gradient:'linear-gradient(160deg,#c9572c,#8a5cc2)', dot:'#c9572c', tradition:'Children' },
     { key:'nrsimha',icon:'🦁', name:'Śrī Lakṣmī Nṛsiṃha',    desc:'Karāvalamba · Stotrams',   action:"switchSection('nrsimha')",  gradient:'linear-gradient(160deg,#5a1a00,#e0701a)', dot:'#e0701a', tradition:'Stotra', photo:'icons/tile-nrsimha.jpg', photoPos:'center center' },
     { key:'rama',  icon:'🛡️', name:'Śrī Rāma',               desc:'Rāma Rakṣā · Stotrams',    action:"switchSection('rama')",     gradient:'linear-gradient(160deg,#0a2a4a,#2a8a9a)', dot:'#2a8a9a', tradition:'Stotra', photo:'icons/tile-rama.jpg', photoPos:'center center' },
@@ -6099,6 +6101,7 @@ function openPanch() {
 <script src="sages/narada.js"></script>
 <script src="sages/vyasa.js"></script>
 <script src="sages.js"></script>
+<script src="vedas/intro.js"></script>
 <script src="vedas.js"></script>
 </body>
 </html>
