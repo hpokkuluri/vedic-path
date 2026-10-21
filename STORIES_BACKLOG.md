@@ -47,11 +47,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] The Yakṣa's Questions at the Lake (Mahābhārata) — yakshas-questions-at-the-lake
 - [x] Hanumān Meets Sītā in the Aśoka Garden (Rāmāyaṇa) — hanuman-meets-sita
 - [x] Arjuna and Śiva the Hunter — the Pāśupata (Mahābhārata) — arjuna-and-shiva-the-hunter
+- [x] Hanumān Sets Laṅkā on Fire (Rāmāyaṇa) — hanuman-sets-lanka-on-fire
+- [x] Arjuna in Indra's Heaven — Urvaśī's Curse (Mahābhārata) — arjuna-and-urvashi
+- [x] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa) — vibhishana-joins-rama
 
 ## Next
-- [ ] Hanumān Sets Laṅkā on Fire (Rāmāyaṇa) — Hanumān, Rāvaṇa, Indrajit
-- [ ] Arjuna in Indra's Heaven — Urvaśī's Curse (Mahābhārata) — Arjuna, Indra, Urvaśī
-- [ ] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa) — Vibhīṣaṇa, Rāvaṇa, Rāma
 - [ ] Bhīma Fetches the Saugandhika Flowers (Mahābhārata) — Bhīma, Draupadī, Kubera's guards
 - [ ] Samudra, the Ocean King, Shows the Way (Rāmāyaṇa) — Rāma, Samudra, Nala
 - [ ] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata) — Yudhiṣṭhira, Bhīma, Arjuna as Bṛhannalā

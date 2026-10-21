@@ -997,4 +997,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'hanuman-sets-lanka-on-fire',
+    added: '2026-10-21',
+    epic: 'Ramayana',
+    chars: ['Hanumān', 'Rāvaṇa', 'Indrajit', 'Vibhīṣaṇa', 'Sītā'],
+    title: { en: 'Hanumān Sets Laṅkā on Fire', te: 'హనుమంతుడి లంకా దహనం' },
+    moral: { en: 'Courage with a cool head can turn trouble into victory.', te: 'ధైర్యానికి నిదానం తోడైతే కష్టం కూడా విజయంగా మారుతుంది.' },
+    cover: { bg: 'night', props: [['moon', 60, 55, 0.8], ['lanka', 200, 196, 2], ['fire', 120, 120, 0.6], ['fire', 175, 92, 0.75], ['fire', 255, 104, 0.7], ['hanuman', 320, 80, 0.7]] },
+    pages: [
+      {
+        scene: { bg: 'forest', props: [['tree', 50, 198, 1.1], ['rock', 120, 200, 0.8], ['monkey', 180, 196, 1.4, { color: '#d9772a' }], ['mace', 212, 198, 1], ['demon', 290, 198, 0.95, { raise: true }], ['demon', 355, 198, 0.85, { color: '#5a7a5a', bald: true, flip: true }]] },
+        en: 'Hanumān had found Sītā and given her Rāma\'s ring. But before going home, he thought, "Let me show Rāvaṇa how strong Rāma\'s friends are." So he began to pull up the trees of the Aśoka garden — every tree except the one where Sītā sat. Crash! Snap! The guards came running, and then whole armies of demons. Hanumān swung a great iron bar and sent them all flying. At last Rāvaṇa\'s son Indrajit came in his chariot and shot the Brahmāstra, the weapon of Lord Brahmā. Hanumān could have broken free, but out of respect for Brahmā, he let himself be tied up. "Good," he smiled. "Now they will take me straight to Rāvaṇa."',
+        te: 'హనుమంతుడు సీతమ్మను చూసి, రాముడి ఉంగరాన్ని ఆమెకు ఇచ్చాడు. కానీ తిరిగి వెళ్ళే ముందు ఇలా అనుకున్నాడు: "రాముడి మిత్రులు ఎంత బలవంతులో రావణుడికి చూపిస్తాను." వెంటనే అశోక వనంలోని చెట్లను పెకలించడం మొదలుపెట్టాడు — సీతమ్మ కూర్చున్న చెట్టును తప్ప. ఢాం! ఫట్! కాపలాదారులు పరుగెత్తుకొచ్చారు, తరువాత రాక్షసుల సైన్యాలే వచ్చాయి. హనుమంతుడు ఒక పెద్ద ఇనుప దండాన్ని గిరగిరా తిప్పి వాళ్ళందరినీ దూరంగా విసిరేశాడు. చివరకు రావణుడి కొడుకు ఇంద్రజిత్తు రథం మీద వచ్చి బ్రహ్మదేవుడి అస్త్రమైన బ్రహ్మాస్త్రాన్ని ప్రయోగించాడు. హనుమంతుడు ఆ బంధాన్ని తెంచుకుని బయటపడగలిగేవాడే. కానీ బ్రహ్మదేవుడి మీద గౌరవంతో కట్టుబడిపోయాడు. "మంచిది," అని నవ్వుకున్నాడు. "ఇప్పుడు వీళ్ళే నన్ను నేరుగా రావణుడి దగ్గరకు తీసుకెళతారు."',
+      },
+      {
+        scene: { bg: 'court', props: [['throne', 100, 196, 1.2], ['demon', 100, 192, 1.1, { cloth: '#f0c040' }], ['person', 195, 198, 1.2, { skin: 'dark', cloth: '#4a7a5a', raise: true }], ['tail', 300, 198, 0.45], ['tail', 300, 184, 0.42], ['tail', 300, 170, 0.39], ['tail', 300, 156, 0.36], ['tail', 300, 142, 0.33], ['monkey', 300, 136, 1.05, { color: '#d9772a' }]] },
+        en: 'In his golden hall, Rāvaṇa sat on a high throne, his ten heads glittering with crowns. No one offered Hanumān a seat. So, it is said, he stretched his tail longer and longer, coiled it into a tall tower, and sat on top — higher than the king himself! "Who are you, monkey?" roared Rāvaṇa. "I am Hanumān, messenger of Rāma," came the calm reply. "Return Sītā to him with respect, and ask his pardon. That is the only way to save Laṅkā." Rāvaṇa shook with rage. "Kill him!" But his younger brother Vibhīṣaṇa stood up. "Brother, a messenger must never be killed. Punish him some other way."',
+        te: 'తన బంగారు సభలో రావణుడు ఎత్తైన సింహాసనం మీద కూర్చున్నాడు. అతని పది తలల మీద కిరీటాలు మెరుస్తున్నాయి. హనుమంతుడికి ఎవరూ ఆసనం ఇవ్వలేదు. అప్పుడు అతడు తన తోకను పొడవుగా, ఇంకా పొడవుగా పెంచి, దాన్ని చుట్టలు చుట్టలుగా ఎత్తైన గోపురంలా చుట్టి, దాని మీద కూర్చున్నాడని చెబుతారు — రాజు కంటే ఎత్తులో! "కోతీ, ఎవరు నువ్వు?" అని రావణుడు గర్జించాడు. "నేను హనుమంతుడిని, శ్రీరాముడి దూతను," అని ప్రశాంతంగా జవాబు వచ్చింది. "సీతమ్మను గౌరవంగా రాముడికి అప్పగించి, ఆయనను క్షమించమని వేడుకో. లంకను కాపాడుకోవడానికి అదొక్కటే దారి." రావణుడు కోపంతో ఊగిపోయాడు. "వీడిని చంపండి!" కానీ అతని తమ్ముడు విభీషణుడు లేచి నిలబడ్డాడు. "అన్నా, దూతను ఎన్నడూ చంపకూడదు. వేరే విధంగా శిక్షించు."',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 350, 45, 0.7], ['lanka', 230, 198, 1.9], ['fire', 150, 124, 0.6], ['fire', 205, 94, 0.75], ['fire', 285, 106, 0.7], ['hanuman', 120, 90, 0.75], ['fire', 55, 74, 0.5]] },
+        en: '"Then set his tail on fire!" ordered Rāvaṇa. The demons wrapped Hanumān\'s tail in old cloth, soaked it in oil and lit it. Laughing and beating drums, they paraded him through the streets. When Sītā heard, she prayed, "O Fire god, if I have always been true, be cool to Hanumān." And the flames felt as cool as sandal paste! Suddenly Hanumān shrank, slipped out of the ropes, and grew huge again. With his blazing tail he leapt from rooftop to rooftop, and the golden palaces of Laṅkā went up in flames. Then he dipped his tail in the sea, made sure Sītā was safe, and leapt back across the ocean to bring Rāma the good news.',
+        te: '"అలా అయితే వీడి తోకకు నిప్పు పెట్టండి!" అని రావణుడు ఆజ్ఞాపించాడు. రాక్షసులు హనుమంతుడి తోకకు పాత గుడ్డలు చుట్టి, నూనెలో ముంచి, నిప్పు అంటించారు. నవ్వుతూ, డప్పులు కొడుతూ అతన్ని వీధుల్లో ఊరేగించారు. ఈ సంగతి విన్న సీతమ్మ, "అగ్నిదేవా, నేను ఎప్పుడూ సత్యంగానే ఉన్నదాన్నయితే, హనుమంతుడిని చల్లగా చూడు," అని ప్రార్థించింది. ఆ మంటలు అతనికి చందనంలా చల్లగా అనిపించాయి! ఒక్కసారిగా హనుమంతుడు చిన్నగా మారి తాళ్ళ నుంచి జారిపోయి, మళ్ళీ పెద్దగా పెరిగాడు. మండుతున్న తోకతో ఒక మేడ మీద నుంచి మరో మేడ మీదికి దూకాడు. లంకలోని బంగారు భవనాలు మంటల్లో చిక్కుకున్నాయి. తరువాత తోకను సముద్రంలో ముంచి మంట ఆర్పుకున్నాడు. సీతమ్మ క్షేమంగా ఉందని చూసుకుని, ఈ శుభవార్త రాముడికి చెప్పడానికి సముద్రం మీదుగా తిరిగి ఎగిరాడు.',
+      },
+    ],
+  },
+  {
+    id: 'arjuna-and-urvashi',
+    added: '2026-10-21',
+    epic: 'Mahabharata',
+    chars: ['Arjuna', 'Indra', 'Urvaśī', 'Citrasena'],
+    title: { en: 'Arjuna in Indra\'s Heaven — Urvaśī\'s Curse', te: 'స్వర్గంలో అర్జునుడు — ఊర్వశి శాపం' },
+    moral: { en: 'Doing right may cost you something, but in the end it always brings good.', te: 'సరైన పని చేస్తే కొంత కష్టం రావచ్చు, కానీ చివరకు అదే మేలు చేస్తుంది.' },
+    cover: { bg: 'palace', props: [['cloud', 60, 55, 1], ['cloud', 340, 60, 0.9], ['person', 150, 198, 1.35, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['person', 255, 198, 1.45, { skin: 'wheat', cloth: '#3a6ab0' }], ['bow', 285, 198, 1]] },
+    pages: [
+      {
+        scene: { bg: 'sky', props: [['sun', 345, 70, 1], ['cloud', 70, 60, 0.9], ['cloud', 195, 172, 2.2], ['person', 190, 128, 0.75, { skin: 'wheat', cloth: '#3a6ab0' }], ['chariot', 200, 152, 1.3], ['cloud', 300, 45, 0.8]] },
+        en: 'While the Pāṇḍavas lived in the forest, Arjuna went to the Himālayas and won the Pāśupata weapon from Lord Śiva. Soon after, a shining chariot rolled down from the clouds. Its driver, Mātali, bowed. "Indra, king of the gods, wishes to see his son Arjuna!" Up and up they flew, to Amarāvatī, the city of the gods, where flowers never fade. Indra hugged Arjuna and seated him beside his own throne. Arjuna stayed there for five years. He learned the gods\' own weapons — of thunder, wind and fire. And Indra said, "Learn music and dance too, my son. One day you will need them." So the gandharva Citrasena became his teacher.',
+        te: 'పాండవులు అడవిలో ఉన్న రోజుల్లో అర్జునుడు హిమాలయాలకు వెళ్ళి శివుడి నుంచి పాశుపతాస్త్రాన్ని పొందాడు. కొద్ది సేపటికే మేఘాల నుంచి మెరిసిపోతున్న ఒక రథం కిందికి దిగి వచ్చింది. దాని సారథి మాతలి నమస్కరించి, "దేవతల రాజు ఇంద్రుడు తన కుమారుడైన అర్జునుడిని చూడాలనుకుంటున్నాడు!" అన్నాడు. రథం పైకి, ఇంకా పైకి ఎగిరి, పూలు ఎప్పటికీ వాడని దేవనగరం అమరావతికి చేరుకుంది. ఇంద్రుడు అర్జునుడిని కౌగిలించుకుని తన సింహాసనం పక్కనే కూర్చోబెట్టుకున్నాడు. అర్జునుడు అక్కడ ఐదేళ్ళు ఉన్నాడు. ఉరుము, గాలి, అగ్ని వంటి దేవతల అస్త్రాలన్నీ నేర్చుకున్నాడు. "నాయనా, సంగీతం, నాట్యం కూడా నేర్చుకో. ఒక రోజు అవి నీకు పనికొస్తాయి," అన్నాడు ఇంద్రుడు. అలా గంధర్వుడైన చిత్రసేనుడు అర్జునుడికి గురువయ్యాడు.',
+      },
+      {
+        scene: { bg: 'palace', props: [['drum', 60, 198, 1], ['person', 140, 198, 1.35, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['flowers', 200, 200, 0.9], ['person', 270, 198, 1.4, { skin: 'wheat', cloth: '#3a6ab0' }], ['throne', 355, 196, 0.9], ['person', 355, 190, 1.05, { skin: 'fair', cloth: '#f0c040', crown: true }]] },
+        en: 'One evening the heavenly dancer Urvaśī danced in Indra\'s hall. Her anklets jingled like rain, and everyone was spellbound. Arjuna watched her with deep respect. Indra noticed and thought, "My son likes Urvaśī." So he asked her to visit Arjuna. That night she came to him in her finest jewels, wishing to become his bride. But Arjuna stood up and folded his hands. "Mother, why have you come?" Urvaśī was astonished. "Mother? I am no mother of yours!" "Long ago you were the wife of King Purūravas, an ancestor of our Kuru family," said Arjuna. "So you are a mother of my whole family. I looked at you only with respect."',
+        te: 'ఒక సాయంత్రం దేవనర్తకి ఊర్వశి ఇంద్రసభలో నాట్యం చేసింది. ఆమె అందెలు వాన చినుకుల్లా ఘల్లుమన్నాయి. అందరూ మైమరచిపోయారు. అర్జునుడు ఆమెను ఎంతో గౌరవంగా చూస్తున్నాడు. అది గమనించిన ఇంద్రుడు, "నా కుమారుడికి ఊర్వశి నచ్చింది," అనుకుని, అర్జునుడి దగ్గరకు వెళ్ళమని ఊర్వశికి చెప్పాడు. ఆ రాత్రి ఊర్వశి మంచి నగలు ధరించి, అర్జునుడిని పెళ్ళాడాలనే కోరికతో అతని దగ్గరకు వచ్చింది. కానీ అర్జునుడు లేచి నిలబడి చేతులు జోడించాడు. "అమ్మా, ఎందుకు వచ్చారు?" ఊర్వశి ఆశ్చర్యపోయింది. "అమ్మనా? నేను నీకు తల్లిని కాను!" "చాలా కాలం క్రితం మా కురువంశ పూర్వీకుడైన పురూరవ మహారాజుకు మీరు భార్య," అన్నాడు అర్జునుడు. "అందుకే మీరు మా వంశానికే తల్లి వంటివారు. నేను మిమ్మల్ని గౌరవంతోనే చూశాను."',
+      },
+      {
+        scene: { bg: 'palace', props: [['person', 110, 198, 1.35, { female: true, skin: 'fair', cloth: '#d9577a', pallu: '#f0c040', raise: true }], ['person', 205, 198, 1.4, { skin: 'wheat', cloth: '#3a6ab0' }], ['throne', 320, 196, 1], ['person', 300, 198, 1.3, { skin: 'fair', cloth: '#f0c040', crown: true, raise: true }], ['cloud', 360, 50, 0.8]] },
+        en: 'No one had ever refused Urvaśī before. Her eyes flashed with anger. "You turned me away!" she cried. "So be it! You will forget that you are a warrior, and live among women as a dance teacher!" Arjuna was shaken and went to Indra. But Indra smiled and put a hand on his shoulder. "My son, you did right. Your goodness pleases me more than any victory. And this curse will become a blessing. It will last only one year, and you may choose when." Years later, when the Pāṇḍavas had to live in disguise for one whole year, Arjuna used that very curse — and became Bṛhannalā, the dance teacher whom no one recognised!',
+        te: 'ఊర్వశిని ఇంతవరకు ఎవరూ కాదనలేదు. ఆమె కళ్ళు కోపంతో మెరిశాయి. "నన్ను కాదన్నావు కదా! అందుకే నువ్వు వీరుడివని మరచిపోయి, స్త్రీల మధ్య నాట్యం నేర్పేవాడిగా బతుకుతావు!" అని శపించింది. అర్జునుడు కలవరపడి ఇంద్రుడి దగ్గరకు వెళ్ళాడు. ఇంద్రుడు చిరునవ్వుతో అతని భుజం మీద చేయి వేశాడు. "నాయనా, నువ్వు సరైన పనే చేశావు. ఏ విజయం కంటే నీ మంచితనమే నాకు ఎక్కువ సంతోషాన్ని ఇచ్చింది. ఈ శాపం నీకు వరంగా మారుతుంది. ఇది ఒక్క సంవత్సరం మాత్రమే ఉంటుంది, ఎప్పుడు అనేది నువ్వే ఎంచుకోవచ్చు." కొన్నేళ్ళ తరువాత పాండవులు ఒక సంవత్సరం పాటు మారువేషాల్లో బతకవలసి వచ్చినప్పుడు, అర్జునుడు ఈ శాపాన్నే ఉపయోగించుకున్నాడు — ఎవరూ గుర్తుపట్టలేని నాట్యాచార్యుడు బృహన్నలగా మారాడు!',
+      },
+    ],
+  },
+  {
+    id: 'vibhishana-joins-rama',
+    added: '2026-10-21',
+    epic: 'Ramayana',
+    chars: ['Vibhīṣaṇa', 'Rāvaṇa', 'Rāma', 'Sugrīva', 'Hanumān', 'Lakṣmaṇa'],
+    title: { en: 'Vibhīṣaṇa Joins Rāma', te: 'రాముడి శరణు కోరిన విభీషణుడు' },
+    moral: { en: 'Stand up for what is right, and good friends will stand by you.', te: 'ధర్మం వైపు నిలబడితే మంచి మిత్రులు నీకు తోడుగా నిలుస్తారు.' },
+    cover: { bg: 'shore', props: [['sun', 60, 50, 0.9], ['lanka', 330, 150, 0.6], ['person', 160, 198, 1.45, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['bow', 188, 198, 1], ['person', 250, 198, 1.35, { skin: 'dark', cloth: '#4a7a5a', crown: true }], ['monkey', 90, 196, 1, { color: '#d9772a' }]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['throne', 100, 196, 1.2], ['demon', 100, 192, 1.1, { cloth: '#f0c040', raise: true }], ['person', 225, 198, 1.4, { skin: 'dark', cloth: '#4a7a5a' }], ['demon', 330, 198, 0.9, { color: '#5a7a5a', bald: true, flip: true }]] },
+        en: 'After Hanumān set Laṅkā ablaze, Rāvaṇa called his ministers. "Rāma is coming with an army of monkeys. What shall we do?" "Fight! We will crush them!" shouted the boastful ones. But Rāvaṇa\'s younger brother, Vibhīṣaṇa, spoke calmly. "Brother, ever since Sītā came here, bad omens have filled our city. Rāma is good and mighty. Give Sītā back and make peace — that is right, and it will save Laṅkā." Rāvaṇa\'s face burned with anger. "You live in my palace, yet you praise my enemy! If you were not my brother, I would punish you. Get out of my sight!"',
+        te: 'హనుమంతుడు లంకను కాల్చి వెళ్ళిన తరువాత రావణుడు తన మంత్రులను పిలిచాడు. "రాముడు వానర సైన్యంతో వస్తున్నాడు. ఏం చేద్దాం?" "యుద్ధం చేద్దాం! వాళ్ళను నలిపేద్దాం!" అని గొప్పలు చెప్పుకునేవాళ్ళు అరిచారు. కానీ రావణుడి తమ్ముడు విభీషణుడు ప్రశాంతంగా మాట్లాడాడు. "అన్నా, సీతమ్మ ఇక్కడికి వచ్చినప్పటి నుంచి మన నగరంలో అన్నీ అపశకునాలే కనిపిస్తున్నాయి. రాముడు ధర్మాత్ముడు, మహా బలవంతుడు. సీతమ్మను తిరిగి ఇచ్చి సంధి చేసుకో — అదే ధర్మం, అదే లంకను కాపాడుతుంది." రావణుడి ముఖం కోపంతో ఎర్రబడింది. "నా ఇంట్లో ఉంటూ నా శత్రువును పొగుడుతావా! నువ్వు నా తమ్ముడివి కాకపోతే నిన్ను శిక్షించేవాడిని. నా కళ్ళ ముందు నుంచి వెళ్ళిపో!"',
+      },
+      {
+        scene: { bg: 'shore', props: [['cloud', 300, 108, 1.9], ['person', 288, 98, 0.85, { skin: 'dark', cloth: '#4a7a5a', raise: true }], ['person', 322, 98, 0.6, { skin: 'dark', cloth: '#5a5a8a' }], ['monkey', 70, 196, 1.2, { color: '#c9a26b' }], ['monkey', 135, 196, 1.1, { color: '#d9772a' }], ['person', 205, 198, 1.4, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['palm', 375, 198, 0.9]] },
+        en: 'Sadly, Vibhīṣaṇa rose into the sky with four loyal friends and flew across the ocean to where Rāma\'s army was camped. "I am Vibhīṣaṇa, Rāvaṇa\'s brother," he called from above. "I have left everything behind. I have come to Rāma for shelter." The monkeys grew suspicious. "He is a demon, and Rāvaṇa\'s own brother," said King Sugrīva. "He may be a spy!" Others agreed. But Hanumān said, "I have watched his face. I see no trick in it. He spoke up for what is right, and he has come at the right time." Everyone turned to Rāma. What would he decide?',
+        te: 'బాధతో విభీషణుడు తన నలుగురు నమ్మకమైన మిత్రులతో కలిసి ఆకాశంలోకి లేచి, సముద్రం దాటి రాముడి సైన్యం విడిది చేసిన చోటికి ఎగిరి వచ్చాడు. "నేను రావణుడి తమ్ముడు విభీషణుడిని," అని ఆకాశం నుంచే పిలిచాడు. "నేను అన్నీ వదులుకుని వచ్చాను. శ్రీరాముడి శరణు కోరుతున్నాను." వానరులకు అనుమానం వచ్చింది. "ఇతడు రాక్షసుడు, పైగా రావణుడి సొంత తమ్ముడు," అన్నాడు సుగ్రీవుడు. "గూఢచారి కావచ్చు!" మరికొందరు కూడా అదే అన్నారు. కానీ హనుమంతుడు, "నేను అతని ముఖం చూశాను. అందులో ఏ మోసమూ కనిపించడం లేదు. అతను ధర్మం వైపు నిలిచి మాట్లాడాడు, సరైన సమయంలో వచ్చాడు," అన్నాడు. అందరూ రాముడి వైపు చూశారు. ఆయన ఏం నిర్ణయిస్తాడు?',
+      },
+      {
+        scene: { bg: 'shore', props: [['sun', 360, 45, 0.8], ['person', 80, 198, 1.3, { skin: 'fair', cloth: '#e8a23a' }], ['person', 160, 198, 1.45, { skin: 'blue', cloth: '#f0c040', tilak: true, raise: true }], ['pot', 196, 122, 0.55], ['person', 230, 198, 1.3, { skin: 'dark', cloth: '#4a7a5a', crown: true }], ['monkey', 305, 196, 1.1, { color: '#d9772a' }], ['monkey', 360, 196, 1, { color: '#c9a26b' }]] },
+        en: 'Rāma smiled. "If anyone comes to me asking for shelter, I will protect him — even if he is Rāvaṇa himself. That is my promise." So Vibhīṣaṇa came down and bowed at Rāma\'s feet. Rāma lifted him up and embraced him like a brother. Then he said, "Lakṣmaṇa, bring water from the sea." Right there on the beach, before the whole army, Rāma poured the sea water over Vibhīṣaṇa\'s head and crowned him King of Laṅkā — even before the war had begun! The monkeys cheered, "Jai Śrī Rām!" Vibhīṣaṇa\'s eyes filled with tears. He had lost his home, but he had found a true friend.',
+        te: 'రాముడు చిరునవ్వు నవ్వాడు. "శరణు కోరి వచ్చిన వారిని నేను తప్పక కాపాడతాను — స్వయంగా రావణుడే వచ్చినా సరే. ఇది నా మాట." అప్పుడు విభీషణుడు కిందికి దిగి వచ్చి రాముడి పాదాలకు నమస్కరించాడు. రాముడు అతన్ని పైకి లేవనెత్తి సోదరుడిలా కౌగిలించుకున్నాడు. తరువాత, "లక్ష్మణా, సముద్రపు నీళ్ళు తీసుకురా," అన్నాడు. అక్కడే, ఆ సముద్రపు ఒడ్డున, సైన్యమంతా చూస్తుండగా, రాముడు ఆ నీటితో విభీషణుడికి అభిషేకం చేసి అతన్ని లంకకు రాజుగా పట్టం కట్టాడు — యుద్ధం మొదలవకముందే! వానరులంతా "జై శ్రీరామ్!" అని హర్షధ్వానాలు చేశారు. విభీషణుడి కళ్ళు చెమర్చాయి. అతను ఇంటిని పోగొట్టుకున్నాడు, కానీ నిజమైన మిత్రుడిని పొందాడు.',
+      },
+    ],
+  },
 ];
