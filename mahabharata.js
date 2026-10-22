@@ -6,6 +6,7 @@
 //   ['sloka', teLines[], enLines[], meaningEn, meaningTe]
 //   ['dyk', icon, en, te]                 "Did you know?" box
 //   ['more', titleEn, titleTe, noteEn, noteTe, blocks[]]   tap-to-open box
+//   ['gitalink', en, te, gitaChapterNo]   button that opens that chapter in the app's Gītā section
 // Styling reuses the .rmy styles injected by ramayana.js; scene art comes from window.RMY_SCENE plus a few of our own.
 // Reading progress stays on this phone (localStorage 'vedic_mbh').
 (function () {
@@ -119,6 +120,7 @@
       if (t === 'sloka') return `<div class="sloka"><div class="sk-te">${b[1].map(esc).join('<br>')}</div><div class="sk-en">${b[2].map(esc).join('<br>')}</div>
         <div class="sk-m"><span class="en">“${esc(b[3])}”</span><span class="te">“${esc(b[4])}”</span></div></div>`;
       if (t === 'dyk') return `<div class="dyk"><div class="ic">${b[1]}</div><div><b>Did you know?</b><p><span class="en">${fmt(b[2])}</span><span class="te">${fmt(b[3])}</span></p></div></div>`;
+      if (t === 'gitalink') return `<button class="dyk mbh-gl" style="width:100%;text-align:left;cursor:pointer;font:inherit;color:inherit" onclick="mbhOpenGita('${b[3]}')"><div class="ic">📖</div><div><b><span class="en">Read it in the Gītā section ›</span><span class="te">గీతా విభాగంలో చదవండి ›</span></b><p><span class="en">${esc(b[1])}</span><span class="te">${esc(b[2])}</span></p></div></button>`;
       if (t === 'more') return `<details class="sank"><summary><span class="en">${esc(b[1])}<small>${esc(b[3])}</small></span><span class="te">${esc(b[2])}<small>${esc(b[4])}</small></span></summary><div class="sank-body">${blocks(b[5], false)}</div></details>`;
       return '';
     }).join('');
@@ -161,6 +163,8 @@
   window.enterMahabharata = () => { state.kids = ''; showView('mahabharata'); };
   window.openMbhParva = k => { state.kids = 'k:' + k; showView('mahabharata'); };
   window.openMbhChapter = id => { state.kids = id; showView('mbhread'); };
+  // open a chapter of the app's own Bhagavad Gītā practice section
+  window.mbhOpenGita = ch => { switchSection('gita'); state.chapter = String(ch); state.expandedVerse = null; saveState(); showView('practice'); };
 
   const cover = () => `<div class="cover mbh-cover">
       <svg class="bow" viewBox="0 0 120 120" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 64 C34 34 78 24 100 42 C114 54 110 78 92 86 C68 96 38 84 14 64 Z"/><path d="M86 33 C95 48 95 72 86 88"/><path d="M70 30 C78 48 78 74 70 91"/></svg>
