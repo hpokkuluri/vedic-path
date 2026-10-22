@@ -24,8 +24,8 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 2 | Sabhā | 16 of 16 ✅ |
 | 3 | Āraṇyaka | 42 of 42 ✅ |
 | 4 | Virāṭa | 18 of 18 ✅ |
-| 5 | Udyoga | next (include Ambā's full story told by Bhīṣma, Karṇa and Kuntī, Karṇa and Kṛṣṇa) |
-| 6 | Bhīṣma | — |
+| 5 | Udyoga | 23 of 23 ✅ |
+| 6 | Bhīṣma | next |
 | 7 | Droṇa | — |
 | 8 | Karṇa | — |
 | 9 | Śalya | — |
