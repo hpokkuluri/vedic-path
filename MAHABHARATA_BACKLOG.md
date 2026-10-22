@@ -28,8 +28,8 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 6 | Bhīṣma | 14 of 14 ✅ (Gītā told at story level, with buttons into the Gītā section) |
 | 7 | Droṇa | 14 of 14 ✅ |
 | 8 | Karṇa | 10 of 10 ✅ |
-| 9 | Śalya | next |
-| 10 | Sauptika | — |
+| 9 | Śalya | 8 of 8 ✅ |
+| 10 | Sauptika | next |
 | 11 | Strī | — |
 | 12 | Śānti | — |
 | 13 | Anuśāsana | — |
