@@ -31,8 +31,8 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 9 | Śalya | 8 of 8 ✅ |
 | 10 | Sauptika | 5 of 5 ✅ |
 | 11 | Strī | 7 of 7 ✅ |
-| 12 | Śānti | next |
-| 13 | Anuśāsana | — |
+| 12 | Śānti | 12 of 12 ✅ |
+| 13 | Anuśāsana | next |
 | 14 | Āśvamedhika | — |
 | 15 | Āśramavāsika | — |
 | 16 | Mausala | — |
