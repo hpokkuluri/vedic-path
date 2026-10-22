@@ -19,6 +19,7 @@
     ['life', 'The Vedas in Our Life', 'మన జీవితంలో వేదాలు', 'Why they still matter', 'ఈ రోజుకీ ఎందుకు ముఖ్యం', '🏡', 'linear-gradient(160deg,#3a0a2a,#b04a7a)'],
   ];
   const SMETA = k => SAGES.find(x => x[0] === k) || SAGES[0];
+  window.VEDA_META = SMETA;   // used by bookmarks.js
   const NEW_DAYS = 21;
   const FS = ['1.08rem', '1.22rem', '1.38rem', '1.6rem'];
 

@@ -19,6 +19,7 @@
     ['uttara', 'Uttara Kāṇḍa', 'ఉత్తర కాండ', 'The Later Book', 'తరువాతి కథ', '🪷', 'linear-gradient(160deg,#2a1a4a,#8a5ac0)'],
   ];
   const KMETA = k => KANDAS.find(x => x[0] === k) || KANDAS[0];
+  window.RMY_KMETA = KMETA;   // used by bookmarks.js
   const NEW_DAYS = 21;
   const FS = ['1.08rem', '1.22rem', '1.38rem', '1.6rem'];
 

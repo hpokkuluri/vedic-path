@@ -30,6 +30,7 @@
     ['angiras', 'Aṅgirasa', 'ఆంగీరసుడు', 'With Aamahaiya and Orukshaya', 'ఆమహయ్య, ఔరుక్షయలతో', '🔥', 'linear-gradient(160deg,#3a1a06,#e0802a)'],
   ];
   const SMETA = k => SAGES.find(x => x[0] === k) || SAGES[0];
+  window.SAGE_META = SMETA;   // used by bookmarks.js
   const NEW_DAYS = 21;
   const FS = ['1.08rem', '1.22rem', '1.38rem', '1.6rem'];
 
