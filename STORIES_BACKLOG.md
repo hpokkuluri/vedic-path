@@ -50,11 +50,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Hanumān Sets Laṅkā on Fire (Rāmāyaṇa) — hanuman-sets-lanka-on-fire
 - [x] Arjuna in Indra's Heaven — Urvaśī's Curse (Mahābhārata) — arjuna-and-urvashi
 - [x] Vibhīṣaṇa Joins Rāma (Rāmāyaṇa) — vibhishana-joins-rama
+- [x] Bhīma Fetches the Saugandhika Flowers (Mahābhārata) — bhima-and-the-saugandhika-flowers
+- [x] Samudra, the Ocean King, Shows the Way (Rāmāyaṇa) — samudra-shows-the-way
+- [x] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata) — pandavas-in-disguise-at-viratas-court
 
 ## Next
-- [ ] Bhīma Fetches the Saugandhika Flowers (Mahābhārata) — Bhīma, Draupadī, Kubera's guards
-- [ ] Samudra, the Ocean King, Shows the Way (Rāmāyaṇa) — Rāma, Samudra, Nala
-- [ ] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata) — Yudhiṣṭhira, Bhīma, Arjuna as Bṛhannalā
 - [ ] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa) — Aṅgada, Rāvaṇa
 - [ ] Prince Uttara's Brave Ride (Mahābhārata) — Uttara, Arjuna
 - [ ] Hanumān Carries the Mountain (Rāmāyaṇa) — Hanumān, Lakṣmaṇa, Suṣeṇa
