@@ -322,8 +322,8 @@
 
   // ── a few styles of our own (the rest come from ramayana.js) ──
   const css = `
-.mbh-poster-bg{background:radial-gradient(120% 80% at 50% 10%,#ffe7b0 0%,#e8a04a 38%,#8a3a12 72%,#3a1206 100%)!important;filter:none!important}
-.mbh-poster-bg:after{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 22%,rgba(255,255,255,.10) 0deg 6deg,transparent 6deg 12deg)}
+.mbh-poster .mbh-conch{display:none}
+.mbh-poster-bg{background-image:url('icons/cover-mahabharata.jpg')!important;background-position:32% top!important;filter:none!important}
 .mbh-conch{width:96px!important}
 .rmy-poster-h1.mbh-h1{font-size:3.1rem}
 .rmy .mbh-cover{background:radial-gradient(120% 90% at 80% 0%,#e8a04a 0%,#a8461a 40%,#3a1206 100%)}

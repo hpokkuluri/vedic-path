@@ -15,7 +15,7 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 - Bhagavad Gītā (Bhīṣma Parva): a story-level chapter that links to the app's Gītā section, not a second retelling.
 - Harivaṃśa is included at the end.
 - Rāmāyaṇa code is untouched apart from exposing `RMY_SCENE`.
-- Cover uses a drawn sunburst until a painting is supplied.
+- Cover uses Hari's painting (icons/cover-mahabharata.jpg, its printed title band removed); home tile is the Kṛṣṇa–Arjuna crop (icons/tile-mahabharata.jpg).
 
 ## Status
 | # | Parva | Chapters |
