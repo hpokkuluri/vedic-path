@@ -265,6 +265,8 @@
       </svg>`;
   }
 
+  window.RMY_SCENE = scene;   // shared with mahabharata.js
+
   // ── blocks → HTML ──
   function blocks(list, firstPara) {
     let first = firstPara;

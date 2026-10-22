@@ -139,10 +139,10 @@
       }
       return null;
     }
-    if (v === 'sageread' || v === 'vedaread' || v === 'rmyread') {
-      const list = v === 'sageread' ? window.SAGE_CHAPTERS : v === 'vedaread' ? window.VEDA_CHAPTERS : window.RMY_CHAPTERS;
+    if (v === 'sageread' || v === 'vedaread' || v === 'rmyread' || v === 'mbhread') {
+      const list = v === 'sageread' ? window.SAGE_CHAPTERS : v === 'vedaread' ? window.VEDA_CHAPTERS : v === 'mbhread' ? window.MBH_CHAPTERS : window.RMY_CHAPTERS;
       const c = (list || []).find(x => x.id === state.kids); if (!c) return null;
-      const page = pageIdx(v === 'sageread' ? '#sg-track' : v === 'vedaread' ? '#vd-track' : '#rmy-track');
+      const page = pageIdx(v === 'sageread' ? '#sg-track' : v === 'vedaread' ? '#vd-track' : v === 'mbhread' ? '#mbh-track' : '#rmy-track');
       const loc = { view: v, id: c.id, page };
       const pg = page === 0 ? '' : ` · p.${page + 1}`, pgT = page === 0 ? '' : ` · పే.${page + 1}`;
       if (v === 'sageread') {
@@ -152,6 +152,10 @@
       if (v === 'vedaread') {
         const M = window.VEDA_META ? VEDA_META(c.book) : [c.book, c.book, c.book];
         return { topic: 'veda:' + c.book, title: M[1], titleTe: M[2], loc, where: `Ch ${c.n} · ${c.title}${pg}`, whereTe: `${c.n}వ అధ్యాయం · ${c.titleTe}${pgT}` };
+      }
+      if (v === 'mbhread') {
+        const P = window.MBH_PMETA ? MBH_PMETA(c.parva) : [c.parva, c.parva, c.parva];
+        return { topic: 'mahabharata', title: 'Śrī Mahābhāratam', titleTe: 'శ్రీ మహాభారతం', loc, where: `${P[1]} · Ch ${c.n} · ${c.title}${pg}`, whereTe: `${P[2]} · ${c.n}వ అధ్యాయం · ${c.titleTe}${pgT}` };
       }
       const K = window.RMY_KMETA ? RMY_KMETA(c.kanda) : [c.kanda, c.kanda, c.kanda];
       return { topic: 'ramayana', title: 'Śrī Rāmāyaṇa', titleTe: 'శ్రీ రామాయణం', loc, where: `${K[1]} · Ch ${c.n} · ${c.title}${pg}`, whereTe: `${K[2]} · ${c.n}వ అధ్యాయం · ${c.titleTe}${pgT}` };
@@ -191,9 +195,9 @@
       const d = L.page - storyPage(); if (d) kzPage(d);
       return;
     }
-    const open = L.view === 'sageread' ? window.openSageChapter : L.view === 'vedaread' ? window.openVedaChapter : window.openRmyChapter;
-    const go = L.view === 'sageread' ? 'sgGo' : L.view === 'vedaread' ? 'vdGo' : 'rmyGo';
-    const tr = L.view === 'sageread' ? '#sg-track' : L.view === 'vedaread' ? '#vd-track' : '#rmy-track';
+    const open = L.view === 'sageread' ? window.openSageChapter : L.view === 'vedaread' ? window.openVedaChapter : L.view === 'mbhread' ? window.openMbhChapter : window.openRmyChapter;
+    const go = L.view === 'sageread' ? 'sgGo' : L.view === 'vedaread' ? 'vdGo' : L.view === 'mbhread' ? 'mbhGo' : 'rmyGo';
+    const tr = L.view === 'sageread' ? '#sg-track' : L.view === 'vedaread' ? '#vd-track' : L.view === 'mbhread' ? '#mbh-track' : '#rmy-track';
     if (!open) return;
     open(L.id);
     const d = L.page - pageIdx(tr); if (d && window[go]) window[go](d);
