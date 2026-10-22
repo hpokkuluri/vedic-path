@@ -42,7 +42,6 @@ Wednesday 2026-10-21, taking the first unchecked book under "Next".
 
 ## Next
 
-- [ ] The Vedas in Our Life (life) — where the Vedas still touch a Hindu family's day: Om; sandhyāvandanam and the Gāyatrī; the sixteen saṃskāras from naming to marriage to the last rites, and which Veda each comes from; the wedding — the seven steps, Agni as witness, Arundhatī's star (link va-2); the upanayanam; gotra and pravara (link an-11); temple worship and the Vedic chanting there; the pañcāṅga and the Vedic calendar; Āyurveda, yoga, music and architecture; what the Vedas teach about the environment, truth, giving, and living in harmony; how anyone can begin to learn — chanting, reading in translation, listening; and why it matters for the next generation.
 
 ## Done
 - [x] What Are the Vedas? (intro) — 10 chapters — 2026-10-21
@@ -50,3 +49,4 @@ Wednesday 2026-10-21, taking the first unchecked book under "Next".
 - [x] Yajurveda (yajur) — 11 chapters — 2026-10-22
 - [x] Sāmaveda (sama) — 11 chapters — 2026-10-22
 - [x] Atharvaveda (atharva) — 10 chapters — 2026-10-22
+- [x] The Vedas in Our Life (life) — 11 chapters — 2026-10-22
