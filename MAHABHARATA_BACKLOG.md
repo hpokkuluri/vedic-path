@@ -29,8 +29,8 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 7 | Droṇa | 14 of 14 ✅ |
 | 8 | Karṇa | 10 of 10 ✅ |
 | 9 | Śalya | 8 of 8 ✅ |
-| 10 | Sauptika | next |
-| 11 | Strī | — |
+| 10 | Sauptika | 5 of 5 ✅ |
+| 11 | Strī | next |
 | 12 | Śānti | — |
 | 13 | Anuśāsana | — |
 | 14 | Āśvamedhika | — |
