@@ -236,7 +236,7 @@
         ? PH.map(p => ['ph:' + p.id]).concat([['add']])
         : STYLES.filter(s => s[1] === g);
       return `<div class="bm-grp">${e(T(en, te))}</div><div class="bm-grid">${items.map(s => {
-        if (s[0] === 'add') return `<label class="bm-chip add"><span class="bm-plus">＋</span><span class="bm-nm">${T('Add photo', 'ఫోటో జోడించండి')}</span><input type="file" accept="image/*" class="bm-file" onchange="bmAddPhoto(this)" aria-label="Add photo"></label>`;
+        if (s[0] === 'add') return `<div class="bm-chip add"><span class="bm-plus">＋</span><span class="bm-nm">${T('Add photo', 'ఫోటో జోడించండి')}</span><input type="file" accept="image/*" class="bm-file" onclick="event.stopPropagation()" onchange="bmAddPhoto(this)" aria-label="Add photo"></div>`;
         const id = s[0], st = style(id), on = BM.style === id;
         return `<div class="bm-chip${on ? ' on' : ''}" onclick="bmSetStyle('${id}')">${ribbon(id, 30)}<span class="bm-nm">${e(T(st[2], st[3]))}</span>${g === 'photo' ? `<button class="bm-del" onclick="event.stopPropagation();bmDelPhoto('${id}')" aria-label="Delete photo">✕</button>` : ''}</div>`;
       }).join('')}</div>`;
