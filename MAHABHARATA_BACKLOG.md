@@ -1,0 +1,43 @@
+# Śrī Mahābhāratam — build plan
+
+Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and detailed — nothing important left out.
+
+## How it is built
+- Reader: `mahabharata.js` (cover poster → 18 parvas + Harivaṃśa → chapter list → swipe reader). Reuses the Rāmāyaṇa styles and scene art (`window.RMY_SCENE`), adds its own scenes (naimisha, serpent, garuda, sun, dice, chariot).
+- Content: one file per parva in `mahabharata/<parva>.js`, appending to `window.MBH_PLAN`, `window.MBH_WHO`, `window.MBH_CHAPTERS`.
+- Chapter fields: `id` (`adi-1`), `parva`, `n`, `order` (parva index × 100 + n), `date`, `title`, `titleTe`, `adh` (the upa-parva shown under the title), `scene`, `who`, `pages`, `remember`, `think`. Plan entries are `[title, upa-parva]` and must match each chapter.
+- Names in prose use `{key|Name}`; every key must exist in `MBH_WHO`.
+- Each new parva file needs a `<script>` tag in `index.html` (before `mahabharata.js`) and an entry in `sw.js` SHELL, with the cache version bumped.
+- Narration is plain prose (no outer quote marks for Sauti / Vaiśampāyana).
+- Ślokas only when the text is certain; anything from later poets or folk tradition is labelled as such.
+
+## Decisions
+- Bhagavad Gītā (Bhīṣma Parva): a story-level chapter that links to the app's Gītā section, not a second retelling.
+- Harivaṃśa is included at the end.
+- Rāmāyaṇa code is untouched apart from exposing `RMY_SCENE`.
+- Cover uses a drawn sunburst until a painting is supplied.
+
+## Status
+| # | Parva | Chapters |
+|---|---|---|
+| 1 | Ādi | 43 of 43 ✅ |
+| 2 | Sabhā | next |
+| 3 | Āraṇyaka | — |
+| 4 | Virāṭa | — |
+| 5 | Udyoga | — (include Ambā's full story told by Bhīṣma, Karṇa and Kuntī, Karṇa and Kṛṣṇa) |
+| 6 | Bhīṣma | — |
+| 7 | Droṇa | — |
+| 8 | Karṇa | — |
+| 9 | Śalya | — |
+| 10 | Sauptika | — |
+| 11 | Strī | — |
+| 12 | Śānti | — |
+| 13 | Anuśāsana | — |
+| 14 | Āśvamedhika | — |
+| 15 | Āśramavāsika | — |
+| 16 | Mausala | — |
+| 17 | Mahāprasthānika | — |
+| 18 | Svargārohaṇa | — |
+| ✦ | Harivaṃśa | — |
+
+Threads set up in Ādi Parva to pay off later: Karṇa's armour taken by Indra (Āraṇyaka), Aśvasena (Karṇa Parva), Ulūpī and Babhruvāhana (Āśvamedhika), Ghaṭotkaca's promise (Droṇa), Yuyutsu crossing over (Bhīṣma), Śikhaṇḍī (Udyoga/Bhīṣma).
