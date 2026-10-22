@@ -236,7 +236,7 @@
         ? PH.map(p => ['ph:' + p.id]).concat([['add']])
         : STYLES.filter(s => s[1] === g);
       return `<div class="bm-grp">${e(T(en, te))}</div><div class="bm-grid">${items.map(s => {
-        if (s[0] === 'add') return `<label class="bm-chip add"><span class="bm-plus">＋</span><span class="bm-nm">${T('Add photo', 'ఫోటో జోడించండి')}</span><input type="file" accept="image/*" onchange="bmAddPhoto(this)" hidden></label>`;
+        if (s[0] === 'add') return `<label class="bm-chip add"><span class="bm-plus">＋</span><span class="bm-nm">${T('Add photo', 'ఫోటో జోడించండి')}</span><input type="file" accept="image/*" class="bm-file" onchange="bmAddPhoto(this)" aria-label="Add photo"></label>`;
         const id = s[0], st = style(id), on = BM.style === id;
         return `<div class="bm-chip${on ? ' on' : ''}" onclick="bmSetStyle('${id}')">${ribbon(id, 30)}<span class="bm-nm">${e(T(st[2], st[3]))}</span>${g === 'photo' ? `<button class="bm-del" onclick="event.stopPropagation();bmDelPhoto('${id}')" aria-label="Delete photo">✕</button>` : ''}</div>`;
       }).join('')}</div>`;
@@ -254,23 +254,52 @@
     if (BM.style === id) { BM.style = 'srirama'; save(); }
     bmRenderSettings(); refresh();
   };
-  window.bmAddPhoto = function (input) {
-    const f = input.files && input.files[0]; if (!f) return;
-    const r = new FileReader();
-    r.onload = () => {
-      const img = new Image();
-      img.onload = () => {
-        const W = 150, H = 240, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
-        const sc = Math.max(W / img.width, H / img.height), w = img.width * sc, h = img.height * sc;
-        cv.getContext('2d').drawImage(img, (W - w) / 2, (H - h) / 2, w, h);
-        const p = { id: Date.now().toString(36), src: cv.toDataURL('image/jpeg', 0.82) };
-        PH.push(p);
-        if (!savePh()) { PH.pop(); toast(T('Phone storage is full', 'ఫోన్‌లో స్థలం లేదు'), T('Delete a photo and try again', 'ఒక ఫోటో తీసేసి మళ్ళీ ప్రయత్నించండి')); return; }
-        BM.style = 'ph:' + p.id; save(); bmRenderSettings(); refresh();
-      };
-      img.src = r.result;
+  // Add the reader's own photo as a bookmark style. Works with big iPhone photos (HEIC/JPEG):
+  // the picture is decoded straight from the file (no huge data: URL), cropped to the ribbon
+  // shape and saved small (~15 KB), so it fits in the phone's storage.
+  window.bmAddPhoto = async function (input) {
+    const f = input.files && input.files[0];
+    if (!f) return;
+    toast(T('Adding photo…', 'ఫోటో జోడిస్తున్నాం…'), '');
+    const W = 180, H = 288;
+    const draw = src => {
+      const iw = src.width || src.naturalWidth, ih = src.height || src.naturalHeight;
+      if (!iw || !ih) throw new Error('empty image');
+      const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+      const cx = cv.getContext('2d');
+      cx.fillStyle = '#fff'; cx.fillRect(0, 0, W, H);
+      const sc = Math.max(W / iw, H / ih), w = iw * sc, h = ih * sc;
+      cx.drawImage(src, (W - w) / 2, (H - h) / 2, w, h);
+      return cv.toDataURL('image/jpeg', 0.8);
     };
-    r.readAsDataURL(f);
+    const viaImg = url => new Promise((ok, bad) => {
+      const img = new Image();
+      img.onload = () => { try { ok(draw(img)); } catch (err) { bad(err); } };
+      img.onerror = () => bad(new Error('decode failed'));
+      img.src = url;
+    });
+    let src = null;
+    try {
+      if (window.createImageBitmap) {
+        try { const bmp = await createImageBitmap(f); src = draw(bmp); if (bmp.close) bmp.close(); } catch (err) { src = null; }
+      }
+      if (!src) {
+        const url = URL.createObjectURL(f);
+        try { src = await viaImg(url); } finally { URL.revokeObjectURL(url); }
+      }
+    } catch (err) {
+      try {
+        const dataUrl = await new Promise((ok, bad) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = bad; r.readAsDataURL(f); });
+        src = await viaImg(dataUrl);
+      } catch (err2) { src = null; }
+    }
+    input.value = '';
+    if (!src) { toast(T('Could not read this photo', 'ఈ ఫోటోను చదవలేకపోయాం'), T('Please try another photo', 'దయచేసి వేరే ఫోటో ప్రయత్నించండి')); return; }
+    const p = { id: Date.now().toString(36), src };
+    PH.push(p);
+    if (!savePh()) { PH.pop(); toast(T('Phone storage is full', 'ఫోన్‌లో స్థలం లేదు'), T('Delete a photo and try again', 'ఒక ఫోటో తీసేసి మళ్ళీ ప్రయత్నించండి')); return; }
+    BM.style = 'ph:' + p.id; save(); bmRenderSettings(); refresh();
+    toast(T('Photo added', 'ఫోటో జోడించాం'), T('It is now your bookmark', 'ఇదే ఇప్పుడు మీ బుక్‌మార్క్'));
   };
 
   // ── Sheet + toast ──
@@ -380,6 +409,7 @@
 .bm-chip{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px 6px;border-radius:10px;border:2px solid var(--border);cursor:pointer;background:var(--card-bg);min-width:0}
 .bm-chip.on{border-color:var(--accent)}
 .bm-chip.add{border-style:dashed;justify-content:center;min-height:84px}
+.bm-file{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;z-index:2}
 .bm-plus{font-size:1.4rem;color:var(--accent)}
 .bm-nm{font-size:.66rem;font-weight:600;color:var(--fg);text-align:center;line-height:1.2;overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap}
 .bm-del{position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:50%;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:.65rem;cursor:pointer;line-height:20px;padding:0}
