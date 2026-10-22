@@ -42,7 +42,6 @@ Wednesday 2026-10-21, taking the first unchecked book under "Next".
 
 ## Next
 
-- [ ] Sāmaveda (sama) — the Veda of song; how a Ṛgveda verse becomes a sung sāman; why Kṛṣṇa says "among the Vedas I am the Sāma"; the roots of Indian music (the seven notes, Carnatic and Hindustani traditions tracing back to it); the three surviving śākhās and the Jaiminīya tradition kept alive in Kerala and Tamil Nadu; the Chāndogya Upaniṣad stories: Satyakāma Jābāla who told the truth about his birth, Śvetaketu and his father ("tat tvam asi — you are that", the salt in water, the banyan seed), Nārada and Sanatkumāra, Raikva the cart-man; the Kena Upaniṣad story of the gods, the blade of grass and Umā Haimavatī.
 - [ ] Atharvaveda (atharva) — the Veda of everyday life; Atharvan and Aṅgiras (link an-8); prayers for health, healing herbs, a happy home, a safe journey, harmony in the family and the assembly, protection from fear; why it is called the root of Āyurveda; the Bhūmi Sūkta — the Earth as mother, and its message for ecology today; the Muṇḍaka (link an-8), Praśna (six students and their six questions) and Māṇḍūkya (Om and the three states of waking, dream and deep sleep) Upaniṣads, told simply.
 - [ ] The Vedas in Our Life (life) — where the Vedas still touch a Hindu family's day: Om; sandhyāvandanam and the Gāyatrī; the sixteen saṃskāras from naming to marriage to the last rites, and which Veda each comes from; the wedding — the seven steps, Agni as witness, Arundhatī's star (link va-2); the upanayanam; gotra and pravara (link an-11); temple worship and the Vedic chanting there; the pañcāṅga and the Vedic calendar; Āyurveda, yoga, music and architecture; what the Vedas teach about the environment, truth, giving, and living in harmony; how anyone can begin to learn — chanting, reading in translation, listening; and why it matters for the next generation.
 
@@ -50,3 +49,4 @@ Wednesday 2026-10-21, taking the first unchecked book under "Next".
 - [x] What Are the Vedas? (intro) — 10 chapters — 2026-10-21
 - [x] Ṛgveda (rig) — 11 chapters — 2026-10-22
 - [x] Yajurveda (yajur) — 11 chapters — 2026-10-22
+- [x] Sāmaveda (sama) — 11 chapters — 2026-10-22
