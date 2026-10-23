@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Bṛhaspati (brihaspati) — son of Aṅgiras; guru of the devas; Tārā and Candra (Budha's birth); Kaca; Bṛhaspati Nīti; the planet Jupiter
 - [ ] Kaśyapa (kashyapa) — wives Aditi, Diti, Danu, Kadrū, Vinatā; Garuḍa and the nāgas; Vāmana's father; Kashmir (Kaśyapa-mīra); Paraśurāma's gift of the earth
 - [ ] Aṣṭāvakra (ashtavakra) — cursed in the womb; the debate at Janaka's court with Bandī; the Aṣṭāvakra Gītā
 - [ ] Ṛṣyaśṛṅga (rishyashringa) — the deer-born boy who had never seen a woman; Romapāda's drought; Śāntā; Daśaratha's putrakāmeṣṭi
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Kapila (kapila) — 7 chapters — 2026-10-23
 - [x] Jamadagni and Paraśurāma (jamadagni) — 10 chapters — 2026-10-23
 - [x] Yājñavalkya (yajnavalkya) — 8 chapters — 2026-10-23
+- [x] Bṛhaspati (brihaspati) — 8 chapters — 2026-10-23
