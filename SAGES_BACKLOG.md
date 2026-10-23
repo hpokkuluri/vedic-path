@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Jamadagni and Paraśurāma (jamadagni) — Ṛcīka's bowl; Reṇukā and the order to kill her; Kārtavīrya and Kāmadhenu; twenty-one campaigns; giving the earth to Kaśyapa; Rāma and the bow; Bhīṣma and Amba; Karṇa's curse; the western coast
 - [ ] Yājñavalkya (yajnavalkya) — quarrel with Vaiśampāyana and vomiting the Yajus (Taittirīya); the Sun and the Śukla Yajurveda; Janaka's court and the thousand cows; Gārgī; Maitreyī and Kātyāyanī; Yājñavalkya Smṛti
 - [ ] Bṛhaspati (brihaspati) — son of Aṅgiras; guru of the devas; Tārā and Candra (Budha's birth); Kaca; Bṛhaspati Nīti; the planet Jupiter
 - [ ] Kaśyapa (kashyapa) — wives Aditi, Diti, Danu, Kadrū, Vinatā; Garuḍa and the nāgas; Vāmana's father; Kashmir (Kaśyapa-mīra); Paraśurāma's gift of the earth
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Mārkaṇḍeya (markandeya) — 7 chapters — 2026-10-23
 - [x] Dadhīci (dadhichi) — 7 chapters — 2026-10-23
 - [x] Kapila (kapila) — 7 chapters — 2026-10-23
+- [x] Jamadagni and Paraśurāma (jamadagni) — 10 chapters — 2026-10-23
