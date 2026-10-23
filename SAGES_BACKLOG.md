@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Aṣṭāvakra (ashtavakra) — cursed in the womb; the debate at Janaka's court with Bandī; the Aṣṭāvakra Gītā
 - [ ] Ṛṣyaśṛṅga (rishyashringa) — the deer-born boy who had never seen a woman; Romapāda's drought; Śāntā; Daśaratha's putrakāmeṣṭi
 
 Add more when fewer than five remain: e.g. Pulastya, Kaṇva, Uttaṅka, Dhaumya, Lomaśa, Māṇḍavya,
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Yājñavalkya (yajnavalkya) — 8 chapters — 2026-10-23
 - [x] Bṛhaspati (brihaspati) — 8 chapters — 2026-10-23
 - [x] Kaśyapa (kashyapa) — 8 chapters — 2026-10-23
+- [x] Aṣṭāvakra (ashtavakra) — 7 chapters — 2026-10-23
