@@ -33,7 +33,7 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 11 | Strī | 7 of 7 ✅ |
 | 12 | Śānti | 12 of 12 ✅ |
 | 13 | Anuśāsana | 8 of 8 ✅ (Viṣṇu Sahasranāma chapter links to the VSN section) |
-| 14 | Āśvamedhika | next |
+| 14 | Āśvamedhika | 7 of 7 ✅ |
 | 15 | Āśramavāsika | — |
 | 16 | Mausala | — |
 | 17 | Mahāprasthānika | — |
