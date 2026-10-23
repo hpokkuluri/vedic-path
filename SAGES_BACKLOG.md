@@ -41,7 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Mārkaṇḍeya (markandeya) — Mṛkaṇḍu's choice of a short-lived wise son; embracing the liṅga; Śiva defeats Yama; the vision of the child on the banyan leaf at pralaya; the Mārkaṇḍeya Purāṇa and Devī Māhātmyam
 - [ ] Dadhīci (dadhichi) — the horse's head and the Madhu-vidyā (Aśvins); quarrel with Kṣuva; giving his bones for the vajra; Dakṣa's yajña; his son Pippalāda
 - [ ] Kapila (kapila) — son of Kardama and Devahūti; teaching his mother (Bhāgavata 3); Sāṅkhya; Sagara's sixty thousand sons burned; Gaṅgā Sāgar
 - [ ] Jamadagni and Paraśurāma (jamadagni) — Ṛcīka's bowl; Reṇukā and the order to kill her; Kārtavīrya and Kāmadhenu; twenty-one campaigns; giving the earth to Kaśyapa; Rāma and the bow; Bhīṣma and Amba; Karṇa's curse; the western coast
@@ -70,3 +69,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Atri and Anasūyā (atri) — 10 chapters — 2026-10-23
 - [x] Gautama (gautama) — 10 chapters — 2026-10-23
 - [x] Bharadvāja (bharadvaja) — 11 chapters — 2026-10-23
+- [x] Mārkaṇḍeya (markandeya) — 7 chapters — 2026-10-23
