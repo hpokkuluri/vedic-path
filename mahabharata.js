@@ -5,6 +5,7 @@
 //   ['p', en, te]                         paragraph (names: {key|Text})
 //   ['sloka', teLines[], enLines[], meaningEn, meaningTe]
 //   ['dyk', icon, en, te]                 "Did you know?" box
+//   ['vsnlink', en, te]                    button into the Viṣṇu Sahasranāmam section
 //   ['more', titleEn, titleTe, noteEn, noteTe, blocks[]]   tap-to-open box
 //   ['gitalink', en, te, gitaChapterNo]   button that opens that chapter in the app's Gītā section
 // Styling reuses the .rmy styles injected by ramayana.js; scene art comes from window.RMY_SCENE plus a few of our own.
@@ -121,6 +122,7 @@
         <div class="sk-m"><span class="en">“${esc(b[3])}”</span><span class="te">“${esc(b[4])}”</span></div></div>`;
       if (t === 'dyk') return `<div class="dyk"><div class="ic">${b[1]}</div><div><b>Did you know?</b><p><span class="en">${fmt(b[2])}</span><span class="te">${fmt(b[3])}</span></p></div></div>`;
       if (t === 'gitalink') return `<button class="dyk mbh-gl" style="width:100%;text-align:left;cursor:pointer;font:inherit;color:inherit" onclick="mbhOpenGita('${b[3]}')"><div class="ic">📖</div><div><b><span class="en">Read it in the Gītā section ›</span><span class="te">గీతా విభాగంలో చదవండి ›</span></b><p><span class="en">${esc(b[1])}</span><span class="te">${esc(b[2])}</span></p></div></button>`;
+      if (t === 'vsnlink') return `<button class="dyk mbh-gl" style="width:100%;text-align:left;cursor:pointer;font:inherit;color:inherit" onclick="mbhOpenVSN()"><div class="ic">📿</div><div><b><span class="en">Recite it in the Viṣṇu Sahasranāmam section ›</span><span class="te">విష్ణు సహస్రనామ విభాగంలో పఠించండి ›</span></b><p><span class="en">${esc(b[1])}</span><span class="te">${esc(b[2])}</span></p></div></button>`;
       if (t === 'more') return `<details class="sank"><summary><span class="en">${esc(b[1])}<small>${esc(b[3])}</small></span><span class="te">${esc(b[2])}<small>${esc(b[4])}</small></span></summary><div class="sank-body">${blocks(b[5], false)}</div></details>`;
       return '';
     }).join('');
@@ -164,6 +166,7 @@
   window.openMbhParva = k => { state.kids = 'k:' + k; showView('mahabharata'); };
   window.openMbhChapter = id => { state.kids = id; showView('mbhread'); };
   // open a chapter of the app's own Bhagavad Gītā practice section
+  window.mbhOpenVSN = () => switchSection('vsn');
   window.mbhOpenGita = ch => { switchSection('gita'); state.chapter = String(ch); state.expandedVerse = null; saveState(); showView('practice'); };
 
   const cover = () => `<div class="cover mbh-cover">
