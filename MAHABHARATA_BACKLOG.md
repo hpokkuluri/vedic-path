@@ -34,10 +34,10 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 12 | Śānti | 12 of 12 ✅ |
 | 13 | Anuśāsana | 8 of 8 ✅ (Viṣṇu Sahasranāma chapter links to the VSN section) |
 | 14 | Āśvamedhika | 7 of 7 ✅ |
-| 15 | Āśramavāsika | — |
-| 16 | Mausala | — |
-| 17 | Mahāprasthānika | — |
-| 18 | Svargārohaṇa | — |
-| ✦ | Harivaṃśa | — |
+| 15 | Āśramavāsika | 5 of 5 ✅ |
+| 16 | Mausala | 3 of 3 ✅ |
+| 17 | Mahāprasthānika | 2 of 2 ✅ |
+| 18 | Svargārohaṇa | 3 of 3 ✅ |
+| ✦ | Harivaṃśa | next |
 
 Threads set up in Ādi Parva to pay off later: Karṇa's armour taken by Indra (Āraṇyaka), Aśvasena (Karṇa Parva), Ulūpī and Babhruvāhana (Āśvamedhika), Ghaṭotkaca's promise (Droṇa), Yuyutsu crossing over (Bhīṣma), Śikhaṇḍī (Udyoga/Bhīṣma).
