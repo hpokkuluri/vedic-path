@@ -1153,4 +1153,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'angadas-foot-in-ravanas-court',
+    added: '2026-10-23',
+    epic: 'Ramayana',
+    chars: ['Aṅgada', 'Rāvaṇa', 'Rāma'],
+    title: { en: 'Aṅgada\'s Foot in Rāvaṇa\'s Court', te: 'రావణుడి కొలువులో అంగదుడి పాదం' },
+    moral: { en: 'With courage and faith, no one can move you.', te: 'ధైర్యం, నమ్మకం ఉంటే మనల్ని ఎవరూ కదిలించలేరు.' },
+    cover: { bg: 'court', props: [['throne', 110, 196, 1.2], ['demon', 110, 192, 1.1, { cloth: '#f0c040' }], ['crown', 110, 84, 0.9], ['monkey', 270, 196, 1.6], ['crown', 270, 112, 0.55]] },
+    pages: [
+      {
+        scene: { bg: 'shore', props: [['lanka', 320, 150, 0.8], ['person', 80, 198, 1.45, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['bow', 108, 198, 1], ['monkey', 190, 196, 1.35], ['crown', 190, 120, 0.5], ['monkey', 250, 196, 0.9, { color: '#d9772a' }], ['bear', 40, 198, 0.8], ['cloud', 200, 40, 1]] },
+        en: 'The great bridge was built, and Rāma\'s army had crossed the sea to Laṅkā. But Rāma did not want a war if it could be avoided. "Let us give Rāvaṇa one last chance," he said. "Who will carry my message?" Young Aṅgada, the son of Vāli, stepped forward. "I will go, my lord!" Rāma smiled and blessed him. With one mighty leap, Aṅgada flew over the walls of Laṅkā and landed right in the middle of Rāvaṇa\'s golden court. The demon king sat on his high throne, his ten heads frowning. All around him, fierce rākṣasas gripped their weapons.',
+        te: 'వారధి పూర్తయింది. రాముడి సైన్యం సముద్రం దాటి లంక చేరుకుంది. కానీ వీలైతే యుద్ధం లేకుండా చూడాలని రాముడు అనుకున్నాడు. "రావణుడికి చివరిసారిగా ఒక అవకాశం ఇద్దాం," అన్నాడు. "నా సందేశాన్ని ఎవరు తీసుకువెళ్తారు?" వాలి కొడుకైన యువ అంగదుడు ముందుకు వచ్చాడు. "నేను వెళ్తాను స్వామీ!" రాముడు చిరునవ్వుతో అతడిని ఆశీర్వదించాడు. ఒక్క దూకుతో అంగదుడు లంక గోడల మీదుగా ఎగిరి, సరిగ్గా రావణుడి బంగారు కొలువు మధ్యలో దిగాడు. రాక్షస రాజు ఎత్తైన సింహాసనం మీద కూర్చుని ఉన్నాడు. అతడి పది తలలూ కోపంగా ముఖం చిట్లించాయి. చుట్టూ భయంకరమైన రాక్షసులు ఆయుధాలు పట్టుకుని నిలబడ్డారు.',
+      },
+      {
+        scene: { bg: 'court', props: [['throne', 70, 196, 1.1], ['demon', 70, 192, 1, { cloth: '#f0c040' }], ['crown', 70, 90, 0.8], ['demon', 170, 198, 0.9, { raise: true }], ['demon', 330, 198, 0.9, { color: '#5a7a5a', raise: true, flip: true }], ['monkey', 250, 92, 1.3], ['crown', 250, 23, 0.5]] },
+        en: 'Aṅgada stood tall and spoke without fear. "I am Aṅgada, son of Vāli, and I bring a message from Rāma. Return Sītā with honour and ask for forgiveness. Then you and Laṅkā will be safe. If not, Rāma\'s arrows will end your pride." Rāvaṇa\'s eyes blazed. "Seize this monkey!" he roared. Four demons grabbed Aṅgada\'s arms. Aṅgada simply laughed. He sprang up into the air, carrying all four with him, and shook them off so they tumbled down like ripe fruit. Then he landed on the palace roof and stamped so hard that its tall tower cracked and crumbled!',
+        te: 'అంగదుడు నిటారుగా నిలబడి భయం లేకుండా మాట్లాడాడు. "నేను వాలి కుమారుడైన అంగదుడిని. శ్రీరాముడి సందేశం తెచ్చాను. సీతాదేవిని గౌరవంగా అప్పగించి క్షమాపణ అడుగు. అలా చేస్తే నువ్వూ, లంకా క్షేమంగా ఉంటారు. లేకపోతే రాముడి బాణాలు నీ గర్వాన్ని అణచివేస్తాయి." రావణుడి కళ్ళు నిప్పులు కక్కాయి. "ఈ కోతిని పట్టుకోండి!" అని గర్జించాడు. నలుగురు రాక్షసులు అంగదుడి చేతులు పట్టుకున్నారు. అంగదుడు నవ్వాడు. ఆ నలుగురినీ వేలాడేసుకునే ఆకాశంలోకి ఎగిరి, వాళ్ళను విదిలించాడు. వాళ్ళు పండిన పళ్ళలా కింద రాలిపడ్డారు. తరువాత అంగదుడు రాజభవనం పైకప్పు మీద దిగి కాలితో గట్టిగా తొక్కాడు. దాని ఎత్తైన గోపురం పగిలి కూలిపోయింది!',
+      },
+      {
+        scene: { bg: 'court', props: [['throne', 330, 196, 1.1], ['monkey', 200, 196, 1.6], ['crown', 200, 108, 0.55], ['demon', 110, 198, 0.95, { color: '#4a4a7a', raise: true }], ['demon', 40, 198, 0.85, { color: '#7a5a9a', bald: true }], ['demon', 285, 198, 0.95, { cloth: '#f0c040', flip: true }], ['crown', 285, 92, 0.75]] },
+        en: 'It is said that, before he left, Aṅgada gave Rāvaṇa\'s warriors one more challenge. He planted his foot firmly on the floor of the court. "If any of you can move my foot even a little, Rāma will go home and Sītā will stay here!" One by one, the strongest rākṣasas pulled and pushed, puffed and groaned. The foot did not move — not even a hair\'s width. At last Rāvaṇa himself came down from his throne and bent to grab it. Aṅgada pulled his foot away. "Why hold my feet, Rāvaṇa? Fall at Rāma\'s feet instead — they alone can save you!" Rāvaṇa stood speechless, and Aṅgada leapt back to Rāma, his message delivered.',
+        te: 'వెళ్ళే ముందు అంగదుడు రావణుడి వీరులకు ఇంకో సవాలు విసిరాడని చెబుతారు. కొలువు నేల మీద తన కాలిని గట్టిగా నాటాడు. "మీలో ఎవరైనా నా కాలిని కొంచెమైనా కదిలించగలిగితే, రాముడు వెనక్కి వెళ్ళిపోతాడు, సీతాదేవి ఇక్కడే ఉంటుంది!" బలమైన రాక్షసులు ఒకరి తరువాత ఒకరు వచ్చి లాగారు, తోశారు, ఆయాసపడ్డారు, మూలిగారు. ఆ కాలు వెంట్రుకవాసి కూడా కదలలేదు. చివరకు రావణుడే సింహాసనం దిగి వచ్చి ఆ కాలిని పట్టుకోవడానికి వంగాడు. అంగదుడు చటుక్కున కాలు వెనక్కి తీసుకున్నాడు. "రావణా, నా కాళ్ళు ఎందుకు పట్టుకుంటావు? శ్రీరాముడి పాదాలు పట్టుకో — అవే నిన్ను కాపాడగలవు!" రావణుడు నోట మాట రాక నిలబడిపోయాడు. సందేశం అందించిన అంగదుడు ఒక్క దూకుతో రాముడి దగ్గరకు తిరిగి వచ్చాడు.',
+      },
+    ],
+  },
+  {
+    id: 'prince-uttaras-brave-ride',
+    added: '2026-10-23',
+    epic: 'Mahabharata',
+    chars: ['Uttara', 'Arjuna', 'Uttarā', 'Draupadī'],
+    title: { en: 'Prince Uttara\'s Brave Ride', te: 'ఉత్తరకుమారుడి సాహస యాత్ర' },
+    moral: { en: 'Courage is not having no fear — it is doing what is right in spite of it.', te: 'భయం లేకపోవడం ధైర్యం కాదు — భయం ఉన్నా సరైనది చేయడమే నిజమైన ధైర్యం.' },
+    cover: { bg: 'forest', props: [['sun', 360, 45, 0.8], ['chariot', 130, 198, 1.6], ['person', 170, 198, 1.25, { cloth: '#3a8a5a', crown: true, raise: true }], ['archer', 250, 198, 1.45, { cloth: '#7a5ab0' }], ['cloud', 120, 45, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'palace', props: [['person', 90, 198, 1.4, { cloth: '#3a8a5a', crown: true, raise: true }], ['person', 175, 198, 1.1, { female: true, skin: 'fair', cloth: '#e0703a', pallu: '#f0c040' }], ['person', 245, 198, 1.25, { female: true, cloth: '#d9577a', pallu: '#f0c040' }], ['person', 320, 198, 1.35, { female: true, cloth: '#7a5ab0', pallu: '#f0c040' }]] },
+        en: 'Near the end of the Pāṇḍavas\' secret year, the Kauravas attacked the kingdom of Matsya and drove away King Virāṭa\'s cows. The king was away fighting another battle, so only young Prince Uttara was left in the palace. "I will chase them all away by myself!" he boasted to the palace ladies. "If only I had a good charioteer!" Draupadī, disguised as the maid Sairandhrī, spoke softly. "Bṛhannalā, the dance teacher, once drove Arjuna\'s chariot." Princess Uttarā ran to fetch her teacher. Bṛhannalā — who was really Arjuna — smiled and took the reins. Off they raced!',
+        te: 'పాండవుల అజ్ఞాతవాసం ముగియబోతున్న సమయంలో, కౌరవులు మత్స్య దేశం మీద దండెత్తి విరాట రాజు ఆవులను తోలుకుపోయారు. రాజు వేరే యుద్ధానికి వెళ్ళి ఉన్నాడు. రాజభవనంలో యువరాజు ఉత్తరకుమారుడు ఒక్కడే మిగిలాడు. "నేనొక్కడినే వాళ్ళందరినీ తరిమికొడతాను!" అని అంతఃపుర స్త్రీల ముందు గొప్పలు చెప్పాడు. "మంచి సారథి ఒక్కడు దొరికితే చాలు!" సైరంధ్రి వేషంలో ఉన్న ద్రౌపది మెల్లగా అంది, "నాట్యం నేర్పే బృహన్నల ఒకప్పుడు అర్జునుడి రథం నడిపింది." రాకుమారి ఉత్తర తన గురువును పిలుచుకురావడానికి పరుగెత్తింది. నిజానికి అర్జునుడే అయిన బృహన్నల చిరునవ్వుతో పగ్గాలు అందుకుంది. రథం వేగంగా దూసుకుపోయింది!',
+      },
+      {
+        scene: { bg: 'forest', props: [['elephant', 330, 150, 0.55], ['person', 270, 150, 0.6, { cloth: '#a8392a' }], ['person', 295, 150, 0.6, { cloth: '#5a5a5a' }], ['person', 370, 150, 0.6, { cloth: '#c9952a' }], ['tree', 80, 198, 1.6], ['bow', 85, 120, 0.4], ['person', 150, 198, 1.3, { cloth: '#3a8a5a', crown: true, raise: true, flip: true }], ['person', 220, 198, 1.35, { female: true, cloth: '#7a5ab0', pallu: '#f0c040', raise: true }]] },
+        en: 'But when the chariot came over the hill, Uttara saw the Kaurava army: Bhīṣma, Droṇa, Karṇa, Duryodhana and thousands of soldiers. Elephants trumpeted. Conches boomed. Uttara\'s knees shook. "Turn back! Turn back!" he cried. He jumped off the chariot and ran. Bṛhannalā ran after him, long braid flying, and the Kaurava soldiers laughed. Catching the prince gently by the hand, Arjuna said, "Don\'t be afraid. You drive, and I will fight." He stopped by a tall śamī tree. "Climb up and bring down the bundle hidden there." Inside were shining weapons — and the mighty Gāṇḍīva bow!',
+        te: 'కానీ రథం కొండ దాటగానే ఉత్తరుడికి కౌరవ సైన్యం కనిపించింది — భీష్ముడు, ద్రోణుడు, కర్ణుడు, దుర్యోధనుడు, వేలాది మంది సైనికులు. ఏనుగులు ఘీంకరించాయి. శంఖాలు మోగాయి. ఉత్తరుడి మోకాళ్ళు వణికాయి. "వెనక్కి తిప్పు! వెనక్కి తిప్పు!" అని అరిచాడు. రథం మీద నుంచి దూకి పారిపోయాడు. బృహన్నల జడ ఊగుతుండగా అతడి వెనకే పరుగెత్తింది. అది చూసి కౌరవ సైనికులు నవ్వారు. అర్జునుడు యువరాజు చేయి మెల్లగా పట్టుకుని, "భయపడకు. నువ్వు రథం నడుపు, నేను యుద్ధం చేస్తాను," అన్నాడు. ఒక పెద్ద జమ్మి చెట్టు దగ్గర ఆగాడు. "పైకి ఎక్కి అక్కడ దాచిన మూటను కిందకు దించు." ఆ మూటలో మెరిసే ఆయుధాలు ఉన్నాయి — గొప్ప గాండీవ ధనుస్సు కూడా!',
+      },
+      {
+        scene: { bg: 'forest', props: [['sun', 50, 45, 0.8], ['chariot', 110, 198, 1.5], ['person', 150, 198, 1.2, { cloth: '#3a8a5a', crown: true, raise: true }], ['archer', 215, 198, 1.45, { cloth: '#7a5ab0' }], ['arrow', 320, 110, 0.9], ['arrow', 340, 140, 0.9], ['cloud', 300, 40, 0.9]] },
+        en: 'Uttara stared. "Whose bow is this?" "It is mine," said Bṛhannalā. "I am Arjuna, and my brothers are hiding in your father\'s court." Uttara\'s fear melted into wonder and joy. "Then I will be your charioteer!" Arjuna blew his conch, Devadatta, and the sound rolled like thunder. He fought the whole Kaurava army and won back every cow. Then he used a magic weapon that made the warriors fall fast asleep. Remembering a promise to Princess Uttarā, he took the bright upper cloths of the sleeping princes for her dolls! Uttara drove home proudly — braver and wiser than the boy who had boasted that morning.',
+        te: 'ఉత్తరుడు ఆశ్చర్యంగా చూశాడు. "ఈ విల్లు ఎవరిది?" "నాదే," అంది బృహన్నల. "నేను అర్జునుడిని. నా సోదరులు మీ నాన్నగారి కొలువులోనే దాగి ఉన్నారు." ఉత్తరుడి భయం పోయి ఆశ్చర్యం, ఆనందం కలిగాయి. "అయితే నేను మీకు సారథిని అవుతాను!" అర్జునుడు తన దేవదత్త శంఖం ఊదాడు. ఆ శబ్దం ఉరుములా మారుమోగింది. అతడు కౌరవ సైన్యమంతటితో పోరాడి ఆవులన్నిటినీ వెనక్కి తెచ్చాడు. తరువాత ఒక మంత్రాస్త్రం వేసి వీరులందరినీ గాఢనిద్రలోకి పంపాడు. రాకుమారి ఉత్తరకు ఇచ్చిన మాట గుర్తుచేసుకుని, నిద్రపోతున్న రాజకుమారుల రంగురంగుల ఉత్తరీయాలను ఆమె బొమ్మల కోసం తీసుకున్నాడు! ఆ ఉదయం గొప్పలు చెప్పిన పిల్లవాడి కంటే ఎంతో ధైర్యంగా, తెలివిగా మారిన ఉత్తరుడు గర్వంగా రథం నడుపుతూ ఇంటికి తిరిగి వచ్చాడు.',
+      },
+    ],
+  },
+  {
+    id: 'hanuman-carries-the-mountain',
+    added: '2026-10-23',
+    epic: 'Ramayana',
+    chars: ['Hanumān', 'Lakṣmaṇa', 'Suṣeṇa', 'Rāma'],
+    title: { en: 'Hanumān Carries the Mountain', te: 'సంజీవని పర్వతం తెచ్చిన హనుమంతుడు' },
+    moral: { en: 'When the task is hard and time is short, a brave heart finds a way.', te: 'పని కష్టమైనా, సమయం తక్కువైనా — ధైర్యమున్న మనసు దారి కనుక్కుంటుంది.' },
+    cover: { bg: 'night', props: [['moon', 60, 60, 0.9], ['hanuman', 190, 175, 1.3], ['peak', 220, 77, 0.7], ['cloud', 330, 70, 0.8]] },
+    pages: [
+      {
+        scene: { bg: 'night', props: [['moon', 350, 55, 0.8], ['fire', 200, 198, 0.8], ['person', 80, 198, 1.4, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 135, 198, 1.3, { skin: 'fair', cloth: '#e8a23a' }], ['monkey', 270, 196, 1.3, { color: '#c9c0b0' }], ['monkey', 335, 196, 1.1, { color: '#d9772a' }]] },
+        en: 'The great battle of Laṅkā raged on. One day Rāvaṇa hurled a terrible spear of power, and it struck Lakṣmaṇa in the chest. The brave prince fell to the ground and lay still. Rāma knelt beside his brother, his eyes full of tears. "Without Lakṣmaṇa, what use is victory to me?" he whispered. Then Suṣeṇa, the wise old monkey physician, came forward and felt Lakṣmaṇa\'s pulse. "He still breathes, my lord. There is hope! Far to the north, on a mountain in the Himālayas, grow magic herbs, like the sañjīvanī that brings back life. If they reach him before the sun rises, Lakṣmaṇa will wake."',
+        te: 'లంకలో మహా యుద్ధం జోరుగా సాగుతోంది. ఒక రోజు రావణుడు భయంకరమైన శక్తి ఆయుధాన్ని విసిరాడు. అది లక్ష్మణుడి గుండెకు తగిలింది. వీరుడైన లక్ష్మణుడు నేల మీద పడి కదలకుండా ఉండిపోయాడు. రాముడు తమ్ముడి పక్కన మోకరిల్లాడు. ఆయన కళ్ళ నిండా నీళ్ళు. "లక్ష్మణుడు లేకపోతే ఈ విజయం నాకెందుకు?" అని మెల్లగా అన్నాడు. అప్పుడు తెలివైన వృద్ధ వానర వైద్యుడు సుషేణుడు ముందుకు వచ్చి లక్ష్మణుడి నాడి చూశాడు. "స్వామీ, ఇంకా ఊపిరి ఉంది. ఆశ ఉంది! ఉత్తరాన హిమాలయాల్లో ఒక పర్వతం మీద అద్భుతమైన మూలికలు పెరుగుతాయి — ప్రాణం పోసే సంజీవని లాంటివి. తెల్లవారే లోపు అవి ఇక్కడికి చేరితే లక్ష్మణుడు లేచి కూర్చుంటాడు."',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 60, 50, 0.8], ['peak', 270, 198, 1.5], ['monkey', 130, 196, 2, { color: '#d9772a' }], ['cloud', 170, 45, 0.7]] },
+        en: '"I will go!" said Hanumān. He grew as tall as a hill, bowed to Rāma, and leapt into the night sky. Over forests, rivers and sleeping villages he flew, faster than the wind, until the snowy Himālayas shone under the moon. There stood the mountain of herbs, glowing softly in the dark. But which plant was which? There were hundreds of leaves and flowers, and all of them seemed to glow! Hanumān scratched his head. Time was running out. "If I cannot pick the right herb," he said, "I will take them all!" He wrapped his mighty arms around the peak, and with one great heave — he lifted the whole mountain!',
+        te: '"నేను వెళ్తాను!" అన్నాడు హనుమంతుడు. ఆయన కొండంత పెద్దగా పెరిగి, రాముడికి నమస్కరించి, రాత్రి ఆకాశంలోకి ఎగిరాడు. అడవులు, నదులు, నిద్రపోతున్న ఊళ్ళ మీదుగా గాలి కంటే వేగంగా ఎగిరాడు. చివరకు వెన్నెలలో మెరిసే మంచు కొండలు — హిమాలయాలు — కనిపించాయి. అక్కడ మూలికల పర్వతం చీకట్లో మెల్లగా వెలుగుతోంది. కానీ ఏ మొక్క ఏదో ఎలా తెలుస్తుంది? వందలాది ఆకులు, పువ్వులు — అన్నీ వెలుగుతున్నట్టే ఉన్నాయి! హనుమంతుడు తల గోక్కున్నాడు. సమయం గడిచిపోతోంది. "సరైన మూలికను ఎంచలేకపోతే, అన్నిటినీ తీసుకెళ్తాను!" అనుకున్నాడు. తన బలమైన చేతులతో ఆ శిఖరాన్ని చుట్టి, ఒక్క ఊపుతో — పర్వతాన్నే పెకలించి ఎత్తాడు!',
+      },
+      {
+        scene: { bg: 'forest', props: [['sun', 360, 70, 0.8], ['peak', 55, 198, 0.9], ['person', 140, 198, 1.4, { skin: 'blue', cloth: '#f0c040', tilak: true }], ['person', 195, 198, 1.3, { raise: true, skin: 'fair', cloth: '#e8a23a' }], ['monkey', 260, 196, 1.4, { color: '#d9772a' }], ['monkey', 320, 196, 1.1, { color: '#c9c0b0' }], ['flowers', 370, 198, 0.8]] },
+        en: 'Holding the mountain high on one hand like a giant umbrella, Hanumān flew back south. The monkeys cheered as a mountain sailed across the stars! He set it down gently beside the camp. Suṣeṇa quickly picked the right herbs, crushed them and held them under Lakṣmaṇa\'s nose. Lakṣmaṇa stirred, opened his eyes and sat up, as strong as ever. It is said the sky was just turning pink with dawn. Rāma hugged Lakṣmaṇa, then hugged Hanumān even tighter. "Hanumān, you have given me back my brother. I can never repay you." Hanumān only bowed and smiled. Serving Rāma was all the reward he wanted.',
+        te: 'ఆ పర్వతాన్ని ఒక్క చేత్తో పెద్ద గొడుగులా పైకి ఎత్తి పట్టుకుని, హనుమంతుడు దక్షిణానికి ఎగిరి వచ్చాడు. నక్షత్రాల మధ్య ఎగురుతున్న పర్వతాన్ని చూసి వానరులు ఆనందంతో కేకలు వేశారు! ఆయన దాన్ని శిబిరం పక్కన మెల్లగా దించాడు. సుషేణుడు వెంటనే సరైన మూలికలు కోసి, నలిపి, లక్ష్మణుడి ముక్కు దగ్గర పెట్టాడు. లక్ష్మణుడు కదిలాడు, కళ్ళు తెరిచాడు, ఎప్పటిలాగే బలంగా లేచి కూర్చున్నాడు. అప్పుడే ఆకాశం తెల్లవారుతూ ఎర్రబడుతోందని చెబుతారు. రాముడు లక్ష్మణుడిని కౌగిలించుకున్నాడు, తరువాత హనుమంతుడిని ఇంకా గట్టిగా హత్తుకున్నాడు. "హనుమా, నా తమ్ముడిని నాకు తిరిగి ఇచ్చావు. నీ ఋణం ఎప్పటికీ తీర్చుకోలేను." హనుమంతుడు వినయంగా నమస్కరించి నవ్వాడు. రాముడి సేవే ఆయనకు కావలసిన బహుమతి.',
+      },
+    ],
+  },
 ];

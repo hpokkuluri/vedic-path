@@ -53,11 +53,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Bhīma Fetches the Saugandhika Flowers (Mahābhārata) — bhima-and-the-saugandhika-flowers
 - [x] Samudra, the Ocean King, Shows the Way (Rāmāyaṇa) — samudra-shows-the-way
 - [x] The Pāṇḍavas in Disguise at Virāṭa's Court (Mahābhārata) — pandavas-in-disguise-at-viratas-court
+- [x] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa) — angadas-foot-in-ravanas-court
+- [x] Prince Uttara's Brave Ride (Mahābhārata) — prince-uttaras-brave-ride
+- [x] Hanumān Carries the Mountain (Rāmāyaṇa) — hanuman-carries-the-mountain
 
 ## Next
-- [ ] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa) — Aṅgada, Rāvaṇa
-- [ ] Prince Uttara's Brave Ride (Mahābhārata) — Uttara, Arjuna
-- [ ] Hanumān Carries the Mountain (Rāmāyaṇa) — Hanumān, Lakṣmaṇa, Suṣeṇa
 - [ ] Kṛṣṇa the Peace Messenger (Mahābhārata) — Kṛṣṇa, Duryodhana, Vidura
 - [ ] Indrajit, the Cloud Warrior (Rāmāyaṇa) — Indrajit, Lakṣmaṇa
 - [ ] Vidura's Simple Meal for Kṛṣṇa (Mahābhārata) — Vidura, Kṛṣṇa
