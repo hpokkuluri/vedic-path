@@ -17,7 +17,7 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 - Rāmāyaṇa code is untouched apart from exposing `RMY_SCENE`.
 - Cover uses Hari's painting (icons/cover-mahabharata.jpg, its printed title band removed); home tile is the Kṛṣṇa–Arjuna crop (icons/tile-mahabharata.jpg).
 
-## Status
+## Status — COMPLETE: all 18 parvas + Harivaṃśa, 249 chapters (22 Oct 2026)
 | # | Parva | Chapters |
 |---|---|---|
 | 1 | Ādi | 43 of 43 ✅ |
@@ -38,6 +38,6 @@ Retold by Hari Pokkuluri, in English + Telugu, for the whole family. Full and de
 | 16 | Mausala | 3 of 3 ✅ |
 | 17 | Mahāprasthānika | 2 of 2 ✅ |
 | 18 | Svargārohaṇa | 3 of 3 ✅ |
-| ✦ | Harivaṃśa | next |
+| ✦ | Harivaṃśa | 9 of 9 ✅ |
 
 Threads set up in Ādi Parva to pay off later: Karṇa's armour taken by Indra (Āraṇyaka), Aśvasena (Karṇa Parva), Ulūpī and Babhruvāhana (Āśvamedhika), Ghaṭotkaca's promise (Droṇa), Yuyutsu crossing over (Bhīṣma), Śikhaṇḍī (Udyoga/Bhīṣma).
