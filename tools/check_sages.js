@@ -4,8 +4,9 @@ const fs = require('fs'), path = require('path');
 const root = path.join(__dirname, '..');
 global.window = {};
 const files = fs.readdirSync(path.join(root, 'sages')).filter(f => f.endsWith('.js')).sort();
-for (const f of ['ramayana/bala.js', 'ramayana/ayodhya.js', 'ramayana/aranya.js', 'ramayana/kishkindha.js'])
-  if (fs.existsSync(path.join(root, f))) eval(fs.readFileSync(path.join(root, f), 'utf8'));
+// Load every Rāmāyaṇa kāṇḍa, as the app does, so name keys and chapter links from any kāṇḍa resolve.
+for (const f of fs.readdirSync(path.join(root, 'ramayana')).filter(f => f.endsWith('.js')).sort())
+  eval(fs.readFileSync(path.join(root, 'ramayana', f), 'utf8'));
 const errs = [];
 for (const f of files) {
   try { eval(fs.readFileSync(path.join(root, 'sages', f), 'utf8')); }

@@ -41,9 +41,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 6. `node tools/check_sages.js` must print OK.
 
 ## Next
-- [ ] Durvāsa (durvasa) — born of Atri and Anasūyā as Śiva's part; Kuntī's mantra; Śakuntalā's curse; Indra and the garland (churning of the ocean); Ambarīṣa and the Sudarśana; Draupadī's akṣaya-pātra; Lakṣmaṇa and Rāma's departure
-- [ ] Atri and Anasūyā (atri) — Atri in the Ṛgveda (eclipse hymn); Anasūyā and the Trimūrti as babies; Dattātreya, Durvāsa, Candra; Anasūyā gifts Sītā; the Ganga at Citrakūṭa (Mandākinī)
-- [ ] Gautama (gautama) — Ahalyā and Indra (all versions); Śatānanda; bringing the Godāvarī (Gautamī) to earth at Tryambaka; the cow and the sages' plot; Nyāya Sūtras attribution
 - [ ] Bharadvāja (bharadvaja) — birth story (Bṛhaspati and Mamatā, Maruts); Ṛgveda Maṇḍala 6; his āśrama at Prayāga and the feast for Bharata's army; Droṇa's birth; Āyurveda from Indra
 - [ ] Mārkaṇḍeya (markandeya) — Mṛkaṇḍu's choice of a short-lived wise son; embracing the liṅga; Śiva defeats Yama; the vision of the child on the banyan leaf at pralaya; the Mārkaṇḍeya Purāṇa and Devī Māhātmyam
 - [ ] Dadhīci (dadhichi) — the horse's head and the Madhu-vidyā (Aśvins); quarrel with Kṣuva; giving his bones for the vajra; Dakṣa's yajña; his son Pippalāda
@@ -70,3 +67,6 @@ icon, gradient) — add it at the end of the list.
 - [x] Nārada (narada) — 12 chapters — 2026-10-20
 - [x] Vyāsa (vyasa) — 12 chapters — 2026-10-21
 - [x] Vālmīki (valmiki) — 10 chapters — 2026-10-22
+- [x] Durvāsa (durvasa) — 10 chapters — 2026-10-23
+- [x] Atri and Anasūyā (atri) — 10 chapters — 2026-10-23
+- [x] Gautama (gautama) — 10 chapters — 2026-10-23
