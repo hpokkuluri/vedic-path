@@ -56,11 +56,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Aṅgada's Foot in Rāvaṇa's Court (Rāmāyaṇa) — angadas-foot-in-ravanas-court
 - [x] Prince Uttara's Brave Ride (Mahābhārata) — prince-uttaras-brave-ride
 - [x] Hanumān Carries the Mountain (Rāmāyaṇa) — hanuman-carries-the-mountain
+- [x] Kṛṣṇa the Peace Messenger (Mahābhārata) — krishna-the-peace-messenger
+- [x] Indrajit, the Cloud Warrior (Rāmāyaṇa) — indrajit-the-cloud-warrior
+- [x] Vidura's Simple Meal for Kṛṣṇa (Mahābhārata) — viduras-simple-meal-for-krishna
 
 ## Next
-- [ ] Kṛṣṇa the Peace Messenger (Mahābhārata) — Kṛṣṇa, Duryodhana, Vidura
-- [ ] Indrajit, the Cloud Warrior (Rāmāyaṇa) — Indrajit, Lakṣmaṇa
-- [ ] Vidura's Simple Meal for Kṛṣṇa (Mahābhārata) — Vidura, Kṛṣṇa
 - [ ] Rāvaṇa's Ten Heads and Brahmā's Boon (Rāmāyaṇa) — Rāvaṇa, Brahmā
 - [ ] Kuntī Meets Karṇa by the River (Mahābhārata) — Kuntī, Karṇa
 - [ ] The Victory at Laṅkā (Rāmāyaṇa) — Rāma, Rāvaṇa, Agastya
