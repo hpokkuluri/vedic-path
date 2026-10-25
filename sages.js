@@ -32,6 +32,7 @@
     ['ashtavakra', 'Aṣṭāvakra', 'అష్టావక్రుడు', 'The boy who won the debate', 'వాదంలో గెలిచిన బాలుడు', '🪷', 'linear-gradient(160deg,#2a1a3a,#8a5ac0)'],
     ['rishyashringa', 'Ṛṣyaśṛṅga', 'ఋష్యశృంగుడు', 'Who brought the rain', 'వర్షం తెచ్చిన ముని', '🦌', 'linear-gradient(160deg,#0a2a3a,#3a8ab0)'],
     ['cyavana', 'Cyavana', 'చ్యవనుడు', 'Made young by the Aśvins', 'అశ్వినులు యువకుణ్ణి చేసిన ముని', '🐎', 'linear-gradient(160deg,#2a1a0a,#b0702a)'],
+    ['uttanka', 'Uttaṅka', 'ఉత్తంకుడు', 'Who won the earrings from the serpents', 'నాగుల నుండి కుండలాలు గెలిచిన శిష్యుడు', '🐍', 'linear-gradient(160deg,#1a2a0a,#7a9a2a)'],
   ];
   const SMETA = k => SAGES.find(x => x[0] === k) || SAGES[0];
   window.SAGE_META = SMETA;   // used by bookmarks.js

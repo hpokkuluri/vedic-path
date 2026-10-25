@@ -42,11 +42,15 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 
 ## Next
 
-- [ ] Uttaṅka (uttanka) — pupil of Veda (Ādi) / of Gautama (Āśvamedhika); Pauṣya's queen's earrings stolen by Takṣaka; journey to the Nāga world; urging Janamejaya's snake sacrifice; meeting Kṛṣṇa in the desert and Indra's water-gift in a caṇḍāla's form; Dhundhu (MBh Ādi, Āśvamedhika, Vana).
 - [ ] Śuka (shuka) — born of Vyāsa from the araṇi; learning from Janaka in Mithilā; the apsarases at the lake; rising into the sky; reciting the Bhāgavata to Parīkṣit (MBh Śānti, Bhāgavata).
 - [ ] Kaṇva (kanva) — Ṛgvedic Kāṇva seers; finding and raising Śakuntalā; her marriage to Duṣyanta and farewell; Bharata's birth; Kaṇva's counsel to Duryodhana in the Udyoga Parva (Ṛgveda, MBh Ādi & Udyoga, Kālidāsa).
 - [ ] Māṇḍavya (mandavya) — the silent sage impaled for thieves' crime; living on the stake; questioning Dharma; Dharma cursed to be born as Vidura; the age of responsibility; the later tale of Śīlavatī and the sun that did not rise (MBh Ādi, later Purāṇas).
 - [ ] Pulastya (pulastya) — mind-born son of Brahmā; Viśravas and the births of Kubera and Rāvaṇa; freeing Rāvaṇa from Kārtavīrya; tīrtha lore to Bhīṣma; blessing Parāśara with the Viṣṇu Purāṇa (Rāmāyaṇa Uttara, MBh Vana, Viṣṇu Purāṇa).
+- [ ] Lomaśa (lomasha) — the hairy sage who lives an age of Brahmā; Indra's messenger to the Pāṇḍavas; guiding them on the great pilgrimage and telling the tīrtha tales (Agastya, Ṛṣyaśṛṅga, Bhagīratha, Cyavana); his hairs falling one per cycle (MBh Vana, later Purāṇas).
+- [ ] Dhaumya (dhaumya) — priest of the Pāṇḍavas chosen at Utkocaka; the 108 names of Sūrya and the akṣaya-pātra; counsel before the year in disguise; the funeral rites after the war (MBh Ādi, Vana, Virāṭa, Strī).
+- [ ] Upamanyu (upamanyu) — Dhaumya's cowherd pupil and the Aśvins' cure; the boy who wanted milk and was taught to seek Śiva; Śiva's test in Indra's form; teaching Kṛṣṇa the Śiva Sahasranāma (MBh Ādi, Anuśāsana, Liṅga Purāṇa).
+- [ ] Sāndīpani (sandipani) — teacher of Kṛṣṇa and Balarāma at Avantī; sixty-four arts in sixty-four days; the son lost to the sea and brought back from Yama's city as guru-dakṣiṇā (Bhāgavata 10, Viṣṇu Purāṇa, Harivaṃśa).
+- [ ] The four Kumāras (kumaras) — Sanaka, Sanandana, Sanātana, Sanatkumāra, mind-born sons who refused to create; cursing Jaya and Vijaya at Vaikuṇṭha; Sanatkumāra teaching Nārada (Chāndogya) and Dhṛtarāṣṭra (Sanatsujātīya) (Bhāgavata, Chāndogya Upaniṣad, MBh Udyoga).
 
 Add more when fewer than five remain: e.g. Pulastya, Kaṇva, Uttaṅka, Dhaumya, Lomaśa, Māṇḍavya,
 Śuka, Jaimini, Vālakhilyas, the four Kumāras, Upamanyu, Āruṇi, Sāndīpani, Garga, Śāṇḍilya, Cyavana.
@@ -77,3 +81,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Aṣṭāvakra (ashtavakra) — 7 chapters — 2026-10-23
 - [x] Ṛṣyaśṛṅga (rishyashringa) — 6 chapters — 2026-10-23
 - [x] Cyavana (cyavana) — 9 chapters — 2026-10-24
+- [x] Uttaṅka (uttanka) — 11 chapters — 2026-10-25
