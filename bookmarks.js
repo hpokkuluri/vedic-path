@@ -139,12 +139,16 @@
       }
       return null;
     }
-    if (v === 'sageread' || v === 'vedaread' || v === 'rmyread' || v === 'mbhread') {
-      const list = v === 'sageread' ? window.SAGE_CHAPTERS : v === 'vedaread' ? window.VEDA_CHAPTERS : v === 'mbhread' ? window.MBH_CHAPTERS : window.RMY_CHAPTERS;
+    if (v === 'sageread' || v === 'kingread' || v === 'vedaread' || v === 'rmyread' || v === 'mbhread') {
+      const list = v === 'sageread' ? window.SAGE_CHAPTERS : v === 'kingread' ? window.KING_CHAPTERS : v === 'vedaread' ? window.VEDA_CHAPTERS : v === 'mbhread' ? window.MBH_CHAPTERS : window.RMY_CHAPTERS;
       const c = (list || []).find(x => x.id === state.kids); if (!c) return null;
-      const page = pageIdx(v === 'sageread' ? '#sg-track' : v === 'vedaread' ? '#vd-track' : v === 'mbhread' ? '#mbh-track' : '#rmy-track');
+      const page = pageIdx(v === 'sageread' ? '#sg-track' : v === 'kingread' ? '#kg-track' : v === 'vedaread' ? '#vd-track' : v === 'mbhread' ? '#mbh-track' : '#rmy-track');
       const loc = { view: v, id: c.id, page };
       const pg = page === 0 ? '' : ` · p.${page + 1}`, pgT = page === 0 ? '' : ` · పే.${page + 1}`;
+      if (v === 'kingread') {
+        const M = window.KING_META ? KING_META(c.king) : [c.king, c.king, c.king];
+        return { topic: 'king:' + c.king, title: M[1], titleTe: M[2], loc, where: `Ch ${c.n} · ${c.title}${pg}`, whereTe: `${c.n}వ అధ్యాయం · ${c.titleTe}${pgT}` };
+      }
       if (v === 'sageread') {
         const M = window.SAGE_META ? SAGE_META(c.sage) : [c.sage, c.sage, c.sage];
         return { topic: 'sage:' + c.sage, title: M[1], titleTe: M[2], loc, where: `Ch ${c.n} · ${c.title}${pg}`, whereTe: `${c.n}వ అధ్యాయం · ${c.titleTe}${pgT}` };
@@ -195,9 +199,9 @@
       const d = L.page - storyPage(); if (d) kzPage(d);
       return;
     }
-    const open = L.view === 'sageread' ? window.openSageChapter : L.view === 'vedaread' ? window.openVedaChapter : L.view === 'mbhread' ? window.openMbhChapter : window.openRmyChapter;
-    const go = L.view === 'sageread' ? 'sgGo' : L.view === 'vedaread' ? 'vdGo' : L.view === 'mbhread' ? 'mbhGo' : 'rmyGo';
-    const tr = L.view === 'sageread' ? '#sg-track' : L.view === 'vedaread' ? '#vd-track' : L.view === 'mbhread' ? '#mbh-track' : '#rmy-track';
+    const open = L.view === 'sageread' ? window.openSageChapter : L.view === 'kingread' ? window.openKingChapter : L.view === 'vedaread' ? window.openVedaChapter : L.view === 'mbhread' ? window.openMbhChapter : window.openRmyChapter;
+    const go = L.view === 'sageread' ? 'sgGo' : L.view === 'kingread' ? 'kgGo' : L.view === 'vedaread' ? 'vdGo' : L.view === 'mbhread' ? 'mbhGo' : 'rmyGo';
+    const tr = L.view === 'sageread' ? '#sg-track' : L.view === 'kingread' ? '#kg-track' : L.view === 'vedaread' ? '#vd-track' : L.view === 'mbhread' ? '#mbh-track' : '#rmy-track';
     if (!open) return;
     open(L.id);
     const d = L.page - pageIdx(tr); if (d && window[go]) window[go](d);
@@ -348,7 +352,7 @@
     } else if (L.view === 'stories') {
       if (storyPage() === L.page) host = document.querySelector('#kz-reader .scene');
     } else {
-      const tr = document.querySelector(L.view === 'sageread' ? '#sg-track' : L.view === 'vedaread' ? '#vd-track' : '#rmy-track');
+      const tr = document.querySelector(L.view === 'sageread' ? '#sg-track' : L.view === 'kingread' ? '#kg-track' : L.view === 'vedaread' ? '#vd-track' : '#rmy-track');
       host = tr && tr.children[L.page];
     }
     if (!host) return;

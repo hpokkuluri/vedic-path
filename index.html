@@ -1271,6 +1271,7 @@ body {
     <button class="stab" data-sec="ramayana" onclick="openRamayana()">Rāmāyaṇa</button>
     <button class="stab" data-sec="mahabharata" onclick="openMahabharata()">Bhāratam</button>
     <button class="stab" data-sec="sages" onclick="openSages()">Sages</button>
+    <button class="stab" data-sec="kings" onclick="openKings()">Kings</button>
     <button class="stab" data-sec="vedas" onclick="openVedas()">Vedas</button>
     <button class="stab" data-sec="kids" onclick="openKids()">Kids</button>
   </div>
@@ -1302,6 +1303,8 @@ body {
   <div class="view" id="view-mbhread"></div>
   <div class="view" id="view-sages"></div>
   <div class="view" id="view-sageread"></div>
+  <div class="view" id="view-kings"></div>
+  <div class="view" id="view-kingread"></div>
   <div class="view" id="view-vedas"></div>
   <div class="view" id="view-vedaread"></div>
   <div class="view" id="view-panch">
@@ -3781,6 +3784,8 @@ function renderCurrentView() {
   else if (state.view === 'mbhread') { if (window.renderMbhRead) renderMbhRead(); }
   else if (state.view === 'sages') { if (window.renderSages) renderSages(); }
   else if (state.view === 'sageread') { if (window.renderSageRead) renderSageRead(); }
+  else if (state.view === 'kings') { if (window.renderKings) renderKings(); }
+  else if (state.view === 'kingread') { if (window.renderKingRead) renderKingRead(); }
   else if (state.view === 'vedas') { if (window.renderVedas) renderVedas(); }
   else if (state.view === 'vedaread') { if (window.renderVedaRead) renderVedaRead(); }
   if (state.view !== 'home' && state.view !== 'library') updateTopbar();
@@ -3789,11 +3794,11 @@ function renderCurrentView() {
 function updateTopbar() {
   const t = document.getElementById('topbar-title');
   const recBtn = document.getElementById('btn-recite');
-  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana', 'mahabharata-cover': 'mahabharata', mahabharata: 'mahabharata', mbhread: 'mahabharata', sages: 'sages', sageread: 'sages', vedas: 'vedas', vedaread: 'vedas' };
+  const VIEW_TAB = { panch: 'panch', kids: 'kids', telugu: 'kids', stories: 'kids', 'ramayana-cover': 'ramayana', ramayana: 'ramayana', rmyread: 'ramayana', 'mahabharata-cover': 'mahabharata', mahabharata: 'mahabharata', mbhread: 'mahabharata', sages: 'sages', sageread: 'sages', kings: 'kings', kingread: 'kings', vedas: 'vedas', vedaread: 'vedas' };
   const activeSec = VIEW_TAB[state.view] || state.section;
   document.querySelectorAll('.stab').forEach(b => b.classList.toggle('active', b.dataset.sec === activeSec));
   if (VIEW_TAB[state.view]) {
-    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : VIEW_TAB[state.view] === 'mahabharata' ? 'Śrī Mahābhāratam' : VIEW_TAB[state.view] === 'sages' ? 'Great Sages' : VIEW_TAB[state.view] === 'vedas' ? 'The Vedas' : 'Kids Corner';
+    t.textContent = state.view === 'panch' ? 'Panchāṅgam' : VIEW_TAB[state.view] === 'ramayana' ? 'Śrī Rāmāyaṇa' : VIEW_TAB[state.view] === 'mahabharata' ? 'Śrī Mahābhāratam' : VIEW_TAB[state.view] === 'sages' ? 'Great Sages' : VIEW_TAB[state.view] === 'kings' ? 'Great Kings' : VIEW_TAB[state.view] === 'vedas' ? 'The Vedas' : 'Kids Corner';
     recBtn.style.display = 'none';
     const tabs = document.getElementById('section-tabs'), act = tabs.querySelector('.stab.active');
     if (act) tabs.scrollLeft = Math.max(0, act.offsetLeft - tabs.offsetLeft - (tabs.clientWidth - act.offsetWidth) / 2);
@@ -3942,6 +3947,7 @@ function renderLibrary() {
     { key:'ramayana', icon:'🏹', name:'Śrī Rāmāyaṇa',         desc:'Vālmīki · retold in EN & తె', action:"openRamayana()",          gradient:'linear-gradient(160deg,#5a1e06,#e08a2c)', dot:'#e08a2c', tradition:'Itihāsa', photo:'icons/tile-ramayana.jpg', photoPos:'center center' },
     { key:'mahabharata', icon:'🐚', name:'Śrī Mahābhāratam', desc:'Vyāsa · retold in EN & తె', action:"openMahabharata()", gradient:'linear-gradient(160deg,#3a1206,#d8902c)', dot:'#d8902c', tradition:'Itihāsa', photo:'icons/tile-mahabharata.jpg', photoPos:'center top' },
     { key:'sages', icon:'🧘', name:'Great Sages',            desc:'Maharṣulu · full life stories', action:"openSages()",           gradient:'linear-gradient(160deg,#2a0a02,#d0601c)', dot:'#d0601c', tradition:'Itihāsa' },
+    { key:'kings', icon:'👑', name:'Great Kings',            desc:'Mahārājulu · royal lives', action:"openKings()",           gradient:'linear-gradient(160deg,#2a1a02,#c0901c)', dot:'#c0901c', tradition:'Itihāsa' },
     { key:'vedas', icon:'🕉️', name:'The Vedas', desc:'Vedālu · explained simply', action:"openVedas()", gradient:'linear-gradient(160deg,#3a1406,#c0601c)', dot:'#c0601c', tradition:'Veda' },
     { key:'kids',  icon:'🧒', name:'Kids Corner',            desc:'Learn Telugu · Stories',    action:"openKids()",                 gradient:'linear-gradient(160deg,#c9572c,#8a5cc2)', dot:'#c9572c', tradition:'Children' },
     { key:'nrsimha',icon:'🦁', name:'Śrī Lakṣmī Nṛsiṃha',    desc:'Karāvalamba · Stotrams',   action:"switchSection('nrsimha')",  gradient:'linear-gradient(160deg,#5a1a00,#e0701a)', dot:'#e0701a', tradition:'Stotra', photo:'icons/tile-nrsimha.jpg', photoPos:'center center' },
@@ -6183,6 +6189,10 @@ function openPanch() {
 <script src="sages/rishyashringa.js"></script>
 <script src="sages/cyavana.js"></script>
 <script src="sages.js"></script>
+<script src="kings/chandragupta.js"></script>
+<script src="kings/ashoka.js"></script>
+<script src="kings/shatakarni.js"></script>
+<script src="kings.js"></script>
 <script src="vedas/atharva.js"></script>
 <script src="vedas/intro.js"></script>
 <script src="vedas/life.js"></script>
