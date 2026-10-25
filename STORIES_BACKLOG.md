@@ -59,11 +59,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Kṛṣṇa the Peace Messenger (Mahābhārata) — krishna-the-peace-messenger
 - [x] Indrajit, the Cloud Warrior (Rāmāyaṇa) — indrajit-the-cloud-warrior
 - [x] Vidura's Simple Meal for Kṛṣṇa (Mahābhārata) — viduras-simple-meal-for-krishna
+- [x] Rāvaṇa's Ten Heads and Brahmā's Boon (Rāmāyaṇa) — ravanas-ten-heads-and-brahmas-boon
+- [x] Kuntī Meets Karṇa by the River (Mahābhārata) — kunti-meets-karna-by-the-river
+- [x] The Victory at Laṅkā (Rāmāyaṇa) — the-victory-at-lanka
 
 ## Next
-- [ ] Rāvaṇa's Ten Heads and Brahmā's Boon (Rāmāyaṇa) — Rāvaṇa, Brahmā
-- [ ] Kuntī Meets Karṇa by the River (Mahābhārata) — Kuntī, Karṇa
-- [ ] The Victory at Laṅkā (Rāmāyaṇa) — Rāma, Rāvaṇa, Agastya
 - [ ] Arjuna Chooses Kṛṣṇa, Duryodhana Chooses the Army (Mahābhārata) — Arjuna, Duryodhana, Kṛṣṇa
 - [ ] Sītā's Return and the Fire (Rāmāyaṇa) — Sītā, Agni, Rāma
 - [ ] Kṛṣṇa's Song on the Battlefield — the Gītā (Mahābhārata) — Kṛṣṇa, Arjuna
