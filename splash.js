@@ -21,159 +21,117 @@
   function run() {
     if (document.getElementById('vs-splash')) return;
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var W = window.innerWidth, H = window.innerHeight, small = Math.min(W, H) < 500;
 
     var css = document.createElement('style');
     css.textContent =
-      '#vs-splash{position:fixed;inset:0;z-index:99999;overflow:hidden;cursor:pointer;' +
-      'background:radial-gradient(ellipse at 50% 48%,#5a1a08 0%,#2a0a04 55%,#120402 100%);transition:opacity .7s ease}' +
-      '#vs-splash canvas{position:absolute;inset:0;width:100%;height:100%}' +
+      '#vs-splash{position:fixed;inset:0;z-index:99999;overflow:hidden;cursor:pointer;contain:strict;' +
+      'background:radial-gradient(ellipse at 50% 48%,#5a1a08 0%,#2a0a04 55%,#120402 100%)}' +
+      '#vs-splash .gl{position:absolute;left:50%;top:50%;width:90vmin;height:90vmin;margin:-45vmin 0 0 -45vmin;border-radius:50%;' +
+      'background:radial-gradient(circle,rgba(' + GOLD + ',.32) 0%,rgba(' + GOLD + ',0) 62%);opacity:0;will-change:opacity,transform}' +
+      '#vs-splash .wd{position:absolute;left:50%;top:50%;white-space:nowrap;font-weight:600;color:#ffe2a0;' +
+      'font-family:"Noto Sans Telugu","Noto Sans Devanagari","Kohinoor Devanagari",serif;' +
+      'text-shadow:0 0 8px rgba(' + GOLD + ',.7);opacity:0;will-change:transform,opacity;backface-visibility:hidden}' +
       '#vs-splash .t{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;pointer-events:none}' +
       '#vs-splash .w{font-family:"Crimson Text",Georgia,serif;font-weight:700;font-size:clamp(2.4rem,11vw,4.2rem);' +
-      'color:#fff;letter-spacing:.03em;line-height:1}' +
-      '#vs-splash .w b{display:inline-block;font-weight:700;opacity:0;transform:scale(.4);filter:blur(6px);' +
-      'transition:opacity .35s ease,transform .45s cubic-bezier(.2,1.6,.4,1),filter .4s ease}' +
+      'color:#fff;letter-spacing:.03em;line-height:1;text-shadow:0 0 18px rgba(' + GOLD + ',.55)}' +
+      '#vs-splash .w b{display:inline-block;font-weight:700;opacity:0;will-change:transform,opacity}' +
       '#vs-splash .w b.g{color:#f0c040}' +
-      '#vs-splash .w b.on{opacity:1;transform:none;filter:none;text-shadow:0 0 18px rgba(' + GOLD + ',.55)}' +
       '#vs-splash .s{margin-top:12px;font-family:"Noto Sans Telugu",serif;font-size:clamp(.95rem,4vw,1.2rem);' +
-      'color:rgba(240,210,140,.9);letter-spacing:.06em;opacity:0;transition:opacity .8s ease}' +
-      '#vs-splash .s.on{opacity:1}' +
+      'color:rgba(240,210,140,.9);letter-spacing:.06em;opacity:0}' +
       '#vs-splash .k{position:absolute;bottom:max(22px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;' +
-      'font:12px -apple-system,system-ui,sans-serif;color:rgba(240,220,180,.4);letter-spacing:.12em;text-transform:uppercase}' +
-      '#vs-splash.pulse .w{animation:vsPulse 1.1s ease}' +
-      '@keyframes vsPulse{0%{filter:none}40%{filter:drop-shadow(0 0 22px rgba(' + GOLD + ',.9))}100%{filter:none}}';
+      'font:12px -apple-system,system-ui,sans-serif;color:rgba(240,220,180,.4);letter-spacing:.12em;text-transform:uppercase}';
     document.head.appendChild(css);
 
     var root = document.createElement('div');
     root.id = 'vs-splash';
     var title = 'Vedasaram';
-    root.innerHTML = '<canvas></canvas><div class="t"><div class="w">' +
+    var pool = WORDS.slice().sort(function () { return Math.random() - .5; }).slice(0, small ? 20 : 28);
+    root.innerHTML = '<div class="gl"></div>' +
+      pool.map(function (w) { return '<span class="wd">' + w + '</span>'; }).join('') +
+      '<div class="t"><div class="w">' +
       title.split('').map(function (ch, i) { return '<b' + (i >= 4 ? ' class="g"' : '') + '>' + ch + '</b>'; }).join('') +
       '</div><div class="s">వేదసారం · वेदसारम्</div></div><div class="k">Tap to skip</div>';
     document.body.appendChild(root);
 
-    var letters = root.querySelectorAll('.w b');
-    var sub = root.querySelector('.s');
-    var done = false, raf = 0;
+    var letters = root.querySelectorAll('.w b'), sub = root.querySelector('.s'), glow = root.querySelector('.gl');
+    var anims = [], done = false;
+    function A(el, kf, opt) { var a = el.animate(kf, opt); anims.push(a); return a; }
+    var smooth = 'cubic-bezier(.45,0,.25,1)';
 
     function finish() {
       if (done) return;
       done = true;
-      for (var i = 0; i < letters.length; i++) letters[i].classList.add('on');
-      sub.classList.add('on');
-      root.style.opacity = '0';
-      setTimeout(function () { cancelAnimationFrame(raf); root.remove(); css.remove(); }, 750);
+      anims.forEach(function (a) { try { a.finish(); } catch (e) {} });
+      var out = root.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, easing: 'ease', fill: 'forwards' });
+      root.style.pointerEvents = 'none';
+      out.onfinish = function () { root.remove(); css.remove(); };
+      setTimeout(function () { if (root.parentNode) { root.remove(); css.remove(); } }, 1500);
     }
     root.addEventListener('click', finish);
 
+    var GATHER = 1500, ABSORB = 1500, FLY = 900, END;
     if (reduce) {
-      for (var r = 0; r < letters.length; r++) letters[r].classList.add('on');
-      sub.classList.add('on');
+      for (var r = 0; r < letters.length; r++) letters[r].style.opacity = 1;
+      sub.style.opacity = 1;
       setTimeout(finish, 1400);
       return;
     }
 
-    var cv = root.querySelector('canvas'), cx = cv.getContext('2d');
-    var W, H, dpr;
-    function size() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = window.innerWidth; H = window.innerHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    size();
-    window.addEventListener('resize', size);
-
-    var small = Math.min(W, H) < 500;
-    var pool = WORDS.slice().sort(function () { return Math.random() - .5; }).slice(0, small ? 22 : 30);
-    var GATHER = 1700, ABSORB = 1500;   // ms: drift phase, then words fly in over this span
-    var words = pool.map(function (text, i) {
+    // Words: fade in where they lie, drift a little, then spiral into the title.
+    var spans = root.querySelectorAll('.wd'), lastArrive = 0;
+    for (var i = 0; i < spans.length; i++) {
+      var el = spans[i];
       var sz = (small ? 14 : 17) + Math.random() * (small ? 10 : 14);
-      cx.font = '600 ' + sz + 'px "Noto Sans Telugu","Noto Sans Devanagari",serif';
-      var half = Math.min(cx.measureText(text).width / 2 + 8, W / 2 - 4);
-      var y;
+      el.style.fontSize = sz + 'px';
+      var half = Math.min(el.offsetWidth / 2 + 8, W / 2 - 4), hh = el.offsetHeight / 2;
+      var x, y;
       do { y = 40 + Math.random() * (H - 110); } while (Math.abs(y - H / 2) < 75);
-      return {
-        text: text,
-        x: half + Math.random() * (W - 2 * half), y: y,
-        vx: (Math.random() - .5) * .2, vy: (Math.random() - .5) * .2 - .06,
-        size: sz,
-        born: Math.random() * 900,
-        start: GATHER + (i / pool.length) * ABSORB + Math.random() * 120,
-        dur: 650 + Math.random() * 250,
-        spin: (Math.random() < .5 ? -1 : 1) * (.6 + Math.random() * .6),
-        hit: false
-      };
-    });
-    var sparks = [], absorbed = 0, t0 = performance.now();
-
-    function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
-
-    function frame(now) {
-      var t = now - t0;
-      cx.clearRect(0, 0, W, H);
-      var mx = W / 2, my = H / 2;
-
-      // soft gathering glow at the centre
-      var glow = Math.min(1, absorbed / words.length) * .55 + .1;
-      var g = cx.createRadialGradient(mx, my, 0, mx, my, Math.min(W, H) * .45);
-      g.addColorStop(0, 'rgba(' + GOLD + ',' + (glow * .35) + ')');
-      g.addColorStop(1, 'rgba(' + GOLD + ',0)');
-      cx.fillStyle = g; cx.fillRect(0, 0, W, H);
-
-      cx.textAlign = 'center'; cx.textBaseline = 'middle';
-      for (var i = 0; i < words.length; i++) {
-        var w = words[i];
-        if (t < w.born) continue;
-        var alpha, x, y, s, rot = 0;
-        if (t < w.start) {
-          w.x += w.vx; w.y += w.vy;
-          alpha = Math.min(1, (t - w.born) / 600) * .75;
-          x = w.x; y = w.y; s = w.size;
-          w.sx = x; w.sy = y;
-        } else {
-          var p = Math.min(1, (t - w.start) / w.dur), e = ease(p);
-          var dx = w.sx - mx, dy = w.sy - my;
-          var ang = Math.atan2(dy, dx) + w.spin * e * 1.4, dist = Math.hypot(dx, dy) * (1 - e);
-          x = mx + Math.cos(ang) * dist; y = my + Math.sin(ang) * dist * .8;
-          s = w.size * (1 - e * .8); alpha = .85 * (1 - Math.pow(p, 4)); rot = w.spin * e * .5;
-          if (p >= 1 && !w.hit) {
-            w.hit = true; absorbed++;
-            var n = Math.round(absorbed / words.length * letters.length);
-            for (var L = 0; L < n; L++) letters[L].classList.add('on');
-            for (var k = 0; k < 8; k++) {
-              var sa = Math.random() * Math.PI * 2, sp = 1 + Math.random() * 3;
-              sparks.push({ x: mx + (Math.random() - .5) * 140, y: my + (Math.random() - .5) * 30,
-                vx: Math.cos(sa) * sp, vy: Math.sin(sa) * sp, life: 1 });
-            }
-          }
-          if (p >= 1) continue;
-        }
-        cx.save();
-        cx.translate(x, y); cx.rotate(rot);
-        cx.font = '600 ' + s.toFixed(1) + 'px "Noto Sans Telugu","Noto Sans Devanagari","Kohinoor Devanagari",serif';
-        cx.shadowColor = 'rgba(' + GOLD + ',.8)'; cx.shadowBlur = 10;
-        cx.fillStyle = 'rgba(255,226,160,' + alpha.toFixed(3) + ')';
-        cx.fillText(w.text, 0, 0);
-        cx.restore();
+      x = half + Math.random() * (W - 2 * half);
+      x -= W / 2; y -= H / 2;                       // relative to centre
+      var dx = (Math.random() - .5) * 30, dy = (Math.random() - .5) * 24 - 10;
+      var born = Math.random() * 700;
+      var leave = GATHER + (i / spans.length) * ABSORB + Math.random() * 100;
+      var total = leave + FLY;
+      var spin = Math.random() < .5 ? -1 : 1;
+      var sx = x + dx, sy = y + dy, ang = Math.atan2(sy, sx), dist = Math.hypot(sx, sy);
+      var mid = { a: ang + spin * .7, d: dist * .45 };
+      function T(px, py, sc, rot) {
+        return 'translate3d(' + (px - el.offsetWidth / 2).toFixed(1) + 'px,' + (py - hh).toFixed(1) + 'px,0) scale(' + sc + ') rotate(' + rot + 'deg)';
       }
-
-      for (var j = sparks.length - 1; j >= 0; j--) {
-        var sk = sparks[j];
-        sk.x += sk.vx; sk.y += sk.vy; sk.vx *= .96; sk.vy *= .96; sk.life -= .025;
-        if (sk.life <= 0) { sparks.splice(j, 1); continue; }
-        cx.fillStyle = 'rgba(255,214,120,' + sk.life.toFixed(3) + ')';
-        cx.beginPath(); cx.arc(sk.x, sk.y, 1.6 * sk.life + .4, 0, 6.283); cx.fill();
-      }
-
-      if (absorbed === words.length && !root.classList.contains('pulse')) {
-        root.classList.add('pulse');
-        sub.classList.add('on');
-        setTimeout(finish, 1500);
-      }
-      if (!done) raf = requestAnimationFrame(frame);
+      var oBorn = born / total, oLeave = leave / total, oMid = (leave + FLY * .55) / total;
+      A(el, [
+        { offset: 0, transform: T(x, y, 1, 0), opacity: 0 },
+        { offset: oBorn, transform: T(x, y, 1, 0), opacity: 0 },
+        { offset: Math.min(oBorn + 600 / total, oLeave), opacity: .8 },
+        { offset: oLeave, transform: T(sx, sy, 1, 0), opacity: .8, easing: smooth },
+        { offset: oMid, transform: T(Math.cos(mid.a) * mid.d, Math.sin(mid.a) * mid.d * .8, .55, spin * 12), opacity: .75, easing: 'cubic-bezier(.4,0,1,1)' },
+        { offset: 1, transform: T(0, 0, .12, spin * 20), opacity: 0 }
+      ], { duration: total, fill: 'forwards' });
+      lastArrive = Math.max(lastArrive, total);
     }
-    raf = requestAnimationFrame(frame);
-    setTimeout(finish, 7000); // safety net
+
+    // Title letters light up as the words arrive.
+    for (var L = 0; L < letters.length; L++) {
+      var at = GATHER + FLY * .8 + (L / (letters.length - 1)) * (lastArrive - GATHER - FLY * .8);
+      A(letters[L], [
+        { opacity: 0, transform: 'scale(.4)' },
+        { opacity: 1, transform: 'scale(1.12)', offset: .6 },
+        { opacity: 1, transform: 'scale(1)' }
+      ], { duration: 520, delay: at, easing: 'ease-out', fill: 'forwards' });
+    }
+    A(glow, [
+      { opacity: 0, transform: 'scale(.6)' },
+      { opacity: .5, transform: 'scale(.9)', offset: .5 },
+      { opacity: 1, transform: 'scale(1)', offset: .85 },
+      { opacity: .7, transform: 'scale(1.05)' }
+    ], { duration: lastArrive + 600, easing: 'ease-in-out', fill: 'forwards' });
+    A(sub, [{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }],
+      { duration: 700, delay: lastArrive, easing: 'ease-out', fill: 'forwards' });
+
+    END = lastArrive + 1300;
+    var out = root.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 700, delay: END, easing: 'ease', fill: 'forwards' });
+    out.onfinish = function () { done = true; root.remove(); css.remove(); };
   }
 
   if (document.body) run(); else document.addEventListener('DOMContentLoaded', run);
