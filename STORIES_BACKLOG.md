@@ -62,11 +62,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Rāvaṇa's Ten Heads and Brahmā's Boon (Rāmāyaṇa) — ravanas-ten-heads-and-brahmas-boon
 - [x] Kuntī Meets Karṇa by the River (Mahābhārata) — kunti-meets-karna-by-the-river
 - [x] The Victory at Laṅkā (Rāmāyaṇa) — the-victory-at-lanka
+- [x] Arjuna Chooses Kṛṣṇa (Mahābhārata) — arjuna-chooses-krishna
+- [x] Sītā's Return and the Fire (Rāmāyaṇa) — sitas-return-and-the-fire
+- [x] Kṛṣṇa's Song on the Battlefield — the Gītā (Mahābhārata) — krishnas-song-the-gita
 
 ## Next
-- [ ] Arjuna Chooses Kṛṣṇa, Duryodhana Chooses the Army (Mahābhārata) — Arjuna, Duryodhana, Kṛṣṇa
-- [ ] Sītā's Return and the Fire (Rāmāyaṇa) — Sītā, Agni, Rāma
-- [ ] Kṛṣṇa's Song on the Battlefield — the Gītā (Mahābhārata) — Kṛṣṇa, Arjuna
 - [ ] The Puṣpaka Flight Home (Rāmāyaṇa) — Rāma, Sītā, Vibhīṣaṇa
 - [ ] Barbarīka, the Boy with Three Arrows (Mahābhārata, folk tradition) — Barbarīka, Kṛṣṇa
 - [ ] Rāma's Coronation — Paṭṭābhiṣekam (Rāmāyaṇa) — Rāma, Bharata, Hanumān

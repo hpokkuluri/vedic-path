@@ -1387,4 +1387,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'arjuna-chooses-krishna',
+    added: '2026-10-26',
+    epic: 'Mahabharata',
+    chars: ['Arjuna', 'Duryodhana', 'Kṛṣṇa'],
+    title: { en: 'Arjuna Chooses Kṛṣṇa', te: 'అర్జునుడు శ్రీకృష్ణుడినే కోరుకున్నాడు' },
+    moral: { en: 'Choose wisdom and goodness over numbers and might.', te: 'బలగం కంటే మంచితనం, జ్ఞానమే గొప్పవి.' },
+    cover: { bg: 'palace', props: [['person', 110, 198, 1.3, { cloth: '#3a6ab0' }], ['person', 200, 198, 1.7, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 300, 198, 1.3, { cloth: '#a83a3a', crown: true }], ['mace', 325, 198, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['throne', 200, 198, 1.3], ['person', 200, 160, 1.1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 85, 198, 1.2, { cloth: '#a83a3a', crown: true }], ['person', 320, 198, 1.2, { cloth: '#3a6ab0', flip: true }]] },
+        en: 'War between the Pāṇḍavas and the Kauravas was coming, and both sides hurried to find friends. Duryodhana and Arjuna both set off for Dvārakā to ask Kṛṣṇa for help. Duryodhana reached the palace first. Kṛṣṇa was fast asleep. Proudly, Duryodhana sat down on a fine seat near Kṛṣṇa\'s head. "I came first, so he must help me first," he thought. A little later Arjuna arrived. He quietly folded his hands and stood at Kṛṣṇa\'s feet, waiting with love. When Kṛṣṇa opened his eyes, who do you think he saw first? Arjuna, standing at his feet!',
+        te: 'పాండవులకు, కౌరవులకు మధ్య యుద్ధం దగ్గర పడుతోంది. రెండు పక్షాలూ సహాయం కోసం తొందరపడ్డాయి. దుర్యోధనుడు, అర్జునుడు ఇద్దరూ శ్రీకృష్ణుడి సహాయం అడగడానికి ద్వారకకు బయలుదేరారు. దుర్యోధనుడు ముందుగా రాజభవనానికి చేరుకున్నాడు. అప్పుడు కృష్ణుడు గాఢంగా నిద్రపోతున్నాడు. దుర్యోధనుడు గర్వంగా కృష్ణుడి తల దగ్గర ఉన్న మంచి ఆసనం మీద కూర్చున్నాడు. "నేనే ముందు వచ్చాను, కాబట్టి ఆయన నాకే ముందు సహాయం చేయాలి," అనుకున్నాడు. కొంచెం సేపటికి అర్జునుడు వచ్చాడు. అతడు నెమ్మదిగా చేతులు జోడించి, ప్రేమతో కృష్ణుడి పాదాల దగ్గర నిలబడ్డాడు. కృష్ణుడు కళ్ళు తెరవగానే ముందు ఎవరిని చూశాడో తెలుసా? పాదాల దగ్గర నిలబడిన అర్జునుడినే!',
+      },
+      {
+        scene: { bg: 'court', props: [['person', 200, 198, 1.5, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['person', 80, 198, 1.2, { cloth: '#a83a3a', crown: true }], ['person', 320, 198, 1.2, { cloth: '#3a6ab0', flip: true }], ['chariot', 130, 198, 0.8], ['bow', 265, 198, 0.8]] },
+        en: '"Welcome, Arjuna! Welcome, Duryodhana!" said Kṛṣṇa with a smile. "You have both come for help, and I will help you both. On one side is my great Nārāyaṇī army — thousands and thousands of brave soldiers. On the other side is me, alone. And I will not lift a single weapon in the war." Duryodhana jumped up. "I came first, so I choose first!" Kṛṣṇa laughed. "But I saw Arjuna first. And he is younger, so he may choose first." Duryodhana\'s heart thumped. "Surely Arjuna will take the army," he worried. "Who would choose one man without weapons?"',
+        te: '"రా అర్జునా! రా దుర్యోధనా!" అని కృష్ణుడు చిరునవ్వుతో పలకరించాడు. "మీరిద్దరూ సహాయం కోసం వచ్చారు. ఇద్దరికీ సహాయం చేస్తాను. ఒక వైపు నా గొప్ప నారాయణీ సేన — వేల వేల ధైర్యవంతులైన సైనికులు. మరో వైపు నేను ఒక్కడినే. పైగా యుద్ధంలో నేను ఒక్క ఆయుధం కూడా పట్టను." దుర్యోధనుడు లేచి నిలబడ్డాడు. "నేనే ముందు వచ్చాను, నేనే ముందు ఎంచుకుంటాను!" కృష్ణుడు నవ్వాడు. "కానీ నేను ముందు చూసింది అర్జునుడిని. పైగా అతడు చిన్నవాడు. కాబట్టి అతడే ముందు ఎంచుకోవాలి." దుర్యోధనుడి గుండె దడదడలాడింది. "అర్జునుడు సైన్యాన్నే తీసుకుంటాడేమో! ఆయుధం లేని ఒక్క మనిషిని ఎవరు కోరుకుంటారు?" అని భయపడ్డాడు.',
+      },
+      {
+        scene: { bg: 'palace', props: [['sun', 60, 50, 0.8], ['chariot', 250, 198, 1.6], ['person', 240, 162, 1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['archer', 110, 198, 1.3, { cloth: '#3a6ab0' }], ['cloud', 330, 45, 0.9]] },
+        en: 'Arjuna did not even stop to think. He bowed low. "Kṛṣṇa, I choose you." Duryodhana could hardly hide his joy. "Then the whole army is mine!" he cried, and he hurried home, sure he had won the better prize. When they were alone, Kṛṣṇa asked gently, "Arjuna, why choose me? I will not even fight." Arjuna smiled. "With you beside me, I need nothing else. Please be my charioteer and guide me." Kṛṣṇa agreed happily. From that day he was called Pārthasārathi — Arjuna\'s charioteer. Duryodhana had chosen soldiers. Arjuna had chosen wisdom, love and God himself.',
+        te: 'అర్జునుడు ఒక్క క్షణం కూడా ఆలోచించలేదు. వంగి నమస్కరించాడు. "కృష్ణా, నాకు నువ్వే కావాలి." దుర్యోధనుడు తన సంతోషాన్ని దాచుకోలేకపోయాడు. "అయితే సైన్యమంతా నాదే!" అని అరిచి, తనకే గొప్ప బహుమతి దొరికిందని అనుకుంటూ ఇంటికి పరుగెత్తాడు. ఇద్దరే మిగిలాక కృష్ణుడు మెల్లగా అడిగాడు, "అర్జునా, నన్నెందుకు కోరుకున్నావు? నేను యుద్ధం కూడా చేయను కదా." అర్జునుడు చిరునవ్వు నవ్వాడు. "నువ్వు నా పక్కన ఉంటే నాకు ఇంకేమీ అక్కర్లేదు. నా రథానికి సారథిగా ఉండి నన్ను నడిపించు." కృష్ణుడు ఆనందంగా ఒప్పుకున్నాడు. ఆ రోజు నుంచి ఆయనకు పార్థసారథి అనే పేరు వచ్చింది. దుర్యోధనుడు సైనికులను ఎంచుకున్నాడు. అర్జునుడు జ్ఞానాన్ని, ప్రేమను, భగవంతుడినే ఎంచుకున్నాడు.',
+      },
+    ],
+  },
+  {
+    id: 'sitas-return-and-the-fire',
+    added: '2026-10-26',
+    epic: 'Ramayana',
+    chars: ['Sītā', 'Rāma', 'Agni', 'Hanumān', 'Vibhīṣaṇa', 'Lakṣmaṇa'],
+    title: { en: 'Sītā\'s Return and the Fire', te: 'సీతాదేవి అగ్నిపరీక్ష' },
+    moral: { en: 'Truth shines through every test, like gold in fire.', te: 'నిప్పులో బంగారంలా, ఎంత పరీక్ష ఎదురైనా సత్యం మెరుస్తుంది.' },
+    cover: { bg: 'shore', props: [['fire', 200, 198, 2.2], ['person', 200, 140, 1.1, { female: true, skin: 'fair', cloth: '#f0c040', pallu: '#c0392b' }], ['person', 90, 198, 1.3, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['monkey', 320, 198, 1.1, { color: '#d9772a', flip: true }]] },
+    pages: [
+      {
+        scene: { bg: 'forest', props: [['tree', 70, 196, 1.2], ['person', 170, 198, 1.4, { female: true, skin: 'fair', cloth: '#f0c040', pallu: '#c0392b' }], ['monkey', 250, 198, 1.2, { color: '#d9772a', flip: true }], ['tree', 340, 196, 1.1], ['flowers', 120, 200, 0.8]] },
+        en: 'The battle was over, and Rāvaṇa was gone. Rāma sent Hanumān straight to the Aśoka grove, where Sītā had waited for so many long months. Hanumān bowed with tears of joy. "Mother, Rāma has won! Vibhīṣaṇa is now king of Laṅkā, and soon you will see your husband again." Sītā\'s face lit up like the moon coming out from behind a cloud. "Hanumān, you have brought me the sweetest news in the world," she said. "I have nothing to give you except my blessing. May you always be strong, wise and loved by all." Then Vibhīṣaṇa brought her, dressed in fine clothes, to Rāma.',
+        te: 'యుద్ధం ముగిసింది. రావణుడు ఇక లేడు. రాముడు వెంటనే హనుమంతుడిని అశోకవనానికి పంపాడు. అక్కడ సీతాదేవి ఎన్నో నెలలుగా ఎదురుచూస్తూ ఉంది. హనుమంతుడు ఆనందబాష్పాలతో నమస్కరించాడు. "అమ్మా, రాముడు గెలిచాడు! ఇప్పుడు విభీషణుడు లంకకు రాజు. త్వరలోనే మీరు మీ స్వామిని చూస్తారు." మబ్బు చాటు నుంచి బయటికి వచ్చిన చంద్రుడిలా సీతాదేవి ముఖం వెలిగిపోయింది. "హనుమా, ప్రపంచంలోకెల్లా తీయని వార్త తెచ్చావు," అందామె. "నీకు ఇవ్వడానికి నా దగ్గర ఆశీర్వాదం తప్ప ఇంకేమీ లేదు. నువ్వు ఎప్పుడూ బలంగా, తెలివిగా, అందరికీ ఇష్టుడిగా ఉండు." తరువాత విభీషణుడు చక్కని వస్త్రాలు ధరించిన సీతాదేవిని రాముడి దగ్గరకు తీసుకువచ్చాడు.',
+      },
+      {
+        scene: { bg: 'shore', props: [['person', 110, 198, 1.4, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 260, 198, 1.35, { female: true, skin: 'fair', cloth: '#f0c040', pallu: '#c0392b' }], ['person', 320, 198, 1.2, { cloth: '#e8a23a', flip: true }], ['fire', 190, 200, 1.2], ['monkey', 40, 198, 1]] },
+        en: 'The whole army crowded round to see the queen they had fought for. But Rāma stood still, and his face was serious. He knew people might whisper, "Sītā lived for so long in Rāvaṇa\'s kingdom." A king\'s family had to be above every doubt. So he spoke words that sounded cold and hard. Sītā\'s eyes filled with tears. Then she lifted her head bravely. "Lakṣmaṇa," she said, "please build a fire. Let the fire god himself tell the world the truth about my heart." Sadly, Lakṣmaṇa looked at Rāma. Rāma said nothing, so Lakṣmaṇa built the fire.',
+        te: 'తాము ఎవరి కోసం యుద్ధం చేశారో ఆ మహారాణిని చూడడానికి సైన్యమంతా చుట్టూ గుమిగూడింది. కానీ రాముడు కదలకుండా నిలబడ్డాడు. ఆయన ముఖం గంభీరంగా ఉంది. "సీత ఇంత కాలం రావణుడి రాజ్యంలో ఉంది" అని జనం గుసగుసలాడవచ్చని ఆయనకు తెలుసు. రాజ కుటుంబం ఏ అనుమానానికీ అందనంత ఎత్తులో ఉండాలి. అందుకే ఆయన కఠినంగా, చల్లగా వినిపించే మాటలు మాట్లాడాడు. సీతాదేవి కళ్ళలో నీళ్ళు తిరిగాయి. అప్పుడు ఆమె ధైర్యంగా తల ఎత్తింది. "లక్ష్మణా, అగ్ని రగిలించు. నా మనసులోని సత్యాన్ని అగ్నిదేవుడే లోకానికి చెప్పనీ," అంది. లక్ష్మణుడు బాధగా రాముడి వైపు చూశాడు. రాముడు ఏమీ మాట్లాడలేదు. లక్ష్మణుడు అగ్నిని రగిలించాడు.',
+      },
+      {
+        scene: { bg: 'shore', props: [['sun', 330, 55, 1], ['fire', 200, 200, 2.4], ['person', 200, 150, 1.1, { female: true, skin: 'fair', cloth: '#f0c040', pallu: '#c0392b' }], ['person', 85, 198, 1.4, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['flowers', 300, 200, 0.9], ['monkey', 360, 198, 1, { color: '#d9772a', flip: true }]] },
+        en: 'Sītā folded her hands and prayed. "If my heart has never left Rāma, even for a moment, O Agni, protect me." Then she stepped calmly into the flames. Everyone gasped! But the fire did not burn her. Out of the flames rose Agni, the shining fire god, holding Sītā gently in his arms. Not one hair, not one flower in her garland was harmed. "Rāma," said Agni, "Sītā is pure and true. Take her back with honour." Rāma\'s eyes shone with tears. "I always knew it," he said. "I only wanted the whole world to know it too." He took Sītā\'s hand, and the sky rained flowers.',
+        te: 'సీతాదేవి చేతులు జోడించి ప్రార్థించింది. "నా మనసు ఒక్క క్షణం కూడా రాముడిని విడిచిపెట్టకపోతే, ఓ అగ్నిదేవా, నన్ను కాపాడు." ఆ తరువాత ఆమె నెమ్మదిగా మంటల్లోకి అడుగుపెట్టింది. అందరూ ఉలిక్కిపడ్డారు! కానీ అగ్ని ఆమెను కాల్చలేదు. మంటల్లోంచి మెరిసిపోతున్న అగ్నిదేవుడు సీతాదేవిని జాగ్రత్తగా చేతుల్లో ఎత్తుకుని పైకి వచ్చాడు. ఆమె తలలో ఒక్క వెంట్రుక కూడా, ఆమె మాలలో ఒక్క పువ్వు కూడా వాడలేదు. "రామా, సీత పవిత్రురాలు, సత్యవంతురాలు. ఆమెను గౌరవంగా స్వీకరించు," అన్నాడు అగ్నిదేవుడు. రాముడి కళ్ళు చెమర్చాయి. "నాకు ఇది ఎప్పుడూ తెలుసు. లోకానికంతా తెలియాలనే ఇలా చేశాను," అన్నాడు. ఆయన సీతాదేవి చేయి పట్టుకున్నాడు. ఆకాశం నుంచి పూలవాన కురిసింది.',
+      },
+    ],
+  },
+  {
+    id: 'krishnas-song-the-gita',
+    added: '2026-10-26',
+    epic: 'Mahabharata',
+    chars: ['Kṛṣṇa', 'Arjuna'],
+    title: { en: 'Kṛṣṇa\'s Song on the Battlefield — the Gītā', te: 'యుద్ధభూమిలో కృష్ణుడి పాట — భగవద్గీత' },
+    moral: { en: 'Do your duty with a brave heart, and leave the results to God.', te: 'నీ కర్తవ్యం ధైర్యంగా చెయ్యి, ఫలితం భగవంతుడికి వదిలెయ్యి.' },
+    cover: { bg: 'river', props: [['sun', 200, 120, 2.6], ['chariot', 210, 198, 1.8], ['person', 190, 155, 1.1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['archer', 90, 198, 1.2, { cloth: '#3a6ab0' }]] },
+    pages: [
+      {
+        scene: { bg: 'river', props: [['chariot', 120, 198, 1.6], ['person', 105, 155, 1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['archer', 190, 198, 1.2, { cloth: '#3a6ab0' }], ['person', 300, 198, 1.1, { cloth: '#f4ead2', beard: true, hair: '#ddd', flip: true }], ['person', 350, 198, 1.1, { cloth: '#f4ead2', beard: true, hair: '#ddd', flip: true }]] },
+        en: 'The two great armies stood face to face on the field of Kurukṣetra. Conch shells boomed, and drums thundered. "Kṛṣṇa," said Arjuna, "drive my chariot between the two armies. I want to see who has come to fight." Kṛṣṇa drove forward. Arjuna looked across the field — and his heart sank. There stood Grandfather Bhīṣma, who had carried him as a baby. There stood Guru Droṇa, who had taught him archery. There were cousins, uncles and friends. Arjuna\'s hands trembled. His great bow Gāṇḍīva slipped to the ground. "Kṛṣṇa, how can I fight my own family? I will not fight," he said, and sat down sadly.',
+        te: 'కురుక్షేత్ర రణభూమిలో రెండు మహాసైన్యాలు ఎదురెదురుగా నిలబడ్డాయి. శంఖాలు మోగాయి, భేరీలు ఉరిమాయి. "కృష్ణా, నా రథాన్ని రెండు సైన్యాల మధ్యకు తీసుకెళ్ళు. ఎవరెవరు యుద్ధానికి వచ్చారో చూడాలి," అన్నాడు అర్జునుడు. కృష్ణుడు రథాన్ని ముందుకు నడిపాడు. అర్జునుడు రణభూమి అంతా చూశాడు — అతడి గుండె కుంగిపోయింది. అక్కడ చిన్నప్పుడు తనను ఎత్తుకు ఆడించిన భీష్మ తాతగారు ఉన్నారు. విలువిద్య నేర్పిన ద్రోణాచార్యులు ఉన్నారు. దాయాదులు, మామలు, స్నేహితులు ఉన్నారు. అర్జునుడి చేతులు వణికాయి. అతడి గొప్ప విల్లు గాండీవం జారి కింద పడింది. "కృష్ణా, నా సొంత వాళ్ళతో ఎలా యుద్ధం చేయగలను? నేను యుద్ధం చేయను," అని బాధగా కూలబడ్డాడు.',
+      },
+      {
+        scene: { bg: 'river', props: [['chariot', 260, 198, 1.6], ['person', 160, 198, 1.5, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['person', 90, 198, 1.2, { cloth: '#3a6ab0' }], ['bow', 40, 198, 0.8], ['lotus', 330, 205, 0.8]] },
+        en: 'Kṛṣṇa smiled kindly, as a teacher smiles at a worried student. Right there, between the armies, he began to speak. His words are the Bhagavad Gītā — the Song of God. "Arjuna, do not grieve. The true self inside every being, the ātmā, is never born and never dies. Weapons cannot cut it, fire cannot burn it, water cannot wet it. Bodies change, like old clothes we take off and new clothes we put on. You are a warrior, and your duty is to stand up for what is right. Do your work well, Arjuna, but do not worry about winning or losing. Offer everything you do to God."',
+        te: 'భయపడిన శిష్యుడిని చూసి గురువు నవ్వినట్లు కృష్ణుడు ప్రేమగా చిరునవ్వు నవ్వాడు. అక్కడే, రెండు సైన్యాల మధ్యనే ఆయన బోధించడం మొదలుపెట్టాడు. ఆ మాటలే భగవద్గీత — భగవంతుడి పాట. "అర్జునా, బాధపడకు. ప్రతి జీవిలోనూ ఉన్న ఆత్మ పుట్టదు, చనిపోదు. ఆయుధాలు దాన్ని నరకలేవు, అగ్ని కాల్చలేదు, నీరు తడపలేదు. మనం పాత బట్టలు విడిచి కొత్త బట్టలు కట్టుకున్నట్లే శరీరాలు మారుతాయి. నువ్వు క్షత్రియుడివి. ధర్మం కోసం నిలబడడమే నీ కర్తవ్యం. నీ పనిని చక్కగా చెయ్యి, కానీ గెలుపు ఓటముల గురించి చింతించకు. నువ్వు చేసే ప్రతి పనినీ భగవంతుడికి అర్పించు."',
+      },
+      {
+        scene: { bg: 'sky', props: [['sun', 200, 120, 3.2], ['person', 200, 175, 2.2, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['cloud', 60, 60, 1], ['cloud', 340, 70, 0.9], ['archer', 330, 198, 1.1, { cloth: '#3a6ab0', flip: true }]] },
+        en: 'Arjuna listened and asked many questions, and Kṛṣṇa answered every one. Then Arjuna said, "Kṛṣṇa, show me who you really are." So Kṛṣṇa showed him his Viśvarūpa — his form as the whole universe! Arjuna saw suns and moons, mountains and oceans, gods and sages, all shining inside Kṛṣṇa, brighter than a thousand suns rising together. Arjuna bowed down in wonder. "Now I understand. My doubts are gone." He stood up, picked up Gāṇḍīva and said, "I will do as you say." To this day, the Gītā is read in homes all over the world, helping people be brave and do what is right.',
+        te: 'అర్జునుడు శ్రద్ధగా విన్నాడు, ఎన్నో ప్రశ్నలు అడిగాడు. కృష్ణుడు ప్రతి ప్రశ్నకూ జవాబు చెప్పాడు. అప్పుడు అర్జునుడు, "కృష్ణా, నువ్వు నిజంగా ఎవరో నాకు చూపించు," అని అడిగాడు. అప్పుడు కృష్ణుడు తన విశ్వరూపాన్ని చూపించాడు — విశ్వమంతా తానే అయిన రూపం! కృష్ణుడిలో సూర్యులు, చంద్రులు, కొండలు, సముద్రాలు, దేవతలు, ఋషులు అందరూ కనిపించారు. వెయ్యి సూర్యులు ఒకేసారి ఉదయించినంత వెలుగు! అర్జునుడు ఆశ్చర్యంతో సాష్టాంగ నమస్కారం చేశాడు. "ఇప్పుడు అర్థమైంది. నా సందేహాలన్నీ తీరిపోయాయి." అతడు లేచి గాండీవాన్ని చేతిలోకి తీసుకున్నాడు. "నువ్వు చెప్పినట్లే చేస్తాను," అన్నాడు. ఈనాటికీ ప్రపంచమంతటా ఇళ్ళలో గీతను చదువుతారు. ధైర్యంగా ఉండడానికి, మంచి పని చేయడానికి అది అందరికీ దారి చూపిస్తుంది.',
+      },
+    ],
+  },
 ];
