@@ -42,7 +42,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 
 ## Next
 
-- [ ] Śuka (shuka) — born of Vyāsa from the araṇi; learning from Janaka in Mithilā; the apsarases at the lake; rising into the sky; reciting the Bhāgavata to Parīkṣit (MBh Śānti, Bhāgavata).
 - [ ] Kaṇva (kanva) — Ṛgvedic Kāṇva seers; finding and raising Śakuntalā; her marriage to Duṣyanta and farewell; Bharata's birth; Kaṇva's counsel to Duryodhana in the Udyoga Parva (Ṛgveda, MBh Ādi & Udyoga, Kālidāsa).
 - [ ] Māṇḍavya (mandavya) — the silent sage impaled for thieves' crime; living on the stake; questioning Dharma; Dharma cursed to be born as Vidura; the age of responsibility; the later tale of Śīlavatī and the sun that did not rise (MBh Ādi, later Purāṇas).
 - [ ] Pulastya (pulastya) — mind-born son of Brahmā; Viśravas and the births of Kubera and Rāvaṇa; freeing Rāvaṇa from Kārtavīrya; tīrtha lore to Bhīṣma; blessing Parāśara with the Viṣṇu Purāṇa (Rāmāyaṇa Uttara, MBh Vana, Viṣṇu Purāṇa).
@@ -82,3 +81,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Ṛṣyaśṛṅga (rishyashringa) — 6 chapters — 2026-10-23
 - [x] Cyavana (cyavana) — 9 chapters — 2026-10-24
 - [x] Uttaṅka (uttanka) — 11 chapters — 2026-10-25
+- [x] Śuka (shuka) — 12 chapters — 2026-10-26
