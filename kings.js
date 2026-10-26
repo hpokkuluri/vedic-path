@@ -15,6 +15,7 @@
     ['ashoka', 'Aśoka', 'అశోకుడు', 'The emperor who gave up war', 'యుద్ధాన్ని విడిచిన చక్రవర్తి', '☸️', 'linear-gradient(160deg,#0a1a3a,#3a6ab0)'],
     ['shatakarni', 'Śātakarṇi', 'శాతకర్ణి', 'Gautamīputra · greatest Sātavāhana', 'గౌతమీపుత్ర · శాతవాహన శ్రేష్ఠుడు', '🐎', 'linear-gradient(160deg,#3a0a0a,#b03a2a)'],
     ['kharavela', 'Khāravela', 'ఖారవేలుడు', 'Kaliṅga · the Elephant Cave king', 'కళింగ · హాథీగుంఫా రాజు', '🐘', 'linear-gradient(160deg,#0a2a1a,#2a8a6a)'],
+    ['samudragupta', 'Samudragupta', 'సముద్రగుప్తుడు', 'Gupta · the poet-king who conquered', 'గుప్త · దిగ్విజయుడైన కవిరాజు', '🪕', 'linear-gradient(160deg,#2a0a3a,#b0702a)'],
   ];
   const SMETA = k => KINGS.find(x => x[0] === k) || KINGS[0];
   window.KING_META = SMETA;   // used by bookmarks.js

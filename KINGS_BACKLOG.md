@@ -48,7 +48,6 @@ king's life, publishes it, and moves it to "Done" in the same commit.
 6. `node tools/check_kings.js` must print OK (and `node tools/check_sages.js` must still print OK).
 
 ## Next
-- [ ] Samudragupta (samudragupta) — the Allahabad pillar praśasti of Hariṣeṇa; the southern campaign (kings of Kāñcī, Veṅgī and the Kṛṣṇā–Godāvarī region); the aśvamedha coins; the lyre-player coins
 - [ ] Candragupta II Vikramāditya (chandragupta2) — Dhruvadevī and the Śaka king (the play Devīcandraguptam); the conquest of the Western Kṣatrapas; Prabhāvatīguptā and the Vākāṭakas; Faxian; the Mehrauli iron pillar; Kālidāsa tradition
 - [ ] Skandagupta (skandagupta) — defending against the Hūṇas; the Bhitarī pillar; the Junāgaḍh inscription and Sudarśana lake again
 - [ ] Harṣavardhana (harsha) — Bāṇa's Harṣacarita; Rājyaśrī; Xuanzang; the assembly at Prayāga; defeat at the Narmadā by Pulakeśin II; his plays
@@ -76,3 +75,4 @@ Mahādajī Śinde, Ahilyābāī Holkar, Ranjīt Siṃh, Rāṇī Lakṣmībāī.
 - [x] Aśoka (ashoka) — 9 chapters — 2026-10-24
 - [x] Gautamīputra Śātakarṇi (shatakarni) — 7 chapters — 2026-10-24
 - [x] Khāravela (kharavela) — 8 chapters — 2026-10-25
+- [x] Samudragupta (samudragupta) — 8 chapters — 2026-10-26
