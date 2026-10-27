@@ -1465,4 +1465,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'the-pushpaka-flight-home',
+    added: '2026-10-27',
+    epic: 'Ramayana',
+    chars: ['Rāma', 'Sītā', 'Lakṣmaṇa', 'Vibhīṣaṇa', 'Hanumān', 'Bharata'],
+    title: { en: 'The Puṣpaka Flight Home', te: 'పుష్పక విమానంలో ఇంటికి' },
+    moral: { en: 'A promise to those who love us must always be kept.', te: 'మనల్ని ప్రేమించేవారికి ఇచ్చిన మాట ఎప్పుడూ నిలబెట్టుకోవాలి.' },
+    cover: { bg: 'sky', props: [['sun', 340, 60, 0.9], ['cloud', 70, 60, 1], ['cloud', 300, 150, 0.9], ['person', 175, 98, 0.9, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['person', 205, 98, 0.95, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['chariot', 200, 140, 1.9]] },
+    pages: [
+      {
+        scene: { bg: 'shore', props: [['sun', 60, 50, 0.9], ['lanka', 330, 150, 0.6], ['person', 150, 198, 1.45, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 245, 198, 1.35, { skin: 'dark', cloth: '#4a7a5a', crown: true, raise: true, flip: true }], ['chariot', 330, 205, 1]] },
+        en: 'The great war was over, and Sītā was free at last. Vibhīṣaṇa, the new king of Laṅkā, came to Rāma with folded hands. "Please stay a few days and rest with us," he begged. Rāma smiled gently. "Thank you, my friend. But my brother Bharata is waiting for me in Ayodhyā. The fourteen years are almost over. If I am late by even one day, his heart will break." So Vibhīṣaṇa brought out the Puṣpaka, a wonderful flying chariot that once belonged to Kubera. It shone like the sun, and there was room in it for everyone who wished to travel. "Then fly home in this," said Vibhīṣaṇa.',
+        te: 'మహాయుద్ధం ముగిసింది, సీతాదేవి చివరకు విడుదలైంది. లంకకు కొత్త రాజైన విభీషణుడు చేతులు జోడించి రాముడి దగ్గరకు వచ్చాడు. "దయచేసి కొన్ని రోజులు మాతో ఉండి విశ్రాంతి తీసుకోండి," అని వేడుకున్నాడు. రాముడు మృదువుగా నవ్వాడు. "ధన్యవాదాలు మిత్రమా. కానీ నా తమ్ముడు భరతుడు అయోధ్యలో నా కోసం ఎదురుచూస్తున్నాడు. పద్నాలుగు సంవత్సరాలు దాదాపు పూర్తయ్యాయి. నేను ఒక్క రోజు ఆలస్యమైనా అతడి గుండె పగిలిపోతుంది." అప్పుడు విభీషణుడు పుష్పక విమానాన్ని తెప్పించాడు. ఒకప్పుడు కుబేరుడిదైన ఆ అద్భుత విమానం సూర్యుడిలా మెరిసిపోతోంది. ఎంతమంది ఎక్కినా అందులో చోటు ఉంటుంది. "అయితే ఇందులో ఇంటికి ఎగిరి వెళ్ళండి," అన్నాడు విభీషణుడు.',
+      },
+      {
+        scene: { bg: 'sky', props: [['cloud', 60, 50, 1], ['cloud', 330, 45, 0.8], ['monkey', 145, 86, 0.6, { color: '#d9772a' }], ['person', 180, 86, 0.85, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['person', 210, 86, 0.9, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['chariot', 195, 128, 1.8], ['stones', 300, 182, 0.8]] },
+        en: 'Rāma, Sītā and Lakṣmaṇa climbed aboard. Then Sugrīva, Hanumān, Vibhīṣaṇa and the whole monkey army called out, "Take us too! We want to see you crowned!" Rāma laughed happily. "Come, all of you!" Up rose the Puṣpaka, like a swan into the sky. Rāma pointed down for Sītā. "Look, there is the battlefield of Laṅkā. There is the bridge the monkeys built across the sea. That is Kiṣkindhā, where I met Sugrīva. And see that little hut by the river? That is Pañcavaṭī, where we lived — and where I searched for you, calling your name." Sītā held his hand, and her eyes filled with tears of joy.',
+        te: 'రాముడు, సీతాదేవి, లక్ష్మణుడు విమానం ఎక్కారు. అప్పుడు సుగ్రీవుడు, హనుమంతుడు, విభీషణుడు, వానర సైన్యమంతా "మమ్మల్ని కూడా తీసుకెళ్ళండి! మీ పట్టాభిషేకం చూడాలని ఉంది!" అని అరిచారు. రాముడు సంతోషంగా నవ్వాడు. "అందరూ రండి!" హంస ఆకాశంలోకి ఎగిరినట్లు పుష్పకం పైకి లేచింది. రాముడు సీతాదేవికి కిందికి చూపించాడు. "చూడు, అదే లంకలో యుద్ధం జరిగిన చోటు. అదిగో, వానరులు సముద్రం మీద కట్టిన వారధి. అది కిష్కింధ, అక్కడే నాకు సుగ్రీవుడు పరిచయమయ్యాడు. నది ఒడ్డున ఆ చిన్న కుటీరం కనిపిస్తోందా? అదే పంచవటి. మనం అక్కడే ఉన్నాం. అక్కడే నీ పేరు పిలుస్తూ నిన్ను వెతికాను." సీతాదేవి ఆయన చేయి పట్టుకుంది. ఆమె కళ్ళు ఆనందబాష్పాలతో నిండిపోయాయి.',
+      },
+      {
+        scene: { bg: 'village', props: [['sun', 200, 45, 0.8], ['sandals', 120, 190, 0.7], ['person', 175, 198, 1.3, { cloth: '#c9a26b' }], ['person', 235, 198, 1.4, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true, flip: true }], ['monkey', 320, 196, 1.1, { color: '#d9772a', flip: true }]] },
+        en: 'Near the holy river Gaṅgā, Rāma turned to Hanumān. "Fly ahead to Nandigrāma and tell Bharata that I am coming. Watch his face, and see if he is truly happy." Hanumān sped away like the wind. He found Bharata in a simple hut, dressed like a hermit, with Rāma\'s sandals resting on a throne beside him. "Your brother is coming home today!" cried Hanumān. Bharata leapt up and hugged him again and again. Soon the Puṣpaka landed, and Bharata ran and fell at Rāma\'s feet. Rāma lifted him up and held him close. The whole town shouted, "Jai Śrī Rām!" At long last, the brothers were together again.',
+        te: 'పవిత్రమైన గంగానది దగ్గరకు వచ్చాక రాముడు హనుమంతుడితో అన్నాడు, "నువ్వు ముందుగా నందిగ్రామానికి వెళ్ళి, నేను వస్తున్నానని భరతుడికి చెప్పు. అతడి ముఖం గమనించు, నిజంగా సంతోషిస్తున్నాడో లేదో చూడు." హనుమంతుడు గాలిలా దూసుకుపోయాడు. ఒక సాధారణ కుటీరంలో, ముని వేషంలో ఉన్న భరతుడిని చూశాడు. పక్కనే ఒక సింహాసనం మీద రాముడి పాదుకలు ఉన్నాయి. "మీ అన్నగారు ఈ రోజే ఇంటికి వస్తున్నారు!" అని అరిచాడు హనుమంతుడు. భరతుడు ఆనందంతో లేచి హనుమంతుడిని మళ్ళీ మళ్ళీ కౌగిలించుకున్నాడు. కొద్దిసేపటికే పుష్పకం కిందికి దిగింది. భరతుడు పరుగెత్తి వచ్చి రాముడి పాదాల మీద పడ్డాడు. రాముడు అతడిని లేపి గుండెకు హత్తుకున్నాడు. ఊరంతా "జై శ్రీరామ్!" అని నినదించింది. ఎంతో కాలం తరువాత అన్నదమ్ములు మళ్ళీ కలిశారు.',
+      },
+    ],
+  },
+  {
+    id: 'barbarika-the-boy-with-three-arrows',
+    added: '2026-10-27',
+    epic: 'Mahabharata',
+    chars: ['Barbarīka', 'Kṛṣṇa', 'Ghaṭotkaca'],
+    title: { en: 'Barbarīka, the Boy with Three Arrows', te: 'మూడు బాణాల వీరుడు బర్బరీకుడు' },
+    moral: { en: 'True greatness is giving up something precious for the good of all.', te: 'అందరి మేలు కోసం తనకు ప్రియమైనదాన్ని త్యాగం చేయడమే నిజమైన గొప్పతనం.' },
+    cover: { bg: 'forest', props: [['sun', 50, 50, 0.8], ['archer', 120, 198, 1.4, { skin: 'dark', cloth: '#a8392a' }], ['arrow', 190, 120, 1], ['arrow', 210, 140, 1], ['arrow', 230, 160, 1], ['tree', 320, 198, 1.4]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['sun', 340, 50, 0.8], ['linga', 270, 190, 1.2], ['person', 160, 198, 1.3, { skin: 'dark', cloth: '#a8392a', raise: true }], ['arrow', 230, 110, 0.9], ['arrow', 240, 125, 0.9], ['arrow', 250, 140, 0.9]] },
+        en: 'It is said that Bhīma\'s brave son Ghaṭotkaca had a son of his own, named Barbarīka. Even as a boy he was strong and fearless. His mother taught him one rule above all others: "Always stand by the side that is weaker." Barbarīka prayed to Lord Śiva for many years. Pleased, Śiva gave him a wonderful gift — three magic arrows. With the first arrow he could mark everything he wished to strike. With the second, he could mark everything he wished to keep safe. The third arrow would then fly out and touch every mark. "With these three arrows," people whispered, "Barbarīka could end any war in a single moment!"',
+        te: 'భీముడి వీరపుత్రుడైన ఘటోత్కచుడికి బర్బరీకుడు అనే కొడుకు ఉండేవాడని చెబుతారు. చిన్నతనం నుంచే అతడు బలశాలి, భయమంటే తెలియనివాడు. అతడి తల్లి అన్నిటికంటే ముఖ్యమైన ఒక నియమం నేర్పింది: "ఎప్పుడూ బలహీనుల పక్షానే నిలబడు." బర్బరీకుడు ఎన్నో ఏళ్ళు శివుడిని ప్రార్థించాడు. శివుడు సంతోషించి అతడికి ఒక అద్భుతమైన వరం ఇచ్చాడు — మూడు మంత్ర బాణాలు. మొదటి బాణంతో తాను కొట్టాలనుకున్న వాటన్నిటికీ గుర్తు పెట్టగలడు. రెండో బాణంతో కాపాడాలనుకున్న వాటికి గుర్తు పెట్టగలడు. మూడో బాణం ఎగిరి వెళ్ళి గుర్తు ఉన్న ప్రతిదాన్నీ తాకుతుంది. "ఈ మూడు బాణాలతో బర్బరీకుడు ఏ యుద్ధాన్నైనా ఒక్క క్షణంలో ముగించగలడు!" అని అందరూ గుసగుసలాడుకునేవారు.',
+      },
+      {
+        scene: { bg: 'forest', props: [['tree', 270, 198, 1.6], ['person', 210, 198, 1.2, { skin: 'blue', cloth: '#f4ead2', beard: true, hair: '#ddd', flip: true }], ['arrow', 215, 196, 0.6], ['archer', 90, 198, 1.3, { skin: 'dark', cloth: '#a8392a' }], ['cloud', 120, 40, 0.9]] },
+        en: 'When the great war of Kurukṣetra was about to begin, Barbarīka set out to see it, his bow on his shoulder and three arrows at his back. On the way, an old brāhmaṇa stopped him. It was Kṛṣṇa in disguise! "Only three arrows?" he laughed. "Show me what they can do. Can you pierce every leaf of this peepal tree?" Barbarīka closed his eyes and let the first arrow fly. Quietly, Kṛṣṇa slipped one fallen leaf under his foot. The arrow marked every leaf on the tree — and then it came and circled round and round Kṛṣṇa\'s foot! "Please lift your foot, sir," said Barbarīka politely, "or my arrow will touch it."',
+        te: 'కురుక్షేత్ర మహాయుద్ధం మొదలవబోతున్నప్పుడు బర్బరీకుడు దాన్ని చూడాలని బయలుదేరాడు. భుజం మీద విల్లు, వీపున మూడు బాణాలు. దారిలో ఒక ముసలి బ్రాహ్మణుడు అతడిని ఆపాడు. ఆయన మారువేషంలో ఉన్న శ్రీకృష్ణుడే! "మూడే బాణాలా?" అని నవ్వాడు ఆయన. "అవి ఏం చేయగలవో చూపించు. ఈ రావిచెట్టు ఆకులన్నిటినీ గుచ్చగలవా?" బర్బరీకుడు కళ్ళు మూసుకుని మొదటి బాణం వదిలాడు. ఆ సమయంలో కృష్ణుడు నెమ్మదిగా రాలిన ఒక ఆకును తన పాదం కింద దాచాడు. బాణం చెట్టు మీది ప్రతి ఆకుకూ గుర్తు పెట్టింది — తరువాత వచ్చి కృష్ణుడి పాదం చుట్టూ గిరగిరా తిరగసాగింది! "అయ్యా, దయచేసి మీ పాదం పైకెత్తండి," అన్నాడు బర్బరీకుడు వినయంగా, "లేకపోతే నా బాణం దానికి తగులుతుంది."',
+      },
+      {
+        scene: { bg: 'mountain', props: [['sun', 200, 120, 2.4], ['person', 200, 198, 1.7, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, raise: true }], ['archer', 90, 198, 1.2, { skin: 'dark', cloth: '#a8392a' }], ['flowers', 300, 198, 1], ['cloud', 340, 50, 0.9]] },
+        en: 'Kṛṣṇa asked, "Whose side will you fight on?" "The weaker side," said Barbarīka. Kṛṣṇa grew thoughtful. "Then whichever side you join will become the stronger one. You will have to change sides again and again, until no one is left on either side." Barbarīka understood. Then the brāhmaṇa asked him for a gift. Barbarīka bowed and gave the greatest gift anyone can give — his own life, so that his arrows would not destroy everyone. With tears in his eyes, Kṛṣṇa showed his true form and blessed him. It is said that by this blessing Barbarīka watched the whole war from a hilltop. Today he is worshipped as Khāṭu Śyām.',
+        te: 'కృష్ణుడు అడిగాడు, "నువ్వు ఏ పక్షాన పోరాడతావు?" "బలహీనంగా ఉన్న పక్షాన," అన్నాడు బర్బరీకుడు. కృష్ణుడు ఆలోచనలో పడ్డాడు. "అయితే నువ్వు ఏ పక్షంలో చేరితే అదే బలంగా మారుతుంది. నువ్వు మళ్ళీ మళ్ళీ పక్షం మార్చాల్సి వస్తుంది. చివరకు రెండు వైపులా ఎవరూ మిగలరు." బర్బరీకుడికి విషయం అర్థమైంది. అప్పుడు ఆ బ్రాహ్మణుడు ఒక దానం అడిగాడు. బర్బరీకుడు నమస్కరించి, ఎవరూ ఇవ్వలేనంత గొప్ప దానం ఇచ్చాడు — తన బాణాలు అందరినీ నాశనం చేయకూడదని తన ప్రాణాన్నే అర్పించాడు. కృష్ణుడు కళ్ళనీళ్ళతో తన నిజరూపం చూపించి అతడిని దీవించాడు. ఆ వరం వల్లే బర్బరీకుడు ఒక కొండ మీది నుంచి యుద్ధమంతా చూశాడని చెబుతారు. ఈ రోజు ఆయనను ఖాటూ శ్యామ్‌గా పూజిస్తారు.',
+      },
+    ],
+  },
+  {
+    id: 'ramas-coronation',
+    added: '2026-10-27',
+    epic: 'Ramayana',
+    chars: ['Rāma', 'Sītā', 'Bharata', 'Hanumān', 'Vasiṣṭha'],
+    title: { en: 'Rāma\'s Coronation — Paṭṭābhiṣekam', te: 'శ్రీరామ పట్టాభిషేకం' },
+    moral: { en: 'A good ruler shares joy with everyone and rules with fairness and love.', te: 'మంచి పాలకుడు అందరితో ఆనందం పంచుకుంటూ న్యాయంగా, ప్రేమగా పాలిస్తాడు.' },
+    cover: { bg: 'court', props: [['throne', 200, 198, 1.7], ['person', 185, 160, 1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 215, 160, 0.95, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['monkey', 80, 198, 1.1, { color: '#d9772a' }], ['flowers', 320, 198, 1]] },
+    pages: [
+      {
+        scene: { bg: 'palace', props: [['sandals', 200, 196, 0.6], ['person', 150, 198, 1.4, { cloth: '#c9a26b', raise: true }], ['person', 250, 198, 1.45, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, flip: true }], ['person', 330, 198, 1.2, { female: true, skin: 'fair', cloth: '#f4ead2', pallu: '#a8392a', flip: true }]] },
+        en: 'Bharata brought Rāma\'s sandals and placed them gently on his brother\'s feet. "Brother, for fourteen years I looked after your kingdom, as if you had left it in my care. Today I give it back to you. Our treasury, our army, our people — all have grown." Rāma\'s eyes shone with pride. Then, for the first time in fourteen years, Rāma, Sītā and Lakṣmaṇa took off their forest clothes of bark. Their long, tangled hair was washed and combed. Rāma put on royal silk and jewels, and the queens of the palace dressed Sītā in her finest. Kausalyā, Sumitrā and Kaikeyī hugged them and could not stop smiling.',
+        te: 'భరతుడు రాముడి పాదుకలు తెచ్చి అన్నగారి పాదాలకు ప్రేమగా తొడిగాడు. "అన్నయ్యా, పద్నాలుగు సంవత్సరాలు నువ్వు నాకు అప్పగించిన సొత్తులా నీ రాజ్యాన్ని జాగ్రత్తగా కాపాడాను. ఈ రోజు దాన్ని నీకు తిరిగి ఇస్తున్నాను. మన ఖజానా, మన సైన్యం, మన ప్రజలు — అన్నీ వృద్ధి చెందాయి." రాముడి కళ్ళు గర్వంతో మెరిశాయి. పద్నాలుగు సంవత్సరాల తరువాత మొదటిసారిగా రాముడు, సీతాదేవి, లక్ష్మణుడు నారచీరలు విడిచారు. జడలు కట్టిన వారి పొడవాటి జుట్టును కడిగి దువ్వారు. రాముడు పట్టు వస్త్రాలు, ఆభరణాలు ధరించాడు. అంతఃపుర రాణులు సీతాదేవిని చక్కగా అలంకరించారు. కౌసల్య, సుమిత్ర, కైకేయి వారిని కౌగిలించుకుని ఆనందంతో మురిసిపోయారు.',
+      },
+      {
+        scene: { bg: 'court', props: [['throne', 200, 198, 1.7], ['person', 185, 160, 1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 215, 160, 0.95, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['person', 100, 198, 1.3, { cloth: '#f4ead2', beard: true, hair: '#ddd', raise: true }], ['pot', 135, 198, 0.8], ['person', 300, 198, 1.2, { skin: 'dark', cloth: '#4a7a5a', crown: true, flip: true }], ['flowers', 360, 198, 0.9]] },
+        en: 'On the great day, Hanumān and the swiftest monkeys flew to the four oceans and brought back pots of their holy waters. Rāma and Sītā sat together on the jewelled throne of Ayodhyā. The wise sage Vasiṣṭha chanted Vedic hymns and poured the sacred waters over them. Then he placed the golden crown of the Sun dynasty on Rāma\'s head. Śatrughna held the white royal umbrella over them, while Sugrīva and Vibhīṣaṇa waved soft white fans. Drums rolled, conches sounded, and flowers rained down from the sky. The people of Ayodhyā danced in the streets. Their beloved Rāma was king at last!',
+        te: 'ఆ శుభదినాన హనుమంతుడు, వేగంగా ఎగరగల వానరులు నాలుగు సముద్రాలకూ వెళ్ళి, ఆ పవిత్ర జలాలను కుండల్లో తెచ్చారు. రాముడు, సీతాదేవి కలిసి అయోధ్య రత్నసింహాసనం మీద కూర్చున్నారు. వసిష్ఠ మహర్షి వేదమంత్రాలు చదువుతూ ఆ పవిత్ర జలాలతో వారికి అభిషేకం చేశాడు. తరువాత సూర్యవంశ రాజుల బంగారు కిరీటాన్ని రాముడి తలపై ఉంచాడు. శత్రుఘ్నుడు వారిపై తెల్లని రాజఛత్రం పట్టాడు. సుగ్రీవుడు, విభీషణుడు తెల్లని వింజామరలు వీచారు. భేరీలు మోగాయి, శంఖాలు పూరించారు, ఆకాశం నుంచి పూలవాన కురిసింది. అయోధ్య ప్రజలు వీధుల్లో ఆనందంతో నాట్యం చేశారు. తమ ప్రియమైన రాముడు చివరకు రాజయ్యాడు!',
+      },
+      {
+        scene: { bg: 'palace', props: [['sun', 60, 45, 0.8], ['person', 150, 198, 1.35, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b', raise: true }], ['monkey', 240, 196, 1.3, { color: '#d9772a', flip: true }], ['person', 320, 198, 1.4, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true, flip: true }], ['flowers', 60, 198, 0.9]] },
+        en: 'Then Rāma gave gifts to all his friends. Sītā took off her own pearl necklace and looked at Rāma. "Give it to the one you are most pleased with," he said softly. At once Sītā placed it around Hanumān\'s neck, for he had been brave, wise and loyal to the very end. Hanumān bowed low, his face glowing with joy. Rāma ruled for many, many years. In his kingdom, it is said, no one went hungry, children were safe, the rains came on time, and everyone spoke the truth. Even today, when people wish for a fair and happy land, they call it "Rāma Rājya".',
+        te: 'తరువాత రాముడు తన మిత్రులందరికీ కానుకలు ఇచ్చాడు. సీతాదేవి తన ముత్యాల హారాన్ని తీసి రాముడి వైపు చూసింది. "నీకు ఎవరి మీద ఎక్కువ సంతోషం కలిగిందో వారికే ఇవ్వు," అన్నాడు ఆయన మెల్లగా. వెంటనే సీతాదేవి ఆ హారాన్ని హనుమంతుడి మెడలో వేసింది. ఎందుకంటే చివరి వరకూ అతడు ధైర్యంగా, తెలివిగా, విశ్వాసంగా ఉన్నాడు. హనుమంతుడు ఆనందంతో వెలిగిపోతూ వంగి నమస్కరించాడు. రాముడు ఎన్నో ఎన్నో సంవత్సరాలు రాజ్యం పాలించాడు. ఆయన రాజ్యంలో ఎవరూ ఆకలితో ఉండలేదని, పిల్లలు సురక్షితంగా ఉండేవారని, వానలు సమయానికి కురిసేవని, అందరూ నిజమే మాట్లాడేవారని చెబుతారు. ఈ రోజుకీ న్యాయంగా, సంతోషంగా ఉండే దేశాన్ని కోరుకున్నప్పుడు ప్రజలు దాన్ని "రామరాజ్యం" అంటారు.',
+      },
+    ],
+  },
 ];

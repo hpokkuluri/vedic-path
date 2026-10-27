@@ -65,11 +65,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Arjuna Chooses Kṛṣṇa (Mahābhārata) — arjuna-chooses-krishna
 - [x] Sītā's Return and the Fire (Rāmāyaṇa) — sitas-return-and-the-fire
 - [x] Kṛṣṇa's Song on the Battlefield — the Gītā (Mahābhārata) — krishnas-song-the-gita
+- [x] The Puṣpaka Flight Home (Rāmāyaṇa) — the-pushpaka-flight-home
+- [x] Barbarīka, the Boy with Three Arrows (Mahābhārata) — barbarika-the-boy-with-three-arrows
+- [x] Rāma's Coronation — Paṭṭābhiṣekam (Rāmāyaṇa) — ramas-coronation
 
 ## Next
-- [ ] The Puṣpaka Flight Home (Rāmāyaṇa) — Rāma, Sītā, Vibhīṣaṇa
-- [ ] Barbarīka, the Boy with Three Arrows (Mahābhārata, folk tradition) — Barbarīka, Kṛṣṇa
-- [ ] Rāma's Coronation — Paṭṭābhiṣekam (Rāmāyaṇa) — Rāma, Bharata, Hanumān
 - [ ] Little Abhimanyu Learns in His Mother's Womb (Mahābhārata) — Abhimanyu, Subhadrā, Arjuna
 - [ ] Hanumān Opens His Heart (Rāmāyaṇa, devotional tradition) — Hanumān, Sītā, Rāma
 - [ ] Abhimanyu and the Cakravyūha (Mahābhārata) — Abhimanyu
