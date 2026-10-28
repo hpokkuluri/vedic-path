@@ -68,11 +68,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] The Puṣpaka Flight Home (Rāmāyaṇa) — the-pushpaka-flight-home
 - [x] Barbarīka, the Boy with Three Arrows (Mahābhārata) — barbarika-the-boy-with-three-arrows
 - [x] Rāma's Coronation — Paṭṭābhiṣekam (Rāmāyaṇa) — ramas-coronation
+- [x] Little Abhimanyu Learns in His Mother's Womb (Mahābhārata) — abhimanyu-learns-in-the-womb
+- [x] Hanumān Opens His Heart (Rāmāyaṇa) — hanuman-opens-his-heart
+- [x] Abhimanyu and the Cakravyūha (Mahābhārata) — abhimanyu-and-the-chakravyuha
 
 ## Next
-- [ ] Little Abhimanyu Learns in His Mother's Womb (Mahābhārata) — Abhimanyu, Subhadrā, Arjuna
-- [ ] Hanumān Opens His Heart (Rāmāyaṇa, devotional tradition) — Hanumān, Sītā, Rāma
-- [ ] Abhimanyu and the Cakravyūha (Mahābhārata) — Abhimanyu
 - [ ] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa) — Lava, Kuśa, Vālmīki
 - [ ] Bhīṣma on the Bed of Arrows (Mahābhārata) — Bhīṣma, Arjuna, Yudhiṣṭhira
 - [ ] How Vālmīki Became a Poet — the Krauñca Birds (Rāmāyaṇa) — Vālmīki, Nārada

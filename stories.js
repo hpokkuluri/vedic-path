@@ -1543,4 +1543,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'abhimanyu-learns-in-the-womb',
+    added: '2026-10-28',
+    epic: 'Mahabharata',
+    chars: ['Abhimanyu', 'Subhadrā', 'Arjuna', 'Kṛṣṇa'],
+    title: { en: 'Little Abhimanyu Learns in His Mother\'s Womb', te: 'తల్లి గర్భంలోనే నేర్చుకున్న అభిమన్యుడు' },
+    moral: { en: 'Children are always listening — and it is wise to learn a lesson right to its end.', te: 'పిల్లలు ఎప్పుడూ వింటూనే ఉంటారు — ఏ విద్యనైనా చివరి వరకూ నేర్చుకోవడం మంచిది.' },
+    cover: { bg: 'night', props: [['moon', 340, 70, 1], ['tree', 60, 198, 1.2], ['person', 170, 198, 1.4, { cloth: '#3a6ab0', crown: true }], ['person', 230, 198, 1.3, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#2a8a6a', flip: true }], ['flowers', 310, 198, 1]] },
+    pages: [
+      {
+        scene: { bg: 'night', props: [['moon', 330, 70, 1], ['tree', 70, 198, 1.3], ['person', 170, 198, 1.4, { cloth: '#3a6ab0', crown: true, raise: true }], ['person', 235, 198, 1.3, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#2a8a6a', flip: true }], ['flowers', 320, 198, 1]] },
+        en: 'Arjuna, the great archer, was married to Subhadrā, the sister of Kṛṣṇa. They were full of joy, for soon a baby would be born to them. Every evening Subhadrā sat with Arjuna in the palace garden under the moon. "Tell me a story," she would say, and Arjuna would tell her of brave deeds and great battles. It is said that the little baby, still curled up safe inside his mother, listened to every word. He could not see the moon, but he could hear his father\'s voice — and he loved it.',
+        te: 'గొప్ప విలుకాడైన అర్జునుడి భార్య సుభద్ర. ఆమె శ్రీకృష్ణుడి చెల్లెలు. త్వరలో తమకు ఒక బిడ్డ పుట్టబోతున్నాడని ఇద్దరూ ఎంతో సంతోషంగా ఉన్నారు. ప్రతి సాయంత్రం సుభద్ర వెన్నెలలో రాజభవనపు తోటలో అర్జునుడి పక్కన కూర్చునేది. "నాకు ఒక కథ చెప్పండి," అనేది. అర్జునుడు వీరుల సాహసాల గురించి, గొప్ప యుద్ధాల గురించి కథలు చెప్పేవాడు. తల్లి కడుపులో హాయిగా ముడుచుకుని ఉన్న ఆ చిన్నారి బిడ్డ ప్రతి మాటా వినేవాడని చెబుతారు. వాడికి చందమామ కనిపించకపోయినా, నాన్న గొంతు వినిపించేది — ఆ గొంతు అంటే వాడికి ఎంతో ఇష్టం.',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 350, 60, 0.8], ['vyuha', 200, 110, 0.55], ['person', 130, 198, 1.4, { cloth: '#3a6ab0', crown: true, raise: true }], ['person', 280, 198, 1.3, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#2a8a6a', flip: true }]] },
+        en: 'One night Arjuna said, "Let me tell you about the hardest battle puzzle of all — the Cakravyūha." He drew circles in the air with his finger. "It is an army arranged like a giant wheel, ring inside ring. Very few warriors know how to break into it. First you strike here, then you turn there…" Arjuna explained how to break through the first ring, then the second, then the next, all the way to the centre. Inside his mother, the baby listened, wide awake. But the night was warm and Arjuna\'s voice was soft. Slowly, Subhadrā\'s eyes closed, and she fell fast asleep.',
+        te: 'ఒక రాత్రి అర్జునుడు అన్నాడు, "అన్నిటికంటే కష్టమైన యుద్ధ రహస్యం గురించి చెబుతాను — పద్మవ్యూహం." ఆయన వేలితో గాలిలో వలయాలు గీశాడు. "సైన్యాన్ని ఒక పెద్ద చక్రంలా, వలయం లోపల వలయంగా నిలబెడతారు. దాన్ని ఛేదించి లోపలికి వెళ్ళడం చాలా కొద్దిమంది వీరులకే తెలుసు. ముందు ఇక్కడ కొట్టాలి, తరువాత అటు తిరగాలి…" మొదటి వలయాన్ని ఎలా ఛేదించాలో, తరువాత రెండోదాన్ని, ఆ తరువాతదాన్ని — అలా మధ్యలోకి ఎలా చేరాలో అర్జునుడు వివరంగా చెప్పాడు. తల్లి కడుపులోని బిడ్డ మెలకువగా ఉండి శ్రద్ధగా విన్నాడు. కానీ ఆ రాత్రి వెచ్చగా ఉంది, అర్జునుడి గొంతు మెత్తగా ఉంది. మెల్లమెల్లగా సుభద్ర కళ్ళు మూతపడ్డాయి, ఆమె గాఢంగా నిద్రపోయింది.',
+      },
+      {
+        scene: { bg: 'palace', props: [['sun', 60, 50, 0.8], ['person', 140, 198, 1.5, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['archer', 240, 198, 1.15, { cloth: '#2a8a6a' }], ['flowers', 340, 198, 0.9]] },
+        en: 'Arjuna saw that Subhadrā was asleep. "I will tell you how to come out of it another day," he smiled, and stopped. But that day never came. So the baby learned how to enter the Cakravyūha, but not how to get out. Soon a beautiful boy was born, and he was named Abhimanyu — the fearless one. He grew up in Dvārakā, where his uncle Kṛṣṇa loved him dearly. By sixteen he was as skilled with the bow as his father. But deep in his memory, it is said, one lesson stayed only half-learned — and one day, that half-lesson would matter very much.',
+        te: 'సుభద్ర నిద్రపోయిందని అర్జునుడు గమనించాడు. "బయటకు ఎలా రావాలో ఇంకోరోజు చెబుతాను," అని చిరునవ్వుతో ఆపేశాడు. కానీ ఆ రోజు మళ్ళీ రానేలేదు. అలా ఆ బిడ్డ పద్మవ్యూహంలోకి వెళ్ళడం నేర్చుకున్నాడు, కానీ బయటకు రావడం నేర్చుకోలేదు. కొంతకాలానికి ఒక అందమైన బాలుడు పుట్టాడు. అతడికి అభిమన్యుడు అని పేరు పెట్టారు — భయమంటే తెలియనివాడు. అతడు ద్వారకలో పెరిగాడు. మేనమామ శ్రీకృష్ణుడికి వాడంటే ప్రాణం. పదహారేళ్ళు వచ్చేసరికి విలువిద్యలో తండ్రి అంతటి నేర్పరి అయ్యాడు. కానీ అతడి జ్ఞాపకాల లోతుల్లో ఒక పాఠం సగమే మిగిలిపోయిందని చెబుతారు — ఒకరోజు ఆ సగం పాఠమే ఎంతో ముఖ్యమైనదవుతుంది.',
+      },
+    ],
+  },
+  {
+    id: 'hanuman-opens-his-heart',
+    added: '2026-10-28',
+    epic: 'Ramayana',
+    chars: ['Hanumān', 'Sītā', 'Rāma'],
+    title: { en: 'Hanumān Opens His Heart', te: 'హృదయంలో సీతారాములను చూపిన హనుమంతుడు' },
+    moral: { en: 'Those we truly love live in our hearts, not in costly things.', te: 'మనం నిజంగా ప్రేమించేవారు మన హృదయంలోనే ఉంటారు, ఖరీదైన వస్తువుల్లో కాదు.' },
+    cover: { bg: 'court', props: [['monkey', 200, 198, 1.8, { color: '#d9772a' }], ['glow', 200, 182, 0.8], ['person', 192, 182, 0.4, { skin: 'blue', cloth: '#f0c040', crown: true }], ['person', 208, 182, 0.38, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['flowers', 80, 198, 1], ['flowers', 320, 198, 1]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['throne', 200, 198, 1.7], ['person', 185, 160, 1, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 215, 160, 0.95, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['monkey', 310, 198, 1.4, { color: '#d9772a', flip: true }], ['necklace', 280, 170, 0.7], ['person', 80, 198, 1.2, { cloth: '#c9a26b'}]] },
+        en: 'It is said that after Rāma was crowned king of Ayodhyā, Sītā gave Hanumān her precious pearl necklace as a thank-you gift. Everyone in the court admired it. The pearls were big and round and shone like little moons. Hanumān bowed and held the necklace in his hands. Then he did something very strange. He picked up one pearl, cracked it open with his teeth and peered inside. He shook his head and tossed it away. Then he bit the next pearl, and the next! The courtiers gasped. "What is this monkey doing?" they whispered. "He is breaking the queen\'s priceless gift!"',
+        te: 'రాముడు అయోధ్యకు రాజైన తరువాత సీతాదేవి కృతజ్ఞతగా తన విలువైన ముత్యాల హారాన్ని హనుమంతుడికి ఇచ్చిందని చెబుతారు. సభలో అందరూ ఆ హారాన్ని మెచ్చుకున్నారు. ముత్యాలు పెద్దగా, గుండ్రంగా, చిన్ని చందమామల్లా మెరుస్తున్నాయి. హనుమంతుడు నమస్కరించి హారాన్ని చేతుల్లోకి తీసుకున్నాడు. తరువాత ఒక విచిత్రమైన పని చేశాడు. ఒక ముత్యాన్ని తీసి పళ్ళతో కొరికి పగలగొట్టి లోపలికి తొంగి చూశాడు. తల అడ్డంగా ఊపి దాన్ని పక్కన పడేశాడు. తరువాత ఇంకో ముత్యం, ఆ తరువాత మరొకటి! సభికులు ఆశ్చర్యపోయారు. "ఈ వానరుడు ఏం చేస్తున్నాడు?" అని గుసగుసలాడుకున్నారు. "మహారాణి ఇచ్చిన అమూల్యమైన కానుకను పాడుచేస్తున్నాడు!"',
+      },
+      {
+        scene: { bg: 'court', props: [['person', 90, 198, 1.3, { cloth: '#c9a26b', raise: true }], ['person', 140, 198, 1.2, { cloth: '#7a5ab0' }], ['monkey', 270, 198, 1.5, { color: '#d9772a', flip: true }], ['necklace', 320, 198, 0.6]] },
+        en: 'At last one courtier spoke up. "Hanumān, why are you breaking such fine pearls?" Hanumān looked up, puzzled. "I am looking for Rāma and Sītā inside them," he said simply. "But they are not here. Anything that does not have my Lord Rāma inside it is of no use to me." The courtier laughed. "Then what about you? Is Rāma inside your body too?" The whole court went quiet. Everyone turned to look at Hanumān. From the throne, Rāma and Sītā watched with gentle smiles, for they already knew the answer.',
+        te: 'చివరకు ఒక సభికుడు అడిగాడు, "హనుమా, ఇంత మంచి ముత్యాలను ఎందుకు పగలగొడుతున్నావు?" హనుమంతుడు అయోమయంగా తలెత్తి చూశాడు. "వీటిలో రాముడు, సీతమ్మ ఉన్నారేమోనని వెతుకుతున్నాను," అన్నాడు అమాయకంగా. "కానీ వీటిలో వారు లేరు. నా స్వామి రాముడు లేని ఏ వస్తువూ నాకు పనికిరాదు." ఆ సభికుడు నవ్వాడు. "మరి నీ సంగతేమిటి? నీ శరీరంలో కూడా రాముడు ఉన్నాడా?" సభ అంతా నిశ్శబ్దమైపోయింది. అందరూ హనుమంతుడి వైపు తిరిగి చూశారు. సింహాసనం మీద నుంచి రాముడు, సీతాదేవి చిరునవ్వుతో చూస్తున్నారు — వారికి జవాబు ముందే తెలుసు.',
+      },
+      {
+        scene: { bg: 'court', props: [['monkey', 200, 198, 1.8, { color: '#d9772a' }], ['glow', 200, 182, 0.8], ['person', 192, 182, 0.4, { skin: 'blue', cloth: '#f0c040', crown: true }], ['person', 208, 182, 0.38, { female: true, skin: 'fair', cloth: '#f2a33a', pallu: '#c0392b' }], ['person', 80, 198, 1.1, { cloth: '#c9a26b' }], ['person', 320, 198, 1.1, { cloth: '#7a5ab0', flip: true }]] },
+        en: 'Hanumān said nothing. He placed both hands on his chest and opened it wide, like opening the doors of a little temple. A golden light filled the hall. And there, glowing in the middle of Hanumān\'s heart, sat Rāma and Sītā, smiling! The courtiers fell to their knees. "Forgive us, Hanumān," they cried. Rāma came down from his throne and hugged his dear friend tightly. At Rāma\'s touch, Hanumān was whole again, without even a scratch. That is why, in many pictures, Hanumān is shown with Rāma and Sītā shining inside his heart.',
+        te: 'హనుమంతుడు ఏమీ మాట్లాడలేదు. రెండు చేతులూ తన ఛాతీ మీద పెట్టి, చిన్న గుడి తలుపులు తెరిచినట్లు దాన్ని తెరిచి చూపించాడు. సభ అంతా బంగారు వెలుగుతో నిండిపోయింది. అక్కడ, హనుమంతుడి హృదయం మధ్యలో రాముడు, సీతాదేవి చిరునవ్వుతో వెలిగిపోతూ కూర్చుని ఉన్నారు! సభికులు మోకరిల్లారు. "హనుమా, మమ్మల్ని క్షమించు," అని వేడుకున్నారు. రాముడు సింహాసనం దిగి వచ్చి తన ప్రియ మిత్రుడిని గట్టిగా కౌగిలించుకున్నాడు. రాముడి స్పర్శతో హనుమంతుడు ఒక్క గీత కూడా లేకుండా మళ్ళీ మామూలుగా అయిపోయాడు. అందుకే చాలా బొమ్మల్లో హనుమంతుడి హృదయంలో సీతారాములు వెలుగుతూ కనిపిస్తారు.',
+      },
+    ],
+  },
+  {
+    id: 'abhimanyu-and-the-chakravyuha',
+    added: '2026-10-28',
+    epic: 'Mahabharata',
+    chars: ['Abhimanyu', 'Yudhiṣṭhira', 'Bhīma', 'Jayadratha', 'Droṇa', 'Arjuna'],
+    title: { en: 'Abhimanyu and the Cakravyūha', te: 'పద్మవ్యూహంలో అభిమన్యుడు' },
+    moral: { en: 'True courage is standing firm for others, even when the odds are against you.', te: 'పరిస్థితులు ఎంత ఎదురుగా ఉన్నా ఇతరుల కోసం ధైర్యంగా నిలబడటమే నిజమైన వీరత్వం.' },
+    cover: { bg: 'mountain', props: [['vyuha', 270, 198, 1.1], ['archer', 110, 198, 1.4, { cloth: '#2a8a6a' }], ['arrow', 180, 120, 1], ['sun', 50, 50, 0.8]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['vyuha', 300, 198, 0.9], ['person', 60, 198, 1.35, { cloth: '#f4ead2', crown: true }], ['person', 110, 198, 1.5, { skin: 'dark', cloth: '#a8392a' }], ['mace', 132, 198, 0.9], ['archer', 175, 198, 1.15, { cloth: '#2a8a6a', raise: true }]] },
+        en: 'On the thirteenth day of the great war at Kurukṣetra, Guru Droṇa arranged the Kaurava army into the Cakravyūha — a giant wheel of soldiers, ring inside ring. Arjuna, the only Pāṇḍava who knew how to break it, had been drawn away to fight far off on another part of the field. Yudhiṣṭhira was worried. "If no one breaks this wheel, our army will be crushed." Then sixteen-year-old Abhimanyu stepped forward. "Uncle, I know how to break in. Father taught me before I was born. But I do not know how to come out." "Do not worry," said Bhīma. "Open the way, and we will all follow right behind you!"',
+        te: 'కురుక్షేత్ర మహాయుద్ధంలో పదమూడో రోజు ద్రోణాచార్యుడు కౌరవ సైన్యాన్ని పద్మవ్యూహంగా నిలబెట్టాడు — వలయం లోపల వలయంగా సైనికులతో ఒక పెద్ద చక్రం. దాన్ని ఛేదించడం తెలిసిన ఒకే ఒక పాండవుడు అర్జునుడు. కానీ ఆ రోజు శత్రువులు అతడిని యుద్ధభూమిలో చాలా దూరం వైపు పోరాటానికి లాక్కెళ్ళారు. ధర్మరాజు ఆందోళన పడ్డాడు. "ఈ వ్యూహాన్ని ఎవరూ ఛేదించకపోతే మన సైన్యం నాశనమవుతుంది." అప్పుడు పదహారేళ్ళ అభిమన్యుడు ముందుకు వచ్చాడు. "పెదనాన్నా, లోపలికి ఎలా వెళ్ళాలో నాకు తెలుసు. నేను పుట్టకముందే నాన్నగారు నేర్పారు. కానీ బయటకు ఎలా రావాలో తెలియదు." "భయపడకు," అన్నాడు భీముడు. "నువ్వు దారి తెరువు, మేమంతా నీ వెనకే వస్తాం!"',
+      },
+      {
+        scene: { bg: 'mountain', props: [['vyuha', 310, 198, 0.9], ['chariot', 110, 198, 1.4], ['archer', 104, 160, 0.75, { cloth: '#2a8a6a' }], ['arrow', 200, 130, 0.9], ['person', 230, 198, 1.3, { cloth: '#6a5a9a', crown: true, raise: true, flip: true }]] },
+        en: 'Abhimanyu\'s chariot raced forward like a flash of lightning. His arrows flew so fast that the first ring of soldiers broke apart, and he burst through into the wheel! But as the Pāṇḍavas rushed to follow, King Jayadratha blocked the gap. Lord Śiva had once given him a boon: for one day, he could hold back all the Pāṇḍavas except Arjuna. Bhīma roared and Yudhiṣṭhira charged, but they could not get past. The wheel closed behind Abhimanyu. Now the young prince was alone inside, with the greatest warriors of the Kaurava army all around him.',
+        te: 'అభిమన్యుడి రథం మెరుపులా ముందుకు దూసుకెళ్ళింది. అతడి బాణాలు ఎంత వేగంగా వెళ్ళాయంటే మొదటి వలయం చెల్లాచెదురైపోయింది. అతడు వ్యూహం లోపలికి చొచ్చుకుపోయాడు! పాండవులు అతడి వెనకే వెళ్ళబోతుండగా సైంధవుడు (జయద్రథుడు) ఆ దారిని అడ్డుకున్నాడు. ఒక్క రోజు పాటు అర్జునుడు తప్ప మిగతా పాండవులందరినీ ఆపగలిగే వరం అతడికి ఒకప్పుడు శివుడు ఇచ్చాడు. భీముడు గర్జించాడు, ధర్మరాజు ముందుకు దూకాడు, కానీ వారు దాటలేకపోయారు. అభిమన్యుడి వెనక వ్యూహం మూసుకుపోయింది. ఇప్పుడు ఆ యువరాజు లోపల ఒంటరిగా ఉన్నాడు — చుట్టూ కౌరవ సైన్యంలోని గొప్ప గొప్ప యోధులు.',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 340, 60, 0.9], ['vyuha', 200, 198, 1.4], ['glow', 200, 172, 0.6], ['person', 200, 170, 0.8, { cloth: '#2a8a6a', raise: true }]] },
+        en: 'Abhimanyu was not afraid. He fought like a young lion, ring after ring, and even great warriors stepped back in wonder. Droṇa himself said, "I have never seen such skill in one so young!" But the Kaurava warriors broke the rules of fair battle and attacked him all together. His bow was broken, then his chariot. Still Abhimanyu stood tall, lifting a chariot wheel to defend himself. At last, tired and alone, the brave boy fell, and his spirit rose to the heavens. When Arjuna heard, his heart broke. Even today, Abhimanyu is remembered as the bravest young hero of the Mahābhārata.',
+        te: 'అభిమన్యుడు భయపడలేదు. ఒక్కో వలయాన్నీ ఛేదిస్తూ కొదమ సింహంలా పోరాడాడు. గొప్ప యోధులు కూడా ఆశ్చర్యంతో వెనక్కి తగ్గారు. "ఇంత చిన్న వయసులో ఇంతటి నేర్పు నేనెప్పుడూ చూడలేదు!" అని ద్రోణుడే అన్నాడు. కానీ కౌరవ యోధులు ధర్మయుద్ధ నియమాలను విడిచిపెట్టి అందరూ ఒక్కసారిగా అతడి మీద పడ్డారు. అతడి విల్లు విరిగింది, తరువాత రథం కూడా విరిగిపోయింది. అయినా అభిమన్యుడు ఒక రథచక్రాన్నే ఎత్తి పట్టుకుని ధైర్యంగా నిలబడ్డాడు. చివరకు అలసిపోయి, ఒంటరిగా ఉన్న ఆ వీర బాలుడు నేల కూలాడు. అతడి ఆత్మ స్వర్గానికి చేరింది. ఈ వార్త విని అర్జునుడి గుండె బద్దలైంది. ఈ రోజుకీ అభిమన్యుడిని మహాభారతంలో అందరికంటే ధైర్యవంతుడైన బాల వీరుడిగా గుర్తుంచుకుంటారు.',
+      },
+    ],
+  },
 ];
