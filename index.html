@@ -4017,9 +4017,11 @@ function renderLibrary() {
     ${layoutBtns}
   </div>
   <div class="lib-content">
+    <div id="fest-slot" class="fest-wrap"></div>
     ${content}
   </div>
   `;
+  if (window.renderFestivalRow) renderFestivalRow(document.getElementById('fest-slot'));
 }
 
 // ─────────────── ARRANGE LIBRARY TILES ───────────────
@@ -6013,7 +6015,9 @@ function render(){
   lang = settings.language || 'both';
   const y = cur.getUTCFullYear(), mo = cur.getUTCMonth(), dd = cur.getUTCDate();
   const r = PANCH.compute(y, mo+1, dd, loc.lat, loc.lon, loc.tz);
-  const M = r.date, T = t => hms(t, M);
+  const M = r.date;
+  // Times after midnight belong to the same pañcāṅga day (until next sunrise): show the clock time with ⁺¹
+  const T = t => { const x = hms(t, M), h = parseInt(x, 10); return h >= 24 ? String(h - 24).padStart(2, '0') + x.slice(x.indexOf(':')) + '⁺¹' : x; };
   const [ty,tm,td] = PANCH.todayIn(loc.tz);
   const isToday = (ty === y && tm === mo+1 && td === dd);
   const now = new Date();
@@ -6099,7 +6103,7 @@ function render(){
   $('sank').innerHTML = sank.map(p => `<p>${lang==='en'?p[0]:p[1]}${lang==='both'?`<span class="en">${p[0]}</span>`:''}</p>`).join('');
 
   $('share').textContent = pick(L.share);
-  $('foot').textContent = `${loc.name}, local time. Times after midnight continue past 24:00, so 25:16 means 1:16 AM.`;
+  $('foot').textContent = `${loc.name}, local time. ⁺¹ means the next morning (after midnight, before the next sunrise) · ⁺¹ = మరుసటి రోజు తెల్లవారుజాము.`;
 
   // Plain text in the priest's message format, for sharing
   const li = lang === 'en' ? 0 : 1, lab = k => L[k][li];
@@ -6123,6 +6127,7 @@ $('share').onclick = async () => {
   catch(e) { prompt('Copy this text:', shareText); }
 };
 
+  window.panchGoTo = function (y, m, d) { cur = new Date(Date.UTC(y, m - 1, d)); };
   let asked = false;
   window.renderPanch = function () {
     if (!cur) goToday();
@@ -6138,6 +6143,7 @@ function openPanch() {
 <script src="audio/index.js"></script>
 <script src="stories.js"></script>
 <script src="kids.js"></script>
+<script src="festivals.js"></script>
 <script src="ramayana/bala.js"></script>
 <script src="ramayana/ayodhya.js"></script>
 <script src="ramayana/aranya.js"></script>
