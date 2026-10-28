@@ -42,7 +42,6 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 
 ## Next
 
-- [ ] Māṇḍavya (mandavya) — the silent sage impaled for thieves' crime; living on the stake; questioning Dharma; Dharma cursed to be born as Vidura; the age of responsibility; the later tale of Śīlavatī and the sun that did not rise (MBh Ādi, later Purāṇas).
 - [ ] Pulastya (pulastya) — mind-born son of Brahmā; Viśravas and the births of Kubera and Rāvaṇa; freeing Rāvaṇa from Kārtavīrya; tīrtha lore to Bhīṣma; blessing Parāśara with the Viṣṇu Purāṇa (Rāmāyaṇa Uttara, MBh Vana, Viṣṇu Purāṇa).
 - [ ] Lomaśa (lomasha) — the hairy sage who lives an age of Brahmā; Indra's messenger to the Pāṇḍavas; guiding them on the great pilgrimage and telling the tīrtha tales (Agastya, Ṛṣyaśṛṅga, Bhagīratha, Cyavana); his hairs falling one per cycle (MBh Vana, later Purāṇas).
 - [ ] Dhaumya (dhaumya) — priest of the Pāṇḍavas chosen at Utkocaka; the 108 names of Sūrya and the akṣaya-pātra; counsel before the year in disguise; the funeral rites after the war (MBh Ādi, Vana, Virāṭa, Strī).
@@ -82,3 +81,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Uttaṅka (uttanka) — 11 chapters — 2026-10-25
 - [x] Śuka (shuka) — 12 chapters — 2026-10-26
 - [x] Kaṇva (kanva) — 10 chapters — 2026-10-27
+- [x] Māṇḍavya (mandavya) — 9 chapters — 2026-10-28

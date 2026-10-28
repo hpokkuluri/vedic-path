@@ -35,6 +35,7 @@
     ['uttanka', 'Uttaṅka', 'ఉత్తంకుడు', 'Who won the earrings from the serpents', 'నాగుల నుండి కుండలాలు గెలిచిన శిష్యుడు', '🐍', 'linear-gradient(160deg,#1a2a0a,#7a9a2a)'],
     ['shuka', 'Śuka', 'శుకుడు', 'Who told the Bhāgavata', 'భాగవతం చెప్పిన ముని', '🦜', 'linear-gradient(160deg,#0a3a2a,#3ab07a)'],
     ['kanva', 'Kaṇva', 'కణ్వుడు', 'Who raised Śakuntalā', 'శకుంతలను పెంచిన ముని', '🐦', 'linear-gradient(160deg,#0a3a2a,#5aa06a)'],
+    ['mandavya', 'Māṇḍavya', 'మాండవ్యుడు', 'The silent sage on the stake', 'శూలం మీద మౌనముని', '🪵', 'linear-gradient(160deg,#2a1a0a,#8a6a3a)'],
   ];
   const SMETA = k => SAGES.find(x => x[0] === k) || SAGES[0];
   window.SAGE_META = SMETA;   // used by bookmarks.js
