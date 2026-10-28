@@ -1182,7 +1182,7 @@ body {
 }
 /* ── Panchāṅgam view ── */
 #view-panch.view{padding:0;max-width:560px}
-#view-panch{--gold:#f0c040;--bad:#c4513a;--bad-soft:rgba(196,81,58,.14);--good:#c99a1a;--good-soft:rgba(201,154,26,.18);
+#view-panch{--gold:#f0c040;--bad:#c4513a;--bad-soft:rgba(196,81,58,.14);--good:#2e7d32;--good-soft:rgba(46,125,50,.14);
   --serif:'Crimson Text',Georgia,'Noto Sans Telugu',serif;--sans:-apple-system,system-ui,'Noto Sans Telugu','Segoe UI',sans-serif;font-family:var(--sans)}
 #view-panch button,#view-panch select,#view-panch input{font:inherit;color:inherit}
 #view-panch :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -6041,7 +6041,7 @@ function render(){
   const arcPath = (a, b) => { let d = ''; for (let i = 0; i <= 30; i++) { const [x, yy] = pt(new Date(+a + (b - a) * i / 30)); d += (i ? 'L' : 'M') + x.toFixed(1) + ',' + yy.toFixed(1); } return d; };
   let svg = `<line x1="0" y1="${base}" x2="${W}" y2="${base}" stroke="rgba(240,192,64,.22)"/>`;
   svg += `<path d="${arcPath(r.sunrise, r.sunset)}" fill="none" stroke="rgba(240,192,64,.4)" stroke-width="1.5" stroke-dasharray="1 5" stroke-linecap="round"/>`;
-  [[r.rahu,'#e8836a'],[r.yama,'#e8836a'],[r.gulika,'#e8836a'],[r.abhijit,'#f0c040']].forEach(([s,col]) =>
+  [[r.rahu,'#e8836a'],[r.yama,'#e8836a'],[r.gulika,'#e8836a'],[r.abhijit,'#5cae5f']].forEach(([s,col]) =>
     svg += `<path d="${arcPath(s.start, s.end)}" fill="none" stroke="${col}" stroke-width="4" stroke-linecap="round"/>`);
   const sunUp = isToday && now > r.sunrise && now < r.sunset;
   const [sx, sy] = sunUp ? pt(now) : pt(new Date((+r.sunrise + +r.sunset) / 2));
