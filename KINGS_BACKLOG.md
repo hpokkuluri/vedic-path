@@ -48,7 +48,6 @@ king's life, publishes it, and moves it to "Done" in the same commit.
 6. `node tools/check_kings.js` must print OK (and `node tools/check_sages.js` must still print OK).
 
 ## Next
-- [ ] Skandagupta (skandagupta) — defending against the Hūṇas; the Bhitarī pillar; the Junāgaḍh inscription and Sudarśana lake again
 - [ ] Harṣavardhana (harsha) — Bāṇa's Harṣacarita; Rājyaśrī; Xuanzang; the assembly at Prayāga; defeat at the Narmadā by Pulakeśin II; his plays
 - [ ] Pulakeśin II (pulakeshin) — the Aihoḷe inscription of Ravikīrti; Harṣa stopped at the Narmadā; the Eastern Cālukyas of Veṅgī founded by his brother; the Pallava wars and Vātāpi
 - [ ] Narasiṃhavarman I Mahāmalla (narasimhavarman) — Pallava king; the taking of Vātāpi; Māmallapuram's monuments; the expedition to Laṅkā
@@ -76,3 +75,4 @@ Mahādajī Śinde, Ahilyābāī Holkar, Ranjīt Siṃh, Rāṇī Lakṣmībāī.
 - [x] Khāravela (kharavela) — 8 chapters — 2026-10-25
 - [x] Samudragupta (samudragupta) — 8 chapters — 2026-10-26
 - [x] Candragupta II Vikramāditya (vikramaditya) — 9 chapters — 2026-10-27
+- [x] Skandagupta (skandagupta) — 8 chapters — 2026-10-28
