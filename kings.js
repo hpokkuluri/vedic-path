@@ -18,6 +18,7 @@
     ['samudragupta', 'Samudragupta', 'సముద్రగుప్తుడు', 'Gupta · the poet-king who conquered', 'గుప్త · దిగ్విజయుడైన కవిరాజు', '🪕', 'linear-gradient(160deg,#2a0a3a,#b0702a)'],
     ['vikramaditya', 'Vikramāditya', 'విక్రమాదిత్యుడు', 'Candragupta II · Gupta · the iron pillar', 'రెండవ చంద్రగుప్తుడు · గుప్త · ఇనుప స్తంభం', '🌙', 'linear-gradient(160deg,#0a1a2a,#c09a3a)'],
     ['skandagupta', 'Skandagupta', 'స్కందగుప్తుడు', 'Gupta · the king who held back the Hūṇas', 'గుప్త · హూణులను నిలువరించిన రాజు', '🛡️', 'linear-gradient(160deg,#1a0a0a,#a04a2a)'],
+    ['harsha', 'Harṣa', 'హర్షుడు', 'Harṣavardhana · Kanauj · poet-king of the North', 'హర్షవర్ధనుడు · కనౌజ్ · ఉత్తరాపథ కవిరాజు', '🪷', 'linear-gradient(160deg,#2a0a1a,#c06a4a)'],
   ];
   const SMETA = k => KINGS.find(x => x[0] === k) || KINGS[0];
   window.KING_META = SMETA;   // used by bookmarks.js
