@@ -71,11 +71,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Little Abhimanyu Learns in His Mother's Womb (Mahābhārata) — abhimanyu-learns-in-the-womb
 - [x] Hanumān Opens His Heart (Rāmāyaṇa) — hanuman-opens-his-heart
 - [x] Abhimanyu and the Cakravyūha (Mahābhārata) — abhimanyu-and-the-chakravyuha
+- [x] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa) — lava-and-kusha-sing-the-ramayana
+- [x] Bhīṣma on the Bed of Arrows (Mahābhārata) — bhishma-on-the-bed-of-arrows
+- [x] How Vālmīki Became a Poet — the Krauñca Birds (Rāmāyaṇa) — how-valmiki-became-a-poet
 
 ## Next
-- [ ] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa) — Lava, Kuśa, Vālmīki
-- [ ] Bhīṣma on the Bed of Arrows (Mahābhārata) — Bhīṣma, Arjuna, Yudhiṣṭhira
-- [ ] How Vālmīki Became a Poet — the Krauñca Birds (Rāmāyaṇa) — Vālmīki, Nārada
 - [ ] Ghaṭotkaca Saves the Pāṇḍavas (Mahābhārata) — Ghaṭotkaca, Karṇa
 - [ ] Śravaṇa Kumāra and King Daśaratha (Rāmāyaṇa tradition) — Śravaṇa, Daśaratha
 - [ ] The Mongoose with the Golden Side (Mahābhārata) — Yudhiṣṭhira, the mongoose

@@ -1621,4 +1621,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'lava-and-kusha-sing-the-ramayana',
+    added: '2026-10-29',
+    epic: 'Ramayana',
+    chars: ['Lava', 'Kuśa', 'Vālmīki', 'Rāma', 'Sītā'],
+    title: { en: 'Lava and Kuśa Sing the Rāmāyaṇa', te: 'రామాయణం పాడిన లవకుశులు' },
+    moral: { en: 'A good story, sung with love, can touch hearts and bring families together.', te: 'ప్రేమతో పాడిన మంచి కథ హృదయాలను తాకి, కుటుంబాలను కలుపుతుంది.' },
+    cover: { bg: 'ashram', props: [['person', 90, 198, 1.35, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 170, 198, 0.95, { cloth: '#e8a23a', raise: true }], ['person', 215, 198, 0.95, { cloth: '#d9577a' }], ['scroll', 270, 198, 0.6], ['sun', 360, 50, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'ashram', props: [['sun', 50, 45, 0.8], ['person', 70, 198, 1.3, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 130, 198, 1.25, { female: true, skin: 'fair', cloth: '#f4ead2', pallu: '#c9a26b' }], ['person', 180, 198, 0.8, { cloth: '#e8a23a' }], ['person', 210, 198, 0.8, { cloth: '#d9577a', raise: true }], ['deer', 265, 198, 0.9]] },
+        en: 'Deep in the forest, by the river Tamasā, stood the peaceful ashram of Sage Vālmīki. Sītā lived there for many years, and the kind old sage cared for her like a father. One day, Sītā gave birth to twin baby boys! Vālmīki named them Lava and Kuśa. The two boys grew up strong and bright, running among the deer and the trees. They learned archery, reading and the chanting of the Vedas. But their favourite lesson was music. Vālmīki had written a long and beautiful poem — the story of Rāma. "Learn it by heart, my children," he said, "and sing it sweetly, so that the whole world may hear it."',
+        te: 'అడవిలో, తమసా నది ఒడ్డున వాల్మీకి మహర్షి ఆశ్రమం ఉండేది. అక్కడ ఎంతో ప్రశాంతంగా ఉండేది. సీతాదేవి చాలా సంవత్సరాలు ఆ ఆశ్రమంలోనే ఉంది. దయగల ఆ మహర్షి ఆమెను కన్నతండ్రిలా చూసుకున్నాడు. ఒకరోజు సీతాదేవికి కవల పిల్లలు పుట్టారు! వాల్మీకి వారికి లవుడు, కుశుడు అని పేర్లు పెట్టాడు. ఇద్దరూ జింకల మధ్య, చెట్ల మధ్య ఆడుకుంటూ బలంగా, తెలివిగా పెరిగారు. విలువిద్య, చదువు, వేదాలు నేర్చుకున్నారు. కానీ వాళ్ళకు అన్నిటికంటే ఇష్టమైనది సంగీతం. వాల్మీకి మహర్షి రాముడి కథను ఒక పెద్ద, అందమైన కావ్యంగా రాశాడు. "పిల్లలూ, దీన్ని కంఠస్థం చేయండి," అన్నాడు ఆయన. "లోకమంతా వినేలా మధురంగా పాడండి."',
+      },
+      {
+        scene: { bg: 'village', props: [['fire', 200, 198, 0.9], ['person', 160, 198, 0.95, { cloth: '#e8a23a', raise: true }], ['person', 240, 198, 0.95, { cloth: '#d9577a', raise: true, flip: true }], ['person', 50, 198, 1.2, { cloth: '#7a5ab0' }], ['person', 95, 198, 1.15, { female: true, cloth: '#2a8a6a', pallu: '#f0c040' }], ['person', 310, 198, 1.2, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 355, 198, 1.2, { cloth: '#c0392b', crown: true, flip: true }]] },
+        en: 'Years later, King Rāma held a great yajña, a grand fire-ceremony, and sages and kings came from far and wide. Vālmīki came too, bringing the two boys. "Go and sing the story of Rāma," he told them, "in the streets, among the sages, and before the king himself. And do not accept any gifts — this story is not for sale." Lava and Kuśa played their vīṇās and sang together, their voices sweet as honey. People stopped to listen. They laughed when the monkeys leapt across the sea, and they cried when Sītā was carried away. Soon everyone was talking about the two shining boys who looked like little princes. The news reached King Rāma.',
+        te: 'చాలా సంవత్సరాల తరువాత రామచంద్రుడు ఒక గొప్ప యజ్ఞం చేశాడు. దూరదూరాల నుండి రాజులూ, మునులూ వచ్చారు. వాల్మీకి మహర్షి కూడా ఆ ఇద్దరు పిల్లల్ని వెంటబెట్టుకుని వచ్చాడు. "వెళ్ళండి, రామకథను పాడండి," అన్నాడు ఆయన. "వీధుల్లో, మునుల మధ్య, రాజుగారి ఎదుట కూడా పాడండి. ఎవరు ఏ కానుక ఇచ్చినా తీసుకోకండి — ఈ కథ అమ్మకానికి కాదు." లవకుశులు వీణలు మీటుతూ తేనె లాంటి గొంతులతో కలిసి పాడారు. జనం ఆగి విన్నారు. వానరులు సముద్రం దాటినప్పుడు నవ్వారు, సీతాదేవిని ఎత్తుకుపోయినప్పుడు కన్నీళ్ళు పెట్టుకున్నారు. చిన్న రాకుమారుల్లా వెలిగిపోతున్న ఆ ఇద్దరు పిల్లల గురించే అందరూ మాట్లాడుకోసాగారు. ఆ వార్త రాముడి చెవిన పడింది.',
+      },
+      {
+        scene: { bg: 'court', props: [['throne', 310, 198, 1.5], ['person', 285, 198, 1.35, { raise: true, flip: true, skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }], ['person', 175, 198, 0.95, { cloth: '#e8a23a' }], ['person', 210, 198, 0.95, { cloth: '#d9577a' }], ['person', 85, 198, 1.3, { cloth: '#f4ead2', beard: true, hair: '#ddd' }]] },
+        en: 'Rāma called the boys to his royal court. Sitting before the throne, Lava and Kuśa sang the whole story, day after day, and Rāma listened to every word. As he looked at their faces, his heart began to beat faster — they looked just like him! "Whose children are you?" he asked gently. "We are pupils of Sage Vālmīki," they replied. Then the old sage stepped forward and smiled. "O Rāma, these are the sons of Sītā. They are your own sons." Rāma came down from his throne and held the two boys close, his eyes full of happy tears. The story they had sung was his own story — and now they were part of it.',
+        te: 'రాముడు ఆ పిల్లల్ని తన రాజసభకు పిలిపించాడు. సింహాసనం ఎదుట కూర్చుని లవకుశులు రోజుల తరబడి కథంతా పాడారు. రాముడు ప్రతి మాటా శ్రద్ధగా విన్నాడు. వాళ్ళ ముఖాలు చూస్తుంటే ఆయన గుండె వేగంగా కొట్టుకుంది — అచ్చం తనలాగే ఉన్నారు! "నాయనలారా, మీరు ఎవరి పిల్లలు?" అని ప్రేమగా అడిగాడు. "మేము వాల్మీకి మహర్షి శిష్యులం," అన్నారు వాళ్ళు. అప్పుడు ఆ ముసలి మహర్షి ముందుకు వచ్చి చిరునవ్వు నవ్వాడు. "రామా, వీళ్ళు సీతాదేవి కుమారులు. నీ సొంత బిడ్డలు." రాముడు సింహాసనం దిగి వచ్చి ఇద్దరినీ గుండెలకు హత్తుకున్నాడు. ఆయన కళ్ళు ఆనందబాష్పాలతో నిండిపోయాయి. వాళ్ళు పాడిన కథ ఆయన కథే — ఇప్పుడు వాళ్ళు కూడా ఆ కథలో భాగమయ్యారు.',
+      },
+    ],
+  },
+  {
+    id: 'bhishma-on-the-bed-of-arrows',
+    added: '2026-10-29',
+    epic: 'Mahabharata',
+    chars: ['Bhīṣma', 'Arjuna', 'Yudhiṣṭhira', 'Śikhaṇḍī', 'Kṛṣṇa'],
+    title: { en: 'Bhīṣma on the Bed of Arrows', te: 'అంపశయ్యపై భీష్ముడు' },
+    moral: { en: 'A truly great person keeps teaching and blessing others, even in the hardest moments.', te: 'గొప్పవాళ్ళు ఎంత కష్టంలో ఉన్నా ఇతరులకు మంచిని నేర్పుతూనే ఉంటారు.' },
+    cover: { bg: 'mountain', props: [['sun', 340, 70, 0.9], ['arrowBed', 200, 198, 1.5], ['archer', 70, 198, 1.2, { cloth: '#3a6ab0' }]] },
+    pages: [
+      {
+        scene: { bg: 'mountain', props: [['sun', 360, 80, 0.8], ['archer', 90, 198, 1.35, { cloth: '#3a6ab0' }], ['person', 190, 198, 1.2, { cloth: '#a8392a', raise: true }], ['arrow', 250, 120, 0.9], ['person', 315, 198, 1.45, { flip: true, cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['bow', 285, 196, 0.7]] },
+        en: 'For nine days of the great war, no one could defeat Grandsire Bhīṣma. He fought like a storm, and the Pāṇḍavas grew worried. So that night they went humbly to his tent and asked, "Grandfather, how can we ever win?" Bhīṣma loved them dearly, and he told them the truth. "I will never raise my bow against Śikhaṇḍī. That is my vow." On the tenth day, Śikhaṇḍī rode in front of Arjuna\'s chariot. When Bhīṣma saw him, he lowered his bow. Arjuna, with a heavy heart, sent arrow after arrow. At last, as the sun was going down, the mighty Bhīṣma fell from his chariot. Both armies stopped fighting and stood in silence.',
+        te: 'మహాయుద్ధంలో తొమ్మిది రోజుల పాటు భీష్మ పితామహుణ్ణి ఎవరూ ఓడించలేకపోయారు. ఆయన తుఫానులా పోరాడాడు. పాండవులకు దిగులు పట్టుకుంది. ఆ రాత్రి వాళ్ళు వినయంగా ఆయన శిబిరానికి వెళ్ళి, "తాతగారూ, మేము ఎలా గెలవగలం?" అని అడిగారు. భీష్ముడికి వాళ్ళంటే ఎంతో ప్రేమ. ఆయన నిజం చెప్పాడు: "శిఖండి మీద నేను విల్లు ఎత్తను. అది నా ప్రతిజ్ఞ." పదో రోజు శిఖండి అర్జునుడి రథం ముందు నిలిచాడు. శిఖండిని చూడగానే భీష్ముడు విల్లు దించేశాడు. అర్జునుడు బరువెక్కిన మనసుతో బాణం మీద బాణం వేశాడు. చివరకు సూర్యుడు అస్తమిస్తుండగా మహాబలుడైన భీష్ముడు రథం మీద నుంచి కింద పడిపోయాడు. రెండు సైన్యాలూ యుద్ధం ఆపి మౌనంగా నిలబడిపోయాయి.',
+      },
+      {
+        scene: { bg: 'mountain', props: [['arrowBed', 215, 198, 1.5], ['archer', 55, 198, 1.3, { cloth: '#3a6ab0' }], ['person', 372, 198, 1.1, { cloth: '#c9952a', crown: true, flip: true }], ['cloud', 300, 45, 0.9]] },
+        en: 'But Bhīṣma did not touch the ground! So many arrows held him up that he lay on them as if on a bed — a bed of arrows. Warriors from both sides gathered around him. "My head hangs down," said Bhīṣma. "Bring me a pillow." Soldiers ran up with soft silk pillows, but he shook his head. "Arjuna, give me a pillow fit for a warrior." Arjuna understood. He shot three arrows into the ground beneath Bhīṣma\'s head, and the old hero smiled. Then Bhīṣma felt thirsty. Again Arjuna drew his bow and shot an arrow deep into the earth. Up sprang a stream of cool, sweet water! It is said that it was his mother, the river Gaṅgā, come to give her son a drink.',
+        te: 'కానీ భీష్ముడి శరీరం నేలను తాకలేదు! ఎన్నో బాణాలు ఆయనను పైకి మోస్తూ ఉన్నాయి. ఆయన వాటిపైనే పడుకున్నాడు — అదే అంపశయ్య, బాణాల పడక. రెండు వైపుల యోధులూ ఆయన చుట్టూ చేరారు. "నా తల కిందికి వేలాడుతోంది," అన్నాడు భీష్ముడు. "ఒక దిండు తీసుకురండి." సైనికులు మెత్తని పట్టు దిండ్లు తెచ్చారు, కానీ ఆయన వద్దన్నాడు. "అర్జునా, ఒక వీరుడికి తగిన దిండు ఇవ్వు." అర్జునుడికి అర్థమైంది. ఆయన తల కింద మూడు బాణాలు నాటాడు. ముసలి వీరుడు చిరునవ్వు నవ్వాడు. తరువాత భీష్ముడికి దాహం వేసింది. అర్జునుడు మళ్ళీ విల్లు ఎక్కుపెట్టి ఒక బాణాన్ని భూమిలోకి లోతుగా వేశాడు. చల్లని, తియ్యని నీటి ధార పైకి ఎగసింది! కొడుకు దాహం తీర్చడానికి గంగమ్మ తల్లే వచ్చిందని చెబుతారు.',
+      },
+      {
+        scene: { bg: 'river', props: [['sun', 200, 55, 1], ['arrowBed', 250, 186, 1.3], ['person', 70, 190, 1.25, { cloth: '#f4ead2', crown: true }], ['person', 120, 190, 1.25, { skin: 'blue', cloth: '#f0c040', crown: true, tilak: true }]] },
+        en: 'Long ago, his father Śantanu had given Bhīṣma a special boon: he could choose the time he would leave the world. So Bhīṣma waited on his bed of arrows for the sun to begin its journey north — the holy time of Uttarāyaṇa. When the war was over, Yudhiṣṭhira came with Kṛṣṇa and his brothers and sat at Bhīṣma\'s side. "Grandfather, teach me how to be a good king." For many days Bhīṣma taught him about truth, kindness, duty and wise rule. He also sang the thousand names of Viṣṇu. Then, when the bright days of Uttarāyaṇa came, Bhīṣma folded his hands, blessed everyone, and peacefully left the world.',
+        te: 'చాలా కాలం క్రితం భీష్ముడి తండ్రి శంతనుడు ఆయనకు ఒక వరం ఇచ్చాడు — తాను కోరుకున్నప్పుడే లోకం విడిచి వెళ్ళవచ్చు. అందుకే భీష్ముడు అంపశయ్య మీదే, సూర్యుడు ఉత్తర దిక్కుకు ప్రయాణం మొదలుపెట్టే పవిత్రమైన ఉత్తరాయణం కోసం ఎదురుచూశాడు. యుద్ధం ముగిశాక ధర్మరాజు శ్రీకృష్ణుడితో, తమ్ముళ్ళతో కలిసి వచ్చి భీష్ముడి పక్కన కూర్చున్నాడు. "తాతగారూ, మంచి రాజుగా ఎలా ఉండాలో నాకు నేర్పండి." ఎన్నో రోజుల పాటు భీష్ముడు సత్యం, దయ, ధర్మం, మంచి పాలన గురించి బోధించాడు. విష్ణు సహస్రనామాలను కూడా చెప్పాడు. ఉత్తరాయణ పుణ్యకాలం రాగానే భీష్ముడు చేతులు జోడించి, అందరినీ ఆశీర్వదించి, ప్రశాంతంగా లోకం విడిచి వెళ్ళిపోయాడు.',
+      },
+    ],
+  },
+  {
+    id: 'how-valmiki-became-a-poet',
+    added: '2026-10-29',
+    epic: 'Ramayana',
+    chars: ['Vālmīki', 'Nārada', 'Brahmā'],
+    title: { en: 'How Vālmīki Became a Poet', te: 'వాల్మీకి కవి అయిన కథ' },
+    moral: { en: 'A kind heart that feels the pain of others can create something beautiful.', te: 'ఇతరుల బాధను పంచుకునే మంచి మనసు అందమైనదాన్ని సృష్టించగలదు.' },
+    cover: { bg: 'river', props: [['tree', 290, 190, 1.2], ['bird', 270, 125, 1.1, { color: '#7a6a5a', wing: '#b8a890' }], ['bird', 308, 125, 1.1, { color: '#7a6a5a', wing: '#b8a890', flip: true }], ['person', 120, 190, 1.4, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['sun', 50, 50, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'ashram', props: [['person', 130, 198, 1.35, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 220, 198, 1.3, { cloth: '#f0c040', hair: '#222', raise: true, flip: true }], ['cloud', 80, 45, 0.9], ['cloud', 230, 35, 0.7]] },
+        en: 'One day the wandering sage Nārada, who travels through the three worlds singing the name of God, came to the ashram of Sage Vālmīki. Vālmīki welcomed him and asked a question that was dear to his heart. "O Nārada, is there anyone in the world today who is truly good — brave, truthful, kind to all, patient and wise?" Nārada smiled. "There is such a person. His name is Rāma, a prince of Ayodhyā." And Nārada told him the whole story of Rāma, from beginning to end. Vālmīki listened with shining eyes. Even after Nārada had gone on his way, Vālmīki sat thinking about Rāma for a long, long time.',
+        te: 'ఒకరోజు ముల్లోకాలూ తిరుగుతూ భగవంతుడి నామం పాడే నారద మహర్షి వాల్మీకి ఆశ్రమానికి వచ్చాడు. వాల్మీకి ఆయనను సాదరంగా ఆహ్వానించి, తన మనసులో ఉన్న ఒక ప్రశ్న అడిగాడు. "నారదా, ఈ లోకంలో నిజంగా గుణవంతుడు ఎవరైనా ఉన్నారా? ధైర్యం, సత్యం, అందరి మీదా దయ, ఓర్పు, తెలివి — ఇవన్నీ ఉన్నవాడు?" నారదుడు చిరునవ్వు నవ్వాడు. "ఉన్నాడు. ఆయన పేరు రాముడు, అయోధ్య రాకుమారుడు." అంటూ రాముడి కథంతా మొదటి నుంచి చివరి దాకా చెప్పాడు. వాల్మీకి మెరిసే కళ్ళతో విన్నాడు. నారదుడు వెళ్ళిపోయాక కూడా వాల్మీకి చాలాసేపు రాముడి గురించే ఆలోచిస్తూ కూర్చున్నాడు.',
+      },
+      {
+        scene: { bg: 'river', props: [['tree', 240, 190, 1.2], ['bird', 225, 125, 1, { color: '#7a6a5a', wing: '#b8a890' }], ['bird', 280, 80, 1, { color: '#7a6a5a', wing: '#b8a890', flip: true }], ['archer', 360, 192, 1.15, { skin: 'dark', cloth: '#7a5a3a', flip: true }], ['person', 90, 192, 1.35, { raise: true, cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['person', 45, 192, 1, { cloth: '#f4ead2' }]] },
+        en: 'Later, Vālmīki walked with his pupil Bharadvāja to the river Tamasā for his bath. The water was clear and calm. In a tree nearby, a pair of krauñca birds were singing happily to each other. Suddenly — whoosh! — a hunter hiding in the bushes shot an arrow. One of the birds fell and did not move again. Its mate circled above, crying and crying in a broken voice. Vālmīki\'s heart filled with sorrow. Without even thinking, words poured from his lips: "O hunter, you struck down one of these loving birds — you will never find peace!" The words came out in a perfect rhythm, like a song.',
+        te: 'తరువాత వాల్మీకి తన శిష్యుడు భరద్వాజుడితో కలిసి స్నానం చేయడానికి తమసా నదికి వెళ్ళాడు. నది నీళ్ళు తేటగా, ప్రశాంతంగా ఉన్నాయి. పక్కనే ఒక చెట్టు మీద రెండు క్రౌంచ పక్షులు సంతోషంగా ఒకదానికొకటి పాడుకుంటున్నాయి. ఇంతలో రివ్వున ఒక బాణం వచ్చింది — పొదల్లో దాక్కున్న ఒక బోయవాడు వేశాడు. ఒక పక్షి కింద పడి మళ్ళీ కదలలేదు. దాని జంట పక్షి పైన తిరుగుతూ దీనంగా ఏడుస్తూనే ఉంది. వాల్మీకి మనసు దుఃఖంతో నిండిపోయింది. ఆలోచించకుండానే ఆయన నోటి నుంచి మాటలు వచ్చాయి: "ఓ బోయవాడా, ప్రేమగా ఉన్న ఈ జంటలో ఒకదాన్ని కొట్టావు — నీకు ఎన్నటికీ శాంతి ఉండదు!" ఆ మాటలు ఒక పాటలా చక్కని లయలో వచ్చాయి.',
+      },
+      {
+        scene: { bg: 'ashram', props: [['glow', 230, 198, 1.3], ['person', 230, 198, 1.4, { cloth: '#f0c040', beard: true, hair: '#ddd', crown: true, raise: true, flip: true }], ['person', 110, 198, 1.35, { cloth: '#f4ead2', beard: true, hair: '#ddd' }], ['scroll', 160, 198, 0.55], ['lotus', 290, 198, 0.8]] },
+        en: 'Back at the ashram, Vālmīki kept repeating the verse. "My sorrow — my śoka — has turned into a śloka, a verse!" he said in wonder. Just then Lord Brahmā, the creator, appeared in a glow of light. "Do not worry, Vālmīki," he said kindly. "This new kind of verse came to you by my wish. Use it to tell the story of Rāma, just as Nārada told it to you. As long as mountains stand and rivers flow, people will sing it." So Vālmīki sat in deep thought, saw the whole story before his eyes, and wrote the Rāmāyaṇa — twenty-four thousand verses! That is why he is called the Ādi Kavi, the very first poet.',
+        te: 'ఆశ్రమానికి తిరిగి వచ్చాక కూడా వాల్మీకి ఆ పద్యాన్నే మళ్ళీ మళ్ళీ అనుకుంటున్నాడు. "నా శోకం శ్లోకంగా మారింది!" అని ఆశ్చర్యపోయాడు. సరిగ్గా అప్పుడే సృష్టికర్త అయిన బ్రహ్మదేవుడు వెలుగులో ప్రత్యక్షమయ్యాడు. "వాల్మీకీ, దిగులు పడకు," అన్నాడు ఆయన ప్రేమగా. "ఈ కొత్త రకం పద్యం నా సంకల్పం వల్లే నీకు వచ్చింది. నారదుడు చెప్పిన రాముడి కథను ఈ ఛందస్సులో రాయి. భూమి మీద కొండలూ, నదులూ ఉన్నంత కాలం ప్రజలు ఆ కథను పాడుకుంటారు." వాల్మీకి ధ్యానంలో కూర్చుని కథంతా కళ్ళ ముందు చూశాడు. ఇరవై నాలుగు వేల శ్లోకాలతో రామాయణం రాశాడు! అందుకే ఆయనను ఆదికవి — మొట్టమొదటి కవి — అంటారు.',
+      },
+    ],
+  },
 ];
