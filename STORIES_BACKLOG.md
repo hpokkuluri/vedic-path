@@ -74,11 +74,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Lava and Kuśa Sing the Rāmāyaṇa (Rāmāyaṇa) — lava-and-kusha-sing-the-ramayana
 - [x] Bhīṣma on the Bed of Arrows (Mahābhārata) — bhishma-on-the-bed-of-arrows
 - [x] How Vālmīki Became a Poet — the Krauñca Birds (Rāmāyaṇa) — how-valmiki-became-a-poet
+- [x] Ghaṭotkaca Saves the Pāṇḍavas (Mahābhārata) — ghatotkacha-saves-the-pandavas
+- [x] Śravaṇa Kumāra and King Daśaratha (Rāmāyaṇa) — shravana-kumara-and-dasharatha
+- [x] The Mongoose with the Golden Side (Mahābhārata) — the-mongoose-with-the-golden-side
 
 ## Next
-- [ ] Ghaṭotkaca Saves the Pāṇḍavas (Mahābhārata) — Ghaṭotkaca, Karṇa
-- [ ] Śravaṇa Kumāra and King Daśaratha (Rāmāyaṇa tradition) — Śravaṇa, Daśaratha
-- [ ] The Mongoose with the Golden Side (Mahābhārata) — Yudhiṣṭhira, the mongoose
 - [ ] Hanumān and the Sanjīvanī Thief Kālanemi (Rāmāyaṇa) — Hanumān, Kālanemi
 - [ ] Yudhiṣṭhira and the Faithful Dog (Mahābhārata) — Yudhiṣṭhira, Dharma, Indra
 - [ ] Śūrpaṇakhā Comes to Pañcavaṭī (Rāmāyaṇa) — Śūrpaṇakhā, Lakṣmaṇa

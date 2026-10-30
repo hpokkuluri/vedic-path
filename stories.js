@@ -1699,4 +1699,82 @@ window.KIDS_STORIES = [
       },
     ],
   },
+  {
+    id: 'ghatotkacha-saves-the-pandavas',
+    added: '2026-10-30',
+    epic: 'Mahabharata',
+    chars: ['Ghaṭotkaca', 'Karṇa', 'Bhīma', 'Kṛṣṇa', 'Arjuna', 'Duryodhana'],
+    title: { en: 'Ghaṭotkaca Saves the Pāṇḍavas', te: 'పాండవులను కాపాడిన ఘటోత్కచుడు' },
+    moral: { en: 'A true hero gives everything to protect the people he loves.', te: 'నిజమైన వీరుడు తనవాళ్ళను కాపాడడానికి సర్వస్వం ఇస్తాడు.' },
+    cover: { bg: 'night', props: [['moon', 345, 70, 1], ['chariot', 80, 198, 1.2], ['demon', 230, 198, 1.4, { color: '#7a5a9a', bald: true, raise: true }]] },
+    pages: [
+      {
+        scene: { bg: 'night', props: [['moon', 60, 70, 0.9], ['fire', 40, 198, 0.6], ['person', 110, 198, 1.4, { cloth: '#a8392a' }], ['mace', 140, 198, 0.9], ['demon', 270, 198, 1.3, { color: '#7a5a9a', bald: true, raise: true }]] },
+        en: 'On the fourteenth day of the great war at Kurukṣetra, the fighting did not stop at sunset. For the first time, the armies battled on into the night, by the light of flaming torches. Then the Pāṇḍavas called for Bhīma\'s son, Ghaṭotkaca. Do you remember him? He was the son of Bhīma and Hiḍimbā, half human and half rākṣasa, and he had promised to come whenever his father needed him. "Night is when I am strongest!" Ghaṭotkaca laughed. He rose into the dark sky, as tall as a palm tree, and roared like thunder.',
+        te: 'కురుక్షేత్ర మహాయుద్ధంలో పద్నాలుగో రోజు సూర్యుడు అస్తమించినా యుద్ధం ఆగలేదు. మొదటిసారిగా రెండు సైన్యాలూ కాగడాల వెలుగులో రాత్రి పూట కూడా పోరాడాయి. అప్పుడు పాండవులు భీముడి కొడుకు ఘటోత్కచుడిని పిలిపించారు. అతను గుర్తున్నాడా? భీముడికీ హిడింబికీ పుట్టిన కొడుకు — సగం మనిషి, సగం రాక్షసుడు. తండ్రికి అవసరమైనప్పుడల్లా వస్తానని అతను మాట ఇచ్చాడు. "రాత్రి పూటే నా బలం ఎక్కువ!" అని ఘటోత్కచుడు పకపకా నవ్వాడు. తాటిచెట్టంత ఎత్తుకు పెరిగి చీకటి ఆకాశంలోకి లేచి, ఉరుములా గర్జించాడు.',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 200, 60, 0.8], ['rock', 150, 80, 0.6], ['rock', 230, 110, 0.5], ['elephant', 90, 198, 0.8, { flip: true }], ['person', 190, 198, 1.2, { cloth: '#5a3a7a', crown: true, raise: true }], ['demon', 320, 198, 1.2, { color: '#7a5a9a', bald: true, raise: true }]] },
+        en: 'All that night, the battle belonged to Ghaṭotkaca. He used his magic powers, vanishing in one place and appearing in another. Rocks and trees rained down from the sky on the Kaurava army. Elephants trumpeted and ran, and soldiers dropped their weapons and fled. Duryodhana was terrified. He rushed to Karṇa. "Karṇa, save us! If this goes on, not one of us will see the morning. Use your Śakti!" Karṇa hesitated. The Śakti was Indra\'s magic weapon, and it could be used only once. For years Karṇa had kept it safe for one enemy alone — Arjuna. But his dear friend was begging him, and the army was breaking.',
+        te: 'ఆ రాత్రంతా యుద్ధభూమి ఘటోత్కచుడిదే! అతను తన మాయలు ప్రయోగించాడు. ఒక చోట మాయమై మరో చోట ప్రత్యక్షమయ్యేవాడు. ఆకాశం నుంచి కౌరవ సైన్యం మీద రాళ్ళూ చెట్లూ వానలా కురిశాయి. ఏనుగులు ఘీంకరిస్తూ పరుగెత్తాయి. సైనికులు ఆయుధాలు వదిలేసి పారిపోయారు. దుర్యోధనుడు భయంతో వణికిపోయాడు. కర్ణుడి దగ్గరకు పరుగెత్తాడు. "కర్ణా, మమ్మల్ని కాపాడు! ఇలాగే జరిగితే మనలో ఒక్కరు కూడా తెల్లవారడం చూడరు. నీ శక్తి ఆయుధాన్ని ప్రయోగించు!" కర్ణుడు సంకోచించాడు. ఇంద్రుడు ఇచ్చిన ఆ శక్తి ఒక్కసారి మాత్రమే పనిచేస్తుంది. దాన్ని అతను ఎన్నో ఏళ్ళుగా ఒకే ఒక్క శత్రువు కోసం — అర్జునుడి కోసం — దాచి ఉంచాడు. కానీ ప్రాణస్నేహితుడు బతిమాలుతున్నాడు, సైన్యం చెల్లాచెదురవుతోంది.',
+      },
+      {
+        scene: { bg: 'night', props: [['archer', 60, 198, 1.3, { cloth: '#c9952a', crown: true }], ['arrow', 150, 105, 1.1], ['glow', 215, 150, 0.8], ['demon', 310, 198, 1.6, { color: '#7a5a9a', bald: true }]] },
+        en: 'Karṇa lifted the shining Śakti and hurled it into the sky. It blazed like lightning and struck Ghaṭotkaca. The brave hero knew that his time had come, but even now he thought of his family. With his last strength, he made himself as big as a mountain and fell upon the Kaurava army, so that even his fall helped the Pāṇḍavas. The Pāṇḍavas wept for him. But Kṛṣṇa said softly, "Do not only weep. Ghaṭotkaca gave his life, and by doing so he saved Arjuna. Karṇa\'s Śakti is gone forever." Bhīma wiped his tears and held his head high. His son was a true hero.',
+        te: 'కర్ణుడు మెరిసిపోతున్న శక్తి ఆయుధాన్ని ఎత్తి ఆకాశంలోకి విసిరాడు. అది మెరుపులా మండుతూ వెళ్ళి ఘటోత్కచుడికి తగిలింది. తన సమయం వచ్చిందని ఆ వీరుడికి అర్థమైంది. అయినా అప్పుడు కూడా అతను తనవాళ్ళ గురించే ఆలోచించాడు. చివరి బలాన్నంతా కూడదీసుకుని కొండంత పెద్దగా పెరిగి, కౌరవ సైన్యం మీదే ఒరిగిపోయాడు. అలా అతను పడిపోవడం కూడా పాండవులకు సాయమే అయింది. పాండవులు అతని కోసం కన్నీరు పెట్టుకున్నారు. కానీ శ్రీకృష్ణుడు మెల్లగా అన్నాడు: "ఏడుస్తూ కూర్చోకండి. ఘటోత్కచుడు తన ప్రాణం ఇచ్చి అర్జునుడి ప్రాణాలు కాపాడాడు. కర్ణుడి శక్తి ఆయుధం ఇక శాశ్వతంగా పోయింది." భీముడు కన్నీళ్ళు తుడుచుకుని గర్వంగా తల ఎత్తాడు. తన కొడుకు నిజమైన వీరుడు.',
+      },
+    ],
+  },
+  {
+    id: 'shravana-kumara-and-dasharatha',
+    added: '2026-10-30',
+    epic: 'Ramayana',
+    chars: ['Śravaṇa', 'Daśaratha'],
+    title: { en: 'Śravaṇa Kumāra and King Daśaratha', te: 'శ్రవణ కుమారుడు — దశరథ మహారాజు' },
+    moral: { en: 'Love and care for your parents — and always think before you act.', te: 'తల్లిదండ్రులను ప్రేమగా చూసుకోవాలి; ఏ పని చేసినా ఆలోచించి చేయాలి.' },
+    cover: { bg: 'river', props: [['sun', 340, 55, 0.9], ['kavadi', 190, 196, 1.3], ['person', 190, 196, 1.3, { cloth: '#f0c040' }], ['tree', 330, 190, 1], ['cloud', 80, 50, 0.9]] },
+    pages: [
+      {
+        scene: { bg: 'village', props: [['sun', 60, 55, 0.8], ['kavadi', 200, 198, 1.4], ['person', 200, 198, 1.4, { cloth: '#f0c040' }], ['tree', 340, 198, 0.9], ['cloud', 290, 40, 0.8]] },
+        en: 'Long before Rāma was born, there lived a young man whom people call Śravaṇa Kumāra. His mother and father were old, and both of them were blind. Śravaṇa loved them more than anything. He cooked for them, held their hands as they walked, and described the world they could not see. One day they said, "Son, before we grow too old, we wish to visit the holy places." The journey was long, and they could not walk so far. So, it is said, Śravaṇa hung two baskets from a strong pole, seated his parents in them, and carried them on his shoulder from one holy river to the next, smiling all the way.',
+        te: 'రాముడు పుట్టడానికి చాలా కాలం ముందు, అందరూ శ్రవణ కుమారుడు అని పిలుచుకునే ఒక యువకుడు ఉండేవాడు. అతని తల్లిదండ్రులు ముసలివాళ్ళు, ఇద్దరికీ కళ్ళు కనిపించవు. శ్రవణుడికి వాళ్ళంటే ప్రాణం. వాళ్ళకు వండిపెట్టేవాడు, చేయి పట్టుకుని నడిపించేవాడు, వాళ్ళు చూడలేని లోకాన్ని మాటల్లో వర్ణించి చెప్పేవాడు. ఒకరోజు వాళ్ళు, "నాయనా, మరీ ముసలివాళ్ళం కాకముందే పుణ్యక్షేత్రాలు దర్శించుకోవాలని ఉంది" అన్నారు. ప్రయాణం చాలా దూరం, వాళ్ళు అంత దూరం నడవలేరు. అందుకే శ్రవణుడు ఒక గట్టి కావడి కట్టి, దానికి రెండు వైపులా రెండు బుట్టలు వేలాడదీసి, తల్లిదండ్రులను వాటిలో కూర్చోబెట్టాడు. భుజాన మోసుకుంటూ ఒక పుణ్యనది నుంచి మరో పుణ్యనదికి చిరునవ్వుతో తీసుకెళ్ళాడని చెబుతారు.',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 200, 60, 0.9], ['archer', 80, 196, 1.3, { cloth: '#3a6ab0', crown: true }], ['tree', 170, 196, 0.9], ['person', 310, 196, 1.2, { cloth: '#f0c040', flip: true }], ['pot', 345, 196, 0.8]] },
+        en: 'One evening they rested in a forest near the river Sarayū. "Son, we are thirsty," said his parents. Śravaṇa took a water pot and went down to the river in the twilight. At that very time, young Prince Daśaratha of Ayodhyā was out hunting. He was proud of a special skill called śabdavedhi: he could shoot an arrow at a sound without even seeing his target. Hiding near the river, he heard a gurgling noise — glug, glug, glug. "An elephant drinking water!" he thought. Without looking, he let his arrow fly. Then came a human cry: "Ah! Who has shot me? I have harmed no one!"',
+        te: 'ఒక సాయంత్రం వాళ్ళు సరయూ నది దగ్గర అడవిలో విశ్రాంతి తీసుకుంటున్నారు. "నాయనా, దాహంగా ఉంది," అన్నారు తల్లిదండ్రులు. శ్రవణుడు ఒక కుండ తీసుకుని, మసక చీకట్లో నది దగ్గరకు వెళ్ళాడు. సరిగ్గా అదే సమయంలో అయోధ్య యువరాజు దశరథుడు వేటకు వచ్చాడు. ఆయనకు శబ్దవేధి అనే ఒక ప్రత్యేక విద్య తెలుసు — గురి కంటికి కనిపించకపోయినా, శబ్దం విని బాణం వేయగలడు. నది దగ్గర పొదల్లో దాక్కుని ఉండగా ఆయనకు "గుడ గుడ గుడ" అనే శబ్దం వినిపించింది. "ఏనుగు నీళ్ళు తాగుతోంది!" అనుకున్నాడు. చూడకుండానే బాణం వదిలాడు. వెంటనే ఒక మనిషి కేక వినిపించింది: "అయ్యో! నన్నెవరు కొట్టారు? నేను ఎవరికీ ఏ హానీ చేయలేదే!"',
+      },
+      {
+        scene: { bg: 'night', props: [['moon', 330, 55, 0.9], ['person', 110, 198, 1.35, { cloth: '#3a6ab0', crown: true }], ['pot', 150, 198, 0.8], ['person', 250, 198, 1.2, { cloth: '#f4ead2', beard: true, hair: '#ddd', flip: true }], ['person', 300, 198, 1.15, { female: true, hair: '#ddd', cloth: '#f4ead2', pallu: '#c9a26b', flip: true }]] },
+        en: 'Daśaratha ran to the river, and his heart sank. A gentle young man lay on the bank, the water pot beside him. "My old parents are waiting, thirsty," whispered Śravaṇa. "Please take water to them." Then he closed his eyes forever. With shaking hands, Daśaratha carried the water to the old couple and told them everything. They wept for their only son. In his grief, the father said, "O king, one day you too will know the pain of being parted from your son." Many years later, when Rāma left for the forest, those words came true. And Daśaratha never forgot Śravaṇa, the son who loved his parents above all.',
+        te: 'దశరథుడు నది దగ్గరకు పరుగెత్తాడు. అక్కడ చూసినదానికి ఆయన గుండె ఆగినంత పనైంది. ఒక మంచి యువకుడు ఒడ్డున పడి ఉన్నాడు, పక్కనే నీళ్ళ కుండ. "నా ముసలి తల్లిదండ్రులు దాహంతో ఎదురుచూస్తున్నారు," అని శ్రవణుడు నెమ్మదిగా అన్నాడు. "దయచేసి వాళ్ళకు నీళ్ళు తీసుకెళ్ళండి." ఆ మాటలు చెప్పి అతను శాశ్వతంగా కన్నుమూశాడు. వణికే చేతులతో దశరథుడు నీళ్ళు తీసుకెళ్ళి, ఆ వృద్ధ దంపతులకు జరిగినదంతా చెప్పాడు. ఒక్కగానొక్క కొడుకు కోసం వాళ్ళు ఎంతో విలపించారు. ఆ దుఃఖంలో తండ్రి, "రాజా, ఏదో ఒకరోజు నువ్వు కూడా కొడుకుకు దూరమైన బాధను అనుభవిస్తావు," అన్నాడు. చాలా ఏళ్ళ తరువాత రాముడు అడవికి వెళ్ళినప్పుడు ఆ మాట నిజమైంది. తల్లిదండ్రులను అంతగా ప్రేమించిన శ్రవణుడిని దశరథుడు ఎప్పటికీ మరచిపోలేదు.',
+      },
+    ],
+  },
+  {
+    id: 'the-mongoose-with-the-golden-side',
+    added: '2026-10-30',
+    epic: 'Mahabharata',
+    chars: ['Yudhiṣṭhira', 'The Mongoose', 'Dharma'],
+    title: { en: 'The Mongoose with the Golden Side', te: 'బంగారు ముంగిస' },
+    moral: { en: 'A small gift given with a loving, selfless heart is the greatest gift of all.', te: 'నిస్వార్థంగా, ప్రేమతో ఇచ్చే చిన్న దానమే అన్నిటికంటే గొప్ప దానం.' },
+    cover: { bg: 'palace', props: [['person', 90, 198, 1.4, { cloth: '#f4ead2', crown: true }], ['fire', 320, 198, 1], ['mongoose', 205, 198, 1.7, { gold: true }]] },
+    pages: [
+      {
+        scene: { bg: 'court', props: [['fire', 200, 196, 1], ['person', 310, 196, 1.4, { cloth: '#f4ead2', crown: true, flip: true }], ['pot', 250, 196, 0.7], ['mongoose', 95, 196, 1.4, { gold: true }]] },
+        en: 'After the great war, Yudhiṣṭhira became king. To bless his kingdom, he held a grand yajña called the Aśvamedha. It was the richest ceremony anyone had ever seen! Mountains of gold were given away, and thousands of people ate delicious food. Everyone said, "There has never been a gift-giving like this!" Just then, a strange little visitor ran into the hall — a mongoose. Its head and one side of its body shone like pure gold. The mongoose rolled over and over on the floor where the guests had eaten. Then it stood up, looked at itself, and sighed sadly.',
+        te: 'మహాయుద్ధం తరువాత ధర్మరాజు రాజయ్యాడు. రాజ్యానికి మేలు జరగాలని అశ్వమేధ యాగం చేశాడు. అంత వైభవంగా జరిగిన యాగాన్ని అంతకుముందు ఎవరూ చూడలేదు! కొండల్లాంటి బంగారు రాశులను దానం చేశారు. వేలాది మంది కమ్మని భోజనం చేశారు. "ఇంత గొప్ప దానం ఎప్పుడూ జరగలేదు!" అని అందరూ పొగిడారు. ఇంతలో ఒక వింత అతిథి ఆ యాగశాలలోకి పరుగెత్తుకుంటూ వచ్చింది — ఒక ముంగిస! దాని తల, శరీరంలో ఒక సగం అచ్చం బంగారంలా మెరుస్తున్నాయి. అతిథులు భోజనం చేసిన చోట ఆ ముంగిస అటూ ఇటూ దొర్లింది. తరువాత లేచి నిలబడి, తన ఒంటిని చూసుకుని దిగులుగా నిట్టూర్చింది.',
+      },
+      {
+        scene: { bg: 'village', props: [['person', 120, 198, 1.2, { cloth: '#c9a26b', beard: true, hair: '#ddd' }], ['person', 160, 198, 1.15, { female: true, hair: '#999', cloth: '#a8622a', pallu: '#c9a26b' }], ['person', 205, 198, 1.2, { cloth: '#c9a26b' }], ['person', 245, 198, 1.1, { female: true, cloth: '#3a9a8a', pallu: '#a8622a' }], ['pot', 182, 198, 0.6], ['person', 330, 198, 1.3, { cloth: '#f4ead2', beard: true, hair: '#ddd', flip: true }]] },
+        en: 'To everyone\'s surprise, the mongoose spoke! "This great yajña is not equal to a handful of barley flour," it said. The guests gasped. "Let me tell you why," said the mongoose. "Once there was a terrible famine. A poor family — a father, a mother, their son and his wife — had not eaten for days. At last they found a little barley, ground it into flour and made four small shares. Just as they sat down to eat, a hungry guest came to the door. The father gave him his share. The guest was still hungry. One by one, the mother, the son and his wife gave their shares too, smiling, though their own stomachs were empty."',
+        te: 'అందరూ ఆశ్చర్యపోయేలా ఆ ముంగిస మాట్లాడింది! "ఈ మహా యాగం గుప్పెడు యవల పిండికి కూడా సాటి రాదు," అంది. అతిథులంతా నివ్వెరపోయారు. "ఎందుకో చెబుతాను, వినండి," అంది ముంగిస. "ఒకప్పుడు భయంకరమైన కరువు వచ్చింది. ఒక పేద కుటుంబం — తండ్రి, తల్లి, కొడుకు, కోడలు — చాలా రోజులుగా తిండి లేకుండా ఉన్నారు. చివరకు వాళ్ళకు కొంచెం యవలు దొరికాయి. వాటిని పిండి చేసి నాలుగు చిన్న భాగాలు చేసుకున్నారు. సరిగ్గా తినడానికి కూర్చోగానే, ఆకలితో ఉన్న ఒక అతిథి గుమ్మం దగ్గరకు వచ్చాడు. తండ్రి తన భాగాన్ని అతనికి ఇచ్చాడు. అయినా అతిథి ఆకలి తీరలేదు. అప్పుడు తల్లి, కొడుకు, కోడలు ఒకరి తరువాత ఒకరు తమ భాగాలను కూడా చిరునవ్వుతో ఇచ్చేశారు — తమ కడుపులు ఖాళీగా ఉన్నా సరే."',
+      },
+      {
+        scene: { bg: 'village', props: [['cloud', 90, 50, 0.9], ['chariot', 120, 120, 1], ['glow', 290, 198, 1.2], ['person', 290, 198, 1.4, { cloth: '#f0c040', crown: true, raise: true, flip: true }], ['mongoose', 185, 198, 1.4, { gold: true }]] },
+        en: 'The guest was full at last, and he blessed them. Then he showed his true form — he was Dharma himself, the god of righteousness, who had come to test them. A heavenly chariot carried the whole family away to heaven. "Later I came by," said the mongoose, "and rolled in the few grains of flour that had fallen on their floor. Wherever the flour touched me, my fur turned to gold! Ever since, I have rolled at every great yajña, hoping to make my other side golden too. But it has never happened." Yudhiṣṭhira bowed his head. He understood: a small gift, given with love when you have almost nothing, is greater than mountains of gold.',
+        te: 'చివరకు అతిథి కడుపు నిండింది. అతను వాళ్ళను మనస్ఫూర్తిగా దీవించాడు. తరువాత తన నిజరూపం చూపించాడు — వాళ్ళను పరీక్షించడానికి వచ్చిన సాక్షాత్తూ ధర్మదేవుడే ఆయన! ఒక దివ్య రథం ఆ కుటుంబాన్నంతా స్వర్గానికి తీసుకెళ్ళింది. "తరువాత నేను అటుగా వచ్చాను," అంది ముంగిస. "వాళ్ళ ఇంట్లో నేల మీద రాలిన కొన్ని పిండి రేణువుల్లో దొర్లాను. ఆ పిండి తాకిన చోటల్లా నా ఒళ్ళు బంగారంగా మారిపోయింది! అప్పటినుంచి మిగతా సగం కూడా బంగారం అవుతుందేమో అని ప్రతి గొప్ప యాగంలోనూ దొర్లుతున్నాను. కానీ ఎక్కడా అలా జరగలేదు." ధర్మరాజు తల వంచాడు. ఆయనకు అర్థమైంది: దాదాపు ఏమీ లేనప్పుడు ప్రేమతో ఇచ్చే చిన్న దానం, కొండంత బంగారం కంటే గొప్పది.',
+      },
+    ],
+  },
 ];
