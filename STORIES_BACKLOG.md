@@ -77,11 +77,11 @@ original wording (never copied from any book, comic or website). Fill in `chars`
 - [x] Ghaṭotkaca Saves the Pāṇḍavas (Mahābhārata) — ghatotkacha-saves-the-pandavas
 - [x] Śravaṇa Kumāra and King Daśaratha (Rāmāyaṇa) — shravana-kumara-and-dasharatha
 - [x] The Mongoose with the Golden Side (Mahābhārata) — the-mongoose-with-the-golden-side
+- [x] Hanumān and the False Sage Kālanemi (Rāmāyaṇa) — hanuman-and-kalanemi
+- [x] Yudhiṣṭhira and the Faithful Dog (Mahābhārata) — yudhishthira-and-the-faithful-dog
+- [x] Śūrpaṇakhā Comes to Pañcavaṭī (Rāmāyaṇa) — shurpanakha-comes-to-panchavati
 
 ## Next
-- [ ] Hanumān and the Sanjīvanī Thief Kālanemi (Rāmāyaṇa) — Hanumān, Kālanemi
-- [ ] Yudhiṣṭhira and the Faithful Dog (Mahābhārata) — Yudhiṣṭhira, Dharma, Indra
-- [ ] Śūrpaṇakhā Comes to Pañcavaṭī (Rāmāyaṇa) — Śūrpaṇakhā, Lakṣmaṇa
 - [ ] Kṛṣṇa and Sudāmā's Handful of Rice (Kṛṣṇa tales) — Sudāmā, Kṛṣṇa
 - [ ] Sumitrā's Blessing to Lakṣmaṇa (Rāmāyaṇa) — Sumitrā, Lakṣmaṇa, Ūrmilā
 - [ ] Śikhaṇḍī's Story (Mahābhārata) — Śikhaṇḍī, Ambā, Bhīṣma
