@@ -19,6 +19,7 @@
     ['vikramaditya', 'Vikramāditya', 'విక్రమాదిత్యుడు', 'Candragupta II · Gupta · the iron pillar', 'రెండవ చంద్రగుప్తుడు · గుప్త · ఇనుప స్తంభం', '🌙', 'linear-gradient(160deg,#0a1a2a,#c09a3a)'],
     ['skandagupta', 'Skandagupta', 'స్కందగుప్తుడు', 'Gupta · the king who held back the Hūṇas', 'గుప్త · హూణులను నిలువరించిన రాజు', '🛡️', 'linear-gradient(160deg,#1a0a0a,#a04a2a)'],
     ['harsha', 'Harṣa', 'హర్షుడు', 'Harṣavardhana · Kanauj · poet-king of the North', 'హర్షవర్ధనుడు · కనౌజ్ · ఉత్తరాపథ కవిరాజు', '🪷', 'linear-gradient(160deg,#2a0a1a,#c06a4a)'],
+    ['pulakeshin', 'Pulakeśin II', 'రెండవ పులకేశి', 'Cālukya of Vātāpi · Lord of the South', 'వాతాపి చాళుక్య · దక్షిణాపథ ప్రభువు', '🐗', 'linear-gradient(160deg,#1a1a0a,#8a6a1a)'],
   ];
   const SMETA = k => KINGS.find(x => x[0] === k) || KINGS[0];
   window.KING_META = SMETA;   // used by bookmarks.js
