@@ -42,11 +42,15 @@ The Great Sages tile (`sages.js`, one file per sage in `sages/`). A daily schedu
 
 ## Next
 
-- [ ] Lomaśa (lomasha) — the hairy sage who lives an age of Brahmā; Indra's messenger to the Pāṇḍavas; guiding them on the great pilgrimage and telling the tīrtha tales (Agastya, Ṛṣyaśṛṅga, Bhagīratha, Cyavana); his hairs falling one per cycle (MBh Vana, later Purāṇas).
 - [ ] Dhaumya (dhaumya) — priest of the Pāṇḍavas chosen at Utkocaka; the 108 names of Sūrya and the akṣaya-pātra; counsel before the year in disguise; the funeral rites after the war (MBh Ādi, Vana, Virāṭa, Strī).
 - [ ] Upamanyu (upamanyu) — Dhaumya's cowherd pupil and the Aśvins' cure; the boy who wanted milk and was taught to seek Śiva; Śiva's test in Indra's form; teaching Kṛṣṇa the Śiva Sahasranāma (MBh Ādi, Anuśāsana, Liṅga Purāṇa).
 - [ ] Sāndīpani (sandipani) — teacher of Kṛṣṇa and Balarāma at Avantī; sixty-four arts in sixty-four days; the son lost to the sea and brought back from Yama's city as guru-dakṣiṇā (Bhāgavata 10, Viṣṇu Purāṇa, Harivaṃśa).
 - [ ] The four Kumāras (kumaras) — Sanaka, Sanandana, Sanātana, Sanatkumāra, mind-born sons who refused to create; cursing Jaya and Vijaya at Vaikuṇṭha; Sanatkumāra teaching Nārada (Chāndogya) and Dhṛtarāṣṭra (Sanatsujātīya) (Bhāgavata, Chāndogya Upaniṣad, MBh Udyoga).
+- [ ] Uddālaka Āruṇi (aruni) — Dhaumya's pupil who lay down in the breach of the field-dyke; “Tat tvam asi” taught to Śvetaketu with the salt, the banyan seed and the honey; the debate with Yājñavalkya; Naciketas's father in the Kaṭha (MBh Ādi, Chāndogya and Bṛhadāraṇyaka Upaniṣads, Kaṭha Upaniṣad).
+- [ ] Jaimini (jaimini) — Vyāsa's pupil who received the Sāmaveda; author of the Mīmāṃsā Sūtras; the four birds of the Vindhyas who answered his questions (Mārkaṇḍeya Purāṇa); the Jaimini Bhārata and its Aśvamedha tales (Viṣṇu Purāṇa, Bhāgavata, Mārkaṇḍeya Purāṇa, later Jaimini Bhārata).
+- [ ] Garga (garga) — priest of the Yadus; the secret naming of Kṛṣṇa and Balarāma in Nanda's cowshed; the sage of the stars and omens; the Garga Saṃhitā (Bhāgavata 10, Harivaṃśa, MBh Śalya, later Garga Saṃhitā).
+- [ ] Śāṇḍilya (shandilya) — the Śāṇḍilya-vidyā “all this is Brahman” in the Chāndogya; the Bhakti Sūtras in his name; guide of Vajra's Vraja (Chāndogya, Śatapatha Brāhmaṇa, Bhāgavata Māhātmya).
+- [ ] The Vālakhilyas (valakhilyas) — sixty thousand thumb-sized sages born of Kratu; hanging from the bough Garuḍa carried; the sacrifice that made Garuḍa against Indra's pride; the Vālakhilya hymns of the Ṛgveda and their place before the Sun's chariot (MBh Ādi, Ṛgveda, Viṣṇu Purāṇa).
 
 Add more when fewer than five remain: e.g. Pulastya, Kaṇva, Uttaṅka, Dhaumya, Lomaśa, Māṇḍavya,
 Śuka, Jaimini, Vālakhilyas, the four Kumāras, Upamanyu, Āruṇi, Sāndīpani, Garga, Śāṇḍilya, Cyavana.
@@ -82,3 +86,4 @@ icon, gradient) — add it at the end of the list.
 - [x] Kaṇva (kanva) — 10 chapters — 2026-10-27
 - [x] Māṇḍavya (mandavya) — 9 chapters — 2026-10-28
 - [x] Pulastya (pulastya) — 10 chapters — 2026-10-29
+- [x] Lomaśa (lomasha) — 12 chapters — 2026-10-31
